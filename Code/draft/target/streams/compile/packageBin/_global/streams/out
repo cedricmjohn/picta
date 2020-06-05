@@ -1,0 +1,29 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/untitled/target/scala-2.13/untitled_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Layout$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Layout$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Title$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Title$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Legend.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Legend.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/test$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/test$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Legend$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Legend$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Chart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Chart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Title.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Title.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Chart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Chart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Trace.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Layout.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/untitled/target/scala-2.13/classes/conusviz/Layout.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

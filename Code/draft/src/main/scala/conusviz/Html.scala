@@ -1,9 +1,13 @@
 package conusviz
 
+import scala.io.Source
 import java.io._
 import scalatags.Text.all._
 
 object Chart {
+
+  // TODO CHANGE TO SCRIPT
+  val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
 
   def generatePlotlyFunction(jsonString: String):String = {
       s"""

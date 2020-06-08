@@ -1,0 +1,17 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'FazalKhan_ACSE9ProjectPlan.blg'
+[110] biber-darwin:322> INFO - === Tue Jun  9, 2020, 00:26:00
+[135] Biber.pm:415> INFO - Reading 'FazalKhan_ACSE9ProjectPlan.bcf'
+[276] Biber.pm:943> INFO - Found 6 citekeys in bib section 0
+[295] Biber.pm:4256> INFO - Processing section 0
+[296] Utils.pm:75> INFO - Globbing data source 'References.bib'
+[296] Utils.pm:91> INFO - Globbed data source 'References.bib' to References.bib
+[313] Biber.pm:4455> INFO - Looking for bibtex format file 'References.bib' for section 0
+[315] bibtex.pm:1653> INFO - LaTeX decoding ...
+[343] bibtex.pm:1471> INFO - Found BibTeX data source 'References.bib'
+[440] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[441] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[441] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[458] bbl.pm:652> INFO - Writing 'FazalKhan_ACSE9ProjectPlan.bbl' with encoding 'UTF-8'
+[463] bbl.pm:755> INFO - Output to FazalKhan_ACSE9ProjectPlan.bbl

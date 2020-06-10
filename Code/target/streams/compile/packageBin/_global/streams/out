@@ -1,0 +1,31 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/conusviz_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TestDrive$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/TestDrive$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/example.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TestDrive.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/TestDrive.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Chart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Chart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Chart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Chart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Line.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Line.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Attribute.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Attribute.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Marker.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Marker.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Marker$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Marker$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

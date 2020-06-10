@@ -1,0 +1,28 @@
+<html><head><script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly-basic.min.js"></script>
+ <script>
+ var Json = {
+  "data" : [
+    {
+      "x" : [
+        1,
+        2,
+        3,
+        4
+      ],
+      "y" : [
+        2,
+        3,
+        4,
+        5
+      ],
+      "type" : "bar",
+      "mode" : "lines+markers"
+    }
+  ]
+};
+ //var Json = JSON.parse(myJson)
+ window.onload = function() {
+   Plotly.newPlot("graph", Json.data);
+ }
+ </script>
+</head><body><div id="graph"></div></body></html>

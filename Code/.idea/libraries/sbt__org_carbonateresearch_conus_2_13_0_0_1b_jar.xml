@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.carbonateresearch:conus_2.13:0.0.1b:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/carbonateresearch/conus_2.13/0.0.1b/conus_2.13-0.0.1b.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/carbonateresearch/conus_2.13/0.0.1b/conus_2.13-0.0.1b-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/carbonateresearch/conus_2.13/0.0.1b/conus_2.13-0.0.1b-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

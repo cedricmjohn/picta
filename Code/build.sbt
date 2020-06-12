@@ -19,12 +19,13 @@ libraryDependencies += "org.plotly-scala" %% "plotly-core" % "0.7.6"
 libraryDependencies += "org.plotly-scala" %% "plotly-render" % "0.7.6"
 
 //// JSON encoding / decoding
+libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"
+libraryDependencies += "com.lihaoyi" %% "ujson-circe" % "1.1.0"
+
 
 val circeVersion = "0.12.3"
 libraryDependencies ++= Seq(
   "io.circe" %% "circe-core",
-  "io.circe" %% "circe-shapes",
   "io.circe" %% "circe-generic",
-  "io.circe" %% "circe-parser",
   "io.circe" %% "circe-literal"
 ).map(_ % circeVersion)

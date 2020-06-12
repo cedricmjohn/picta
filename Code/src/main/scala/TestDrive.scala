@@ -1,22 +1,30 @@
-import org.carbonateresearch.conus.common._
-import org.carbonateresearch.conus.grids._
+package conusviz
 
-object TestDrive {
+//import scala.util.Random
+//import Data._
+//import ujson.{Obj, Value}
+import ujson.{Arr, Obj, Value}
+import upickle.default._
+
+import scala.reflect.ClassTag
+import scala.util.Random
+
+object Example extends App {
+
+  val rand: Random.type = scala.util.Random
+
+  // raw data
+  val x = (1 to 1000).map { e => e*100*rand.nextDouble() }.toSeq
+  val y = x.map(_*rand.nextDouble())
+  val z = y.map(_+rand.nextDouble()*100)
+
+  val layout = Layout("Chart", true)
+  val config = Config(true, true)
+  val trace = Trace(List(x, y), trace_name = "test", trace_type = "scattergl", mode = "markers")
+
+  val xychart = new XYChart(List(trace), layout, config)
+  xychart.plot()
 }
-
-
-
-
-//trait FlatCaseClassCodecs extends HListInstances {
-//  implicit def encodeCaseClassFlat[A, Repr <: HList](implicit
-//                                                     gen: Generic.Aux[A, Repr],
-//                                                     encodeRepr: Encoder[Repr]
-//                                                    ): Encoder[A] = encodeRepr.contramap(gen.to)
-//
-//}
-//
-//object FlatCaseClassCodecs extends FlatCaseClassCodecs
-
 
 //  val sum: ModelVariable[Double] = ModelVariable("Sum", 1.0)
 //  val interestRate: ModelVariable[Double] = ModelVariable("Interest Rate", 0.1)

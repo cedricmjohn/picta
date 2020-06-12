@@ -5,19 +5,22 @@ import java.io._
 
 import io.circe.Json
 import scalatags.Text.all._
+import ujson.{Obj, Value}
 
 object Chart {
 
   // TODO CHANGE TO SCRIPT
   val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
 
-  def generatePlotlyFunction(jsonString: Json):String = {
+  def generatePlotlyFunction(traces: Obj, layout: Value, config: Value):String = {
       s"""
          | <script>
-         | var Json = ${jsonString};
+         | var traces = ${traces};
+         | var layout = ${layout};
+         | var config = ${config};
          | //var Json = JSON.parse(myJson)
          | window.onload = function() {
-         |   Plotly.newPlot("graph", Json.data);
+         |   Plotly.newPlot("graph", traces.data, layout, config);
          | }
          | </script>
          |""".stripMargin
@@ -26,7 +29,7 @@ object Chart {
   def generateHTMLChart(plotlyFunction: String):String = {
     html(
       head(
-        script(src:="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly-basic.min.js"),
+        script(src:="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"),
         raw(plotlyFunction)
       ),
       body(

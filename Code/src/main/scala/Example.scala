@@ -2,7 +2,7 @@
 
 //import Trace._
 //import ujson.Obj
-import conusviz.{Config, Layout, SurfaceTrace, Trace, XYChart, XYTrace}
+import conusviz.{Config, Layout, SurfaceChart, SurfaceTrace, Trace, XYChart, XYTrace}
 import ujson.{Obj, Value}
 import upickle.default.{ReadWriter => RW}
 import upickle.default._
@@ -11,23 +11,40 @@ import scala.reflect.ClassTag
 import conusviz.XYTrace._
 
 object Example extends App {
-  val x = List("a", "b", "c")
-  val y = List(1, 2, 3, 4)
-  val z = List(10, 20, 30)
 
-  val k = List.range(1, 100).grouped(10).toList
+  val k = List(
+    List(8.83,8.89,8.81,8.87,8.9,8.87),
+    List(8.89,8.94,8.85,8.94,8.96,8.92),
+    List(8.84,8.9,8.82,8.92,8.93,8.91),
+    List(8.79,8.85,8.79,8.9,8.94,8.92),
+    List(8.79,8.88,8.81,8.9,8.95,8.92),
+    List(8.8,8.82,8.78,8.91,8.94,8.92),
+    List(8.75,8.78,8.77,8.91,8.95,8.92),
+    List(8.8,8.8,8.77,8.91,8.95,8.94),
+    List(8.74,8.81,8.76,8.93,8.98,8.99),
+    List(8.89,8.99,8.92,9.1,9.13,9.11),
+    List(8.97,8.97,8.91,9.09,9.11,9.11),
+    List(9.04,9.08,9.05,9.25,9.28,9.27),
+    List(9,9.01,9,9.2,9.23,9.2),
+    List(8.99,8.99,8.98,9.18,9.2,9.19),
+    List(8.93,8.97,8.97,9.18,9.2,9.18)
+  )
 
-  val data = SurfaceTrace(k,"trace0", "scatter", "marker")
-
-  val layout = Layout("Chart", true)
+  // 3d surface plot
+  val trace_surface = SurfaceTrace(k, "trace")
+  val layout = Layout("ConusViz Surface Chart Example", true)
   val config = Config(true, true)
+  val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
+  chart_surface.plot()
 
-//  val xychart = new S(List(data), layout, config)
+  // line plot
+  val x = List.fill(100)(scala.util.Random.nextDouble)
+  val y = List.fill(100)(scala.util.Random.nextDouble)
 
-//  xychart.plot()
+  val trace_line = new XYTrace(x, y, "example", "scatter", "marker+line")
+  val chart_line = new XYChart(List(trace_line), layout, config)
+  chart_line.plot()
 }
-
-
 
 //  val trace: Trace[Any] = Trace(List(x, y), trace_name = "test", trace_type = "surface", mode = "lines")
 

@@ -1,11 +1,11 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/conusviz_2.13-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	example.txt[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/example.txt[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Serializer$DoubleSerializer$.class[0m
@@ -14,6 +14,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Layout$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/XYZ.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/XYZ.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Surface.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Surface.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Serializer$IntSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Serializer$IntSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Layout$$anon$1$$anon$2.class[0m
@@ -34,6 +36,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Layout$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/package$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/SurfaceChart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/SurfaceChart$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Config$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Config$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Chart$.class[0m
@@ -52,6 +56,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/XYZChart$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/package.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/SurfaceChart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/SurfaceChart.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/XYZTrace$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/XYZTrace$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/XYZChart.class[0m

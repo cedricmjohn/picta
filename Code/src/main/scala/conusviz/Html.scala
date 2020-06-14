@@ -1,16 +1,16 @@
 package conusviz
 
-import scala.io.Source
-import java.io._
+import java.io.{BufferedWriter, File, FileWriter}
 
-import io.circe.Json
+//import java.io._
+import scala.io.Source
 import scalatags.Text.all._
 import ujson.{Obj, Value}
 
 object Chart {
 
   // TODO CHANGE TO SCRIPT
-  val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
+//  val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
 
   def generatePlotlyFunction(traces: Value, layout: Value, config: Value):String = {
       s"""
@@ -39,10 +39,32 @@ object Chart {
   }
 
   def writeHTMLChartToFile(html: String): Unit = {
+
+    val osName = (System.getProperty("os.name") match {
+      case name if name.startsWith("Linux") => "linux"
+      case name if name.startsWith("Mac") => "mac"
+      case name if name.startsWith("Windows") => "win"
+      case _ => throw new Exception("Unknown platform!")
+    })
+
     // TODO - MAKE NAME DYNAMIC
-    val fout = new File("example.html")
+    val model_name = System.currentTimeMillis().toString
+    val dir = System.getProperty("user.home")+"/Conus/"+model_name+".html"
+    val fout = new File(dir)
     val bufferWriter = new BufferedWriter(new FileWriter(fout))
     bufferWriter.write(html)
     bufferWriter.close()
+
+    val command = osName match {
+      case "linux" => Some(Seq("xdg-open", fout.getAbsolutePath))
+      case "mac" => Some(Seq("open", fout.getAbsolutePath))
+      case "win" => Some(Seq("cmd", s"start ${fout.getAbsolutePath}"))
+      case _ => None
+    }
+
+    command match {
+      case Some(c) => sys.process.Process(c).run
+      case None => Console.err.println(s"Chart could not be opened")
+    }
   }
 }

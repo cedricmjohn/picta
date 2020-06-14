@@ -4,15 +4,15 @@ import conusviz.{Config, Layout, Trace, XYTrace}
 import ujson.{Arr, Obj, Value}
 import upickle.default._
 
-sealed trait XY {
+sealed trait Surface {
   val traces: List[Value]
   val layout: Value
   val config: Value
 }
 
-final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
-                   l: Layout = Layout("Chart", true),
-                   c: Config = Config(true, true)) extends XY {
+final case class SurfaceChart[T0](val data: List[SurfaceTrace[T0]],
+                                 l: Layout = Layout("Chart", true),
+                                 c: Config = Config(true, true)) extends Surface {
 
   // convert the traces, layout and config arguments to a Json value format
   val traces: List[Value] = data.map(t => t.value)
@@ -26,10 +26,8 @@ final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
   }
 }
 
-object XYChart {
+object SurfaceChart {
   val compatibleChartSet = Set(
-    "scatter",
-    "scattergl",
-    "bar",
+    "surface"
   )
 }

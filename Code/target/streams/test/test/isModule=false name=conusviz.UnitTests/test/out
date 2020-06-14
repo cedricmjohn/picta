@@ -1,2 +1,5 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mUnitTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Data.createTrace.3D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Int.Scatter.2D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.String.Scatter.2D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Double.Scatter.2D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Data.InvalidTrace.XY[0m[0m

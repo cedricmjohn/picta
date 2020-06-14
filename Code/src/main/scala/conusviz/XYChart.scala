@@ -1,29 +1,38 @@
 package conusviz
 
-import ujson.{Obj, Value}
+import conusviz.{Config, Layout, Trace, XYTrace}
+import ujson.{Arr, Obj, Value}
 import upickle.default._
 
 import scala.reflect.ClassTag
 
-
 sealed trait XY {
-  // trace
+  val traces: List[Value]
   val layout: Value
   val config: Value
 }
 
-case class XYChart[T <: AnyVal](val data: List[Trace[T]],
+final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
                    l: Layout = Layout("Chart", true),
-                   c: Config = Config(true, true))(implicit ev: ClassTag[T]) extends XY {
+                   c: Config = Config(true, true)) extends XY {
 
+  // convert the traces, layout and config arguments to a Json value format
+  val traces: List[Value] = data.map(t => t.value)
+  val layout: Value = transform(l.createLayout).to(Value)
+  val config: Value = transform(c.createConfig).to(Value)
 
-  val traces: List[Obj] = data.map(t => t.value)
-  val layout = transform(l.createLayout).to(Value)
-  val config = transform(c.createConfig).to(Value)
-
-  def plot() = {
-    val data = Trace.createDataField(traces)
-    val html: String = Chart.generateHTMLChart(Chart.generatePlotlyFunction(data, layout, config))
+  // simply inject traces, layout and config into the the function and generate the HTML
+  def plot(): Unit = {
+    val html: String = Chart.generateHTMLChart(Chart.generatePlotlyFunction(traces, layout, config))
     Chart.writeHTMLChartToFile(html)
   }
+}
+
+object XYChart {
+  val compatibleChartSet = Set(
+    "scatter",
+    "scattergl",
+    "bar",
+    "surface"
+  )
 }

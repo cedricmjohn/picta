@@ -12,7 +12,7 @@ object Chart {
   // TODO CHANGE TO SCRIPT
   val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
 
-  def generatePlotlyFunction(traces: Obj, layout: Value, config: Value):String = {
+  def generatePlotlyFunction(traces: Value, layout: Value, config: Value):String = {
       s"""
          | <script>
          | var traces = ${traces};
@@ -20,7 +20,7 @@ object Chart {
          | var config = ${config};
          | //var Json = JSON.parse(myJson)
          | window.onload = function() {
-         |   Plotly.newPlot("graph", traces.data, layout, config);
+         |   Plotly.newPlot("graph", traces, layout, config);
          | }
          | </script>
          |""".stripMargin

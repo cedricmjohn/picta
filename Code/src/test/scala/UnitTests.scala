@@ -4,67 +4,63 @@ import org.scalatest.FunSuite
 import upickle.default._
 import upickle.default.{ReadWriter => RW}
 
-import Trace._
-
-
 class UnitTests extends FunSuite {
 
-//  test("Data.createSeries.2D") {
-//    val x = Seq(1, 2, 3)
-//    val y = Seq(1, 2, 3)
-//    val series = Trace.createSeries(List(x, y))
-//    val test: String = """{"x":[1,2,3],"y":[1,2,3]}"""
-//    assert(write(series) == test)
-//  }
-//
-//  test("Data.createSeries.3D") {
-//    val x = Seq(1, 2, 3)
-//    val y = Seq(1, 2, 3)
-//    val z = Seq(1, 2, 3)
-//    val series = Trace.createSeries(List(x, y, z))
-//    val test: String = """{"x":[1,2,3],"y":[1,2,3],"z":[1,2,3]}"""
-//    assert(write(series) == test)
-//  }
-//
-//  test("Data.zipSeries.3D") {
-//    val x = Seq(1, 2, 3)
-//    val y = Seq(1, 2, 3)
-//    val z = Seq(1, 2, 3)
-//    val test = List((1, 1, 1), (2, 2, 2), (3, 3, 3))
-//    assert(test == Trace.zipSeries(List(x, y, z)))
-//  }
-//
-//  test("Data.createTrace.Scatter.2D") {
-//    val x = Seq(1, 2, 3)
-//    val y = Seq(1, 2, 3)
-//    val trace = createTrace(List(x, y), "test", "scatter", "lines")
-//    val test = """{"name":"test","type":"scatter","mode":"lines","x":[1,2,3],"y":[1,2,3]}"""
-//    assert(test == write(trace))
-//  }
+  val x_int = List(1, 2, 3)
+  val y_int = List(1, 2, 3)
+  val z_int = List(1, 2, 3)
 
-//  test("Data.createTrace.2D") {
-//    val x = Seq(1, 2, 3)
-//    val y = Seq(1, 2, 3)
-//    val trace = Trace(List(x, y), "test", "scatter", "lines")
-//    val test = """{"name":"test","type":"scatter","mode":"lines","x":[1,2,3],"y":[1,2,3]}"""
-//    assert(test == write(trace.value))
-//  }
+  val x_double = List(1.5, 2.5, 3.5)
+  val y_double = List(1.5, 2.5, 3.5)
+  val z_double = List(1.5, 2.5, 3.5)
 
-  test("Data.createTrace.3D") {
-    val x = Seq(1, 2, 3)
-    val y = Seq(10, 20, 30)
-    val z = Seq(30, 20, 10)
-    val trace1 = Trace(List(x, y, z), "test", "scatter", "lines").value
-    val trace2 = Trace(List(x, y), "test", "scatter", "lines").value
-    val data = List(trace1, trace2)
+  val x_str = List("1", "2", "3")
+  val y_str = List("a", "b", "c")
+  val z_str = List("my", "name", "is")
 
-    println(write(data))
+  /*
+  * XY Chart tests
+  * */
+  test("Trace.createTrace.Int.Scatter.2D") {
+    val trace = XYTrace(x_int, y_int, "test", "scatter", "lines")
+    val test = """{"name":"test","type":"scatter","mode":"lines","x":[1,2,3],"y":[1,2,3]}"""
+    assert(test == write(trace.value))
   }
 
+  test("Trace.createTrace.String.Scatter.2D") {
+    val trace = XYTrace(x_str, y_str, "test", "scatter", "lines")
+    val test = """{"name":"test","type":"scatter","mode":"lines","x":["1","2","3"],"y":["a","b","c"]}"""
+    assert(test == write(trace.value))
+  }
+
+  test("Trace.createTrace.Double.Scatter.2D") {
+    val trace = XYTrace(x_double, y_double, "test", "scatter", "lines")
+    val test = """{"name":"test","type":"scatter","mode":"lines","x":[1.5,2.5,3.5],"y":[1.5,2.5,3.5]}"""
+    assert(test == write(trace.value))
+  }
+
+  test("Data.InvalidTrace.XY") {
+    val chart_types = Seq("contour", "heatmap", "scatter3d")
+    chart_types.map(t => {
+      assertThrows[IllegalArgumentException] {
+        XYTrace(x_int, y_int, "test", t, "lines")
+      }
+    })
+  }
+
+  /*
+  * XYZ Chart tests
+  * */
 
 
 
 
-
-
+//  test("Data.InvalidTrace.XYZ") {
+//    val cases = Seq("contour", "heatmap", "scatter3d")
+//    cases.map(str => {
+//      assertThrows[IllegalArgumentException] {
+//        Trace(List(x, y), "test", str, "lines").value
+//      }
+//    })
+//  }
 }

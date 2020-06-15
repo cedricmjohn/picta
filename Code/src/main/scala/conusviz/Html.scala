@@ -6,7 +6,6 @@ import ujson.{Value}
 import almond.interpreter.api.{DisplayData, OutputHandler}
 import scala.io.Source
 
-
 object Chart {
 
   // TODO CHANGE TO SCRIPT
@@ -15,16 +14,27 @@ object Chart {
     scala.io.Source.fromInputStream(is).mkString
   }
 
+  def init_notebook_mode()(implicit publish: OutputHandler): Unit = {
+    val html = s"""
+      |<script type='text/javascript'>
+      |define( 'plotly', function(require, exports, module) {
+      |$minJs
+      |})
+      |require( ['plotly'], function(Plotly) {
+      |window.Plotly = Plotly;
+      |})
+      |</script>
+      |""".stripMargin
+    publish.html(html)
+  }
+
   def generatePlotlyFunction(traces: Value, layout: Value, config: Value): String = {
       s"""
          |<script>
-         |window.onload = function() {
-         |$minJs
          | var traces = ${traces};
          | var layout = ${layout};
          | var config = ${config};
          | Plotly.newPlot("graph", traces, layout, config);
-         |}
          |</script>
          |""".stripMargin
   }
@@ -32,8 +42,8 @@ object Chart {
   def generateHTMLChart(plotlyFunction: String):String = {
     html(
       body(
-        raw(plotlyFunction),
         div(id:="graph"),
+        raw(plotlyFunction)
       )
     ).toString()
   }

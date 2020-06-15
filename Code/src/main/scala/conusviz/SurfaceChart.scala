@@ -30,8 +30,7 @@ case class SurfaceChart[T0](val data: List[SurfaceTrace[T0]],
 
   //(implicit kernel: almond.api.JupyterApi)
   def plotInline()(implicit publish: OutputHandler) = {
-
-    val html: String = Chart.generatePlotlyFunction(traces, layout, config)//Chart.generateHTMLChart(Chart.generatePlotlyFunction(traces, layout, config))
+    val html: String = Chart.generateHTMLChart(Chart.generatePlotlyFunction(traces, layout, config))
     Chart.writeHTMLToJupyter(html)
   }
 }

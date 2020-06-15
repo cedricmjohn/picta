@@ -4,10 +4,10 @@ import conusviz.{SurfaceChart, XYChart}
 import conusviz.Trace._
 import conusviz.LayoutOption._
 import conusviz.ConfigOption._
-
 import ujson.{Obj, Value}
 import upickle.default.{ReadWriter => RW}
 import upickle.default._
+import conusviz.Chart._
 
 object Example extends App {
 
@@ -35,8 +35,7 @@ object Example extends App {
   val config = Config(true, true)
   val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
 //  println(chart_surface.plotInline())
-  chart_surface.plot()
-
+//  chart_surface.plot()
 
   //
 //  // line plot

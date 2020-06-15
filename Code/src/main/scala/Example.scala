@@ -1,14 +1,13 @@
-//package conusviz
-
 //import Trace._
 //import ujson.Obj
-import conusviz.{Config, Layout, SurfaceChart, SurfaceTrace, Trace, XYChart, XYTrace}
+import conusviz.{SurfaceChart, XYChart}
+import conusviz.Trace._
+import conusviz.LayoutOption._
+import conusviz.ConfigOption._
+
 import ujson.{Obj, Value}
 import upickle.default.{ReadWriter => RW}
 import upickle.default._
-
-import scala.reflect.ClassTag
-import conusviz.XYTrace._
 
 object Example extends App {
 
@@ -35,15 +34,19 @@ object Example extends App {
   val layout = Layout("ConusViz Surface Chart Example", true)
   val config = Config(true, true)
   val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
+//  println(chart_surface.plotInline())
   chart_surface.plot()
 
-  // line plot
-  val x = List.fill(100)(scala.util.Random.nextDouble)
-  val y = List.fill(100)(scala.util.Random.nextDouble)
 
-  val trace_line = new XYTrace(x, y, "example", "scatter", "marker+line")
-  val chart_line = new XYChart(List(trace_line), layout, config)
-  chart_line.plot()
+  //
+//  // line plot
+//  val x = List.fill(100)(scala.util.Random.nextDouble)
+//  val y = List.fill(100)(scala.util.Random.nextDouble)
+//
+//  val trace_line = new XYTrace(x, y, "example", "scatter", "marker+line")
+//  val chart_line = new XYChart(List(trace_line), layout, config)
+
+
 }
 
 //  val trace: Trace[Any] = Trace(List(x, y), trace_name = "test", trace_type = "surface", mode = "lines")

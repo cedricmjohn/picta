@@ -1,8 +1,11 @@
 package conusviz
 
-import conusviz.{Config, Layout, Trace, XYTrace}
-import ujson.{Arr, Obj, Value}
+import ujson.Value
 import upickle.default._
+import Trace._
+import LayoutOption._
+import ConfigOption._
+import almond.interpreter.api.{DisplayData, OutputHandler}
 
 sealed trait Surface {
   val traces: List[Value]
@@ -10,7 +13,7 @@ sealed trait Surface {
   val config: Value
 }
 
-final case class SurfaceChart[T0](val data: List[SurfaceTrace[T0]],
+case class SurfaceChart[T0](val data: List[SurfaceTrace[T0]],
                                  l: Layout = Layout("Chart", true),
                                  c: Config = Config(true, true)) extends Surface {
 
@@ -23,6 +26,13 @@ final case class SurfaceChart[T0](val data: List[SurfaceTrace[T0]],
   def plot(): Unit = {
     val html: String = Chart.generateHTMLChart(Chart.generatePlotlyFunction(traces, layout, config))
     Chart.writeHTMLChartToFile(html)
+  }
+
+  //(implicit kernel: almond.api.JupyterApi)
+  def plotInline()(implicit publish: OutputHandler) = {
+
+    val html: String = Chart.generatePlotlyFunction(traces, layout, config)//Chart.generateHTMLChart(Chart.generatePlotlyFunction(traces, layout, config))
+    Chart.writeHTMLToJupyter(html)
   }
 }
 

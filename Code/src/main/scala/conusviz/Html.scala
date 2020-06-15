@@ -1,45 +1,48 @@
 package conusviz
 
 import java.io.{BufferedWriter, File, FileWriter}
-
-//import java.io._
-import scala.io.Source
 import scalatags.Text.all._
-import ujson.{Obj, Value}
+import ujson.{Value}
+import almond.interpreter.api.{DisplayData, OutputHandler}
+import scala.io.Source
+
 
 object Chart {
 
   // TODO CHANGE TO SCRIPT
-//  val readmeText : Iterator[String] = Source.fromResource("example.txt").getLines
+  val minJs : String = {
+    val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
+    scala.io.Source.fromInputStream(is).mkString
+  }
 
-  def generatePlotlyFunction(traces: Value, layout: Value, config: Value):String = {
+  def generatePlotlyFunction(traces: Value, layout: Value, config: Value): String = {
       s"""
-         | <script>
+         |<script>
+         |window.onload = function() {
+         |$minJs
          | var traces = ${traces};
          | var layout = ${layout};
          | var config = ${config};
-         | //var Json = JSON.parse(myJson)
-         | window.onload = function() {
-         |   Plotly.newPlot("graph", traces, layout, config);
-         | }
-         | </script>
+         | Plotly.newPlot("graph", traces, layout, config);
+         |}
+         |</script>
          |""".stripMargin
   }
 
   def generateHTMLChart(plotlyFunction: String):String = {
     html(
-      head(
-        script(src:="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"),
-        raw(plotlyFunction)
-      ),
       body(
+        raw(plotlyFunction),
         div(id:="graph"),
       )
     ).toString()
   }
 
-  def writeHTMLChartToFile(html: String): Unit = {
+  def writeHTMLToJupyter(html: String)(implicit publish: OutputHandler): Unit = {
+    publish.html(html)
+  }
 
+  def writeHTMLChartToFile(html: String): Unit = {
     val osName = (System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
       case name if name.startsWith("Mac") => "mac"

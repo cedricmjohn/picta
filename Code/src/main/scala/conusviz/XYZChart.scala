@@ -1,7 +1,10 @@
 package conusviz
 
-import ujson.{Arr, Obj, Value}
+import ujson.{Value}
 import upickle.default._
+import Trace._
+import LayoutOption._
+import ConfigOption._
 
 sealed trait XYZ {
   val traces: List[Value]

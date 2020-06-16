@@ -18,24 +18,24 @@ object Chart {
     scala.io.Source.fromInputStream(is).mkString
   }
 
-  def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String): String = {
+  def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String, graph_id: String): String = {
       s"""
-         |<div id='graph'></div>
+         |<div id='graph_${graph_id}'></div>
          |<script>
          |$plotlyJs
          | var traces = ${traces};
          | var layout = ${layout};
          | var config = ${config};
-         | Plotly.newPlot("graph", traces, layout, config);
+         | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
          |</script>
          |""".stripMargin
   }
 
-  def writeHTMLToJupyter(html: String)(implicit publish: OutputHandler): Unit = {
+  def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
     publish.html(html)
   }
 
-  def writeHTMLToFile(html: String): Unit = {
+  def writeHTMLToFile(html: String, graph_id: String): Unit = {
     val osName = (System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
       case name if name.startsWith("Mac") => "mac"
@@ -43,8 +43,7 @@ object Chart {
       case _ => throw new Exception("Unknown platform!")
     })
 
-    val model_name = System.currentTimeMillis().toString
-    val dir = System.getProperty("user.home")+"/Conus/"+model_name+".html"
+    val dir = System.getProperty("user.home")+"/Conus/"+graph_id+".html"
     val fout = new File(dir)
     val bufferWriter = new BufferedWriter(new FileWriter(fout))
     bufferWriter.write(html)
@@ -84,13 +83,15 @@ object Chart {
 
   // simply inject traces, layout and config into the the function and generate the HTML
   def plotChart(traces: List[Value], layout: Value, config: Value, js: String): Unit = {
-    val html: String = generateHTML(traces, layout, config, js)
-    writeHTMLToFile(html)
+    val graph_id = System.currentTimeMillis().toString
+    val html: String = generateHTML(traces, layout, config, js, graph_id)
+    writeHTMLToFile(html, graph_id)
   }
 
   def plotChart_inline(traces: List[Value], layout: Value, config: Value)
                       (implicit publish: OutputHandler): Unit = {
-    val html: String = generateHTML(traces, layout, config, "")
-    writeHTMLToJupyter(html)
+    val graph_id = System.currentTimeMillis().toString
+    val html: String = generateHTML(traces, layout, config, "", graph_id)
+    writeHTMLToJupyter(html, graph_id)
   }
 }

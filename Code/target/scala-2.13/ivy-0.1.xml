@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="org.carbonateresearch" module="conusviz_2.13" revision="0.1" status="release" publication="20200616132835">
+  <info organisation="org.carbonateresearch" module="conusviz_2.13" revision="0.1" status="release" publication="20200616143931">
     <description>conusviz</description>
   </info>
   <configurations>
@@ -33,9 +33,6 @@
     <dependency org="org.scalactic" name="scalactic_2.13" rev="3.1.2" conf="compile->default(compile)"> </dependency>
     <dependency org="org.scalatest" name="scalatest_2.13" rev="3.1.2" conf="test->default(compile)"> </dependency>
     <dependency org="org.carbonateresearch" name="conus_2.13" rev="0.0.1b" conf="compile->default(compile)"> </dependency>
-    <dependency org="com.lihaoyi" name="scalatags_2.13" rev="0.9.1" conf="compile->default(compile)"> </dependency>
-    <dependency org="org.plotly-scala" name="plotly-core_2.13" rev="0.7.6" conf="compile->default(compile)"> </dependency>
-    <dependency org="org.plotly-scala" name="plotly-render_2.13" rev="0.7.6" conf="compile->default(compile)"> </dependency>
     <dependency org="com.lihaoyi" name="upickle_2.13" rev="1.1.0" conf="compile->default(compile)"> </dependency>
     <dependency org="com.lihaoyi" name="ujson-circe_2.13" rev="1.1.0" conf="compile->default(compile)"> </dependency>
   </dependencies>

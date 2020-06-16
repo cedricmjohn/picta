@@ -3,21 +3,24 @@ package conusviz
 import java.io.{BufferedWriter, File, FileWriter}
 
 import almond.api.JupyterApi
-import almond.api.helpers.Display
-import scalatags.Text.all._
 import ujson.Value
-import almond.interpreter.api.{DisplayData, OutputHandler}
-
-import scala.io.Source
+import almond.interpreter.api.{OutputHandler}
 
 object Chart {
-
-  // TODO CHANGE TO SCRIPT
+  /*
+  * this is the plotly.min.js script that is used to render the plots
+  * */
   val minJs : String = {
     val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
     scala.io.Source.fromInputStream(is).mkString
   }
 
+  /*
+  * A function to generate the HTML corresponding to the Plotly plotting function
+  * @param traces: This is the trace data. It should be serialized as a json list
+  * @param layout: This should be the layout case class instance
+  * @param config: This should be the config case class instance
+  * */
   def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String, graph_id: String): String = {
       s"""
          |<div id='graph_${graph_id}'></div>
@@ -31,10 +34,20 @@ object Chart {
          |""".stripMargin
   }
 
+  /*
+* A function to inject the HTML into the Jupyter notebook
+* @param html: This is the html represented as a string
+* @param graph_id: This is required in order to generate a unique div id for the plotly chart to render in the right place
+* */
   def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
     publish.html(html)
   }
 
+  /*
+* A function to write the chart to a .html and open a browser displaying the chart
+* @param html: This is the html represented as a string
+* @param graph_id: This is required in order to generate a unique file name for the chart
+* */
   def writeHTMLToFile(html: String, graph_id: String): Unit = {
     val osName = (System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
@@ -64,6 +77,8 @@ object Chart {
 
   /*
   * This sets the charts to be inline inside a Jupyter notebook.
+  * @param publish (implicit): required to render the HTML in the almond notebook
+  * @param kernel (implicit): required to interact with the underlying Jupyter kernel instance
   * */
   def init_notebook_mode()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
@@ -77,19 +92,32 @@ object Chart {
                   |})
                   |</script>
                   |""".stripMargin
-
     publish.html(html)
   }
 
-  // simply inject traces, layout and config into the the function and generate the HTML
+  /*
+  * This plots the chart in the browser
+  * @param traces: a list of trace data we wish to plot
+  * @param layout: the layout case class specifying layout options
+  * @param config: the config case class specificying the chart config options
+  * @param js: This is the javascript we wish to inject into the page
+  * */
   def plotChart(traces: List[Value], layout: Value, config: Value, js: String): Unit = {
     val graph_id = System.currentTimeMillis().toString
     val html: String = generateHTML(traces, layout, config, js, graph_id)
     writeHTMLToFile(html, graph_id)
   }
 
-  def plotChart_inline(traces: List[Value], layout: Value, config: Value)
-                      (implicit publish: OutputHandler): Unit = {
+  /*
+* This plots the chart inside a Jupyter notebook
+* @param traces: a list of trace data we wish to plot
+* @param layout: the layout case class specifying layout options
+* @param config: the config case class specifying the chart config options
+* @param js: This is the javascript we wish to inject into the page
+* @param publish (implicit): required to render the HTML in the almond notebook
+* @param kernel (implicit): required to interact with the underlying Jupyter kernel instance
+* */
+  def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
     val graph_id = System.currentTimeMillis().toString
     val html: String = generateHTML(traces, layout, config, "", graph_id)
     writeHTMLToJupyter(html, graph_id)

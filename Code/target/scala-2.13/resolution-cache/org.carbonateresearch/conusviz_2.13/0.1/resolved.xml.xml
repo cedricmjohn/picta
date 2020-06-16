@@ -33,9 +33,6 @@
     <dependency org="org.scalactic" name="scalactic_2.13" rev="3.1.2" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="org.scalatest" name="scalatest_2.13" rev="3.1.2" conf="test-&gt;default(compile)"> </dependency>
     <dependency org="org.carbonateresearch" name="conus_2.13" rev="0.0.1b" conf="compile-&gt;default(compile)"> </dependency>
-    <dependency org="com.lihaoyi" name="scalatags_2.13" rev="0.9.1" conf="compile-&gt;default(compile)"> </dependency>
-    <dependency org="org.plotly-scala" name="plotly-core_2.13" rev="0.7.6" conf="compile-&gt;default(compile)"> </dependency>
-    <dependency org="org.plotly-scala" name="plotly-render_2.13" rev="0.7.6" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="com.lihaoyi" name="upickle_2.13" rev="1.1.0" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="com.lihaoyi" name="ujson-circe_2.13" rev="1.1.0" conf="compile-&gt;default(compile)"> </dependency>
   </dependencies>

@@ -2191,8 +2191,7 @@
     <bcf:citekey order="7">LAMMEL20081</bcf:citekey>
     <bcf:citekey order="8">haller_odersky_2009</bcf:citekey>
     <bcf:citekey order="9">akka</bcf:citekey>
-    <bcf:citekey order="10">dionisosflow</bcf:citekey>
-    <bcf:citekey order="11">ALSALMI201945</bcf:citekey>
+    <bcf:citekey order="10">matplotlib</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -3,6 +3,10 @@ package conusviz
 import upickle.default._
 import ujson.{Obj, Value}
 
+
+/*
+  * A type class for a serializer that serializes scala data structures to a valid Value format
+  * */
 sealed trait Serializer[T] {
   def serialize(seq: List[T]): Value
 }
@@ -22,18 +26,28 @@ object Serializer {
     def serialize(seq: List[Double]): Value = transform(seq).to(Value)
   }
 
+
+  /*
+  * This function creates the data for a trace from two-dimensional data
+  * */
   def createSeriesXY[T0 : Serializer, T1: Serializer]
   (x: List[T0], y: List[T1])
   (implicit s0: Serializer[T0], s1: Serializer[T1]): Value = {
     transform(Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y))).to(Value)
   }
 
+  /*
+  * This function creates the data for a trace from three-dimensional data
+  * */
   def createSeriesXYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[T2])
   (implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
     transform(Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> s2.serialize(z))).to(Value)
   }
 
+  /*
+  * This function creates the data for a trace for a surface plot
+  * */
   def createSeriesSurface[T : Serializer]
   (x: List[T], n: Int)
   (implicit s0: Serializer[T]): Value = {
@@ -41,10 +55,12 @@ object Serializer {
     transform(Obj("z" -> list)).to(Value)
   }
 
+  /*
+  * This function creates a trace json in value format. This format allows it to easily be interpreted by the Plotly.js
+  * library later on
+  * */
   def createTrace(series: Value, trace_name: String, trace_type: String, trace_mode: String): Value = {
-    // add the meta information that assigns the name and type of the trace
     val meta_data: Obj = Obj("name" -> trace_name, "type" -> trace_type, "mode" -> trace_mode)
-    // combine metadata and trace values
     meta_data.value.addAll(series.obj)
   }
 }

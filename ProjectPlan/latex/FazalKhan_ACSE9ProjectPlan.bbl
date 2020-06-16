@@ -247,58 +247,12 @@
       \field{howpublished}{\url{https://akka.io/}}
       \field{title}{Akka}
     \endentry
-    \entry{dionisosflow}{misc}{}
+    \entry{matplotlib}{misc}{}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.beicip.asia/software/explorations/dionisos-flow/}}
-      \field{title}{dionisosflow}
-    \endentry
-    \entry{ALSALMI201945}{article}{}
-      \name{author}{3}{}{%
-        {{hash=2affbead279ae3fa5db99612ac3aa199}{%
-           family={Al-Salmi},
-           familyi={A\bibinithyphendelim S\bibinitperiod},
-           given={Marya},
-           giveni={M\bibinitperiod}}}%
-        {{hash=032fa22fc44a3ab3cb5ae42380225246}{%
-           family={John},
-           familyi={J\bibinitperiod},
-           given={Cédric\bibnamedelima M.},
-           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=9d32e41571ebe829b007ba854955cb75}{%
-           family={Hawie},
-           familyi={H\bibinitperiod},
-           given={Nicolas},
-           giveni={N\bibinitperiod}}}%
-      }
-      \strng{namehash}{d6449bb0a64e871cc191b51d894f7c87}
-      \strng{fullhash}{d6449bb0a64e871cc191b51d894f7c87}
-      \strng{bibnamehash}{d6449bb0a64e871cc191b51d894f7c87}
-      \strng{authorbibnamehash}{d6449bb0a64e871cc191b51d894f7c87}
-      \strng{authornamehash}{d6449bb0a64e871cc191b51d894f7c87}
-      \strng{authorfullhash}{d6449bb0a64e871cc191b51d894f7c87}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The complex geometry of carbonate systems is influenced by a multitude of physical as well as biological processes. The Lower Cretaceous carbonates of Northern Oman are characterised by a variability of regional-scale geometries with expected vertical and lateral facies variations. The main environmental and tectonic controls acting on the depositional processes of the Lower Cretaceous ramps and platforms through space and geological time (in 4 dimensions) are only partially understood. In this study, we use a 4D DionisosFlow Forward Stratigraphic Modelling (FSM) approach to explore the role of: (i) eustasy; (ii) subsidence; (iii) initial paleobathymetry, and (iv) wave energy, to generate carbonate stacking patterns and heterogeneities. Carbonate production was maintained constant through deposition. Multi-disciplinary and multi-scale datasets were used (i.e. seismic, well and field data) to constrain the FSM input parameters and sensitivity analysis was carried out to validate or refute some depositional model hypotheses. Results show that basement topography and eustasy have the greatest influence on the progradational geometries and the lateral continuity of clinoform architectures during the Tithonian to Valanginian second-order super-sequence. In the Valanginian to Aptian super-sequence, subsidence was the primary control for the observed aggradational stacking pattern. Lateral and vertical stacking of carbonate lithologies, textures as well as facies are thus apprehended through this FSM approach, leading to a better assessment of petroleum systems elements as reservoir, seal and trap.}
-      \field{issn}{0264-8172}
-      \field{journaltitle}{Marine and Petroleum Geology}
-      \field{title}{Quantitative controls on the regional geometries and heterogeneities of the Rayda to Shu'aiba formations (Northern Oman) using forward stratigraphic modelling}
-      \field{volume}{99}
-      \field{year}{2019}
-      \field{pages}{45\bibrangedash 60}
-      \range{pages}{16}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.marpetgeo.2018.09.030
-      \endverb
-      \verb{urlraw}
-      \verb http://www.sciencedirect.com/science/article/pii/S0264817218303945
-      \endverb
-      \verb{url}
-      \verb http://www.sciencedirect.com/science/article/pii/S0264817218303945
-      \endverb
+      \field{howpublished}{\url{https://matplotlib.org}}
+      \field{title}{matplotlib}
     \endentry
   \enddatalist
 \endrefsection

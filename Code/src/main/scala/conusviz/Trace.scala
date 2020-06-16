@@ -1,11 +1,5 @@
 package conusviz
 
-// keep the library as generic as possible
-// keep it as a wrapper ; easy to use functions; plotmatrix etc multiple levels of complexity
-// add more types; float; bigInt; bigDecimal; ordinalValues
-// have more general type numbers/ fractional - look in the CoNuS library for this technique; util
-
-import Serializer._
 import conusviz.charts.{XYChart, XYZChart}
 import ujson.Value
 

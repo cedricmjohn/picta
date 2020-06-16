@@ -6,6 +6,7 @@ package conusviz
 // have more general type numbers/ fractional - look in the CoNuS library for this technique; util
 
 import Serializer._
+import conusviz.charts.{XYChart, XYZChart}
 import ujson.Value
 
 sealed trait Trace {

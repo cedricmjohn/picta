@@ -1,9 +1,13 @@
 package conusviz
 
 import java.io.{BufferedWriter, File, FileWriter}
+
+import almond.api.JupyterApi
+import almond.api.helpers.Display
 import scalatags.Text.all._
-import ujson.{Value}
+import ujson.Value
 import almond.interpreter.api.{DisplayData, OutputHandler}
+
 import scala.io.Source
 
 object Chart {
@@ -14,23 +18,11 @@ object Chart {
     scala.io.Source.fromInputStream(is).mkString
   }
 
-  def init_notebook_mode()(implicit publish: OutputHandler): Unit = {
-    val html = s"""
-      |<script type='text/javascript'>
-      |define( 'plotly', function(require, exports, module) {
-      |$minJs
-      |})
-      |require( ['plotly'], function(Plotly) {
-      |window.Plotly = Plotly;
-      |})
-      |</script>
-      |""".stripMargin
-    publish.html(html)
-  }
-
-  def generatePlotlyFunction(traces: Value, layout: Value, config: Value): String = {
+  def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String): String = {
       s"""
+         |<div id='graph'></div>
          |<script>
+         |$plotlyJs
          | var traces = ${traces};
          | var layout = ${layout};
          | var config = ${config};
@@ -39,20 +31,11 @@ object Chart {
          |""".stripMargin
   }
 
-  def generateHTMLChart(plotlyFunction: String):String = {
-    html(
-      body(
-        div(id:="graph"),
-        raw(plotlyFunction)
-      )
-    ).toString()
-  }
-
   def writeHTMLToJupyter(html: String)(implicit publish: OutputHandler): Unit = {
     publish.html(html)
   }
 
-  def writeHTMLChartToFile(html: String): Unit = {
+  def writeHTMLToFile(html: String): Unit = {
     val osName = (System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
       case name if name.startsWith("Mac") => "mac"
@@ -60,7 +43,6 @@ object Chart {
       case _ => throw new Exception("Unknown platform!")
     })
 
-    // TODO - MAKE NAME DYNAMIC
     val model_name = System.currentTimeMillis().toString
     val dir = System.getProperty("user.home")+"/Conus/"+model_name+".html"
     val fout = new File(dir)
@@ -79,5 +61,35 @@ object Chart {
       case Some(c) => sys.process.Process(c).run
       case None => Console.err.println(s"Chart could not be opened")
     }
+  }
+
+  /*
+  * This sets the charts to be inline inside a Jupyter notebook.
+  * */
+  def init_notebook_mode()(implicit publish: OutputHandler, k: JupyterApi): Unit = {
+    implicitly[JupyterApi].register[almond.display.Data]{ _ => Map.empty }
+    val html = s"""
+                  |<script type='text/javascript'>
+                  |define( 'plotly', function(require, exports, module) {
+                  |$minJs
+                  |})
+                  |require( ['plotly'], function(Plotly) {
+                  |window.Plotly = Plotly;
+                  |})
+                  |</script>
+                  |""".stripMargin
+
+    publish.html(html)
+  }
+
+  // simply inject traces, layout and config into the the function and generate the HTML
+  def plotChart(traces: List[Value], layout: Value, config: Value, js: String): Unit = {
+    val html: String = generateHTML(traces, layout, config, js)
+    writeHTMLToFile(html)
+  }
+
+  def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
+    val html: String = generateHTML(traces, layout, config, "")
+    writeHTMLToJupyter(html)
   }
 }

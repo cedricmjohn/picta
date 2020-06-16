@@ -1,6 +1,7 @@
 package conusviz.charts
 
-import conusviz.Chart.{plotChart, plotChart_inline, minJs}
+import almond.api.JupyterApi
+import conusviz.Chart.{minJs, plotChart, plotChart_inline}
 import conusviz.Trace.XYTrace
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
@@ -25,7 +26,8 @@ final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
 
   // simply inject traces, layout and config into the the function and generate the HTML
   def plot(): Unit = plotChart(traces, layout, config, minJs)
-  def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
+  def plot_inline()(implicit publish: OutputHandler): Unit =
+    plotChart_inline(traces, layout, config)
 }
 
 object XYChart {

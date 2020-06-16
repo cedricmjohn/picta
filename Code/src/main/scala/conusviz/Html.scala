@@ -66,8 +66,8 @@ object Chart {
   /*
   * This sets the charts to be inline inside a Jupyter notebook.
   * */
-  def init_notebook_mode()(implicit publish: OutputHandler, k: JupyterApi): Unit = {
-    implicitly[JupyterApi].register[almond.display.Data]{ _ => Map.empty }
+  def init_notebook_mode()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
+    kernel.silent(true)
     val html = s"""
                   |<script type='text/javascript'>
                   |define( 'plotly', function(require, exports, module) {
@@ -88,7 +88,8 @@ object Chart {
     writeHTMLToFile(html)
   }
 
-  def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
+  def plotChart_inline(traces: List[Value], layout: Value, config: Value)
+                      (implicit publish: OutputHandler): Unit = {
     val html: String = generateHTML(traces, layout, config, "")
     writeHTMLToJupyter(html)
   }

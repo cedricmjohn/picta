@@ -12,13 +12,15 @@ object LayoutOptions {
   implicit def layout_rw: RW[Layout] = macroRW
 
   /*
-* Class for specifying chart layout options
-* @param title: sets the chart title
-* @param showLegend: specify whether to show the legend
-* */
-  case class Layout(title: String, showlegend: Boolean) extends LayoutOptions {
+  * Class for specifying chart layout options
+  * @param title: sets the chart title
+  * @param showLegend: specify whether to show the legend
+  * */
+  final case class Layout(title: String, showlegend: Boolean, x_label: String = "x", y_label: String = "y") extends LayoutOptions {
     def createLayout(): Value = {
-      val layout = Obj("title" -> title, "showlegend" -> showlegend)
+      val x_axis = Obj("title" -> x_label)
+      val y_axis = Obj("title" -> y_label)
+      val layout = Obj("title" -> title, "showlegend" -> showlegend, "xaxis" -> x_axis, "yaxis" -> y_axis)
       transform(layout).to(Value)
     }
   }

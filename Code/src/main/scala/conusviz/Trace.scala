@@ -11,8 +11,11 @@ sealed trait Trace {
 }
 
 object Trace {
-  case class XYTrace[T0 : Serializer, T1: Serializer]
-  (x: List[T0], y: List[T1], val trace_name: String, val trace_type: String, val trace_mode: String) extends Trace {
+  final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0],
+                                                            y: List[T1],
+                                                            val trace_name: String,
+                                                            val trace_type: String,
+                                                            val trace_mode: String) extends Trace {
 
     if (!(XYChart.compatibleChartSet contains trace_type))
       throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")
@@ -23,8 +26,12 @@ object Trace {
     }
   }
 
-  case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2], val trace_name: String, val trace_type: String, val trace_mode: String) extends Trace {
+  final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer](x: List[T0],
+                                                                             y: List[T1],
+                                                                             z: List[T2],
+                                                                             val trace_name: String,
+                                                                             val trace_type: String,
+                                                                             val trace_mode: String) extends Trace {
 
     if (!(XYZChart.compatibleChartSet contains trace_type))
       throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")
@@ -35,8 +42,11 @@ object Trace {
     }
   }
 
-  case class SurfaceTrace[T0: Serializer]
-  (x: List[T0], n: Int, val trace_name: String) extends Trace {
+  final case class SurfaceTrace[T0: Serializer](x: List[T0],
+                                          n: Int,
+                                          val trace_name: String,
+                                          val x_label: String = "x",
+                                          val y_label: String = "y") extends Trace {
     val trace_type = "surface"
     val trace_mode = ""
     val value: Value = {
@@ -46,9 +56,19 @@ object Trace {
   }
 
   object SurfaceTrace {
-    def apply[T0: Serializer](x: List[List[T0]], trace_name: String): SurfaceTrace[T0] = {
+    /*
+    * Alternative constructors for surface trace which takes in a different shape for the input list
+    * */
+    def apply[T0: Serializer](x: List[List[T0]],
+                              trace_name: String): SurfaceTrace[T0] = {
       val n = x.length
       SurfaceTrace(x.flatten, n, trace_name)
+    }
+
+    def apply[T0: Serializer](x: List[List[T0]],
+                              trace_name: String, x_label: String, y_label: String): SurfaceTrace[T0] = {
+      val n = x.length
+      SurfaceTrace(x.flatten, n, trace_name, x_label, y_label)
     }
   }
 }

@@ -15,9 +15,9 @@
 \addbibresource{References.bib}
 
 \begin{document}
-	%==================================
-	%	TITLE PAGE
-	%==================================
+%==================================
+%	TITLE PAGE
+%==================================
 \begin{titlepage}
 	\begin{center}
 		\vspace*{1cm}
@@ -71,7 +71,7 @@
 
 \subsection{Forward Modelling}
 
-Many real-world scientific processes, such as fluid-flow or infectious diseases may be formulated as a model that evolves with time. Formulating a process this way allows it to be simulated using computational techniques. Suppose $\vec y$ denotes the variables of interest stacked in a vector, then a forward model describing their evolution with respect to time may be written as:
+Many real-world scientific processes, such as fluid-flow or infectious diseases may be formulated as a model that evolves with time. Formulating a process this way allows it to be simulated using computational techniques. Suppose $\vec y$ denotes the variables of interest stored in a vector, then a general forward model describing their evolution with respect to time can be written as:
 
 \begin{center}
 	\begin{equation}
@@ -81,11 +81,9 @@ Many real-world scientific processes, such as fluid-flow or infectious diseases 
 
 From this we can see that in order to update the variables of interest, $\vec y_t$, we must consider both time, $t$ and the previous state of the variables of interest, $\vec y_{t-1}$.
 
-
-As mentioned, this general technique can be applied in many different fields. As a concrete example, consider one such field known as Stratigraphy. Stratigraphy is concerned with the processes which lead to the organization of rocks in space and time. Stratigraphic Forward Models (SFM) are forward models which have been used to simulate realistic stratigraphic processes based on a set of reasonable geologic parameter values, such as tectonic movement and erosion \cite{10.2110/pec.99.62.0069}.
+As mentioned, this general technique can be applied in many different fields. As a concrete example consider one such field known as Stratigraphy. Stratigraphy is concerned with the processes which lead to the organization of rocks in space and time. Stratigraphic Forward Models (SFM) are forward models which have been used to simulate realistic stratigraphic processes based on a set of reasonable geologic parameter values, such as tectonic movement and erosion \cite{10.2110/pec.99.62.0069}.
 
 When studying stratigraphic observational data, it is often important to understand what set of initial geological conditions may have caused the stratigraphic patterns in the observations. Problems of this type can be generally classified as inverse problems \cite{10.1260/0144598011492363}. SFMs can be used to generate a set of outputs which in turn are compared to observations. Outputs are generated systematically for a range of initial parameter values, and those outputs which are close to the observations within a pre-defined bound are then taken as solutions to this inverse problem. Used in this way SFMs are an integral part of solving inversion problems in stratigraphy. More generally, solving inverse problems in this way can be useful for many other domains ranging from finance to physics.
-
 
 \subsection{Computational Intensity of Large Forward Models}
 Large forward models are computationally intensive methods which may require many outputs to find a satisfactory solution. For example in order to solve inverse problems, not only are many outputs generated, but the set of input geological parameters, $\vec y_i$ is often also very large too \cite{10.1260/0144598011492363}.
@@ -113,78 +111,70 @@ Scala also combines both object-orientated and functional programming concepts t
 \section{Project Aim}
 As CoNuS is experimental, it currently lacks an integrated visualization library which can plot the results of models. The aim of this independent research project will be to design and build a visualization library, CoNuS-Viz, will allow users to visualize CoNuS models. In addition, this library will also provide more general plotting functions, such as those found in Python's matplotlib \cite{matplotlib}.
 
-
 \subsection{Schedule}
-In this section I will outline the envisaged project schedule. Some of the items in the schedule were already underway as of writing.
+In this section I will outline the expected project schedule. Some of the items in the schedule were already underway or completed as of the time of writing.
 
 \subsubsection{Phase 1: Preparation}
 
 \textbf{i. Literature Review}
 
-I will review literature on Forward Modelling, Data Visualization and Functional Programming. 
+I will review literature on forward modelling, data visualization and functional programming techniques. 
 
-As of writing I have completed the literature review on Forward Modelling, and understand the context of the CoNuS-Viz. \\
+At the time of writing, I have completed the literature review on forward modelling, understand why the CoNuS library exists, and why there is the need to develop a visualization library for it. I will continue to read more articles on data visualization and functional programming techniques. \\
 
 \textbf{ii. Review Existing Visualization Libraries}
 
-For this part I will review the existing libraries that exist on Scala and the JVM, taking note of their limitations and strengths. This part will critically inform my project strategy. \\
+At the time of writing I have reviewed existing visualization libraries for Scala and the JVM. I have concluded that non of the existing options meet the requirements for this project. After looking at the rich Javascript open-source ecosystem, I have decided to leverage the Plotlyjs library as the basis for this project. \\
 
 \textbf{iii. Learn Functional Programming Techniques}
 
-Functional programming is a new way of approaching programming. Scala is also a complex language, and so this part is crucial for me to get up to speed in order to leverage Scala effectively. \\
-
+This will consist of reviewing functional programming approaches to designing software, understanding Scala's type system and how to utilize Scala's functional features to build robust software. \\
 
 \textbf{iv. Implement Basic Library Structure}
 
-Based on the foundations built in the above three phases, I will begin to design and implement basic functionality to get the project going. \\
+At the time of writing I have implemented basic code for rendering charts. I will expand on this by adding more visualization options and additional interactive chart components as they are required. \\
 
 \textbf{v. Write Project Plan}
 
 I will begin writing the project plan ready for submission by the 25th of June. \\
 
-
 \subsubsection{Phase 2: Execution}
 
 \textbf{i. Design Advanced Components of Library}
 
-.... \\
+This will consist of building on the existing code I wrote in the previous phase. This may require refactoring of the library and making it more structured by using interfaces and abstracting out redundant code. I will also try and make the code more efficient if required. \\
 
-\textbf{ii. Learn Further Library Design Principles}
+\textbf{ii. Review Best Practices}
 
-.... \\
+Here I will review more closely work done with existing state-of-the-art visualization libraries. This will ensure that any changes I make to the existing codebase are in line with best practice. \\
 
 \textbf{iii. Write Summary of Work Done So Far}
 
-.... \\
+I will maintain notes on the work done so far, with the aim of combining these notes into a single document for my independent research project report. \\
 
 \textbf{iv. Review Codebase}
 
-.... \\
+Review the codebase and remove redundant or inefficient code. \\
 
 \subsubsection{Phase 3: Summary}
 
 \textbf{i. Test Library}
 
-.... \\
+Run full suite of unit tests and get the codebase to compile and pass all the tests. In addition, test the library from a user's perspective by creating an example notebook in Jupyter making full use of library functionality. Make any final changes to codebase. \\
 
-\textbf{ii. Review Summaries}
+\textbf{ii. Write Independent Research Report}
 
-.... \\
-
-\textbf{iii. Write Independent Research Report}
-
-.... \\
+Combine all the summaries into one coherent document and write the Independent Research Report. \\
 
 \subsubsection{Phase 3: Summary}
 
 \textbf{i. Meet Supervisor}
 
-.... \\
+I will have weekly meetings with Professor Cédric John to discuss progress and potential future direction.  \\
 
 \textbf{ii. Write Unit Tests}
 
-.... \\
-
+I will be writing unit tests as I go along to ensure code is validated and working as expected. \\
 
 
 \pagebreak

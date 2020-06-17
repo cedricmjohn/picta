@@ -1,7 +1,7 @@
 import conusviz.Trace._
 import conusviz.options.LayoutOptions._
 import conusviz.options.ConfigOptions._
-import conusviz.charts.SurfaceChart
+import conusviz.charts.{SurfaceChart, XYChart}
 
 object Example extends App {
 
@@ -24,11 +24,23 @@ object Example extends App {
   )
 
   // 3d surface plot
-  val trace_surface = SurfaceTrace(k, "trace")
-  val layout = Layout("ConusViz Surface Chart Example", true)
+//  val trace_surface = SurfaceTrace(k, "trace")
+//  val layout = Layout("ConusViz Surface Chart Example", true)
+//  val config = Config(true, true)
+//  val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
+//  chart_surface.plot()
+
+  val x = List.range(1, 100)
+  val y = x.map(x => x + scala.util.Random.nextDouble()*100)
+
+  val trace0 = XYTrace(x, y, "trace0", "scatter", "marker")
+  val layout = Layout(title="ConusViz Scatter Chart Example", showlegend=true)
   val config = Config(true, true)
-  val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
+  val chart_surface = new XYChart(List(trace0), layout, config)
   chart_surface.plot()
+
+
+
 }
 
 //  val trace: Trace[Any] = Trace(List(x, y), trace_name = "test", trace_type = "surface", mode = "lines")

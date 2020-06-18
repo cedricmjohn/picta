@@ -1,6 +1,7 @@
 package conusviz
 
 import org.scalatest.FunSuite
+import conusviz.Trace._
 import upickle.default._
 import upickle.default.{ReadWriter => RW}
 
@@ -47,6 +48,24 @@ class UnitTests extends FunSuite {
       }
     })
   }
+
+  /*
+  * Alternative Constructors
+  * */
+  test("Data.alternativeConstructor.bar") {
+    assertThrows[IllegalArgumentException] {
+      XYTrace(x_int, y_int, "test", "not_bar")
+    }
+  }
+
+  test("Data.alternativeConstructor.histogram") {
+    assertCompiles ("""HistogramTrace(x_int, "test")""")
+  }
+
+
+
+
+
 
   /*
   * XYZ Chart tests

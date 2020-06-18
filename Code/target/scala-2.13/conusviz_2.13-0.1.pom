@@ -38,9 +38,27 @@
             <version>1.1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.lihaoyi</groupId>
-            <artifactId>ujson-circe_2.13</artifactId>
-            <version>1.1.0</version>
+            <groupId>com.github.jupyter</groupId>
+            <artifactId>jvm-repr</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>sh.almond</groupId>
+            <artifactId>interpreter-api_2.13</artifactId>
+            <version>0.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>sh.almond</groupId>
+            <artifactId>jupyter-api_2.13</artifactId>
+            <version>0.10.0</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>jitpack</id>
+            <name>jitpack</name>
+            <url>https://jitpack.io/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>

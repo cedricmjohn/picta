@@ -12,8 +12,6 @@ sealed trait Serializer[T] {
 }
 
 object Serializer {
-  def serialize[T](seq: List[T])(implicit serializer: Serializer[T]): Value = serializer.serialize(seq)
-
   implicit object StringSerializer extends Serializer[String] {
     def serialize(seq: List[String]): Value = transform(seq).to(Value)
   }
@@ -26,6 +24,12 @@ object Serializer {
     def serialize(seq: List[Double]): Value = transform(seq).to(Value)
   }
 
+  /*
+  * This function creates the data for a trace from two-dimensional data
+  * */
+  def createSeriesX[T0 : Serializer](x: List[T0], name: String)(implicit s0: Serializer[T0]): Value = {
+    transform(Obj("x" -> s0.serialize(x))).to(Value)
+  }
 
   /*
   * This function creates the data for a trace from two-dimensional data

@@ -6,6 +6,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Serializer$DoubleSerializer$.class[0m
@@ -80,6 +82,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$SurfaceTrace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$SurfaceTrace$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$SurfaceTrace$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$HistogramTrace$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$HistogramTrace$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Utils.class[0m
@@ -90,8 +94,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$XYTrace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Serializer.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Serializer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Utils$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Utils$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$XYZTrace$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$XYZTrace$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$HistogramTrace.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$HistogramTrace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Trace$XYZTrace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Trace$XYZTrace.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$delayedInit$body.class[0m

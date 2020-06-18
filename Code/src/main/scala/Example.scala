@@ -1,47 +1,107 @@
 import conusviz.Trace._
 import conusviz.options.LayoutOptions._
 import conusviz.options.ConfigOptions._
-import conusviz.charts.{SurfaceChart, XYChart}
+import conusviz.charts.{XYChart, XYZChart}
+import ujson.Value
 
 object Example extends App {
 
-  val k = List(
-    List(8.83,8.89,8.81,8.87,8.9,8.87),
-    List(8.89,8.94,8.85,8.94,8.96,8.92),
-    List(8.84,8.9,8.82,8.92,8.93,8.91),
-    List(8.79,8.85,8.79,8.9,8.94,8.92),
-    List(8.79,8.88,8.81,8.9,8.95,8.92),
-    List(8.8,8.82,8.78,8.91,8.94,8.92),
-    List(8.75,8.78,8.77,8.91,8.95,8.92),
-    List(8.8,8.8,8.77,8.91,8.95,8.94),
-    List(8.74,8.81,8.76,8.93,8.98,8.99),
-    List(8.89,8.99,8.92,9.1,9.13,9.11),
-    List(8.97,8.97,8.91,9.09,9.11,9.11),
-    List(9.04,9.08,9.05,9.25,9.28,9.27),
-    List(9,9.01,9,9.2,9.23,9.2),
-    List(8.99,8.99,8.98,9.18,9.2,9.19),
-    List(8.93,8.97,8.97,9.18,9.2,9.18)
-  )
+//    val x = List.range(1, 10)
+//    val y = x.map(x => x + scala.util.Random.nextDouble()*100)
+//
+//    val trace2 = HistogramTrace(x, trace_name="trace2")
+//    val config = Config(responsive=true, scrollZoom=true)
+//
+//    val layout = Layout(title="Histogram Example",
+//        xaxis="x_series",
+//        yaxis="y_series",
+//        showlegend=true)
+//
+//    val chart2 = new HistogramChart(List(trace2), layout, config)
 
-  // 3d surface plot
-//  val trace_surface = SurfaceTrace(k, "trace")
-//  val layout = Layout("ConusViz Surface Chart Example", true)
-//  val config = Config(true, true)
-//  val chart_surface = new SurfaceChart(List(trace_surface), layout, config)
-//  chart_surface.plot()
+    val x = List.range(1, 100)
+    val y = List.range(1, 100)
+    val z = List.range(1, 100).map(e => e + scala.util.Random.nextDouble()*100).grouped(10).toList
 
-  val x = List.range(1, 100)
-  val y = x.map(x => x + scala.util.Random.nextDouble()*100)
+//    val trace4 = XYTrace(x, trace_name="trace4", trace_type="histogram")
+    val config = Config(responsive=false, scrollZoom=true)
 
-  val trace0 = XYTrace(x, y, "trace0", "scatter", "marker")
-  val layout = Layout(title="ConusViz Scatter Chart Example", showlegend=true)
-  val config = Config(true, true)
-  val chart_surface = new XYChart(List(trace0), layout, config)
-  chart_surface.plot()
+    val layout = Layout(title="Contour",
+        xaxis="x_series",
+        yaxis="y_series",
+        showlegend=true)
+
+//    val chart4 = new XYChart(List(trace4), layout, config)
 
 
 
+//    /*
+//    * Example 0 - Scatter Chart
+//    * */
+//    val trace0 = XYTrace(x, y, "trace0", "scatter", "markers")
+//    val layout0 = Layout(title="ConusViz Scatter Chart Example", x_label="x_series", y_label="y_series", show_legend=true)
+//    val config = Config(responsive=true, scrollZoom=true)
+//    val chart0 = new XYChart(List(trace0), layout0, config)
+//
+//    /*
+//    * Example 1 - Line Chart
+//    * */
+//    val trace1 = XYTrace(x, y, "trace1", "scatter", "lines")
+//    val layout1 = Layout(title="ConusViz Line Chart Example", x_label="x_series", y_label="y_series", show_legend=true)
+//    val chart1 = new XYChart(List(trace1), layout1, config)
+//
+//    /*
+//    * Example 2 - Line+Marker Chart
+//    * */
+//    val trace2 = XYTrace(x, y, "trace2", "scatter", "lines+markers")
+//    val layout2 = Layout(title="ConusViz Line+Markers Chart Example", x_label="x_series", y_label="y_series", show_legend=true)
+//    val chart2 = new XYChart(List(trace2), layout2, config)
+//
+//    /*
+//    * Example 3 - Bar Chart - ungrouped
+//    * */
+//    val trace3 = XYTrace(x, y, "trace0", "bar")
+//    val layout3 = Layout(title="ConusViz Bar Chart Example", x_label="x_series", y_label="y_series", show_legend=true)
+//    val chart3 = new XYChart(List(trace3), layout3, config)
+//
+//    /*
+//    * Example 3 - Bar Chart - grouped
+//    * */
+//    val trace4 = XYTrace(x, y, "trace0", "bar")
+//    val layout4 = Layout(title="ConusViz Grouped Bar Chart Example", x_label="x_series", y_label="y_series", show_legend=true, bar_mode="grouped")
+//    val chart4 = new XYChart(List(trace3), layout4, config)
+
+//    case class Test(title: ujson.Value, showlegend: Boolean)
+//    implicit val authorRW = upickle.default.macroRW[Test]
+//    val is = getClass.getClassLoader.getResourceAsStream("layout.json")
+//    val k = ujson.read(scala.io.Source.fromInputStream(is).mkString)
+//    println(k)
+//    val t = ujson.Bool(false)
+//    conusviz.Utils.update(k, "legend", "example", false)
+//    println(k)
 }
+
+//    val engine = new ScriptEngineManager().getEngineByMimeType("text/javascript")
+//    val result = engine.eval("1 + 1")
+//    println(result)
+
+//    val engine: ScriptEngine  = new ScriptEngineManager().getEngineByName("nashorn");
+//    val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
+//    engine.eval(scala.io.Source.fromInputStream(is).mkString)
+//
+//    val invocable: Invocable = engine.asInstanceOf[Invocable]
+//
+//    val result: Object = invocable.invokeFunction("Plotly.validate", "{}");
+//    System.out.println(result);
+
+//  val x = List.range(1, 100)
+//  val y = x.map(x => x + scala.util.Random.nextDouble()*100)
+//
+//  val trace0 = XYTrace(x, y, "trace0", "scatter", "marker")
+//  val layout = Layout(title="ConusViz Scatter Chart Example", showlegend=true)
+//  val config = Config(true, true)
+//  val chart_surface = new XYChart(List(trace0), layout, config)
+//  chart_surface.plot()
 
 //  val trace: Trace[Any] = Trace(List(x, y), trace_name = "test", trace_type = "surface", mode = "lines")
 

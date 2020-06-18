@@ -111,7 +111,7 @@ Since it is written in Scala, CoNuS benefits from several language features that
 Scala also combines both object-orientated and functional programming concepts to create highly expressive programs that can support many levels of abstraction over the underlying computation. One such abstraction is the Scala actor model which allows concurrent code to be written ergonomically in a type-safe manner. The actor model was introduced to deal with the JVMs shared-memory thread model, which suffered from high memory consumption and context switching costs \autocite{haller_odersky_2009}. The Scala actors library has since been deprecated and replaced by the Akka library, which is built on the same concept and allows code to be run on clusters \autocite{akka}. Making use of actors on clusters is on the roadmap for the CoNuS library.
 
 \section{Project Aims}
-As CoNuS is experimental, it currently lacks an integrated visualization library. The aim of this independent research project will be to design and build a visualization library with the following aims:
+As CoNuS is experimental, it currently lacks an integrated visualization library. The aim of this independent research project will be to design and build a visualization library with the following deliverables:
 
 \begin{itemize}
 \item Create an easy-to-use, general purpose plotting library for Scala that can plot scientific data, much like matplotlib for Python \autocite{matplotlib}.
@@ -127,55 +127,55 @@ In this section I will outline the expected project schedule. Some of the items 
 
 \subsubsection{Phase 1: Preparation}
 
-\textbf{i. Literature Review}
+\textit{i. Literature Review}
 
 I will review literature on forward modelling, data visualization and functional programming techniques. 
 
-At the time of writing, I have completed the literature review on forward modelling, understand why the CoNuS library exists, and why there is the need to develop a visualization library for it. I will continue to read more articles on data visualization and functional programming techniques. \\
+At the time of writing, I have completed the literature review on forward modelling, understand why the CoNuS library exists, and why there is the need to develop a visualization library for it. I will continue to read more articles on data visualization and functional programming techniques.
 
-\textbf{ii. Review Existing Visualization Libraries}
+\textit{ii. Review Existing Visualization Libraries}
 
-At the time of writing I have reviewed existing visualization libraries for Scala and the JVM. I have concluded that non of the existing options meet the requirements for this project. After looking at the rich Javascript open-source ecosystem, I have decided to leverage the Plotlyjs library as the basis for this project. \\
+At the time of writing I have reviewed existing visualization libraries for Scala and the JVM. I have concluded that non of the existing options meet the requirements for this project. After looking at the rich Javascript open-source ecosystem, I have decided to leverage the Plotlyjs library as the basis for this project.
 
-\textbf{iii. Learn Functional Programming Techniques}
+\textit{iii. Learn Functional Programming Techniques}
 
-This will consist of reviewing functional approaches to designing software, understanding Scala's type system and how to utilize Scala's functional features to build robust software. \\
+This will consist of reviewing functional approaches to designing software, understanding Scala's type system and how to utilize Scala's functional features to build robust software.
 
-\textbf{iv. Implement Basic Library Structure}
+\textit{iv. Implement Basic Library Structure}
 
-At the time of writing I have implemented basic code for rendering charts. I will expand on this by adding more visualization options and additional interactive chart components as they are required. \\
+At the time of writing I have implemented basic code for rendering charts. I will expand on this by adding more visualization options and additional interactive chart components as they are required.
 
-\textbf{v. Write Project Plan}
+\textit{v. Write Project Plan}
 
 I will begin writing the project plan ready for submission by the 25th of June.
 
 \subsubsection{Phase 2: Execution}
 
-\textbf{i. Design Advanced Components of Library}
+\textit{i. Design Advanced Components of Library}
 
-This will consist of building on the existing code I wrote in the previous phase. This may require refactoring of the library and making it more structured by using interfaces and abstracting out redundant code. I will also try and make the code more efficient if required. \\
+This will consist of building on the existing code I wrote in the previous phase. This may require refactoring of the library and making it more structured by using interfaces and abstracting out redundant code. I will also try and make the code more efficient if required.
 
-\textbf{ii. Review Best Practices}
+\textit{ii. Review Best Practices}
 
-Here I will review more closely work done with existing state-of-the-art visualization libraries. This will ensure that the existing codebase is in line with best practices. \\
+Here I will review more closely work done with existing state-of-the-art visualization libraries. This will ensure that the existing codebase is in line with best practices.
 
-\textbf{iii. Write Summary of Work Done So Far}
+\textit{iii. Write Summary of Work Done So Far}
 
-I will maintain notes on the work done so far, with the aim of combining these notes into a single document for my independent research project report. \\
+I will maintain notes on the work done so far, with the aim of combining these notes into a single document for my independent research project report.
 
-\textbf{iv. Review Codebase}
+\textit{iv. Review Codebase}
 
 Review the codebase and remove redundant or inefficient code. 
 
 \subsubsection{Phase 3: Summary}
 
-\textbf{i. Test Library}
+\textit{i. Test Library}
 
-Run full suite of unit tests and get the codebase to compile and pass all the tests. In addition, test the library from a user's perspective by creating an example notebook in Jupyter making full use of library functionality. Make any final changes to codebase. \\
+Run full suite of unit tests and get the codebase to compile and pass all the tests. In addition, test the library from a user's perspective by creating an example notebook in Jupyter making full use of library functionality. Make any final changes to codebase.
 
-\textbf{ii. Write Independent Research Report}
+\textit{ii. Write Independent Research Report}
 
-Combine all the summaries into one coherent document and write the Independent Research Report. \\
+Combine all the summaries into one coherent document and write the Independent Research Report.
 
 \section{Risks and Mitigation}
 

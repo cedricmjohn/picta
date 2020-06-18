@@ -18,7 +18,7 @@ object ConfigOptions {
 * */
   final case class Config(responsive: Boolean, scrollZoom: Boolean) extends ConfigOptions {
     def createConfig(): Value = {
-      val config = Obj("responsive" -> responsive, "scrollZoom" -> scrollZoom)
+      val config = Obj("responsive" -> responsive, "scrollZoom" -> scrollZoom, "displaylogo" -> false)
       transform(config).to(Value)
     }
   }

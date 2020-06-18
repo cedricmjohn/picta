@@ -31,10 +31,10 @@
     <orderEntry type="library" name="sbt: com.github.fommil.netlib:netlib-native_system-win-i686:1.1:natives:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.fommil.netlib:netlib-native_system-win-x86_64:1.1:natives:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.fommil:jniloader:1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jupyter:jvm-repr:0.4.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.virtuald:curvesapi:1.06:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.wendykierp:JTransforms:3.1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:geny_2.13:0.6.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.lihaoyi:ujson-circe_2.13:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:ujson_2.13:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:upack_2.13:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:upickle-core_2.13:1.1.0:jar" level="project" />
@@ -47,10 +47,6 @@
     <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.13:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-io:commons-io:1.3.1:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.0.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-core_2.13:0.12.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-jawn_2.13:0.12.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-numbers_2.13:0.12.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-parser_2.13:0.12.1:jar" level="project" />
     <orderEntry type="library" name="sbt: io.monix:implicitbox_2.13:0.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: io.monix:monix-catnap_2.13:3.1.0-2156c0e:jar" level="project" />
     <orderEntry type="library" name="sbt: io.monix:monix-eval_2.13:3.1.0-2156c0e:jar" level="project" />
@@ -91,24 +87,14 @@
     <orderEntry type="library" name="sbt: org.typelevel:cats-effect_2.13:2.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:cats-kernel_2.13:2.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:cats-macros_2.13:2.0.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:jawn-parser_2.13:0.14.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:machinist_2.13:0.6.8:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:spire-macros_2.13:0.17.0-M1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:spire-platform_2.13:0.17.0-M1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:spire-util_2.13:0.17.0-M1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.typelevel:spire_2.13:0.17.0-M1:jar" level="project" />
     <orderEntry type="library" name="sbt: pl.edu.icm:JLargeArrays:1.5:jar" level="project" />
-    <orderEntry type="module-library">
-      <library name="sbt: unmanaged-jars">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/interpreter-api_2.13-0.9.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/../../lib/jupyter-api_2.13-0.9.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/../../lib/scala-kernel-api_2.13.1-0.9.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="sbt: sh.almond:interpreter-api_2.13:0.10.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: sh.almond:jupyter-api_2.13:0.10.0:jar" level="project" />
     <orderEntry type="module-library">
       <library name="sbt: unmanaged-sources-and-docs">
         <CLASSES />

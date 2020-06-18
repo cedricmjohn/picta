@@ -1,12 +1,12 @@
 package conusviz.charts
 
 import conusviz.Chart.{minJs, plotChart, plotChart_inline}
-import conusviz.Trace.XYTrace
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.Value
 import upickle.default._
 import almond.interpreter.api.OutputHandler
+import conusviz.traces.XYTrace
 
 sealed trait XY {
   val traces: List[Value]
@@ -38,5 +38,7 @@ object XYChart {
     "scatter",
     "scattergl",
     "bar",
+    "histogram2dcontour",
+    "histogram"
   )
 }

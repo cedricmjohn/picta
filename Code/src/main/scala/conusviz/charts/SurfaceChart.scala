@@ -1,12 +1,12 @@
 package conusviz.charts
 
 import conusviz.Chart.{minJs, plotChart, plotChart_inline}
-import conusviz.Trace.SurfaceTrace
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.Value
 import upickle.default._
 import almond.interpreter.api.OutputHandler
+import conusviz.traces.SurfaceTrace
 
 sealed trait Surface {
   val traces: List[Value]

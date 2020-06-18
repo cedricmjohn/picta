@@ -21,18 +21,16 @@ object Chart {
   * @param layout: This should be the layout case class instance
   * @param config: This should be the config case class instance
   * */
+  //<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"></script>
   def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String, graph_id: String): String = {
       s"""
-         |<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly-basic.min.js"></script>
+         |
          |<div id='graph_${graph_id}'></div>
          |<script>
-         |//plotlyJs
+         |$plotlyJs
          | var traces = ${traces};
          | var layout = ${layout};
          | var config = ${config};
-         | window.onload = function() {
-         |
-         | }
          | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
          |</script>
          |""".stripMargin

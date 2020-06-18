@@ -16,12 +16,25 @@ object LayoutOptions {
   * @param title: sets the chart title
   * @param showLegend: specify whether to show the legend
   * */
-  final case class Layout(title: String, showlegend: Boolean, x_label: String = "x", y_label: String = "y") extends LayoutOptions {
+  final case class Layout(title: String,
+                          showlegend: Boolean,
+                          xaxis: String = "x",
+                          yaxis: String = "y",
+                          // only bar chart specific
+                          barmode: String = "") extends LayoutOptions {
+
     def createLayout(): Value = {
-      val x_axis = Obj("title" -> x_label)
-      val y_axis = Obj("title" -> y_label)
-      val layout = Obj("title" -> title, "showlegend" -> showlegend, "xaxis" -> x_axis, "yaxis" -> y_axis)
+      val x_axis = Obj("title" -> xaxis)
+      val y_axis = Obj("title" -> yaxis)
+      val layout = Obj(
+        "title" -> title,
+        "showlegend" -> showlegend,
+        "xaxis" -> x_axis,
+        "yaxis" -> y_axis,
+        "barmode" -> barmode,
+      )
       transform(layout).to(Value)
     }
   }
 }
+

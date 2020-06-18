@@ -15,4 +15,8 @@ libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.0.1b"
 
 // JSON encoding / decoding
 libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"
-libraryDependencies += "com.lihaoyi" %% "ujson-circe" % "1.1.0"
+
+resolvers += "jitpack" at "https://jitpack.io"
+libraryDependencies += "com.github.jupyter" % "jvm-repr" % "0.4.0"
+libraryDependencies += "sh.almond" %% "interpreter-api" % "0.10.0"
+libraryDependencies += "sh.almond" %% "jupyter-api" % "0.10.0"

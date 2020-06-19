@@ -1,29 +1,16 @@
-import conusviz.Trace._
+import conusviz.traces._
 import conusviz.options.LayoutOptions._
 import conusviz.options.ConfigOptions._
 import conusviz.charts.{XYChart, XYZChart}
 import ujson.Value
 
 object Example extends App {
-
-//    val x = List.range(1, 10)
-//    val y = x.map(x => x + scala.util.Random.nextDouble()*100)
-//
-//    val trace2 = HistogramTrace(x, trace_name="trace2")
-//    val config = Config(responsive=true, scrollZoom=true)
-//
-//    val layout = Layout(title="Histogram Example",
-//        xaxis="x_series",
-//        yaxis="y_series",
-//        showlegend=true)
-//
-//    val chart2 = new HistogramChart(List(trace2), layout, config)
-
     val x = List.range(1, 100)
     val y = List.range(1, 100)
     val z = List.range(1, 100).map(e => e + scala.util.Random.nextDouble()*100).grouped(10).toList
+    val x_double = List(1.5, 2.5, 3.5)
 
-//    val trace4 = XYTrace(x, trace_name="trace4", trace_type="histogram")
+    val trace4 = XYTrace(x_double, trace_name="test", trace_type="histogram", trace_mode="vertical")
     val config = Config(responsive=false, scrollZoom=true)
 
     val layout = Layout(title="Contour",
@@ -31,8 +18,9 @@ object Example extends App {
         yaxis="y_series",
         showlegend=true)
 
-//    val chart4 = new XYChart(List(trace4), layout, config)
+    val chart4 = new XYChart(List(trace4), layout, config)
 
+    chart4.plot()
 
 
 //    /*

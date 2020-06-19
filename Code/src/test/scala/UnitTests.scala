@@ -1,7 +1,7 @@
 package conusviz
 
 import org.scalatest.FunSuite
-import conusviz.Trace._
+import conusviz.traces._
 import upickle.default._
 import upickle.default.{ReadWriter => RW}
 
@@ -22,25 +22,37 @@ class UnitTests extends FunSuite {
   /*
   * XY Chart tests
   * */
-  test("Trace.createTrace.Int.Scatter.2D") {
+  test("Trace.createTrace.Int.Scatter.XY") {
     val trace = XYTrace(x_int, y_int, "test", "scatter", "lines")
     val test = """{"name":"test","type":"scatter","mode":"lines","x":[1,2,3],"y":[1,2,3]}"""
     assert(test == write(trace.value))
   }
 
-  test("Trace.createTrace.String.Scatter.2D") {
+  test("Trace.createTrace.String.Scatter.XY") {
     val trace = XYTrace(x_str, y_str, "test", "scatter", "lines")
     val test = """{"name":"test","type":"scatter","mode":"lines","x":["1","2","3"],"y":["a","b","c"]}"""
     assert(test == write(trace.value))
   }
 
-  test("Trace.createTrace.Double.Scatter.2D") {
+  test("Trace.createTrace.Double.Scatter.XY") {
     val trace = XYTrace(x_double, y_double, "test", "scatter", "lines")
     val test = """{"name":"test","type":"scatter","mode":"lines","x":[1.5,2.5,3.5],"y":[1.5,2.5,3.5]}"""
     assert(test == write(trace.value))
   }
 
-  test("Data.InvalidTrace.XY") {
+  test("Trace.createTrace.Double.Histogram.XY") {
+    val trace = XYTrace(x_double, "test", "histogram", "vertical")
+    val test = """{"name":"test","type":"histogram","mode":"vertical","x":[1.5,2.5,3.5]}"""
+    assert(test == write(trace.value))
+  }
+
+  test("Trace.createTrace.bar.XY") {
+    assertThrows[IllegalArgumentException] {
+      XYTrace(x_int, y_int, "test", "not_bar")
+    }
+  }
+
+  test("Trace.createTrace.Invalid. XY") {
     val chart_types = Seq("contour", "heatmap", "scatter3d")
     chart_types.map(t => {
       assertThrows[IllegalArgumentException] {
@@ -52,15 +64,11 @@ class UnitTests extends FunSuite {
   /*
   * Alternative Constructors
   * */
-  test("Data.alternativeConstructor.bar") {
-    assertThrows[IllegalArgumentException] {
-      XYTrace(x_int, y_int, "test", "not_bar")
-    }
-  }
 
-  test("Data.alternativeConstructor.histogram") {
-    assertCompiles ("""HistogramTrace(x_int, "test")""")
-  }
+
+//  test("Data.alternativeConstructor.histogram") {
+//    assertCompiles ("""HisTrace(x_int, "test")""")
+//  }
 
 
 

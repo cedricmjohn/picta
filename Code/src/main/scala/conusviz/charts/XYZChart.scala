@@ -1,7 +1,7 @@
 package conusviz.charts
 
 import conusviz.Chart.{minJs, plotChart, plotChart_inline}
-import conusviz.Trace.XYZTrace
+import conusviz.traces._
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.Value
@@ -24,7 +24,6 @@ final case class XYZChart[T0, T1, T2](val data: List[XYZTrace[T0, T1, T2]],
                                 l: Layout = Layout("Chart", true),
                                 c: Config = Config(true, true)) extends XYZ {
 
-  // convert the traces, layout and config arguments to a Value format as that is easier to work with
   val traces: List[Value] = data.map(t => t.value)
   val layout: Value = transform(l.createLayout).to(Value)
   val config: Value = transform(c.createConfig).to(Value)

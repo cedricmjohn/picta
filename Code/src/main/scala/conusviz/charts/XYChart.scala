@@ -24,7 +24,6 @@ final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
                    l: Layout = Layout("Chart", true),
                    c: Config = Config(true, true)) extends XY {
 
-  // convert the traces, layout and config arguments to a Value format as that is easier to work with
   val traces: List[Value] = data.map(t => t.value)
   val layout: Value = transform(l.createLayout).to(Value)
   val config: Value = transform(c.createConfig).to(Value)

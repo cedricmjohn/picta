@@ -27,7 +27,7 @@ object Serializer {
   /*
   * This function creates the data for a trace from two-dimensional data
   * */
-  def createSeriesX[T0 : Serializer](x: List[T0], name: String)(implicit s0: Serializer[T0]): Value = {
+  def createSeriesHistogram[T0 : Serializer](x: List[T0], name: String)(implicit s0: Serializer[T0]): Value = {
     transform(Obj("x" -> s0.serialize(x))).to(Value)
   }
 

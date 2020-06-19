@@ -1,9 +1,9 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mUnitTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Int.Scatter.2D[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.String.Scatter.2D[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Double.Scatter.2D[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Data.InvalidTrace.XY[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Data.alternativeConstructor.bar[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Data.alternativeConstructor.histogram[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Int.Scatter.XY[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.String.Scatter.XY[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Double.Scatter.XY[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Double.Histogram.XY[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.bar.XY[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Trace.createTrace.Invalid. XY[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Trace.InvalidTrace.XYZ[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Trace.PlotlyExample.Surface[0m[0m

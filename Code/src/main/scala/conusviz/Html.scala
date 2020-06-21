@@ -1,10 +1,11 @@
 package conusviz
 
 import java.io.{BufferedWriter, File, FileWriter}
+import java.net.{HttpURLConnection, URL}
 
 import almond.api.JupyterApi
 import ujson.Value
-import almond.interpreter.api.{OutputHandler}
+import almond.interpreter.api.OutputHandler
 
 object Chart {
   /*
@@ -16,24 +17,58 @@ object Chart {
   }
 
   /*
+  * This function checks if an active network connection is available. It returns true if this is the case, false otherwise
+  * */
+  def testNetworkConnection(): Boolean = {
+    var activeConnection: Boolean = true
+    val url: URL = new URL("https://www.google.com");
+    val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
+
+    try {
+      urlConn.connect()
+      urlConn.setConnectTimeout(1)
+      urlConn.setReadTimeout(1)
+    } catch {
+      case e: Throwable => activeConnection = false
+    } finally urlConn.disconnect()
+
+    activeConnection
+  }
+
+  val activeConnection: Boolean = testNetworkConnection()
+
+  /*
   * A function to generate the HTML corresponding to the Plotly plotting function
   * @param traces: This is the trace data. It should be serialized as a json list
   * @param layout: This should be the layout case class instance
   * @param config: This should be the config case class instance
   * */
-  //<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"></script>
-  def generateHTML(traces: Value, layout: Value, config: Value, plotlyJs: String, graph_id: String): String = {
-      s"""
-         |
-         |<div id='graph_${graph_id}'></div>
-         |<script>
-         |$plotlyJs
-         | var traces = ${traces};
-         | var layout = ${layout};
-         | var config = ${config};
-         | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
-         |</script>
-         |""".stripMargin
+  //
+  def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
+    var script = new StringBuilder()
+
+    if (activeConnection)
+      script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
+    else
+      script ++= s"""<script> ${minJs} </script>"""
+
+    val base_html = s"""
+                       |<div id='graph_${graph_id}'></div>
+                       |<script>
+                       | var traces = ${traces};
+                       | var layout = ${layout};
+                       | var config = ${config};
+                       | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
+                       |</script>
+                       |""".stripMargin
+
+    if (scriptFlag) {
+      script ++= base_html
+      script.mkString
+    }
+    else {
+      base_html
+    }
   }
 
   /*
@@ -51,12 +86,12 @@ object Chart {
 * @param graph_id: This is required in order to generate a unique file name for the chart
 * */
   def writeHTMLToFile(html: String, graph_id: String): Unit = {
-    val osName = (System.getProperty("os.name") match {
+    val osName = System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
       case name if name.startsWith("Mac") => "mac"
       case name if name.startsWith("Windows") => "win"
       case _ => throw new Exception("Unknown platform!")
-    })
+    }
 
     val dir = System.getProperty("user.home")+"/Conus/"+graph_id+".html"
     val fout = new File(dir)
@@ -84,16 +119,37 @@ object Chart {
   * */
   def init_notebook_mode()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
-    val html = s"""
-                  |<script type='text/javascript'>
-                  |define( 'plotly', function(require, exports, module) {
-                  |$minJs
-                  |})
-                  |require( ['plotly'], function(Plotly) {
-                  |window.Plotly = Plotly;
-                  |})
-                  |</script>
-                  |""".stripMargin
+
+
+    // if internet connection; grab from cdn
+    // otherwise just inject the raw javascript
+    val html = if (activeConnection) {
+      s"""
+          |<script type='text/javascript'>
+          |require.config({
+          |paths: {
+          |        'plotly': "https://cdn.plot.ly/plotly-latest.min.js"
+          |    },
+          |})
+          |require( ['plotly'], function(Plotly) {
+          |window.Plotly = Plotly;
+          |})
+          |</script>
+          |""".stripMargin
+    }
+    else {
+      s"""
+        |<script type='text/javascript'>
+        |define( 'plotly', function(require, exports, module) {
+        |$minJs
+        |})
+        |require( ['plotly'], function(Plotly) {
+        |window.Plotly = Plotly;
+        |})
+        |</script>
+        |""".stripMargin
+    }
+
     publish.html(html)
   }
 
@@ -104,9 +160,9 @@ object Chart {
   * @param config: the config case class specificying the chart config options
   * @param js: This is the javascript we wish to inject into the page
   * */
-  def plotChart(traces: List[Value], layout: Value, config: Value, js: String): Unit = {
+  def plotChart(traces: List[Value], layout: Value, config: Value): Unit = {
     val graph_id = System.currentTimeMillis().toString
-    val html: String = generateHTML(traces, layout, config, js, graph_id)
+    val html: String = generateHTML(traces, layout, config, true, graph_id)
     writeHTMLToFile(html, graph_id)
   }
 
@@ -121,7 +177,7 @@ object Chart {
 * */
   def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
     val graph_id = System.currentTimeMillis().toString
-    val html: String = generateHTML(traces, layout, config, "", graph_id)
+    val html: String = generateHTML(traces, layout, config, false, graph_id)
     writeHTMLToJupyter(html, graph_id)
   }
 }

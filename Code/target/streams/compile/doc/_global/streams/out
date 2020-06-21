@@ -10,12 +10,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/Example.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/Html.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/Serializer.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/Trace.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/Utils.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/charts/SurfaceChart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/charts/XYChart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/charts/XYZChart.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/options/AxisOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/options/ConfigOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/options/LayoutOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/package.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/traces/Trace.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/traces/XYTrace.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/conusviz/traces/XYZTrace.scala[0m
 [0m[[0m[0minfo[0m] [0m[0mMain Scala API documentation successful.[0m

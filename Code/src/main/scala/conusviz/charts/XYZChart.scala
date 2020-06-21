@@ -28,7 +28,7 @@ final case class XYZChart[T0, T1, T2](val data: List[XYZTrace[T0, T1, T2]],
   val layout: Value = transform(l.createLayout).to(Value)
   val config: Value = transform(c.createConfig).to(Value)
 
-  def plot(): Unit = plotChart(traces, layout, config, minJs)
+  def plot(): Unit = plotChart(traces, layout, config)
   def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
 }
 
@@ -37,5 +37,6 @@ object XYZChart {
     "contour",
     "heatmap",
     "scatter3d",
+    "surface"
   )
 }

@@ -20,15 +20,14 @@ sealed trait XY {
 * @param l: This is a layout class instance specifying the options to do with layout
 * @param c: This is a config class instance specifying the options to do with general configuration
 * */
-final case class XYChart[T0, T1](val data: List[XYTrace[T0, T1]],
-                   l: Layout = Layout("Chart", true),
-                   c: Config = Config(true, true)) extends XY {
+final case class XYChart[T0, T1]
+(val data: List[XYTrace[T0, T1]], l: Layout = Layout("Chart", true), c: Config = Config(true, true)) extends XY {
 
   val traces: List[Value] = data.map(t => t.value)
   val layout: Value = transform(l.createLayout).to(Value)
   val config: Value = transform(c.createConfig).to(Value)
 
-  def plot(): Unit = plotChart(traces, layout, config, minJs)
+  def plot(): Unit = plotChart(traces, layout, config)
   def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
 }
 

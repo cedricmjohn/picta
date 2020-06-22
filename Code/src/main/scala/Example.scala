@@ -30,12 +30,6 @@ object Example extends App {
   
 }
 
-
-
-
-
-
-
 //  val runnedModel = myFirstModel.run
 
 //  Thread.sleep(1000)

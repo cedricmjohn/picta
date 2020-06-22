@@ -16,6 +16,7 @@ object AxisOptions {
       val raw = Obj(name -> Obj("title" -> title, "showgrid" -> showgrid, "zeroline" -> zeroline, "showline" -> showline))
       transform(raw).to(Value)
     }
+
   }
 
   object Axis {

@@ -17,6 +17,15 @@ import ujson.{Obj, Value}
 
 object Example extends App {
 
+  case class example(a: String, b: String) {
+    val fields =  this.getClass.getDeclaredFields.toList.map(i => {
+      i.getName -> i.get(this)
+    }).toMap
+  }
+
+  println(example("aas", "basas").fields("a"))
+
+
   // some dummy data
 //  val col1 = Col(List("a", "b", "c", "d", "e"))
 //  val col2 = Col(List(12, 200, 80900, 201200, 124420000))

@@ -258,7 +258,6 @@
     \entry{akka}{misc}{}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
-      \field{labeldatesource}{nodate}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://akka.io/}}
       \field{title}{Akka}
@@ -266,7 +265,6 @@
     \entry{matplotlib}{misc}{}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
-      \field{labeldatesource}{nodate}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://matplotlib.org}}
       \field{title}{matplotlib}
@@ -274,7 +272,6 @@
     \entry{scala}{misc}{}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
-      \field{labeldatesource}{nodate}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.scala-lang.org/}}
       \field{title}{Scala}

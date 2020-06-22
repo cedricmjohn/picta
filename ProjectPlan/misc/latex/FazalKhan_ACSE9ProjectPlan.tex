@@ -13,6 +13,8 @@
 \usepackage{lscape}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\usepackage[british,UKenglish,USenglish,english,american]{babel}
+\renewcommand{\familydefault}{\sfdefault}
 
 \addbibresource{References.bib}
 
@@ -33,13 +35,10 @@
 		Independent Research Project \\
 		Project Plan
 		
-		
 		\vspace{1cm}
 		
-		
-		{\fontsize{18}{104}\selectfont \textbf{ CoNuS-Viz: A Visualization Package for the Concurrent Library for Numerical Simulations}}
+		{\fontsize{18}{104}\selectfont \textbf{Picta: The Visualization Library For The CoNuS (Concurrent Numerical Simulations) Library}}
 
-		
 		\vspace{1cm}
 		
 		by \\ 
@@ -81,27 +80,27 @@ Many natural or social phenomena such as fluid-flow or population dynamics may b
 	\end{equation}
 \end{center}
 
-From this we can see that in order to update the variables of interest, $\vec y_t$, we must consider both time, $t$ and the previous state of the variables of interest, $\vec y_{t-1}$.
+From this we can see that in order to update the variables of interest, $\vec y_t$, we must consider both time, $t$, and the previous state of the variables of interest, $\vec y_{t-1}$.
 
 As mentioned, this general technique can be applied in many different fields. As a concrete example consider one such field known as Stratigraphy. Stratigraphy is concerned with the processes which lead to the organization of rocks in space and time. Stratigraphic Forward Models (SFM) are forward models which have been used to simulate realistic stratigraphic processes based on a set of reasonable geologic parameter values. These parameters may consist of items such as tectonic movement and erosion \autocite{10.2110/pec.99.62.0069}.
 
-When studying stratigraphic observational data, it is often important to understand what set of initial geological conditions may have caused the stratigraphic patterns in the observations. Problems of this type can be generally classified as inverse problems \autocite{10.1260/0144598011492363}. SFMs can be used to generate a set of outputs which in turn are compared to observations. Outputs are generated systematically for a range of initial parameter values, and those outputs which are close to the observations within a pre-defined bound are then taken as solutions to this inverse problem. Used in this way SFMs are an integral part of solving inversion problems in stratigraphy. More generally, solving inverse problems in this way can be useful for many other domains ranging from finance to physics.
+When studying stratigraphic observational data it is often important to understand what set of initial geological conditions may have caused the stratigraphic patterns in the observations. Problems of this type can be generally classified as inverse problems \autocite{10.1260/0144598011492363}. SFMs can be used to generate a set of outputs which in turn are compared to observations. Outputs are generated systematically for a range of initial parameter values, and those outputs which are close to the observations within a pre-defined bound are then taken as solutions to this inverse problem. Used in this way SFMs are an integral part of solving inversion problems in stratigraphy. More generally, solving inverse problems in this way can be useful for many other domains ranging from finance to physics.
 
 \subsection{Computational Intensity of Large Forward Models}
 Large forward models are computationally intensive methods which may require generating many outputs to find a satisfactory solution. For example in order to solve inverse problems, not only are many outputs generated, but the set of input geological parameters, $\vec y_i$ is often also very large too \autocite{10.1260/0144598011492363}.
 
 For these reasons computational techniques that can deal with large models efficiently are very important in practice. One way to address this is to use concurrency and parallelism when performing calculations on the underlying data. Such techniques have been used in scientific modelling for increasing performance and reducing computation time. Domains ranging from biophysical modelling to computational fluid dynamics have benefited from technologies such as GPUs that allows these techniques to be more readily exploited \autocite{4490127}.
 
-\subsection{The Concurrent Library for Numerical Simulations (CoNuS)}
+\subsection{The CoNuS Library}
 CoNuS is an experimental open-source library developed by Professor Cédric John from the Carbonate Research Group at Imperial College London. The library is written in the Scala programming language and has two general aims:
 
 \begin{enumerate}
-\item \textbf{Abstraction}: Abstract away unnecessary implementation details from the user so they can focus on the modelling. \\
+\item \textbf{Abstraction}: Abstract away unnecessary implementation details from the user so they can focus on the modelling.
 \item \textbf{Performance}: Be performant enough to run large, concurrent models in a reasonable amount of time.
 \end{enumerate}
 
 \subsubsection{Abstraction}
-Conventional forward models generally require users to define a grid of variables, some type of mathematical equation that defines how variables evolve with time, and a loop to actually carry out calculations. CoNuS abstracts away these common mechanics of forward models so that users from any discipline, regardless of their programming experience, can compose models by focusing on the mathematical basis for how variables evolve. Users essentially define equation (1), and let the model run.
+Conventional forward models generally require users to define a grid of variables, some type of mathematical equation that defines how variables evolve with time, and a loop to actually carry out calculations. CoNuS abstracts away these common mechanics of forward models so that users from any discipline, regardless of their programming experience, can compose models by focusing on the mathematical basis for how variables evolve. Users essentially define equation (1) and run the model.
 
 \subsubsection{Performance}
 CoNuS leverages the Scala programming language and functional programming techniques to enhance performance and program correctness. Functional programming techniques are excellent at creating data recursion schemes that can exploit concurrency and parallelism; an example is Google's famous MapReduce algorithm which processes large datasets in parallel \autocite{LAMMEL20081}. 
@@ -111,13 +110,13 @@ Since it is written in Scala, CoNuS benefits from several language features that
 Scala also combines both object-orientated and functional programming concepts to create highly expressive programs that can support many levels of abstraction over the underlying computation. One such abstraction is the Scala actor model which allows concurrent code to be written ergonomically in a type-safe manner. The actor model was introduced to deal with the JVMs shared-memory thread model, which suffered from high memory consumption and context switching costs \autocite{haller_odersky_2009}. The Scala actors library has since been deprecated and replaced by the Akka library, which is built on the same concept and allows code to be run on clusters \autocite{akka}. Making use of actors on clusters is on the roadmap for the CoNuS library.
 
 \section{Project Aims}
-As CoNuS is experimental, it currently lacks an integrated visualization library. The aim of this independent research project will be to design and build a visualization library with the following deliverables:
+As CoNuS is experimental, it currently lacks an integrated visualization library. The aim of this independent research project will be to design and build a visualization library with the following outcomes:
 
 \begin{itemize}
 \item Create an easy-to-use, general purpose plotting library for Scala that can plot scientific data, much like matplotlib for Python \autocite{matplotlib}.
-\item Allow CoNuS forward models to be visualized.
+\item Allow CoNuS forward models to be visualized easily.
 \item Implement enhanced functionality that creates interactive scientific charts, not just static ones. 
-\item Integrate the library to run seamlessly with Jupyter notebooks, in addition to running on the JVM.
+\item Integrate the library to run seamlessly with Jupyter notebooks in addition to running on the JVM.
 \item Leverage functional programming design and Scala's type system to ensure program correctness.
 \item Make an original contribution to the Scala open-source community.
 \end{itemize}
@@ -129,57 +128,94 @@ In this section I will outline the expected project schedule. Some of the items 
 
 \textit{i. Literature Review}
 
-I will review literature on forward modelling, data visualization and functional programming techniques. 
+\begin{itemize}
+\item Review literature on forward modelling, data visualization, and functional programming techniques.
 
-At the time of writing, I have completed the literature review on forward modelling, understand why the CoNuS library exists, and why there is the need to develop a visualization library for it. I will continue to read more articles on data visualization and functional programming techniques.
+\item I have completed the literature review on forward modelling, understand why the CoNuS library exists, and why there is the need to develop a visualization library for the JVM and that integrates with it. I will continue to review literature on data visualization and functional programming.
+\end{itemize}
 
 \textit{ii. Review Existing Visualization Libraries}
 
-At the time of writing I have reviewed existing visualization libraries for Scala and the JVM. I have concluded that non of the existing options meet the requirements for this project. After looking at the rich Javascript open-source ecosystem, I have decided to leverage the Plotlyjs library as the basis for this project.
+\begin{itemize}
+\item I have reviewed existing visualization libraries for Scala and the JVM. I have concluded that non of the existing options meet the requirements for this project. As a consequence of this review, I have decided to build the library from scratch leveraging open source libraries such as Plotlyjs.
+\end{itemize}
 
 \textit{iii. Learn Functional Programming Techniques}
 
-This will consist of reviewing functional approaches to designing software, understanding Scala's type system and how to utilize Scala's functional features to build robust software.
+\begin{itemize}
+
+\item Review functional approaches to designing software, understanding Scala's type system and how to utilize Scala's functional features to build robust software.
+ 
+\end{itemize}
 
 \textit{iv. Implement Basic Library Structure}
 
-At the time of writing I have implemented basic code for rendering charts. I will expand on this by adding more visualization options and additional interactive chart components as they are required.
+\begin{itemize}
+
+\item I have implemented basic code for rendering charts. I will expand on this by adding more visualization options and additional interactive chart components as they are required.
+	
+\end{itemize}
 
 \textit{v. Write Project Plan}
 
-I will begin writing the project plan ready for submission by the 25th of June.
+\begin{itemize}
+	\item Get project plan ready for submission by the 26th of June deadline.
+\end{itemize}
 
 \subsubsection{Phase 2: Execution}
 
 \textit{i. Design Advanced Components of Library}
 
-This will consist of building on the existing code I wrote in the previous phase. This may require refactoring of the library and making it more structured by using interfaces and abstracting out redundant code. I will also try and make the code more efficient if required.
+
+\begin{itemize}
+	
+\item Build on the existing code written in the previous phase. 
+\item This may require refactoring of the library and making it more structured by using interfaces and abstracting out redundant code.
+\item Make the code more efficient if required.
+
+\end{itemize}
 
 \textit{ii. Review Best Practices}
 
-Here I will review more closely work done with existing state-of-the-art visualization libraries. This will ensure that the existing codebase is in line with best practices.
+\begin{itemize}
+\item Review more closely work done with existing state-of-the-art visualization libraries. This will ensure that the existing codebase is in line with best practices.
+\end{itemize}
 
 \textit{iii. Write Summary of Work Done So Far}
 
-I will maintain notes on the work done so far, with the aim of combining these notes into a single document for my independent research project report.
+\begin{itemize}
+\item Maintain notes on the work done so far, with the aim of combining these notes into the independent research project report.
+\end{itemize}
 
 \textit{iv. Review Codebase}
 
-Review the codebase and remove redundant or inefficient code. 
+\begin{itemize}
+\item Review the codebase and remove redundant or inefficient code. 
+\end{itemize}
 
 \subsubsection{Phase 3: Summary}
 
 \textit{i. Test Library}
 
-Run full suite of unit tests and get the codebase to compile and pass all the tests. In addition, test the library from a user's perspective by creating an example notebook in Jupyter making full use of library functionality. Make any final changes to codebase.
+\begin{itemize}
+\item Run full suite of unit tests and get the codebase to compile and pass all the tests. 
+
+\item Test the library from a user's perspective by creating an example notebook in Jupyter making full use of library functionality. 
+
+\item Make any final changes to codebase.
+\end{itemize}
 
 \textit{ii. Write Independent Research Report}
 
-Combine all the summaries into one coherent document and write the Independent Research Report.
+\begin{itemize}
+\item Combine all the summaries into one coherent document and write the Independent Research Report.
+\end{itemize}
 
 \section{Risks and Mitigation}
 
-The main risk is being unable to make progress quickly enough before the deadline due to the complexity of the Scala type system. To mitigate this risk I will create my library incrementally and in a modular manner. This will ensure that even if I run out of time, the library will still have some basic visualization capabilities even if incomplete.
+The main risk is being unable to make progress quickly enough before the deadline due to the complexity of the Scala type system and amount of code that has to be written. 
+
+To mitigate this risk I will create my library incrementally and in a modular manner. This will ensure that even if I run out of time, the library will nonetheless have some basic visualization capabilities.
 
 \pagebreak
 \begin{landscape}

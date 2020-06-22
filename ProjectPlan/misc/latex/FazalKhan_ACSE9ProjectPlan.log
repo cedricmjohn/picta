@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.7)  17 JUN 2020 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.7)  22 JUN 2020 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -916,31 +916,88 @@ File: pgfcalendar.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-\@quotelevel=\count440
-\@quotereset=\count441
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/03/22 3.42 The Babel package
 
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/03/22 3.42 Babel switching mechanism
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/british.ldf
+Language: british 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/03/22 3.42 Babel common definitions
+\babel@savecnt=\count440
+\U@D=\dimen275
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read4
+\bbl@dirlevel=\count441
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 108.
+))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/UKenglish.ldf
+Language: UKenglish 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/USenglish.ldf
+Language: USenglish 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/american.ldf
+Language: american 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+)))
+
+Package Babel Warning: The package option `english' should not be used
+(Babel)                with a more specific one (like `american') on input line
+ 17.
+
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count442
+\@quotereset=\count443
 (./FazalKhan_ACSE9ProjectPlan.aux)
 \openout1 = `FazalKhan_ACSE9ProjectPlan.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+21.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -976,8 +1033,41 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+Package biblatex Warning: File 'american-bath.lbx' not found!
+(biblatex)                Ignoring mapping 'american' -> 'american-bath'.
+
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/american.lbx
+File: american.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
 Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
 (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
 File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
 the biblatex-bath style
@@ -993,6 +1083,110 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 ))
+
+Package biblatex Warning: File 'USenglish-bath.lbx' not found!
+(biblatex)                Ignoring mapping 'USenglish' -> 'USenglish-bath'.
+
+Package biblatex Info: Trying to load language 'USenglish'...
+Package biblatex Info: ... file 'USenglish.lbx' found.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/USenglish.lbx
+File: USenglish.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/american.lbx
+File: american.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/american.lbx
+File: american.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+))))
+
+Package biblatex Warning: File 'UKenglish-bath.lbx' not found!
+(biblatex)                Ignoring mapping 'UKenglish' -> 'UKenglish-bath'.
+
+Package biblatex Info: Trying to load language 'UKenglish'...
+Package biblatex Info: ... file 'UKenglish.lbx' found.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/UKenglish.lbx
+File: UKenglish.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'british' -> 'british-bath'...
+Package biblatex Info: ... file 'british-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/british-bath.lbx
+File: british-bath.lbx 2020/01/16 v3.2 British English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+File: british.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'british' -> 'british-bath'...
+Package biblatex Info: ... file 'british-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/british-bath.lbx
+File: british-bath.lbx 2020/01/16 v3.2 British English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+))))
+Package biblatex Info: Trying to load language 'british' -> 'british-bath'...
+Package biblatex Info: ... file 'british-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/british-bath.lbx
+File: british-bath.lbx 2020/01/16 v3.2 British English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+File: british.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english' -> 'english-bath'...
+Package biblatex Info: ... file 'english-bath.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex-bath/english-bath.lbx
+File: english-bath.lbx 2020/01/16 v3.2 Generic English conventions required by 
+the biblatex-bath style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1002,30 +1196,40 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'FazalKhan_ACSE9ProjectPlan.bbl' found.
 
 (./FazalKhan_ACSE9ProjectPlan.bbl)
-Package biblatex Info: Reference section=0 on input line 19.
-Package biblatex Info: Reference segment=0 on input line 19.
+Package biblatex Info: Reference section=0 on input line 21.
+Package biblatex Info: Reference segment=0 on input line 21.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count442
-\scratchdimen=\dimen275
+\scratchcounter=\count444
+\scratchdimen=\dimen276
 \scratchbox=\box66
-\nofMPsegments=\count443
-\nofMParguments=\count444
+\nofMPsegments=\count445
+\nofMParguments=\count446
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count445
-\MPscratchDim=\dimen276
-\MPnumerator=\count446
-\makeMPintoPDFobject=\count447
+\MPscratchCnt=\count447
+\MPscratchDim=\dimen277
+\MPnumerator=\count448
+\makeMPintoPDFobject=\count449
 \everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
@@ -1033,53 +1237,53 @@ e
 ABD: EveryShipout initializing macros [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+5.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-6.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-76.
+75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-76.
+75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 76.
+(Font)              <12> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 76.
+(Font)              <8> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 76.
+(Font)              <6> on input line 75.
+ [1]
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 108.
 
-Overfull \hbox (4.75517pt too wide) in paragraph at lines 95--95
-|[]\OT1/lmr/bx/n/14.4 The Con-cur-rent Li-brary for Nu-mer-i-cal Sim-u-la-tions
- (CoNuS)| 
- []
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+116.
 
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-17.
-(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2] [3] [4]
-<./images/Gantt.png, id=29, 1163.34625pt x 311.1625pt>
+<./images/Gantt.png, id=30, 1163.34625pt x 311.1625pt>
 File: ./images/Gantt.png Graphic file (type png)
 <use ./images/Gantt.png>
-Package pdftex.def Info: ./images/Gantt.png  used on input line 189.
+Package pdftex.def Info: ./images/Gantt.png  used on input line 225.
 (pdftex.def)             Requested size: 756.16612pt x 202.25322pt.
 
-Overfull \hbox (55.65926pt too wide) in paragraph at lines 189--190
+Overfull \hbox (55.65926pt too wide) in paragraph at lines 225--226
  [] 
  []
 
@@ -1087,7 +1291,7 @@ Overfull \hbox (55.65926pt too wide) in paragraph at lines 189--190
 
  <./images/Gantt.png>]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-196.
+232.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1100,29 +1304,30 @@ Package logreq Info: Writing requests to 'FazalKhan_ACSE9ProjectPlan.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24937 strings out of 480608
- 503699 string characters out of 5903631
- 1282348 words of memory out of 5000000
- 40418 multiletter control sequences out of 15000+600000
- 569222 words of font info for 45 fonts, out of 8000000 for 9000
+ 25769 strings out of 480608
+ 519876 string characters out of 5903631
+ 1350782 words of memory out of 5000000
+ 41154 multiletter control sequences out of 15000+600000
+ 568911 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,7n,69p,2405b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,7n,69p,2405b,3833s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
 l/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/202
 0/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2020/texmf-dist/f
 onts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/d
 vips/lm/lm-mathit.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm
-/lmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi12.pf
-b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2020/texmf-dist/fonts/
-type1/public/lm/lmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/lm/lmtt12.pfb>
-Output written on FazalKhan_ACSE9ProjectPlan.pdf (7 pages, 165399 bytes).
+/lmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/font
+s/type1/public/lm/lmsso12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
+ublic/lm/lmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
+tt12.pfb>
+Output written on FazalKhan_ACSE9ProjectPlan.pdf (7 pages, 177438 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

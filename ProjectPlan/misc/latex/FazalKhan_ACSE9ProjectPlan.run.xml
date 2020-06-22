@@ -62,6 +62,11 @@
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
       <file>english-bath.lbx</file>
+      <file>american.lbx</file>
+      <file>USenglish.lbx</file>
+      <file>british.lbx</file>
+      <file>british-bath.lbx</file>
+      <file>UKenglish.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">

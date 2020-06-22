@@ -1,14 +1,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mUnitTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.Int[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.String[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.Double[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Bar[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram2dContour[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.createTrace.Invalid[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Scatter3D[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.line3D[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Surface[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Heatmap[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.HeatmapWithXY[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.InvalidTrace[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- XY.Empty *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...":{"title":"Chart","[showlegend":true,"height":500,"width":1000,"xaxis":{"title":"x","showgrid":true,"zeroline":true,"showline":false},"yaxis":{"title":"y","showgrid":true,"zeroline":true,"showline":fals]e}},"config":{"respo..." did not equal "...":{"title":"Chart","[legend":{"showlegend":true,"x":0,"y":1},"height":500,"width":800,"xaxis":{"title":"x","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":true},"yaxis":{"title":"y","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":tru]e}},"config":{"respo..." (UnitTests.scala:61)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Analysis:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...":{"title":"Chart","[showlegend":true,"height":500,"width":1000,"xaxis":{"title":"x","showgrid":true,"zeroline":true,"showline":false},"yaxis":{"title":"y","showgrid":true,"zeroline":true,"showline":fals]e}},"config":{"respo..." -> "...":{"title":"Chart","[legend":{"showlegend":true,"x":0,"y":1},"height":500,"width":800,"xaxis":{"title":"x","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":true},"yaxis":{"title":"y","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":tru]e}},"config":{"respo..."[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Axis.Composition[0m[0m

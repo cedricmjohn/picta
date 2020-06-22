@@ -1,30 +1,18 @@
 package conusviz.options
 
+import conusviz.common.Component
 import ujson.{Obj, Value}
 import upickle.default.{macroRW, ReadWriter => RW, _}
 
-sealed trait AxisOptions
+sealed trait AxisOptions extends Component
 
 object AxisOptions {
-  case class Axis
-  (name: String, title: String, showgrid: Boolean = true, zeroline: Boolean = true, showline: Boolean = true) extends AxisOptions {
+  case class Axis(key: String, title: String = "title", side: String ="", overlaying: String = "",
+                  showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = true) extends AxisOptions {
 
-    if ( !(Axis.acceptableSetofNames contains name) )
-      throw new IllegalArgumentException("name must be one of: 'xaxis', 'yaxis', 'xaxis2', 'yaxis2")
-
-    def createAxis(): Value = {
-      val raw = Obj(name -> Obj("title" -> title, "showgrid" -> showgrid, "zeroline" -> zeroline, "showline" -> showline))
+    def serialize(): Value = {
+      val raw = Obj(key -> Obj("title" -> title, "side" -> side, "overlaying" -> overlaying, "showgrid" -> showgrid, "zeroline" -> zeroline, "showline" -> showline))
       transform(raw).to(Value)
     }
-
-  }
-
-  object Axis {
-    val acceptableSetofNames = Set(
-      "xaxis",
-      "yaxis",
-      "xaxis2",
-      "yaxis2"
-    )
   }
 }

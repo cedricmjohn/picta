@@ -1,6 +1,6 @@
 package conusviz
 
-import conusviz.Chart.plotChart
+import conusviz.Html.plotChart
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.{Arr, Obj, Value}
@@ -15,13 +15,13 @@ case class Col[T: Serializer](data: List[T])(implicit s0: Serializer[T]) extends
 }
 
 case class Header[T: Serializer](data: List[T])(implicit s0: Serializer[T]) extends TableComponent {
-  val values = data.map(d => s0.serialize(List(d))) //data.grouped(1).toList.map(d => s0.serialize(d))
+  val values = data.map(d => s0.serialize(List(d)))
 }
 
-case class Table(header: TableComponent, columns: List[TableComponent], l: Layout = Layout("Chart", true), c: Config = Config(true, true)) {
+case class Table(header: TableComponent, columns: List[TableComponent], l: Layout = Layout("Chart"), c: Config = Config(true, true)) {
 
-  val layout: Value = transform(l.createLayout).to(Value)
-  val config: Value = transform(c.createConfig).to(Value)
+  val layout: Value = transform(l.serialize).to(Value)
+  val config: Value = transform(c.serialize).to(Value)
 
   def getData(): Value = {
 

@@ -1,11 +1,10 @@
 package conusviz.options
 
+import conusviz.common.Component
 import ujson.{Obj, Value}
 import upickle.default.{ReadWriter => RW, _}
 
-sealed trait ConfigOptions {
-  def createConfig: Value
-}
+sealed trait ConfigOptions extends Component
 
 object ConfigOptions {
   /*
@@ -14,7 +13,7 @@ object ConfigOptions {
 * @param scrollZoom: specifiy whether mousewheel or two-finger scroll zooms the plot
 * */
   final case class Config(responsive: Boolean = true, scrollZoom: Boolean = true) extends ConfigOptions {
-    def createConfig(): Value = {
+    def serialize(): Value = {
       val config = Obj("responsive" -> responsive, "scrollZoom" -> scrollZoom, "displaylogo" -> false)
       transform(config).to(Value)
     }

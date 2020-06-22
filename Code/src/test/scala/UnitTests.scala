@@ -4,6 +4,7 @@ import conusviz.charts.{XYChart, XYZChart}
 import conusviz.options.AxisOptions.Axis
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
+import conusviz.Utils._
 import org.scalatest.funsuite.AnyFunSuite
 import conusviz.traces._
 import org.scalatest.FunSuite
@@ -48,10 +49,134 @@ class UnitTests extends FunSuite {
   // create a common configuration to be used in all the tests
   val config: Config = Config(responsive=false, scrollZoom=true)
 
+  /*
+  * Empty Chart Test -> Simply displays an empty set of axis, with a generic title
+  * */
+  test("XY.Empty") {
+    val empty = new XYChart(Nil)
+
+    if (plotFlag) empty.plot()
+
+    val test = """{"traces":[],"layout":{"title":"Chart","showlegend":true,"height":500,"width":1000,"xaxis":{"title":"x","showgrid":true,"zeroline":true,"showline":false},"yaxis":{"title":"y","showgrid":true,"zeroline":true,"showline":false}},"config":{"responsive":true,"scrollZoom":true,"displaylogo":false}}"""
+//    assert(test == write(empty.serialize))
+  }
+
+
+  /*
+  * Test multiple series plotting and axis composition
+  * */
+  test("XY.Axis.Composition") {
+    // 1. define the axis to plot on the chart
+    val ax0: Axis = Axis("xaxis1")
+    val ax1: Axis = Axis("yaxis1")
+    val ax2: Axis = Axis("yaxis2", title = "y axis 2", side = "right", overlaying = "y")
+
+    // 2. add the axis to the layout to display them on the xy chart
+    val layout: Layout = Layout("XY.Axis.Composition", List(ax0, ax1, ax2))
+
+    // 3. define the data to display on the chart
+    val trace0: XYTrace[Int, Double] = XYTrace(x_int, y_double, "trace0", "scatter", "markers+lines", yaxis="y2")
+    val trace1: XYTrace[Double, Int] = XYTrace(x_double, y_int, "trace1", "scatter", "markers+lines")
+
+    // 4. combine elements into a single chart
+    val chart: XYChart = new XYChart(List(trace0, trace1), layout, config)
+
+    if (plotFlag) chart.plot()
+
+    val test = s"""{"traces":[{"name":"trace0","type":"scatter","mode":"markers+lines","xaxis":"x1","yaxis":"y2","x":[1,2,3],"y":[15,2.5,35.9]},{"name":"trace1","type":"scatter","mode":"markers+lines","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5],"y":[1,2,3]}],"layout":{"title":"XY.Axis.Composition","legend":{"showlegend":true,"x":0,"y":1},"height":500,"width":800,"xaxis1":{"title":"title","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":true},"yaxis1":{"title":"title","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":true},"yaxis2":{"title":"y axis 2","side":"right","overlaying":"y","showgrid":true,"zeroline":false,"showline":true}},"config":{"responsive":false,"scrollZoom":true,"displaylogo":false}}"""
+//    assert(test == write(chart.serialize))
+  }
 
 
 
-  
+
+
+
+//    /*
+//    * XY Chart tests
+//    * */
+//    test("XY.Scatter.Int") {
+//      val trace = XYTrace(x_int, y_int, "test", "scatter", "markers+lines")
+//      if (true) {
+//        val layout = Layout("XY.Scatter.Int", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"scatter","mode":"markers+lines","xaxis":"x1","yaxis":"y1","x":[1,2,3],"y":[1,2,3]}"""
+//      assert(test == write(trace.value))
+//    }
+
+//    test("XY.Scatter.String") {
+//      val trace = XYTrace(x_str, y_str, "test", "scatter", "markers")
+//      if (plotFlag) {
+//        val layout = Layout("XY.Scatter.String", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"scatter","mode":"markers","xaxis":"x1","yaxis":"y1","x":["1","2","3"],"y":["a","b","c"]}"""
+//      assert(test == write(trace.value))
+//    }
+//
+//    test("XY.Scatter.Double") {
+//      val trace = XYTrace(x_double, y_double, "test", "scatter", "lines")
+//      if (plotFlag) {
+//        val layout = Layout("XY.Scatter.Double", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"scatter","mode":"lines","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5],"y":[15,2.5,35.9]}"""
+//      assert(test == write(trace.value))
+//    }
+//
+//    test("XY.Histogram") {
+//      val trace = XYTrace(x_double, "test", "histogram", "vertical")
+//      if (plotFlag) {
+//        val layout = Layout("XY.Histogram", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"histogram","mode":"vertical","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5]}"""
+//      assert(test == write(trace.value))
+//    }
+//
+//    test("XY.Bar") {
+//      val trace = XYTrace(y_str, y_double, "test", "bar")
+//      if (plotFlag) {
+//        val layout = Layout("XY.Bar", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"bar","mode":"","xaxis":"x1","yaxis":"y1","x":["a","b","c"],"y":[15,2.5,35.9]}"""
+//      assert(test == write(trace.value))
+//
+//      assertThrows[IllegalArgumentException] {
+//        XYTrace(x_int, y_int, "test", "not_bar")
+//      }
+//    }
+//
+//    test("XY.Histogram2dContour") {
+//      val trace = XYTrace(x_double, y_double, "test", "histogram2dcontour")
+//      if (plotFlag) {
+//        val layout = Layout("XY.Histogram2dContour", true)
+//        val chart = new XYChart(List(trace), layout, config)
+//        chart.plot()
+//      }
+//      val test = """{"name":"test","type":"histogram2dcontour","mode":"","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5],"y":[15,2.5,35.9]}"""
+//      assert(test == write(trace.value))
+//    }
+//
+//    test("XY.createTrace.Invalid") {
+//      val chart_types = Seq("contour", "heatmap", "scatter3d")
+//      chart_types.map(t => {
+//        assertThrows[IllegalArgumentException] {
+//          XYTrace(x_int, y_int, "test", t, "lines")
+//        }
+//      })
+//    }
+
+
+
+
 
 
 
@@ -60,87 +185,7 @@ class UnitTests extends FunSuite {
 
 
 
-//  /*
-//  * XY Chart tests
-//  * */
-//  test("XY.Scatter.Int") {
-//    val trace = XYTrace(x_int, y_int, "test", "scatter", "markers+lines")
-//    if (true) {
-//      val layout = Layout("XY.Scatter.Int", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"scatter","mode":"markers+lines","xaxis":"x1","yaxis":"y1","x":[1,2,3],"y":[1,2,3]}"""
-//    assert(test == write(trace.value))
-//  }
-//
-//  test("XY.Scatter.String") {
-//    val trace = XYTrace(x_str, y_str, "test", "scatter", "markers")
-//    if (plotFlag) {
-//      val layout = Layout("XY.Scatter.String", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"scatter","mode":"markers","xaxis":"x1","yaxis":"y1","x":["1","2","3"],"y":["a","b","c"]}"""
-//    assert(test == write(trace.value))
-//  }
-//
-//  test("XY.Scatter.Double") {
-//    val trace = XYTrace(x_double, y_double, "test", "scatter", "lines")
-//    if (plotFlag) {
-//      val layout = Layout("XY.Scatter.Double", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"scatter","mode":"lines","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5],"y":[15,2.5,35.9]}"""
-//    assert(test == write(trace.value))
-//  }
-//
-//  test("XY.Histogram") {
-//    val trace = XYTrace(x_double, "test", "histogram", "vertical")
-//    if (plotFlag) {
-//      val layout = Layout("XY.Histogram", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"histogram","mode":"vertical","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5]}"""
-//    assert(test == write(trace.value))
-//  }
-//
-//  test("XY.Bar") {
-//    val trace = XYTrace(y_str, y_double, "test", "bar")
-//    if (plotFlag) {
-//      val layout = Layout("XY.Bar", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"bar","mode":"","xaxis":"x1","yaxis":"y1","x":["a","b","c"],"y":[15,2.5,35.9]}"""
-//    assert(test == write(trace.value))
-//
-//    assertThrows[IllegalArgumentException] {
-//      XYTrace(x_int, y_int, "test", "not_bar")
-//    }
-//  }
-//
-//  test("XY.Histogram2dContour") {
-//    val trace = XYTrace(x_double, y_double, "test", "histogram2dcontour")
-//    if (plotFlag) {
-//      val layout = Layout("XY.Histogram2dContour", true)
-//      val chart = new XYChart(List(trace), layout, config)
-//      chart.plot()
-//    }
-//    val test = """{"name":"test","type":"histogram2dcontour","mode":"","xaxis":"x1","yaxis":"y1","x":[1.5,2.5,3.5],"y":[15,2.5,35.9]}"""
-//    assert(test == write(trace.value))
-//  }
-//
-//  test("XY.createTrace.Invalid") {
-//    val chart_types = Seq("contour", "heatmap", "scatter3d")
-//    chart_types.map(t => {
-//      assertThrows[IllegalArgumentException] {
-//        XYTrace(x_int, y_int, "test", t, "lines")
-//      }
-//    })
-//  }
+
 //
 //  /*
 //  * XYZ Chart tests

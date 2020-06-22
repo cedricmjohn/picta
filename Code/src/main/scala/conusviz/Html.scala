@@ -7,7 +7,7 @@ import almond.api.JupyterApi
 import ujson.Value
 import almond.interpreter.api.OutputHandler
 
-object Chart {
+object Html {
   /*
   * this is the plotly.min.js script that is used to render the plots
   * */
@@ -53,7 +53,7 @@ object Chart {
       script ++= s"""<script> ${minJs} </script>"""
 
     val base_html = s"""
-                       |<div id='graph_${graph_id}'></div>
+                       |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
                        |<script>
                        | var traces = ${traces};
                        | var layout = ${layout};

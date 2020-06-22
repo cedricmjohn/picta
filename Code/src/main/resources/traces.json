@@ -1,0 +1,21 @@
+{
+  "type": "",
+  "name": "",
+  "visible": true,
+  "showlegend": true,
+  "legendgroup": "",
+  "opacity": 1,
+  "mode": "",
+  "id": [],
+  "x": [],
+  "x0": 0,
+  "dx": 1,
+  "y": [],
+  "y0": 0,
+  "dy": 1,
+  "text": [],
+  "textposition": "middle center",
+  "texttemplate": [],
+  "hovertext": [],
+  "hoverinfo": "all"
+}

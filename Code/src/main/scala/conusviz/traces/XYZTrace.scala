@@ -13,7 +13,7 @@ final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
   if (!(XYZChart.compatibleChartSet contains trace_type))
     throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")
 
-  private def getSeries(): Value = n match {
+  def serialize(): Value = n match {
     case 1 => Serializer.createSeriesXYZ(x, y, z)
     case _ => (x, y) match {
       case (Nil, Nil)  => Serializer.createSeriesXYZ(z, n)
@@ -22,7 +22,7 @@ final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
   }
 
   // TODO - make sure this works
-  val value: Value = Serializer.createTrace(getSeries(), trace_name, trace_type, trace_mode, "", "")
+  val value: Value = Serializer.createTrace(serialize(), trace_name, trace_type, trace_mode, "", "")
 }
 
 object XYZTrace {

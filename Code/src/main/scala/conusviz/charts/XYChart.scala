@@ -1,12 +1,14 @@
 package conusviz.charts
 
-import conusviz.Chart.{minJs, plotChart, plotChart_inline}
+import conusviz.Html.{minJs, plotChart, plotChart_inline}
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
-import ujson.Value
+import ujson.{Obj, Value}
 import upickle.default._
 import almond.interpreter.api.OutputHandler
-import conusviz.traces.XYTrace
+import conusviz.Serializer
+import conusviz.traces.{Trace, XYTrace}
+import conusviz.charts.Geometry
 
 sealed trait XY {
   val traces: List[Value]
@@ -20,13 +22,14 @@ sealed trait XY {
 * @param l: This is a layout class instance specifying the options to do with layout
 * @param c: This is a config class instance specifying the options to do with general configuration
 * */
-final case class XYChart[T0, T1]
-(val data: List[XYTrace[T0, T1]], l: Layout = Layout("Chart", true), c: Config = Config(true, true)) extends XY {
+final case class XYChart
+(val data: List[Trace], l: Layout = Layout("Chart"), c: Config = Config(true, true)) extends XY {
 
   val traces: List[Value] = data.map(t => t.value)
-  val layout: Value = transform(l.createLayout).to(Value)
-  val config: Value = transform(c.createConfig).to(Value)
+  val layout: Value = transform(l.serialize).to(Value)
+  val config: Value = transform(c.serialize).to(Value)
 
+  def serialize: Value = Obj("traces" -> traces, "layout" -> layout, "config" -> config)
   def plot(): Unit = plotChart(traces, layout, config)
   def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
 }

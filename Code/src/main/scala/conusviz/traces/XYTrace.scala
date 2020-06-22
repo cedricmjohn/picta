@@ -8,7 +8,7 @@ import ujson.Value
 * XY Trace: Line, Scatter, Bar Chart, Histogram
 * */
 final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0], y: List[T1], trace_name: String,
-                                                          trace_type: String, trace_mode: String = "",
+                                                          trace_type: String = "scatter", trace_mode: String = "markers",
                                                           xaxis: String = "x1", yaxis: String = "y1") extends Trace {
 
   if (!(XYChart.compatibleChartSet contains trace_type))
@@ -17,7 +17,7 @@ final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0], y: List[T
   /*
   * A function that creates a series of type Value to be passed into the val variable for this class instance
   * */
-  private def getSeries(): Value = trace_type match  {
+  def serialize(): Value = trace_type match  {
     case "histogram" => trace_mode match {
         case "vertical" => Serializer.createSeriesHistogram(x, "x")
         case "horizontal" => Serializer.createSeriesHistogram(x, "y")
@@ -26,7 +26,7 @@ final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0], y: List[T
     case _ => Serializer.createSeriesXY(x, y)
   }
 
-  val value: Value = Serializer.createTrace(getSeries(), trace_name, trace_type, trace_mode, xaxis, yaxis)
+  val value: Value = Serializer.createTrace(this.serialize(), trace_name, trace_type, trace_mode, xaxis, yaxis)
 }
 
 object XYTrace {
@@ -38,4 +38,8 @@ object XYTrace {
     if (trace_type != "histogram") throw new IllegalArgumentException("trace_type must be 'histogram'")
     XYTrace(x, Nil, trace_name, trace_type, trace_mode)
   }
+
+
+
+
 }

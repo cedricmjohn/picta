@@ -53,7 +53,9 @@ object Html {
       script ++= s"""<script> ${minJs} </script>"""
 
     val base_html = s"""
+                       |<div align="center">
                        |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+                       |</div>
                        |<script>
                        | var traces = ${traces};
                        | var layout = ${layout};

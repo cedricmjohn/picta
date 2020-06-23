@@ -1,0 +1,285 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{10.2110/pec.99.62.0069}{incollection}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=81caf8e095ae4051a2f94dbd62e018db}{%
+           family={Cross},
+           familyi={C\bibinitperiod},
+           given={Timothy\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=788cfcea9bcbdf2f37711851550c214e}{%
+           family={Lessenger},
+           familyi={L\bibinitperiod},
+           given={Margaret\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {SEPM Society for Sedimentary Geology}%
+      }
+      \strng{namehash}{494cd37f6917f43f5abf6baf7c297d23}
+      \strng{fullhash}{494cd37f6917f43f5abf6baf7c297d23}
+      \strng{bibnamehash}{494cd37f6917f43f5abf6baf7c297d23}
+      \strng{authorbibnamehash}{494cd37f6917f43f5abf6baf7c297d23}
+      \strng{authornamehash}{494cd37f6917f43f5abf6baf7c297d23}
+      \strng{authorfullhash}{494cd37f6917f43f5abf6baf7c297d23}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Stratigraphic inversion is a quantitative technique that extracts values of process parameters, such as tectonic movement, lithosphere strength, sea level change, sediment supply, and basin topography, from stratigraphic data. A stratigraphic inverse model contains (1) a forward model that simulates stratigraphy through the operation of a set of input process parameters and algorithms that describe the behavior of the stratigraphic process-response system; (2) a set of observed data that are comparable in type and form to forward model predictions; and (3) a set of equations and algorithms that compare the values of forward model predictions with observations, and simultaneously adjust values of all forward model parameters to create a better match between predictions and observations. The inverse model iteratively reduces differences between forward model predictions and observations until a best match is achieved. The model calculates the degree of accuracy and uncertainty of values of stratigraphic predictions.Constructing an inverse model requires the following steps: (1) selecting a stratigraphic forward model; (2) designing simple mathematical functions that most accurately describe the real stratigraphic processes that operated in a basin and that make inversion computationally possible; (3) measuring data that correspond in type to the output of that forward model and transcribing those data into the form of a numerical vector; (4) selecting an appropriate parameter optimization algorithm; and (5) building a stratigraphic inverse model that connects components of steps 1–4.One purpose of stratigraphic inverse modeling is predicting stratigraphic attributes (e.g., facies, geometry, distribution, volume) with calculated estimates of accuracy and uncertainty. Once the range of parameter values is calculated by the inverse model, a population of forward models may be run that should contain the true stratigraphy. The population of forward models is used to predict the geographic and stratigraphic positions and extent of potential reservoir and source and seal rocks. We show an example of accurate stratigraphic predictions using inverse modeling of the Mesa Verde Group, San Juan basin, Colorado and New Mexico, United States.}}
+      \field{booktitle}{{Numerical Experiments in Stratigraphy: Recent Advances in Stratigraphic and Sedimentologic Computer Simulations}}
+      \field{isbn}{9781565761841}
+      \field{month}{01}
+      \field{title}{{Construction and Application of a Stratigraphic Inverse Model}}
+      \field{year}{1999}
+      \verb{doi}
+      \verb 10.2110/pec.99.62.0069
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2110/pec.99.62.0069
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2110/pec.99.62.0069
+      \endverb
+    \endentry
+    \entry{10.1260/0144598011492363}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2205c16c6102b39b275e584d2d9a3731}{%
+           family={Lerche},
+           familyi={L\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2205c16c6102b39b275e584d2d9a3731}
+      \strng{fullhash}{2205c16c6102b39b275e584d2d9a3731}
+      \strng{bibnamehash}{2205c16c6102b39b275e584d2d9a3731}
+      \strng{authorbibnamehash}{2205c16c6102b39b275e584d2d9a3731}
+      \strng{authornamehash}{2205c16c6102b39b275e584d2d9a3731}
+      \strng{authorfullhash}{2205c16c6102b39b275e584d2d9a3731}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Quantitative models are often constructed in attempts to uncover the evolution of stratigraphic and basinal systems from present-day data. These models contain parameters related to the imposed boundary and initial conditions, as well as intrinsic parameters connected to the intrinsic evolution of the systems through equations of state taken to describe dynamical, chemical and flow processes. The use of inverse methods to determine these parameters is often undertaken by optimizing the model development in order to minimize the disagreement of the model with observations. We show here that several methods of optimization are possible, and we compare and contrast their intrinsic assumptions and relative numerical speeds. The problems of finite data sampling, with uncertainty of precision, accuracy, sensitivity and sampling frequency and distribution also play a major role in attempting to obtain the parameters required. In addition, different choices of control functions chosen for the minimization are shown to lead to different optimum parameter values, so that there is also a uniqueness problem in any inverse method chosen. The three methods considered here are simulated annealing, genetic algorithms, and the fast path tomographic method. Newton line search methods and Simplex solvers are also mentioned, but they are already known to be very much slower than any of the other three methods. The implications of the investigation reported here are that extreme care must be exercised in using data, models, and methods in attempts to uncover the evolution of a system. Failure to be absolutely sharp in what is being done can easily lead to overstating the results of an inverse method beyond its level of ability to resolve the problem. And the manner in which a problem fails to be resolved is also one of the crucial factors to be determined from any inverse method applied to such problems.}
+      \field{journaltitle}{Energy Exploration \& Exploitation}
+      \field{number}{4}
+      \field{title}{Inverse Methods and Uncertainties in Stratigraphy and Basin Analysis}
+      \field{volume}{19}
+      \field{year}{2001}
+      \field{pages}{397\bibrangedash 462}
+      \range{pages}{66}
+      \verb{doi}
+      \verb 10.1260/0144598011492363
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1260/0144598011492363
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1260/0144598011492363
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1260/0144598011492363
+      \endverb
+    \endentry
+    \entry{LAMMEL20081}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cb14e43c6697e915f13edfd464040c8e}{%
+           family={Lämmel},
+           familyi={L\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cb14e43c6697e915f13edfd464040c8e}
+      \strng{fullhash}{cb14e43c6697e915f13edfd464040c8e}
+      \strng{bibnamehash}{cb14e43c6697e915f13edfd464040c8e}
+      \strng{authorbibnamehash}{cb14e43c6697e915f13edfd464040c8e}
+      \strng{authornamehash}{cb14e43c6697e915f13edfd464040c8e}
+      \strng{authorfullhash}{cb14e43c6697e915f13edfd464040c8e}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Google’s MapReduce programming model serves for processing large data sets in a massively parallel manner. We deliver the first rigorous description of the model including its advancement as Google’s domain-specific language Sawzall. To this end, we reverse-engineer the seminal papers on MapReduce and Sawzall, and we capture our findings as an executable specification. We also identify and resolve some obscurities in the informal presentation given in the seminal papers. We use typed functional programming (specifically Haskell) as a tool for design recovery and executable specification. Our development comprises three components: (i) the basic program skeleton that underlies MapReduce computations; (ii) the opportunities for parallelism in executing MapReduce computations; (iii) the fundamental characteristics of Sawzall’s aggregators as an advancement of the MapReduce approach. Our development does not formalize the more implementational aspects of an actual, distributed execution of MapReduce computations.}
+      \field{issn}{0167-6423}
+      \field{journaltitle}{Science of Computer Programming}
+      \field{number}{1}
+      \field{title}{Google’s MapReduce programming model — Revisited}
+      \field{volume}{70}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 30}
+      \range{pages}{30}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.scico.2007.07.001
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0167642307001281
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0167642307001281
+      \endverb
+      \keyw{Data processing,Parallel programming,Distributed programming,Software design,Executable specification,Typed functional programming,MapReduce,Sawzall,Map,Reduce,List homomorphism,Haskell}
+    \endentry
+    \entry{4490127}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=20650eaa17b0a3fcee9feac7f5e81256}{%
+           family={{Owens}},
+           familyi={O\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5933461ab13aeae7840e1a444cada39e}{%
+           family={{Houston}},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b45fd1a30394b5c3d019b655e705fb6a}{%
+           family={{Luebke}},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b78681939a649607a994a3608ba1cef}{%
+           family={{Green}},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ff16ffa54b37c1bdd70523b7d70bd79}{%
+           family={{Stone}},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e0cda668b5f37d4a1dac9e15f82a8b4e}{%
+           family={{Phillips}},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ca4b81427702ad919c36b9a7990acd1f}
+      \strng{fullhash}{27b4d24a1796bdcc96b7139ab9a6f114}
+      \strng{bibnamehash}{27b4d24a1796bdcc96b7139ab9a6f114}
+      \strng{authorbibnamehash}{27b4d24a1796bdcc96b7139ab9a6f114}
+      \strng{authornamehash}{ca4b81427702ad919c36b9a7990acd1f}
+      \strng{authorfullhash}{27b4d24a1796bdcc96b7139ab9a6f114}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{number}{5}
+      \field{title}{GPU Computing}
+      \field{volume}{96}
+      \field{year}{2008}
+      \field{pages}{879\bibrangedash 899}
+      \range{pages}{21}
+    \endentry
+    \entry{haller_odersky_2009}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6987cf8ce0f10540abc8b54a10c06420}{%
+           family={Haller},
+           familyi={H\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=887f509975b0ec9ebba9dfae96d0c454}{%
+           family={Odersky},
+           familyi={O\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Theoretical Computer Science}%
+      }
+      \strng{namehash}{e053857f999153cebab690e1bee8af90}
+      \strng{fullhash}{e053857f999153cebab690e1bee8af90}
+      \strng{bibnamehash}{e053857f999153cebab690e1bee8af90}
+      \strng{authorbibnamehash}{e053857f999153cebab690e1bee8af90}
+      \strng{authornamehash}{e053857f999153cebab690e1bee8af90}
+      \strng{authorfullhash}{e053857f999153cebab690e1bee8af90}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0304-3975}
+      \field{journaltitle}{Theoretical Computer Science}
+      \field{number}{2-3}
+      \field{title}{Scala Actors: Unifying thread-based and event-based programming}
+      \field{volume}{410}
+      \field{year}{2009}
+      \field{pages}{202\bibrangedash 220}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1016/j.tcs.2008.09.019
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.doi.org/10.1016/j.tcs.2008.09.019
+      \endverb
+      \verb{url}
+      \verb https://dx.doi.org/10.1016/j.tcs.2008.09.019
+      \endverb
+    \endentry
+    \entry{akka}{misc}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://akka.io/}}
+      \field{title}{Akka}
+    \endentry
+    \entry{matplotlib}{misc}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://matplotlib.org}}
+      \field{title}{matplotlib}
+    \endentry
+    \entry{scala}{misc}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.scala-lang.org/}}
+      \field{title}{Scala}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

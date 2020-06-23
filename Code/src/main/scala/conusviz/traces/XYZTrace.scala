@@ -4,17 +4,19 @@ import conusviz.Serializer
 import conusviz.charts.XYZChart
 import ujson.Value
 
+// make the grid equal on each size for heatmap, make grids visible on the heamap
+
 /*
 * Contour, Heatmap, Scatter3d
 * */
 final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
-(x: List[T0], y: List[T1], z: List[T2], trace_name: String, trace_type: String, trace_mode: String = "", n: Int = 1) extends Trace {
+(x: List[T0], y: List[T1], z: List[T2], trace_name: String, trace_type: String, trace_mode: String = "", n: Int = 0) extends Trace {
 
   if (!(XYZChart.compatibleChartSet contains trace_type))
     throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")
 
   def serialize(): Value = n match {
-    case 1 => Serializer.createSeriesXYZ(x, y, z)
+    case 0 => Serializer.createSeriesXYZ(x, y, z)
     case _ => (x, y) match {
       case (Nil, Nil)  => Serializer.createSeriesXYZ(z, n)
       case (_, _) => Serializer.createSeriesXYZ(x, y, z, n)

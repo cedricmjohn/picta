@@ -11,6 +11,7 @@ import conusviz.Utils._
 import conusviz.charts.{XYChart, XYZChart}
 import conusviz.options.AxisOptions.Axis
 import conusviz.options.ConfigOptions.Config
+import conusviz.options.GridOptions.Grid
 import conusviz.options.LayoutOptions.Layout
 import conusviz.traces.{XYTrace, XYZTrace}
 import spire.random.rng.Serial
@@ -20,21 +21,8 @@ import upickle.default.{macroRW, ReadWriter => RW}
 
 
 object Example extends App {
-
-
-
-
-//  implicit val rw: RW[List[(String, Object)]] = macroRW
 //
-//
-//  case class example(a: String, b: String) {
-//    val fields = {this.getClass.getDeclaredFields.toList.map(i => {
-//        i.getName -> i.get(this)
-//      })}
-//  }
-
-
-  // some dummy data
+//  // some dummy data
 //  val col1 = Col(List("a", "b", "c", "d", "e"))
 //  val col2 = Col(List(12, 200, 80900, 201200, 124420000))
 //  val col3 = Col(List(121, 12121, 71240000, 44356, 845))
@@ -44,27 +32,16 @@ object Example extends App {
 //
 //  val table = Table(header, data)
 //  table.plot()
-  
+//
+
+  val grid = Grid(1, 2, "independent")
+
+  println(grid.serialize())
+
+
+
+
+
+
 }
 
-//  val runnedModel = myFirstModel.run
-
-//  Thread.sleep(1000)
-
-//  val r: Seq[SingleModelResults] = runnedModel.results
-
-// total number of steps
-//  println(r(0).getModelVariablesForStep(0))
-
-
-//println(createCoordinateRange(2, 2))
-
-//  val x = getSeriesFromSingleModel(r(0), depth, Seq(0, 0), 100)
-//  val y = getSeriesFromSingleModel(r(0), burialTemperature, Seq(0, 0), 100)
-//  val z: List[List[Double]] = getSeriesFromSingleModel(r(0), SampleTemp, Seq(0, 0), 100).grouped(4).toList
-//
-//  val trace = XYZTrace(z, "example", "surface")
-//  val layout = Layout("XYZ.Heatmap", true)
-//  val config: Config = Config(responsive=false, scrollZoom=true)
-//  val chart = new XYZChart(List(trace), layout, config)
-//  chart.plot()

@@ -25,7 +25,7 @@ sealed trait XY {
 final case class XYChart
 (val data: List[Trace], l: Layout = Layout("Chart"), c: Config = Config(true, true)) extends XY {
 
-  val traces: List[Value] = data.map(t => t.value)
+  val traces: List[Value] = data.map(t => t.serialize)
   val layout: Value = transform(l.serialize).to(Value)
   val config: Value = transform(c.serialize).to(Value)
 

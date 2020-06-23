@@ -8,10 +8,17 @@ sealed trait AxisOptions extends Component
 
 object AxisOptions {
   case class Axis(key: String, title: String = "variable", side: String ="", overlaying: String = "",
-                  showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = true) extends AxisOptions {
+                  showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends AxisOptions {
 
     def serialize(): Value = {
-      val raw = Obj(key -> Obj("title" -> title, "side" -> side, "overlaying" -> overlaying, "showgrid" -> showgrid, "zeroline" -> zeroline, "showline" -> showline))
+      val raw = Obj(key -> Obj(
+        "title" -> title,
+        "side" -> side,
+        "overlaying" -> overlaying,
+        "showgrid" -> showgrid,
+        "zeroline" -> zeroline,
+        "showline" -> showline)
+      )
       transform(raw).to(Value)
     }
   }

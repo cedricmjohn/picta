@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.7)  22 JUN 2020 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.7)  23 JUN 2020 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,52 +1238,52 @@ ABD: EveryShipout initializing macros [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-5.
+9.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-5.
+9.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-75.
+79.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-75.
+79.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 75.
+(Font)              <12> on input line 79.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 75.
+(Font)              <8> on input line 79.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 75.
+(Font)              <6> on input line 79.
  [1]
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 108.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 112.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-116.
+120.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2] [3] [4]
-<./images/Gantt.png, id=30, 1163.34625pt x 311.1625pt>
+<./images/Gantt.png, id=30, 1175.39125pt x 311.1625pt>
 File: ./images/Gantt.png Graphic file (type png)
 <use ./images/Gantt.png>
-Package pdftex.def Info: ./images/Gantt.png  used on input line 225.
-(pdftex.def)             Requested size: 756.16612pt x 202.25322pt.
+Package pdftex.def Info: ./images/Gantt.png  used on input line 229.
+(pdftex.def)             Requested size: 763.99527pt x 202.25322pt.
 
-Overfull \hbox (55.65926pt too wide) in paragraph at lines 225--226
+Overfull \hbox (63.4884pt too wide) in paragraph at lines 229--230
  [] 
  []
 
@@ -1291,7 +1291,7 @@ Overfull \hbox (55.65926pt too wide) in paragraph at lines 225--226
 
  <./images/Gantt.png>]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-232.
+236.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1324,7 +1324,7 @@ ist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/font
 s/type1/public/lm/lmsso12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
 ublic/lm/lmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
 tt12.pfb>
-Output written on FazalKhan_ACSE9ProjectPlan.pdf (7 pages, 177438 bytes).
+Output written on FazalKhan_ACSE9ProjectPlan.pdf (7 pages, 177813 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream

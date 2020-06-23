@@ -1,0 +1,17 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'template.blg'
+[147] biber-darwin:322> INFO - === Tue Jun 23, 2020, 23:37:45
+[175] Biber.pm:415> INFO - Reading 'template.bcf'
+[492] Biber.pm:943> INFO - Found 8 citekeys in bib section 0
+[523] Biber.pm:4256> INFO - Processing section 0
+[523] Utils.pm:75> INFO - Globbing data source 'References.bib'
+[524] Utils.pm:91> INFO - Globbed data source 'References.bib' to References.bib
+[543] Biber.pm:4455> INFO - Looking for bibtex format file 'References.bib' for section 0
+[546] bibtex.pm:1653> INFO - LaTeX decoding ...
+[586] bibtex.pm:1471> INFO - Found BibTeX data source 'References.bib'
+[738] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[738] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[738] Biber.pm:4084> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[738] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[770] bbl.pm:652> INFO - Writing 'template.bbl' with encoding 'UTF-8'
+[782] bbl.pm:755> INFO - Output to template.bbl

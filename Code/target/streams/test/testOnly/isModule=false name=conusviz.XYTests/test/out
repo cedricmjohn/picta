@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mXYTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Axis.Composition[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.Int[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.String[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Scatter.Double[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Bar[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram2dContour[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XY.createTrace.Invalid[0m[0m

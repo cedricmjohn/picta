@@ -40,16 +40,16 @@ object Serializer {
   /*
   * This function creates the data for a trace from two-dimensional data
   * */
-  def createSeriesHistogram[T0 : Serializer](x: List[T0], name: String)(implicit s0: Serializer[T0]): Value = {
-    transform(Obj("x" -> s0.serialize(x))).to(Value)
+  def createSeriesXY[T0 : Serializer, T1: Serializer]
+  (x: List[T0], y: List[T1], xkey: String, ykey: String)(implicit s0: Serializer[T0], s1: Serializer[T1]): Value = {
+    transform(Obj(xkey -> s0.serialize(x), ykey -> s1.serialize(y))).to(Value)
   }
 
   /*
-  * This function creates the data for a trace from two-dimensional data
-  * */
-  def createSeriesXY[T0 : Serializer, T1: Serializer]
-  (x: List[T0], y: List[T1])(implicit s0: Serializer[T0], s1: Serializer[T1]): Value = {
-    transform(Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y))).to(Value)
+* This function creates the data for a trace from two-dimensional data
+* */
+  def createSeriesHistogram[T0 : Serializer](x: List[T0], xkey: String)(implicit s0: Serializer[T0]): Value = {
+    transform(Obj(xkey -> s0.serialize(x))).to(Value)
   }
 
   /*

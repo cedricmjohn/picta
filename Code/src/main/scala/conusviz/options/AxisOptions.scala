@@ -7,7 +7,7 @@ import upickle.default.{macroRW, ReadWriter => RW, _}
 sealed trait AxisOptions extends Component
 
 object AxisOptions {
-  case class Axis(key: String, title: String = "title", side: String ="", overlaying: String = "",
+  case class Axis(key: String, title: String = "variable", side: String ="", overlaying: String = "",
                   showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = true) extends AxisOptions {
 
     def serialize(): Value = {

@@ -8,11 +8,11 @@ import org.carbonateresearch.conus.grids.{AllCells, PerCell}
 import org.carbonateresearch.conus.modelzoo.GeneralGeology._
 import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
 import conusviz.Utils._
-import conusviz.charts.XYZChart
+import conusviz.charts.{XYChart, XYZChart}
 import conusviz.options.AxisOptions.Axis
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
-import conusviz.traces.XYZTrace
+import conusviz.traces.{XYTrace, XYZTrace}
 import spire.random.rng.Serial
 import ujson.{Obj, Value}
 import upickle.default._
@@ -21,11 +21,7 @@ import upickle.default.{macroRW, ReadWriter => RW}
 
 object Example extends App {
 
-  val data = List(1, 2, 3, 4, 5)
 
-  for ((x, i) <- data.view.zipWithIndex) {
-    println(x, i)
-  }
 
 
 //  implicit val rw: RW[List[(String, Object)]] = macroRW

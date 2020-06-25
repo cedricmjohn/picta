@@ -6,6 +6,7 @@ import conusviz.options.GridOptions.Grid
 import conusviz.options.LegendOptions.Legend
 import ujson.{Obj, Value}
 import upickle.default._
+import conusviz.Utils._
 
 sealed trait LayoutOptions extends Component
 
@@ -16,11 +17,17 @@ object LayoutOptions {
   * @param showLegend: specify whether to show the legend
   * */
   // TODO - Create Alternative Constructor for All Combinations
-  final case class Layout(title: String, axs: List[Axis], legend: Legend = Legend(),
+  final case class Layout(title: String, axs: List[Axis], showlegend: Boolean = true, legend: Legend = Legend(),
                           height: Int = 500, width: Int = 800, grid: Grid = Grid()) extends LayoutOptions {
 
     def serialize(): Value = {
-      val raw = Obj("title" -> title, "legend" -> legend.serialize, "height" -> height, "width" -> width, "grid" -> grid.serialize)
+
+      val raw = Obj(
+        "title" -> Obj("text" -> title),
+        "legend" -> legend.serialize,
+        "height" -> height,
+        "width" -> width,
+        "grid" -> grid.serialize)
       val meta_data: Value = transform(raw).to(Value)
       axs.foldLeft(meta_data)((acc, x) => acc.obj ++ x.serialize().obj)
     }

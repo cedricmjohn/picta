@@ -1,7 +1,13 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/conusviz_2.13-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/test.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example$Cat.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$Cat.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/plotly.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example$Cat$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$Cat$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$.class[0m
@@ -18,6 +24,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/AxisOptions$Axis$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/AxisOptions$Axis$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/MarkerOptions$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/MarkerOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/ConfigOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/ConfigOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LayoutOptions.class[0m
@@ -28,20 +36,32 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/GridOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LegendOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LegendOptions.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/MarkerOptions.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/MarkerOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LegendOptions$Legend.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LegendOptions$Legend.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/GridOptions$Grid.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/GridOptions$Grid.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LayoutOptions$Layout.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LayoutOptions$Layout.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LineOptions$Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LineOptions$Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/MarkerOptions$Marker.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/MarkerOptions$Marker.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LineOptions.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LineOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/AxisOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/AxisOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/ConfigOptions$Config.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/ConfigOptions$Config.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LineOptions$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LineOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LegendOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LegendOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/AxisOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/AxisOptions.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/MarkerOptions$Marker$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/MarkerOptions$Marker$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/ConfigOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/ConfigOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LegendOptions$Legend$.class[0m
@@ -56,6 +76,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/ConfigOptions$Config$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/GridOptions$Grid$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/GridOptions$Grid$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	conusviz/options/LineOptions$Line.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/options/LineOptions$Line.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Serializer$IntSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/conusviz/Serializer$IntSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	conusviz/Col.class[0m

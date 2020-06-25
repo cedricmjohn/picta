@@ -10,8 +10,8 @@ import ujson.{Obj, Value}
 * */
 final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0], y: List[T1], xkey: String = "x", ykey: String = "y",
                                                           trace_name: String, trace_type: String = "scatter",
-                                                          trace_mode: String = "markers", xaxis: String = "x1",
-                                                          yaxis: String = "y1", marker: Marker = Marker()) extends Trace {
+                                                          trace_mode: String = "markers", xaxis: String = "x",
+                                                          yaxis: String = "y", marker: Marker = Marker()) extends Trace {
 
   if (!(XYChart.compatibleChartSet contains trace_type))
     throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")

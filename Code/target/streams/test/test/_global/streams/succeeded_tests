@@ -1,6 +1,6 @@
 #Successful Tests
-#Tue Jun 23 23:19:54 IST 2020
-conusviz.UnitTests=1592930268997
-conusviz.HistogramTests=1592950794941
-conusviz.XYZTests=1592936227888
-conusviz.XYTests=1592936227894
+#Thu Jun 25 22:57:25 IST 2020
+conusviz.MarkerTests=1593112366077
+conusviz.LineTests=1593111354927
+conusviz.HistogramTests=1593106441800
+conusviz.XYTests=1593122245885

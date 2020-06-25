@@ -11,8 +11,9 @@ object AxisOptions {
                   showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends AxisOptions {
 
     def serialize(): Value = {
-      val raw = Obj(key -> Obj(
-        "title" -> title,
+      val raw = Obj(
+        key -> Obj(
+        "title" -> Obj("text" -> title),
         "side" -> side,
         "overlaying" -> overlaying,
         "showgrid" -> showgrid,

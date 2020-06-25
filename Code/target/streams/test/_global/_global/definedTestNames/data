@@ -1,1 +1,1 @@
-["conusviz.LayoutTests","conusviz.XYZTests","conusviz.HistogramTests","conusviz.XYTests"]
+["conusviz.MarkerTests","conusviz.LineTests","conusviz.XYTests"]

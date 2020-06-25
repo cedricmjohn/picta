@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/scala" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/test/scala" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -35,6 +36,7 @@
     <orderEntry type="library" name="sbt: com.github.virtuald:curvesapi:1.06:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.wendykierp:JTransforms:3.1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:geny_2.13:0.6.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.lihaoyi:os-lib_2.13:0.7.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:ujson_2.13:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:upack_2.13:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:upickle-core_2.13:1.1.0:jar" level="project" />

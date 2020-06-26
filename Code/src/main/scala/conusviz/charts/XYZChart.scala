@@ -25,7 +25,7 @@ final case class XYZChart[T0, T1, T2](val data: List[XYZTrace[T0, T1, T2]],
                                 l: Layout = Layout("Chart"),
                                 c: Config = Config(true, true)) extends XYZ {
 
-  val traces: List[Value] = data.map(t => t.value)
+  val traces: List[Value] = data.map(t => t.serialize())
   val layout: Value = transform(l.serialize).to(Value)
   val config: Value = transform(c.serialize).to(Value)
 
@@ -35,10 +35,4 @@ final case class XYZChart[T0, T1, T2](val data: List[XYZTrace[T0, T1, T2]],
 }
 
 object XYZChart {
-  val compatibleChartSet = Set(
-    "contour",
-    "heatmap",
-    "scatter3d",
-    "surface"
-  )
 }

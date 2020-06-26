@@ -11,24 +11,22 @@ object MarkerOptions {
   case class Marker(symbol: Option[String] = None, color: Option[String] = None, line: Option[Line] = None) {
     def serialize(): Value = {
 
-      var acc = emptyObject
+      var acc = emptyObject.obj
 
       symbol match {
-        case Some(_) => acc.obj ++ Obj("symbol" -> symbol).obj
+        case Some(_) => acc ++ Obj("symbol" -> symbol).obj
         case None => ()
       }
 
       color match {
-        case Some(_) => acc.obj ++ Obj("color" -> color).obj
+        case Some(_) => acc ++ Obj("color" -> color).obj
         case None => ()
       }
 
       line match {
-        case Some(l) => acc.obj ++ Obj("line" -> l.serialize()).obj
-        case None => ()
+        case Some(l) => acc ++ Obj("line" -> l.serialize()).obj
+        case None => acc
       }
-
-      acc
     }
   }
 }

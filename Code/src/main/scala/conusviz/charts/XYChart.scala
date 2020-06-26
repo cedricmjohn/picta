@@ -1,16 +1,15 @@
 package conusviz.charts
 
-import conusviz.Html.{minJs, plotChart, plotChart_inline}
+import conusviz.Html.{plotChart, plotChart_inline}
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.{Obj, Value}
 import upickle.default._
 import almond.interpreter.api.OutputHandler
-import conusviz.Serializer
-import conusviz.traces.{Trace, XYTrace}
+import conusviz.traces.{Trace}
 import conusviz.charts.Geometry
 
-sealed trait XY {
+sealed trait XY extends Geometry {
   val traces: List[Value]
   val layout: Value
   val config: Value
@@ -35,11 +34,4 @@ final case class XYChart
 }
 
 object XYChart {
-  val compatibleChartSet = Set(
-    "scatter",
-    "scattergl",
-    "bar",
-    "histogram2dcontour",
-    "histogram"
-  )
 }

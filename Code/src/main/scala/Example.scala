@@ -1,41 +1,10 @@
-import java.io.{BufferedWriter, File, FileWriter, IOException}
-import java.net.{HttpURLConnection, InetSocketAddress, URL}
-import java.util
-import java.util.Collections
-
-import conusviz.{Col, Serializer, Table}
-import org.carbonateresearch.conus.calibration.{Calibrator, InRange, LargerThan, SmallerThan, ValueEqualTo}
-import org.carbonateresearch.conus.common.{ModelVariable, SingleModelResults, SteppedModel}
-import org.carbonateresearch.conus.grids.{AllCells, PerCell}
-import org.carbonateresearch.conus.modelzoo.GeneralGeology._
-import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
-import conusviz.Utils._
-import conusviz.charts.{XYChart, XYZChart}
-import conusviz.options.AxisOptions.Axis
-import conusviz.options.ConfigOptions.Config
-import conusviz.options.GridOptions.Grid
-import conusviz.options.LayoutOptions.Layout
-import conusviz.traces.{XYTrace, XYZTrace}
-import spire.random.rng.Serial
-import ujson.{Obj, Value}
-import upickle.default._
-import upickle.default.{macroRW, ReadWriter => RW}
-
-
 object Example extends App {
 
-  def generateResponse(order: Option[String] = None): String =
-    order.map(o => s"Your order is $o").getOrElse("You have not ordered anything yet.")
-
-  case class Cat(name: String)
-
-  val cat = Cat("babb")
-
-  cat.getClass().getDeclaredFields().foreach(println)
-
-
-
 }
+
+
+
+
 
 //  // some dummy data
 //  val col1 = Col(List("a", "b", "c", "d", "e"))

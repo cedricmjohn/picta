@@ -20,12 +20,12 @@ object AxisOptions {
       ).obj
 
       side match {
-        case Some(_) => acc.obj ++ Obj("side" -> side).obj
+        case Some(s) => acc ++= Obj("side" -> s).obj
         case None => ()
       }
 
       overlaying match {
-        case Some(_) => acc.obj ++ Obj("overlaying" -> overlaying).obj
+        case Some(o) => acc ++= Obj("overlaying" -> o).obj
         case None => ()
       }
 

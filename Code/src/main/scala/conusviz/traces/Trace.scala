@@ -6,8 +6,7 @@ import ujson.Value
 trait  Trace extends Component {
   val trace_name: String
   val trace_type: String
-  val trace_mode: String
-  val value: Value
+  val trace_mode: Option[String]
 }
 
 object Trace {

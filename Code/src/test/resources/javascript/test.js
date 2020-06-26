@@ -37,7 +37,12 @@ function validate(traces, layout) {
   dom.window.document.head.appendChild(script);
 
   dom.window.onload = () => {
-    console.log(JSON.stringify(dom.window.test));
+    if (typeof dom.window.test === "undefined") {
+      console.log(JSON.stringify([]))
+    }
+    else {
+      console.log(JSON.stringify(dom.window.test))
+    }
   };
 }
 
@@ -47,8 +52,3 @@ process.stdin.on('readable', () => {
   const chart = JSON.parse(chart_json)
   validate(chart.traces, chart.layout)
 });
-
-// const raw = {"traces":[{"name":"test","type":"scatter","mode":"markers+lines","xaxis":"x","yaxis":"y","x":[1,2,3],"y":[1,2,3],"marker":{}}],"layout":{"title":"XY.Scatter.Int","legend":{"x":0,"y":1,"orientation":"v"},"height":500,"width":800,"grid":{"rows":1,"columns":1,"pattern":"independent"},"xaxis":{"title":"x","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":false},"yaxis":{"title":"y","side":"","overlaying":"","showgrid":true,"zeroline":false,"showline":false}},"config":{"responsive":false,"scrollZoom":true,"displaylogo":false}}
-// const chart = JSON.parse(JSON.stringify(raw))
-
-// validate([], chart.layout)

@@ -17,19 +17,27 @@ object LayoutOptions {
   * @param showLegend: specify whether to show the legend
   * */
   // TODO - Create Alternative Constructor for All Combinations
-  final case class Layout(title: String, axs: List[Axis], showlegend: Boolean = true, legend: Legend = Legend(),
-                          height: Int = 500, width: Int = 800, grid: Grid = Grid()) extends LayoutOptions {
+  final case class Layout(title: String, axs: List[Axis], showlegend: Boolean = true, legend: Option[Legend] = None,
+                          height: Int = 500, width: Int = 800, grid: Option[Grid] = None) extends LayoutOptions {
 
     def serialize(): Value = {
-
-      val raw = Obj(
+      var acc = emptyObject.obj ++ Obj(
         "title" -> Obj("text" -> title),
-        "legend" -> legend.serialize,
         "height" -> height,
         "width" -> width,
-        "grid" -> grid.serialize)
-      val meta_data: Value = transform(raw).to(Value)
-      axs.foldLeft(meta_data)((acc, x) => acc.obj ++ x.serialize().obj)
+      ).obj
+
+      legend match {
+        case Some(l) => acc.obj ++ Obj("legend" -> l.serialize).obj
+        case None => ()
+      }
+
+      grid match {
+        case Some(g) => acc.obj ++ Obj("grid" ->g.serialize).obj
+        case None => ()
+      }
+
+      axs.foldLeft(acc)((acc, x) => acc.obj ++ x.serialize().obj)
     }
   }
 
@@ -41,7 +49,7 @@ object LayoutOptions {
     }
 
     def apply(title: String): Layout = Layout(title=title, axs=defaultAxis())
-    def apply(title: String, grid: Grid): Layout = Layout(title=title, axs=defaultAxis(), grid=grid)
+    def apply(title: String, grid: Grid): Layout = Layout(title=title, axs=defaultAxis(), grid=Some(grid))
 
 //    def apply(title: String, showlegend: Boolean): Layout = Layout(title=title, axs=defaultAxis())
 

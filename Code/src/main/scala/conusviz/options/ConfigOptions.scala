@@ -14,8 +14,7 @@ object ConfigOptions {
 * */
   final case class Config(responsive: Boolean = true, scrollZoom: Boolean = true) extends ConfigOptions {
     def serialize(): Value = {
-      val config = Obj("responsive" -> responsive, "scrollZoom" -> scrollZoom, "displaylogo" -> false)
-      transform(config).to(Value)
+      Obj("responsive" -> responsive, "scrollZoom" -> scrollZoom, "displaylogo" -> false)
     }
   }
 }

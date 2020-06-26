@@ -10,7 +10,7 @@ import ujson.Value
 * Contour, Heatmap, Scatter3d
 * */
 final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
-(x: List[T0], y: List[T1], z: List[T2], trace_name: String, trace_type: String, trace_mode: String = "", n: Int = 0) extends Trace {
+(x: List[T0], y: List[T1], z: List[T2], trace_name: String, trace_type: String, trace_mode: Option[String] = None, n: Int = 0) extends Trace {
 
   if (!(XYZChart.compatibleChartSet contains trace_type))
     throw new IllegalArgumentException(s"chart type '${trace_type}' is not compatible with XYChart")
@@ -24,7 +24,7 @@ final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
   }
 
   // TODO - make sure this works
-  val value: Value = Serializer.createTrace(serialize(), trace_name, trace_type, trace_mode, "", "")
+  val value: Value = Serializer.createTrace(serialize(), trace_name, trace_type, trace_mode.getOrElse(""), "", "")
 }
 
 object XYZTrace {

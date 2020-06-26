@@ -1,16 +1,10 @@
-[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.options.AxisOptions$ has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.options.ConfigOptions$ has the following regular definitions changed:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]).[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
-[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.options.AxisOptions$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.options.ConfigOptions$: Set(); now invalidating by inheritance (internally).[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.options.AxisOptions$.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.UnitTests. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.options.LayoutOptions$ has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
-[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.options.LayoutOptions$: Set(); now invalidating by inheritance (internally).[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.options.LayoutOptions$.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.options.ConfigOptions$.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LineTests. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.XYTests. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.UnitTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.UnitTestUtils. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

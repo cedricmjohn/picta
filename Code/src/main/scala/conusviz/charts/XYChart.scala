@@ -4,10 +4,8 @@ import conusviz.Html.{plotChart, plotChart_inline}
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.{Obj, Value}
-import upickle.default._
 import almond.interpreter.api.OutputHandler
 import conusviz.traces.{Trace}
-import conusviz.charts.Geometry
 
 sealed trait XY extends Geometry {
   val traces: List[Value]
@@ -25,13 +23,10 @@ final case class XYChart
 (val data: List[Trace], l: Layout = Layout("Chart"), c: Config = Config(true, true)) extends XY {
 
   val traces: List[Value] = data.map(t => t.serialize)
-  val layout: Value = transform(l.serialize).to(Value)
-  val config: Value = transform(c.serialize).to(Value)
+  val layout: Value = l.serialize
+  val config: Value = c.serialize
 
   def serialize: Value = Obj("traces" -> traces, "layout" -> layout, "config" -> config)
   def plot(): Unit = plotChart(traces, layout, config)
   def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
-}
-
-object XYChart {
 }

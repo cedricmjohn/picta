@@ -1,12 +1,9 @@
 package conusviz.traces
 
 import conusviz.Serializer
-import conusviz.charts.XYChart
 import conusviz.options.MarkerOptions._
 import ujson.{Obj, Value}
-import upickle.default._
 import conusviz.Utils._
-import conusviz.traces.Trace.XYType
 import conusviz.traces.Trace.XYType._
 
 /*
@@ -41,24 +38,24 @@ final case class XYTrace[T0 : Serializer, T1: Serializer](x: List[T0], y: List[T
   * A function that creates a series of type Value to be passed into the val variable for this class instance
   * */
   def serialize(): Value = {
-    var acc = emptyObject.obj ++ Obj(
+    val meta = Obj(
       "name" -> trace_name,
       "type" -> trace_type.toString.toLowerCase,
       "xaxis" -> xaxis,
       "yaxis" -> yaxis
-    ).obj
+    )
 
-    trace_mode match {
-      case Some(t) => acc.obj ++= Obj("mode" -> t).obj
-      case None => ()
+    val t = trace_mode match {
+      case Some(t) => Obj("mode" -> t)
+      case None => emptyObject
     }
 
-    marker match {
-      case Some(m) => acc.obj ++= Obj("mode" -> m.serialize).obj
-      case None => ()
+    val m = marker match {
+      case Some(m) => Obj("marker" -> m.serialize)
+      case None => emptyObject
     }
 
-    acc.obj ++ createSeries().obj
+    meta.obj ++ t.obj ++ m.obj ++ createSeries().obj
   }
 }
 

@@ -1,7 +1,6 @@
 package conusviz.options
 
 import ujson.{Obj, Value}
-import upickle.default._
 
 trait GridOptions
 

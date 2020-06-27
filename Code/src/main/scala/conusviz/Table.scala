@@ -3,7 +3,7 @@ package conusviz
 import conusviz.Html.plotChart
 import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
-import ujson.{Arr, Obj, Value}
+import ujson.{Obj, Value}
 import upickle.default._
 
 trait TableComponent {

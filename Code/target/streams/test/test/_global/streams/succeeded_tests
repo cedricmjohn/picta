@@ -1,9 +1,9 @@
 #Successful Tests
-#Fri Jun 26 19:21:29 IST 2020
-conusviz.LayoutTests=1593195684018
-conusviz.MarkerTests=1593195667985
-conusviz.LineTests=1593195667985
-conusviz.HistogramTests=1593195684109
-conusviz.Histogram2DContourTests=1593195673914
-conusviz.XYTests=1593195683990
-conusviz.XYZTests=1593195689864
+#Sat Jun 27 21:41:22 IST 2020
+conusviz.LayoutTests=1593290478595
+conusviz.MarkerTests=1593290463914
+conusviz.LineTests=1593290469655
+conusviz.HistogramTests=1593290478562
+conusviz.Histogram2DContourTests=1593290469610
+conusviz.XYTests=1593290480292
+conusviz.XYZTests=1593290482277

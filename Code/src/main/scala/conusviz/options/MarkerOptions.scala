@@ -10,23 +10,22 @@ sealed trait MarkerOptions extends Component
 object MarkerOptions {
   case class Marker(symbol: Option[String] = None, color: Option[String] = None, line: Option[Line] = None) {
     def serialize(): Value = {
-
-      var acc = emptyObject.obj
-
-      symbol match {
-        case Some(_) => acc ++ Obj("symbol" -> symbol).obj
-        case None => ()
+      val s = symbol match {
+        case Some(_) => Obj("symbol" -> symbol)
+        case None => emptyObject
       }
 
-      color match {
-        case Some(_) => acc ++ Obj("color" -> color).obj
-        case None => ()
+      val c = color match {
+        case Some(_) => Obj("color" -> color)
+        case None => emptyObject
       }
 
-      line match {
-        case Some(l) => acc ++ Obj("line" -> l.serialize()).obj
-        case None => acc
+      val l = line match {
+        case Some(l) => Obj("line" -> l.serialize())
+        case None => emptyObject
       }
+
+      s.obj ++ c.obj ++ l.obj
     }
   }
 }

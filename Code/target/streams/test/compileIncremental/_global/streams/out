@@ -1,17 +1,32 @@
-[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.traces.XYZTrace$ has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.traces.XYTrace has the following regular definitions changed:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]).[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
-[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.traces.XYZTrace$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.traces.XYTrace: Set(); now invalidating by inheritance (internally).[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.traces.XYZTrace$.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.traces.XYTrace.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LayoutTests. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LineTests. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.XYZTests. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.traces.XYZTrace has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.Histogram2DContourTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.HistogramTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.XYTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.options.LineOptions$ has the following regular definitions changed:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]).[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
-[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.traces.XYZTrace: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.options.LineOptions$: Set(); now invalidating by inheritance (internally).[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.traces.XYZTrace.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.options.LineOptions$.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LineTests. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.XYZTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.MarkerTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.HistogramTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe conusviz.traces.XYTrace$ has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) conusviz.traces.XYTrace$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) conusviz.traces.XYTrace$.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LayoutTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.LineTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.Histogram2DContourTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.HistogramTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of conusviz.XYTests. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

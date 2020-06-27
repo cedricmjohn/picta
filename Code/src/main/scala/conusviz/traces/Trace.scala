@@ -1,7 +1,6 @@
 package conusviz.traces
 
 import conusviz.common.Component
-import ujson.Value
 
 trait  Trace extends Component {
   val trace_name: String

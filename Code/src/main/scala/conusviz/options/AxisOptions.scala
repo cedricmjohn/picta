@@ -2,7 +2,6 @@ package conusviz.options
 
 import conusviz.common.Component
 import ujson.{Obj, Value}
-import upickle.default.{macroRW, ReadWriter => RW, _}
 import conusviz.Utils._
 
 sealed trait AxisOptions extends Component
@@ -12,22 +11,24 @@ object AxisOptions {
                   showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends AxisOptions {
 
     def serialize(): Value = {
-      var acc = emptyObject.obj ++ Obj(
+      val meta = Obj(
         "title" -> Obj("text" -> title),
         "showgrid" -> showgrid,
         "zeroline" -> zeroline,
         "showline" -> showline
-      ).obj
+      )
 
-      side match {
-        case Some(s) => acc ++= Obj("side" -> s).obj
-        case None => ()
+      val s = side match {
+        case Some(s) => Obj("side" -> s)
+        case None => emptyObject
       }
 
-      overlaying match {
-        case Some(o) => acc ++= Obj("overlaying" -> o).obj
-        case None => ()
+      val o = overlaying match {
+        case Some(o) => Obj("overlaying" -> o)
+        case None => emptyObject
       }
+
+      val acc = meta.obj ++ s.obj ++ o.obj
 
       Obj(key -> acc)
     }

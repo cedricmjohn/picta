@@ -3,8 +3,6 @@ package conusviz
 import org.carbonateresearch.conus.common.{ModelVariable, SingleModelResults}
 import ujson.Value
 
-
-
 // TODO - Need to add more utility functions
 object Utils {
 

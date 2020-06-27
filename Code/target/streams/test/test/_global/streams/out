@@ -1,11 +1,11 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.MarkerTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.LayoutTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.LineTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.HistogramTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.XYTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.XYZTests, org.scalatest.tools.Framework$$anon$1@d882e1b, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 22 seconds, 133 milliseconds.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.HistogramTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.XYZTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.LayoutTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.MarkerTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.LineTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(conusviz.XYTests, org.scalatest.tools.Framework$$anon$1@3090cbc9, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 18 seconds, 814 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 17[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 7, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 17, failed 0, canceled 0, ignored 0, pending 0[0m[0m

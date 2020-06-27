@@ -5,7 +5,6 @@ import conusviz.options.AxisOptions._
 import conusviz.options.GridOptions.Grid
 import conusviz.options.LegendOptions.Legend
 import ujson.{Obj, Value}
-import upickle.default._
 import conusviz.Utils._
 
 sealed trait LayoutOptions extends Component
@@ -21,24 +20,26 @@ object LayoutOptions {
                           height: Int = 500, width: Int = 800, grid: Option[Grid] = None) extends LayoutOptions {
 
     def serialize(): Value = {
-      var acc = emptyObject.obj ++ Obj(
+      val meta = Obj(
         "title" -> Obj("text" -> title),
         "height" -> height,
         "width" -> width,
-      ).obj
+      )
 
-      legend match {
-        case Some(l) => acc ++= Obj("legend" -> l.serialize).obj
-        case None => ()
+      val l = legend match {
+        case Some(l) => Obj("legend" -> l.serialize)
+        case None => emptyObject
       }
 
-      grid match {
-        case Some(g) => acc ++= Obj("grid" ->g.serialize).obj
-        case None => ()
+      val g = grid match {
+        case Some(g) => Obj("grid" ->g.serialize)
+        case None => emptyObject
       }
+
+      val acc = meta.obj ++ l.obj ++ g.obj
 
       axs match {
-        case Some(lst) => lst.foldLeft(acc)((acc, x) => acc.obj ++ x.serialize().obj)
+        case Some(lst) => lst.foldLeft( acc )((a, x) => a.obj ++ x.serialize().obj)
         case _ => acc
       }
     }
@@ -50,11 +51,5 @@ object LayoutOptions {
       val y = Axis(key="yaxis", title="y")
       List(x, y)
     }
-
-//    def apply(title: String, showlegend: Boolean): Layout = Layout(title=title, axs=defaultAxis())
-
-//    def apply(title: String, showlegend: Boolean, height: Int, width: Int): Layout = {
-//      Layout(title=title, axs=defaultAxis(),, height=height, width=width)
-//    }
   }
 }

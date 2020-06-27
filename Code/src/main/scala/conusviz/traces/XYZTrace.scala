@@ -1,7 +1,6 @@
 package conusviz.traces
 
 import conusviz.Serializer
-import conusviz.charts.XYZChart
 import ujson.{Obj, Value}
 import conusviz.Utils._
 import conusviz.traces.Trace.XYZType._
@@ -53,17 +52,17 @@ final case class XYZTrace[T0 : Serializer, T1: Serializer, T2: Serializer]
   }
 
   def serialize(): Value = {
-    var acc = emptyObject.obj ++= Obj(
+    val meta = Obj(
       "name" -> trace_name,
       "type" -> trace_type.toString.toLowerCase(),
-    ).obj
+    )
 
-    trace_mode match {
-      case Some(t) => acc.obj ++= Obj("mode" -> t).obj
-      case None => ()
+    val t = trace_mode match {
+      case Some(t) => Obj("mode" -> t)
+      case None => emptyObject
     }
 
-    acc.obj ++ createSeries().obj
+    meta.obj ++ t.obj ++ createSeries().obj
   }
 }
 

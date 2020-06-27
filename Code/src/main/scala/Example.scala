@@ -1,4 +1,8 @@
+import ujson.Obj
+
 object Example extends App {
+
+  val l = Some("string")
 
 }
 

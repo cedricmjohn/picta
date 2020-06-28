@@ -6,6 +6,7 @@ import conusviz.options.GridOptions.Grid
 import conusviz.options.LegendOptions.Legend
 import ujson.{Obj, Value}
 import conusviz.Utils._
+import conusviz.options.GeoOptions.Geo
 
 sealed trait LayoutOptions extends Component
 
@@ -15,28 +16,42 @@ object LayoutOptions {
   * @param title: sets the chart title
   * @param showLegend: specify whether to show the legend
   * */
-  // TODO - Create Alternative Constructor for All Combinations
-  final case class Layout(title: String, axs: Option[List[Axis]] = None, showlegend: Boolean = true, legend: Option[Legend] = None,
-                          height: Int = 500, width: Int = 800, grid: Option[Grid] = None) extends LayoutOptions {
+  final case class Layout
+  (title: Option[String] = None, axs: Option[List[Axis]] = None, showlegend: Boolean = true, legend: Option[Legend] = None,
+   height: Int = 500, width: Int = 800, grid: Option[Grid] = None, geo: Option[Geo] = None) extends LayoutOptions {
+
+    def +(new_axis: Axis): Layout = {
+      val combined_axes = axs match {
+        case Some(lst) => Some(new_axis :: lst)
+        case None => Some(List(new_axis))
+      }
+      this.copy(axs = combined_axes)
+    }
 
     def serialize(): Value = {
-      val meta = Obj(
-        "title" -> Obj("text" -> title),
-        "height" -> height,
-        "width" -> width,
-      )
+      val dim = Obj("height" -> height, "width" -> width)
+
+      val t = title match {
+        case Some(t) => Obj("title" -> Obj("text" -> t))
+        case None => emptyObject
+      }
 
       val l = legend match {
         case Some(l) => Obj("legend" -> l.serialize)
         case None => emptyObject
       }
 
-      val g = grid match {
+      val gr = grid match {
         case Some(g) => Obj("grid" ->g.serialize)
         case None => emptyObject
       }
 
-      val acc = meta.obj ++ l.obj ++ g.obj
+      val ge = geo match {
+        case Some(g) => Obj("geo" -> g.serialize)
+        case None => emptyObject
+      }
+
+      val acc = dim.obj ++ t.obj ++ l.obj ++ gr.obj ++ ge.obj
 
       axs match {
         case Some(lst) => lst.foldLeft( acc )((a, x) => a.obj ++ x.serialize().obj)

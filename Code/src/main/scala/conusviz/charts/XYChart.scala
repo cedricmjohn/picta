@@ -7,7 +7,7 @@ import ujson.{Obj, Value}
 import almond.interpreter.api.OutputHandler
 import conusviz.traces.{Trace}
 
-sealed trait XY extends Geometry {
+sealed trait XY extends Chart {
   val traces: List[Value]
   val layout: Value
   val config: Value
@@ -20,11 +20,15 @@ sealed trait XY extends Geometry {
 * @param c: This is a config class instance specifying the options to do with general configuration
 * */
 final case class XYChart
-(val data: List[Trace], l: Layout = Layout("Chart"), c: Config = Config(true, true)) extends XY {
+(data: List[Trace] = Nil, l: Layout = Layout(), c: Config = Config()) extends XY {
 
   val traces: List[Value] = data.map(t => t.serialize)
   val layout: Value = l.serialize
   val config: Value = c.serialize
+
+  def +(t: Trace) = XYChart(t::data, l, c)
+  def +(new_layout: Layout) = XYChart(data, new_layout, c)
+  def +(new_config: Config) = XYChart(data, l, new_config)
 
   def serialize: Value = Obj("traces" -> traces, "layout" -> layout, "config" -> config)
   def plot(): Unit = plotChart(traces, layout, config)

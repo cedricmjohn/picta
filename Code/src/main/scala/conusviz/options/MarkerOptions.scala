@@ -11,12 +11,12 @@ object MarkerOptions {
   case class Marker(symbol: Option[String] = None, color: Option[String] = None, line: Option[Line] = None) {
     def serialize(): Value = {
       val s = symbol match {
-        case Some(_) => Obj("symbol" -> symbol)
+        case Some(s) => Obj("symbol" -> s)
         case None => emptyObject
       }
 
       val c = color match {
-        case Some(_) => Obj("color" -> color)
+        case Some(c) => Obj("color" -> c)
         case None => emptyObject
       }
 

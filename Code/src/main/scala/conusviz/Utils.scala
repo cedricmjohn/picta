@@ -21,7 +21,6 @@ object Utils {
     } yield Seq(x, y)
   }
 
-
   def getSeriesFromSingleModel[T: Serializer]
   (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
     val r = for {

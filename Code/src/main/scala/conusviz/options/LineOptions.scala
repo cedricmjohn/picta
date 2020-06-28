@@ -2,7 +2,6 @@ package conusviz.options
 
 import conusviz.common.Component
 import ujson.{Obj, Value}
-import conusviz.Utils._
 
 sealed trait LineOptions extends Component
 

@@ -1,8 +1,7 @@
 package conusviz
 
-import org.carbonateresearch.conus.common.SingleModelResults
 import upickle.default._
-import ujson.{Obj, Value}
+import ujson.{Value}
 
 
 /*

@@ -18,13 +18,12 @@ case class Header[T: Serializer](data: List[T])(implicit s0: Serializer[T]) exte
   val values = data.map(d => s0.serialize(List(d)))
 }
 
-case class Table(header: TableComponent, columns: List[TableComponent], l: Layout = Layout("Chart"), c: Config = Config(true, true)) {
+case class Table(header: TableComponent, columns: List[TableComponent], l: Layout = Layout(), c: Config = Config(true, true)) {
 
   val layout: Value = transform(l.serialize).to(Value)
   val config: Value = transform(c.serialize).to(Value)
 
   def getData(): Value = {
-
     // construct header
     val formatted_header = Obj(
       "values" -> header.values,
@@ -32,14 +31,7 @@ case class Table(header: TableComponent, columns: List[TableComponent], l: Layou
       "font" -> Obj("color" -> "white"),
       "line" -> Obj("color" -> "black")
     )
-
-    val data = Obj(
-      "type" -> "table",
-      "header" -> formatted_header,
-      "cells" -> Obj("values" -> columns.map(c => c.values))
-    )
-
-    transform(data).to(Value)
+    Obj("type" -> "table", "header" -> formatted_header, "cells" -> Obj("values" -> columns.map(c => c.values)))
   }
 
   override def toString: String = ujson.write(getData())

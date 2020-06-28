@@ -8,7 +8,7 @@ import ujson.{Obj, Value}
 import upickle.default._
 import almond.interpreter.api.OutputHandler
 
-sealed trait XYZ extends Geometry {
+sealed trait XYZ extends Chart {
   val traces: List[Value]
   val layout: Value
   val config: Value
@@ -20,11 +20,9 @@ sealed trait XYZ extends Geometry {
 * @param l: This is a layout class instance specifying the options to do with layout
 * @param c: This is a config class instance specifying the options to do with general configuration
 * */
-final case class XYZChart[T0, T1, T2](val data: List[XYZTrace[T0, T1, T2]],
-                                l: Layout = Layout("Chart"),
-                                c: Config = Config(true, true)) extends XYZ {
+final case class XYZChart[T0, T1, T2](data: List[XYZTrace[T0, T1, T2]] = Nil, l: Layout = Layout(), c: Config = Config()) extends XYZ {
 
-  val traces: List[Value] = data.map(t => t.serialize())
+  val traces: List[Value] = data.map(t => t.serialize)
   val layout: Value = l.serialize
   val config: Value = c.serialize
 

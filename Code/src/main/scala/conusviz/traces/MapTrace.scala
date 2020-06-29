@@ -9,6 +9,8 @@ final case class MapTrace(lat: List[Double] = Nil, lon: List[Double] = Nil, trac
 
   val trace_name = "map"
 
+  def +(l: Line): MapTrace = this.copy(line = Some(l))
+
   override def serialize: Value = {
     val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 

@@ -1,1 +1,1 @@
-["conusviz.LayoutTests","conusviz.LineTests","conusviz.CompositionTests","conusviz.XYZTests","conusviz.MapTests","conusviz.Histogram2DContourTests","conusviz.MarkerTests","conusviz.HistogramTests","conusviz.XYTests"]
+["conusviz.LayoutTests","conusviz.ScatterWithColorTests","conusviz.LineTests","conusviz.CompositionTests","conusviz.XYZTests","conusviz.MapTests","conusviz.Histogram2DContourTests","conusviz.MarkerTests","conusviz.BasicChartTests","conusviz.HistogramTests"]

@@ -7,8 +7,20 @@ import conusviz.Utils._
 
 sealed trait MarkerOptions extends Component
 
+
+
 object MarkerOptions {
-  case class Marker(symbol: Option[String] = None, color: Option[String] = None, line: Option[Line] = None) {
+
+  // Abstract type class for Color
+  sealed trait Color
+  case class ColorString(value: String) extends Color
+  case class ColorList(value: List[Double]) extends Color
+
+  case class Marker(symbol: Option[String] = None, color: Option[Color] = None, line: Option[Line] = None) {
+
+    def +(new_line: Line): Marker = this.copy(line = Some(new_line))
+    def +(new_color: Color): Marker = this.copy(color = Some(new_color))
+
     def serialize(): Value = {
       val s = symbol match {
         case Some(s) => Obj("symbol" -> s)
@@ -16,7 +28,11 @@ object MarkerOptions {
       }
 
       val c = color match {
-        case Some(c) => Obj("color" -> c)
+        case Some(c) => c match {
+          case s: ColorString => Obj("color" -> s.value)
+          case l: ColorList => Obj("color" -> l.value)
+          case _ => emptyObject()
+        }
         case None => emptyObject
       }
 

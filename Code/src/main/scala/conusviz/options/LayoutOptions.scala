@@ -20,13 +20,14 @@ object LayoutOptions {
   (title: Option[String] = None, axs: Option[List[Axis]] = None, showlegend: Boolean = true, legend: Option[Legend] = None,
    height: Int = 500, width: Int = 800, grid: Option[Grid] = None, geo: Option[Geo] = None) extends LayoutOptions {
 
-    def +(new_axis: Axis): Layout = {
-      val combined_axes = axs match {
-        case Some(lst) => Some(new_axis :: lst)
-        case None => Some(List(new_axis))
-      }
-      this.copy(axs = combined_axes)
+    def +(new_axis: Axis): Layout = axs match {
+        case Some(lst) => this.copy(axs = Some(new_axis :: lst))
+        case None => this.copy(axs = Some(List(new_axis)))
     }
+
+    def +(new_geo: Geo): Layout = this.copy(geo = Some(new_geo))
+    def +(new_legend: Legend): Layout = this.copy(legend = Some(new_legend))
+
 
     def serialize(): Value = {
       val dim = Obj("height" -> height, "width" -> width)

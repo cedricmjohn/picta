@@ -8,13 +8,13 @@ trait Trace extends Component {
 }
 
 object Trace {
-  object XYType extends Enumeration {
-    type XYType = Value
-    val SCATTER, SCATTERGL, BAR, HISTOGRAM2DCONTOUR, HISTOGRAM = Value
+  object XYChartType extends Enumeration {
+    type XYChartType = Value
+    val SCATTER, SCATTERGL, BAR, HISTOGRAM2DCONTOUR, HISTOGRAM, PIE = Value
   }
 
-  object XYZType extends Enumeration {
-    type XYZType = Value
+  object XYZChartType extends Enumeration {
+    type XYZChartType = Value
     val CONTOUR, HEATMAP, SCATTER3D, SURFACE = Value
   }
 }

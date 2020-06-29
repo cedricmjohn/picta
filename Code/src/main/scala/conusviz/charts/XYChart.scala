@@ -5,13 +5,8 @@ import conusviz.options.ConfigOptions.Config
 import conusviz.options.LayoutOptions.Layout
 import ujson.{Obj, Value}
 import almond.interpreter.api.OutputHandler
-import conusviz.traces.{Trace}
-
-sealed trait XY extends Chart {
-  val traces: List[Value]
-  val layout: Value
-  val config: Value
-}
+import conusviz.traces.XYTrace._
+import conusviz.traces.{XYTrace}
 
 /*
 * Class for constructing a XY plot. This is typically two-dimensional data
@@ -19,18 +14,21 @@ sealed trait XY extends Chart {
 * @param l: This is a layout class instance specifying the options to do with layout
 * @param c: This is a config class instance specifying the options to do with general configuration
 * */
-final case class XYChart
-(data: List[Trace] = Nil, l: Layout = Layout(), c: Config = Config()) extends XY {
 
-  val traces: List[Value] = data.map(t => t.serialize)
-  val layout: Value = l.serialize
-  val config: Value = c.serialize
-
-  def +(t: Trace) = XYChart(t::data, l, c)
-  def +(new_layout: Layout) = XYChart(data, new_layout, c)
-  def +(new_config: Config) = XYChart(data, l, new_config)
-
-  def serialize: Value = Obj("traces" -> traces, "layout" -> layout, "config" -> config)
-  def plot(): Unit = plotChart(traces, layout, config)
-  def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(traces, layout, config)
-}
+//
+//final case class XYChart
+//(data: List[XYTrace] = Nil, layout: Layout = Layout(), config: Config = Config()) extends Chart {
+//
+//  val t: List[Value] = data.map(t => t.serialize)
+//  val l: Value = layout.serialize
+//  val c: Value = config.serialize
+//
+//  def +(new_trace: XYTrace): XYChart = this.copy(data = new_trace::data)
+//  def +(new_traces: List[XYTrace]): XYChart = this.copy(data = new_traces:::data)
+//  def +(new_layout: Layout): XYChart = this.copy(layout = new_layout)
+//  def +(new_config: Config): XYChart = this.copy(config = new_config)
+//
+//  def serialize: Value = Obj("traces" -> t, "layout" -> l, "config" -> c)
+//  def plot(): Unit = plotChart(t, l, c)
+//  def plot_inline()(implicit publish: OutputHandler): Unit = plotChart_inline(t, l, c)
+//}

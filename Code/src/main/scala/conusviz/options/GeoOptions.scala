@@ -10,7 +10,7 @@ trait GeoOptions extends Component
 
 object GeoOptions {
   case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boolean = true, showlakes: Boolean = true,
-                 landcolor: Option[String] = None, countrycolor: Option[String] = None, lakecolor: Option[String] = None,
+                 landcolor: Option[String] = None, lakecolor: Option[String] = None,
                  projection: Option[Projection] = None, coastlinewidth: Int = 2, lataxis: Option[LatAxis] = None,
                  longaxis: Option[LongAxis] = None) extends GeoOptions {
 
@@ -35,11 +35,6 @@ object GeoOptions {
         case None => emptyObject
       }
 
-      val countrycol = countrycolor match {
-        case Some(c) => Obj("countrycolor" -> c)
-        case None => emptyObject
-      }
-
       val lakecol = lakecolor match {
         case Some(l) => Obj("lakecolor" -> l)
         case None => emptyObject
@@ -60,7 +55,7 @@ object GeoOptions {
         case None => emptyObject
       }
 
-      acc.obj ++ s.obj ++ landcol.obj ++ countrycol.obj ++ lakecol.obj ++ proj.obj ++ latax.obj ++ lonax.obj
+      acc.obj ++ s.obj ++ landcol.obj ++ lakecol.obj ++ proj.obj ++ latax.obj ++ lonax.obj
     }
   }
 }

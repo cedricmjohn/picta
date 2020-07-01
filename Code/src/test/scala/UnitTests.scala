@@ -1,23 +1,50 @@
-package conusviz
+package picta
 
-import conusviz.charts.{Chart}
-import conusviz.options.AxisOptions.Axis
-import conusviz.options.ConfigOptions.Config
-import conusviz.options.LayoutOptions.Layout
-import conusviz.Utils._
-import conusviz.options.GeoOptions.Geo
-import conusviz.options.GridOptions.Grid
-import conusviz.options.LegendOptions.Legend
-import conusviz.options.LineOptions.Line
-import conusviz.options.MapAxisOptions.{LatAxis, LongAxis}
-import conusviz.options.MarkerOptions._
+import picta.charts.Chart
+import picta.options.AxisOptions.Axis
+import picta.options.ConfigOptions.Config
+import picta.options.LayoutOptions.Layout
+import picta.Utils._
+import picta.options.ColorOptions._
+import picta.options.GeoOptions.Geo
+import picta.options.GridOptions.Grid
+import picta.options.LegendOptions.Legend
+import picta.options.LineOptions.Line
+import picta.options.MapAxisOptions.{LatAxis, LongAxis}
+import picta.options.MarkerOptions._
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default._
-import conusviz.traces.Trace.XYChartType._
-import conusviz.traces.Trace.XYZChartType._
-import conusviz.traces.XYTrace.XY
-import conusviz.traces.MapTrace
-import conusviz.traces.XYZTrace.XYZ
+import picta.traces.Trace.XYChartType._
+import picta.traces.Trace.XYZChartType._
+import picta.traces.XYTrace.XY
+import picta.traces.MapTrace.Map
+import picta.traces.XYZTrace.XYZ
+
+class LineTests extends AnyFunSuite {
+  test("Line.Constructor.Basic") {
+    val line = Line(color = Some("rgb(255, 255, 255, 1)"))
+    val test = """{"width":0.5,"color":"rgb(255, 255, 255, 1)"}"""
+    assert(test == write(line.serialize))
+  }
+}
+
+class MarkerTests extends AnyFunSuite {
+  import UnitTestUtils._
+
+  test("Marker.Constructor.Default") {
+    val marker = Marker()
+    assert(emptyObject.toString ==  write(marker.serialize))
+  }
+
+  test("Marker.Constructor.WithParameters") {
+    val marker = Marker(symbol="circle")
+    val data = XY(x_int, y_int, trace_name = "test", trace_type = SCATTER, trace_mode=Some("markers")) + marker
+    val chart = Chart() + Layout() + config + data
+    if (plotFlag) chart.plot()
+    assert(validateJson(chart.serialize.toString))
+  }
+}
+
 
 class CompositionTests extends AnyFunSuite {
   import UnitTestUtils._
@@ -44,7 +71,6 @@ class CompositionTests extends AnyFunSuite {
   }
 
   test("XY.Layout.Add.Axis") {
-    // we need to create a new trace and specifiy that it will have its yaxis as the secondary axis, y2
     val trace_c = XY(x_int, z_int, trace_name="alt_axis", trace_type=SCATTER, trace_mode=Some("markers"), yaxis="y2")
     val layout = Layout(Some("XY.Chart.Add.Config")) + Legend() + Axis("yaxis2", overlaying=Some("y"), side=Some("right"))
     val chart = Chart() + Config(false, false) + trace_a + trace_b + trace_c + layout
@@ -53,20 +79,7 @@ class CompositionTests extends AnyFunSuite {
   }
 }
 
-class LineTests extends AnyFunSuite {
-  test("Line.Constructor.Basic") {
-    val line = Line(color = Some("rgb(255, 255, 255, 1)"))
-    val test = """{"width":0.5,"color":"rgb(255, 255, 255, 1)"}"""
-    assert(test == write(line.serialize))
-  }
-}
 
-class MarkerTests extends AnyFunSuite {
-  test("Marker.Constructor.Basic") {
-    val marker = Marker()
-    assert(emptyObject.toString ==  write(marker.serialize))
-  }
-}
 
 class BasicChartTests extends AnyFunSuite {
   import UnitTestUtils._
@@ -264,7 +277,7 @@ class MapTests extends AnyFunSuite {
   test("Map.Basic") {
     val lat = List(40.7127, 51.5072)
     val lon = List(-74.0059, 0.1275)
-    val trace = MapTrace(lat, lon)
+    val trace = Map(lat, lon)
     val chart = Chart() + trace
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString))
@@ -272,7 +285,7 @@ class MapTests extends AnyFunSuite {
 
   test("Map.Geo") {
     val line = Line(width = 2, color = Some("red"))
-    val trace = MapTrace(List(40.7127, 51.5072), List(-74.0059, 0.1275), trace_mode = Some("lines")) + line
+    val trace = Map(List(40.7127, 51.5072), List(-74.0059, 0.1275), trace_mode = Some("lines")) + line
 
     val geo = Geo(landcolor = Some("rgb(204, 204, 204)"), lakecolor=Some("rgb(255, 255, 255)")) +
       LatAxis(List(20, 60)) + LongAxis(List(-100, 20))

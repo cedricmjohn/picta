@@ -1,4 +1,4 @@
-name := "conusviz"
+name := "picta"
 
 organization := "org.carbonateresearch"
 
@@ -24,3 +24,6 @@ libraryDependencies += "sh.almond" %% "jupyter-api" % "0.10.0"
 
 // OS interface
 libraryDependencies += "com.lihaoyi" %% "os-lib" % "0.7.0"
+
+// CSV file
+libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.3.6"

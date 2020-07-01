@@ -1,39 +1,90 @@
+import java.io.File
+
+import com.github.tototoshi.csv._
+import os._
+import picta.IO.IO._
+import picta.Serializer
 import ujson.Obj
 
+import scala.collection.mutable
+
 object Example extends App {
-  // repetitive case classes A and B - Can they be abstracted to one case class?
-  case class A(a: Int, b: String) {
-    def f1(): Unit = println(a, b)
-  }
-  case class B(a: Int, b: String) {
-    def f1(): Unit = println(a, b)
+
+  case class Marker[T: Serializer](lst: List[T])
+
+  case class test[T: Serializer](value: Option[Marker[T]] = None)(implicit s0: Serializer[T]) {
+    def serialize() = value match {
+      case Some(m) => println(s0.serialize(m.lst))
+      case _ => println("...")
+    }
   }
 
-  case class C(a: A, b: B) {
-    def serialize() = Map("a" -> a, "b" -> b)
-    def +(new_a: A): C = C(new_a, b)
-    def +(new_b: B): C = C(a, new_b)
-  }
+  val x = Marker(List(1, 2, 3))
+
+  val t = test(Some(x))
+
+  println(t.serialize())
+
+
+
+
+
+
+
 }
 
-//// if I use the same type for both A and B, I cannot use + individually anymore
-//case class C_alt(a: A, b: A) {
-//  def serialize() = Map("a" -> a, "b" -> b)
-//  def +(new_a: A): C_alt = C_alt(new_a, b)
-//  def +(new_b: A): C_alt = C_alt(a, new_b)
+//  val wd = get_wd
+//  val filepath = get_wd + "/iris_csv.csv"
+//  val df = read_csv(wd, filepath)
+//  println(df.keySet)
+//  println(df("petalwidth"))
+
+//trait Base {
+//
 //}
-
-
-
-
-//  // some dummy data
-//  val col1 = Col(List("a", "b", "c", "d", "e"))
-//  val col2 = Col(List(12, 200, 80900, 201200, 124420000))
-//  val col3 = Col(List(121, 12121, 71240000, 44356, 845))
+//    def serialize(): String
+//  }
 //
-//  val header: Col[String] = Col(List("a1", "b1", "c1"))
-//  val data = List(col1, col2, col3)
+//  trait Animal extends Base
+//  trait Mammal extends Animal
+//  trait Reptile extends Animal
 //
-//  val table = Table(header, data)
-//  table.plot()
+//  case class Lizard(name: String, tail: Boolean) extends Reptile {
+//    def serialize(): String = s"""{name: $name, tail: $tail}"""
+//  }
 //
+//  case class Cat(name: String, age: Int) extends Mammal {
+//    def serialize(): String = s"""{name: $name, age: $age}"""
+//  }
+//
+//  case class Fish(species: String) extends Animal {
+//    def serialize(): String = s"""{species: $species}"""
+//  }
+//
+//  case class Pets(group_name: String, cat: Option[Cat] = None, lizard: Option[Lizard] = None, fish: Fish) extends Base {
+//    override def serialize(): String = {
+//
+//      // cat and lizard serialize in a similar fashion
+//      val cat_object = cat match {
+//        case Some(c) => s"""cats: ${c.serialize()}"""
+//        case _ => ""
+//      }
+//
+//      val lizard_object = lizard match {
+//        case Some(d) => s"""lizards: ${d.serialize()}"""
+//        case _ => ""
+//      }
+//
+//      // fish serializes in a different way
+//      val fish_object = s"""fish: ${fish.serialize()}"""
+//
+//      s"""{$lizard_object, $cat_object, $fish_object}"""
+//    }
+//  }
+//
+//  val bob = Cat("Bob", 42)
+//  val jill = Lizard("Jill", true)
+//
+//  val pets = Pets("my group", Some(bob), Some(jill), Fish("goldfish")).serialize()
+//
+//  println(pets)

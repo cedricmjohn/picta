@@ -4,6 +4,10 @@ const path = require("path");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom
 
+
+//jsdom  => compile to js
+
+
 // get current path
 const currentPath = process.cwd();
 

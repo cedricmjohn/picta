@@ -3,34 +3,32 @@ import java.io.File
 import com.github.tototoshi.csv._
 import os._
 import picta.IO.IO._
-import picta.Serializer
 import ujson.Obj
 
-import scala.collection.mutable
-
 object Example extends App {
+  sealed trait Property[T] {
+    def serialize(seq: List[T]): String
+  }
 
-  case class Marker[T: Serializer](lst: List[T])
-
-  case class test[T: Serializer](value: Option[Marker[T]] = None)(implicit s0: Serializer[T]) {
-    def serialize() = value match {
-      case Some(m) => println(s0.serialize(m.lst))
-      case _ => println("...")
+  trait LowPrioritySerializer {
+    implicit object StringSerializer extends Property[String] {
+      def serialize(seq: List[String]): String = seq.toString()
     }
   }
 
-  val x = Marker(List(1, 2, 3))
+  object Property extends LowPrioritySerializer {
+    implicit object IntSerializer extends Property[Int] {
+      def serialize(seq: List[Int]): String = seq.toString()
+    }
+  }
 
-  val t = test(Some(x))
+  case class A[T: Property](lst: Option[List[T]] = None) {
+    def +[T: Property](new_list: List[T]): A[T] = this.copy(Some(new_list))
+  }
 
-  println(t.serialize())
-
-
-
-
-
-
-
+  case class B[T1: Property, T2: Property](value: Option[A[T1]] = None, value2: List[T2]) {
+    def +[Z: Property](new_A: A[Z]): B[Z, T2] = B[Z, T2](value=Some(new_A), value2=value2)
+  }
 }
 
 //  val wd = get_wd
@@ -40,7 +38,11 @@ object Example extends App {
 //  println(df("petalwidth"))
 
 //trait Base {
-//
+//g.
+//[success] Total time: 2 s, completed 1 Jul 2020, 18:54:26
+//[info] running Example
+//[success] Total time: 1 s, completed 1 Jul 2020, 18:54:27
+//[IJ]sbt:picta>
 //}
 //    def serialize(): String
 //  }

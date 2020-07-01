@@ -22,7 +22,7 @@ import picta.traces.XYZTrace.XYZ
 
 class LineTests extends AnyFunSuite {
   test("Line.Constructor.Basic") {
-    val line = Line(color = Some("rgb(255, 255, 255, 1)"))
+    val line = Line() + List("rgb(255, 255, 255, 1)")
     val test = """{"width":0.5,"color":"rgb(255, 255, 255, 1)"}"""
     assert(test == write(line.serialize))
   }
@@ -44,7 +44,6 @@ class MarkerTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 }
-
 
 class CompositionTests extends AnyFunSuite {
   import UnitTestUtils._
@@ -78,8 +77,6 @@ class CompositionTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 }
-
-
 
 class BasicChartTests extends AnyFunSuite {
   import UnitTestUtils._
@@ -122,7 +119,7 @@ class ScatterWithColorTests extends AnyFunSuite {
   import UnitTestUtils._
 
   test("ScatterWithColor.Basic") {
-    val marker = Marker() + ColorList(z_double)
+    val marker = Marker() + z_double
     val trace = XY(x_int, y_int, trace_name = "test", trace_type = SCATTER, trace_mode = Some("markers")) + marker
     val chart = Chart() + Layout(Some("Color2D.Basic")) + config + trace
     if (plotFlag) chart.plot()
@@ -130,9 +127,6 @@ class ScatterWithColorTests extends AnyFunSuite {
   }
 }
 
-/*
-* Tests for the Histogram and Histogram 2D Contour chart
-* */
 class HistogramTests extends AnyFunSuite {
   import UnitTestUtils._
 
@@ -154,11 +148,12 @@ class HistogramTests extends AnyFunSuite {
   }
 
   test("XY.Histogram.Color") {
-    val marker = Marker(color=Some(ColorString("rgba(255, 100, 102, 0.4)")), line=Some(Line()))
+
+    val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
     // change xkey to y to get a horizontal histogram
     val trace = XY(x_random, xkey="y", trace_name="test", trace_type=HISTOGRAM, marker=marker)
     val layout = Layout(Some("XY.Histogram.Color"))
-    val chart = Chart() + trace + layout + config
+    val chart = Chart() + trace //+ layout + config
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -284,7 +279,8 @@ class MapTests extends AnyFunSuite {
   }
 
   test("Map.Geo") {
-    val line = Line(width = 2, color = Some("red"))
+    val color = List("red")
+    val line = Line(width = 2) + color
     val trace = Map(List(40.7127, 51.5072), List(-74.0059, 0.1275), trace_mode = Some("lines")) + line
 
     val geo = Geo(landcolor = Some("rgb(204, 204, 204)"), lakecolor=Some("rgb(255, 255, 255)")) +

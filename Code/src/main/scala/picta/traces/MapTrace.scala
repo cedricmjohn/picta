@@ -1,16 +1,17 @@
 package picta.traces
 
 import picta.Utils._
+import picta.options.ColorOptions.Color
 import picta.options.LineOptions.Line
 import ujson.{Obj, Value}
 
 object MapTrace {
-  final case class Map(lat: List[Double] = Nil, lon: List[Double] = Nil, trace_mode: Option[String] = None,
-                       line: Option[Line] = None) extends Trace {
+  final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, trace_mode: Option[String] = None,
+                       line: Option[Line[T]] = None) extends Trace {
 
     val trace_name = "map"
 
-    def +(l: Line): Map = this.copy(line = Some(l))
+    def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = Some(l))
 
     override def serialize: Value = {
       val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")

@@ -7,10 +7,14 @@ import ujson.{Obj, Value}
 import picta.Utils._
 
 object MarkerOptions {
-  case class Marker(symbol: Option[String] = None, color: Option[Color] = None, line: Option[Line] = None) extends Component {
+  case class Marker[T0: Color, T1: Color](symbol: Option[String] = None, color: Option[List[T0]] = None, line: Option[Line[T1]] = None)
+                              extends Component {
 
-    def +(new_line: Line): Marker = this.copy(line = Some(new_line))
-    def +(new_color: Color): Marker = this.copy(color = Some(new_color))
+    val c0 = implicitly[Color[T0]]
+    val c1 = implicitly[Color[T1]]
+
+    def +[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line=Some(new_line))
+    def +[Z: Color](new_color: List[Z]): Marker[Z, T1] = Marker(color = Some(new_color))
 
     def serialize(): Value = {
       val symbol_ = symbol match {
@@ -19,11 +23,7 @@ object MarkerOptions {
       }
 
       val color_ = color match {
-        case Some(c) => c match {
-          case s: ColorString => s.serialize()
-          case l: ColorList => l.serialize()
-          case _ => emptyObject
-        }
+        case Some(lst: List[T0]) => Obj("color" -> c0.serialize(lst))
         case None => emptyObject
       }
 
@@ -37,12 +37,22 @@ object MarkerOptions {
   }
 
   object Marker {
-    def apply(symbol: String, color: Color, line: Line): Marker = Marker(Some(symbol), Some(color), Some(line))
-    def apply(symbol: String, color: Color ): Marker = Marker(symbol=Some(symbol), color=Some(color))
-    def apply(symbol: String, line: Line): Marker = Marker(symbol=Some(symbol), line=Some(line))
-    def apply(color: Color, line: Line): Marker = Marker(color=Some(color), line=Some(line))
-    def apply(symbol: String): Marker = Marker(symbol=Some(symbol))
-    def apply(color: Color): Marker = Marker(color=Some(color))
-    def apply(line: Line): Marker = Marker(line=Some(line))
+    def apply[T0: Color, T1: Color](symbol: String, color: List[T0], line: Line[T1]): Marker[T0, T1] =
+      Marker(Some(symbol), Some(color), Some(line))
+
+    def apply[T0: Color](symbol: String, color: List[T0]): Marker[T0, T0] =
+      Marker(symbol=Some(symbol), color=Some(color))
+
+    def apply[T0: Color](symbol: String, line: Line[T0]): Marker[T0, T0] =
+      Marker(symbol=Some(symbol), line=Some(line))
+
+    def apply[T0: Color, T1: Color](color: List[T0], line: Line[T1]): Marker[T0, T1] =
+      Marker(color=Some(color), line=Some(line))
+
+    def apply[T0: Color](symbol: String): Marker[T0, T0] = Marker(symbol=Some(symbol))
+
+    def apply[T0: Color](color: List[T0]): Marker[T0, T0] = Marker(color=Some(color))
+
+    def apply[T0: Color](line: Line[T0]): Marker[T0, T0] = Marker(line=Some(line))
   }
 }

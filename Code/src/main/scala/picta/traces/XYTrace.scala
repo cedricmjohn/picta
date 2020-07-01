@@ -4,6 +4,7 @@ import picta.Serializer
 import picta.options.MarkerOptions._
 import ujson.{Obj, Value}
 import picta.Utils._
+import picta.options.ColorOptions.Color
 import picta.traces.Trace.XYChartType._
 
 trait XYTrace extends Trace
@@ -13,13 +14,13 @@ object XYTrace {
   /*
   * XY Trace: Line, Scatter, Bar Chart, Histogram
   * */
-  final case class XY[T0: Serializer, T1: Serializer]
+  final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   (x: List[T0], y: List[T1], xkey: String = "x", ykey: String = "y", trace_name: String, trace_type: XYChartType = SCATTER,
-   trace_mode: Option[String] = None, xaxis: String = "x", yaxis: String = "y", marker: Option[Marker] = None,
+   trace_mode: Option[String] = None, xaxis: String = "x", yaxis: String = "y", marker: Option[Marker[T2, T3]] = None,
    cumulative: Option[Boolean] = None, histnorm: Option[String] = None, histfunc: Option[String] = None) extends XYTrace {
 
 
-    def +(new_marker: Marker): XY[T0, T1] = this.copy(marker = Some(new_marker))
+    def +[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = Some(new_marker))
 
     private def createSeriesXY[T0 : Serializer, T1: Serializer]
     (x: List[T0], y: List[T1], xkey: String, ykey: String)(implicit s0: Serializer[T0], s1: Serializer[T1]): Value = {
@@ -80,12 +81,12 @@ object XYTrace {
     /*
     * Alternative constructors for a histogram chart
     * */
-    def apply[T0 : Serializer](x: List[T0], xkey: String, trace_name: String, trace_type: XYChartType): XY[T0, T0] = {
+    def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, trace_name: String, trace_type: XYChartType): XY[T0, T0, T1, T2] = {
       if (trace_type != HISTOGRAM) throw new IllegalArgumentException("trace_type must be 'histogram'")
       XY(x=x, y=Nil, xkey=xkey, trace_name=trace_name, trace_type=trace_type)
     }
 
-    def apply[T0 : Serializer](x: List[T0], xkey: String, trace_name: String, trace_type: XYChartType, marker: Marker): XY[T0, T0] = {
+    def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, trace_name: String, trace_type: XYChartType, marker: Marker[T1, T2]): XY[T0, T0, T1, T2] = {
       if (trace_type != HISTOGRAM) throw new IllegalArgumentException("trace_type must be 'histogram'")
       XY(x=x, y=Nil, xkey=xkey, trace_name=trace_name, trace_type=trace_type, marker=Some(marker))
     }

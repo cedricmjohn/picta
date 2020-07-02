@@ -1,1 +1,1 @@
-["picta.HistogramTests","picta.MarkerTests","picta.BasicChartTests","picta.XYZTests","picta.CompositionTests","picta.Histogram2DContourTests","picta.ScatterWithColorTests","picta.LineTests","picta.LayoutTests","picta.MapTests"]
+["LayoutTests","MarkerTests","ScatterWithColorTests","Histogram2DContourTests","CompositionTests","LineTests","BasicChartTests","MapTests","HistogramTests","XYZTests"]

@@ -4,8 +4,8 @@ import ujson.{Value}
 import upickle.default._
 
 /** This object creates a priority implicit which allows either a List[String] or List[Double] to be added as chart
- *  components.
- */
+  *  components.
+  */
 object ColorOptions {
   sealed trait Color[T] {
     def serialize(seq: List[T]): Value

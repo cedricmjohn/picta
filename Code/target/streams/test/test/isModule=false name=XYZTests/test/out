@@ -1,0 +1,6 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mXYZTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Scatter3D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.line3D[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Surface[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Heatmap[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.HeatmapWithXY[0m[0m

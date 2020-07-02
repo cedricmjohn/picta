@@ -5,7 +5,6 @@ import picta.options.ColorOptions._
 import ujson.{Obj, Value}
 import picta.Utils._
 
-
 /**
  * @constructor: Configures a Marker component for the chart.
  * @param symbol: Specifies what symbol the marker will use on the chart.

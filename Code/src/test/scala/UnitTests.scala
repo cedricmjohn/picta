@@ -1,20 +1,16 @@
-package picta
-
 import picta.charts.Chart
 
 import picta.Utils._
 import upickle.default._
 import org.scalatest.funsuite.AnyFunSuite
 import picta.options.{Marker, Axis, Config, Layout, LatAxis, LongAxis, Geo, Grid, Legend, Line}
+import picta.series.{XY, XYZ, Map}
 import picta.series.Series.XYChartType._
 import picta.series.Series.XYZChartType._
-import picta.series.{XY, XYZ, Map}
-
 
 class LineTests extends AnyFunSuite {
   test("Line.Constructor.Basic") {
-    // Colors can be added as a list of strings or list of doubles
-    val line = Line() + List("rgb(255, 255, 255, 1)")
+    val line = Line() + "rgb(255, 255, 255, 1)"
     val test = """{"width":0.5,"color":"rgb(255, 255, 255, 1)"}"""
     assert(test == write(line.serialize))
   }
@@ -172,18 +168,14 @@ class Histogram2DContourTests extends AnyFunSuite {
 class LayoutTests extends AnyFunSuite {
   import UnitTestUtils._
 
-  /*
-  * Empty Chart Test -> Simply displays an empty set of axis, with a generic title
-  * */
+  /** Empty Chart Test -> Simply displays an empty set of axis, with a generic title */
   test("XY.Empty") {
     val chart = Chart()
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
-  /*
-  * Test multiple series plotting and axis composition
-  * */
+  /** Test multiple series plotting and axis composition */
   test("XY.Axis.Composition") {
     // 1. define the axis to plot on the chart
     val ax0 = Axis(key="xaxis")
@@ -310,8 +302,6 @@ object UnitTestUtils {
 
     // end the process
     sub.destroy()
-
-    //val errors = result.arr.filter(e => e("code").toString() != """"unused"""")
 
     result.arr.foreach(println)
 

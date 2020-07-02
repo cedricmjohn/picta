@@ -27,8 +27,42 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Marker.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Projection.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/package.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/MapTrace.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/MapSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/Series.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYZSeries.scala[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/MapSeries.scala:8:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYSeries.scala:12:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYZSeries.scala:10:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Geo.scala:7:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Grid.scala:6:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Layout.scala:7:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Legend.scala:6:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Line.scala:8:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/MapAxis.scala:6:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Marker.scala:8:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/Projection.scala:6:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/**[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0m11 warnings found[0m
 [0m[[0m[0minfo[0m] [0m[0mMain Scala API documentation successful.[0m

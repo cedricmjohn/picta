@@ -1,12 +1,8 @@
 package picta.options
 
 import picta.common.Component
-import picta.options.Axis._
-import picta.options.Grid
-import picta.options.Legend
 import ujson.{Obj, Value}
 import picta.Utils._
-import picta.options.Geo
 
 /**
   * @constructor: Specifies the layout for the chart.

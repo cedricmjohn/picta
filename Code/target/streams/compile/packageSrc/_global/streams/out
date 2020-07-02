@@ -20,14 +20,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/Utils.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/Serializer.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/Serializer.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	picta/series/MapTrace.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/MapTrace.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/series/XYSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/series/Series.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/Series.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/series/XYZSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/XYZSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	picta/series/MapSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/series/MapSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/options/MapAxis.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/scala/picta/options/MapAxis.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/options/Legend.scala[0m

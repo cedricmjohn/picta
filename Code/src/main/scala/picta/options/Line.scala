@@ -13,6 +13,7 @@ import ujson.{Obj, Value}
 case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil))(implicit c: Color[T]) extends Component {
 
   def +[T: Color](new_color: List[T]): Line[T] = this.copy(color = Some(new_color))
+  def +(new_color: String): Line[String] = this.copy(color = Some(List(new_color)))
 
   def serialize(): Value = {
     val acc = Obj("width" -> width)

@@ -11,7 +11,7 @@ libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % "test"
 
 // conus library
-libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.0.1b"
+libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.2.0"
 
 // JSON encoding / decoding
 libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"

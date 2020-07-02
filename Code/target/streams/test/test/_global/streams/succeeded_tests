@@ -1,12 +1,12 @@
 #Successful Tests
-#Wed Jul 01 20:29:48 IST 2020
-picta.HistogramTests=1593631773971
-picta.XYZTests=1593631783800
-picta.MarkerTests=1593631783356
-picta.CompositionTests=1593631783496
-picta.MapTests=1593631788089
-picta.Histogram2DContourTests=1593631765195
-picta.LineTests=1593631759475
-picta.BasicChartTests=1593631778859
-picta.LayoutTests=1593631788239
-picta.ScatterWithColorTests=1593631778458
+#Thu Jul 02 13:24:45 BST 2020
+picta.HistogramTests=1593692682402
+picta.XYZTests=1593692685235
+picta.MarkerTests=1593692678400
+picta.CompositionTests=1593692683827
+picta.MapTests=1593692682438
+picta.Histogram2DContourTests=1593692678343
+picta.LineTests=1593692675719
+picta.BasicChartTests=1593692683878
+picta.LayoutTests=1593692682443
+picta.ScatterWithColorTests=1593692678409

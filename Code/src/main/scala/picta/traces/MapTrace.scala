@@ -2,7 +2,7 @@ package picta.traces
 
 import picta.Utils._
 import picta.options.ColorOptions.Color
-import picta.options.LineOptions.Line
+import picta.options.Line
 import ujson.{Obj, Value}
 
 object MapTrace {

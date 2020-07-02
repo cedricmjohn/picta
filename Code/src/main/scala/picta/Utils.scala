@@ -1,6 +1,6 @@
 package picta
 
-import org.carbonateresearch.conus.common.{ModelVariable, SingleModelResults}
+import org.carbonateresearch.conus._
 import ujson.Value
 
 // TODO - Need to add more utility functions
@@ -21,14 +21,14 @@ object Utils {
     } yield Seq(x, y)
   }
 
-  def getSeriesFromSingleModel[T: Serializer]
-  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
-    val r = for {
-      t <- 0 until n
-    } yield model.getStepResult(t, variable).getValueAtCell(coordinate)
-
-    r.asInstanceOf[Seq[T]].toList
-  }
+//  def getSeriesFromSingleModel[T: Serializer]
+//  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
+//    val r = for {
+//      t <- 0 until n
+//    } yield model.getStepResult(t, variable).getValueAtCell(coordinate)
+//
+//    r.asInstanceOf[Seq[T]].toList
+//  }
 
   // println(results.getModelVariablesForStep(i))
 

@@ -1,7 +1,7 @@
 package picta.traces
 
 import picta.Serializer
-import picta.options.MarkerOptions._
+import picta.options.Marker
 import ujson.{Obj, Value}
 import picta.Utils._
 import picta.options.ColorOptions.Color

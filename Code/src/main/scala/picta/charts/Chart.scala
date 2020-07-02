@@ -3,8 +3,8 @@ package picta.charts
 import almond.interpreter.api.OutputHandler
 import picta.Html.{plotChart, plotChart_inline}
 import picta.common.Component
-import picta.options.ConfigOptions.Config
-import picta.options.LayoutOptions.Layout
+import picta.options.Config
+import picta.options.Layout
 import picta.traces.{Trace}
 import ujson.{Obj, Value}
 

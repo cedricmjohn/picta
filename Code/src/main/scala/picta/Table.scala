@@ -1,8 +1,8 @@
 package picta
 
 import picta.Html.plotChart
-import picta.options.ConfigOptions.Config
-import picta.options.LayoutOptions.Layout
+import picta.options.Config
+import picta.options.Layout
 import ujson.{Obj, Value}
 import upickle.default._
 

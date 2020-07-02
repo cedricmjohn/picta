@@ -1,19 +1,11 @@
 package picta
 
 import picta.charts.Chart
-import picta.options.AxisOptions.Axis
-import picta.options.ConfigOptions.Config
-import picta.options.LayoutOptions.Layout
+
 import picta.Utils._
-import picta.options.ColorOptions._
-import picta.options.GeoOptions.Geo
-import picta.options.GridOptions.Grid
-import picta.options.LegendOptions.Legend
-import picta.options.LineOptions.Line
-import picta.options.MapAxisOptions.{LatAxis, LongAxis}
-import picta.options.MarkerOptions._
-import org.scalatest.funsuite.AnyFunSuite
 import upickle.default._
+import org.scalatest.funsuite.AnyFunSuite
+import picta.options.{Marker, Axis, Config, Layout, MapAxis, LatAxis, LongAxis, Geo, Grid, Legend, Line}
 import picta.traces.Trace.XYChartType._
 import picta.traces.Trace.XYZChartType._
 import picta.traces.XYTrace.XY

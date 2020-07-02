@@ -10,7 +10,9 @@ import ujson.{Obj, Value}
  * @param width: Sets the line width.
  * @param color: Sets the color for the line.
  */
-case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil))(implicit c: Color[T]) extends Component {
+case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil)) extends Component {
+
+  private val c = implicitly[Color[T]]
 
   def +[T: Color](new_color: List[T]): Line[T] = this.copy(color = Some(new_color))
   def +(new_color: String): Line[String] = this.copy(color = Some(List(new_color)))
@@ -25,4 +27,10 @@ case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil
 
     acc.obj ++ color_.obj
   }
+}
+
+object Line {
+  def apply(width: Double, color: String): Line[String] = Line(width=width, color = Some(List(color)))
+  def apply(color: String): Line[String] = Line(color = Some(List(color)))
+  def apply[T: Color](color: List[T]): Line[T] = Line(color = Some(color))
 }

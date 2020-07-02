@@ -5,9 +5,16 @@ import picta.options.Marker
 import ujson.{Obj, Value}
 import picta.Utils._
 import picta.options.ColorOptions.Color
-import picta.series.Series.XYChartType._
 
 trait XYSeries extends Series
+
+object XYChartType extends Enumeration {
+  type XYChartType = Value
+  val SCATTER, SCATTERGL, BAR, HISTOGRAM2DCONTOUR, HISTOGRAM, PIE = Value
+}
+
+import XYChartType._
+
 
 /**
  * TODO - Remove non-common components to another individual component
@@ -89,6 +96,22 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 }
 
 object XY {
+
+  def apply[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
+  (x: List[T0], y: List[T1], xkey: String, ykey: String, series_name: String, series_type: XYChartType,
+   series_mode: String, xaxis: String, yaxis: String, marker: Option[Marker[T2, T3]],
+   cumulative: Option[Boolean], histnorm: Option[String], histfunc: Option[String]): XY[T0, T1, T2, T3] = {
+
+    XY(x=x, y=y, xkey=xkey, ykey=ykey, series_name=series_name, series_type=series_type, series_mode=Some(series_mode),
+      xaxis=xaxis, yaxis=yaxis, marker=marker, cumulative=cumulative, histnorm=histnorm, histfunc=histfunc)
+  }
+
+  def apply[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
+  (x: List[T0], y: List[T1], series_name: String, series_type: XYChartType, series_mode: String):  XY[T0, T1, T2, T3] = {
+    XY(x=x, y=y, series_name=series_name, series_type=series_type, series_mode=Some(series_mode))
+  }
+
+
   def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, series_name: String, series_type: XYChartType): XY[T0, T0, T1, T2] = {
     if (series_type != HISTOGRAM) throw new IllegalArgumentException("series_type must be 'histogram'")
     XY(x=x, y=Nil, xkey=xkey, series_name=series_name, series_type=series_type)

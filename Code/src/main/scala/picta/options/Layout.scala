@@ -71,4 +71,9 @@ object Layout {
     val y = Axis(key="yaxis", title="y")
     List(x, y)
   }
+
+  def apply(title: String): Layout = Layout(title= Some(title))
+
+  def apply(title: String, height: Int, width: Int): Layout = Layout(title=Some(title), height=height, width=width)
+
 }

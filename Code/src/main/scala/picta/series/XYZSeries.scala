@@ -3,9 +3,15 @@ package picta.series
 import picta.Serializer
 import ujson.{Obj, Value}
 import picta.Utils._
-import picta.series.Series.XYZChartType._
 
 trait XYZSeries extends Series
+
+object XYZChartType extends Enumeration {
+  type XYZChartType = Value
+  val CONTOUR, HEATMAP, SCATTER3D, SURFACE = Value
+}
+
+import XYZChartType._
 
 /**
  * @constructor: A Series for a 3d chart.
@@ -71,5 +77,10 @@ object XYZ {
   def apply[T0: Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[List[T2]], series_name: String, series_type: XYZChartType): XYZ[T0, T1, T2] = {
     XYZ(x=x, y=y, z=z.flatten,series_name=series_name, series_type=series_type, n=z.length)
+  }
+
+  def apply[T0 : Serializer, T1: Serializer, T2: Serializer]
+  (x: List[T0], y: List[T1], z: List[T2], series_name: String, series_type: XYZChartType, series_mode: String): XYZ[T0, T1, T2] = {
+    XYZ(x=x, y=y, z=z, series_name=series_mode, series_type=series_type, series_mode=Some(series_mode))
   }
 }

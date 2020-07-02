@@ -1,22 +1,12 @@
 #Successful Tests
-#Thu Jul 02 21:55:46 BST 2020
-MapTests=1593723343634
-picta.MarkerTests=1593723163589
-picta.MapTests=1593723165418
-HistogramTests=1593723343593
-picta.Histogram2DContourTests=1593723163510
-MarkerTests=1593723339716
-ScatterWithColorTests=1593723339704
-picta.LineTests=1593723161234
-LineTests=1593723337333
-picta.HistogramTests=1593723167058
-picta.XYZTests=1593723169796
-picta.CompositionTests=1593723168430
-BasicChartTests=1593723345213
-Histogram2DContourTests=1593723339723
-LayoutTests=1593723343600
-picta.BasicChartTests=1593723169819
-CompositionTests=1593723345197
-XYZTests=1593723346593
-picta.LayoutTests=1593723167095
-picta.ScatterWithColorTests=1593723163590
+#Thu Jul 02 23:05:07 BST 2020
+MapTests=1593727499824
+HistogramTests=1593727502303
+MarkerTests=1593727497180
+BasicChartTests=1593727504393
+Histogram2DContourTests=1593727497226
+ScatterWithColorTests=1593727497213
+LayoutTests=1593727502345
+CompositionTests=1593727504707
+XYZTests=1593727507327
+LineTests=1593727494090

@@ -34,3 +34,8 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
     List(acc, series_mode_, line_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }
+
+object Map {
+  def apply[T: Color](lat: List[Double], lon: List[Double], series_mode: String): Map[T] =
+    Map(lat=lat, lon=lon, series_mode=series_mode)
+}

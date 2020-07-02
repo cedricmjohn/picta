@@ -5,8 +5,9 @@ import upickle.default._
 import org.scalatest.funsuite.AnyFunSuite
 import picta.options.{Marker, Axis, Config, Layout, LatAxis, LongAxis, Geo, Grid, Legend, Line}
 import picta.series.{XY, XYZ, Map}
-import picta.series.Series.XYChartType._
-import picta.series.Series.XYZChartType._
+
+import picta.series.XYChartType._
+import picta.series.XYZChartType._
 
 class LineTests extends AnyFunSuite {
   test("Line.Constructor.Basic") {

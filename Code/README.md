@@ -9,13 +9,18 @@ Support for further Scala Notebook kernels, such as Zeppelin will be added in th
 
 ### Installation
 
+[TODO - ONCE Final Version is Complete and Pushed to remote Repo]
 
+### Testing
 
+The unit tests make use of both `ScalaTest` and `Nodejs` in order to run. In order to setup the testing suite, do the following:
 
+1.  Add `ScalaTest` to your build using `libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % "test"`
 
+2. Next install `Nodejs`. More details can be found here for operating system: https://nodejs.org/en/download/
 
-
-
+3. Next, navigate to `.../Code/src/test/resources/javascript`. Here there should be a `package.json` file. If `Nodejs` has been installed correctly, open a terminal and type `npm install` to install all the javascript library dependencies.
+4. Now, simply open an `sbt` shell and type `test` and the test suite should run.
 
 ### Colors
 
@@ -48,4 +53,6 @@ To compose a marker, simply choose which components are required and combine the
 ```scala
 val marker = Marker() + "circle" + List("red") + Line()
 ```
+
+[TBU FOR REST OF COMPONENTS ONCE LIBRARY API FINALIZED]
 

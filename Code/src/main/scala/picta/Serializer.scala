@@ -3,9 +3,7 @@ package picta
 import upickle.default._
 import ujson.{Value}
 
-/*
-* A type class for a serializer that serializes scala data structures to a valid Value format
-* */
+/** A type class that serializes scala data structures to a valid Value format for JSON. */
 sealed trait Serializer[T] {
   def serialize(seq: List[T]): Value
 }

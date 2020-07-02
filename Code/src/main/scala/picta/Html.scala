@@ -8,17 +8,15 @@ import ujson.Value
 import almond.interpreter.api.OutputHandler
 
 object Html {
-  /*
-  * this is the plotly.min.js script that is used to render the plots
-  * */
+  /** this is the plotly.min.js script that is used to render the plots */
   val minJs : String = {
     val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
     scala.io.Source.fromInputStream(is).mkString
   }
 
-  /*
-  * This function checks if an active network connection is available. It returns true if this is the case, false otherwise
-  * */
+  /** This function checks if an active network connection is available. It returns true if this is the case, false
+    * otherwise.
+    */
   def testNetworkConnection(): Boolean = {
     var activeConnection: Boolean = true
     val url: URL = new URL("https://www.google.com");
@@ -37,13 +35,13 @@ object Html {
 
   val activeConnection: Boolean = testNetworkConnection()
 
-  /*
-  * A function to generate the HTML corresponding to the Plotly plotting function
-  * @param traces: This is the trace data. It should be serialized as a json list
-  * @param layout: This should be the layout case class instance
-  * @param config: This should be the config case class instance
-  * */
-  //
+  /**
+    * A function to generate the HTML corresponding to the Plotly plotting function.
+    * @param traces: This is the trace data. It should be serialized as a json list.
+    * @param layout: This should be the layout case class instance.
+    * @param config: This should be the config case class instance.
+    * @param graph_id: This is an internal id that allows the Plotly functions to find the chart element in the HTML.
+    */
   def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
     var script = new StringBuilder()
 
@@ -73,20 +71,21 @@ object Html {
     }
   }
 
-  /*
-* A function to inject the HTML into the Jupyter notebook
-* @param html: This is the html represented as a string
-* @param graph_id: This is required in order to generate a unique div id for the plotly chart to render in the right place
-* */
+  /**
+    * A function to inject the HTML into the Jupyter notebook.
+    * @param html: This is the html represented as a string.
+    * @param graph_id: This is required in order to generate a unique div id for the plotly chart to render in the right
+    *                  place.
+    */
   def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
     publish.html(html)
   }
 
-  /*
-* A function to write the chart to a .html and open a browser displaying the chart
-* @param html: This is the html represented as a string
-* @param graph_id: This is required in order to generate a unique file name for the chart
-* */
+  /**
+    * A function to write the chart to a .html and open a browser displaying the chart.
+    * @param html: This is the html represented as a string.
+    * @param graph_id: This is required in order to generate a unique file name for the chart.
+    */
   def writeHTMLToFile(html: String, graph_id: String): Unit = {
     val osName = System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
@@ -114,16 +113,15 @@ object Html {
     }
   }
 
-  /*
-  * This sets the charts to be inline inside a Jupyter notebook.
-  * @param publish (implicit): required to render the HTML in the almond notebook
-  * @param kernel (implicit): required to interact with the underlying Jupyter kernel instance
-  * */
+  /**
+    * This sets the charts to be inline inside a Jupyter notebook.
+    * @param publish (implicit): required to render the HTML in the almond notebook.
+    * @param kernel (implicit): required to interact with the underlying Jupyter kernel instance.
+    */
   def init_notebook_mode()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
 
-    // if internet connection; grab from cdn
-    // otherwise just inject the raw javascript
+    /** if internet connection; grab from cdn otherwise just inject the raw javascript */
     val html = if (activeConnection) {
       s"""
           |<script type='text/javascript'>
@@ -154,28 +152,25 @@ object Html {
     publish.html(html)
   }
 
-  /*
-  * This plots the chart in the browser
-  * @param traces: a list of trace data we wish to plot
-  * @param layout: the layout case class specifying layout options
-  * @param config: the config case class specificying the chart config options
-  * @param js: This is the javascript we wish to inject into the page
-  * */
+  /**
+    * This plots the chart in the browser
+    * @param traces: a list of trace data we wish to plot
+    * @param layout: the layout case class specifying layout options
+    * @param config: the config case class specificying the chart config options
+    */
   def plotChart(traces: List[Value], layout: Value, config: Value): Unit = {
     val graph_id = System.currentTimeMillis().toString
     val html: String = generateHTML(traces, layout, config, true, graph_id)
     writeHTMLToFile(html, graph_id)
   }
 
-  /*
-* This plots the chart inside a Jupyter notebook
-* @param traces: a list of trace data we wish to plot
-* @param layout: the layout case class specifying layout options
-* @param config: the config case class specifying the chart config options
-* @param js: This is the javascript we wish to inject into the page
-* @param publish (implicit): required to render the HTML in the almond notebook
-* @param kernel (implicit): required to interact with the underlying Jupyter kernel instance
-* */
+  /**
+    * This plots the chart inside a Jupyter notebook
+    * @param traces: a list of trace data we wish to plot
+    * @param layout: the layout case class specifying layout options
+    * @param config: the config case class specifying the chart config options
+    * @param publish (implicit): required to render the HTML in the almond notebook
+    */
   def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
     val graph_id = System.currentTimeMillis().toString
     val html: String = generateHTML(traces, layout, config, false, graph_id)

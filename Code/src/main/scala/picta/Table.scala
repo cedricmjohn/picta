@@ -10,6 +10,7 @@ trait TableComponent {
   val values: Value
 }
 
+// TODO - Decide what functionality to implement to aid interactive visualization based on research.
 case class Col[T: Serializer](data: List[T])(implicit s0: Serializer[T]) extends TableComponent {
   val values: Value = s0.serialize(data)
 }
@@ -24,7 +25,6 @@ case class Table(header: TableComponent, columns: List[TableComponent], l: Layou
   val config: Value = transform(c.serialize).to(Value)
 
   def getData(): Value = {
-    // construct header
     val formatted_header = Obj(
       "values" -> header.values,
       "fill" -> Obj("color" -> "grey"),

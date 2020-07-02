@@ -5,18 +5,27 @@ import picta.options.ColorOptions._
 import ujson.{Obj, Value}
 import picta.Utils._
 
-case class Marker[T0: Color, T1: Color](symbol: Option[String] = None, color: Option[List[T0]] = None, line: Option[Line[T1]] = None)
-  extends Component {
+
+/**
+ * @constructor: Configures a Marker component for the chart.
+ * @param symbol: Specifies what symbol the marker will use on the chart.
+ * @param color: Specifies the color for the symbol on a chart.
+ * @param line: This configures the line for the marker. This is another Line component.
+ *
+ */
+case class Marker[T0: Color, T1: Color](symbol: Option[String] = None, color: Option[List[T0]] = None,
+                                        line: Option[Line[T1]] = None) extends Component {
 
   val c0 = implicitly[Color[T0]]
   val c1 = implicitly[Color[T1]]
 
-  def +[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line=Some(new_line))
+  def +(new_symbol: String): Marker[T0, T1] = Marker(symbol = Some(new_symbol))
   def +[Z: Color](new_color: List[Z]): Marker[Z, T1] = Marker(color = Some(new_color))
+  def +[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line=Some(new_line))
 
   def serialize(): Value = {
     val symbol_ = symbol match {
-      case Some(s) => Obj("symbol" -> s)
+      case Some(x) => Obj("symbol" -> x)
       case None => emptyObject
     }
 
@@ -26,7 +35,7 @@ case class Marker[T0: Color, T1: Color](symbol: Option[String] = None, color: Op
     }
 
     val line_ = line match {
-      case Some(l) => Obj("line" -> l.serialize())
+      case Some(x) => Obj("line" -> x.serialize())
       case None => emptyObject
     }
 

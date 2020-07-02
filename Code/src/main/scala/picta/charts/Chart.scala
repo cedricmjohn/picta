@@ -5,12 +5,9 @@ import picta.Html.{plotChart, plotChart_inline}
 import picta.common.Component
 import picta.options.Config
 import picta.options.Layout
-import picta.traces.{Trace}
+import picta.series.{Series}
 import ujson.{Obj, Value}
 
-/*
-* Interface for Chart
-* */
 trait ChartInterface extends Component {
   val t: List[Value]
   val l: Value
@@ -19,13 +16,19 @@ trait ChartInterface extends Component {
   def plot_inline()(implicit publish: OutputHandler): Unit
 }
 
-final case class Chart(data: List[Trace] = Nil, layout: Layout = Layout(), config: Config = Config()) extends ChartInterface {
+/**
+  * @constructor Creates a new chart with 'data', 'layout' and 'config' components
+  * @param data: This is a list of 'series' that we wish to add to the plot.
+  * @param layout: This is the layout that determines how the chart is visually laid out.
+  * @param config: This is the config that controls how the plot behaves with user interaction.
+  */
+final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config()) extends ChartInterface {
   val t: List[Value] = data.map(t => t.serialize)
   val l: Value = layout.serialize
   val c: Value = config.serialize
 
-  def +(new_trace: Trace): Chart = this.copy(data = new_trace::data)
-  def +(new_traces: List[Trace]): Chart = this.copy(data = new_traces:::data)
+  def +(new_series: Series): Chart = this.copy(data = new_series::data)
+  def +(new_series: List[Series]): Chart = this.copy(data = new_series:::data)
   def +(new_layout: Layout): Chart = this.copy(layout = new_layout)
   def +(new_config: Config): Chart = this.copy(config = new_config)
 

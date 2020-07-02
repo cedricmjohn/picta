@@ -1,17 +1,17 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.XYZTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.BasicChartTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.HistogramTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.MarkerTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.LineTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.CompositionTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.LayoutTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.MapTests, org.scalatest.tools.Framework$$anon$1@1ada435d, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 9 seconds, 687 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 26[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.MapTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.BasicChartTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.XYZTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.LayoutTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.LineTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.HistogramTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.CompositionTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(picta.MarkerTests, org.scalatest.tools.Framework$$anon$1@a32cad0, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 9 seconds, 377 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 27[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 10, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 26, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 27, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta.HistogramTests[0m

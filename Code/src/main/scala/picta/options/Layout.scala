@@ -8,11 +8,17 @@ import ujson.{Obj, Value}
 import picta.Utils._
 import picta.options.Geo
 
-/*
-* Class for specifying chart layout options
-* @param title: sets the chart title
-* @param showLegend: specify whether to show the legend
-* */
+/**
+  * @constructor: Specifies the layout for the chart.
+  * @param title: Sets the chart title.
+  * @param axs: Sets the chart title.
+  * @param showlegend: Specifies whether to show the legend.
+  * @param legend: This is the component that configures the legend for the chart..
+  * @param height: This sets the height for the chart.
+  * @param width: This sets the width for the chart.
+  * @param grid: This is a component that configures the grid.
+  * @param geo: this is used for Map charts only and configures the geo component for a Map chart..
+  */
 final case class Layout
 (title: Option[String] = None, axs: Option[List[Axis]] = None, showlegend: Boolean = true, legend: Option[Legend] = None,
  height: Int = 500, width: Int = 800, grid: Option[Grid] = None, geo: Option[Geo] = None) extends Component {
@@ -35,22 +41,22 @@ final case class Layout
     val acc = Obj("height" -> height, "width" -> width)
 
     val title_ = title match {
-      case Some(t) => Obj("title" -> Obj("text" -> t))
+      case Some(x) => Obj("title" -> Obj("text" -> x))
       case None => emptyObject
     }
 
     val legend_ = legend match {
-      case Some(l) => Obj("legend" -> l.serialize)
+      case Some(x) => Obj("legend" -> x.serialize)
       case None => emptyObject
     }
 
     val grid_ = grid match {
-      case Some(g) => Obj("grid" ->g.serialize)
+      case Some(x) => Obj("grid" -> x.serialize)
       case None => emptyObject
     }
 
     val geo_ = geo match {
-      case Some(g) => Obj("geo" -> g.serialize)
+      case Some(x) => Obj("geo" -> x.serialize)
       case None => emptyObject
     }
 

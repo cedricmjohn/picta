@@ -3,7 +3,7 @@ package picta
 import org.carbonateresearch.conus._
 import ujson.Value
 
-// TODO - Need to add more utility functions
+// TODO - Need to add more utility functions - can be done after integrating with CoNuS core.
 object Utils {
 
   /*

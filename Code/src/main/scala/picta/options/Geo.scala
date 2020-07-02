@@ -1,11 +1,22 @@
 package picta.options
 
 import picta.common.Component
-import picta.options.Projection
 import ujson.{Obj, Value}
 import picta.Utils._
-import picta.options.{MapAxis, LatAxis, LongAxis}
 
+/**
+  * @constructor: This is configures the Chart for a Map.
+ *  @param resolution: This sets the resolution.
+ *  @param scope: This determines the geographic scope for the map.
+ *  @param showland: Specifies whether the land is shown on the map.
+ *  @param showlakes: Specifies whether lakes are shown on the map.
+ *  @param landcolor: Specifcies the landcolor.
+ *  @param lakecolor: Specifies the lakecolor.
+ *  @param projection:
+ *  @param coastlinewidth: Specifies the coast line width on the map.
+ *  @param lataxis: This is the component that configures the lataxis.
+ *  @param longaxis: This is the component that configures the longaxis.
+ */
 case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boolean = true, showlakes: Boolean = true,
                landcolor: Option[String] = None, lakecolor: Option[String] = None, projection: Option[Projection] = None,
                coastlinewidth: Int = 2, lataxis: Option[LatAxis] = None, longaxis: Option[LongAxis] = None) extends Component {
@@ -22,32 +33,32 @@ case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boo
     )
 
     val scope_ = scope match {
-      case Some(s) => Obj("scope" -> s)
+      case Some(x) => Obj("scope" -> x)
       case None => emptyObject
     }
 
     val landcolor_ = landcolor match {
-      case Some(l) => Obj("landcolor" -> l)
+      case Some(x) => Obj("landcolor" -> x)
       case None => emptyObject
     }
 
     val lakecolor_ = lakecolor match {
-      case Some(l) => Obj("lakecolor" -> l)
+      case Some(x) => Obj("lakecolor" -> x)
       case None => emptyObject
     }
 
     val projection_ = projection match {
-      case Some(p) => Obj("projection" -> p.serialize)
+      case Some(x) => Obj("projection" -> x.serialize)
       case None => emptyObject
     }
 
     val lataxis_ = lataxis match {
-      case Some(m) => Obj("lataxis" -> m.serialize)
+      case Some(x) => Obj("lataxis" -> x.serialize)
       case None => emptyObject
     }
 
     val longaxis_ = longaxis match {
-      case Some(m) => Obj("lonaxis" -> m.serialize)
+      case Some(x) => Obj("lonaxis" -> x.serialize)
       case None => emptyObject
     }
 

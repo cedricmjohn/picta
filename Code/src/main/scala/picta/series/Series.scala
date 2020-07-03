@@ -3,16 +3,16 @@ package picta.series
 import picta.common.Component
 
 trait Series extends Component {
+  import picta.series.ModeType.ModeType
   val series_name: String
-  val series_mode: Option[String]
+  val series_mode: Option[ModeType]
 }
 
-object MarkerType extends Enumeration {
-  type MarkerType = Value
+object ModeType extends Enumeration {
+  type ModeType = Value
   val NONE, LINES, MARKERS, TEXT, LINES_MARKERS, LINES_TEXT, MARKERS_TEXT, LINES_MARKERS_TEXT = Value
 
-
-  implicit class Wrapper(x: Value) {
+  implicit class Wrapper(x: ModeType) {
     def Stringify(): String = x match {
       case NONE => "none"
       case LINES => "lines"

@@ -3,6 +3,7 @@ package picta.series
 import picta.Utils._
 import picta.options.ColorOptions.Color
 import picta.options.Line
+import picta.series.ModeType.ModeType
 import ujson.{Obj, Value}
 
 /**
@@ -14,7 +15,7 @@ import ujson.{Obj, Value}
   * @param line: This configures the line for the Map.
   */
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
-                               series_mode: Option[String] = None, line: Option[Line[T]] = None) extends Series {
+                               series_mode: Option[ModeType] = None, line: Option[Line[T]] = None) extends Series {
 
   def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = Some(l))
 
@@ -22,7 +23,7 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
     val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 
     val series_mode_ = series_mode match {
-      case Some(x) => Obj("mode" -> x)
+      case Some(x) => Obj("mode" -> x.Stringify)
       case None => emptyObject
     }
 

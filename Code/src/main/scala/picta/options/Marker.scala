@@ -12,11 +12,10 @@ import picta.Utils._
  * @param line: This configures the line for the marker. This is another Line component.
  *
  */
-case class Marker[T0: Color, T1: Color](symbol: Option[String] = None, color: Option[List[T0]] = None,
-                                        line: Option[Line[T1]] = None) extends Component {
+case class Marker[T0: Color, T1: Color]
+(symbol: Option[String] = None, color: Option[List[T0]] = None, line: Option[Line[T1]] = None) extends Component {
 
   private val c0 = implicitly[Color[T0]]
-  private val c1 = implicitly[Color[T1]]
 
   def +(new_symbol: String): Marker[T0, T1] = Marker(symbol = Some(new_symbol))
   def +[Z: Color](new_color: List[Z]): Marker[Z, T1] = Marker(color = Some(new_color))

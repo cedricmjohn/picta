@@ -3,6 +3,7 @@ package picta.series
 import picta.Serializer
 import ujson.{Obj, Value}
 import picta.Utils._
+import picta.series.ModeType.ModeType
 
 trait XYZSeries extends Series
 
@@ -23,7 +24,7 @@ import XYZChartType._
  * @param n:
  */
 final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
-(x: List[T0], y: List[T1], z: List[T2], series_name: String, series_type: XYZChartType, series_mode: Option[String] = None,
+(x: List[T0], y: List[T1], z: List[T2], series_name: String = genRandomText, series_type: XYZChartType, series_mode: Option[ModeType] = None,
  n: Int = 0) extends XYZSeries {
 
   private def createSeriesXYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
@@ -61,7 +62,7 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
     val name = Obj("name" -> series_name, "type" -> series_type.toString.toLowerCase())
 
     val series_mode_ = series_mode match {
-      case Some(t) => Obj("mode" -> t)
+      case Some(x) => Obj("mode" -> x.Stringify())
       case None => emptyObject
     }
 
@@ -80,7 +81,7 @@ object XYZ {
   }
 
   def apply[T0 : Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2], series_name: String, series_type: XYZChartType, series_mode: String): XYZ[T0, T1, T2] = {
-    XYZ(x=x, y=y, z=z, series_name=series_mode, series_type=series_type, series_mode=Some(series_mode))
+  (x: List[T0], y: List[T1], z: List[T2], series_name: String, series_type: XYZChartType, series_mode: ModeType): XYZ[T0, T1, T2] = {
+    XYZ(x=x, y=y, z=z, series_name=series_name, series_type=series_type, series_mode=Some(series_mode))
   }
 }

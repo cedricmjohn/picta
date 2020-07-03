@@ -45,4 +45,7 @@ object Utils {
       true
     case _ => true
   }
+
+  /** Generates a random 7 digit alphanumeric string */
+  def genRandomText(): String = java.util.UUID.randomUUID.toString().slice(0, 7)
 }

@@ -1,11 +1,11 @@
 import picta.charts.Chart
-
 import picta.Utils._
 import upickle.default._
 import org.scalatest.funsuite.AnyFunSuite
-import picta.options.{Marker, Axis, Config, Layout, LatAxis, LongAxis, Geo, Grid, Legend, Line}
-import picta.series.{XY, XYZ, Map}
-
+import picta.options.histogram.Cumulative
+import picta.options.{Axis, Config, Geo, Grid, LatAxis, Layout, Legend, Line, LongAxis, Marker}
+import picta.series.{Map, XY, XYZ}
+import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
 
@@ -25,50 +25,17 @@ class MarkerTests extends AnyFunSuite {
     assert(emptyObject.toString ==  write(marker.serialize))
   }
 
-  test("Marker.Constructor.WithSymbol, Color, Line") {
+  test("Marker.Constructor.Full") {
     val marker = Marker() + "circle" + List("red") + Line()
     val test = """{"color":"red","line":{"width":0.5}}"""
     assert(test ==  write(marker.serialize))
   }
 
-  test("Marker.Compose.WithTrace") {
-    val marker = Marker(symbol="circle")
-    val data = XY(x_int, y_int, series_name = "test", series_type = SCATTER, series_mode=Some("markers")) + marker
-    val chart = Chart() + data + Layout() + config
+  test("Marker.Composisition.WithTrace") {
+    val marker = Marker(symbol="circle") + "circle" + List("red") + Line()
+    val data = XY(x_int, y_int, series_name="test", series_type = SCATTER, series_mode=MARKERS) + marker
+    val chart = Chart() + data + Layout()
     if (plotFlag) chart.plot()
-    assert(validateJson(chart.serialize.toString))
-  }
-}
-
-class CompositionTests extends AnyFunSuite {
-  import UnitTestUtils._
-
-  val trace_a = XY(x_int, y_int, series_name="int", series_type=SCATTER, series_mode=Some("markers"))
-  val trace_b = XY(x_int, y_double, series_name="double", series_type=SCATTER, series_mode=Some("markers"))
-
-  test("XY.Chart.Add.Traces") {
-    val chart = Chart() + trace_a + trace_b
-    if (plotFlag) chart.plot
-    assert(validateJson(chart.serialize.toString))
-  }
-
-  test("XY.Chart.Add.Layout") {
-    val chart = Chart() + Layout(Some("XY.Chart.Add.Layout")) + trace_a + trace_b
-    if (plotFlag) chart.plot
-    assert(validateJson(chart.serialize.toString))
-  }
-
-  test("XY.Chart.Add.Config") {
-    val chart = Chart() + config + Layout(Some("XY.Chart.Add.Config")) + trace_a + trace_b
-    if (plotFlag) chart.plot
-    assert(validateJson(chart.serialize.toString))
-  }
-
-  test("XY.Layout.Add.Axis") {
-    val trace_c = XY(x_int, z_int, series_name="alt_axis", series_type=SCATTER, series_mode=Some("markers"), yaxis="y2")
-    val layout = Layout(Some("XY.Chart.Add.Config")) + Legend() + Axis("yaxis2", overlaying=Some("y"), side=Some("right"))
-    val chart = Chart() + Config(false, false) + trace_a + trace_b + trace_c + layout
-    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 }
@@ -77,34 +44,42 @@ class BasicChartTests extends AnyFunSuite {
   import UnitTestUtils._
 
   test("XY.Scatter.Int") {
-    val trace = XY(x_int, y_int, series_name="test", series_type=SCATTER, series_mode=Some("markers"))
+    val trace = XY(x_int, y_int, series_name="test", series_type=SCATTER, series_mode=MARKERS)
     val layout = Layout(Some("XY.Scatter.Int"))
-    val chart = Chart() + trace +  layout + config
+    val chart = Chart() + trace + layout
     if (plotFlag) chart.plot
-    assert( validateJson(chart.serialize.toString) )
+    assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Bar") {
     val trace = XY(y_str, y_double, series_name="test", series_type=BAR)
     val layout = Layout(Some("XY.Bar"))
-    val chart = Chart() + trace + layout + config
+    val chart = Chart() + trace + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Multiple") {
     val trace1 = XY(x_int, y_int, series_name="test", series_type=BAR)
-    val trace2 = XY(x_int, y_double, series_name="test", series_type=SCATTER, series_mode=Some("markers"))
+    val trace2 = XY(x_int, y_double, series_name="test", series_type=SCATTER, series_mode=MARKERS)
     val layout = Layout(Some("XY.Multiple"))
-    val chart = Chart() + List(trace1) + trace2 +  layout + config
+    val chart = Chart() + List(trace1) + trace2 + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Pie") {
-    val trace1 = XY(List(19, 26, 55), List("Residential", "Non-Residential", "Utility"), series_name="test", series_type=PIE)
-    val layout = Layout(Some("XY.Multiple"))
-    val chart = Chart() + List(trace1)  +  layout + config
+    val trace1 = XY(List(19, 26, 55), List("Residential", "Non-Residential", "Utility"), series_type=PIE)
+    val layout = Layout(Some("XY.Pie"))
+    val chart = Chart() + trace1 + layout
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Scatter.Simplest") {
+    val trace = XY(x=x_int, y=y_int, series_type=SCATTER)
+    val layout = Layout(Some("XY.Scatter.Simplest"))
+    val chart = Chart() + trace + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -115,8 +90,8 @@ class ScatterWithColorTests extends AnyFunSuite {
 
   test("ScatterWithColor.Basic") {
     val marker = Marker() + z_double
-    val trace = XY(x_int, y_int, series_name = "test", series_type = SCATTER, series_mode = Some("markers")) + marker
-    val chart = Chart() + Layout(Some("Color2D.Basic")) + config + trace
+    val trace = XY(x_int, y_int, series_type=SCATTER, series_mode=MARKERS) + marker
+    val chart = Chart() + trace + Layout("ScatterWithColor.Basic")
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString))
   }
@@ -126,8 +101,8 @@ class HistogramTests extends AnyFunSuite {
   import UnitTestUtils._
 
   test("XY.Histogram.Basic") {
-    val trace = XY(x=x_int, xkey="x", series_name="test", series_type=HISTOGRAM)
-    val layout = Layout(Some("XY.Histogram.Basic"))
+    val trace = XY(x=x_int, xkey="x", series_type=HISTOGRAM)
+    val layout = Layout("XY.Histogram.Basic")
     val chart = Chart() + trace + layout + config
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -152,22 +127,34 @@ class HistogramTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 
-  test("XY.Histogram.AllOptions") {
+  test("XY.Histogram.Advanced") {
     val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
-
-
     // change xkey to y to get a horizontal histogram
     val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
+    val layout = Layout(Some("XY.Histogram.Advanced"))
+    val chart = Chart() + trace //+ layout + config
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
 
-    println(trace.serialize())
+  test("XY.Histogram.Advanced") {
+    val cumulative = Cumulative()
 
 
 
-//    val layout = Layout(Some("XY.Histogram.Color"))
+//    val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
+//    // change xkey to y to get a horizontal histogram
+//    val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
+//    val layout = Layout(Some("XY.Histogram.Advanced"))
 //    val chart = Chart() + trace //+ layout + config
 //    if (plotFlag) chart.plot
 //    assert(validateJson(chart.serialize.toString))
   }
+
+
+
+
+
 
 
 
@@ -180,6 +167,39 @@ class Histogram2DContourTests extends AnyFunSuite {
     val trace = XY(x_double, y_double, series_name="test", series_type=HISTOGRAM2DCONTOUR)
     val layout = Layout(Some("XY.Histogram2dContour"))
     val chart = Chart(List(trace), layout, config)
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+}
+
+class CompositionTests extends AnyFunSuite {
+  import UnitTestUtils._
+
+  val trace_a = XY(x_int, y_int, series_name="int", series_type=SCATTER, series_mode=MARKERS)
+  val trace_b = XY(x_int, y_double, series_name="double", series_type=SCATTER, series_mode=MARKERS)
+
+  test("XY.Chart.Add.Traces") {
+    val chart = Chart() + trace_a + trace_b
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Chart.Add.Layout") {
+    val chart = Chart() + Layout(Some("XY.Chart.Add.Layout")) + trace_a + trace_b
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Chart.Add.Config") {
+    val chart = Chart() + config + Layout(Some("XY.Chart.Add.Config")) + trace_a + trace_b
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Layout.Add.Axis") {
+    val trace_c = XY(x_int, z_int, series_name="alt_axis", series_type=SCATTER, series_mode=Some(MARKERS), yaxis="y2")
+    val layout = Layout("XY.Chart.Add.Config") + Legend() + Axis(key="yaxis2", title="y #2", overlaying=Some("y"), side=Some("right"))
+    val chart = Chart() + Config(false, false) + trace_a + trace_b + trace_c + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -198,14 +218,14 @@ class LayoutTests extends AnyFunSuite {
   /** Test multiple series plotting and axis composition */
   test("XY.Axis.Composition") {
     // 1. define the axis to plot on the chart
-    val ax0 = Axis(key="xaxis")
+    val ax0 = Axis(key="xaxis", title= " x axis 1")
     val ax1 = Axis(key="yaxis", title = "y axis 1")
     val ax2 = Axis(key="yaxis2", title = "y axis 2", side = Some("right"), overlaying = Some("y"))
     // 2. add the axis to the layout to display them on the xy chart
     val layout = Layout(Some("XY.Axis.Composition"), Some(List(ax0, ax1, ax2)))
     // 3. define the data to display on the chart
-    val trace1 = XY(x=x_int, y=y_double, series_name="trace0", series_type=SCATTER, series_mode=Some("markers"), yaxis="y2")
-    val trace2 = XY(x=x_double, y=y_int, series_name="trace1", series_type=SCATTER, series_mode=Some("markers"))
+    val trace1 = XY(x=x_int, y=y_double, series_name="trace0", series_type=SCATTER, series_mode=Some(MARKERS), yaxis="y2")
+    val trace2 = XY(x=x_double, y=y_int, series_name="trace1", series_type=SCATTER, series_mode=Some(MARKERS))
     // 4. combine elements into a single chart
     val chart = Chart(List(trace1, trace2), layout, config)
     if (plotFlag) chart.plot
@@ -219,8 +239,8 @@ class LayoutTests extends AnyFunSuite {
     val ax1 = Axis("xaxis", title = "x axis 1")
     val ax2 = Axis("xaxis2", title = "x axis 2")
     // 2. define the traces
-    val trace1 = XY(x=x_int, y=y_double, series_name="trace1", series_type=SCATTER, series_mode=Some("markers"))
-    val trace2 = XY(x=x_double, y=y_int, series_name="trace2", series_type=SCATTER, series_mode=Some("markers"), xaxis="x2", yaxis="y2")
+    val trace1 = XY(x=x_int, y=y_double, series_name="trace1", series_type=SCATTER, series_mode=MARKERS)
+    val trace2 = XY(x=x_double, y=y_int, series_name="trace2", series_type=SCATTER, series_mode=Some(MARKERS), xaxis="x2", yaxis="y2")
     // 3. combine into a layout
     val layout = Layout(title=Some("XY.Axis.Composition"), axs=Some(List(ax1, ax2)), grid=Some(grid))
     // 4. construct into a chart
@@ -254,7 +274,6 @@ class HeatmapTests extends AnyFunSuite {
   }
 }
 
-
 class XYZTests extends AnyFunSuite {
   import UnitTestUtils._
 
@@ -267,7 +286,7 @@ class XYZTests extends AnyFunSuite {
   }
 
   test("XYZ.line3D") {
-    val trace = XYZ(x_double, y_double, z_double, series_name="trace", series_type=SCATTER3D, series_mode=Some("lines"))
+    val trace = XYZ(x_double, y_double, z_double, series_name="trace", series_type=SCATTER3D, series_mode=Some(LINES))
     val layout = Layout(Some("XYZ.line3D"))
     val chart = Chart(List(trace), layout, config)
     if (plotFlag) chart.plot
@@ -298,7 +317,7 @@ class MapTests extends AnyFunSuite {
   test("Map.Geo") {
     val color = List("red")
     val line = Line(width = 2) + color
-    val trace = Map(List(40.7127, 51.5072), List(-74.0059, 0.1275), series_mode = Some("lines")) + line
+    val trace = Map(List(40.7127, 51.5072), List(-74.0059, 0.1275), series_mode = Some(LINES)) + line
 
     val geo = Geo(landcolor = Some("rgb(204, 204, 204)"), lakecolor=Some("rgb(255, 255, 255)")) +
       LatAxis(List(20, 60)) + LongAxis(List(-100, 20))

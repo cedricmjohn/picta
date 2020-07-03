@@ -14,7 +14,7 @@ import picta.Utils._
  * @param zeroline: Determines whether the zeroline for each axis are shown.
  * @param showline: Determines whether the axis is visibly drawn on the chart.
  */
-case class Axis(key: String, title: String = "variable", side: Option[String] = None, overlaying: Option[String] = None,
+case class Axis(key: String, title: String, side: Option[String] = None, overlaying: Option[String] = None,
                 showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
   def serialize(): Value = {

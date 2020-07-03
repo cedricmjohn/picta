@@ -18,7 +18,7 @@ case class Axis(key: String, title: String = "variable", side: Option[String] = 
                 showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
   def serialize(): Value = {
-    val acc = Obj(
+    val meta = Obj(
       "title" -> Obj("text" -> title),
       "showgrid" -> showgrid,
       "zeroline" -> zeroline,
@@ -35,6 +35,6 @@ case class Axis(key: String, title: String = "variable", side: Option[String] = 
       case None => emptyObject
     }
 
-    Obj(key -> List(side_, overlaying_).foldLeft(acc)((a, x) => a.obj ++ x.obj))
+    Obj(key -> List(meta, side_, overlaying_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj))
   }
 }

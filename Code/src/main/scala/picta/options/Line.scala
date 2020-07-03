@@ -25,7 +25,7 @@ case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil
       case _ =>  emptyObject
     }
 
-    acc.obj ++ color_.obj
+    List(acc, color_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }
 

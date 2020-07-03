@@ -1,17 +1,18 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(BasicChartTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MapTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LayoutTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MarkerTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LineTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CompositionTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HistogramTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(XYZTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@25f1626f, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 8 seconds, 989 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 27[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 10, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 27, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(XYZTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HistogramTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CompositionTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MapTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HeatmapTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LineTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MarkerTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LayoutTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(BasicChartTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@6e49ef4, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 11 seconds, 203 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 28[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 11, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 28, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	LayoutTests[0m
@@ -23,4 +24,5 @@
 [0m[[0m[0mdebug[0m] [0m[0m	BasicChartTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	MapTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	HistogramTests[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HeatmapTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	XYZTests[0m

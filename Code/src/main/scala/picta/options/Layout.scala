@@ -34,7 +34,7 @@ final case class Layout
   def +(new_grid: Grid): Layout = this.copy(grid = Some(new_grid))
 
   def serialize(): Value = {
-    val acc = Obj("height" -> height, "width" -> width)
+    val dim = Obj("height" -> height, "width" -> width)
 
     val title_ = title match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
@@ -56,7 +56,7 @@ final case class Layout
       case None => emptyObject
     }
 
-    val combined = List(title_, legend_, grid_, geo_).foldLeft(acc)((a, x) => a.obj ++ x.obj)
+    val combined = List(dim, title_, legend_, grid_, geo_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
 
     axs match {
       case Some(lst) => lst.foldLeft( combined )((a, x) => a.obj ++ x.serialize().obj)
@@ -73,7 +73,5 @@ object Layout {
   }
 
   def apply(title: String): Layout = Layout(title= Some(title))
-
   def apply(title: String, height: Int, width: Int): Layout = Layout(title=Some(title), height=height, width=width)
-
 }

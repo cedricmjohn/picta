@@ -25,7 +25,7 @@ case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boo
   def +(l: LongAxis):Geo = this.copy(longaxis = Some(l))
 
   def serialize(): Value = {
-    val acc = Obj(
+    val meta = Obj(
       "resolution" -> resolution,
       "showland" -> showland,
       "showlakes" -> showlakes,
@@ -62,6 +62,7 @@ case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boo
       case None => emptyObject
     }
 
-    List(scope_, landcolor_, lakecolor_, projection_, lataxis_, longaxis_).foldLeft(acc)((a, x) => a.obj ++ x.obj)
+    List(meta, scope_, landcolor_, lakecolor_, projection_, lataxis_, longaxis_)
+      .foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }

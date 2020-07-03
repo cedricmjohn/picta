@@ -15,7 +15,6 @@ object XYChartType extends Enumeration {
 
 import XYChartType._
 
-
 /**
  * TODO - Remove non-common components to another individual component
  * @constructor:
@@ -29,16 +28,15 @@ import XYChartType._
  * @param xaxis:
  * @param yaxis:
  * @param marker:
- * @param cumulative:
- * @param histnorm:
- * @param histfunc:
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: List[T1], xkey: String = "x", ykey: String = "y", series_name: String, series_type: XYChartType = SCATTER,
  series_mode: Option[String] = None, xaxis: String = "x", yaxis: String = "y", marker: Option[Marker[T2, T3]] = None,
- cumulative: Option[Boolean] = None, histnorm: Option[String] = None, histfunc: Option[String] = None) extends XYSeries {
+ cumulative: Option[Boolean] = None, histnorm: Option[String] = None, histfunc: Option[String] = None,
+ autobinx: Option[Boolean] = None, autobiny: Option[Boolean] = None) extends XYSeries {
 
   def +[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = Some(new_marker))
+
 
   private def createSeriesXY[T0 : Serializer, T1: Serializer]
   (x: List[T0], y: List[T1], xkey: String, ykey: String)(implicit s0: Serializer[T0], s1: Serializer[T1]): Value = {
@@ -66,32 +64,43 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case _ => Obj("xaxis" -> xaxis, "yaxis" -> yaxis)
     }
 
-    val t = series_mode match {
-      case Some(t) => Obj("mode" -> t)
+    val series_mode_ = series_mode match {
+      case Some(x) => Obj("mode" -> x)
       case None => emptyObject
     }
 
-    val m = marker match {
-      case Some(m) => Obj("marker" -> m.serialize)
+    val marker_ = marker match {
+      case Some(x) => Obj("marker" -> x.serialize)
       case None => emptyObject
     }
 
-    val c = cumulative match {
-      case Some(m) => Obj("cumulative" -> Obj("enabled" -> m))
+    val cumulative_ = cumulative match {
+      case Some(x) if (series_type == HISTOGRAM) => Obj("cumulative" -> Obj("enabled" -> x))
       case None => emptyObject
     }
 
-    val hn = histnorm match {
-      case Some(h) => Obj("histnorm" -> h)
+    val histnorm_ = histnorm match {
+      case Some(x) if (series_type == HISTOGRAM) => Obj("histnorm" -> x)
       case None => emptyObject
     }
 
-    val hf = histfunc match {
-      case Some(h) => Obj("histfunc" -> h)
+    val histfunc_ = histfunc match {
+      case Some(x) if (series_type == HISTOGRAM) => Obj("histfunc" -> x)
       case None => emptyObject
     }
 
-    meta.obj ++ axes.obj ++ t.obj ++ m.obj ++ c.obj ++ hn.obj ++ hf.obj ++ createSeries().obj
+    val autobinx_ = autobinx match {
+      case Some(x) if (series_type == HISTOGRAM) => Obj("autobinx" -> x)
+      case None => emptyObject
+    }
+
+    val autobiny_ = autobiny match {
+      case Some(x) if (series_type == HISTOGRAM) => Obj("autobiny" -> x)
+      case None => emptyObject
+    }
+
+    List(meta, axes, series_mode_, marker_, cumulative_, histnorm_, histfunc_, autobinx_, autobiny_, createSeries)
+      .foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }
 
@@ -99,11 +108,9 @@ object XY {
 
   def apply[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   (x: List[T0], y: List[T1], xkey: String, ykey: String, series_name: String, series_type: XYChartType,
-   series_mode: String, xaxis: String, yaxis: String, marker: Option[Marker[T2, T3]],
-   cumulative: Option[Boolean], histnorm: Option[String], histfunc: Option[String]): XY[T0, T1, T2, T3] = {
-
+   series_mode: String, xaxis: String, yaxis: String, marker: Option[Marker[T2, T3]]): XY[T0, T1, T2, T3] = {
     XY(x=x, y=y, xkey=xkey, ykey=ykey, series_name=series_name, series_type=series_type, series_mode=Some(series_mode),
-      xaxis=xaxis, yaxis=yaxis, marker=marker, cumulative=cumulative, histnorm=histnorm, histfunc=histfunc)
+      xaxis=xaxis, yaxis=yaxis, marker=marker)
   }
 
   def apply[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
@@ -112,12 +119,14 @@ object XY {
   }
 
 
-  def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, series_name: String, series_type: XYChartType): XY[T0, T0, T1, T2] = {
+  def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, series_name: String,
+                                                   series_type: XYChartType): XY[T0, T0, T1, T2] = {
     if (series_type != HISTOGRAM) throw new IllegalArgumentException("series_type must be 'histogram'")
     XY(x=x, y=Nil, xkey=xkey, series_name=series_name, series_type=series_type)
   }
 
-  def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, series_name: String, series_type: XYChartType, marker: Marker[T1, T2]): XY[T0, T0, T1, T2] = {
+  def apply[T0 : Serializer, T1: Color, T2: Color](x: List[T0], xkey: String, series_name: String,
+                                                   series_type: XYChartType, marker: Marker[T1, T2]): XY[T0, T0, T1, T2] = {
     if (series_type != HISTOGRAM) throw new IllegalArgumentException("series_type must be 'histogram'")
     XY(x=x, y=Nil, xkey=xkey, series_name=series_name, series_type=series_type, marker=Some(marker))
   }

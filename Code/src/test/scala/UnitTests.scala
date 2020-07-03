@@ -143,7 +143,6 @@ class HistogramTests extends AnyFunSuite {
   }
 
   test("XY.Histogram.Color") {
-
     val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
     // change xkey to y to get a horizontal histogram
     val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
@@ -152,6 +151,26 @@ class HistogramTests extends AnyFunSuite {
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
+
+  test("XY.Histogram.AllOptions") {
+    val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
+
+
+    // change xkey to y to get a horizontal histogram
+    val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
+
+    println(trace.serialize())
+
+
+
+//    val layout = Layout(Some("XY.Histogram.Color"))
+//    val chart = Chart() + trace //+ layout + config
+//    if (plotFlag) chart.plot
+//    assert(validateJson(chart.serialize.toString))
+  }
+
+
+
 }
 
 class Histogram2DContourTests extends AnyFunSuite {
@@ -211,6 +230,31 @@ class LayoutTests extends AnyFunSuite {
   }
 }
 
+
+class HeatmapTests extends AnyFunSuite {
+  import UnitTestUtils._
+
+  test("XYZ.Heatmap") {
+    val data = List(List(1, 2, 3), List(4, 5, 6))
+    val series = XYZ(data, series_name="trace", series_type=HEATMAP)
+    val layout = Layout(Some("XYZ.Heatmap"))
+    val chart = Chart(List(series), layout, config)
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XYZ.HeatmapWithXY") {
+    val x: List[String] = List("a", "b", "c", "d", "e", "f")
+    val y: List[Int] = List.range(1, 16).toList
+    val trace = XYZ(x, y, z_surface, "trace", HEATMAP)
+    val layout = Layout(Some("XYZ.Heatmap"))
+    val chart = Chart(List(trace), layout, config)
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+}
+
+
 class XYZTests extends AnyFunSuite {
   import UnitTestUtils._
 
@@ -233,24 +277,6 @@ class XYZTests extends AnyFunSuite {
   test("XYZ.Surface") {
     val trace = XYZ(z_surface, series_name="trace", series_type=SURFACE)
     val layout = Layout(Some("XYZ.Surface"))
-    val chart = Chart(List(trace), layout, config)
-    if (plotFlag) chart.plot
-    assert(validateJson(chart.serialize.toString))
-  }
-
-  test("XYZ.Heatmap") {
-    val trace = XYZ(z_surface, series_name="trace", series_type=HEATMAP)
-    val layout = Layout(Some("XYZ.Heatmap"))
-    val chart = Chart(List(trace), layout, config)
-    if (plotFlag) chart.plot
-    assert(validateJson(chart.serialize.toString))
-  }
-
-  test("XYZ.HeatmapWithXY") {
-    val x: List[Int] = List.range(1, 16).toList
-    val y: List[String] = List("a", "b", "c", "d", "e", "f")
-    val trace = XYZ(x, y, z_surface, "trace", HEATMAP)
-    val layout = Layout(Some("XYZ.Heatmap"))
     val chart = Chart(List(trace), layout, config)
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

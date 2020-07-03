@@ -39,11 +39,11 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
 
   private def createSeriesXYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[T2], n: Int)(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
-    if (n != x.length)
-      throw new IllegalArgumentException("The number of elements in 'z' must be divisible by length of 'y'")
+    if (x.length != n)
+      throw new IllegalArgumentException("The length of a single list inside 'z' must be equal to the length of 'x'")
 
     if (z.length / n != y.length)
-      throw new IllegalArgumentException("The number of elements in 'x' must be divisible by length of an element in 'z'")
+      throw new IllegalArgumentException("The total number of lists inside 'z' must be equal to the length of 'y'")
 
     val list: List[Value] = z.grouped(n).toList.map(e => s2.serialize(e))
     Obj("x"-> s0.serialize(x), "y" -> s1.serialize(y), "z" -> list)
@@ -60,23 +60,23 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
   def serialize(): Value = {
     val name = Obj("name" -> series_name, "type" -> series_type.toString.toLowerCase())
 
-    val t = series_mode match {
+    val series_mode_ = series_mode match {
       case Some(t) => Obj("mode" -> t)
       case None => emptyObject
     }
 
-    name.obj ++ t.obj ++ createSeries().obj
+    List(name, series_mode_, createSeries).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }
 
 object XYZ {
   def apply[T0: Serializer](z: List[List[T0]], series_name: String, series_type: XYZChartType): XYZ[T0, T0, T0] = {
-    XYZ(x=Nil, y=Nil, z=z.flatten, series_name=series_name, series_type=series_type, n=z.length)
+    XYZ(x=Nil, y=Nil, z=z.flatten, series_name=series_name, series_type=series_type, n=z(0).length)
   }
 
   def apply[T0: Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[List[T2]], series_name: String, series_type: XYZChartType): XYZ[T0, T1, T2] = {
-    XYZ(x=x, y=y, z=z.flatten,series_name=series_name, series_type=series_type, n=z.length)
+    XYZ(x=x, y=y, z=z.flatten,series_name=series_name, series_type=series_type, n=z(0).length)
   }
 
   def apply[T0 : Serializer, T1: Serializer, T2: Serializer]

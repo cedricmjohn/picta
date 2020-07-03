@@ -17,7 +17,7 @@ class MapAxis(range: List[Double], showgrid: Boolean, dtick: Int) extends Compon
 }
 
 case class LatAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends
-  MapAxis(range=range, showgrid=showgrid, dtick=dtick) {}
+  MapAxis(range=range, showgrid=showgrid, dtick=dtick)
 
 case class LongAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends
-  MapAxis(range=range, showgrid=showgrid, dtick=dtick) {}
+  MapAxis(range=range, showgrid=showgrid, dtick=dtick)

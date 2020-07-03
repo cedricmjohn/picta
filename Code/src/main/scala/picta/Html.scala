@@ -9,16 +9,20 @@ import almond.interpreter.api.OutputHandler
 import os.Path
 
 object Html {
-  /** this is the plotly.min.js script that is used to render the plots */
-  val plotlyJs : String = {
-    val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
+
+  /** A function to read files from the src resources folder */
+  private def readFile(file_name: String): String = {
+    val is = getClass.getClassLoader.getResourceAsStream(file_name)
     scala.io.Source.fromInputStream(is).mkString
   }
+
+  /** this is the plotly.min.js script that is used to render the plots */
+  private val plotlyJs : String = readFile("plotly.min.js")
 
   /** This function checks if an active network connection is available. It returns true if this is the case, false
     * otherwise.
     */
-  def testNetworkConnection(): Boolean = {
+  private def testNetworkConnection(): Boolean = {
     var activeConnection: Boolean = true
     val url: URL = new URL("https://www.google.com")
     val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
@@ -34,7 +38,7 @@ object Html {
     activeConnection
   }
 
-  val useCDN: Boolean = testNetworkConnection()
+  private val useCDN: Boolean = testNetworkConnection()
 
   /**
     * A function to generate the HTML corresponding to the Plotly plotting function.
@@ -43,7 +47,7 @@ object Html {
     * @param config: This should be the config case class instance.
     * @param graph_id: This is an internal id that allows the Plotly functions to find the chart element in the HTML.
     */
-  def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
+  private def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
     var script = new StringBuilder()
 
     if (useCDN)
@@ -78,7 +82,7 @@ object Html {
     * @param graph_id: This is required in order to generate a unique div id for the plotly chart to render in the right
     *                  place.
     */
-  def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
+  private def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
     publish.html(html)
   }
 
@@ -87,7 +91,7 @@ object Html {
     * @param html: This is the html represented as a string.
     * @param graph_id: This is required in order to generate a unique file name for the chart.
     */
-  def writeHTMLToFile(html: String, graph_id: String): Unit = {
+  private def writeHTMLToFile(html: String, graph_id: String): Unit = {
     val osName = System.getProperty("os.name") match {
       case name if name.startsWith("Linux") => "linux"
       case name if name.startsWith("Mac") => "mac"
@@ -126,31 +130,17 @@ object Html {
     kernel.silent(true)
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
-    val html = if (useCDN) {
-      val requirejs = {
-        val is = getClass.getClassLoader.getResourceAsStream("require.min.js")
-        scala.io.Source.fromInputStream(is).mkString
-      }
+    val html = {
+      val requirejs_CDN_path = """paths: {'plotly': "https://cdn.plot.ly/plotly-latest.min"},"""
+
+      val requirejs =
+        if (useCDN) s"""<script type='text/javascript'>${readFile("require.min.js")}</script>""" else ""
 
       s"""
-          |<script type='text/javascript'>${requirejs}</script>
-          |<script type='text/javascript'>
-          |require.config({
-          |paths: {
-          |        'plotly': "https://cdn.plot.ly/plotly-latest.min"
-          |    },
-          |})
-          |require( ['plotly'], function(Plotly) {
-          |window.Plotly = Plotly;
-          |})
-          |</script>
-          |""".stripMargin
-    }
-    else {
-      s"""
+        |${ if (useCDN) requirejs }
         |<script type='text/javascript'>
-        |define( 'plotly', function(require, exports, module) {
-        |${plotlyJs}
+        |require.config({
+        |${ if (useCDN) requirejs_CDN_path else plotlyJs }
         |})
         |require( ['plotly'], function(Plotly) {
         |window.Plotly = Plotly;
@@ -166,7 +156,7 @@ object Html {
     * This plots the chart in the browser
     * @param traces: a list of trace data we wish to plot
     * @param layout: the layout case class specifying layout options
-    * @param config: the config case class specificying the chart config options
+    * @param config: the config case class specifying the chart config options
     */
   def plotChart(traces: List[Value], layout: Value, config: Value): Unit = {
     val graph_id = System.currentTimeMillis().toString

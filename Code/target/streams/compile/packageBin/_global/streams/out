@@ -1,15 +1,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$A.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$A.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	test.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/test.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/plotly.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$B.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$B.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$A$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$A$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/picta[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/Serializer$DoubleSerializer$.class[0m
@@ -166,22 +158,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/picta/Serializer$FloatSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$Property.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$Property.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$LowPrioritySerializer.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$LowPrioritySerializer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	require.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/require.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$LowPrioritySerializer$StringSerializer$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$LowPrioritySerializer$StringSerializer$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	traces.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/traces.json[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$Property$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$Property$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$Property$IntSerializer$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$Property$IntSerializer$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$B$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$B$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

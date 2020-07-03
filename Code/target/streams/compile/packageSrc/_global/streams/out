@@ -1,9 +1,9 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1-sources.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	test.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/resources/test.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/resources/plotly.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	require.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/resources/require.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/src/main/resources/layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	traces.json[0m

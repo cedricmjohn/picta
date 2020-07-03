@@ -1,11 +1,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1-javadoc.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$LowPrioritySerializer$StringSerializer$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$LowPrioritySerializer$StringSerializer$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	index.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/index.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$B.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$B.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/picta[0m
 [0m[[0m[0mdebug[0m] [0m[0m	picta/series[0m
@@ -136,12 +132,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/picta/Serializer$$DoubleSerializer$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	index.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/index.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$Property$$IntSerializer$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$Property$$IntSerializer$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$Property.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$Property.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$Property$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$Property$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	lib[0m
@@ -256,8 +246,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/lib/ownerbg2.gif[0m
 [0m[[0m[0mdebug[0m] [0m[0m	lib/annotation.svg[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/lib/annotation.svg[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$A.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$A.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$$LowPrioritySerializer.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/irp-acse-fk4517/Code/target/scala-2.13/api/Example$$LowPrioritySerializer.html[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -9,7 +9,7 @@ import almond.interpreter.api.OutputHandler
 
 object Html {
   /** this is the plotly.min.js script that is used to render the plots */
-  val minJs : String = {
+  val plotlyJs : String = {
     val is = getClass.getClassLoader.getResourceAsStream("plotly.min.js")
     scala.io.Source.fromInputStream(is).mkString
   }
@@ -19,7 +19,7 @@ object Html {
     */
   def testNetworkConnection(): Boolean = {
     var activeConnection: Boolean = true
-    val url: URL = new URL("https://www.google.com");
+    val url: URL = new URL("https://www.google.com")
     val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
 
     try {
@@ -48,7 +48,7 @@ object Html {
     if (activeConnection)
       script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
     else
-      script ++= s"""<script> ${minJs} </script>"""
+      script ++= s"""<script> ${plotlyJs} </script>"""
 
     val base_html = s"""
                        |<div align="center">
@@ -123,7 +123,13 @@ object Html {
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
     val html = if (activeConnection) {
+      val requirejs = {
+        val is = getClass.getClassLoader.getResourceAsStream("require.min.js")
+        scala.io.Source.fromInputStream(is).mkString
+      }
+
       s"""
+          |<script type='text/javascript'>${requirejs}</script>
           |<script type='text/javascript'>
           |require.config({
           |paths: {
@@ -140,7 +146,7 @@ object Html {
       s"""
         |<script type='text/javascript'>
         |define( 'plotly', function(require, exports, module) {
-        |$minJs
+        |${plotlyJs}
         |})
         |require( ['plotly'], function(Plotly) {
         |window.Plotly = Plotly;

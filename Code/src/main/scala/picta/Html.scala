@@ -6,6 +6,7 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import ujson.Value
 import almond.interpreter.api.OutputHandler
+import os.Path
 
 object Html {
   /** this is the plotly.min.js script that is used to render the plots */
@@ -33,7 +34,7 @@ object Html {
     activeConnection
   }
 
-  val activeConnection: Boolean = testNetworkConnection()
+  val useCDN: Boolean = testNetworkConnection()
 
   /**
     * A function to generate the HTML corresponding to the Plotly plotting function.
@@ -45,7 +46,7 @@ object Html {
   def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
     var script = new StringBuilder()
 
-    if (activeConnection)
+    if (useCDN)
       script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
     else
       script ++= s"""<script> ${plotlyJs} </script>"""
@@ -94,8 +95,11 @@ object Html {
       case _ => throw new Exception("Unknown platform!")
     }
 
-    val dir = System.getProperty("user.home")+"/Conus/"+graph_id+".html"
-    val fout = new File(dir)
+    /** Folders where images are saved is relative to the home folder */
+    val save_directory = System.getProperty("user.home")+"/Conus/"
+    if (!os.exists(Path(save_directory))) os.makeDir(Path(save_directory))
+    val file_directory = save_directory+graph_id+".html"
+    val fout = new File(file_directory)
     val bufferWriter = new BufferedWriter(new FileWriter(fout))
     bufferWriter.write(html)
     bufferWriter.close()
@@ -122,7 +126,7 @@ object Html {
     kernel.silent(true)
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
-    val html = if (activeConnection) {
+    val html = if (useCDN) {
       val requirejs = {
         val is = getClass.getClassLoader.getResourceAsStream("require.min.js")
         scala.io.Source.fromInputStream(is).mkString

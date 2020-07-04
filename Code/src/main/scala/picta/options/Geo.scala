@@ -1,8 +1,10 @@
 package picta.options
 
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.common.Component
 import ujson.{Obj, Value}
-import picta.Utils._
 
 /**
   * @constructor: This is configures the Chart for a Map.
@@ -17,12 +19,12 @@ import picta.Utils._
  *  @param lataxis: This is the component that configures the lataxis.
  *  @param longaxis: This is the component that configures the longaxis.
  */
-case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boolean = true, showlakes: Boolean = true,
-               landcolor: Option[String] = None, lakecolor: Option[String] = None, projection: Option[Projection] = None,
-               coastlinewidth: Int = 2, lataxis: Option[LatAxis] = None, longaxis: Option[LongAxis] = None) extends Component {
+case class Geo(resolution: Int = 50, scope: Opt[String]=Blank, showland: Boolean = true, showlakes: Boolean = true,
+               landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank, projection: Opt[Projection] = Blank,
+               coastlinewidth: Int = 2, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank) extends Component {
 
-  def +(l: LatAxis):Geo = this.copy(lataxis = Some(l))
-  def +(l: LongAxis):Geo = this.copy(longaxis = Some(l))
+  def +(l: LatAxis):Geo = this.copy(lataxis = l)
+  def +(l: LongAxis):Geo = this.copy(longaxis = l)
 
   def serialize(): Value = {
     val meta = Obj(
@@ -32,41 +34,37 @@ case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boo
       "coastlinewidth" -> coastlinewidth
     )
 
-    val scope_ = scope match {
+    val scope_ = scope.asOption match {
       case Some(x) => Obj("scope" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val landcolor_ = landcolor match {
+    val landcolor_ = landcolor.asOption match {
       case Some(x) => Obj("landcolor" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val lakecolor_ = lakecolor match {
+    val lakecolor_ = lakecolor.asOption match {
       case Some(x) => Obj("lakecolor" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val projection_ = projection match {
+    val projection_ = projection.asOption match {
       case Some(x) => Obj("projection" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val lataxis_ = lataxis match {
+    val lataxis_ = lataxis.asOption match {
       case Some(x) => Obj("lataxis" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val longaxis_ = longaxis match {
+    val longaxis_ = longaxis.asOption match {
       case Some(x) => Obj("lonaxis" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
     List(meta, scope_, landcolor_, lakecolor_, projection_, lataxis_, longaxis_)
-      .foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+      .foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
-}
-
-object Geo {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

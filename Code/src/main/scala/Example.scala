@@ -1,14 +1,13 @@
-import picta.common.Opt._
+import picta.common.Monoid._
+
 
 object Example extends App {
 
-  def f1(my_string: Opt[String] = Blank): Unit = {
+  val a = JsonMonoid.empty
 
-  }
+  val x = a |+| a
 
-  f1("name")
-
-
+  println(x)
 
 }
 

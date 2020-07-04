@@ -1,28 +1,30 @@
 package picta.options.histogram
 
-import picta.Utils.emptyObject
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.common.Component
 import ujson.{Obj, Value}
 
-case class Cumulative(enabled: Option[Boolean] = None, direction: Option[String] = None,
-                      currentbin: Option[String] = None) extends Component {
+case class Cumulative(enabled: Opt[Boolean] = Blank, direction: Opt[String] = Blank,
+                      currentbin: Opt[String] = Blank) extends Component {
 
   def serialize: Value = {
-    val enabled_ = enabled match {
+    val enabled_ = enabled.asOption match {
       case Some(x) => Obj("enabled" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val direction_ = direction match {
+    val direction_ = direction.asOption match {
       case Some(x) => Obj("direction" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val currentbin_ = currentbin match {
+    val currentbin_ = currentbin.asOption match {
       case Some(x) => Obj("currentbin" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    List(enabled_, direction_, currentbin_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(enabled_, direction_, currentbin_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
 }

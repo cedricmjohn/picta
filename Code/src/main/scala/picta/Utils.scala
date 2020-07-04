@@ -9,7 +9,7 @@ object Utils {
   /*
   * Returns an empty json object, serialized as a Value type
   * */
-  def emptyObject(): Value = ujson.read("{}")
+//  def emptyObject(): Value = ujson.read("{}")
   
   /*
   * Creates a list of all the possible co-ordinates

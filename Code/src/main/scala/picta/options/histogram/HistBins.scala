@@ -1,37 +1,35 @@
 package picta.options.histogram
 
-import picta.Utils.emptyObject
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.common.Component
 import ujson.{Obj, Value}
 
-class HistBins(start: Option[Double]=None, end: Option[Double]=None, size: Option[Double]=None) extends Component {
+class HistBins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends Component {
 
   def serialize: Value = {
-    val start_ = start match {
+    val start_ = start.asOption match {
       case Some(x) => Obj("start" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val end_ = end match {
+    val end_ = end.asOption match {
       case Some(x) => Obj("end" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val size_ = size match {
+    val size_ = size.asOption match {
       case Some(x) => Obj("size" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    List(start_, end_, size_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(start_, end_, size_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
 }
 
-object HistBins {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
-}
-
-case class Xbins(start: Option[Double]=None, end: Option[Double]=None, size: Option[Double]=None) extends
+case class Xbins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends
   HistBins(start=start, end=end, size=size)
 
-case class Ybins(start: Option[Double]=None, end: Option[Double]=None, size: Option[Double]=None) extends
+case class Ybins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends
   HistBins(start=start, end=end, size=size)

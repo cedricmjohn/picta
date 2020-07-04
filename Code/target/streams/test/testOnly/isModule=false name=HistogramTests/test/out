@@ -1,8 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0m[32mHistogramTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.Basic[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.Horizontal[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.Color[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.Advanced[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.Cumulative[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.WithOptions[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- XY.Histogram.SpecifyBinningFunction[0m[0m

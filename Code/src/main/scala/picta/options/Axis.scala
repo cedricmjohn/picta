@@ -1,8 +1,9 @@
 package picta.options
 
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
 import picta.common.Component
 import ujson.{Obj, Value}
-import picta.Utils._
 
 /**
  * @constructor Creates a new Axis that the user can configure with different options
@@ -14,7 +15,7 @@ import picta.Utils._
  * @param zeroline: Determines whether the zeroline for each axis are shown.
  * @param showline: Determines whether the axis is visibly drawn on the chart.
  */
-case class Axis(key: String, title: String, side: Option[String]=None, overlaying: Option[String]=None,
+case class Axis(key: String, title: String, side: Opt[String]=Blank, overlaying: Opt[String]=Blank,
                 showgrid: Boolean = true, zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
   def serialize(): Value = {
@@ -25,20 +26,16 @@ case class Axis(key: String, title: String, side: Option[String]=None, overlayin
       "showline" -> showline
     )
 
-    val side_ = side match {
+    val side_ = side.asOption match {
       case Some(x) => Obj("side" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val overlaying_ = overlaying match {
+    val overlaying_ = overlaying.asOption match {
       case Some(x) => Obj("overlaying" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    Obj(key -> List(meta, side_, overlaying_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj))
+    Obj(key -> List(meta, side_, overlaying_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x))
   }
-}
-
-object Axis {
-  implicit def liftToOption[T](x: T): Option[T] = Option(x)
 }

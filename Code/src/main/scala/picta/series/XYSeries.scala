@@ -1,5 +1,8 @@
 package picta.series
 
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.Serializer
 import picta.options.Marker
 import ujson.{Obj, Value}
@@ -7,7 +10,6 @@ import picta.Utils._
 import picta.options.ColorOptions.Color
 import picta.options.histogram.HistOptions
 import picta.series.ModeType.ModeType
-import upickle.default.transform
 
 trait XYSeries extends Series
 
@@ -33,9 +35,9 @@ import XYChartType._
  * @param marker:
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
-(x: List[T0], y: List[T1], xkey: String = "x", ykey: String = "y", series_name: String = genRandomText, series_type: XYChartType=SCATTER,
- series_mode: Option[ModeType]=None, xaxis: String="x", yaxis: String="y", marker: Option[Marker[T2, T3]]=None,
- hist_options: Option[HistOptions] = None) extends XYSeries {
+(x: List[T0], y: List[T1], xkey: String = "x", ykey: String = "y", series_name: String = genRandomText,
+ series_type: XYChartType=SCATTER, series_mode: Opt[ModeType]=Blank, xaxis: String="x", yaxis: String="y",
+ marker: Opt[Marker[T2, T3]]=Blank, hist_options: Opt[HistOptions]=Blank) extends XYSeries {
 
   def +[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker=new_marker)
 
@@ -63,34 +65,31 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
     )
 
     val axes = series_type match {
-      case PIE => emptyObject()
+      case PIE => JsonMonoid.empty
       case _ => Obj("xaxis" -> xaxis, "yaxis" -> yaxis)
     }
 
-    val series_mode_ = series_mode match {
+    val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val marker_ = marker match {
+    val marker_ = marker.asOption match {
       case Some(x) => Obj("marker" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
     /** No need to add a key as this object merges directly */
-    val hist_options_ : Value = hist_options match {
-      case Some(x) => if (series_type == HISTOGRAM) x.serialize else emptyObject
-      case None => emptyObject
+    val hist_options_ : Value = hist_options.asOption match {
+      case Some(x) => if (series_type == HISTOGRAM) x.serialize else JsonMonoid.empty
+      case None => JsonMonoid.empty
     }
 
-    List(meta, axes, series_mode_, marker_, hist_options_,createSeries).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(meta, axes, series_mode_, marker_, hist_options_,createSeries).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
 }
 
 object XY {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
-
-
   /** Alternative constructor that constructs a histogram series, with X, Y, Z specified */
   def apply[T0 : Serializer, T1: Color, T2: Color]
   (x: List[T0], xkey: String, series_type: XYChartType): XY[T0, T0, T1, T2] = {
@@ -107,14 +106,14 @@ object XY {
 
   /** Alternative constructor that constructs a histogram series, with X, Y, Z specified */
   def apply[T0 : Serializer, T1: Color, T2: Color]
-  (x: List[T0], xkey: String, series_type: XYChartType, marker: Option[Marker[T1, T2]]): XY[T0, T0, T1, T2] = {
+  (x: List[T0], xkey: String, series_type: XYChartType, marker: Opt[Marker[T1, T2]]): XY[T0, T0, T1, T2] = {
     if (series_type != HISTOGRAM) throw new IllegalArgumentException("series_type must be 'histogram'")
     XY(x=x, y=Nil, xkey=xkey, series_type=series_type, marker=marker)
   }
 
   /** Alternative constructor that constructs a histogram series, with X, Y, Z specified */
   def apply[T0 : Serializer, T1: Color, T2: Color]
-  (x: List[T0], xkey: String, series_name: String, series_type: XYChartType, marker: Option[Marker[T1, T2]]): XY[T0, T0, T1, T2] = {
+  (x: List[T0], xkey: String, series_name: String, series_type: XYChartType, marker: Opt[Marker[T1, T2]]): XY[T0, T0, T1, T2] = {
     if (series_type != HISTOGRAM) throw new IllegalArgumentException("series_type must be 'histogram'")
     XY(x=x, y=Nil, xkey=xkey, series_name=series_name, series_type=series_type, marker=marker)
   }

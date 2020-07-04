@@ -1,9 +1,11 @@
 package picta.options
 
+import picta.common.OptionWrapper._
 import picta.common.Component
+import picta.common.Monoid._
+
 import picta.options.ColorOptions._
 import ujson.{Obj, Value}
-import picta.Utils._
 
 /**
  * @constructor: Configures a Marker component for the chart.
@@ -13,34 +15,30 @@ import picta.Utils._
  *
  */
 case class Marker[T0: Color, T1: Color]
-(symbol: Option[String] = None, color: Option[List[T0]] = None, line: Option[Line[T1]] = None) extends Component {
+(symbol: Opt[String]=Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank) extends Component {
 
   private val c0 = implicitly[Color[T0]]
 
-  def +(new_symbol: String): Marker[T0, T1] = Marker(symbol = Some(new_symbol))
-  def +[Z: Color](new_color: List[Z]): Marker[Z, T1] = Marker(color = Some(new_color))
-  def +[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line=Some(new_line))
+  def +(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
+  def +[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
+  def +[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
 
   def serialize(): Value = {
-    val symbol_ = symbol match {
+    val symbol_ = symbol.asOption match {
       case Some(x) => Obj("symbol" -> x)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val color_ = color match {
+    val color_ = color.asOption match {
       case Some(lst: List[T0]) => Obj("color" -> c0.serialize(lst))
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val line_ = line match {
+    val line_ = line.asOption match {
       case Some(x) => Obj("line" -> x.serialize())
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    List(symbol_, color_, line_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(symbol_, color_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
-}
-
-object Marker {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

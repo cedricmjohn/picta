@@ -1,5 +1,8 @@
 package picta.series
 
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.Serializer
 import ujson.{Obj, Value}
 import picta.Utils._
@@ -24,8 +27,8 @@ import XYZChartType._
  * @param n:
  */
 final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
-(x: List[T0], y: List[T1], z: List[T2], series_name: String = genRandomText, series_type: XYZChartType, series_mode: Option[ModeType] = None,
- n: Int = 0) extends XYZSeries {
+(x: List[T0], y: List[T1], z: List[T2], series_name: String = genRandomText, series_type: XYZChartType,
+ series_mode: Opt[ModeType]=Blank, n: Int=0) extends XYZSeries {
 
   private def createSeriesXYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[T2])(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
@@ -61,18 +64,16 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
   def serialize(): Value = {
     val name = Obj("name" -> series_name, "type" -> series_type.toString.toLowerCase())
 
-    val series_mode_ = series_mode match {
+    val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    List(name, series_mode_, createSeries).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(name, series_mode_, createSeries).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
 }
 
 object XYZ {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
-
   def apply[T0: Serializer](z: List[List[T0]], series_name: String, series_type: XYZChartType): XYZ[T0, T0, T0] = {
     XYZ(x=Nil, y=Nil, z=z.flatten, series_name=series_name, series_type=series_type, n=z(0).length)
   }
@@ -80,10 +81,5 @@ object XYZ {
   def apply[T0: Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[List[T2]], series_name: String, series_type: XYZChartType): XYZ[T0, T1, T2] = {
     XYZ(x=x, y=y, z=z.flatten,series_name=series_name, series_type=series_type, n=z(0).length)
-  }
-
-  def apply[T0 : Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2], series_name: String, series_type: XYZChartType, series_mode: ModeType): XYZ[T0, T1, T2] = {
-    XYZ(x=x, y=y, z=z, series_name=series_name, series_type=series_type, series_mode=Some(series_mode))
   }
 }

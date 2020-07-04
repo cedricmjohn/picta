@@ -1,6 +1,8 @@
 package picta.series
 
-import picta.Utils._
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.options.ColorOptions.Color
 import picta.options.Line
 import picta.series.ModeType.ModeType
@@ -15,27 +17,23 @@ import ujson.{Obj, Value}
   * @param line: This configures the line for the Map.
   */
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
-                               series_mode: Option[ModeType] = None, line: Option[Line[T]] = None) extends Series {
+                               series_mode: Opt[ModeType]=Blank, line: Opt[Line[T]] = Blank) extends Series {
 
-  def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = Some(l))
+  def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 
   override def serialize: Value = {
     val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 
-    val series_mode_ = series_mode match {
+    val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val line_ = line match {
+    val line_ = line.asOption match {
       case Some(x) => Obj("line" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    List(acc, series_mode_, line_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    List(acc, series_mode_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
-}
-
-object Map {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

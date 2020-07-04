@@ -1,8 +1,10 @@
 package picta.options
 
+import picta.common.OptionWrapper._
+import picta.common.Monoid._
+
 import picta.common.Component
 import ujson.{Obj, Value}
-import picta.Utils._
 
 /**
   * @constructor: Specifies the layout for the chart.
@@ -16,55 +18,51 @@ import picta.Utils._
   * @param geo: this is used for Map charts only and configures the geo component for a Map chart..
   */
 final case class Layout
-(title: Option[String] = None, axs: Option[List[Axis]] = None, showlegend: Boolean = true, legend: Option[Legend] = None,
- height: Int = 500, width: Int = 800, grid: Option[Grid] = None, geo: Option[Geo] = None) extends Component {
+(title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, showlegend: Boolean = true, legend: Opt[Legend]=Blank,
+ height: Int = 500, width: Int = 800, grid: Opt[Grid]=Blank, geo: Opt[Geo]=Blank) extends Component {
 
-  def +(new_axis: Axis): Layout = axs match {
-    case Some(lst) => this.copy(axs = Some(new_axis :: lst))
-    case None => this.copy(axs = Some(List(new_axis)))
+  def +(new_axis: Axis): Layout = axs.asOption match {
+    case Some(lst) => this.copy(axs = new_axis :: lst)
+    case None => this.copy(axs = List(new_axis))
   }
 
-  def +(new_axes: List[Axis]): Layout = axs match {
-    case Some(lst) => this.copy(axs = Some(new_axes ::: lst))
-    case None => this.copy(axs = Some(new_axes))
+  def +(new_axes: List[Axis]): Layout = axs.asOption match {
+    case Some(lst) => this.copy(axs = new_axes ::: lst)
+    case None => this.copy(axs = new_axes)
   }
 
-  def +(new_geo: Geo): Layout = this.copy(geo = Some(new_geo))
-  def +(new_legend: Legend): Layout = this.copy(legend = Some(new_legend))
-  def +(new_grid: Grid): Layout = this.copy(grid = Some(new_grid))
+  def +(new_geo: Geo): Layout = this.copy(geo = new_geo)
+  def +(new_legend: Legend): Layout = this.copy(legend = new_legend)
+  def +(new_grid: Grid): Layout = this.copy(grid = new_grid)
 
   def serialize(): Value = {
     val dim = Obj("height" -> height, "width" -> width)
 
-    val title_ = title match {
+    val title_ = title.asOption match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val legend_ = legend match {
+    val legend_ = legend.asOption match {
       case Some(x) => Obj("legend" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val grid_ = grid match {
+    val grid_ = grid.asOption match {
       case Some(x) => Obj("grid" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val geo_ = geo match {
+    val geo_ = geo.asOption match {
       case Some(x) => Obj("geo" -> x.serialize)
-      case None => emptyObject
+      case None => JsonMonoid.empty
     }
 
-    val combined = List(dim, title_, legend_, grid_, geo_).foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
+    val combined = List(dim, title_, legend_, grid_, geo_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
 
-    axs match {
-      case Some(lst) => lst.foldLeft( combined )((a, x) => a.obj ++ x.serialize().obj)
+    axs.asOption match {
+      case Some(lst) => lst.foldLeft( combined )((a, x) => a |+| x.serialize())
       case _ => combined
     }
   }
-}
-
-object Layout {
-  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

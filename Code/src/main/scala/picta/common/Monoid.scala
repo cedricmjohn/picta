@@ -16,10 +16,7 @@ object Monoid {
     def empty: Value = read("{}")
   }
 
-  implicit class JsonMonoid[A](val x: A) {
-    def |+|(y: A)(implicit m: Monoid[A]): A = m.combine(x, y)
+  implicit class JsonMonoid[A](val x: A)(implicit m: Monoid[A]) {
+    def |+|(y: A): A = m.combine(x, y)
   }
 }
-
-
-

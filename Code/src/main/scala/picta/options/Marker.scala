@@ -42,21 +42,5 @@ case class Marker[T0: Color, T1: Color]
 }
 
 object Marker {
-  def apply[T0: Color, T1: Color](symbol: String, color: List[T0], line: Line[T1]): Marker[T0, T1] =
-    Marker(Some(symbol), Some(color), Some(line))
-
-  def apply[T0: Color](symbol: String, color: List[T0]): Marker[T0, T0] =
-    Marker(symbol=Some(symbol), color=Some(color))
-
-  def apply[T0: Color](symbol: String, line: Line[T0]): Marker[T0, T0] =
-    Marker(symbol=Some(symbol), line=Some(line))
-
-  def apply[T0: Color, T1: Color](color: List[T0], line: Line[T1]): Marker[T0, T1] =
-    Marker(color=Some(color), line=Some(line))
-
-  def apply[T0: Color](symbol: String): Marker[T0, T0] = Marker(symbol=Some(symbol))
-
-  def apply[T0: Color](color: List[T0]): Marker[T0, T0] = Marker(color=Some(color))
-
-  def apply[T0: Color](line: Line[T0]): Marker[T0, T0] = Marker(line=Some(line))
+  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

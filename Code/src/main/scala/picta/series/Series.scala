@@ -10,18 +10,9 @@ trait Series extends Component {
 
 object ModeType extends Enumeration {
   type ModeType = Value
-  val NONE, LINES, MARKERS, TEXT, LINES_MARKERS, LINES_TEXT, MARKERS_TEXT, LINES_MARKERS_TEXT = Value
-
-  implicit class Wrapper(x: ModeType) {
-    def Stringify(): String = x match {
-      case NONE => "none"
-      case LINES => "lines"
-      case MARKERS => "markers"
-      case TEXT => "text"
-      case LINES_MARKERS => "lines+markers"
-      case LINES_TEXT => "lines+text"
-      case MARKERS_TEXT => "markers+text"
-      case LINES_MARKERS_TEXT => "lines+markers+text"
-    }
-  }
+  val NONE, LINES, MARKERS, TEXT = Value
+  val LINES_MARKERS = Value("lines+markers")
+  val LINES_TEXT = Value("lines+text")
+  val MARKERS_TEXT = Value("markers+text")
+  val LINES_MARKERS_TEXT = Value("lines+markers+text")
 }

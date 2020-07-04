@@ -1,13 +1,21 @@
+import org.scalatest.funsuite.AnyFunSuite
+
 import picta.charts.Chart
 import picta.Utils._
 import upickle.default._
-import org.scalatest.funsuite.AnyFunSuite
-import picta.options.histogram.Cumulative
+
+import picta.options.histogram.{Cumulative, HistBins, HistNormType, HistOptions, Xbins}
+import picta.options.histogram.HistOptions._
+import picta.options.histogram.HistFuncType._
+import picta.options.histogram.HistNormType._
 import picta.options.{Axis, Config, Geo, Grid, LatAxis, Layout, Legend, Line, LongAxis, Marker}
+
 import picta.series.{Map, XY, XYZ}
 import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
+
+import UnitTestUtils._
 
 class LineTests extends AnyFunSuite {
   test("Line.Constructor.Basic") {
@@ -18,8 +26,6 @@ class LineTests extends AnyFunSuite {
 }
 
 class MarkerTests extends AnyFunSuite {
-  import UnitTestUtils._
-
   test("Marker.Constructor.Default") {
     val marker = Marker()
     assert(emptyObject.toString ==  write(marker.serialize))
@@ -31,30 +37,26 @@ class MarkerTests extends AnyFunSuite {
     assert(test ==  write(marker.serialize))
   }
 
-  test("Marker.Composisition.WithTrace") {
+  test("Marker.Composition.WithTrace") {
     val marker = Marker(symbol="circle") + "circle" + List("red") + Line()
     val data = XY(x_int, y_int, series_name="test", series_type = SCATTER, series_mode=MARKERS) + marker
-    val chart = Chart() + data + Layout()
-    if (plotFlag) chart.plot()
+    val chart = Chart() + data + Layout("Marker.Composition.WithTrace")
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 }
 
 class BasicChartTests extends AnyFunSuite {
-  import UnitTestUtils._
-
   test("XY.Scatter.Int") {
     val trace = XY(x_int, y_int, series_name="test", series_type=SCATTER, series_mode=MARKERS)
-    val layout = Layout(Some("XY.Scatter.Int"))
-    val chart = Chart() + trace + layout
+    val chart = Chart() + trace + Layout("XY.Scatter.Int")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Bar") {
     val trace = XY(y_str, y_double, series_name="test", series_type=BAR)
-    val layout = Layout(Some("XY.Bar"))
-    val chart = Chart() + trace + layout
+    val chart = Chart() + trace + Layout("XY.Bar")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -62,24 +64,21 @@ class BasicChartTests extends AnyFunSuite {
   test("XY.Multiple") {
     val trace1 = XY(x_int, y_int, series_name="test", series_type=BAR)
     val trace2 = XY(x_int, y_double, series_name="test", series_type=SCATTER, series_mode=MARKERS)
-    val layout = Layout(Some("XY.Multiple"))
-    val chart = Chart() + List(trace1) + trace2 + layout
+    val chart = Chart() + List(trace1, trace2) + Layout("XY.Multiple")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Pie") {
     val trace1 = XY(List(19, 26, 55), List("Residential", "Non-Residential", "Utility"), series_type=PIE)
-    val layout = Layout(Some("XY.Pie"))
-    val chart = Chart() + trace1 + layout
+    val chart = Chart() + trace1 + Layout("XY.Pie")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Scatter.Simplest") {
     val trace = XY(x=x_int, y=y_int, series_type=SCATTER)
-    val layout = Layout(Some("XY.Scatter.Simplest"))
-    val chart = Chart() + trace + layout
+    val chart = Chart() + trace + Layout("XY.Scatter.Simplest")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -103,16 +102,16 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.Basic") {
     val trace = XY(x=x_int, xkey="x", series_type=HISTOGRAM)
     val layout = Layout("XY.Histogram.Basic")
-    val chart = Chart() + trace + layout + config
+    val chart = Chart() + trace + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Histogram.Horizontal") {
     // change xkey to y to get a horizontal histogram
-    val trace = XY(x = x_random, xkey="y", series_name="test", series_type=HISTOGRAM)
+    val trace = XY(x=x_int, xkey="y", series_type=HISTOGRAM)
     val layout = Layout(Some("XY.Histogram.Horizontal"))
-    val chart = Chart() + trace + layout + config
+    val chart = Chart() + trace + layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -120,9 +119,8 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.Color") {
     val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
     // change xkey to y to get a horizontal histogram
-    val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
-    val layout = Layout(Some("XY.Histogram.Color"))
-    val chart = Chart() + trace //+ layout + config
+    val trace = XY(x_random, xkey="y", series_type=HISTOGRAM, marker=marker)
+    val chart = Chart() + trace + Layout("XY.Histogram.Color")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -130,33 +128,43 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.Advanced") {
     val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
     // change xkey to y to get a horizontal histogram
-    val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
+    val trace = XY(x_random, xkey="x", series_name="test", series_type=HISTOGRAM) + marker
     val layout = Layout(Some("XY.Histogram.Advanced"))
-    val chart = Chart() + trace //+ layout + config
+    val chart = Chart() + trace + layout + config
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
-  test("XY.Histogram.Advanced") {
-    val cumulative = Cumulative()
-
-
-
-//    val marker = Marker() + List("rgba(255, 100, 102, 0.4)")  + Line()
-//    // change xkey to y to get a horizontal histogram
-//    val trace = XY(x_random, xkey="y", series_name="test", series_type=HISTOGRAM, marker=marker)
-//    val layout = Layout(Some("XY.Histogram.Advanced"))
-//    val chart = Chart() + trace //+ layout + config
-//    if (plotFlag) chart.plot
-//    assert(validateJson(chart.serialize.toString))
+  test("XY.Histogram.Cumulative") {
+    val hist_options = HistOptions(histnorm=NUMBER) + Cumulative(enabled=true)
+    val trace = XY(x_random, xkey="x", series_name="test", series_type=HISTOGRAM) + hist_options
+    val chart = Chart() + trace + Layout("XY.Histogram.Cumulative")
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
   }
 
+  test("XY.Histogram.WithOptions") {
+    val hist_options = HistOptions(histnorm=NUMBER) + Xbins(start=0.5, end=2.8, size=0.06)
+    val trace = XY(x_random, xkey="x", series_name="test", series_type=HISTOGRAM) + hist_options
+    val chart = Chart() + trace + Layout("XY.Histogram.Advanced")
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
 
+    test("XY.Histogram.SpecifyBinningFunction") {
+      val x = List("Apples","Apples","Apples","Oranges", "Bananas")
+      val y = List("5","10","3","10","5")
 
+      val ho1 = HistOptions(histfunc=COUNT)
+      val ho2 = HistOptions(histfunc=SUM)
 
+      val t1 = XY(x=x, y=y, series_name="test", series_type=HISTOGRAM) + ho1
+      val t2 = XY(x=x, y=y, series_name="test", series_type=HISTOGRAM) + ho2
 
-
-
+      val chart = Chart() + t1 + t2 + Layout("XY.Histogram.SpecifyBinningFunction")
+      if (plotFlag) chart.plot
+      assert(validateJson(chart.serialize.toString))
+    }
 
 }
 
@@ -249,7 +257,6 @@ class LayoutTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 }
-
 
 class HeatmapTests extends AnyFunSuite {
   import UnitTestUtils._

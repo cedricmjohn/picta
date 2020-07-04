@@ -66,12 +66,5 @@ final case class Layout
 }
 
 object Layout {
-  def defaultAxis(): List[Axis] = {
-    val x = Axis(key="xaxis", title="x")
-    val y = Axis(key="yaxis", title="y")
-    List(x, y)
-  }
-
-  def apply(title: String): Layout = Layout(title= Some(title))
-  def apply(title: String, height: Int, width: Int): Layout = Layout(title=Some(title), height=height, width=width)
+  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

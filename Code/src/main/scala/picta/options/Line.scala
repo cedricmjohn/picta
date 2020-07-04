@@ -29,8 +29,8 @@ case class Line[T: Color](width: Double = 0.5, color: Option[List[T]] = Some(Nil
   }
 }
 
+
+
 object Line {
-  def apply(width: Double, color: String): Line[String] = Line(width=width, color = Some(List(color)))
-  def apply(color: String): Line[String] = Line(color = Some(List(color)))
-  def apply[T: Color](color: List[T]): Line[T] = Line(color = Some(color))
+  implicit def liftToOption[T](x: T): Option[T] = Option(x)
 }

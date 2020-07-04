@@ -1,8 +1,14 @@
+import picta.common.Opt._
+
 object Example extends App {
 
-  import picta.Utils._
+  def f1(my_string: Opt[String] = Blank): Unit = {
 
-  println(genRandomText())
+  }
+
+  f1("name")
+
+
 
 }
 

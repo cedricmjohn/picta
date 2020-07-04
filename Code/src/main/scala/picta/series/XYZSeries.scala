@@ -62,7 +62,7 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
     val name = Obj("name" -> series_name, "type" -> series_type.toString.toLowerCase())
 
     val series_mode_ = series_mode match {
-      case Some(x) => Obj("mode" -> x.Stringify())
+      case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => emptyObject
     }
 
@@ -71,6 +71,8 @@ final case class XYZ[T0 : Serializer, T1: Serializer, T2: Serializer]
 }
 
 object XYZ {
+  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
+
   def apply[T0: Serializer](z: List[List[T0]], series_name: String, series_type: XYZChartType): XYZ[T0, T0, T0] = {
     XYZ(x=Nil, y=Nil, z=z.flatten, series_name=series_name, series_type=series_type, n=z(0).length)
   }

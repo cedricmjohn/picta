@@ -23,7 +23,7 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
     val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 
     val series_mode_ = series_mode match {
-      case Some(x) => Obj("mode" -> x.Stringify)
+      case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => emptyObject
     }
 
@@ -37,6 +37,5 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
 }
 
 object Map {
-  def apply[T: Color](lat: List[Double], lon: List[Double], series_mode: String): Map[T] =
-    Map(lat=lat, lon=lon, series_mode=series_mode)
+  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
 }

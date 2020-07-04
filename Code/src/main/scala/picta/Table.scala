@@ -37,8 +37,3 @@ case class Table(header: TableComponent, columns: List[TableComponent], l: Layou
   override def toString: String = ujson.write(getData())
   def plot(): Unit = plotChart(List(this.getData()), ujson.read("{}"), ujson.read("{}"))
 }
-
-object Table {
-
-
-}

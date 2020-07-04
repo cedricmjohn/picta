@@ -2,7 +2,6 @@ package picta.IO
 
 import java.io.File
 import com.github.tototoshi.csv._
-import os._
 import scala.collection.mutable
 
 object IO {

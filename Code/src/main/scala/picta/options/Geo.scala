@@ -66,3 +66,7 @@ case class Geo(resolution: Int = 50, scope: Option[String] = None, showland: Boo
       .foldLeft(emptyObject)((a, x) => a.obj ++ x.obj)
   }
 }
+
+object Geo {
+  implicit def liftToOption[T](x: T): Option[T] = Option[T](x)
+}

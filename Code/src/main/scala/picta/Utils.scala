@@ -1,16 +1,13 @@
 package picta
 
-import org.carbonateresearch.conus._
-import ujson.Value
-
 // TODO - Need to add more utility functions - can be done after integrating with CoNuS core.
 object Utils {
 
   /*
   * Returns an empty json object, serialized as a Value type
   * */
-//  def emptyObject(): Value = ujson.read("{}")
-  
+  //  def emptyObject(): Value = ujson.read("{}")
+
   /*
   * Creates a list of all the possible co-ordinates
   * */
@@ -21,14 +18,14 @@ object Utils {
     } yield Seq(x, y)
   }
 
-//  def getSeriesFromSingleModel[T: Serializer]
-//  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
-//    val r = for {
-//      t <- 0 until n
-//    } yield model.getStepResult(t, variable).getValueAtCell(coordinate)
-//
-//    r.asInstanceOf[Seq[T]].toList
-//  }
+  //  def getSeriesFromSingleModel[T: Serializer]
+  //  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
+  //    val r = for {
+  //      t <- 0 until n
+  //    } yield model.getStepResult(t, variable).getValueAtCell(coordinate)
+  //
+  //    r.asInstanceOf[Seq[T]].toList
+  //  }
 
   // println(results.getModelVariablesForStep(i))
 

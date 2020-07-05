@@ -1,22 +1,22 @@
 package picta.options
 
-import picta.common.OptionWrapper._
-import picta.common.Monoid._
-
 import picta.common.Component
-import picta.options.ColorOptions.{Color}
+import picta.common.Monoid._
+import picta.common.OptionWrapper._
+import picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
 
 /**
  * @constructor: This constructs the line for a chart.
- * @param width: Sets the line width.
- * @param color: Sets the color for the line.
+ * @param width : Sets the line width.
+ * @param color : Sets the color for the line.
  */
-case class Line[T: Color](width: Double=0.5, color: Opt[List[T]] = Empty) extends Component {
+case class Line[T: Color](width: Double = 0.5, color: Opt[List[T]] = Empty) extends Component {
 
   private val c = implicitly[Color[T]]
 
   def +[T: Color](new_color: List[T]): Line[T] = this.copy(color = new_color)
+
   def +(new_color: String): Line[String] = this.copy(color = List(new_color))
 
   def serialize(): Value = {
@@ -24,7 +24,7 @@ case class Line[T: Color](width: Double=0.5, color: Opt[List[T]] = Empty) extend
 
     val color_ = color.asOption match {
       case Some(lst) if (lst != Nil) => Obj("color" -> c.serialize(lst))
-      case _ =>  JsonMonoid.empty
+      case _ => JsonMonoid.empty
     }
 
     List(acc, color_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)

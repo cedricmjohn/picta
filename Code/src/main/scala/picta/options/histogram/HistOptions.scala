@@ -1,9 +1,8 @@
 package picta.options.histogram
 
-import picta.common.OptionWrapper._
-import picta.common.Monoid._
 import picta.common.Component
-
+import picta.common.Monoid._
+import picta.common.OptionWrapper._
 import ujson.{Obj, Value}
 
 object HistNormType extends Enumeration {
@@ -12,20 +11,22 @@ object HistNormType extends Enumeration {
   val PERCENT, DENSITY, PROBABILITY_DENSITY = Value
 }
 
-import HistNormType.HistNormType
+import picta.options.histogram.HistNormType.HistNormType
 
 object HistFuncType extends Enumeration {
   type HistFuncType = Value
   val COUNT, SUM, AVG, MIN, MAX = Value
 }
 
-import HistFuncType.HistFuncType
+import picta.options.histogram.HistFuncType.HistFuncType
 
-case class HistOptions(cumulative: Opt[Cumulative]=Blank, histnorm: Opt[HistNormType]=Blank, histfunc: Opt[HistFuncType]=Blank,
-                       xbins: Opt[Xbins]=Blank, ybins: Opt[Ybins]=Blank) extends Component {
+case class HistOptions(cumulative: Opt[Cumulative] = Blank, histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFuncType] = Blank,
+                       xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 
   def +(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)
+
   def +(new_xbins: Xbins): HistOptions = this.copy(xbins = new_xbins)
+
   def +(new_ybins: Ybins): HistOptions = this.copy(ybins = new_ybins)
 
   def serialize(): Value = {

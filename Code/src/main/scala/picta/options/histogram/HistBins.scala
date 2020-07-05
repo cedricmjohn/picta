@@ -1,12 +1,11 @@
 package picta.options.histogram
 
-import picta.common.OptionWrapper._
-import picta.common.Monoid._
-
 import picta.common.Component
+import picta.common.Monoid._
+import picta.common.OptionWrapper._
 import ujson.{Obj, Value}
 
-class HistBins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends Component {
+class HistBins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends Component {
 
   def serialize: Value = {
     val start_ = start.asOption match {
@@ -28,8 +27,8 @@ class HistBins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Doubl
   }
 }
 
-case class Xbins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends
-  HistBins(start=start, end=end, size=size)
+case class Xbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends
+  HistBins(start = start, end = end, size = size)
 
-case class Ybins(start: Opt[Double]=Blank, end: Opt[Double]=Blank, size: Opt[Double]=Blank) extends
-  HistBins(start=start, end=end, size=size)
+case class Ybins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends
+  HistBins(start = start, end = end, size = size)

@@ -1,8 +1,7 @@
 package picta
 
 import picta.Html.plotChart
-import picta.options.Config
-import picta.options.Layout
+import picta.options.{Config, Layout}
 import ujson.{Obj, Value}
 import upickle.default._
 
@@ -24,6 +23,10 @@ case class Table(header: TableComponent, columns: List[TableComponent], l: Layou
   val layout: Value = transform(l.serialize).to(Value)
   val config: Value = transform(c.serialize).to(Value)
 
+  override def toString: String = ujson.write(getData())
+
+  def plot(): Unit = plotChart(List(this.getData()), ujson.read("{}"), ujson.read("{}"))
+
   def getData(): Value = {
     val formatted_header = Obj(
       "values" -> header.values,
@@ -33,7 +36,4 @@ case class Table(header: TableComponent, columns: List[TableComponent], l: Layou
     )
     Obj("type" -> "table", "header" -> formatted_header, "cells" -> Obj("values" -> columns.map(c => c.values)))
   }
-
-  override def toString: String = ujson.write(getData())
-  def plot(): Unit = plotChart(List(this.getData()), ujson.read("{}"), ujson.read("{}"))
 }

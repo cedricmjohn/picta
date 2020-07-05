@@ -1,23 +1,22 @@
 package picta.series
 
-import picta.common.OptionWrapper._
 import picta.common.Monoid._
-
+import picta.common.OptionWrapper._
 import picta.options.ColorOptions.Color
 import picta.options.Line
 import picta.series.ModeType.ModeType
 import ujson.{Obj, Value}
 
 /**
-  * @constructor: This sets the Series for a Map chart specifically.
-  * @param lat: This is the list of latitudes.
-  * @param lon: This is the list of longitudes.
-  * @param series_name: This sets the series name.
-  * @param series_mode: This sets the series mode.
-  * @param line: This configures the line for the Map.
-  */
+ * @constructor: This sets the Series for a Map chart specifically.
+ * @param lat         : This is the list of latitudes.
+ * @param lon         : This is the list of longitudes.
+ * @param series_name : This sets the series name.
+ * @param series_mode : This sets the series mode.
+ * @param line        : This configures the line for the Map.
+ */
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
-                               series_mode: Opt[ModeType]=Blank, line: Opt[Line[T]] = Blank) extends Series {
+                               series_mode: Opt[ModeType] = Blank, line: Opt[Line[T]] = Blank) extends Series {
 
   def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 

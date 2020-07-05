@@ -1,9 +1,8 @@
 package picta.options.histogram
 
-import picta.common.OptionWrapper._
-import picta.common.Monoid._
-
 import picta.common.Component
+import picta.common.Monoid._
+import picta.common.OptionWrapper._
 import ujson.{Obj, Value}
 
 case class Cumulative(enabled: Opt[Boolean] = Blank, direction: Opt[String] = Blank,

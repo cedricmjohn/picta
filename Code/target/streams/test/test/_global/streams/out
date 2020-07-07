@@ -1,18 +1,18 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(BasicChartTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LayoutTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CompositionTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MarkerTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MapTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LineTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HeatmapTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AxisTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HistogramTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(XYZTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AnimationTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(PieChartTests, org.scalatest.tools.Framework$$anon$1@4c79fce7, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 13 seconds, 638 milliseconds.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LineTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MarkerTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(PieChartTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CompositionTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AnimationTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AxisTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HistogramTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(HeatmapTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(XYZTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(BasicChartTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LayoutTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MapTests, org.scalatest.tools.Framework$$anon$1@35998249, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 13 seconds, 556 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 36[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 14, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 36, failed 0, canceled 0, ignored 0, pending 0[0m[0m

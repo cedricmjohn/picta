@@ -9,7 +9,7 @@ import picta.options.histogram.HistNormType._
 import picta.options.histogram.{Cumulative, HistOptions, Xbins}
 import picta.options.histogram2d.Hist2dOptions
 import picta.options._
-import picta.options.animation.{Args, PlayButton, PauseButton, CurrentValue, Setting, Slider, SliderStep, UpdateMenus}
+import picta.options.animation.{AnimationEngine, Args, CurrentValue, PauseButton, PlayButton, Setting, Slider, SliderStep, UpdateMenus}
 import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
@@ -386,29 +386,11 @@ class AnimationTests extends AnyFunSuite {
 //  }
 
   test("Animation.XYZ") {
-    case class AnimationEngine() {
 
-    }
+    val animation_engine = AnimationEngine()
 
-    val play_btn_args = Args(mode = "immediate", fromcurrent = true, transition = Setting(duration = 300.0),
-      frame=Setting(duration = 300.0, redraw = true))
-
-    val play_button = PlayButton(method = "animate", args=play_btn_args, label = "Play")
-
-    val pause_btn_args = Args(mode = "immediate", transition = Setting(duration = 0.0),
-      frame=Setting(duration = 0.0, redraw = true))
-
-    val pause_button = PauseButton(method = "animate", args=pause_btn_args, label = "Pause")
-
-    val update_menus = UpdateMenus(x=0.0, y=0.0, yanchor = "top", xanchor = "left", showactive = true, direction = "left",
-      menu_type = "buttons", pad = Margin(t=110, r=10), buttons = List(play_button, pause_button))
-
-    val current_value = CurrentValue(visible=true, prefix="Time:", xanchor = "right")
-    val sliders = Slider(pad = Margin(l=130, t=200)) + current_value
-
-
-    val traces = createXYZSeries(numberToCreate=3, length = 3)
-    val layout = Layout("Animation") + sliders + update_menus
+    val traces = createXYZSeries(numberToCreate=10, length = 10)
+    val layout = Layout("Animation") + animation_engine
 
     val chart = Chart(animated=true) + layout + traces
 
@@ -416,11 +398,6 @@ class AnimationTests extends AnyFunSuite {
 
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
-
-
-
-
-
 
 }
 

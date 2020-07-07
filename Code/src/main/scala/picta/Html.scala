@@ -6,6 +6,7 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
 import os.Path
+import picta.common.OptionWrapper._
 import ujson.Value
 
 object Html {
@@ -59,9 +60,15 @@ object Html {
    * @param layout : the layout case class specifying layout options
    * @param config : the config case class specifying the chart config options
    */
-  def plotChart(traces: List[Value], layout: Value, config: Value): Unit = {
+  def plotChart(traces: List[Value], frames: Opt[Value]=Blank, layout: Value, config: Value): Unit = {
     val graph_id = System.currentTimeMillis().toString
-    val html: String = generateHTML(traces, layout, config, true, graph_id)
+
+    val html: String = frames.asOption match {
+      case Some(x) =>
+        generateHTML(traces=traces, frames=x,layout=layout, config=config, includeScript = true, graph_id=graph_id)
+      case _ => generateHTML(traces=traces, layout=layout, config=config, includeScript = true, graph_id=graph_id)
+    }
+
     writeHTMLToFile(html, graph_id)
   }
 
@@ -73,33 +80,46 @@ object Html {
    * @param config   : This should be the config case class instance.
    * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
    */
-  private def generateHTML(traces: Value, layout: Value, config: Value, scriptFlag: Boolean, graph_id: String): String = {
+  private def generateHTML(traces: Value, frames: Opt[Value]=Blank, layout: Value, config: Value, includeScript: Boolean, graph_id: String): String = {
+
     var script = new StringBuilder()
 
-    if (useCDN)
-      script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
-    else
-      script ++= s"""<script> ${plotlyJs} </script>"""
-
-    val base_html =
-      s"""
-         |<div align="center">
-         |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
-         |</div>
-         |<script>
-         | var traces = ${traces};
-         | var layout = ${layout};
-         | var config = ${config};
-         | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
-         |</script>
-         |""".stripMargin
-
-    if (scriptFlag) {
-      script ++= base_html
-      script.mkString
+    useCDN match {
+      case true => script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
+      case false => script ++= s"""<script> ${plotlyJs} </script>"""
     }
-    else {
-      base_html
+
+    val graph_html =
+      s"""
+       |<div align="center">
+       |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+       |</div>
+       |""".stripMargin
+
+    val function_html = frames.asOption match {
+      case Some(frames_) =>
+        s"""
+           |<script>
+           |Plotly.newPlot("graph_${graph_id}",{
+           |data: ${traces},
+           |layout: ${layout},
+           |frames: ${frames_},
+           |});
+           |</script>
+           |""".stripMargin
+      case _ =>
+        s"""|<script>
+            | var traces = ${traces};
+            | var layout = ${layout};
+            | var config = ${config};
+            | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
+            |</script>
+            |""".stripMargin
+    }
+
+    includeScript match {
+      case true => (script ++= graph_html ++= function_html).mkString
+      case false => graph_html + function_html
     }
   }
 
@@ -149,7 +169,7 @@ object Html {
    */
   def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
     val graph_id = System.currentTimeMillis().toString
-    val html: String = generateHTML(traces, layout, config, false, graph_id)
+    val html: String = generateHTML(traces=traces, layout=layout, config=config, includeScript = false, graph_id = graph_id)
     writeHTMLToJupyter(html, graph_id)
   }
 

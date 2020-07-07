@@ -1,7 +1,7 @@
 package picta.series
 
 import picta.Serializer
-import picta.Utils._
+import picta.common.Utils._
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
 import picta.series.ModeType.ModeType

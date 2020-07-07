@@ -1,12 +1,14 @@
-package picta
+package picta.common
+
+import picta.options.animation.{Args, Setting, SliderStep}
+import picta.series.{Series}
+import ujson.Obj
 
 // TODO - Need to add more utility functions - can be done after integrating with CoNuS core.
 object Utils {
 
-  /*
-  * Returns an empty json object, serialized as a Value type
-  * */
-  //  def emptyObject(): Value = ujson.read("{}")
+
+
 
   /*
   * Creates a list of all the possible co-ordinates

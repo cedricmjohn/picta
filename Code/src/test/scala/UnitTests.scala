@@ -3,15 +3,18 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
+import picta.common.Utils._
 import picta.options.histogram.HistFuncType._
 import picta.options.histogram.HistNormType._
 import picta.options.histogram.{Cumulative, HistOptions, Xbins}
 import picta.options.histogram2d.Hist2dOptions
 import picta.options._
+import picta.options.animation.{Args, PlayButton, PauseButton, CurrentValue, Setting, Slider, SliderStep, UpdateMenus}
 import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
-import picta.series.{Map, XY, XYZ}
+import picta.series.{Map, XY, XYSeries, XYZ, XYZSeries}
+import ujson.Value
 import upickle.default.write
 
 class AxisTests extends AnyFunSuite {
@@ -350,6 +353,84 @@ class MapTests extends AnyFunSuite {
   }
 }
 
+class AnimationTests extends AnyFunSuite {
+//  test("Animation.XY") {
+//    val xaxis = Axis(key="xaxis", title="X Variable", range = (0.0, 10.0))
+//    val yaxis = Axis(key="yaxis", title="Y Variable", range = (0.0, 10.0))
+//
+//    val play_btn_args = Args(mode = "immediate", fromcurrent = true, transition = Setting(duration = 300.0),
+//      frame=Setting(duration = 300.0, redraw = false))
+//
+//    val play_button = PlayButton(method = "animate", args=play_btn_args, label = "Play")
+//
+//    val pause_btn_args = Args(mode = "immediate", transition = Setting(duration = 0.0),
+//      frame=Setting(duration = 0.0, redraw = false))
+//
+//    val pause_button = PauseButton(method = "animate", args=pause_btn_args, label = "Pause")
+//
+//    val update_menus = UpdateMenus(x=0.0, y=0.0, yanchor = "top", xanchor = "left", showactive = false, direction = "left",
+//      menu_type = "buttons", pad = Margin(t=87, r=10), buttons = List(play_button, pause_button))
+//
+//    val traces = createXYSeries(numberToCreate=100)
+//
+//    val current_value = CurrentValue(visible=true, prefix="Time:", xanchor = "right")
+//    val sliders = Slider(pad = Margin(l=130, t=55)) + current_value
+//
+//    val layout = Layout("Animation") + sliders + xaxis + yaxis + update_menus
+//
+//    val chart = Chart(animated=true, method = "animate") + layout + traces
+//
+//    if (true) chart.plot()
+//
+//    assert(validateJson(chart.serialize.toString, "dynamic"))
+//  }
+
+  test("Animation.XYZ") {
+    case class AnimationEngine() {
+
+    }
+
+    val play_btn_args = Args(mode = "immediate", fromcurrent = true, transition = Setting(duration = 300.0),
+      frame=Setting(duration = 300.0, redraw = true))
+
+    val play_button = PlayButton(method = "animate", args=play_btn_args, label = "Play")
+
+    val pause_btn_args = Args(mode = "immediate", transition = Setting(duration = 0.0),
+      frame=Setting(duration = 0.0, redraw = true))
+
+    val pause_button = PauseButton(method = "animate", args=pause_btn_args, label = "Pause")
+
+    val update_menus = UpdateMenus(x=0.0, y=0.0, yanchor = "top", xanchor = "left", showactive = true, direction = "left",
+      menu_type = "buttons", pad = Margin(t=110, r=10), buttons = List(play_button, pause_button))
+
+    val current_value = CurrentValue(visible=true, prefix="Time:", xanchor = "right")
+    val sliders = Slider(pad = Margin(l=130, t=200)) + current_value
+
+
+    val traces = createXYZSeries(numberToCreate=3, length = 3)
+    val layout = Layout("Animation") + sliders + update_menus
+
+    val chart = Chart(animated=true) + layout + traces
+
+    if (true) chart.plot()
+
+    assert(validateJson(chart.serialize.toString, "dynamic"))
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 object UnitTestUtils {
 
   val x_random = List.range(1, 100).map(x => scala.util.Random.nextDouble() * 100)
@@ -385,7 +466,32 @@ object UnitTestUtils {
     List(8.93, 8.97, 8.97, 9.18, 9.2, 9.18)
   )
 
-  def validateJson(json: String): Boolean = {
+  // creates random XY for testing purposes
+  def createXYSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYSeries] = {
+    if (count == numberToCreate) Nil
+    else {
+      val xs = List.range(0, length)
+      val ys = xs.map(x => scala.util.Random.nextDouble() * x)
+      val trace = XY(x=xs, y = ys, series_name = "trace" + count)
+      trace :: createXYSeries(numberToCreate, count + 1, length)
+    }
+  }
+
+  def createXYZSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYZSeries] = {
+    if (count == numberToCreate) Nil
+    else {
+      val xs = List.range(0, length)
+      val ys = xs.map(x => scala.util.Random.nextDouble() * x)
+      val zs = xs.map(x => scala.util.Random.nextDouble() * x * scala.util.Random.nextInt())
+      val trace = XYZ(x=xs, y=ys, z=zs, series_name = "trace" + count, series_type = SCATTER3D)
+      trace :: createXYZSeries(numberToCreate, count + 1, length)
+    }
+  }
+
+
+
+
+  def validateJson(json: String, ignore: Opt[String]=Blank): Boolean = {
     val wd = os.pwd / "src" / "test" / "resources" / "javascript"
 
     // spawn a subprocess
@@ -401,8 +507,13 @@ object UnitTestUtils {
     // end the process
     sub.destroy()
 
-    result.arr.foreach(println)
+    val errors = ignore.asOption match {
+      case Some(x) => result.arr.filter(e => e("code").toString() != s""""${x}"""")
+      case None => result.arr
+    }
 
-    result.arr.length == 0
+    if (errors.length > 0) errors.foreach(println)
+
+    errors.length == 0
   }
 }

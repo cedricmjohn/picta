@@ -4,6 +4,7 @@ import java.io.File
 import com.github.tototoshi.csv._
 import scala.collection.mutable
 
+/** TODO - need to make sure working directory is also used */
 object IO {
   def get_wd: String = os.pwd.toString
 

@@ -21,7 +21,7 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
   def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 
   override def serialize: Value = {
-    val acc = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
+    val meta = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 
     val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
@@ -33,6 +33,6 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
       case None => JsonMonoid.empty
     }
 
-    List(acc, series_mode_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(meta, series_mode_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
 }

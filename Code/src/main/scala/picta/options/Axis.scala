@@ -16,8 +16,8 @@ import ujson.{Obj, Value}
  * @param showline   : Determines whether the axis is visibly drawn on the chart.
  */
 case class Axis(key: String, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
-                domain: Opt[(Double, Double)] = Blank, showgrid: Boolean = true, zeroline: Boolean = false,
-                showline: Boolean = false) extends Component {
+                domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
+                zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
   def serialize(): Value = {
     val meta = Obj(
@@ -46,6 +46,11 @@ case class Axis(key: String, title: Opt[String] = Blank, side: Opt[String] = Bla
       case None => JsonMonoid.empty
     }
 
-    Obj(key -> List(title_, meta, side_, overlaying_, domain_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x))
+    val range_ = range.asOption match {
+      case Some(x) => Obj("range" -> List(x._1, x._2))
+      case None => JsonMonoid.empty
+    }
+
+    Obj(key -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x))
   }
 }

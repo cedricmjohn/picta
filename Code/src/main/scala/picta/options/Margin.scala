@@ -30,5 +30,4 @@ case class Margin(l: Opt[Int] = Blank, r: Opt[Int] = Blank, t: Opt[Int] = Blank,
 
     List(l_, r_, t_, b_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
   }
-
 }

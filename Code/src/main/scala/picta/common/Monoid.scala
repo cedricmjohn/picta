@@ -2,12 +2,12 @@ package picta.common
 
 import ujson.{Value, read}
 
-trait Semigroup[A] {
-  def combine(x: A, y: A): A
+trait Semigroup[T] {
+  def combine(x: T, y: T): T
 }
 
-trait Monoid[A] extends Semigroup[A] {
-  def empty: A
+trait Monoid[T] extends Semigroup[T] {
+  def empty: T
 }
 
 object Monoid {
@@ -16,7 +16,7 @@ object Monoid {
     def empty: Value = read("{}")
   }
 
-  implicit class JsonMonoid[A](val x: A)(implicit m: Monoid[A]) {
-    def |+|(y: A): A = m.combine(x, y)
+  implicit class JsonMonoid[T](val x: T)(implicit m: Monoid[T]) {
+    def |+|(y: T): T = m.combine(x, y)
   }
 }

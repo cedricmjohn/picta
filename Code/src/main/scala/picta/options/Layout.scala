@@ -3,6 +3,7 @@ package picta.options
 import picta.common.Component
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
+import picta.options.animation.{Slider, SliderStep, UpdateMenus}
 import ujson.{Obj, Value}
 
 /**
@@ -18,8 +19,8 @@ import ujson.{Obj, Value}
  */
 final case class Layout
 (title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, grid: Opt[Grid] = Blank, geo: Opt[Geo] = Blank, showlegend: Boolean = false, height: Int = 550,
- width: Int = 600) extends Component {
+ margin: Opt[Margin] = Blank, grid: Opt[Grid] = Blank, geo: Opt[Geo] = Blank, updatemenus: Opt[UpdateMenus]=Blank,
+ sliders: Opt[Slider]=Blank, showlegend: Boolean = false, height: Int = 550, width: Int = 600) extends Component {
 
   def +(new_axis: Axis): Layout = axs.asOption match {
     case Some(lst) => this.copy(axs = new_axis :: lst)
@@ -38,6 +39,10 @@ final case class Layout
   def +(new_grid: Grid): Layout = this.copy(grid = new_grid)
 
   def +(new_margin: Margin): Layout = this.copy(margin = new_margin)
+
+  def +(new_updatemenus: UpdateMenus): Layout = this.copy(updatemenus = new_updatemenus)
+
+  def +(new_slider: Slider): Layout = this.copy(sliders=new_slider)
 
   def serialize(): Value = {
     val dim = Obj("height" -> height, "width" -> width)
@@ -72,12 +77,22 @@ final case class Layout
       case None => JsonMonoid.empty
     }
 
+    val updatemenus_ = updatemenus.asOption match {
+      case Some(x) => Obj("updatemenus" -> List(x.serialize))
+      case None => JsonMonoid.empty
+    }
+
     val margin_ = margin.asOption match {
       case Some(x) => Obj("margin" -> x.serialize)
       case None => JsonMonoid.empty
     }
 
-    val combined = List(dim, title_, showlegend_, legend_, autosize_, grid_, geo_, margin_)
+    val sliders_ = sliders.asOption match {
+      case Some(x) => Obj("sliders" -> List(x.serialize))
+      case None => JsonMonoid.empty
+    }
+
+    val combined = List(dim, title_, showlegend_, legend_, autosize_, grid_, geo_, updatemenus_, margin_, sliders_)
       .foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
 
     axs.asOption match {

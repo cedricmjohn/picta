@@ -53,34 +53,88 @@ object Html {
     scala.io.Source.fromInputStream(is).mkString
   }
 
-  /**
-   * This plots the chart in the browser
-   *
-   * @param traces : a list of trace data we wish to plot
-   * @param layout : the layout case class specifying layout options
-   * @param config : the config case class specifying the chart config options
-   */
-  def plotChart(traces: List[Value], frames: Opt[Value] = Blank, layout: Value, config: Value): Unit = {
-    val graph_id = System.currentTimeMillis().toString
+  def createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value,
+                          transition_duration: Int, graph_id: String): String = {
 
-    val html: String = frames.asOption match {
-      case Some(x) =>
-        generateHTML(traces = traces, frames = x, layout = layout, config = config, includeScript = true, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, graph_id = graph_id)
-    }
-
-    writeHTMLToFile(html, graph_id)
+    s"""
+       |<script>
+       |const graph_id = 'graph_${graph_id}'
+       |const graph = document.getElementById(graph_id)
+       |const button = document.getElementById('play')
+       |const traces = $traces
+       |const layout = $layout
+       |const frames = $frames
+       |const labels = $labels
+       |const duration = $transition_duration
+       |
+       |const animation_settings = {
+       |    mode: {},
+       |    direction: {},
+       |    fromcurrent: true,
+       |    frame: [
+       |      {duration: duration},
+       |      {duration: duration},
+       |      {redraw: true}
+       |    ],
+       |    transition: [
+       |      {duration: duration, easing: 'cubic-in-out'},
+       |      {duration: duration, easing: 'cubic-in-out'},
+       |    ],
+       |    ordering: "layout first"
+       |}
+       |
+       |var slider = document.createElement("input")
+       |slider.id = "slider"
+       |slider.type = "range"
+       |slider.min = 0
+       |slider.max = frames.length - 1
+       |slider.value = 0
+       |document.getElementById("sliderContainer").appendChild(slider);
+       |
+       |Plotly.newPlot(graph_id, traces, layout)
+       |.then(function () { Plotly.addFrames(graph_id, frames) })
+       |
+       |function startAnimation() {
+       |  const start_index = slider.value == labels.length - 1 ? 0 : slider.value
+       |  const end_index = labels.length
+       |  Plotly.animate(graph_id, labels.slice(start_index, end_index), animation_settings)
+       |}
+       |
+       |var trigger = true
+       |var resetCount = false
+       |
+       button.onclick = function() {
+       |   trigger = true
+       |   startAnimation()
+       |}
+       |
+       |graph.on('plotly_redraw', () => {
+       |   if (trigger) ++slider.value
+       |   if (slider.value == labels.length - 1) reset_count = true
+       |});
+       |
+       |slider.oninput = function() {
+       |   Plotly.animate(graph_id, frames[this.value], animation_settings)
+       |   trigger = false
+       |   slider.value = this.value
+       |   if (this.value == 0) reset_count = false
+       |   if (this.value == labels.length - 1) reset_count = true
+       |}
+       |</script>
+       |""".stripMargin
   }
+
+
 
   /**
    * A function to generate the HTML corresponding to the Plotly plotting function.
-   *
    * @param traces   : This is the trace data. It should be serialized as a json list.
    * @param layout   : This should be the layout case class instance.
    * @param config   : This should be the config case class instance.
    * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
    */
-  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, layout: Value, config: Value, includeScript: Boolean, graph_id: String): String = {
+  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
+                           includeScript: Boolean, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
 
     var script = new StringBuilder()
 
@@ -89,32 +143,36 @@ object Html {
       case false => script ++= s"""<script> ${plotlyJs} </script>"""
     }
 
-    val graph_html =
-      s"""
-         |<div align="center">
-         |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
-         |</div>
-         |""".stripMargin
-
-    val function_html = frames.asOption match {
-      case Some(frames_) =>
-        s"""
-           |<script>
-           |Plotly.newPlot("graph_${graph_id}",{
-           |data: ${traces},
-           |layout: ${layout},
-           |frames: ${frames_},
-           |});
-           |</script>
-           |""".stripMargin
+    val graph_html = frames.asOption match {
+      case Some(_) => s"""
+                       |<div align="center">
+                       |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+                       |<div id="sliderContainer"></div>
+                       |<button id='play'>Animate!</button>
+                       |</div>
+                       |""".stripMargin
       case _ =>
-        s"""|<script>
-            | var traces = ${traces};
-            | var layout = ${layout};
-            | var config = ${config};
-            | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
-            |</script>
-            |""".stripMargin
+        s"""
+           |<div align="center">
+           |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+           |</div>
+           |""".stripMargin
+    }
+
+    val function_html = {
+      (frames.asOption, labels.asOption, transition_duration.asOption) match {
+        case (Some(x), Some(y), Some(z)) => createAnimationHTML(traces = traces, frames = x, labels = y, layout = layout,
+          transition_duration = z, graph_id)
+
+        case _ =>
+          s"""|<script>
+              | var traces = ${traces};
+              | var layout = ${layout};
+              | var config = ${config};
+              | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
+              |</script>
+              |""".stripMargin
+      }
     }
 
     includeScript match {
@@ -125,7 +183,6 @@ object Html {
 
   /**
    * A function to write the chart to a .html and open a browser displaying the chart.
-   *
    * @param html     : This is the html represented as a string.
    * @param graph_id : This is required in order to generate a unique file name for the chart.
    */
@@ -160,6 +217,28 @@ object Html {
   }
 
   /**
+   * This plots the chart in the browser
+   *
+   * @param traces : a list of trace data we wish to plot
+   * @param layout : the layout case class specifying layout options
+   * @param config : the config case class specifying the chart config options
+   */
+  def plotChart(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
+                transition_duration: Opt[Int]=Blank, layout: Value, config: Value): Unit = {
+
+    val graph_id = System.currentTimeMillis().toString
+
+    val html: String = (frames.asOption, labels.asOption, transition_duration.asOption) match {
+      case (Some(x), Some(y), Some(z)) =>
+        generateHTML(traces = traces, frames = x, labels = y, transition_duration = z, layout = layout, config = config,
+          includeScript = true, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, graph_id = graph_id)
+    }
+
+    writeHTMLToFile(html, graph_id)
+  }
+
+  /**
    * This plots the chart inside a Jupyter notebook
    *
    * @param traces  : a list of trace data we wish to plot
@@ -167,10 +246,14 @@ object Html {
    * @param config  : the config case class specifying the chart config options
    * @param publish (implicit): required to render the HTML in the almond notebook
    */
-  def plotChart_inline(traces: List[Value], frames: Opt[Value] = Blank, layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
+  def plotChart_inline(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
+                       transition_duration: Opt[Int] = Blank, layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
+
     val graph_id = System.currentTimeMillis().toString
-    val html: String = frames.asOption match {
-      case Some(x) => generateHTML(traces = traces, frames = x, layout = layout, config = config, includeScript = false, graph_id = graph_id)
+
+    val html: String = (frames.asOption, labels.asOption, transition_duration.asOption) match {
+      case (Some(x), Some(y), Some(z)) => generateHTML(traces = traces, frames = x, labels = x, transition_duration = z,
+        layout = layout, config = config, includeScript = false, graph_id = graph_id)
       case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, graph_id = graph_id)
     }
     writeHTMLToJupyter(html, graph_id)

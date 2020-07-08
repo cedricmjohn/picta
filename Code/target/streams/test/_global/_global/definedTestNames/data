@@ -1,1 +1,1 @@
-["LayoutTests","MarkerTests","ScatterWithColorTests","Histogram2DContourTests","CompositionTests","LineTests","BasicChartTests","MapTests","HistogramTests","HeatmapTests","PieChartTests","AnimationTests","AxisTests","XYZTests"]
+["MarkerTests","LineTests","AnimationTests","AxisTests"]

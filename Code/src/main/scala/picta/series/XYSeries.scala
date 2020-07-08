@@ -40,7 +40,7 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
  series_type: XYChartType = SCATTER, series_mode: Opt[ModeType] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank,
  marker: Opt[Marker[T2, T3]] = Blank, hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
 
-  def +[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
+  def withMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
 
   def +(new_hist_options: HistOptions): XY[T0, T1, T2, T3] = this.copy(hist_options = new_hist_options)
 

@@ -60,13 +60,13 @@ object Html {
    * @param layout : the layout case class specifying layout options
    * @param config : the config case class specifying the chart config options
    */
-  def plotChart(traces: List[Value], frames: Opt[Value]=Blank, layout: Value, config: Value): Unit = {
+  def plotChart(traces: List[Value], frames: Opt[Value] = Blank, layout: Value, config: Value): Unit = {
     val graph_id = System.currentTimeMillis().toString
 
     val html: String = frames.asOption match {
       case Some(x) =>
-        generateHTML(traces=traces, frames=x,layout=layout, config=config, includeScript = true, graph_id=graph_id)
-      case _ => generateHTML(traces=traces, layout=layout, config=config, includeScript = true, graph_id=graph_id)
+        generateHTML(traces = traces, frames = x, layout = layout, config = config, includeScript = true, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, graph_id = graph_id)
     }
 
     writeHTMLToFile(html, graph_id)
@@ -80,7 +80,7 @@ object Html {
    * @param config   : This should be the config case class instance.
    * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
    */
-  private def generateHTML(traces: Value, frames: Opt[Value]=Blank, layout: Value, config: Value, includeScript: Boolean, graph_id: String): String = {
+  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, layout: Value, config: Value, includeScript: Boolean, graph_id: String): String = {
 
     var script = new StringBuilder()
 
@@ -91,10 +91,10 @@ object Html {
 
     val graph_html =
       s"""
-       |<div align="center">
-       |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
-       |</div>
-       |""".stripMargin
+         |<div align="center">
+         |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+         |</div>
+         |""".stripMargin
 
     val function_html = frames.asOption match {
       case Some(frames_) =>
@@ -167,9 +167,12 @@ object Html {
    * @param config  : the config case class specifying the chart config options
    * @param publish (implicit): required to render the HTML in the almond notebook
    */
-  def plotChart_inline(traces: List[Value], layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
+  def plotChart_inline(traces: List[Value], frames: Opt[Value] = Blank, layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
     val graph_id = System.currentTimeMillis().toString
-    val html: String = generateHTML(traces=traces, layout=layout, config=config, includeScript = false, graph_id = graph_id)
+    val html: String = frames.asOption match {
+      case Some(x) => generateHTML(traces = traces, frames = x, layout = layout, config = config, includeScript = false, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, graph_id = graph_id)
+    }
     writeHTMLToJupyter(html, graph_id)
   }
 

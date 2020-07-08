@@ -11,12 +11,12 @@ trait Monoid[T] extends Semigroup[T] {
 }
 
 object Monoid {
-  implicit val JsonMonoid: Monoid[Value] = new Monoid[Value] {
+  implicit val jsonMonoid: Monoid[Value] = new Monoid[Value] {
     def combine(x: Value, y: Value): Value = x.obj ++ y.obj
     def empty: Value = read("{}")
   }
 
-  implicit class JsonMonoid[T](val x: T)(implicit m: Monoid[T]) {
+  implicit class jsonMonoid[T](val x: T)(implicit m: Monoid[T]) {
     def |+|(y: T): T = m.combine(x, y)
   }
 }

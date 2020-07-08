@@ -1,9 +1,9 @@
 package picta.series
 
 import picta.Serializer
-import picta.common.Utils._
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
+import picta.common.Utils._
 import picta.series.ModeType.ModeType
 import ujson.{Obj, Value}
 
@@ -34,10 +34,10 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 
     val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(name, series_mode_, createSeries).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(name, series_mode_, createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 
   private def createSeries(): Value = n match {

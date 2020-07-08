@@ -3,7 +3,7 @@ package picta.options
 import picta.common.Component
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
-import picta.options.animation.{AnimationEngine, Slider, SliderStep, UpdateMenus}
+import picta.options.animation.{AnimationEngine, Slider, UpdateMenus}
 import ujson.{Obj, Value}
 
 /**
@@ -19,8 +19,8 @@ import ujson.{Obj, Value}
  */
 final case class Layout
 (title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, grid: Opt[Grid] = Blank, geo: Opt[Geo] = Blank, updatemenus: Opt[UpdateMenus]=Blank,
- sliders: Opt[Slider]=Blank, showlegend: Boolean = false,
+ margin: Opt[Margin] = Blank, grid: Opt[Grid] = Blank, geo: Opt[Geo] = Blank, updatemenus: Opt[UpdateMenus] = Blank,
+ sliders: Opt[Slider] = Blank, showlegend: Boolean = false,
  height: Int = 550, width: Int = 600) extends Component {
 
   def +(new_axis: Axis): Layout = axs.asOption match {
@@ -35,7 +35,7 @@ final case class Layout
 
   def +(new_geo: Geo): Layout = this.copy(geo = new_geo)
 
-  def +(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend=true)
+  def +(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
 
   def +(new_grid: Grid): Layout = this.copy(grid = new_grid)
 
@@ -43,61 +43,61 @@ final case class Layout
 
   def +(new_updatemenus: UpdateMenus): Layout = this.copy(updatemenus = new_updatemenus)
 
-  def +(new_slider: Slider): Layout = this.copy(sliders=new_slider)
+  def +(new_slider: Slider): Layout = this.copy(sliders = new_slider)
 
   def +(animation_engine: AnimationEngine): Layout =
-    this.copy(updatemenus=animation_engine.update_menus, sliders=animation_engine.sliders)
+    this.copy(updatemenus = animation_engine.update_menus, sliders = animation_engine.sliders)
 
   def serialize(): Value = {
     val dim = Obj("height" -> height, "width" -> width)
 
     val title_ = title.asOption match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val showlegend_ = showlegend.asOption match {
       case Some(x) => Obj("showlegend" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val legend_ = legend.asOption match {
       case Some(x) => Obj("legend" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val autosize_ = autosize.asOption match {
       case Some(x) => Obj("autosize" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val grid_ = grid.asOption match {
       case Some(x) => Obj("grid" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val geo_ = geo.asOption match {
       case Some(x) => Obj("geo" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val margin_ = margin.asOption match {
       case Some(x) => Obj("margin" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val updatemenus_ = updatemenus.asOption match {
       case Some(x) => Obj("updatemenus" -> List(x.serialize))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val sliders_ = sliders.asOption match {
       case Some(x) => Obj("sliders" -> List(x.serialize))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val combined = List(dim, title_, showlegend_, legend_, autosize_, grid_, geo_, margin_, updatemenus_, sliders_)
-      .foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+      .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
     axs.asOption match {
       case Some(lst) => lst.foldLeft(combined)((a, x) => a |+| x.serialize())

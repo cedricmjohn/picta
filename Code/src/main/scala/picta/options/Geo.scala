@@ -36,35 +36,35 @@ case class Geo(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakec
 
     val scope_ = scope.asOption match {
       case Some(x) => Obj("scope" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val landcolor_ = landcolor.asOption match {
       case Some(x) => Obj("landcolor" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val lakecolor_ = lakecolor.asOption match {
       case Some(x) => Obj("lakecolor" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val projection_ = projection.asOption match {
       case Some(x) => Obj("projection" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val lataxis_ = lataxis.asOption match {
       case Some(x) => Obj("lataxis" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val longaxis_ = longaxis.asOption match {
       case Some(x) => Obj("lonaxis" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     List(meta, scope_, landcolor_, lakecolor_, projection_, lataxis_, longaxis_)
-      .foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+      .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

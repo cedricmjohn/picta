@@ -1,9 +1,9 @@
 package picta.series
 
 import picta.Serializer
-import picta.common.Utils._
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
+import picta.common.Utils._
 import picta.options.ColorOptions.Color
 import picta.options.Marker
 import picta.options.histogram.HistOptions
@@ -54,38 +54,38 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
     val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val xaxis_ = xaxis.asOption match {
-      case Some(x) => if (series_type != PIE) Obj("xaxis" -> x) else JsonMonoid.empty
-      case _ => JsonMonoid.empty
+      case Some(x) => if (series_type != PIE) Obj("xaxis" -> x) else jsonMonoid.empty
+      case _ => jsonMonoid.empty
     }
 
     val yaxis_ = yaxis.asOption match {
-      case Some(x) => if (series_type != PIE) Obj("yaxis" -> x) else JsonMonoid.empty
-      case _ => JsonMonoid.empty
+      case Some(x) => if (series_type != PIE) Obj("yaxis" -> x) else jsonMonoid.empty
+      case _ => jsonMonoid.empty
     }
 
     val marker_ = marker.asOption match {
       case Some(x) => Obj("marker" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     /** No need to add a key as this object merges directly */
     val hist_options_ : Value = hist_options.asOption match {
-      case Some(x) => if (series_type == HISTOGRAM) x.serialize else JsonMonoid.empty
-      case None => JsonMonoid.empty
+      case Some(x) => if (series_type == HISTOGRAM) x.serialize else jsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     /** No need to add a key as this object merges directly */
     val hist2d_options_ : Value = hist2d_options.asOption match {
-      case Some(x) => if (series_type == HISTOGRAM2DCONTOUR) x.serialize else JsonMonoid.empty
-      case None => JsonMonoid.empty
+      case Some(x) => if (series_type == HISTOGRAM2DCONTOUR) x.serialize else jsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     List(meta, series_mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries)
-      .foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+      .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 
   private def createSeries(): Value = {

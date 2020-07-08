@@ -3,18 +3,16 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
-import picta.common.Utils._
 import picta.options.histogram.HistFuncType._
 import picta.options.histogram.HistNormType._
 import picta.options.histogram.{Cumulative, HistOptions, Xbins}
 import picta.options.histogram2d.Hist2dOptions
 import picta.options._
-import picta.options.animation.{AnimationEngine, Args, CurrentValue, PauseButton, PlayButton, Setting, Slider, SliderStep, UpdateMenus}
+import picta.options.animation.{AnimationEngine}
 import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
 import picta.series.{Map, XY, XYSeries, XYZ, XYZSeries}
-import ujson.Value
 import upickle.default.write
 
 class AxisTests extends AnyFunSuite {
@@ -42,7 +40,7 @@ class LineTests extends AnyFunSuite {
 class MarkerTests extends AnyFunSuite {
   test("Marker.Constructor.Default") {
     val marker = Marker()
-    assert(JsonMonoid.empty.toString == write(marker.serialize))
+    assert(jsonMonoid.empty.toString == write(marker.serialize))
   }
 
   test("Marker.Constructor.Full") {
@@ -354,59 +352,24 @@ class MapTests extends AnyFunSuite {
 }
 
 class AnimationTests extends AnyFunSuite {
-//  test("Animation.XY") {
-//    val xaxis = Axis(key="xaxis", title="X Variable", range = (0.0, 10.0))
-//    val yaxis = Axis(key="yaxis", title="Y Variable", range = (0.0, 10.0))
-//
-//    val play_btn_args = Args(mode = "immediate", fromcurrent = true, transition = Setting(duration = 300.0),
-//      frame=Setting(duration = 300.0, redraw = false))
-//
-//    val play_button = PlayButton(method = "animate", args=play_btn_args, label = "Play")
-//
-//    val pause_btn_args = Args(mode = "immediate", transition = Setting(duration = 0.0),
-//      frame=Setting(duration = 0.0, redraw = false))
-//
-//    val pause_button = PauseButton(method = "animate", args=pause_btn_args, label = "Pause")
-//
-//    val update_menus = UpdateMenus(x=0.0, y=0.0, yanchor = "top", xanchor = "left", showactive = false, direction = "left",
-//      menu_type = "buttons", pad = Margin(t=87, r=10), buttons = List(play_button, pause_button))
-//
-//    val traces = createXYSeries(numberToCreate=100)
-//
-//    val current_value = CurrentValue(visible=true, prefix="Time:", xanchor = "right")
-//    val sliders = Slider(pad = Margin(l=130, t=55)) + current_value
-//
-//    val layout = Layout("Animation") + sliders + xaxis + yaxis + update_menus
-//
-//    val chart = Chart(animated=true, method = "animate") + layout + traces
-//
-//    if (true) chart.plot()
-//
-//    assert(validateJson(chart.serialize.toString, "dynamic"))
-//  }
-
-  test("Animation.XYZ") {
-
-    val animation_engine = AnimationEngine()
-
-    val traces = createXYZSeries(numberToCreate=10, length = 10)
-    val layout = Layout("Animation") + animation_engine
-
+  test("Animation.XY") {
+    val xaxis = Axis(key="xaxis", title="X Variable", range = (0.0, 10.0))
+    val yaxis = Axis(key="yaxis", title="Y Variable", range = (0.0, 10.0))
+    val layout = Layout("Animation.XY")  + xaxis + yaxis + AnimationEngine()
+    val traces = createXYSeries(numberToCreate = 5, length=3)
     val chart = Chart(animated=true) + layout + traces
-
     if (true) chart.plot()
-
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
 
+  test("Animation.XYZ") {
+    val traces = createXYZSeries(numberToCreate=3, length=3)
+    val layout = Layout("Animation.XYZ") + AnimationEngine()
+    val chart = Chart(animated=true) + layout + traces
+    if (plotFlag) chart.plot()
+    assert(validateJson(chart.serialize.toString, "dynamic"))
+  }
 }
-
-
-
-
-
-
-
 
 object UnitTestUtils {
 
@@ -464,9 +427,6 @@ object UnitTestUtils {
       trace :: createXYZSeries(numberToCreate, count + 1, length)
     }
   }
-
-
-
 
   def validateJson(json: String, ignore: Opt[String]=Blank): Boolean = {
     val wd = os.pwd / "src" / "test" / "resources" / "javascript"

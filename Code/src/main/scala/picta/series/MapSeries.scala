@@ -25,14 +25,14 @@ final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil,
 
     val series_mode_ = series_mode.asOption match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val line_ = line.asOption match {
       case Some(x) => Obj("line" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(meta, series_mode_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(meta, series_mode_, line_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

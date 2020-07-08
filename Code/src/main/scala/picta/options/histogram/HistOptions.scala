@@ -32,29 +32,29 @@ case class HistOptions(cumulative: Opt[Cumulative] = Blank, histnorm: Opt[HistNo
   def serialize(): Value = {
     val cumulative_ = cumulative.asOption match {
       case Some(x) => Obj("cumulative" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val histnorm_ = histnorm.asOption match {
       case Some(x) => Obj("histnorm" -> x.toString.toLowerCase)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val histfunc_ = histfunc.asOption match {
       case Some(x) => Obj("histfunc" -> x.toString.toLowerCase)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val xbins_ = xbins.asOption match {
       case Some(x) => Obj("xbins" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val ybins_ = ybins.asOption match {
       case Some(x) => Obj("ybins" -> x.serialize)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(cumulative_, histnorm_, histfunc_, xbins_, ybins_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(cumulative_, histnorm_, histfunc_, xbins_, ybins_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

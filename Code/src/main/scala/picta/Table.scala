@@ -1,6 +1,5 @@
 package picta
 
-import picta.Html.plotChart
 import picta.options.{Config, Layout}
 import ujson.{Obj, Value}
 import upickle.default._

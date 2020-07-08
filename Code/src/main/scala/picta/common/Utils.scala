@@ -1,15 +1,7 @@
 package picta.common
 
-import picta.options.animation.{Args, Setting, SliderStep}
-import picta.series.{Series}
-import ujson.Obj
-
 // TODO - Need to add more utility functions - can be done after integrating with CoNuS core.
 object Utils {
-
-
-
-
   /*
   * Creates a list of all the possible co-ordinates
   * */

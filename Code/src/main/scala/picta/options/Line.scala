@@ -24,9 +24,9 @@ case class Line[T: Color](width: Double = 0.5, color: Opt[List[T]] = Empty) exte
 
     val color_ = color.asOption match {
       case Some(lst) if (lst != Nil) => Obj("color" -> c.serialize(lst))
-      case _ => JsonMonoid.empty
+      case _ => jsonMonoid.empty
     }
 
-    List(acc, color_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(acc, color_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

@@ -1,5 +1,5 @@
+import ujson.{Null, Value}
 import upickle.default._
-import ujson.{Value, Null}
 
 
 object Example extends App {

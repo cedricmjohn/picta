@@ -11,19 +11,19 @@ case class Cumulative(enabled: Opt[Boolean] = Blank, direction: Opt[String] = Bl
   def serialize: Value = {
     val enabled_ = enabled.asOption match {
       case Some(x) => Obj("enabled" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val direction_ = direction.asOption match {
       case Some(x) => Obj("direction" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val currentbin_ = currentbin.asOption match {
       case Some(x) => Obj("currentbin" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(enabled_, direction_, currentbin_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(enabled_, direction_, currentbin_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

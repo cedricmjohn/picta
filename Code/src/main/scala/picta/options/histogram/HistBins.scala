@@ -10,20 +10,20 @@ class HistBins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[D
   def serialize: Value = {
     val start_ = start.asOption match {
       case Some(x) => Obj("start" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val end_ = end.asOption match {
       case Some(x) => Obj("end" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val size_ = size.asOption match {
       case Some(x) => Obj("size" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(start_, end_, size_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(start_, end_, size_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }
 

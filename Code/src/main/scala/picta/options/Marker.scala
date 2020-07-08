@@ -27,19 +27,19 @@ case class Marker[T0: Color, T1: Color]
   def serialize(): Value = {
     val symbol_ = symbol.asOption match {
       case Some(x) => Obj("symbol" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val color_ = color.asOption match {
       case Some(lst: List[T0]) => Obj("color" -> c0.serialize(lst))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val line_ = line.asOption match {
       case Some(x) => Obj("line" -> x.serialize())
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    List(symbol_, color_, line_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x)
+    List(symbol_, color_, line_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

@@ -28,29 +28,29 @@ case class Axis(key: String, title: Opt[String] = Blank, side: Opt[String] = Bla
 
     val title_ = title.asOption match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val side_ = side.asOption match {
       case Some(x) => Obj("side" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val overlaying_ = overlaying.asOption match {
       case Some(x) => Obj("overlaying" -> x)
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val domain_ = domain.asOption match {
       case Some(x) => Obj("domain" -> List(x._1, x._2))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
     val range_ = range.asOption match {
       case Some(x) => Obj("range" -> List(x._1, x._2))
-      case None => JsonMonoid.empty
+      case None => jsonMonoid.empty
     }
 
-    Obj(key -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(JsonMonoid.empty)((a, x) => a |+| x))
+    Obj(key -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
   }
 }

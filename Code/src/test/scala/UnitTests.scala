@@ -400,7 +400,7 @@ class MapTests extends AnyFunSuite {
 
 class AnimationTests extends AnyFunSuite {
 
-  val plotFlag = false
+  val plotFlag = true
 
   test("Animation.XY") {
     val xaxis = Axis(position="xaxis", title="X Variable", range = (0.0, 10.0))

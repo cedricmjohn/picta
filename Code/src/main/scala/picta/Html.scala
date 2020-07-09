@@ -13,6 +13,7 @@ object Html {
 
   /** this is the plotly.min.js script that is used to render the plots */
   private val plotlyJs: String = readFile("plotly.min.js")
+  private val cssStyle: String = readFile("styles.css")
   private val useCDN: Boolean = testNetworkConnection()
 
   /**
@@ -25,7 +26,7 @@ object Html {
     kernel.silent(true)
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
-    val html = {
+    val body  = {
       val requirejs_CDN_path = """paths: {'plotly': "https://cdn.plot.ly/plotly-latest.min"},"""
 
       val requirejs =
@@ -43,6 +44,8 @@ object Html {
          |</script>
          |""".stripMargin
     }
+
+    val html = s"""<style>$cssStyle/style>""" + body
 
     publish.html(html)
   }
@@ -135,8 +138,6 @@ object Html {
        |""".stripMargin
   }
 
-
-
   /**
    * A function to generate the HTML corresponding to the Plotly plotting function.
    * @param traces   : This is the trace data. It should be serialized as a json list.
@@ -145,7 +146,7 @@ object Html {
    * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
    */
   private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
-                           includeScript: Boolean, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
+                           includeScript: Boolean, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
 
     var script = new StringBuilder()
 
@@ -154,22 +155,28 @@ object Html {
       case false => script ++= s"""<script> ${plotlyJs} </script>"""
     }
 
+    includeStyle match {
+      case true => script ++= s"""<style>$cssStyle/style>"""
+      case false => ()
+    }
+
     val graph_html = frames.asOption match {
       case Some(_) => s"""
+                       |<style>$cssStyle</style>
                        |<div align="center">
-                       |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+                       |<div id='graph_${graph_id}' class="graph"></div>
                        |<button id='play'>Play</button>
                        |<button id='pause'>Pause</button>
-                       |<div id="sliderContainer" style="display:inline-block"></div>
+                       |<div id="sliderContainer"></div>
                        |<div>
-                       |   <div style="display:block"> <h3 style="display:inline-block">Frame:</h3> <h3 style="display:inline-block" id="value">0</h3> </div>
+                       |   <div id='counterContainer'><h3>Frame:</h3> <h3 id="value">0</h3> </div>
                        |</div>
                        |</div>
                        |""".stripMargin
       case _ =>
         s"""
            |<div align="center">
-           |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
+           |<div id='graph_${graph_id}' class='graph'></div>
            |</div>
            |""".stripMargin
     }
@@ -247,7 +254,8 @@ object Html {
       case (Some(x), Some(y), Some(z)) =>
         generateHTML(traces = traces, frames = x, labels = y, transition_duration = z, layout = layout, config = config,
           includeScript = true, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, includeStyle = true,
+        graph_id = graph_id)
     }
 
     writeHTMLToFile(html, graph_id)
@@ -268,8 +276,9 @@ object Html {
 
     val html: String = (frames.asOption, labels.asOption, transition_duration.asOption) match {
       case (Some(x), Some(y), Some(z)) => generateHTML(traces = traces, frames = x, labels = x, transition_duration = z,
-        layout = layout, config = config, includeScript = false, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, graph_id = graph_id)
+        layout = layout, config = config, includeScript = false, includeStyle = false, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, includeStyle = false
+        , graph_id = graph_id)
     }
     writeHTMLToJupyter(html, graph_id)
   }

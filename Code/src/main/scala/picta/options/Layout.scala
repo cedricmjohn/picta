@@ -18,27 +18,26 @@ import ujson.{Obj, Value}
  */
 final case class Layout
 (title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, grid: Opt[Grid] = Blank, geo: Opt[Geo] = Blank, showlegend: Boolean = false,
+ margin: Opt[Margin] = Blank, grid: Opt[Subplot] = Blank, geo: Opt[Geo] = Blank, showlegend: Boolean = false,
  height: Int = 550, width: Int = 600) extends Component {
 
-  def witAxes(new_axes: List[Axis]): Layout = axs.asOption match {
+  def setAxes(new_axes: List[Axis]): Layout = axs.asOption match {
     case Some(lst) => this.copy(axs = new_axes ::: lst)
     case None => this.copy(axs = new_axes)
   }
 
-  def withAxes(new_axis: Axis*): Layout = axs.asOption match {
+  def setAxes(new_axis: Axis*): Layout = axs.asOption match {
     case Some(lst) => this.copy(axs = new_axis.toList ::: lst)
     case None => this.copy(axs = new_axis.toList)
   }
 
-  def +(new_geo: Geo): Layout = this.copy(geo = new_geo)
+  def setGeo(new_geo: Geo): Layout = this.copy(geo = new_geo)
 
-  def +(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
+  def setLegend(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
 
-  def +(new_grid: Grid): Layout = this.copy(grid = new_grid)
+  def setSubplot(new_grid: Subplot): Layout = this.copy(grid = new_grid)
 
-  def +(new_margin: Margin): Layout = this.copy(margin = new_margin)
-
+  def setMargin(new_margin: Margin): Layout = this.copy(margin = new_margin)
 
   def serialize(): Value = {
     val dim = Obj("height" -> height, "width" -> width)

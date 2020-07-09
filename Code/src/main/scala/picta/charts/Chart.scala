@@ -21,7 +21,7 @@ trait ChartInterface extends Component {
  * @param config : This is the config that controls how the plot behaves with user interaction.
  */
 final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config(),
-                       animated: Boolean = false, transition_duration: Int = 10) extends ChartInterface {
+                       animated: Boolean = false, transition_duration: Int = 100) extends ChartInterface {
 
   private val frames_labels = animated match {
     case false => (Nil, Nil)
@@ -38,15 +38,13 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
 
   private val config_ : Value = config.serialize
 
-  def withSeries(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
+  def setData(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
 
-  def withSeries(new_series: Series*): Chart = {
-    this.copy(data = new_series.toList ::: data)
-  }
+  def setData(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
 
-  def withLayout(new_layout: Layout): Chart = this.copy(layout = new_layout)
+  def setLayout(new_layout: Layout): Chart = this.copy(layout = new_layout)
 
-  def withConfig(new_config: Config): Chart = this.copy(config = new_config)
+  def setConfig(new_config: Config): Chart = this.copy(config = new_config)
 
   def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 
@@ -58,7 +56,6 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
       case false => plotChart(traces = data_, layout = layout_, config = config_)
     }
   }
-
 
   def plot_inline()(implicit publish: OutputHandler): Unit = {
     val labels_ : Value = transform(labels).to(Value)

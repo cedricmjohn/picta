@@ -6,8 +6,7 @@ import picta.common.OptionWrapper._
 import ujson.{Obj, Value}
 
 case class Margin(l: Opt[Int] = Blank, r: Opt[Int] = Blank, t: Opt[Int] = Blank, b: Opt[Int] = Blank) extends Component {
-
-  override def serialize: Value = {
+  override def serialize(): Value = {
     val l_ = l.asOption match {
       case Some(x) => Obj("l" -> x)
       case None => jsonMonoid.empty

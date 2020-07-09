@@ -20,14 +20,24 @@ object HistFuncType extends Enumeration {
 
 import picta.options.histogram.HistFuncType.HistFuncType
 
-case class HistOptions(cumulative: Opt[Cumulative] = Blank, histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFuncType] = Blank,
+
+object HistOrientationType extends Enumeration {
+type HistOrientationType = Value
+  val VERTICAL = Value("x")
+  val HORIZONTAL = Value("y")
+}
+
+import picta.options.histogram.HistOrientationType.{HistOrientationType, VERTICAL}
+
+case class HistOptions(orientation: HistOrientationType = VERTICAL, cumulative: Opt[Cumulative] = Blank,
+                       histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFuncType] = Blank,
                        xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 
-  def +(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)
+  def setCumulative(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)
 
-  def +(new_xbins: Xbins): HistOptions = this.copy(xbins = new_xbins)
+  def setXbins(new_xbins: Xbins): HistOptions = this.copy(xbins = new_xbins)
 
-  def +(new_ybins: Ybins): HistOptions = this.copy(ybins = new_ybins)
+  def setYbins(new_ybins: Ybins): HistOptions = this.copy(ybins = new_ybins)
 
   def serialize(): Value = {
     val cumulative_ = cumulative.asOption match {

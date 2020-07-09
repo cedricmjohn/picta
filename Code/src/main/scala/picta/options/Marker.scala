@@ -18,13 +18,13 @@ case class Marker[T0: Color, T1: Color]
 
   private val c0 = implicitly[Color[T0]]
 
-  def withSymbol(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
+  def setSymbol(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
 
-  def withColors[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
+  def setColors[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
 
-  def withColors[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
+  def setColors[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
 
-  def withLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
+  def setLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
 
   def serialize(): Value = {
     val symbol_ = symbol.asOption match {

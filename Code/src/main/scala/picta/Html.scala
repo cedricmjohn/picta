@@ -68,7 +68,7 @@ object Html {
        |const duration = $transition_duration
        |
        |const animation_settings = {
-       |    mode: {},
+       |    mode: "immediate",
        |    direction: {},
        |    fromcurrent: true,
        |    frame: [
@@ -101,15 +101,24 @@ object Html {
        |}
        |
        |var trigger = true
-       |var resetCount = false
+       |var reset_count = false
        |
-       button.onclick = function() {
+       |play.onclick = function() {
        |   trigger = true
+       |   if (reset_count) {
+       |      slider.value = 0
+       |      reset_count = false
+       |   }
        |   startAnimation()
        |}
        |
+       |pause.onclick = function() {
+       |   Plotly.animate(graph_id, [null], animation_settings)
+       |}
+       |
        |graph.on('plotly_redraw', () => {
-       |   if (trigger) ++slider.value
+       |   value.innerHTML = slider.value;
+       |   if (trigger & !reset_count) ++slider.value
        |   if (slider.value == labels.length - 1) reset_count = true
        |});
        |
@@ -117,8 +126,10 @@ object Html {
        |   Plotly.animate(graph_id, frames[this.value], animation_settings)
        |   trigger = false
        |   slider.value = this.value
+       |   value.innerHTML = this.value;
        |   if (this.value == 0) reset_count = false
        |   if (this.value == labels.length - 1) reset_count = true
+       |   reset_count = false
        |}
        |</script>
        |""".stripMargin
@@ -147,8 +158,12 @@ object Html {
       case Some(_) => s"""
                        |<div align="center">
                        |<div id='graph_${graph_id}' style="width:100%; margin:0 auto;"></div>
-                       |<div id="sliderContainer"></div>
-                       |<button id='play'>Animate!</button>
+                       |<button id='play'>Play</button>
+                       |<button id='pause'>Pause</button>
+                       |<div id="sliderContainer" style="display:inline-block"></div>
+                       |<div>
+                       |   <div style="display:block"> <h3 style="display:inline-block">Frame:</h3> <h3 style="display:inline-block" id="value">0</h3> </div>
+                       |</div>
                        |</div>
                        |""".stripMargin
       case _ =>

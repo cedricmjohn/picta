@@ -18,7 +18,7 @@ import ujson.{Obj, Value}
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
                                series_mode: Opt[ModeType] = Blank, line: Opt[Line[T]] = Blank) extends Series {
 
-  def +[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
+  def setLine[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 
   override def serialize: Value = {
     val meta = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")

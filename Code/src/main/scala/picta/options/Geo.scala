@@ -22,9 +22,11 @@ case class Geo(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakec
                projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
                showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
 
-  def +(new_axis: LatAxis): Geo = this.copy(lataxis = new_axis)
+  def setAxis(new_axis: LatAxis): Geo = this.copy(lataxis = new_axis)
 
-  def +(new_axis: LongAxis): Geo = this.copy(longaxis = new_axis)
+  def setAxis(new_axis: LongAxis): Geo = this.copy(longaxis = new_axis)
+
+  def setAxes(lat: LatAxis, lon: LongAxis): Geo = this.copy(lataxis=lat, longaxis = lon)
 
   def serialize(): Value = {
     val meta = Obj(

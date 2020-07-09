@@ -11,4 +11,3 @@ object OptionWrapper {
 
   implicit def liftToOption[A](arg: Opt[A]): Option[A] = arg.asOption
 }
-

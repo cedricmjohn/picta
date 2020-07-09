@@ -26,8 +26,6 @@ import picta.series.XYChartType._
  * @constructor:
  * @param x           :
  * @param y           :
- * @param xkey        :
- * @param ykey        :
  * @param series_name
  * @param series_mode :
  * @param series_type :
@@ -36,15 +34,16 @@ import picta.series.XYChartType._
  * @param marker      :
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
-(x: List[T0], y: Opt[List[T1]] = Empty, xkey: String = "x", ykey: String = "y", series_name: String = genRandomText,
- series_type: XYChartType = SCATTER, series_mode: Opt[ModeType] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank,
+(x: List[T0], y: Opt[List[T1]] = Empty, series_name: String = genRandomText, series_type: XYChartType = SCATTER, series_mode: Opt[ModeType] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank,
  marker: Opt[Marker[T2, T3]] = Blank, hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
 
-  def withMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
+  def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(series_name = new_name)
 
-  def +(new_hist_options: HistOptions): XY[T0, T1, T2, T3] = this.copy(hist_options = new_hist_options)
+  def setMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
 
-  def +(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
+  def setHistOptions(new_hist_options: HistOptions): XY[T0, T1, T2, T3] = this.copy(hist_options = new_hist_options)
+
+  def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
 
   def serialize: Value = {
     val meta = Obj(
@@ -89,13 +88,16 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   }
 
   private def createSeries(): Value = {
+    val xkey: String = "x"
+    val ykey: String = "y"
+
     val y_ = y.asOption match {
       case Some(x) => x
       case _ => Nil
     }
 
     (x, y_, series_type) match {
-      case (x, Nil, HISTOGRAM) => createSeriesXY(x, xkey)
+      case (x, Nil, HISTOGRAM) => createSeriesXY(x, getHistOrientation(hist_options))
       case (_, _, PIE) => createSeriesXY(x, y_, "values", "labels")
       case (_, _, _) => createSeriesXY(x, y_, xkey, ykey)
     }
@@ -109,4 +111,10 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   private def createSeriesXY[T0: Serializer](x: List[T0], xkey: String)(implicit s0: Serializer[T0]): Value = {
     Obj(xkey -> s0.serialize(x))
   }
+
+  private def getHistOrientation(hist_options: Opt[HistOptions]) =
+    hist_options.asOption match {
+      case Some(x) => x.orientation.toString
+      case _ => "x"
+    }
 }

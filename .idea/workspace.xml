@@ -1,102 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c80f490-9190-452b-b079-7f703dbbdc41" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Code/Examples.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Examples.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/project/target/config-classes/$4eb5f35ab56d3e2f4825$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/project/target/config-classes/$4eb5f35ab56d3e2f4825.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/project/target/config-classes/$4eb5f35ab56d3e2f4825.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/Code/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/Html.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/main/scala/picta/Html.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/charts/Chart.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/main/scala/picta/charts/Chart.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/Layout.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/main/scala/picta/options/Layout.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/Marker.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/main/scala/picta/options/Marker.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/animation/AnimationEngine.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/animation/Args.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/animation/Buttons.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/animation/Slider.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/options/animation/UpdateMenus.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/main/scala/picta/series/XYSeries.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/main/scala/picta/series/XYSeries.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/src/test/scala/UnitTests.scala" beforeDir="false" afterPath="$PROJECT_DIR$/Code/src/test/scala/UnitTests.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Html$.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Html$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Html.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Html.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Table$.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/Table$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/charts/Chart$.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/charts/Chart$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/charts/Chart.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/charts/Chart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Layout$.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Layout$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Layout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Marker.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/Marker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/AnimationEngine$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/AnimationEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Args$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Args.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Button$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Button.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/CurrentValue$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/CurrentValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/PauseButton$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/PauseButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/PlayButton$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/PlayButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Setting$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Setting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Slider$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/Slider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/SliderStep$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/SliderStep.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/UpdateMenus$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/options/animation/UpdateMenus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/series/XY.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/classes/picta/series/XY.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/AnimationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/AxisTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/AxisTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/BasicChartTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/CompositionTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/HeatmapTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/Histogram2DContourTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/HistogramTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/LayoutTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/LineTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/LineTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/MapTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/MarkerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/MarkerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/PieChartTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/ScatterWithColorTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/UnitTestUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/UnitTestUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/scala-2.13/test-classes/XYZTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/definedTestNames/data" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/_global/_global/definedTestNames/data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/definedTests/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/definedTests/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/test/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/test/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/test/_global/streams/succeeded_tests" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/test/_global/streams/succeeded_tests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/test/isModule=false name=MarkerTests/test/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/test/isModule=false name=MarkerTests/test/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/testOnly/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/testOnly/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/streams/test/testOnly/isModule=false name=AnimationTests/test/out" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/streams/test/testOnly/isModule=false name=AnimationTests/test/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-AnimationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-AnimationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-AxisTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-AxisTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-BasicChartTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-BasicChartTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-CompositionTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-CompositionTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-HeatmapTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-HeatmapTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-Histogram2DContourTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-Histogram2DContourTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-HistogramTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-HistogramTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-LayoutTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-LayoutTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-LineTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-LineTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-MapTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-MapTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-MarkerTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-MarkerTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-PieChartTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-PieChartTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-ScatterWithColorTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-ScatterWithColorTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/target/test-reports/TEST-XYZTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/target/test-reports/TEST-XYZTests.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3c80f490-9190-452b-b079-7f703dbbdc41" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -123,7 +38,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594248707466</updated>
+      <workItem from="1594387669844" duration="55000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
 </project>

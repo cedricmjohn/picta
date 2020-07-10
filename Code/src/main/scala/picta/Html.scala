@@ -13,7 +13,7 @@ object Html {
 
   /** this is the plotly.min.js script that is used to render the plots */
   private val plotlyJs: String = readFile("plotly.min.js")
-  private val cssStyle: String = readFile("styles.css")
+  private val cssStyle: String = readFile("style.css")
   private val useCDN: Boolean = testNetworkConnection()
 
   /**
@@ -45,7 +45,7 @@ object Html {
          |""".stripMargin
     }
 
-    val html = s"""<style>$cssStyle/style>""" + body
+    val html = s"""<style>$cssStyle</style>""" + body
 
     publish.html(html)
   }
@@ -146,7 +146,7 @@ object Html {
    * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
    */
   private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
-                           includeScript: Boolean, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
+                           includeScript: Boolean = false, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
 
     var script = new StringBuilder()
 
@@ -156,7 +156,7 @@ object Html {
     }
 
     includeStyle match {
-      case true => script ++= s"""<style>$cssStyle/style>"""
+      case true => script ++= s"""<style>$cssStyle</style>"""
       case false => ()
     }
 

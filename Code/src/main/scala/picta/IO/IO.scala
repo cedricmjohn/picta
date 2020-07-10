@@ -8,12 +8,12 @@ import scala.collection.mutable
 
 /** TODO - need to make sure working directory is also used */
 object IO {
-  def get_wd: String = os.pwd.toString
+  def getWorkingDirectory: String = os.pwd.toString
 
-  def read_csv(wd: String, filepath: String): mutable.Map[String, List[Any]] = {
+  def readCSV(filepath: String): mutable.Map[String, List[String]] = {
     val reader = CSVReader.open(new File(filepath)).allWithHeaders()
     val headers = reader(0).keys
-    var map: mutable.Map[String, List[Any]] = collection.mutable.Map()
+    var map: mutable.Map[String, List[String]] = collection.mutable.Map()
     headers.foreach(h => map += (h -> Nil))
     reader.foreach(line => {
       line.foreach(x => {

@@ -26,7 +26,7 @@ case class Geo(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakec
 
   def setAxis(new_axis: LongAxis): Geo = this.copy(longaxis = new_axis)
 
-  def setAxes(lat: LatAxis, lon: LongAxis): Geo = this.copy(lataxis=lat, longaxis = lon)
+  def setAxes(lat: LatAxis, lon: LongAxis): Geo = this.copy(lataxis = lat, longaxis = lon)
 
   def serialize(): Value = {
     val meta = Obj(

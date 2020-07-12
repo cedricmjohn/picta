@@ -7,10 +7,12 @@ import ujson.{Obj, Value}
 
 /**
  * @constructor Creates a new Axis that the user can configure with different options
- * @param key        : This is used to give an axis a key. This is used by a Series to map to the corresponding axis.
+ * @param position   : This is used to give an axis a key. This is used by a Series to map to the corresponding axis.
  * @param title      : This sets the axis title.
  * @param side       : This determines which side the axis will be shown on.
  * @param overlaying : This is used if we have more than one axis, and want to set which base axis it is mirroring.
+ * @param domain     : Determines the domain the Chart.
+ * @param range      : Determines the range the Chart.
  * @param showgrid   : Determines whether the grid is shown on the Chart.
  * @param zeroline   : Determines whether the zeroline for each axis are shown.
  * @param showline   : Determines whether the axis is visibly drawn on the chart.
@@ -19,12 +21,13 @@ case class Axis(position: String, title: Opt[String] = Blank, side: Opt[String] 
                 domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
                 zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
-
   def setTitle(new_title: String): Axis = this.copy(title = new_title)
+
   def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
+
   def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
 
-  def serialize(): Value = {
+  private[picta] def serialize(): Value = {
     val meta = Obj(
       "showgrid" -> showgrid,
       "zeroline" -> zeroline,
@@ -59,6 +62,7 @@ case class Axis(position: String, title: Opt[String] = Blank, side: Opt[String] 
     Obj(convertKey(position) -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
   }
 
+  /** An internal function that converts a user entered key into one that the plotly library can understand */
   private def convertKey(key: String): String = {
     if (key.length == 2) {
       key take 1 match {

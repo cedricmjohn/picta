@@ -26,7 +26,7 @@ object Html {
     kernel.silent(true)
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
-    val body  = {
+    val body = {
       val requirejs_CDN_path = """paths: {'plotly': "https://cdn.plot.ly/plotly-latest.min"},"""
 
       val requirejs =
@@ -54,6 +54,95 @@ object Html {
   private def readFile(file_name: String): String = {
     val is = getClass.getClassLoader.getResourceAsStream(file_name)
     scala.io.Source.fromInputStream(is).mkString
+  }
+
+  /**
+   * This plots the chart in the browser
+   *
+   * @param traces : a list of trace data we wish to plot
+   * @param layout : the layout case class specifying layout options
+   * @param config : the config case class specifying the chart config options
+   */
+  def plotChart(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
+                transition_duration: Opt[Int] = Blank, layout: Value, config: Value): Unit = {
+
+    val graph_id = System.currentTimeMillis().toString
+
+    val html: String = (frames.asOption, labels.asOption, transition_duration.asOption) match {
+      case (Some(x), Some(y), Some(z)) =>
+        generateHTML(traces = traces, frames = x, labels = y, transition_duration = z, layout = layout, config = config,
+          includeScript = true, graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, includeStyle = true,
+        graph_id = graph_id)
+    }
+
+    writeHTMLToFile(html, graph_id)
+  }
+
+  /**
+   * A function to generate the HTML corresponding to the Plotly plotting function.
+   *
+   * @param traces   : This is the trace data. It should be serialized as a json list.
+   * @param layout   : This should be the layout case class instance.
+   * @param config   : This should be the config case class instance.
+   * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
+   */
+  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
+                           includeScript: Boolean = false, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
+
+    var script = new StringBuilder()
+
+    useCDN match {
+      case true => script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
+      case false => script ++= s"""<script> ${plotlyJs} </script>"""
+    }
+
+    includeStyle match {
+      case true => script ++= s"""<style>$cssStyle</style>"""
+      case false => ()
+    }
+
+    val graph_html = frames.asOption match {
+      case Some(_) => s"""
+                         |<style>$cssStyle</style>
+                         |<div align="center">
+                         |<div id='graph_${graph_id}' class="graph"></div>
+                         |<button id='play'>Play</button>
+                         |<button id='pause'>Pause</button>
+                         |<div id="sliderContainer"></div>
+                         |<div>
+                         |   <div id='counterContainer'><h3>Frame:</h3> <h3 id="value">0</h3> </div>
+                         |</div>
+                         |</div>
+                         |""".stripMargin
+      case _ =>
+        s"""
+           |<div align="center">
+           |<div id='graph_${graph_id}' class='graph'></div>
+           |</div>
+           |""".stripMargin
+    }
+
+    val function_html = {
+      (frames.asOption, labels.asOption, transition_duration.asOption) match {
+        case (Some(x), Some(y), Some(z)) => createAnimationHTML(traces = traces, frames = x, labels = y, layout = layout,
+          transition_duration = z, graph_id)
+
+        case _ =>
+          s"""|<script>
+              | var traces = ${traces};
+              | var layout = ${layout};
+              | var config = ${config};
+              | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
+              |</script>
+              |""".stripMargin
+      }
+    }
+
+    includeScript match {
+      case true => (script ++= graph_html ++= function_html).mkString
+      case false => graph_html + function_html
+    }
   }
 
   def createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value,
@@ -139,72 +228,8 @@ object Html {
   }
 
   /**
-   * A function to generate the HTML corresponding to the Plotly plotting function.
-   * @param traces   : This is the trace data. It should be serialized as a json list.
-   * @param layout   : This should be the layout case class instance.
-   * @param config   : This should be the config case class instance.
-   * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
-   */
-  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
-                           includeScript: Boolean = false, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
-
-    var script = new StringBuilder()
-
-    useCDN match {
-      case true => script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
-      case false => script ++= s"""<script> ${plotlyJs} </script>"""
-    }
-
-    includeStyle match {
-      case true => script ++= s"""<style>$cssStyle</style>"""
-      case false => ()
-    }
-
-    val graph_html = frames.asOption match {
-      case Some(_) => s"""
-                       |<style>$cssStyle</style>
-                       |<div align="center">
-                       |<div id='graph_${graph_id}' class="graph"></div>
-                       |<button id='play'>Play</button>
-                       |<button id='pause'>Pause</button>
-                       |<div id="sliderContainer"></div>
-                       |<div>
-                       |   <div id='counterContainer'><h3>Frame:</h3> <h3 id="value">0</h3> </div>
-                       |</div>
-                       |</div>
-                       |""".stripMargin
-      case _ =>
-        s"""
-           |<div align="center">
-           |<div id='graph_${graph_id}' class='graph'></div>
-           |</div>
-           |""".stripMargin
-    }
-
-    val function_html = {
-      (frames.asOption, labels.asOption, transition_duration.asOption) match {
-        case (Some(x), Some(y), Some(z)) => createAnimationHTML(traces = traces, frames = x, labels = y, layout = layout,
-          transition_duration = z, graph_id)
-
-        case _ =>
-          s"""|<script>
-              | var traces = ${traces};
-              | var layout = ${layout};
-              | var config = ${config};
-              | Plotly.newPlot("graph_${graph_id}", traces, layout, config);
-              |</script>
-              |""".stripMargin
-      }
-    }
-
-    includeScript match {
-      case true => (script ++= graph_html ++= function_html).mkString
-      case false => graph_html + function_html
-    }
-  }
-
-  /**
    * A function to write the chart to a .html and open a browser displaying the chart.
+   *
    * @param html     : This is the html represented as a string.
    * @param graph_id : This is required in order to generate a unique file name for the chart.
    */
@@ -236,29 +261,6 @@ object Html {
       case Some(c) => sys.process.Process(c).run
       case None => Console.err.println(s"Chart could not be opened")
     }
-  }
-
-  /**
-   * This plots the chart in the browser
-   *
-   * @param traces : a list of trace data we wish to plot
-   * @param layout : the layout case class specifying layout options
-   * @param config : the config case class specifying the chart config options
-   */
-  def plotChart(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
-                transition_duration: Opt[Int]=Blank, layout: Value, config: Value): Unit = {
-
-    val graph_id = System.currentTimeMillis().toString
-
-    val html: String = (frames.asOption, labels.asOption, transition_duration.asOption) match {
-      case (Some(x), Some(y), Some(z)) =>
-        generateHTML(traces = traces, frames = x, labels = y, transition_duration = z, layout = layout, config = config,
-          includeScript = true, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, includeStyle = true,
-        graph_id = graph_id)
-    }
-
-    writeHTMLToFile(html, graph_id)
   }
 
   /**

@@ -16,8 +16,11 @@ case class Line[T: Color](width: Double = 0.5, color: Opt[List[T]] = Empty) exte
   private val c = implicitly[Color[T]]
 
   def setWidth(new_width: Double): Line[T] = this.copy(width = new_width)
+
   def setColor[T: Color](new_color: List[T]): Line[T] = this.copy(color = new_color)
+
   def setColor(new_color: String): Line[String] = this.copy(color = List(new_color))
+
   def setColor(new_color: String*): Line[String] = this.copy(color = new_color.toList)
 
   def serialize(): Value = {

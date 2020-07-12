@@ -1,27 +1,25 @@
-import UnitTestUtils._
+package picta.test
+
 import org.scalatest.funsuite.AnyFunSuite
 import picta.IO.IO._
-import picta.common.Utils.getSeriesbyCategory
 import picta.charts.Chart
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
-import picta.options.histogram.HistFuncType._
+import picta.common.Utils.getSeriesbyCategory
+import picta.options._
 import picta.options.histogram.HistNormType._
 import picta.options.histogram.{Cumulative, HistOptions, Xbins}
 import picta.options.histogram2d.Hist2dOptions
-import picta.options._
-import picta.options.histogram.HistOrientationType.HORIZONTAL
 import picta.series.ModeType._
 import picta.series.XYChartType._
 import picta.series.XYZChartType._
-import picta.series.{Map, XY, XYSeries, XYZ, XYZSeries}
+import picta.series._
+import picta.test.UnitTestUtils._
 import upickle.default.write
-
-import scala.collection.mutable
 
 class AxisTests extends AnyFunSuite {
   test("Axis.Constructor") {
-    val axis = Axis(position = "x2") setTitle "second x-axis" setDomain (0.85, 1.0)
+    val axis = Axis(position = "x2") setTitle "second x-axis" setDomain(0.85, 1.0)
     val test = """{"xaxis2":{"title":{"text":"second x-axis"},"showgrid":true,"zeroline":false,"showline":false,"domain":[0.85,1]}}"""
     assert(test == write(axis.serialize))
   }
@@ -62,7 +60,7 @@ class MarkerTests extends AnyFunSuite {
 
     val series = XY(x_int, y_int, series_type = SCATTER, series_mode = MARKERS) setMarker marker
     val layout = Layout("Marker.Composition.WithTrace") setAxes(x_axis, y_axis)
-    val chart = Chart() setData  series setLayout layout
+    val chart = Chart() setData series setLayout layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -107,9 +105,8 @@ class PieChartTests extends AnyFunSuite {
   val plotFlag = false
 
   test("XY.Pie") {
-    val series = XY(List(19, 26, 55), List("Residential", "Non-Residential", "Utility"), series_type = PIE)
-    val chart = Chart() setData series setLayout Layout("XY.Pie")
-    if (plotFlag) chart.plot
+
+
     assert(validateJson(chart.serialize.toString))
   }
 }
@@ -143,7 +140,7 @@ class HistogramTests extends AnyFunSuite {
     // change xkey to y to get a horizontal histogram
     val series = XY(x = x_int, series_type = HISTOGRAM) setHistOptions HistOptions(orientation = HORIZONTAL)
     val layout = Layout("XY.Histogram.Horizontal")
-    val chart = Chart() setData  series setLayout layout
+    val chart = Chart() setData series setLayout layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -215,15 +212,15 @@ class Histogram2DContourTests extends AnyFunSuite {
     val series2 = XY(x_double, y_double, series_type = HISTOGRAM2DCONTOUR, series_name = "density") setHist2dOptions hist2d_options
 
     val series3 = XY(x = x_double, xaxis = "x", yaxis = "y2", series_type = HISTOGRAM) setName "histogram"
-    val series4 = ( XY(y_double, xaxis = "x2", series_type = HISTOGRAM, series_name = "y density") setMarker marker
-                    setHistOptions HistOptions(orientation = HORIZONTAL) )
+    val series4 = (XY(y_double, xaxis = "x2", series_type = HISTOGRAM, series_name = "y density") setMarker marker
+      setHistOptions HistOptions(orientation = HORIZONTAL))
 
-    val ax1 = Axis(position = "x", showgrid = false) setDomain (0.0, 0.85)
-    val ax2 = Axis(position = "y", showgrid = false) setDomain (0.0, 0.85)
-    val ax3 = Axis(position = "x2", showgrid = false) setDomain (0.85, 1.0)
-    val ax4 = Axis(position = "y2", showgrid = false) setDomain (0.85, 1.0)
+    val ax1 = Axis(position = "x", showgrid = false) setDomain(0.0, 0.85)
+    val ax2 = Axis(position = "y", showgrid = false) setDomain(0.0, 0.85)
+    val ax3 = Axis(position = "x2", showgrid = false) setDomain(0.85, 1.0)
+    val ax4 = Axis(position = "y2", showgrid = false) setDomain(0.85, 1.0)
 
-    val chart = Chart()  setData List(series1, series2, series3, series4) setLayout
+    val chart = Chart() setData List(series1, series2, series3, series4) setLayout
       (Layout("XY.Histogram2dContour.WithDensity", autosize = false) setAxes(ax1, ax2, ax3, ax4))
 
     if (plotFlag) chart.plot
@@ -258,8 +255,8 @@ class CompositionTests extends AnyFunSuite {
 
   test("XY.Layout.Add.Axis") {
     val series3 = XY(x_int, z_int, series_type = SCATTER, series_mode = MARKERS, yaxis = "y2")
-    val layout = ( Layout("XY.Chart.Add.Config") setLegend  Legend()
-      setAxes Axis(position = "y2", title = "second y axis", overlaying = "y", side = "right") )
+    val layout = (Layout("XY.Chart.Add.Config") setLegend Legend()
+      setAxes Axis(position = "y2", title = "second y axis", overlaying = "y", side = "right"))
 
     val chart = Chart() setConfig Config(false, false) setData(series1, series2, series3) setLayout layout
     if (plotFlag) chart.plot
@@ -391,10 +388,10 @@ class MapTests extends AnyFunSuite {
     val line = Line(width = 2) setColor color
     val data = Map(List(40.7127, 51.5072), List(-74.0059, 0.1275), series_mode = LINES) setLine line
 
-    val geo = Geo(landcolor = "rgb(204, 204, 204)", lakecolor = "rgb(255, 255, 255)")setAxes
+    val geo = Geo(landcolor = "rgb(204, 204, 204)", lakecolor = "rgb(255, 255, 255)") setAxes
       (LatAxis(List(20, 60)), LongAxis(List(-100, 20)))
 
-    val layout = Layout(margin = Margin(0, 0, 0, 0), height = 800, width=800) setGeo geo
+    val layout = Layout(margin = Margin(0, 0, 0, 0), height = 800, width = 800) setGeo geo
     val chart = Chart() setData data setLayout layout setConfig config
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -406,19 +403,19 @@ class AnimationTests extends AnyFunSuite {
   val plotFlag = true
 
   test("Animation.XY") {
-    val xaxis = Axis(position="xaxis", title="X Variable", range = (0.0, 10.0))
-    val yaxis = Axis(position="yaxis", title="Y Variable", range = (0.0, 10.0))
-    val layout = Layout("Animation.XY")  setAxes (xaxis, yaxis)
-    val data = createXYSeries(numberToCreate = 50, length=30)
-    val chart = Chart(animated=true) setLayout layout setData data
+    val xaxis = Axis(position = "xaxis", title = "X Variable", range = (0.0, 10.0))
+    val yaxis = Axis(position = "yaxis", title = "Y Variable", range = (0.0, 10.0))
+    val layout = Layout("Animation.XY") setAxes(xaxis, yaxis)
+    val data = createXYSeries(numberToCreate = 50, length = 30)
+    val chart = Chart(animated = true) setLayout layout setData data
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
 
   test("Animation.XYZ") {
-    val data = createXYZSeries(numberToCreate=3, length=3)
+    val data = createXYZSeries(numberToCreate = 3, length = 3)
     val layout = Layout("Animation.XYZ")
-    val chart = Chart(animated=true) setLayout layout setData data
+    val chart = Chart(animated = true) setLayout layout setData data
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
@@ -439,7 +436,7 @@ class IrisTests extends AnyFunSuite {
 
     val result: List[XYSeries] = getSeriesbyCategory(categories, (sepal_length, petal_width))
 
-    val chart = Chart() setData result setLayout Layout(title="Iris", showlegend = true)
+    val chart = Chart() setData result setLayout Layout(title = "Iris", showlegend = true)
     chart.plot()
   }
 }
@@ -481,7 +478,7 @@ object UnitTestUtils {
     else {
       val xs = List.range(0, length)
       val ys = xs.map(x => scala.util.Random.nextDouble() * x)
-      val trace = XY(x=xs, y = ys, series_name = "trace" + count)
+      val trace = XY(x = xs, y = ys, series_name = "trace" + count)
       trace :: createXYSeries(numberToCreate, count + 1, length)
     }
   }
@@ -492,12 +489,12 @@ object UnitTestUtils {
       val xs = List.range(0, length)
       val ys = xs.map(x => scala.util.Random.nextDouble() * x)
       val zs = xs.map(x => scala.util.Random.nextDouble() * x * scala.util.Random.nextInt())
-      val trace = XYZ(x=xs, y=ys, z=zs, series_name = "trace" + count, series_type = SCATTER3D)
+      val trace = XYZ(x = xs, y = ys, z = zs, series_name = "trace" + count, series_type = SCATTER3D)
       trace :: createXYZSeries(numberToCreate, count + 1, length)
     }
   }
 
-  def validateJson(json: String, ignore: Opt[String]=Blank): Boolean = {
+  def validateJson(json: String, ignore: Opt[String] = Blank): Boolean = {
     val wd = os.pwd / "src" / "test" / "resources" / "javascript"
 
     // spawn a subprocess

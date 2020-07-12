@@ -4,7 +4,9 @@ import picta.common.Component
 import picta.common.OptionWrapper.Opt
 
 trait Series extends Component {
+
   import picta.series.ModeType.ModeType
+
   val series_mode: Opt[ModeType]
   val series_name: String
 }

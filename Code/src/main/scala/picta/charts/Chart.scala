@@ -11,14 +11,20 @@ import upickle.default._
 
 trait ChartInterface extends Component {
   def plot(): Unit
+
   def plot_inline()(implicit publish: OutputHandler): Unit
 }
 
 /**
- * @constructor Creates a new chart with 'data', 'layout' and 'config' components
- * @param data   : This is a list of 'series' that we wish to add to the plot.
- * @param layout : This is the layout that determines how the chart is visually laid out.
- * @param config : This is the config that controls how the plot behaves with user interaction.
+ * This is the chart base class with which we can compose all other elements of the grammar that determine how the chart
+ * is displayed.
+ *
+ * @constructor Creates a new chart with 'data', 'layout' and 'config' components.
+ * @param data                : This is a list of 'series' type that we wish to add to the plot.
+ * @param layout              : This is the layout that determines how the chart is visually laid out.
+ * @param config              : This is the config that controls how the plot behaves with user interaction.
+ * @param animated            : Specifies whether the chart is animated or static.
+ * @param transition_duration : If the chart is animated, this specifies the time (ms) it takes to change frame.
  */
 final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config(),
                        animated: Boolean = false, transition_duration: Int = 100) extends ChartInterface {
@@ -51,7 +57,7 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
   def plot(): Unit = {
     val labels_ : Value = transform(labels).to(Value)
     animated match {
-      case true => plotChart(traces = List(data_(0)), frames = frames, transition_duration=transition_duration,
+      case true => plotChart(traces = List(data_(0)), frames = frames, transition_duration = transition_duration,
         labels = labels_, layout = layout_, config = config_)
       case false => plotChart(traces = data_, layout = layout_, config = config_)
     }
@@ -62,7 +68,7 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
     animated match {
       case true => plotChart_inline(traces = List(data_(0)), frames = frames, transition_duration = transition_duration,
         labels = labels_, layout = layout_, config = config_)
-      case false => plotChart_inline(traces=data_, layout=layout_, config=config_)
+      case false => plotChart_inline(traces = data_, layout = layout_, config = config_)
     }
   }
 

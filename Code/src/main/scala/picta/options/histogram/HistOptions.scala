@@ -13,24 +13,33 @@ object HistNormType extends Enumeration {
 
 import picta.options.histogram.HistNormType.HistNormType
 
-object HistFuncType extends Enumeration {
-  type HistFuncType = Value
+object HistFunction extends Enumeration {
+  type HistFunction = Value
   val COUNT, SUM, AVG, MIN, MAX = Value
 }
 
-import picta.options.histogram.HistFuncType.HistFuncType
+import picta.options.histogram.HistFunction.HistFunction
 
 
-object HistOrientationType extends Enumeration {
-type HistOrientationType = Value
+object HistOrientation extends Enumeration {
+  type HistOrientation = Value
   val VERTICAL = Value("x")
   val HORIZONTAL = Value("y")
 }
 
-import picta.options.histogram.HistOrientationType.{HistOrientationType, VERTICAL}
+import picta.options.histogram.HistOrientation.{HistOrientation, VERTICAL}
 
-case class HistOptions(orientation: HistOrientationType = VERTICAL, cumulative: Opt[Cumulative] = Blank,
-                       histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFuncType] = Blank,
+/** This class sets the histogram-specific options for a histogram.
+ *
+ * @param orientation : Specifies whether the histogram is vertical or horizontal.
+ * @param cumulative  : This takes in a Cumulative type which specifies how the histogram cumulative function works.
+ * @param histnorm    : Specifies the type of normalization for the histogram series.
+ * @param histfunc    : Specifies the binning function for the histogram series.
+ * @param xbins       : An Xbin specified by the user.
+ * @param ybins       : A Ybin specified by the user.
+ */
+case class HistOptions(orientation: HistOrientation = VERTICAL, cumulative: Opt[Cumulative] = Blank,
+                       histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFunction] = Blank,
                        xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 
   def setCumulative(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)

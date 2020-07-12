@@ -1,2 +1,14 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mAxisTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Axis.Constructor[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- Axis.Constructor *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.IllegalArgumentException: Can't find a private method named: serialize[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.PrivateMethodTester$Invoker.invokePrivate(PrivateMethodTester.scala:247)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at AxisTests.$anonfun$new$1(UnitTests.scala:29)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.funsuite.AnyFunSuiteLike$$anon$1.apply(AnyFunSuiteLike.scala:189)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m

@@ -23,7 +23,6 @@ object ColorOptions {
         }
       }
     }
-
   }
 
   /** This is first priority option; List[Double]. If the list does not match either List[Double] or List[String],
@@ -41,5 +40,4 @@ object ColorOptions {
     }
 
   }
-
 }

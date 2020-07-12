@@ -5,6 +5,12 @@ import picta.common.Monoid._
 import picta.common.OptionWrapper._
 import ujson.{Obj, Value}
 
+/** Base class for both the x-axis bins and the y-axis bins used in tuning a histogram chart.
+ *
+ * @param start : The starting value for the bin. Defaults to the minimum data value.
+ * @param end   : The ending value for the bin. Defaults to the maximum data value.
+ * @param size  : Sets the size of each bin.
+ */
 class HistBins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends Component {
 
   def serialize: Value = {

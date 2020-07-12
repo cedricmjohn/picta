@@ -8,55 +8,71 @@ import picta.series.{XY, XYSeries}
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
-// TODO - Need to add more utility functions - can be done after integrating with CoNuS core.
+/** This object contains a number of general utility functions that are useful for both users and the library.
+ */
 object Utils {
+  /** This is an alternative constructor that uses tuples instead of lists to limit users entering more than two data series
+   *
+   * @param categories : This are the per data-point category labels
+   * @param data       : This is a tuple of the raw data for both the x and y variables
+   */
+  def getSeriesbyCategory[T: Serializer](categories: List[String], data: (List[T], List[T])): List[XYSeries] = {
+    getSeriesbyCategory(categories, List(data._1, data._2))
+  }
+
+  /** This is the base constructor for the alternative constructor above. As this function signature uses lists as opposed to
+   * tuples, it is not good from a user interface perspective.
+   *
+   * @param categories : This are the per data-point category labels
+   * @param data       : This is a tuple of the raw data for both the x and y variables
+   */
   private def getSeriesbyCategory[T: Serializer](categories: List[String], data: List[List[T]]): List[XYSeries] = {
-    /** generate some axis labels - this is just to keep track of later on, the exact value is not important */
+    /** generate some axis labels - this is just to keep track, the exact value is not important */
     val axis_labels = List(genRandomText, genRandomText)
-    /** we use the given list of labels, and convert them to a set of categories */
+
+    /** use the given list of categories, and convert them to a Set of individual labels */
     val category_labels = categories.toSet
-    /** we use a nested mutable map structure in order to increase efficiency of access
-     *  mutable lists are used for memory-efficient in-place appends
+
+    /** use a nested mutable map structure in order to increase efficiency of access; O(1) access time-complexity.
+     * Mutable lists are used for memory-efficient in-place appends as otherwise immutable lists would require copy + update.
      */
     var data_map: mutable.Map[String, mutable.Map[String, ListBuffer[T]]] = collection.mutable.Map()
+
     /** for each series, create a nested map pointing to each category */
-    data.zipWithIndex.foreach{ case (_, index) => {
-      var inner_map: mutable.Map[String, ListBuffer[T]] = collection.mutable.Map()
-      /** now create a list for each of the different categories */
-      category_labels.foreach(c => inner_map += c -> new ListBuffer[T]())
-      /** add the name of the series to the nested map */
-      data_map += axis_labels(index) -> inner_map
-    }}
-    /** at this stage the structure should be like (axis1 -> (cat1 -> Nil, cat2 -> Nil,...), axis2 -> ...) */
+    data.zipWithIndex.foreach {
+      case (_, index) => {
+        var inner_map: mutable.Map[String, ListBuffer[T]] = collection.mutable.Map()
+
+        /** now create a list for each of the different categories */
+        category_labels.foreach(c => inner_map += c -> new ListBuffer[T]())
+
+        /** add the name of the series to the nested map */
+        data_map += axis_labels(index) -> inner_map
+      }
+    }
+
+    /** at this stage the structure should be like (axis 1 -> (cat. 1 -> Nil, cat. 2 -> Nil,...), axis 2 -> ...) */
     var series_set = scala.collection.mutable.Set[XYSeries]()
-    /** we iterate each label, take the associated data from the series, and stick into the correct place in the map */
+
+    /** for each label, take the associated data from the series and stick into the correct place in the map */
     for ((label, i) <- categories.zipWithIndex) {
       for ((series, j) <- data.zipWithIndex) {
         data_map(axis_labels(j))(label) +:= series(i)
       }
     }
+
     /** since we have an efficient, easy to traverse structure, we can now create the individual series */
     category_labels.foreach(category => {
       val x = data_map(axis_labels(0))(category).toList
       val y = data_map(axis_labels(1))(category).toList
-      series_set += XY(x=x, y=y, series_type = SCATTER, series_mode = MARKERS, series_name = category)
+      series_set += XY(x = x, y = y, series_type = SCATTER, series_mode = MARKERS, series_name = category)
     })
     series_set.toList
   }
 
-  def getSeriesbyCategory[T: Serializer](categories: List[String], data: (List[T], List[T])): List[XYSeries] = {
-    getSeriesbyCategory(categories, List(data._1, data._2))
-  }
+  /** Generates a random 7 digit alphanumeric string. Example use is creating a random, non-conflicting series name */
+  private[picta] def genRandomText(): String = java.util.UUID.randomUUID.toString().slice(0, 7)
 
-  /*
-  * Creates a list of all the possible co-ordinates
-  * */
-  def createCoordinateRange(dimx: Int, dimy: Int): List[Seq[Int]] = {
-    for {
-      x <- List.range(0, dimx)
-      y <- List.range(0, dimy)
-    } yield Seq(x, y)
-  }
 
   //  def getSeriesFromSingleModel[T: Serializer]
   //  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
@@ -68,6 +84,16 @@ object Utils {
   //  }
 
   // println(results.getModelVariablesForStep(i))
+
+  /**
+   * Creates a list of all the possible co-ordinates
+   */
+  def createCoordinateRange(dimx: Int, dimy: Int): List[Seq[Int]] = {
+    for {
+      x <- List.range(0, dimx)
+      y <- List.range(0, dimy)
+    } yield Seq(x, y)
+  }
 
   // traverse and update a Value object -  assumes no repeated keys - not a pure function as it modifies in place
   def update(v: ujson.Value, parent: String, child: String, z: ujson.Value): Boolean = v match {
@@ -82,7 +108,4 @@ object Utils {
       true
     case _ => true
   }
-
-  /** Generates a random 7 digit alphanumeric string */
-  def genRandomText(): String = java.util.UUID.randomUUID.toString().slice(0, 7)
 }

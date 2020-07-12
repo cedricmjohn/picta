@@ -10,6 +10,7 @@ import ujson.{Obj, Value}
  * @param title      : Sets the chart title.
  * @param axs        : Sets the chart title.
  * @param showlegend : Specifies whether to show the legend.
+ * @param autosize   : This is the component that configures the legend for the chart..
  * @param legend     : This is the component that configures the legend for the chart..
  * @param height     : This sets the height for the chart.
  * @param width      : This sets the width for the chart.

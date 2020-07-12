@@ -6,10 +6,15 @@ import com.github.tototoshi.csv._
 
 import scala.collection.mutable
 
-/** TODO - need to make sure working directory is also used */
+/** Contains helper methods to work with common IO tasks */
 object IO {
+  /** this grabs the working directory path as a string */
   def getWorkingDirectory: String = os.pwd.toString
 
+  /** Reads a CSV file (with-headers) into a Map(header -> column of data)
+   *
+   * @param filepath : A string containing the path of the file that is to be read
+   */
   def readCSV(filepath: String): mutable.Map[String, List[String]] = {
     val reader = CSVReader.open(new File(filepath)).allWithHeaders()
     val headers = reader(0).keys

@@ -3,9 +3,9 @@ package picta
 import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.{Layout}
-import picta.series.ModeType.MARKERS
+import picta.series.Mode.MARKERS
 import picta.series.XY
-import picta.series.XYChartType.{BAR, SCATTER}
+import picta.series.XYChart.{BAR, SCATTER}
 import test.UnitTestUtils.{validateJson, x_int, y_double, y_int, y_str}
 
 class BasicChartTests extends AnyFunSuite {

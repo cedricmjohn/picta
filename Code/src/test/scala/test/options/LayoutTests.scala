@@ -3,9 +3,9 @@ package picta
 import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.{Axis, Layout, Subplot}
-import picta.series.ModeType.MARKERS
+import picta.series.Mode.MARKERS
 import picta.series.XY
-import picta.series.XYChartType.SCATTER
+import picta.series.XYChart.SCATTER
 import test.UnitTestUtils.{config, validateJson, x_double, x_int, y_double, y_int}
 
 class LayoutTests extends AnyFunSuite {

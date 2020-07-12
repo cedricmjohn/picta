@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.Layout
 import picta.series.XYZ
-import picta.series.XYZChartType.HEATMAP
+import picta.series.XYZChart.HEATMAP
 import test.UnitTestUtils.{config, validateJson, z_surface}
 
 class HeatmapTests extends AnyFunSuite {

@@ -1,0 +1,3 @@
+This is the API documentation for Picta, a graphing library for Scala.
+
+More detailed documentation about using the library can be found at [[https://acse-fk4517.github.io/picta-docs/]].

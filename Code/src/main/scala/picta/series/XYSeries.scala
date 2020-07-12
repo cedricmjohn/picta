@@ -1,24 +1,24 @@
 package picta.series
 
-import picta.Serializer
 import picta.common.Monoid._
 import picta.common.OptionWrapper._
+import picta.common.Serializer
 import picta.common.Utils._
 import picta.options.ColorOptions.Color
 import picta.options.Marker
 import picta.options.histogram.HistOptions
 import picta.options.histogram2d.Hist2dOptions
-import picta.series.ModeType.ModeType
+import picta.series.Mode.Mode
 import ujson.{Obj, Value}
 
 trait XYSeries extends Series
 
-object XYChartType extends Enumeration {
+object XYChart extends Enumeration {
   type XYChartType = Value
   val SCATTER, SCATTERGL, BAR, HISTOGRAM2DCONTOUR, HISTOGRAM, PIE = Value
 }
 
-import picta.series.XYChartType._
+import picta.series.XYChart._
 
 /**
  * TODO - Remove non-common components to another individual component
@@ -34,8 +34,9 @@ import picta.series.XYChartType._
  * @param marker      :
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
-(x: List[T0], y: Opt[List[T1]] = Empty, series_name: String = genRandomText, series_type: XYChartType = SCATTER, series_mode: Opt[ModeType] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank,
- marker: Opt[Marker[T2, T3]] = Blank, hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
+(x: List[T0], y: Opt[List[T1]] = Empty, series_name: String = genRandomText, series_type: XYChartType = SCATTER,
+ series_mode: Opt[Mode] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
+ hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
 
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(series_name = new_name)
 

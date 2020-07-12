@@ -4,9 +4,9 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.common.Monoid._
 import picta.options.{Axis, Layout, Line, Marker}
-import picta.series.ModeType.MARKERS
+import picta.series.Mode.MARKERS
 import picta.series.XY
-import picta.series.XYChartType.SCATTER
+import picta.series.XYChart.SCATTER
 import test.UnitTestUtils.{validateJson, x_int, y_int}
 import upickle.default.write
 
@@ -20,13 +20,13 @@ class MarkerTests extends AnyFunSuite {
   }
 
   test("Marker.Constructor.Full") {
-    val marker = Marker() setSymbol "circle" setColors "red" setLine Line()
+    val marker = Marker() setSymbol "circle" setColor "red" setLine Line()
     val test = """{"symbol":"circle","color":"red","line":{"width":0.5}}"""
     assert(test == write(marker.serialize))
   }
 
   test("Marker.Composition.WithTrace") {
-    val marker = Marker() setSymbol "circle" setColors "red" setLine Line()
+    val marker = Marker() setSymbol "circle" setColor "red" setLine Line()
     val x_axis = Axis(position = "x") setTitle "x variable"
     val y_axis = Axis(position = "y") setTitle "y variable"
 

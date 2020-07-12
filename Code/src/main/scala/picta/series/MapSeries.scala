@@ -4,7 +4,7 @@ import picta.common.Monoid._
 import picta.common.OptionWrapper._
 import picta.options.ColorOptions.Color
 import picta.options.Line
-import picta.series.ModeType.ModeType
+import picta.series.Mode.Mode
 import ujson.{Obj, Value}
 
 /**
@@ -16,7 +16,7 @@ import ujson.{Obj, Value}
  * @param line        : This configures the line for the Map.
  */
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
-                               series_mode: Opt[ModeType] = Blank, line: Opt[Line[T]] = Blank) extends Series {
+                               series_mode: Opt[Mode] = Blank, line: Opt[Line[T]] = Blank) extends Series {
 
   def setLine[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 

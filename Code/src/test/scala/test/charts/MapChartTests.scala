@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.{Geo, LatAxis, Layout, Line, LongAxis, Margin}
 import picta.series.Map
-import picta.series.ModeType.LINES
+import picta.series.Mode.LINES
 import test.UnitTestUtils.{validateJson, config}
 
 class MapTests extends AnyFunSuite {

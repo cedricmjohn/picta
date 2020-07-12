@@ -3,9 +3,9 @@ package picta
 import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.{Axis, Config, Layout, Legend}
-import picta.series.ModeType.MARKERS
+import picta.series.Mode.MARKERS
 import picta.series.XY
-import picta.series.XYChartType.SCATTER
+import picta.series.XYChart.SCATTER
 import test.UnitTestUtils.{validateJson, x_int, y_double, y_int, z_int, config}
 
 class CompositionTests extends AnyFunSuite {

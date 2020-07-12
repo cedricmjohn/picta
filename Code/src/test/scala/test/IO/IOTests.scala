@@ -9,7 +9,7 @@ import picta.series.XYSeries
 
 class IOTests extends AnyFunSuite {
 
-  val plotFlag = false
+  val plotFlag = true
 
   test("Iris.2DCategory") {
     val filepath = getWorkingDirectory + "/src/test/resources/iris_csv.csv"
@@ -23,6 +23,6 @@ class IOTests extends AnyFunSuite {
     val result: List[XYSeries] = getSeriesbyCategory(categories, (sepal_length, petal_width))
 
     val chart = Chart() setData result setLayout Layout(title = "Iris", showlegend = true)
-    chart.plot()
+    if (plotFlag) chart.plot()
   }
 }

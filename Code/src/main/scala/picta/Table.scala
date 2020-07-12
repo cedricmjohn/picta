@@ -1,5 +1,6 @@
 package picta
 
+import picta.common.Serializer
 import picta.options.{Config, Layout}
 import ujson.{Obj, Value}
 import upickle.default._

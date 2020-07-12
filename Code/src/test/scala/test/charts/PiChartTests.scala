@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.Layout
 import picta.series.XY
-import picta.series.XYChartType.PIE
+import picta.series.XYChart.PIE
 import test.UnitTestUtils.validateJson
 
 class PieChartTests extends AnyFunSuite {

@@ -1,7 +1,7 @@
 package picta.charts
 
 import almond.interpreter.api.OutputHandler
-import picta.Html.{plotChart, plotChart_inline}
+import Html.{plotChart, plotChart_inline}
 import picta.common.Component
 import picta.common.OptionWrapper._
 import picta.options.{Config, Layout}

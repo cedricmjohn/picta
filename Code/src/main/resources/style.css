@@ -1,0 +1,19 @@
+#animationInterface {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.progressBar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inline-div {
+    display: block;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    text-align: center;
+}

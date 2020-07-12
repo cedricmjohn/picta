@@ -2,7 +2,7 @@ package test
 
 import picta.common.OptionWrapper._
 import picta.options._
-import picta.series.XYZChartType._
+import picta.series.XYZChart._
 import picta.series._
 
 object UnitTestUtils {

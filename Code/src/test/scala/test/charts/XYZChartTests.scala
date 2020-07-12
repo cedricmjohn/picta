@@ -3,9 +3,9 @@ package picta
 import org.scalatest.funsuite.AnyFunSuite
 import picta.charts.Chart
 import picta.options.Layout
-import picta.series.ModeType.LINES
+import picta.series.Mode.LINES
 import picta.series.XYZ
-import picta.series.XYZChartType.{SCATTER3D, SURFACE}
+import picta.series.XYZChart.{SCATTER3D, SURFACE}
 import test.UnitTestUtils.{config, validateJson, x_double, y_double, z_double, z_surface}
 
 class XYZTests extends AnyFunSuite {

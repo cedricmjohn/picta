@@ -1,8 +1,7 @@
 package picta.common
 
-import picta.Serializer
-import picta.series.ModeType.MARKERS
-import picta.series.XYChartType.SCATTER
+import picta.series.Mode.MARKERS
+import picta.series.XYChart.SCATTER
 import picta.series.{XY, XYSeries}
 
 import scala.collection.mutable

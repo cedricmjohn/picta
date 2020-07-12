@@ -8,7 +8,7 @@ import picta.options.histogram.HistNormType.NUMBER
 import picta.options.histogram.HistOrientation.HORIZONTAL
 import picta.options.histogram.{Cumulative, HistOptions, Xbins}
 import picta.series.XY
-import picta.series.XYChartType.HISTOGRAM
+import picta.series.XYChart.HISTOGRAM
 import test.UnitTestUtils.{validateJson, x_int, x_random, config}
 
 class HistogramTests extends AnyFunSuite {
@@ -33,7 +33,7 @@ class HistogramTests extends AnyFunSuite {
   }
 
   test("XY.Histogram.Color") {
-    val marker = Marker() setColors List("rgba(255, 100, 102, 0.4)") setLine Line()
+    val marker = Marker() setColor List("rgba(255, 100, 102, 0.4)") setLine Line()
     // change xkey to y to get a horizontal histogram
     val series = XY(x_random, series_type = HISTOGRAM, marker = marker) setHistOptions HistOptions(orientation = HORIZONTAL)
     val chart = Chart() setData series setLayout Layout("XY.Histogram.Color")
@@ -42,7 +42,7 @@ class HistogramTests extends AnyFunSuite {
   }
 
   test("XY.Histogram.withLines") {
-    val marker = Marker() setColors List("rgba(255, 100, 102, 0.4)") setLine Line()
+    val marker = Marker() setColor List("rgba(255, 100, 102, 0.4)") setLine Line()
     val series = XY(x_random, series_type = HISTOGRAM) setMarker marker
     val layout = Layout("XY.Histogram.Advanced")
     val chart = Chart() setData series setLayout layout setConfig config

@@ -20,9 +20,9 @@ case class Marker[T0: Color, T1: Color]
 
   def setSymbol(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
 
-  def setColors[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
+  def setColor[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
 
-  def setColors[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
+  def setColor[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
 
   def setLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
 

@@ -1,0 +1,28 @@
+package test.IO
+
+import org.scalatest.funsuite.AnyFunSuite
+import picta.IO.IO.{getWorkingDirectory, readCSV}
+import picta.charts.Chart
+import picta.common.Utils.getSeriesbyCategory
+import picta.options.Layout
+import picta.series.XYSeries
+
+class IOTests extends AnyFunSuite {
+
+  val plotFlag = false
+
+  test("Iris.2DCategory") {
+    val filepath = getWorkingDirectory + "/src/test/resources/iris_csv.csv"
+
+    val data = readCSV(filepath)
+
+    val sepal_length = data("sepallength").map(_.toDouble)
+    val petal_width = data("petalwidth").map(_.toDouble)
+    val categories = data("class")
+
+    val result: List[XYSeries] = getSeriesbyCategory(categories, (sepal_length, petal_width))
+
+    val chart = Chart() setData result setLayout Layout(title = "Iris", showlegend = true)
+    chart.plot()
+  }
+}

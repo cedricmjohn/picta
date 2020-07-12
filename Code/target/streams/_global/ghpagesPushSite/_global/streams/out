@@ -1,8 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m/Users/fazi/.sbt/ghpages/fa110bbdbabfb70cfd3dc973dc6c151380937386/org.carbonateresearch/picta$ git add .[0m
-[0m[[0m[0mdebug[0m] [0m[0m/Users/fazi/.sbt/ghpages/fa110bbdbabfb70cfd3dc973dc6c151380937386/org.carbonateresearch/picta$ git commit -m updated site[0m
-[0m[[0m[0minfo[0m] [0m[0mOn branch gh-pages[0m
-[0m[[0m[0minfo[0m] [0m[0mYour branch is up to date with 'origin/gh-pages'.[0m
-[0m[[0m[0minfo[0m] [0m[0mnothing to commit, working tree clean[0m
-[0m[[0m[0minfo[0m] [0m[0mNonzero exit code (1) running git.[0m
-[0m[[0m[0mdebug[0m] [0m[0m/Users/fazi/.sbt/ghpages/fa110bbdbabfb70cfd3dc973dc6c151380937386/org.carbonateresearch/picta$ git push[0m
-[0m[[0m[0minfo[0m] [0m[0mEverything up-to-date[0m

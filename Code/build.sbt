@@ -7,7 +7,7 @@ version := "0.1"
 scalaVersion := "2.13.2"
 
 // documentation output
-target in Compile in doc := baseDirectory.value / "picta-api"
+target in Compile in doc := baseDirectory.value / "docs"
 
 // unit testing
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"

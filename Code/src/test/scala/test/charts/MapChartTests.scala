@@ -1,11 +1,11 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta.{Chart, Layout}
+import org.carbonateresearch.picta.options.{Geo, LatAxis, Line, LongAxis, Margin}
+import org.carbonateresearch.picta.series.Map
+import org.carbonateresearch.picta.series.Mode.LINES
+import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Geo, LatAxis, Layout, Line, LongAxis, Margin}
-import picta.series.Map
-import picta.series.Mode.LINES
-import test.UnitTestUtils.{validateJson, config}
 
 class MapTests extends AnyFunSuite {
 

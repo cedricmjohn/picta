@@ -1,12 +1,11 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta.{Chart, Layout, XY}
+import org.carbonateresearch.picta.options.Marker
+import org.carbonateresearch.picta.series.Mode.MARKERS
+import org.carbonateresearch.picta.XYChart.SCATTER
+import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int, z_double}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Layout, Marker}
-import picta.series.Mode.MARKERS
-import picta.series.XY
-import picta.series.XYChart.SCATTER
-import test.UnitTestUtils.{validateJson, x_int, y_int, z_double}
 
 class ScatterWithColorTests extends AnyFunSuite {
 

@@ -1,15 +1,15 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta
+import org.carbonateresearch.picta.{Chart, Layout, XY}
+import org.carbonateresearch.picta.options.{Axis, Marker}
+import org.carbonateresearch.picta.options.histogram.HistOptions
+import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
+import org.carbonateresearch.picta.options.histogram.HistOrientation.HORIZONTAL
+import org.carbonateresearch.picta.series.Mode.MARKERS
+import org.carbonateresearch.picta.XYChart.{HISTOGRAM, HISTOGRAM2DCONTOUR, SCATTER}
+import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_double, y_double}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Axis, Layout, Marker}
-import picta.options.histogram.HistOptions
-import picta.options.histogram.HistOrientation.HORIZONTAL
-import picta.options.histogram2d.Hist2dOptions
-import picta.series.Mode.MARKERS
-import picta.series.XY
-import picta.series.XYChart.{HISTOGRAM, HISTOGRAM2DCONTOUR, SCATTER}
-import test.UnitTestUtils.{validateJson, x_double, y_double, config}
 
 class Histogram2DContourTests extends AnyFunSuite {
 
@@ -40,7 +40,7 @@ class Histogram2DContourTests extends AnyFunSuite {
     val ax4 = Axis(position = "y2", showgrid = false) setDomain(0.85, 1.0)
 
     val chart = Chart() setData List(series1, series2, series3, series4) setLayout
-      (Layout("XY.Histogram2dContour.WithDensity", autosize = false) setAxes(ax1, ax2, ax3, ax4))
+      (picta.Layout("XY.Histogram2dContour.WithDensity", autosize = false) setAxes(ax1, ax2, ax3, ax4))
 
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

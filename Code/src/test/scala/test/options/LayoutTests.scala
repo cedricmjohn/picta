@@ -1,12 +1,11 @@
-package picta
+package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta
+import org.carbonateresearch.picta.options.{Axis, Subplot}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Axis, Layout, Subplot}
-import picta.series.Mode.MARKERS
-import picta.series.XY
-import picta.series.XYChart.SCATTER
-import test.UnitTestUtils.{config, validateJson, x_double, x_int, y_double, y_int}
+import org.carbonateresearch.picta.series.Mode.MARKERS
+import XYChart.SCATTER
+import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_double, x_int, y_double, y_int}
 
 class LayoutTests extends AnyFunSuite {
 
@@ -27,7 +26,7 @@ class LayoutTests extends AnyFunSuite {
     val ax2 = Axis(position = "y2", title = "y axis 2", side = "right", overlaying = "y")
 
     // 2. add the axis to the layout to display them on the xy chart
-    val layout = Layout("XY.Axis.Composition") setAxes List(ax0, ax1, ax2)
+    val layout = picta.Layout("XY.Axis.Composition") setAxes List(ax0, ax1, ax2)
 
     // 3. define the data to display on the chart
     val trace1 = XY(x = x_int, y = y_double, series_type = SCATTER, series_mode = MARKERS, yaxis = "y2")
@@ -52,7 +51,7 @@ class LayoutTests extends AnyFunSuite {
     val trace2 = XY(x = x_double, y = y_int, series_type = SCATTER, series_mode = MARKERS, xaxis = "x2", yaxis = "y2")
 
     // 3. combine into a layout
-    val layout = Layout(title = "XY.Axis.Composition") setAxes List(ax1, ax2) setSubplot grid
+    val layout = picta.Layout(title = "XY.Axis.Composition") setAxes List(ax1, ax2) setSubplot grid
 
     // 4. construct into a chart
     val chart = Chart(List(trace1, trace2), layout, config)

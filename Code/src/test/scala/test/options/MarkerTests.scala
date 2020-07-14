@@ -1,13 +1,11 @@
-package picta
+package org.carbonateresearch.picta
 
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.common.Monoid._
-import picta.options.{Axis, Layout, Line, Marker}
-import picta.series.Mode.MARKERS
-import picta.series.XY
-import picta.series.XYChart.SCATTER
-import test.UnitTestUtils.{validateJson, x_int, y_int}
+import org.carbonateresearch.picta.common.Monoid._
+import org.carbonateresearch.picta.options.{Axis, Line, Marker}
+import org.carbonateresearch.picta.series.Mode.MARKERS
+import XYChart.SCATTER
+import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
 import upickle.default.write
 
 class MarkerTests extends AnyFunSuite {

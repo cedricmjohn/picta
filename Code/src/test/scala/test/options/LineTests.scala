@@ -1,7 +1,7 @@
-package picta
+package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.options.Line
 import org.scalatest.funsuite.AnyFunSuite
-import picta.options.Line
 import upickle.default.write
 
 class LineTests extends AnyFunSuite {

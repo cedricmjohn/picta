@@ -1,9 +1,10 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta
+import org.carbonateresearch.picta.{Chart, Layout}
+import org.carbonateresearch.picta.options.Axis
+import org.carbonateresearch.picta.UnitTestUtils.{createXYSeries, createXYZSeries, validateJson}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Axis, Layout}
-import test.UnitTestUtils.{createXYSeries, createXYZSeries, validateJson}
 
 class AnimationTests extends AnyFunSuite {
 
@@ -21,7 +22,7 @@ class AnimationTests extends AnyFunSuite {
 
   test("Animation.XYZ") {
     val data = createXYZSeries(numberToCreate = 3, length = 3)
-    val layout = Layout("Animation.XYZ")
+    val layout = picta.Layout("Animation.XYZ")
     val chart = Chart(animated = true) setLayout layout setData data
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))

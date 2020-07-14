@@ -1,15 +1,12 @@
-package test.IO
+package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.IO.IO.{getWorkingDirectory, readCSV}
+import org.carbonateresearch.picta.common.Utils.getSeriesbyCategory
 import org.scalatest.funsuite.AnyFunSuite
-import picta.IO.IO.{getWorkingDirectory, readCSV}
-import picta.charts.Chart
-import picta.common.Utils.getSeriesbyCategory
-import picta.options.Layout
-import picta.series.XYSeries
 
 class IOTests extends AnyFunSuite {
 
-  val plotFlag = true
+  val plotFlag = false
 
   test("Iris.2DCategory") {
     val filepath = getWorkingDirectory + "/src/test/resources/iris_csv.csv"

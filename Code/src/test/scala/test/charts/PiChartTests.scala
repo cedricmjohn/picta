@@ -1,11 +1,10 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta
+import org.carbonateresearch.picta.{Chart, Layout, XY}
+import org.carbonateresearch.picta.XYChart.PIE
+import org.carbonateresearch.picta.UnitTestUtils.validateJson
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.Layout
-import picta.series.XY
-import picta.series.XYChart.PIE
-import test.UnitTestUtils.validateJson
 
 class PieChartTests extends AnyFunSuite {
 
@@ -13,7 +12,7 @@ class PieChartTests extends AnyFunSuite {
 
   test("XY.Pie") {
     val series = XY(List(19, 26, 55), List("Residential", "Non-Residential", "Utility"), series_type = PIE)
-    val chart = Chart() setData series setLayout Layout("XY.Pie")
+    val chart = Chart() setData series setLayout picta.Layout("XY.Pie")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }

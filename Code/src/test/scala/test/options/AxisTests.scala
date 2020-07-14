@@ -1,7 +1,7 @@
-package picta
+package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.options.Axis
 import org.scalatest.funsuite.AnyFunSuite
-import picta.options.Axis
 import upickle.default.write
 
 class AxisTests extends AnyFunSuite {

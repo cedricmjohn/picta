@@ -1,0 +1,58 @@
+package org.carbonateresearch.picta.common
+
+import ujson.Value
+import upickle.default._
+
+/** A type class that serializes scala data structures to a valid Value format for JSON. */
+sealed trait Serializer[T] {
+  def serialize(lst: List[T]): Value
+}
+
+/** Traits are prioritised to allow the compiler to compile without any ambiguity errors */
+trait Big_Decimal_Serializer {
+
+  implicit object BigDecimalSerializer extends Serializer[BigDecimal] {
+    def serialize(lst: List[BigDecimal]): Value = transform(lst).to(Value)
+  }
+
+}
+
+trait Long_Serializer extends Big_Decimal_Serializer {
+
+  implicit object LongSerializer extends Serializer[Long] {
+    def serialize(lst: List[Long]): Value = transform(lst).to(Value)
+  }
+
+}
+
+trait Float_Serializer extends Long_Serializer {
+
+  implicit object FloatSerializer extends Serializer[Float] {
+    def serialize(lst: List[Float]): Value = transform(lst).to(Value)
+  }
+
+}
+
+trait String_Serializer extends Float_Serializer {
+
+  implicit object StringSerializer extends Serializer[String] {
+    def serialize(lst: List[String]): Value = transform(lst).to(Value)
+  }
+
+}
+
+trait Int_Serializer extends String_Serializer {
+
+  implicit object IntSerializer extends Serializer[Int] {
+    def serialize(lst: List[Int]): Value = transform(lst).to(Value)
+  }
+
+}
+
+object Serializer extends Int_Serializer {
+
+  implicit object DoubleSerializer extends Serializer[Double] {
+    def serialize(lst: List[Double]): Value = transform(lst).to(Value)
+  }
+
+}

@@ -1,15 +1,15 @@
-package picta
+package org.carbonateresearch.picta.charts
 
+import org.carbonateresearch.picta
+import org.carbonateresearch.picta.{Chart, Layout, XY}
+import org.carbonateresearch.picta.options.{Line, Marker}
+import org.carbonateresearch.picta.options.histogram.HistFunction.{COUNT, SUM}
+import org.carbonateresearch.picta.options.histogram.HistNormType.NUMBER
+import org.carbonateresearch.picta.options.histogram.HistOrientation.HORIZONTAL
+import org.carbonateresearch.picta.options.histogram.{Cumulative, HistOptions, Xbins}
+import org.carbonateresearch.picta.XYChart.HISTOGRAM
+import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_int, x_random}
 import org.scalatest.funsuite.AnyFunSuite
-import picta.charts.Chart
-import picta.options.{Layout, Line, Marker}
-import picta.options.histogram.HistFunction.{COUNT, SUM}
-import picta.options.histogram.HistNormType.NUMBER
-import picta.options.histogram.HistOrientation.HORIZONTAL
-import picta.options.histogram.{Cumulative, HistOptions, Xbins}
-import picta.series.XY
-import picta.series.XYChart.HISTOGRAM
-import test.UnitTestUtils.{validateJson, x_int, x_random, config}
 
 class HistogramTests extends AnyFunSuite {
 
@@ -26,7 +26,7 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.Horizontal") {
     // change xkey to y to get a horizontal histogram
     val series = XY(x = x_int, series_type = HISTOGRAM) setHistOptions HistOptions(orientation = HORIZONTAL)
-    val layout = Layout("XY.Histogram.Horizontal")
+    val layout = picta.Layout("XY.Histogram.Horizontal")
     val chart = Chart() setData series setLayout layout
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -36,7 +36,7 @@ class HistogramTests extends AnyFunSuite {
     val marker = Marker() setColor List("rgba(255, 100, 102, 0.4)") setLine Line()
     // change xkey to y to get a horizontal histogram
     val series = XY(x_random, series_type = HISTOGRAM, marker = marker) setHistOptions HistOptions(orientation = HORIZONTAL)
-    val chart = Chart() setData series setLayout Layout("XY.Histogram.Color")
+    val chart = Chart() setData series setLayout picta.Layout("XY.Histogram.Color")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -44,7 +44,7 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.withLines") {
     val marker = Marker() setColor List("rgba(255, 100, 102, 0.4)") setLine Line()
     val series = XY(x_random, series_type = HISTOGRAM) setMarker marker
-    val layout = Layout("XY.Histogram.Advanced")
+    val layout = picta.Layout("XY.Histogram.Advanced")
     val chart = Chart() setData series setLayout layout setConfig config
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -53,7 +53,7 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.Cumulative") {
     val hist_options = HistOptions(histnorm = NUMBER) setCumulative Cumulative(enabled = true)
     val series = XY(x_random, series_type = HISTOGRAM) setHistOptions hist_options
-    val chart = Chart() setData series setLayout Layout("XY.Histogram.Cumulative")
+    val chart = Chart() setData series setLayout picta.Layout("XY.Histogram.Cumulative")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -61,7 +61,7 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.WithOptions") {
     val hist_options = HistOptions(histnorm = NUMBER) setXbins Xbins(start = 0.5, end = 3.0, size = 0.05)
     val series = XY(x_random, series_type = HISTOGRAM) setHistOptions hist_options
-    val chart = Chart() setData series setLayout Layout("XY.Histogram.WithOptions")
+    val chart = Chart() setData series setLayout picta.Layout("XY.Histogram.WithOptions")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
@@ -73,7 +73,7 @@ class HistogramTests extends AnyFunSuite {
     val ho2 = HistOptions(histfunc = SUM)
     val t1 = XY(x = x, y = y, series_type = HISTOGRAM) setHistOptions ho1
     val t2 = XY(x = x, y = y, series_type = HISTOGRAM) setHistOptions ho2
-    val chart = Chart() setData(t1, t2) setLayout Layout("XY.Histogram.SpecifyBinningFunction")
+    val chart = Chart() setData(t1, t2) setLayout picta.Layout("XY.Histogram.SpecifyBinningFunction")
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }

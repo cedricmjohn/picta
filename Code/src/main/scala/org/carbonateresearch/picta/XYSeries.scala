@@ -54,6 +54,8 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
 
+  def setAxes(axes: (XAxis, YAxis)): XY[T0, T1, T2, T3] = this.copy(xaxis = axes._1, yaxis = axes._2)
+
   def as(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
 
   def asScatter(): XY[T0, T1, T2, T3] = this.copy(`type` = SCATTER)

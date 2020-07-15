@@ -1,33 +1,44 @@
 package org.carbonateresearch.picta.options.histogram
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
-object HistNormType extends Enumeration {
-  type HistNormType = Value
-  val NUMBER = Value("")
-  val PERCENT, DENSITY, PROBABILITY_DENSITY = Value
+sealed trait HistNorm
+
+case object PERCENT extends HistNorm
+
+case object DENSITY extends HistNorm
+
+case object PROBABILITY_DENSITY extends HistNorm
+
+case object NUMBER extends HistNorm {
+  override def toString: String = ""
 }
 
-import HistNormType.HistNormType
+sealed trait HistFunction
 
-object HistFunction extends Enumeration {
-  type HistFunction = Value
-  val COUNT, SUM, AVG, MIN, MAX = Value
+case object COUNT extends HistFunction
+
+case object SUM extends HistFunction
+
+case object AVG extends HistFunction
+
+case object MIN extends HistFunction
+
+case object MAX extends HistFunction
+
+sealed trait HistOrientation
+
+case object VERTICAL extends HistOrientation {
+  override def toString: String = "x"
 }
 
-import HistFunction.HistFunction
-
-
-object HistOrientation extends Enumeration {
-  type HistOrientation = Value
-  val VERTICAL = Value("x")
-  val HORIZONTAL = Value("y")
+case object HORIZONTAL extends HistOrientation {
+  override def toString: String = "y"
 }
 
-import HistOrientation.{HistOrientation, VERTICAL}
 
 /** This class sets the histogram-specific options for a histogram.
  *
@@ -39,8 +50,8 @@ import HistOrientation.{HistOrientation, VERTICAL}
  * @param ybins       : A Ybin specified by the user.
  */
 final case class HistOptions(orientation: HistOrientation = VERTICAL, cumulative: Opt[Cumulative] = Blank,
-                       histnorm: Opt[HistNormType] = Blank, histfunc: Opt[HistFunction] = Blank,
-                       xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
+                             histnorm: Opt[HistNorm] = Blank, histfunc: Opt[HistFunction] = Blank,
+                             xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 
   def setCumulative(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)
 

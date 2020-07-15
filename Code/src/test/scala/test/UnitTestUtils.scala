@@ -1,8 +1,6 @@
 package org.carbonateresearch.picta
 
-import OptionWrapper._
-import org.carbonateresearch.picta.series.XYZ
-import XYZChart._
+import org.carbonateresearch.picta.OptionWrapper._
 
 object UnitTestUtils {
   // create a common configuration to be used in all the tests
@@ -41,7 +39,7 @@ object UnitTestUtils {
     else {
       val xs = List.range(0, length)
       val ys = xs.map(x => scala.util.Random.nextDouble() * x)
-      val trace = XY(x = xs, y = ys, series_name = "trace" + count)
+      val trace = XY(x = xs, y = ys, name = "trace" + count)
       trace :: createXYSeries(numberToCreate, count + 1, length)
     }
   }
@@ -52,7 +50,7 @@ object UnitTestUtils {
       val xs = List.range(0, length)
       val ys = xs.map(x => scala.util.Random.nextDouble() * x)
       val zs = xs.map(x => scala.util.Random.nextDouble() * x * scala.util.Random.nextInt())
-      val trace = XYZ(x = xs, y = ys, z = zs, series_name = "trace" + count, series_type = SCATTER3D)
+      val trace = XYZ(x = xs, y = ys, z = zs, name = "trace" + count, `type` = SCATTER3D)
       trace :: createXYZSeries(numberToCreate, count + 1, length)
     }
   }

@@ -1,30 +1,29 @@
 package org.carbonateresearch.picta.series
 
+import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.options.ColorOptions.Color
 import org.carbonateresearch.picta.options.Line
-import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.OptionWrapper._
-import org.carbonateresearch.picta.options.ColorOptions.Color
-import Mode.Mode
+import org.carbonateresearch.picta.{Mode, Series}
 import ujson.{Obj, Value}
 
 /**
  * @constructor: This sets the Series for a Map chart specifically.
  * @param lat         : This is the list of latitudes.
  * @param lon         : This is the list of longitudes.
- * @param series_name : This sets the series name.
- * @param series_mode : This sets the series mode.
+ * @param name : This sets the series name.
+ * @param mode : This sets the series mode.
  * @param line        : This configures the line for the Map.
  */
-final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, series_name: String = "map",
-                               series_mode: Opt[Mode] = Blank, line: Opt[Line[T]] = Blank) extends Series {
+final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, name: String = "map",
+                               mode: Opt[Mode] = Blank, line: Opt[Line[T]] = Blank) extends Series {
 
   def setLine[Z: Color](l: Line[Z]): Map[Z] = this.copy(line = l)
 
   private[picta] def serialize: Value = {
     val meta = Obj("lat" -> lat, "lon" -> lon, "type" -> "scattergeo")
 
-    val series_mode_ = series_mode.option match {
+    val series_mode_ = mode.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }

@@ -17,15 +17,32 @@ import ujson.{Obj, Value}
  * @param zeroline   : Determines whether the zeroline for each axis are shown.
  * @param showline   : Determines whether the axis is visibly drawn on the chart.
  */
-case class Axis(position: String, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
-                domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
-                zeroline: Boolean = false, showline: Boolean = false) extends Component {
 
-  def setTitle(new_title: String): Axis = this.copy(title = new_title)
+trait Axis extends Component {
+  val orientation: String
+  val position: Opt[Int]
+  val title: Opt[String]
+  val side: Opt[String]
+  val overlaying: Opt[String]
+  val domain: Opt[(Double, Double)]
+  val range: Opt[(Double, Double)]
+  val showgrid: Boolean
+  val zeroline: Boolean
+  val showline: Boolean
 
-  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
+  private[picta] def getPosition(): String = position.option match {
+    case Some(x) if x != 1 =>  x.toString
+    case _ => ""
+  }
 
-  def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
+  /** An internal function that converts a user entered key into one that the plotly library can understand */
+  private def convertPosition(position: String): String = orientation + position
+
+  def setTitle(new_title: String): Axis
+
+  def setDomain(new_domain: (Double, Double)): Axis
+
+  def setRange(new_range: (Double, Double)): Axis
 
   private[picta] def serialize(): Value = {
     val meta = Obj(
@@ -59,22 +76,30 @@ case class Axis(position: String, title: Opt[String] = Blank, side: Opt[String] 
       case None => jsonMonoid.empty
     }
 
-    Obj(convertKey(position) -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
-  }
+    val position_ = getPosition()
 
-  /** An internal function that converts a user entered key into one that the plotly library can understand */
-  private def convertKey(key: String): String = {
-    if (key.length == 2) {
-      key take 1 match {
-        case "x" => if (key(1).toInt == 1) "xaxis" else "xaxis" + key(1)
-        case "y" => if (key(1).toInt == 1) "yaxis" else "yaxis" + key(1)
-        case _ => throw new IllegalArgumentException("Axis key is not valid. It should start with 'x' or 'y'")
-      }
-    }
-    else key take 1 match {
-      case "x" => "xaxis"
-      case "y" => "yaxis"
-      case _ => throw new IllegalArgumentException("Axis key is not valid. It should start with 'x' or 'y'")
-    }
+    Obj(convertPosition(position_) -> List(title_, meta, side_, overlaying_, domain_, range_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
   }
+}
+
+final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
+                  domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
+                  zeroline: Boolean = false, showline: Boolean = false) extends Axis {
+
+  override val orientation: String = "xaxis"
+
+  def setTitle(new_title: String): Axis = this.copy(title = new_title)
+  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
+  def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
+}
+
+final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
+                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
+                        zeroline: Boolean = false, showline: Boolean = false) extends Axis {
+
+  override val orientation: String = "yaxis"
+
+  def setTitle(new_title: String): Axis = this.copy(title = new_title)
+  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
+  def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
 }

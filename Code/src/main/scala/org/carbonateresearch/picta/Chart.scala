@@ -1,9 +1,8 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.charts.Html.{plotChart, plotChartInline}
-import OptionWrapper._
-import org.carbonateresearch.picta.series.Series
 import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.charts.Html.{plotChart, plotChartInline}
 import ujson.{Obj, Value}
 import upickle.default._
 
@@ -36,9 +35,9 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
 
   private val config_ : Value = config.serialize
 
-  def setData(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
+  def addSeries(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
 
-  def setData(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
+  def addSeries(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
 
   def setLayout(new_layout: Layout): Chart = this.copy(layout = new_layout)
 
@@ -67,7 +66,7 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
   private def createFramesAndLabels(lst: List[Series], frames: List[Obj] = Nil, labels: List[String] = Nil): (List[Obj], List[String]) = {
     lst match {
       case Nil => (frames, labels)
-      case hd :: tl => createFramesAndLabels(tl, frames :+ Obj("name" -> hd.series_name, "data" -> List(hd.serialize)), labels :+ hd.series_name)
+      case hd :: tl => createFramesAndLabels(tl, frames :+ Obj("name" -> hd.name, "data" -> List(hd.serialize)), labels :+ hd.name)
     }
   }
 }

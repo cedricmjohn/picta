@@ -3,16 +3,14 @@ package org.carbonateresearch.picta.charts
 import java.io.{BufferedWriter, File, FileWriter}
 import java.net.{HttpURLConnection, URL}
 
-import org.carbonateresearch.picta.common.Utils.genRandomText
-import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
-
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
+import org.carbonateresearch.picta.common.Utils.genRandomText
 import os.Path
 import ujson.Value
 
 private[picta] object Html {
-
   /** this is the plotly.min.js script that is used to render the plots */
   private val plotlyJs: String = readFile("plotly.min.js")
   private val cssStyle: String = readFile("style.css")
@@ -24,7 +22,7 @@ private[picta] object Html {
    * @param publish (implicit): required to render the HTML in the almond notebook.
    * @param kernel  (implicit): required to interact with the underlying Jupyter kernel instance.
    */
-  def initNotebookMode()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
+  def initNotebook()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
 
     /** if internet connection; grab from cdn otherwise just inject the raw javascript */
@@ -68,7 +66,7 @@ private[picta] object Html {
   private[picta] def plotChart(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
                 transition_duration: Opt[Int] = Blank, layout: Value, config: Value): Unit = {
 
-    val graph_id = System.currentTimeMillis().toString
+    val graph_id = genRandomText()
 
     val html: String = (frames.option, labels.option, transition_duration.option) match {
       case (Some(x), Some(y), Some(z)) =>
@@ -97,9 +95,10 @@ private[picta] object Html {
     val html: String = (frames.option, labels.option, transition_duration.option) match {
       case (Some(x), Some(y), Some(z)) => generateHTML(traces = traces, frames = x, labels = y, transition_duration = z,
         layout = layout, config = config, includeScript = false, includeStyle = false, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, includeStyle = false
-        , graph_id = graph_id)
+      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, includeStyle = false,
+        graph_id = graph_id)
     }
+
     writeHTMLToJupyter(html, graph_id)
   }
 

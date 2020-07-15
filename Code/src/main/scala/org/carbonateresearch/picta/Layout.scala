@@ -20,7 +20,7 @@ import ujson.{Obj, Value}
 final case class Layout
 (title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
  margin: Opt[Margin] = Blank, grid: Opt[Subplot] = Blank, geo: Opt[Geo] = Blank, showlegend: Boolean = false,
- height: Int = 550, width: Int = 600) extends Component {
+ hovermode: String = "closest", height: Int = 550, width: Int = 600) extends Component {
 
   def setAxes(new_axes: List[Axis]): Layout = axs.option match {
     case Some(lst) => this.copy(axs = new_axes ::: lst)
@@ -41,17 +41,14 @@ final case class Layout
   def setMargin(new_margin: Margin): Layout = this.copy(margin = new_margin)
 
   private[picta] def serialize(): Value = {
-    val dim = Obj("height" -> height, "width" -> width)
+    val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode)
 
     val title_ = title.option match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
       case None => jsonMonoid.empty
     }
 
-    val showlegend_ = showlegend.asOption match {
-      case Some(x) => Obj("showlegend" -> x)
-      case None => jsonMonoid.empty
-    }
+    val showlegend_ = Obj("showlegend" -> showlegend)
 
     val legend_ = legend.option match {
       case Some(x) => Obj("legend" -> x.serialize)

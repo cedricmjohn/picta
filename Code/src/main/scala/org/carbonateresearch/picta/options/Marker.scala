@@ -1,10 +1,10 @@
 package org.carbonateresearch.picta.options
 
-import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.OptionWrapper._
-import ColorOptions._
 import org.carbonateresearch.picta.Component
+import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid._
+import org.carbonateresearch.picta.common.Serializer
+import org.carbonateresearch.picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
 
 /**
@@ -15,9 +15,10 @@ import ujson.{Obj, Value}
  *
  */
 final case class Marker[T0: Color, T1: Color]
-(symbol: Opt[String] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank) extends Component {
+(symbol: Opt[String] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank, size: Opt[List[Int]] = Empty) extends Component {
 
   private val c0 = implicitly[Color[T0]]
+  private val s0 = implicitly[Serializer[Int]]
 
   def setSymbol(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
 
@@ -26,6 +27,10 @@ final case class Marker[T0: Color, T1: Color]
   def setColor[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
 
   def setLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
+
+  def setSize(new_size: List[Int]): Marker[T0, T1] = this.copy(size = new_size)
+
+  def setSize(new_size: Int*): Marker[T0, T1] = this.copy(size = new_size.toList)
 
   private[picta] def serialize(): Value = {
     val symbol_ = symbol.option match {
@@ -43,6 +48,11 @@ final case class Marker[T0: Color, T1: Color]
       case None => jsonMonoid.empty
     }
 
-    List(symbol_, color_, line_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
+    val size_ = size.option match {
+      case Some(x) => Obj("size" -> s0.serialize(x))
+      case None => jsonMonoid.empty
+    }
+
+    List(symbol_, color_, line_, size_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

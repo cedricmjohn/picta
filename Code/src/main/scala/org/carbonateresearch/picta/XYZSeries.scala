@@ -4,117 +4,125 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
-import org.carbonateresearch.picta.series.Mode.Mode
-import org.carbonateresearch.picta.series.Series
 import ujson.{Obj, Value}
 
 trait XYZSeries extends Series
 
-object XYZChart extends Enumeration {
-  type XYZChart = Value
-  val CONTOUR, HEATMAP, SCATTER3D, SURFACE = Value
-}
+/** ENUM for the XYZ chart series types */
+private[picta] sealed trait XYZType
 
-import org.carbonateresearch.picta.XYZChart._
+case object SCATTER3D extends XYZType
+
+case object CONTOUR extends XYZType
+
+case object HEATMAP extends XYZType
+
+case object SURFACE extends XYZType
 
 /**
  * @constructor: A Series for a 3d chart.
  * @param x           :
  * @param y           :
  * @param z           :
- * @param series_name :
- * @param series_mode :
- * @param n           :
+ * @param name :
+ * @param mode :
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
-(x: List[T0], y: List[T1], z: List[T2], series_name: String = genRandomText, series_type: XYZChart,
- series_mode: Opt[Mode] = Blank, n: Int = 0, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank) extends XYZSeries {
+(x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = genRandomText, `type`: XYZType = SCATTER3D,
+ mode: Opt[Mode] = Blank, n: Opt[Int] = Blank) extends XYZSeries {
 
-  private[picta] def serialize(): Value = {
-    val name = Obj("name" -> series_name, "type" -> series_type.toString.toLowerCase())
+  /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
+  (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {
+      /* a surface chart must always specify n */
+    case (_, _, _, 0, SURFACE) =>
+      throw new IllegalArgumentException("'n' cannot be equal to zero if 'type' is 'SURFACE' or 'HEATMAP'")
 
-    val series_mode_ = series_mode.option match {
-      case Some(x) => Obj("mode" -> x.toString.toLowerCase)
-      case None => jsonMonoid.empty
-    }
+    /* if we just have z for a heatmap, we cannot have it equal to 0 */
+    case (Nil, Nil, _, 0, HEATMAP | CONTOUR) =>
+      throw new IllegalArgumentException("'n' cannot be equal to zero if 'type' is 'HEATMAP' or 'CONTOUR' and 'x' and 'y' are unspecified")
 
-    val xaxis_ = xaxis.option match {
-      case Some(x) => Obj("xaxis" -> x)
-      case _ => jsonMonoid.empty
-    }
+    /* if we are passing in a single series, make sure dimensions of z and n are consistent*/
+    case (Nil, Nil, z, n, HEATMAP | SURFACE | CONTOUR) =>
+      if (z.length % n != 0) throw new IllegalArgumentException("The length of 'z' must be divisible by 'n'")
 
-    val yaxis_ = yaxis.option match {
-      case Some(x) => Obj("yaxis" -> x)
-      case _ => jsonMonoid.empty
-    }
+    /* we are passing in x, y as well as z, where z is a nested series. Make sure the dimensions are consistent */
+    case (x, y, z, n, HEATMAP | SURFACE | CONTOUR) =>
+      if (n == 0) throw new IllegalArgumentException("'n' cannot be equal to zero")
 
-    List(name, series_mode_, xaxis_, yaxis_,createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
+      if (x.length != n)
+        throw new IllegalArgumentException("The length of a single list inside 'z' must be equal to the length of 'x'")
+
+      if (z.length / n != y.length)
+        throw new IllegalArgumentException("The total number of lists inside 'z' must be equal to the length of 'y'")
+
+    /* accept all other cases */
+    case (_, _, _, _, _) => ()
   }
 
-  private def createSeries(): Value = n match {
-    case 0 => createSeriesXYZ(x, y, z)
-    case _ => (x, y) match {
-      case (Nil, Nil) => createSeriesXYZ(z, n)
-      case (_, _) => createSeriesXYZ(x, y, z, n)
+  def as(new_type: XYZType): XYZ[T0, T1, T2] = {
+    new_type match {
+      case CONTOUR => this.asContour
+      case HEATMAP => this.asHeatmap
+      case SCATTER3D => this.asScatter3d
+      case SURFACE => this.asSurface
     }
   }
 
-  private def createSeriesXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2])(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
-    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> s2.serialize(z))
+  def asScatter3d: XYZ[T0, T1, T2] = (x.getOrElse(Nil), y.getOrElse(Nil), z) match {
+    case (Nil, _, _) | (_, Nil, _) | (_, _, Nil) => throw new IllegalArgumentException("All three series must be specified")
+    case _ => this.copy(`type` = `type`)
   }
 
-  private def createSeriesXYZ[T: Serializer](z: List[T], n: Int)(implicit s0: Serializer[T]): Value = {
-    if (z.length % n != 0) throw new IllegalArgumentException("The length of 'z' must be divisible by 'n'")
+  def asContour: XYZ[T0, T1, T2] = this.copy(`type` = CONTOUR)
+
+  def asHeatmap: XYZ[T0, T1, T2] = this.copy(`type` = HEATMAP)
+
+  def asSurface: XYZ[T0, T1, T2] = this.copy(`type` = SURFACE)
+
+  def draw(mode: Mode): XYZ[T0, T1, T2] = this.copy(mode = mode)
+
+  def drawLines: XYZ[T0, T1, T2] = this.copy(mode = LINES)
+
+  def drawMarkers: XYZ[T0, T1, T2] = this.copy(mode = MARKERS)
+
+  def drawTEXT: XYZ[T0, T1, T2] = this.copy(mode = LINES)
+
+  def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(mode = LINES_MARKERS)
+
+  private def createSeries(): Value =
+    (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0)) match {
+      case (x, y, z, 0) =>  createXYZ(x, y, z)
+      case (Nil, Nil, z, n) => createXYZ(z, n)
+      case (x, y, z, n) if (n != 0) => createXYZ(x, y, z, n)
+      case _ => throw new IllegalArgumentException("'n' cannot be equal to zero")
+  }
+
+  /** list has a nested form, no other axis specified */
+  private def createXYZ[T: Serializer](z: List[T], n: Int)(implicit s0: Serializer[T]): Value = {
     val list = z.grouped(n).toList.map(e => s0.serialize(e))
     Obj("z" -> list)
   }
 
-  private def createSeriesXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
+  /** x, y and z are specified */
+  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
+  (x: List[T0], y: List[T1], z: List[T2])(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
+    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> s2.serialize(z))
+  }
+
+  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
   (x: List[T0], y: List[T1], z: List[T2], n: Int)(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
-    if (x.length != n)
-      throw new IllegalArgumentException("The length of a single list inside 'z' must be equal to the length of 'x'")
-
-    if (z.length / n != y.length)
-      throw new IllegalArgumentException("The total number of lists inside 'z' must be equal to the length of 'y'")
-
     val list: List[Value] = z.grouped(n).toList.map(e => s2.serialize(e))
     Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> list)
   }
-}
 
-private[picta] object XYZ {
+  private[picta] def serialize(): Value = {
+    val name_ = Obj("name" -> name, "type" -> `type`.toString.toLowerCase())
 
-  def apply[T0: Serializer](z: List[List[T0]], series_type: XYZChart): XYZ[T0, T0, T0] = {
-    XYZ(x = Nil, y = Nil, z = z.flatten, series_type = series_type, n = z(0).length)
-  }
+    val mode_ = mode.option match {
+      case Some(x) => Obj("mode" -> x.toString.toLowerCase)
+      case None => jsonMonoid.empty
+    }
 
-  def apply[T0: Serializer]
-  (z: List[List[T0]], series_type: XYZChart, xaxis: Opt[String], yaxis: Opt[String]): XYZ[T0, T0, T0] = {
-    XYZ(x = Nil, y = Nil, z = z.flatten, series_type = series_type, n = z(0).length, xaxis=xaxis, yaxis=yaxis)
-  }
-
-  def apply[T0: Serializer](z: List[List[T0]], series_name: String, series_type: XYZChart): XYZ[T0, T0, T0] = {
-    XYZ(x = Nil, y = Nil, z = z.flatten, series_name = series_name, series_type = series_type, n = z(0).length)
-  }
-
-  def apply[T0: Serializer]
-  (z: List[List[T0]], series_name: String, series_type: XYZChart, xaxis: Opt[String], yaxis: Opt[String]): XYZ[T0, T0, T0] = {
-    XYZ(x = Nil, y = Nil, z = z.flatten, series_name = series_name, series_type = series_type, n = z(0).length, xaxis=xaxis, yaxis=yaxis)
-  }
-
-  def apply[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[List[T2]], series_type: XYZChart): XYZ[T0, T1, T2] = {
-    XYZ(x = x, y = y, z = z.flatten, series_type = series_type, n = z(0).length)
-  }
-
-  def apply[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[List[T2]], series_type: XYZChart, xaxis: Opt[String], yaxis: Opt[String]): XYZ[T0, T1, T2] = {
-    XYZ(x = x, y = y, z = z.flatten, series_type = series_type, n = z(0).length, xaxis=xaxis, yaxis=yaxis)
-  }
-
-  def apply[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[List[T2]], series_name: String, series_type: XYZChart, xaxis: Opt[String], yaxis: Opt[String]): XYZ[T0, T1, T2] = {
-    XYZ(x = x, y = y, z = z.flatten, series_name = series_name, series_type = series_type, n = z(0).length, xaxis=xaxis, yaxis=yaxis)
+    List(name_, mode_, createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

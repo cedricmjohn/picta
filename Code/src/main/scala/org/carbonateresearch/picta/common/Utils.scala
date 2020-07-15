@@ -1,9 +1,8 @@
 package org.carbonateresearch.picta.common
 
-import org.carbonateresearch.picta.series.XY
-import org.carbonateresearch.picta.series.Mode.MARKERS
-import org.carbonateresearch.picta.XYChart.SCATTER
-import org.carbonateresearch.picta.{XY, XYSeries}
+import java.security.SecureRandom
+
+import org.carbonateresearch.picta.{MARKERS, SCATTER, XY, XYSeries}
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -65,14 +64,13 @@ object Utils {
     category_labels.foreach(category => {
       val x = data_map(axis_labels(0))(category).toList
       val y = data_map(axis_labels(1))(category).toList
-      series_set += XY(x = x, y = y, series_type = SCATTER, series_mode = MARKERS, series_name = category)
+      series_set += XY(x = x, y = y, `type` = SCATTER, mode = MARKERS, name = category)
     })
     series_set.toList
   }
 
-  /** Generates a random 7 digit alphanumeric string. Example use is creating a random, non-conflicting series name */
-  private[picta] def genRandomText(): String = java.util.UUID.randomUUID.toString().slice(0, 7)
-
+  /** Generates a random alphanumeric string. */
+  private[picta] def genRandomText(): String = scala.util.Random.alphanumeric.take(10).mkString
 
   //  def getSeriesFromSingleModel[T: Serializer]
   //  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {

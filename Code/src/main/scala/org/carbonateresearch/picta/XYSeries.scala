@@ -5,21 +5,28 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.Marker
+import org.carbonateresearch.picta.options.{Axis, Marker, XAxis, YAxis}
 import org.carbonateresearch.picta.options.histogram.HistOptions
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
-import org.carbonateresearch.picta.series.Mode.Mode
-import org.carbonateresearch.picta.series.Series
 import ujson.{Obj, Value}
 
 trait XYSeries extends Series
 
-object XYChart extends Enumeration {
-  type XYChartType = Value
-  val SCATTER, SCATTERGL, BAR, HISTOGRAM2DCONTOUR, HISTOGRAM, PIE = Value
-}
+/** ENUM for the XY chart series types */
+private[picta] sealed trait XYType
 
-import org.carbonateresearch.picta.XYChart._
+case object SCATTER extends XYType
+
+case object SCATTERGL extends XYType
+
+case object BAR extends XYType
+
+case object HISTOGRAM2DCONTOUR extends XYType
+
+case object HISTOGRAM extends XYType
+
+case object PIE extends XYType
+
 
 /**
  * TODO - Remove non-common components to another individual component
@@ -27,19 +34,19 @@ import org.carbonateresearch.picta.XYChart._
  * @constructor:
  * @param x           :
  * @param y           :
- * @param series_name
- * @param series_mode :
- * @param series_type :
+ * @param name
+ * @param mode :
+ * @param `type` :
  * @param xaxis       :
  * @param yaxis       :
  * @param marker      :
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
-(x: List[T0], y: Opt[List[T1]] = Empty, series_name: String = genRandomText, series_type: XYChartType = SCATTER,
- series_mode: Opt[Mode] = Blank, xaxis: Opt[String] = Blank, yaxis: Opt[String] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
+(x: List[T0], y: Opt[List[T1]] = Empty, name: String = genRandomText, `type`: XYType = SCATTER,
+ mode: Opt[Mode] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
 
-  def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(series_name = new_name)
+  def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
 
   def setMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
 
@@ -47,24 +54,38 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
 
+  def as(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
+
+  def asScatter(): XY[T0, T1, T2, T3] = this.copy(`type` = SCATTER)
+
+  def asScatterGl(): XY[T0, T1, T2, T3] = this.copy(`type` = SCATTERGL)
+
+  def asBar(): XY[T0, T1, T2, T3] = this.copy(`type` = BAR)
+
+  def asHistogram2dContour(): XY[T0, T1, T2, T3] = this.copy(`type` = HISTOGRAM2DCONTOUR)
+
+  def asHistogram(): XY[T0, T1, T2, T3] = this.copy(`type` = HISTOGRAM)
+
+  def asPIE(): XY[T0, T1, T2, T3] = this.copy(`type` = PIE)
+
   private[picta] def serialize: Value = {
     val meta = Obj(
-      "name" -> series_name,
-      "type" -> series_type.toString.toLowerCase,
+      "name" -> name,
+      "type" -> `type`.toString.toLowerCase,
     )
 
-    val series_mode_ = series_mode.option match {
+    val mode_ = mode.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }
 
     val xaxis_ = xaxis.option match {
-      case Some(x) => if (series_type != PIE) Obj("xaxis" -> x) else jsonMonoid.empty
+      case Some(x) => if (`type` != PIE && x.getPosition() != "") Obj("xaxis" -> ("x" + x.getPosition())) else jsonMonoid.empty
       case _ => jsonMonoid.empty
     }
 
     val yaxis_ = yaxis.option match {
-      case Some(x) => if (series_type != PIE) Obj("yaxis" -> x) else jsonMonoid.empty
+      case Some(x) => if (`type` != PIE && x.getPosition() != "") Obj("yaxis" -> ("y" + x.getPosition())) else jsonMonoid.empty
       case _ => jsonMonoid.empty
     }
 
@@ -75,17 +96,17 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
     /** No need to add a key as this object merges directly */
     val hist_options_ : Value = hist_options.option match {
-      case Some(x) => if (series_type == HISTOGRAM) x.serialize else jsonMonoid.empty
+      case Some(x) => if (`type` == HISTOGRAM) x.serialize else jsonMonoid.empty
       case None => jsonMonoid.empty
     }
 
     /** No need to add a key as this object merges directly */
     val hist2d_options_ : Value = hist2d_options.option match {
-      case Some(x) => if (series_type == HISTOGRAM2DCONTOUR) x.serialize else jsonMonoid.empty
+      case Some(x) => if (`type` == HISTOGRAM2DCONTOUR) x.serialize else jsonMonoid.empty
       case None => jsonMonoid.empty
     }
 
-    List(meta, series_mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries)
+    List(meta, mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 
@@ -98,7 +119,7 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case _ => Nil
     }
 
-    (x, y_, series_type) match {
+    (x, y_, `type`) match {
       case (x, Nil, HISTOGRAM) => createSeriesXY(x, getHistOrientation(hist_options))
       case (_, _, PIE) => createSeriesXY(x, y_, "values", "labels")
       case (_, _, _) => createSeriesXY(x, y_, xkey, ykey)
@@ -114,9 +135,8 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
     Obj(xkey -> s0.serialize(x))
   }
 
-  private def getHistOrientation(hist_options: Opt[HistOptions]) =
-    hist_options.option match {
+  private def getHistOrientation(hist_options: Opt[HistOptions]): String = hist_options.option match {
       case Some(x) => x.orientation.toString
       case _ => "x"
-    }
+  }
 }

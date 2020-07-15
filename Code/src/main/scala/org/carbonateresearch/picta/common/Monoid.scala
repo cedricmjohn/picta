@@ -2,16 +2,15 @@ package org.carbonateresearch.picta.common
 
 import ujson.{Value, read}
 
-trait Semigroup[T] {
+private[picta] trait Semigroup[T] {
   def combine(x: T, y: T): T
 }
 
-trait Monoid[T] extends Semigroup[T] {
+private[picta] trait Monoid[T] extends Semigroup[T] {
   def empty: T
 }
 
 private[picta] object Monoid {
-
   /** implicit value that allows Value types to be manipulated as Monoids */
   implicit val jsonMonoid: Monoid[Value] = new Monoid[Value] {
     def combine(x: Value, y: Value): Value = x.obj ++ y.obj
@@ -30,5 +29,4 @@ private[picta] object Monoid {
      */
     def |+|(y: T): T = m.combine(x, y)
   }
-
 }

@@ -1,23 +1,23 @@
 package org.carbonateresearch.picta.options.histogram
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
-object Direction extends Enumeration {
-  type Direction = Value
-  val INCREASING, DECREASING = Value
-}
+sealed trait Direction
 
-import Direction.Direction
+case object INCREASING extends Direction
 
-object CurrentBin extends Enumeration {
-  type CurrentBin = Value
-  val INCLUDE, EXCLUDE, HALF = Value
-}
+case object DECREASING extends Direction
 
-import CurrentBin.CurrentBin
+sealed trait CurrentBin
+
+case object INCLUDE extends CurrentBin
+
+case object EXCLUDE extends CurrentBin
+
+case object HALF extends CurrentBin
 
 /** This is an option for a histogram chart. If enabled == true, it shows cumulative distribution by summing the bin
  * values.

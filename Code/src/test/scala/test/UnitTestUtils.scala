@@ -1,6 +1,8 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Serializer
+import org.carbonateresearch.picta.options.ColorOptions.Color
 
 object UnitTestUtils {
   // create a common configuration to be used in all the tests
@@ -34,7 +36,9 @@ object UnitTestUtils {
   )
 
   // creates random XY for testing purposes
-  def createXYSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYSeries] = {
+  def createXYSeries[T: Color]
+  (numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYSeries[Int, Double, T, T]] = {
+
     if (count == numberToCreate) Nil
     else {
       val xs = List.range(0, length)

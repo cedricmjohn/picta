@@ -17,7 +17,7 @@ class IOTests extends AnyFunSuite {
     val petal_width = data("petalwidth").map(_.toDouble)
     val categories = data("class")
 
-    val result: List[XYSeries] = getSeriesbyCategory(categories, (sepal_length, petal_width))
+    val result = getSeriesbyCategory(categories, (sepal_length, petal_width))
 
     val chart = Chart() addSeries result setLayout Layout(title = "Iris", showlegend = true)
     if (plotFlag) chart.plot()

@@ -2,7 +2,7 @@ package org.carbonateresearch.picta.charts
 
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils.{createXYSeries, createXYZSeries, validateJson}
-import org.carbonateresearch.picta.options.{Axis, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{XAxis, YAxis}
 import org.carbonateresearch.picta.{Chart, Layout}
 import org.scalatest.funsuite.AnyFunSuite
 

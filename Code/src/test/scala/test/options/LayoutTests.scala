@@ -2,7 +2,7 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.{Axis, Subplot, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Axis, Grid, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 
 class LayoutTests extends AnyFunSuite {
@@ -38,7 +38,7 @@ class LayoutTests extends AnyFunSuite {
 
   test("XY.Grid") {
     // 1. first we define the grid layout - 1 row, 2 columns
-    val grid = Subplot(1, 2)
+    val grid = Grid(1, 2)
 
     // 2. Now define the axes we want to place on the grid
     val ax1 = XAxis() setTitle "x axis 1"

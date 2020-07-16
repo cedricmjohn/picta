@@ -3,6 +3,9 @@ package org.carbonateresearch.picta
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.charts.Html.{plotChart, plotChartInline}
+import org.carbonateresearch.picta.common.Serializer
+import org.carbonateresearch.picta.options.ColorOptions.Color
+import org.carbonateresearch.picta.options.{Axis, Grid, XAxis, YAxis}
 import ujson.{Obj, Value}
 import upickle.default._
 
@@ -17,8 +20,9 @@ import upickle.default._
  * @param animated            : Specifies whether the chart is animated or static.
  * @param transition_duration : If the chart is animated, this specifies the time (ms) it takes to change frame.
  */
-final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config(),
-                       animated: Boolean = false, transition_duration: Int = 100) extends Component {
+final case class Chart[T0, T1, T2, T3]
+(data: List[Series] = Nil, layout: Layout[T0, T1, T2, T3] = Layout(), config: Config = Config(),
+ animated: Boolean = false, transition_duration: Int = 100) extends Component {
 
   private val frames_labels = animated match {
     case false => (Nil, Nil)
@@ -35,13 +39,35 @@ final case class Chart(data: List[Series] = Nil, layout: Layout = Layout(), conf
 
   private val config_ : Value = config.serialize
 
-  def addSeries(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
+  def addSeries(new_series: List[Series]): Chart[T0, T1, T2, T3] = this.copy(data = new_series ::: data)
 
-  def addSeries(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
+  def addSeries(new_series: Series*): Chart[T0, T1, T2, T3] = this.copy(data = new_series.toList ::: data)
 
-  def setLayout(new_layout: Layout): Chart = this.copy(layout = new_layout)
+  def setLayout[Z0, Z1, Z2, Z3]
+  (new_layout: Layout[Z0, Z1, Z2, Z3]): Chart[Z0, Z1, Z2, Z3] = {
 
-  def setConfig(new_config: Config): Chart = this.copy(config = new_config)
+    var axeslist = scala.collection.mutable.ListBuffer.empty[Axis]
+    var serieslist = scala.collection.mutable.ListBuffer.empty[Series]
+
+    new_layout.grid.option match {
+      case Some(x) =>
+        for(i <- 0 until x.rows) {
+          for(j <- 0 until x.columns) {
+            val element = x.data(i)(j)
+            axeslist += element.xaxis
+            axeslist += element.yaxis
+            serieslist += element.series
+          }
+        }
+
+        this.copy(layout = new_layout.setAxes(axeslist.toList), data = serieslist.toList)
+
+      case _ => this.copy(layout = new_layout)
+    }
+
+  }
+
+  def setConfig(new_config: Config): Chart[T0, T1, T2, T3] = this.copy(config = new_config)
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 

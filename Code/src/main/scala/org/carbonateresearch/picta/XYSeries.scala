@@ -5,12 +5,14 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.{Axis, Marker, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Marker, XAxis, YAxis}
 import org.carbonateresearch.picta.options.histogram.HistOptions
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
 
-trait XYSeries extends Series
+trait XYSeries[T0, T1, T2, T3] extends Series {
+  def setAxes(axes: (XAxis, YAxis)): XY[T0, T1, T2, T3]
+}
 
 /** ENUM for the XY chart series types */
 private[picta] sealed trait XYType
@@ -44,7 +46,7 @@ case object PIE extends XYType
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = genRandomText, `type`: XYType = SCATTER,
  mode: Opt[Mode] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
- hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries {
+ hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries[T0, T1, T2, T3] {
 
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
 

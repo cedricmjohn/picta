@@ -26,10 +26,12 @@ class MarkerTests extends AnyFunSuite {
     val x_axis = XAxis() setTitle "x variable"
     val y_axis = YAxis() setTitle "y variable"
 
-    val series = XY(x_int, y_int, `type` = SCATTER, mode = MARKERS) setMarker marker
+    val series = XY(x_int, y_int, `type` = SCATTER, symbol = MARKERS) setMarker marker
     val layout = Layout("Marker.Composition.WithTrace") setAxes(x_axis, y_axis)
     val chart = Chart() addSeries series setLayout layout
-    if (plotFlag) chart.plot
+    val canvas = Canvas()
+    canvas.subplot(0, 0) = chart
+    if (plotFlag) canvas.plot
     assert(validateJson(chart.serialize.toString))
   }
 }

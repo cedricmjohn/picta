@@ -25,11 +25,11 @@ case object SURFACE extends XYZType
  * @param y           :
  * @param z           :
  * @param name :
- * @param mode :
+ * @param symbol :
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 (x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = genRandomText, `type`: XYZType = SCATTER3D,
- mode: Opt[Mode] = Blank, n: Opt[Int] = Blank) extends XYZSeries {
+ symbol: Opt[Symbol] = Blank, n: Opt[Int] = Blank) extends XYZSeries {
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
   (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {
@@ -59,7 +59,7 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
     case (_, _, _, _, _) => ()
   }
 
-  def as(new_type: XYZType): XYZ[T0, T1, T2] = {
+  def asType(new_type: XYZType): XYZ[T0, T1, T2] = {
     new_type match {
       case CONTOUR => this.asContour
       case HEATMAP => this.asHeatmap
@@ -79,15 +79,15 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 
   def asSurface: XYZ[T0, T1, T2] = this.copy(`type` = SURFACE)
 
-  def draw(mode: Mode): XYZ[T0, T1, T2] = this.copy(mode = mode)
+  def drawSymbol(mode: Symbol): XYZ[T0, T1, T2] = this.copy(symbol = mode)
 
-  def drawLines: XYZ[T0, T1, T2] = this.copy(mode = LINES)
+  def drawLines: XYZ[T0, T1, T2] = this.copy(symbol = LINES)
 
-  def drawMarkers: XYZ[T0, T1, T2] = this.copy(mode = MARKERS)
+  def drawMarkers: XYZ[T0, T1, T2] = this.copy(symbol = MARKERS)
 
-  def drawTEXT: XYZ[T0, T1, T2] = this.copy(mode = LINES)
+  def drawTEXT: XYZ[T0, T1, T2] = this.copy(symbol = LINES)
 
-  def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(mode = LINES_MARKERS)
+  def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(symbol = LINES_MARKERS)
 
   private def createSeries(): Value =
     (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0)) match {
@@ -118,7 +118,7 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
   private[picta] def serialize(): Value = {
     val name_ = Obj("name" -> name, "type" -> `type`.toString.toLowerCase())
 
-    val mode_ = mode.option match {
+    val mode_ = symbol.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }

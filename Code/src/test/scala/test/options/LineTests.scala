@@ -20,7 +20,7 @@ class LineTests extends AnyFunSuite {
 
   test("Line.withMarker") {
     val marker = Marker() setSymbol "circle" setColor "rgb(17, 157, 255)" setLine Line(width = 2)
-    val data = XY(x_int, y_int, name="test", `type`=SCATTER, mode=MARKERS) setMarker marker
+    val data = XY(x_int, y_int, name="test", `type`=SCATTER, symbol=MARKERS) setMarker marker
     val chart = Chart() addSeries data setLayout Layout() setConfig config
     assert(validateJson(chart.serialize.toString))
   }

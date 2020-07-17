@@ -67,7 +67,7 @@ object Utils {
     category_labels.foreach(category => {
       val x = data_map(axis_labels(0))(category).toList
       val y = data_map(axis_labels(1))(category).toList
-      series_set += XY(x = x, y = y, `type` = SCATTER, mode = MARKERS, name = category)
+      series_set += XY(x = x, y = y, `type` = SCATTER, symbol = MARKERS, name = category)
     })
     series_set.toList
   }

@@ -16,32 +16,30 @@ import ujson.{Obj, Value}
  * @param legend     : This is the component that configures the legend for the chart..
  * @param height     : This sets the height for the chart.
  * @param width      : This sets the width for the chart.
- * @param grid       : This is a component that configures the grid.
  * @param geo        : this is used for Map charts only and configures the geo component for a Map chart..
  */
-final case class Layout[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
+final case class Layout
 (title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, grid: Opt[Grid[T0, T1, T2, T3]] = Blank, geo: Opt[Geo] = Blank, showlegend: Boolean = false,
+ margin: Opt[Margin] = Blank, geo: Opt[Geo] = Blank, multichart: Opt[MultiChart] = Blank, showlegend: Boolean = false,
  hovermode: String = "closest", height: Int = 550, width: Int = 600) extends Component {
 
-  def setAxes(new_axes: List[Axis]): Layout[T0, T1, T2, T3] = axs.option match {
+  def setAxes(new_axes: List[Axis]): Layout = axs.option match {
     case Some(lst) => this.copy(axs = new_axes ::: lst)
     case None => this.copy(axs = new_axes)
   }
 
-  def setAxes(new_axis: Axis*): Layout[T0, T1, T2, T3] = axs.option match {
+  def setAxes(new_axis: Axis*): Layout = axs.option match {
     case Some(lst) => this.copy(axs = new_axis.toList ::: lst)
     case None => this.copy(axs = new_axis.toList)
   }
 
-  def setGeo(new_geo: Geo): Layout[T0, T1, T2, T3] = this.copy(geo = new_geo)
+  def setGeo(new_geo: Geo): Layout = this.copy(geo = new_geo)
 
-  def setLegend(new_legend: Legend): Layout[T0, T1, T2, T3] = this.copy(legend = new_legend, showlegend = true)
+  def setLegend(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
 
-  def setSubplot[Z0: Serializer, Z1: Serializer, Z2: Color, Z3: Color]
-  (new_grid: Grid[Z0, Z1, Z2, Z3]): Layout[Z0, Z1, Z2, Z3] = this.copy(grid = new_grid)
+  def setMargin(new_margin: Margin): Layout = this.copy(margin = new_margin)
 
-  def setMargin(new_margin: Margin): Layout[T0, T1, T2, T3] = this.copy(margin = new_margin)
+  def setMultiChart(new_minigrid: MultiChart) = this.copy(multichart = new_minigrid)
 
   private[picta] def serialize(): Value = {
     val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode)
@@ -63,11 +61,6 @@ final case class Layout[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case None => jsonMonoid.empty
     }
 
-    val grid_ = grid.option match {
-      case Some(x) => Obj("grid" -> x.serialize)
-      case None => jsonMonoid.empty
-    }
-
     val geo_ = geo.option match {
       case Some(x) => Obj("geo" -> x.serialize)
       case None => jsonMonoid.empty
@@ -78,7 +71,12 @@ final case class Layout[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case None => jsonMonoid.empty
     }
 
-    val combined = List(dim, title_, showlegend_, legend_, autosize_, grid_, geo_, margin_)
+    val minigrid_ = multichart.option match {
+      case Some(x) => Obj("grid" -> x.serialize)
+      case None => jsonMonoid.empty
+    }
+
+    val combined = List(dim, title_, showlegend_, legend_, autosize_, geo_, margin_, minigrid_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
     axs.option match {

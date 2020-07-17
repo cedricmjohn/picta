@@ -11,9 +11,10 @@ class ScatterWithColorTests extends AnyFunSuite {
 
   test("ScatterWithColor.Basic") {
     val marker = Marker() setColor z_double
-    val series = XY(x_int, y_int, `type` = SCATTER, mode = MARKERS) setMarker marker
+    val series = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS setMarker marker
     val chart = Chart() addSeries series setLayout Layout("ScatterWithColor.Basic")
-    if (plotFlag) chart.plot()
+    val canvas = Canvas() addCharts chart
+    if (plotFlag) canvas.plot()
     assert(validateJson(chart.serialize.toString))
   }
 }

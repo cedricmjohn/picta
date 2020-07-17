@@ -5,16 +5,43 @@ import java.net.{HttpURLConnection, URL}
 
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
-import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
-import org.carbonateresearch.picta.common.Utils.genRandomText
+import org.carbonateresearch.picta.options.Subplot
 import os.Path
 import ujson.Value
+import upickle.default.transform
 
-private[picta] object Html {
+object Html {
   /** this is the plotly.min.js script that is used to render the plots */
   private val plotlyJs: String = readFile("plotly.min.js")
+  private val macyJs: String = readFile("macy.min.js")
+  private val requireJs: String = readFile("require.min.js")
   private val cssStyle: String = readFile("style.css")
   private val useCDN: Boolean = testNetworkConnection()
+
+  /** A function to read files from the src resources folder */
+  private def readFile(file_name: String): String = {
+    val is = getClass.getClassLoader.getResourceAsStream(file_name)
+    scala.io.Source.fromInputStream(is).mkString
+  }
+
+  /** This function checks if an active network connection is available. It returns true if this is the case, false
+   * otherwise.
+   */
+  private def testNetworkConnection(): Boolean = {
+    var activeConnection: Boolean = true
+    val url: URL = new URL("https://www.google.com")
+    val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
+
+    try {
+      urlConn.connect()
+      urlConn.setConnectTimeout(1)
+      urlConn.setReadTimeout(1)
+    } catch {
+      case e: Throwable => activeConnection = false
+    } finally urlConn.disconnect()
+
+    activeConnection
+  }
 
   /**
    * This sets the charts to be inline inside a Jupyter notebook.
@@ -25,166 +52,188 @@ private[picta] object Html {
   def initNotebook()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
 
-    /** if internet connection; grab from cdn otherwise just inject the raw javascript */
-    val body = {
-      val requirejs_CDN_path = """paths: {'plotly': "https://cdn.plot.ly/plotly-latest.min"},"""
+    var html = new StringBuilder()
 
-      val requirejs =
-        if (useCDN) s"""<script type='text/javascript'>${readFile("require.min.js")}</script>""" else ""
-
+    html ++=
       s"""
-         |${if (useCDN) requirejs}
-         |<script type='text/javascript'>
-         |require.config({
-         |${if (useCDN) requirejs_CDN_path else plotlyJs}
-         |})
-         |require( ['plotly'], function(Plotly) {
-         |window.Plotly = Plotly;
+         |<script> $requireJs </script>
+         |<script>
+         | require.config({
+         |   paths: {
+         |     'plotly': "https://cdn.plot.ly/plotly-latest.min",
+         |     'macy': "https://cdn.jsdelivr.net/npm/macy@2.5.1/dist/macy.min"
+         |   },
+         | })
+         |require( ['plotly', 'macy'], function(Plotly, Macy) {
+         | window.Plotly = Plotly;
+         | window.Macy = Macy;
          |})
          |</script>
          |""".stripMargin
-    }
 
-    val html = s"""<style>$cssStyle</style>""" + body
-
-    publish.html(html)
+    publish.html(html.toString)
   }
 
-  /** A function to read files from the src resources folder */
-  private def readFile(file_name: String): String = {
-    val is = getClass.getClassLoader.getResourceAsStream(file_name)
-    scala.io.Source.fromInputStream(is).mkString
-  }
-
-  /**
-   * This plots the chart in the browser
-   *
-   * @param traces : a list of trace data we wish to plot
-   * @param layout : the layout case class specifying layout options
-   * @param config : the config case class specifying the chart config options
-   */
-  private[picta] def plotChart(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
-                transition_duration: Opt[Int] = Blank, layout: Value, config: Value): Unit = {
-
-    val graph_id = genRandomText()
-
-    val html: String = (frames.option, labels.option, transition_duration.option) match {
-      case (Some(x), Some(y), Some(z)) =>
-        generateHTML(traces = traces, frames = x, labels = y, transition_duration = z, layout = layout, config = config,
-          includeScript = true, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = true, includeStyle = true,
-        graph_id = graph_id)
-    }
-
-    writeHTMLToFile(html, graph_id)
-  }
-
-  /**
-   * This plots the chart inside a Jupyter notebook
-   *
-   * @param traces  : a list of trace data we wish to plot
-   * @param layout  : the layout case class specifying layout options
-   * @param config  : the config case class specifying the chart config options
-   * @param publish (implicit): required to render the HTML in the almond notebook
-   */
-  private[picta] def plotChartInline(traces: List[Value], frames: Opt[Value] = Blank, labels: Opt[Value] = Blank,
-                                      transition_duration: Opt[Int] = Blank, layout: Value, config: Value)(implicit publish: OutputHandler): Unit = {
-
-    val graph_id = genRandomText() + genRandomText()
-
-    val html: String = (frames.option, labels.option, transition_duration.option) match {
-      case (Some(x), Some(y), Some(z)) => generateHTML(traces = traces, frames = x, labels = y, transition_duration = z,
-        layout = layout, config = config, includeScript = false, includeStyle = false, graph_id = graph_id)
-      case _ => generateHTML(traces = traces, layout = layout, config = config, includeScript = false, includeStyle = false,
-        graph_id = graph_id)
-    }
-
-    writeHTMLToJupyter(html, graph_id)
-  }
-
-  /**
-   * A function to generate the HTML corresponding to the Plotly plotting function.
-   *
-   * @param traces   : This is the trace data. It should be serialized as a json list.
-   * @param layout   : This should be the layout case class instance.
-   * @param config   : This should be the config case class instance.
-   * @param graph_id : This is an internal id that allows the Plotly functions to find the chart element in the HTML.
-   */
-  private def generateHTML(traces: Value, frames: Opt[Value] = Blank, labels: Opt[Value] = Blank, layout: Value, config: Value,
-                           includeScript: Boolean = false, includeStyle: Boolean = true, graph_id: String, transition_duration: Opt[Int] = Blank): String = {
-
-    var script = new StringBuilder()
+    /** Creates the necessary headers when plotting in jvm mode */
+  def createHeader(useCDN: Boolean, includeStyle: Boolean) = {
+    var header = new StringBuilder()
 
     useCDN match {
-      case true => script ++= """<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>"""
-      case false => script ++= s"""<script> ${plotlyJs} </script>"""
+      case true =>
+        header ++= s"""<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> \n"""
+      case false =>
+        header ++= s"""<script> ${plotlyJs} </script> \n"""
     }
 
+    header ++= s"""<script> ${macyJs} </script> \n"""
+
     includeStyle match {
-      case true => script ++= s"""<style>$cssStyle</style>"""
+      case true => header ++= s"""<style>$cssStyle</style> \n"""
       case false => ()
     }
 
-    val graph_html = frames.option match {
-      case Some(_) =>
-        s"""
-           |<style>$cssStyle</style>
-           |<div align="center">
-           |<div id='graph_${graph_id}' class="graph"></div>
-           |<div class='animationInterface'>
-           |<button id='play_${graph_id}'>Play</button>
-           |<button id='pause_${graph_id}'>Pause</button>
-           |<div id="sliderContainer_${graph_id}" class='progressBar'></div>
-           |<div>
-           |<div>
-           |   <div id='counterContainer_${graph_id}' class='inline-div'>
-           |      <h3>Frame: </h3><h3 id="value_${graph_id}">0</h3>
-           |   </div>
-           |</div>
-           |</div>
-           |""".stripMargin
-      case _ =>
-        s"""
-           |<div align="center">
-           |<div id='graph_${graph_id}' class='graph'></div>
-           |</div>
-           |""".stripMargin
-    }
+    s"""<head> \n""" + header.mkString + s"""\n</head>\n"""
+  }
 
-    val function_html = {
-      (frames.option, labels.option, transition_duration.option) match {
-        case (Some(x), Some(y), Some(z)) => createAnimationHTML(traces = traces, frames = x, labels = y, layout = layout,
-          transition_duration = z, graph_id)
+  private def createGridHTML(grid: Subplot) = {
+    var html = new StringBuilder()
 
-        case _ =>
-          s"""|<script>
-              | var traces_${graph_id} = ${traces};
-              | var layout_${graph_id} = ${layout};
-              | var config_${graph_id} = ${config};
-              | Plotly.newPlot("graph_${graph_id}", traces_${graph_id}, layout_${graph_id}, config_${graph_id});
-              |</script>
-              |""".stripMargin
+    html ++= s"""<div id="grid_${grid.id}" align="center"> \n"""
+
+    /** Build body of the page */
+    for (i <- 0 until grid.rows) {
+      for (j <- 0 until grid.columns) {
+        val chart = grid(i, j)
+        val graph_id = chart.id
+
+        if (chart.animated) {
+          html ++=
+            s"""
+               |<div align="center">
+               |  <div id='graph_${graph_id}' class="graph"></div>
+               |  <div class='animationInterface'>
+               |    <button id='play_${graph_id}'>Play</button>
+               |    <button id='pause_${graph_id}'>Pause</button>
+               |    <div id="sliderContainer_${graph_id}" class='progressBar'></div>
+               |    <div id='counterContainer_${graph_id}' class='inline-div'>
+               |        <h3>Frame: </h3><h3 id="value_${graph_id}">0</h3>
+               |    </div>
+               |   </div>
+               |</div> \n
+               |""".stripMargin
+        }
+        else html ++= s"""<div id='graph_${graph_id}' class='graph'></div> \n"""
       }
     }
 
-    includeScript match {
-      case true => (script ++= graph_html ++= function_html).mkString
-      case false => graph_html + function_html
-    }
+    html ++= s"""</div> \n"""
+
+    html.mkString
   }
 
-  private def createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value,
+
+  def plotChart(grid: Subplot) = {
+    var html = new StringBuilder()
+
+    /* create the html headers and add them to the page */
+    html ++= createHeader(useCDN, true)
+
+    /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
+    html ++= createGridHTML(grid)
+
+    /* create the javascript that corresponds to each of these charts */
+    html ++= createJsScripts(grid)
+
+    writeHTMLToFile(html.toString, grid.id)
+  }
+
+  private[picta] def plotChartInline(grid: Subplot)(implicit publish: OutputHandler): Unit = {
+    var html = new StringBuilder()
+
+    /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
+    html ++= createGridHTML(grid)
+
+    /* create the javascript that corresponds to each of these charts */
+    html ++= createJsScripts(grid)
+
+    publish.html(html.toString)
+  }
+
+
+  private def createJsScripts(grid: Subplot) = {
+    var html = new StringBuilder()
+
+    /** create js for this batch */
+    html ++= s"""<script>"""
+
+    val masonry_js =
+      s"""
+         |var masonry = new Macy({
+         |    container: '#grid_${grid.id}',
+         |    trueOrder: false,
+         |    waitForImages: false,
+         |    useOwnImageLoader: false,
+         |    debug: true,
+         |    mobileFirst: true,
+         |    columns: ${grid.columns},
+         |    margin: {
+         |        y: 0,
+         |        x: '0.5%',
+         |    },
+         |  });
+         |""".stripMargin
+
+    html ++= masonry_js
+
+    /** Now construct the relevant js for each chart */
+    for (i <- 0 until grid.rows) {
+      for (j <- 0 until grid.columns) {
+        val chart = grid(i, j)
+        val graph_id = chart.id
+
+        if (chart.animated) {
+          val traces: Value = transform(List(chart.data_(0))).to(Value)
+          val frames: Value = chart.frames
+          val labels: Value = transform(chart.labels).to(Value)
+          val layout: Value = chart.layout_
+          val transition_duration = chart.transition_duration
+          val config: Value = chart.config_
+
+          html ++= createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value, config=config,
+            transition_duration: Int, graph_id: String)
+        }
+
+        else {
+          val traces: Value = transform(chart.data_).to(Value)
+          val layout: Value = chart.layout_
+          val config: Value = chart.config_
+
+          html ++=
+            s"""
+               | var traces_${graph_id} = ${traces};
+               | var layout_${graph_id} = ${layout};
+               | var config_${graph_id} = ${config};
+               | Plotly.newPlot("graph_${graph_id}", traces_${graph_id}, layout_${graph_id}, config_${graph_id});
+               |""".stripMargin
+        }
+      }
+    }
+
+    html ++= s"""</script> \n"""
+    html.mkString
+  }
+
+  private def createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value, config: Value,
                           transition_duration: Int, graph_id: String): String = {
 
     s"""
-       |<script>
-       |//var graph_id = 'graph_${graph_id}'
        |var graph_${graph_id} = document.getElementById('graph_${graph_id}')
        |var traces_${graph_id} = $traces
        |var layout_${graph_id} = $layout
        |var frames_${graph_id} = $frames
        |var labels_${graph_id} = $labels
        |var duration_${graph_id} = $transition_duration
+       |var config_${graph_id} = $config
        |
        |var animation_settings_${graph_id} = {
        |    mode: "immediate",
@@ -212,7 +261,7 @@ private[picta] object Html {
        |slider_${graph_id}.value = 0
        |document.getElementById("sliderContainer_${graph_id}").appendChild(slider_${graph_id});
        |
-       |Plotly.newPlot(graph_${graph_id}, traces_${graph_id}, layout_${graph_id})
+       |Plotly.newPlot(graph_${graph_id}, traces_${graph_id}, layout_${graph_id}, config_${graph_id})
        |.then(function () { Plotly.addFrames(graph_${graph_id}, frames_${graph_id}) })
        |
        |var trigger_${graph_id} = true
@@ -250,7 +299,6 @@ private[picta] object Html {
        |   if (this.value == labels_${graph_id}.length - 1) reset_count_${graph_id} = true
        |   reset_count_${graph_id} = false
        |}
-       |</script>
        |""".stripMargin
   }
 
@@ -288,35 +336,5 @@ private[picta] object Html {
       case Some(c) => sys.process.Process(c).run
       case None => Console.err.println(s"Chart could not be opened")
     }
-  }
-
-  /**
-   * A function to inject the HTML into the Jupyter notebook.
-   *
-   * @param html     : This is the html represented as a string.
-   * @param graph_id : This is required in order to generate a unique div id for the plotly chart to render in the right
-   *                 place.
-   */
-  private def writeHTMLToJupyter(html: String, graph_id: String)(implicit publish: OutputHandler): Unit = {
-    publish.html(html)
-  }
-
-  /** This function checks if an active network connection is available. It returns true if this is the case, false
-   * otherwise.
-   */
-  private def testNetworkConnection(): Boolean = {
-    var activeConnection: Boolean = true
-    val url: URL = new URL("https://www.google.com")
-    val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
-
-    try {
-      urlConn.connect()
-      urlConn.setConnectTimeout(1)
-      urlConn.setReadTimeout(1)
-    } catch {
-      case e: Throwable => activeConnection = false
-    } finally urlConn.disconnect()
-
-    activeConnection
   }
 }

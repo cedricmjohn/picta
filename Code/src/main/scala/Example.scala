@@ -1,34 +1,40 @@
-// priority implicits
-sealed trait Stringifier[T] {
-  def stringify(lst: List[T]): String
-}
+import org.carbonateresearch.picta._
+import org.carbonateresearch.picta.XY
+import org.carbonateresearch.picta.options.{Subplot, XAxis, YAxis}
+import org.carbonateresearch.picta.options.ColorOptions.Color
 
-trait Int_Stringifier {
-  implicit object IntStringifier extends  Stringifier[Int] {
-    def stringify(lst: List[Int]): String = lst.toString()
-  }
-}
-
-object Double_Stringifier extends Int_Stringifier {
-  implicit object DoubleStringifier extends Stringifier[Double] {
-    def stringify(lst: List[Double]): String = lst.toString()
-  }
-}
-
-import Double_Stringifier._
 
 object Example extends App {
 
-  trait Animal[T0] {
-    def incrementAge(): Animal[T0]
+  def createXYSeries[T: Color]
+  (numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYSeries[Int, Double, T, T]] = {
+
+    if (count == numberToCreate) Nil
+    else {
+      val xs = List.range(0, length)
+      val ys = xs.map(x => scala.util.Random.nextDouble() * x)
+      val trace = XY(x = xs, y = ys, name = "trace" + count)
+      trace :: createXYSeries(numberToCreate, count + 1, length)
+    }
   }
 
-  case class Food[T0: Stringifier]() {
-    def getCalories  = 100
-  }
+  val grid = Subplot(1, 2)
 
-  case class Dog[T0]
-  (age: Int = 0, food: Food[T0] = Food()) extends Animal[String] {
-    def incrementAge(): Dog[T0] = this.copy(age = age + 1)
-  }
+  grid(0, 0) = Chart() addSeries XY(List(1,2,3), List(3, 5, 6))
+
+  val xaxis = XAxis(title = "X Variable", range = (0.0, 10.0))
+  val yaxis = YAxis(title = "Y Variable", range = (0.0, 10.0))
+  val layout1 = Layout("Animation.XY", height=300, width=300) setAxes(xaxis, yaxis)
+  val layout2 = Layout("Animation.XY", height=300, width=300) setAxes(xaxis, yaxis)
+  val data = createXYSeries(numberToCreate = 50, length = 30)
+  val chart = Chart(animated = true) setLayout layout1 addSeries data
+  val chart2 = Chart(animated = true) setLayout layout2 addSeries data
+
+  grid(0, 0) = chart
+  grid(0, 1) = chart2
+
+  val canvas = Canvas(grid)
+
+  canvas.plot()
+
 }

@@ -37,7 +37,7 @@ case object PIE extends XYType
  * @param x           :
  * @param y           :
  * @param name
- * @param mode :
+ * @param symbol :
  * @param `type` :
  * @param xaxis       :
  * @param yaxis       :
@@ -45,7 +45,7 @@ case object PIE extends XYType
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = genRandomText, `type`: XYType = SCATTER,
- mode: Opt[Mode] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
+ symbol: Opt[Symbol] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries[T0, T1, T2, T3] {
 
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
@@ -56,9 +56,13 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
 
-  def setAxes(axes: (XAxis, YAxis)): XY[T0, T1, T2, T3] = this.copy(xaxis = axes._1, yaxis = axes._2)
+  def setAxes(new_axes: (XAxis, YAxis)): XY[T0, T1, T2, T3] = this.copy(xaxis = new_axes._1, yaxis = new_axes._2)
 
-  def as(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
+  def setAxis(new_axis: XAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_axis)
+
+  def setAxis(new_axis: YAxis): XY[T0, T1, T2, T3] = this.copy(yaxis = new_axis)
+
+  def asType(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
 
   def asScatter(): XY[T0, T1, T2, T3] = this.copy(`type` = SCATTER)
 
@@ -72,13 +76,32 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def asPIE(): XY[T0, T1, T2, T3] = this.copy(`type` = PIE)
 
+  def drawSymbol(new_mode: Symbol) = this.copy(symbol = new_mode)
+
+  def drawLines() = this.copy(symbol = LINES)
+
+  def drawMarkers() = this.copy(symbol = MARKERS)
+
+  def drawLinesMarkers() = this.copy(symbol = LINES_MARKERS)
+
+  def drawText() = this.copy(symbol = TEXT)
+
+  def drawLinesText() = this.copy(symbol = LINES_TEXT)
+
+  def drawMarkersText() = this.copy(symbol = MARKERS_TEXT)
+
+  def drawNone() = this.copy(symbol = NONE)
+
+  def drawLinesMarkersText() = this.copy(symbol = LINES_MARKERS_TEXT)
+
+
   private[picta] def serialize: Value = {
     val meta = Obj(
       "name" -> name,
       "type" -> `type`.toString.toLowerCase,
     )
 
-    val mode_ = mode.option match {
+    val mode_ = symbol.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }

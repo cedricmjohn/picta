@@ -5,6 +5,11 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
 import ujson.{Obj, Value}
 
+
+trait Side
+case object RIGHT extends Side
+case object LEFT extends Side
+
 /**
  * @constructor Creates a new Axis that the user can configure with different options
  * @param position   : This is used to give an axis a key. This is used by a Series to map to the corresponding axis.
@@ -22,7 +27,7 @@ trait Axis extends Component {
   val orientation: String
   val position: Opt[Int]
   val title: Opt[String]
-  val side: Opt[String]
+  val side: Opt[Side]
   val overlaying: Opt[String]
   val domain: Opt[(Double, Double)]
   val range: Opt[(Double, Double)]
@@ -57,7 +62,7 @@ trait Axis extends Component {
     }
 
     val side_ = side.option match {
-      case Some(x) => Obj("side" -> x)
+      case Some(x) => Obj("side" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }
 
@@ -82,7 +87,7 @@ trait Axis extends Component {
   }
 }
 
-final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
+final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[String] = Blank,
                   domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
                   zeroline: Boolean = false, showline: Boolean = false) extends Axis {
 
@@ -93,7 +98,7 @@ final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, 
   def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
 }
 
-final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[String] = Blank, overlaying: Opt[String] = Blank,
+final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[String] = Blank,
                         domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
                         zeroline: Boolean = false, showline: Boolean = false) extends Axis {
 

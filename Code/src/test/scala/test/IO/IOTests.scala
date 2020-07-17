@@ -20,6 +20,7 @@ class IOTests extends AnyFunSuite {
     val result = getSeriesbyCategory(categories, (sepal_length, petal_width))
 
     val chart = Chart() addSeries result setLayout Layout(title = "Iris", showlegend = true)
-    if (plotFlag) chart.plot()
+    val canvas = Canvas() addCharts chart
+    if (plotFlag) canvas.plot()
   }
 }

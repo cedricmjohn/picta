@@ -35,6 +35,12 @@ trait Axis extends Component {
   val zeroline: Boolean
   val showline: Boolean
 
+  def setTitle(new_title: String): Axis
+
+  def setDomain(new_domain: (Double, Double)): Axis
+
+  def setRange(new_range: (Double, Double)): Axis
+
   private[picta] def getPosition(): String = position.option match {
     case Some(x) if x != 1 =>  x.toString
     case _ => ""
@@ -42,12 +48,6 @@ trait Axis extends Component {
 
   /** An internal function that converts a user entered key into one that the plotly library can understand */
   private def convertPosition(position: String): String = orientation + position
-
-  def setTitle(new_title: String): Axis
-
-  def setDomain(new_domain: (Double, Double)): Axis
-
-  def setRange(new_range: (Double, Double)): Axis
 
   private[picta] def serialize(): Value = {
     val meta = Obj(

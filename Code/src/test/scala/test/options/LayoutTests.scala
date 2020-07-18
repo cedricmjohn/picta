@@ -2,7 +2,7 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.{Axis, RIGHT, Subplot, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{RIGHT, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 
 class LayoutTests extends AnyFunSuite {

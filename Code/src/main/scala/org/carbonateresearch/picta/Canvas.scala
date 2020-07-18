@@ -3,11 +3,11 @@ package org.carbonateresearch.picta
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.OptionWrapper.{Opt, Blank}
 import org.carbonateresearch.picta.charts.Html.{plotChart, plotChartInline}
-import org.carbonateresearch.picta.common.Utils.genRandomText
+import org.carbonateresearch.picta.common.Utils.generateRandomText
 
 final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[Array[Chart]] = Blank) {
 
-  val id = genRandomText()
+  val id = generateRandomText()
   val grid_ = grid.option match {
     case Some(x) => x
     case _ => Array.fill[Chart](rows * columns)(Chart(id = "not_set"))
@@ -15,7 +15,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[A
 
   def setChart(i: Int, j: Int, chart: Chart): Canvas = {
     val copy = this.copy(grid = this.grid_)
-    copy.grid_(i * columns + j) = chart.copy(id = genRandomText())
+    copy.grid_(i * columns + j) = chart.copy(id = generateRandomText())
     copy
   }
 
@@ -32,7 +32,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[A
     val new_canvas = this.copy()
 
     /* copy each chart with an updated index to the corresponding position inside the subplot grid */
-    charts.zipWithIndex.foreach{ case (chart, index) => new_canvas.grid_(index) = chart.copy(id=genRandomText) }
+    charts.zipWithIndex.foreach{ case (chart, index) => new_canvas.grid_(index) = chart.copy(id=generateRandomText) }
 
     new_canvas
   }

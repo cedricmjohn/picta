@@ -35,7 +35,7 @@ class CompositionTests extends AnyFunSuite {
   }
 
   test("XY.Layout.Add.Axis") {
-    val series3 = XY(x_int, z_int, `type` = SCATTER, symbol = MARKERS, yaxis = YAxis(2))
+    val series3 = XY(x_int, z_int) asType SCATTER drawSymbol MARKERS setAxis YAxis(2)
     val layout = (picta.Layout("XY.Chart.Add.Config") setLegend Legend()
       setAxes YAxis(position = 2, title = "second y axis", overlaying = "y", side = RIGHT))
 

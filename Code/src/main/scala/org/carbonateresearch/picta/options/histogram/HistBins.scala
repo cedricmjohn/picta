@@ -5,7 +5,6 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
 import ujson.{Obj, Value}
 
-
 private[picta] trait HistBins extends Component {
   /** The starting value for the bin. Defaults to the minimum data value. */
   val start: Opt[Double]
@@ -32,7 +31,6 @@ private[picta] trait HistBins extends Component {
 
     List(start_, end_, size_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
-
 }
 
 final case class Xbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins

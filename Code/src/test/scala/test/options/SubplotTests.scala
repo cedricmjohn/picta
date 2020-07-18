@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.options.{MultiChart, Subplot, XAxis, YAxis}
 import org.carbonateresearch.picta.UnitTestUtils._
+import org.carbonateresearch.picta.options.{MultiChart, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 
 

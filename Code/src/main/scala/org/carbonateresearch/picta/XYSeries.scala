@@ -44,7 +44,7 @@ case object PIE extends XYType
  * @param marker      :
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
-(x: List[T0], y: Opt[List[T1]] = Empty, name: String = genRandomText, `type`: XYType = SCATTER,
+(x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
  symbol: Opt[Symbol] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries[T0, T1, T2, T3] {
 

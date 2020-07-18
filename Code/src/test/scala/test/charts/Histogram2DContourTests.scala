@@ -1,10 +1,9 @@
 package org.carbonateresearch.picta.charts
 
-import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_double, y_double}
-import org.carbonateresearch.picta.options.histogram.{HORIZONTAL, HistOptions}
+import org.carbonateresearch.picta.options.histogram.HistOptions
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
-import org.carbonateresearch.picta.options.{Axis, Marker, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{HORIZONTAL, Marker, XAxis, YAxis}
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 

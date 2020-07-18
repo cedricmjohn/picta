@@ -28,7 +28,7 @@ case object SURFACE extends XYZType
  * @param symbol :
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
-(x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = genRandomText, `type`: XYZType = SCATTER3D,
+(x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = generateRandomText, `type`: XYZType = SCATTER3D,
  symbol: Opt[Symbol] = Blank, n: Opt[Int] = Blank) extends XYZSeries {
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */

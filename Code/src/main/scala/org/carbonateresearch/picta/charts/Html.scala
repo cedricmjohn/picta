@@ -6,7 +6,6 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.Chart
-import org.carbonateresearch.picta.options.Subplot
 import os.Path
 import ujson.Value
 import upickle.default.transform
@@ -76,7 +75,7 @@ object Html {
   }
 
     /** Creates the necessary headers when plotting in jvm mode */
-  def createHeader(useCDN: Boolean, includeStyle: Boolean) = {
+  private def createHeader(useCDN: Boolean, includeStyle: Boolean) = {
     var header = new StringBuilder()
 
     useCDN match {
@@ -117,7 +116,7 @@ object Html {
                |    <button id='pause_${graph_id}'>Pause</button>
                |    <div id="sliderContainer_${graph_id}" class='progressBar'></div>
                |    <div id='counterContainer_${graph_id}' class='inline-div'>
-               |        <h3>Frame: </h3><h3 id="value_${graph_id}">0</h3>
+               |        <h3>Frame: </h3> <h3 id="value_${graph_id}">0</h3>
                |    </div>
                |   </div>
                |</div> \n
@@ -133,7 +132,7 @@ object Html {
   }
 
 
-  def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
+  private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
     /* create the html headers and add them to the page */

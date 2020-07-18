@@ -3,6 +3,7 @@ package org.carbonateresearch.picta.options.histogram
 import org.carbonateresearch.picta.Component
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
+import org.carbonateresearch.picta.options.{Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
 sealed trait HistNorm
@@ -29,17 +30,6 @@ case object MIN extends HistFunction
 
 case object MAX extends HistFunction
 
-sealed trait HistOrientation
-
-case object VERTICAL extends HistOrientation {
-  override def toString: String = "x"
-}
-
-case object HORIZONTAL extends HistOrientation {
-  override def toString: String = "y"
-}
-
-
 /** This class sets the histogram-specific options for a histogram.
  *
  * @param orientation : Specifies whether the histogram is vertical or horizontal.
@@ -49,7 +39,7 @@ case object HORIZONTAL extends HistOrientation {
  * @param xbins       : An Xbin specified by the user.
  * @param ybins       : A Ybin specified by the user.
  */
-final case class HistOptions(orientation: HistOrientation = VERTICAL, cumulative: Opt[Cumulative] = Blank,
+final case class HistOptions(orientation: Orientation = VERTICAL, cumulative: Opt[Cumulative] = Blank,
                              histnorm: Opt[HistNorm] = Blank, histfunc: Opt[HistFunction] = Blank,
                              xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 

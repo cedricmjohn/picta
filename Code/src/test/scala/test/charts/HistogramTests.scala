@@ -3,7 +3,7 @@ package org.carbonateresearch.picta.charts
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_int, x_random}
 import org.carbonateresearch.picta.options.histogram._
-import org.carbonateresearch.picta.options.{Line, Marker}
+import org.carbonateresearch.picta.options.{HORIZONTAL, Line, Marker}
 import org.carbonateresearch.picta.{Canvas, Chart, HISTOGRAM, Layout, XY}
 import org.scalatest.funsuite.AnyFunSuite
 

@@ -1,6 +1,8 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.Component
+import org.carbonateresearch.picta.options.Orientation
+
 import ujson.{Obj, Value}
 
 /**
@@ -11,7 +13,14 @@ import ujson.{Obj, Value}
  * @param xanchor     :
  * @param yanchor     :
  */
-final case class Legend(x: Double = 0.5, y: Double = -0.2, orientation: String = "h", xanchor: String = "auto",
-                  yanchor: String = "auto") extends Component {
-  private[picta] def serialize: Value = Obj("x" -> x, "y" -> y, "orientation" -> orientation, "xanchor" -> xanchor, "yanchor" -> yanchor)
+final case class Legend(x: Double = 0.5, y: Double = -0.2, orientation: Orientation = HORIZONTAL,
+                        xanchor: String = "auto", yanchor: String = "auto") extends Component {
+
+  private[picta] def serialize: Value = {
+    val orientation_ = orientation match {
+      case VERTICAL => "v"
+      case HORIZONTAL => "h"
+    }
+    Obj("x" -> x, "y" -> y, "orientation" -> orientation_, "xanchor" -> xanchor, "yanchor" -> yanchor)
+  }
 }

@@ -1,9 +1,7 @@
 package org.carbonateresearch.picta.charts
 
-import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta._
-import org.carbonateresearch.picta.{SCATTER, MARKERS}
+import org.carbonateresearch.picta.{MARKERS, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
 class BasicChartTests extends AnyFunSuite {

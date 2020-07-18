@@ -9,7 +9,7 @@ import ujson.{Obj, Value}
  * @param dtick    :
  */
 
-private[picta] trait MapAxis {
+private[picta] trait MapAxis extends Component {
   val range: List[Double]
   val showgrid: Boolean
   val dtick: Int

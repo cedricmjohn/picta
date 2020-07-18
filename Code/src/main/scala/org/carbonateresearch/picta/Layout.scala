@@ -2,15 +2,23 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Empty, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
-import org.carbonateresearch.picta.common.Serializer
-import org.carbonateresearch.picta.options.ColorOptions.Color
 import org.carbonateresearch.picta.options._
+import ujson.IndexedValue.False
 import ujson.{Obj, Value}
+
+trait HoverMode
+
+case object X extends HoverMode
+case object Y extends HoverMode
+case object CLOSEST extends HoverMode
+case object FALSE extends HoverMode
+case object X_UNIFIED extends HoverMode
+case object Y_UNIFIED extends HoverMode
 
 /**
  * @constructor: Specifies the layout for the chart.
  * @param title      : Sets the chart title.
- * @param axs        : Sets the chart title.
+ * @param axes        : Sets the chart title.
  * @param showlegend : Specifies whether to show the legend.
  * @param autosize   : This is the component that configures the legend for the chart..
  * @param legend     : This is the component that configures the legend for the chart..
@@ -19,18 +27,22 @@ import ujson.{Obj, Value}
  * @param geo        : this is used for Map charts only and configures the geo component for a Map chart..
  */
 final case class Layout
-(title: Opt[String] = Blank, axs: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
+(title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
  margin: Opt[Margin] = Blank, geo: Opt[Geo] = Blank, multichart: Opt[MultiChart] = Blank, showlegend: Boolean = false,
- hovermode: String = "closest", height: Int = 550, width: Int = 600) extends Component {
+ hovermode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600) extends Component {
 
-  def setAxes(new_axes: List[Axis]): Layout = axs.option match {
-    case Some(lst) => this.copy(axs = new_axes ::: lst)
-    case None => this.copy(axs = new_axes)
+  def setTitle(new_title: String) = this.copy(title = new_title)
+
+  def showLegend(new_showlegend: Boolean) = this.copy(showlegend = new_showlegend)
+
+  def setAxes(new_axes: List[Axis]): Layout = axes.option match {
+    case Some(lst) => this.copy(axes = new_axes ::: lst)
+    case None => this.copy(axes = new_axes)
   }
 
-  def setAxes(new_axis: Axis*): Layout = axs.option match {
-    case Some(lst) => this.copy(axs = new_axis.toList ::: lst)
-    case None => this.copy(axs = new_axis.toList)
+  def setAxes(new_axis: Axis*): Layout = axes.option match {
+    case Some(lst) => this.copy(axes = new_axis.toList ::: lst)
+    case None => this.copy(axes = new_axis.toList)
   }
 
   def setGeo(new_geo: Geo): Layout = this.copy(geo = new_geo)
@@ -42,7 +54,7 @@ final case class Layout
   def setMultiChart(new_minigrid: MultiChart) = this.copy(multichart = new_minigrid)
 
   private[picta] def serialize(): Value = {
-    val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode)
+    val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode.toString.toLowerCase)
 
     val title_ = title.option match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
@@ -79,7 +91,7 @@ final case class Layout
     val combined = List(dim, title_, showlegend_, legend_, autosize_, geo_, margin_, minigrid_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
-    axs.option match {
+    axes.option match {
       case Some(lst) => lst.foldLeft(combined)((a, x) => a |+| x.serialize())
       case _ => combined
     }

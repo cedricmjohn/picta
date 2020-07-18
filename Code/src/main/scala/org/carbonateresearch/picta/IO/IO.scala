@@ -12,7 +12,6 @@ object IO {
   def getWorkingDirectory: String = os.pwd.toString
 
   /** Reads a CSV file (with-headers) into a Map(header -> column of data)
-   *
    * @param filepath : A string containing the path of the file that is to be read
    */
   def readCSV(filepath: String): mutable.Map[String, List[String]] = {

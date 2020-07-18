@@ -1,13 +1,13 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.common.Utils.genRandomText
-import org.carbonateresearch.picta.options.{XAxis, YAxis}
+import org.carbonateresearch.picta.common.Utils.generateRandomText
+import org.carbonateresearch.picta.options.{Axis, Legend, MultiChart, XAxis, YAxis}
 import ujson.{Obj, Value}
 import upickle.default._
 
 final case class Chart
 (data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config(),
- animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = genRandomText()) extends Component {
+ animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = generateRandomText()) extends Component {
 
   private val frames_labels = animated match {
     case false => (Nil, Nil)
@@ -32,8 +32,36 @@ final case class Chart
 
   def setConfig(new_config: Config): Chart = this.copy(config = new_config)
 
-  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis) = this.copy(layout = this.layout setAxes(new_xaxis, new_yaxis))
+  /* helper methods that make wrangling all the sub-components a lot easier */
+  def setTitle(title: String): Chart = {
+    val new_layout = this.layout setTitle title
+    this.copy(layout = new_layout)
+  }
 
+  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
+    val new_layout = this.layout setAxes(new_xaxis, new_yaxis)
+    this.copy(layout = new_layout)
+  }
+
+  def setAxes(new_axis: Axis*) = {
+    val new_layout = this.layout setAxes new_axis.toList
+    this.copy(layout = new_layout)
+  }
+
+  def showLegend(showlegend: Boolean) = {
+    val new_layout = this.layout showLegend showlegend
+    this.copy(layout = new_layout)
+  }
+
+  def setLegend(new_legend: Legend) = {
+    val new_layout = this.layout setLegend new_legend
+    this.copy(layout = new_layout)
+  }
+
+  def asMultiChart(rows: Int, columns: Int) = {
+    val new_layout = this.layout setMultiChart MultiChart(rows, columns)
+    this.copy(layout = new_layout)
+  }
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 

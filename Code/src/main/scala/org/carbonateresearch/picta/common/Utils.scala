@@ -30,7 +30,7 @@ object Utils {
   private def getSeriesbyCategory[T: Serializer, T1: Color, T2: Color]
   (categories: List[String], data: List[List[T]]): List[XYSeries[T, T, T1, T2]] = {
     /** generate some axis labels - this is just to keep track, the exact value is not important */
-    val axis_labels = List(genRandomText, genRandomText)
+    val axis_labels = List(generateRandomText, generateRandomText)
 
     /** use the given list of categories, and convert them to a Set of individual labels */
     val category_labels = categories.toSet
@@ -73,7 +73,7 @@ object Utils {
   }
 
   /** Generates a random alphanumeric string. */
-  private[picta] def genRandomText(): String = scala.util.Random.alphanumeric.take(10).mkString
+  private[picta] def generateRandomText(): String = scala.util.Random.alphanumeric.take(10).mkString
 
   //  def getSeriesFromSingleModel[T: Serializer]
   //  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {

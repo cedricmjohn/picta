@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.common.Utils.genRandomText
-
+import org.carbonateresearch.picta.options.{XAxis, YAxis}
 import ujson.{Obj, Value}
 import upickle.default._
 
@@ -31,6 +31,9 @@ final case class Chart
   def setLayout[Z0, Z1, Z2, Z3](new_layout: Layout): Chart= this.copy(layout = new_layout)
 
   def setConfig(new_config: Config): Chart = this.copy(config = new_config)
+
+  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis) = this.copy(layout = this.layout setAxes(new_xaxis, new_yaxis))
+
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 

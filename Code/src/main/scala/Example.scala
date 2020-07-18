@@ -33,7 +33,7 @@ object Example extends App {
   grid(0, 0) = chart
   grid(0, 1) = chart2
 
-  val canvas = Canvas(grid)
+  val canvas = Canvas(1, 2)
 
   canvas.plot()
 

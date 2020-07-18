@@ -5,6 +5,7 @@ import java.net.{HttpURLConnection, URL}
 
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.Chart
 import org.carbonateresearch.picta.options.Subplot
 import os.Path
 import ujson.Value
@@ -95,15 +96,15 @@ object Html {
     s"""<head> \n""" + header.mkString + s"""\n</head>\n"""
   }
 
-  private def createGridHTML(grid: Subplot) = {
+  private def createGridHTML(rows: Int, columns: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
-    html ++= s"""<div id="grid_${grid.id}" align="center"> \n"""
+    html ++= s"""<div id="grid_${id}" align="center"> \n"""
 
     /** Build body of the page */
-    for (i <- 0 until grid.rows) {
-      for (j <- 0 until grid.columns) {
-        val chart = grid(i, j)
+    for (i <- 0 until rows) {
+      for (j <- 0 until columns) {
+        val chart = grid(i * columns + j)
         val graph_id = chart.id
 
         if (chart.animated) {
@@ -132,35 +133,34 @@ object Html {
   }
 
 
-  def plotChart(grid: Subplot) = {
+  def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
     /* create the html headers and add them to the page */
     html ++= createHeader(useCDN, true)
 
     /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
-    html ++= createGridHTML(grid)
+    html ++= createGridHTML(rows, cols, grid, id)
 
     /* create the javascript that corresponds to each of these charts */
-    html ++= createJsScripts(grid)
+    html ++= createJsScripts(rows, cols, grid, id)
 
-    writeHTMLToFile(html.toString, grid.id)
+    writeHTMLToFile(html.toString, id)
   }
 
-  private[picta] def plotChartInline(grid: Subplot)(implicit publish: OutputHandler): Unit = {
+  private[picta] def plotChartInline(rows: Int, columns: Int, grid: Array[Chart], id: String)(implicit publish: OutputHandler): Unit = {
     var html = new StringBuilder()
 
     /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
-    html ++= createGridHTML(grid)
+    html ++= createGridHTML(rows, columns, grid, id)
 
     /* create the javascript that corresponds to each of these charts */
-    html ++= createJsScripts(grid)
+    html ++= createJsScripts(rows, columns, grid, id)
 
     publish.html(html.toString)
   }
 
-
-  private def createJsScripts(grid: Subplot) = {
+  private def createJsScripts(rows: Int, columns: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
     /** create js for this batch */
@@ -169,13 +169,13 @@ object Html {
     val masonry_js =
       s"""
          |var masonry = new Macy({
-         |    container: '#grid_${grid.id}',
+         |    container: '#grid_${id}',
          |    trueOrder: false,
          |    waitForImages: false,
          |    useOwnImageLoader: false,
          |    debug: true,
          |    mobileFirst: true,
-         |    columns: ${grid.columns},
+         |    columns: ${columns},
          |    margin: {
          |        y: 0,
          |        x: '0.5%',
@@ -186,9 +186,9 @@ object Html {
     html ++= masonry_js
 
     /** Now construct the relevant js for each chart */
-    for (i <- 0 until grid.rows) {
-      for (j <- 0 until grid.columns) {
-        val chart = grid(i, j)
+    for (i <- 0 until rows) {
+      for (j <- 0 until columns) {
+        val chart = grid(i * columns + j)
         val graph_id = chart.id
 
         if (chart.animated) {

@@ -2,7 +2,7 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
 import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.options.{Axis, Line, Marker, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Line, Marker, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
 
@@ -29,8 +29,7 @@ class MarkerTests extends AnyFunSuite {
     val series = XY(x_int, y_int, `type` = SCATTER, symbol = MARKERS) setMarker marker
     val layout = Layout("Marker.Composition.WithTrace") setAxes(x_axis, y_axis)
     val chart = Chart() addSeries series setLayout layout
-    val canvas = Canvas()
-    canvas.subplot(0, 0) = chart
+    val canvas = Canvas() addCharts chart
     if (plotFlag) canvas.plot
     assert(validateJson(chart.serialize.toString))
   }

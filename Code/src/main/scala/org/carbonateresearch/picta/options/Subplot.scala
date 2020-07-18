@@ -17,6 +17,8 @@ case class Subplot(rows: Int = 1, columns: Int = 1) {
   private[picta] val id = genRandomText()
   private[picta] val grid = Array.fill[Chart](rows * columns)(Chart(id = "not_set"))
 
+  def printIds() = grid.map(chart => println(chart.id))
+
   def apply(i: Int, j: Int) = this.grid(i * columns + j)
 
   def update(i: Int, j: Int, chart: Chart) = {

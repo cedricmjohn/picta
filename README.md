@@ -1,2 +1,2 @@
-# picta
-Visualization module for CoNuS
+# Picta
+A visualization library for interactive data exploration.

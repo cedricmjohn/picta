@@ -1,6 +1,6 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.IO.IO.{getWorkingDirectory, readCSV}
+import IO.{getWorkingDirectory, readCSV}
 import org.carbonateresearch.picta.common.Utils.getSeriesbyCategory
 import org.scalatest.funsuite.AnyFunSuite
 

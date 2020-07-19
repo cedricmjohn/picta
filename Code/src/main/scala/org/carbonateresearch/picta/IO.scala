@@ -1,8 +1,8 @@
-package org.carbonateresearch.picta.IO
+package org.carbonateresearch.picta
 
 import java.io.File
 
-import com.github.tototoshi.csv._
+import com.github.tototoshi.csv.CSVReader
 
 import scala.collection.mutable
 

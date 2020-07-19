@@ -45,7 +45,7 @@ final case class Layout
     case None => this.copy(axes = new_axis.toList)
   }
 
-  def setGeo(new_geo: MapOptions): Layout = this.copy(geo = new_geo)
+  def setMapOption(new_geo: MapOptions): Layout = this.copy(geo = new_geo)
 
   def setLegend(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
 

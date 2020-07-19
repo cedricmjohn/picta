@@ -59,7 +59,7 @@ final case class Chart
   }
 
   def setMapOptions(new_map_options: MapOptions) = {
-    val new_layout = this.layout setGeo new_map_options
+    val new_layout = this.layout setMapOption new_map_options
     this.copy(layout = new_layout)
   }
 

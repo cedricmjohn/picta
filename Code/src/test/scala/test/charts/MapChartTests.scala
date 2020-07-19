@@ -27,7 +27,7 @@ class MapTests extends AnyFunSuite {
     val geo = MapOptions(landcolor = "rgb(204, 204, 204)", lakecolor = "rgb(255, 255, 255)")
               .setMapAxes(LatAxis(List(20, 60)), LongAxis(List(-100, 20)))
 
-    val layout = Layout(height = 800, width = 800) setGeo geo setMargin Margin(0, 0, 0, 0)
+    val layout = Layout(height = 800, width = 800) setMapOption geo setMargin Margin(0, 0, 0, 0)
     val chart = Chart() addSeries data setLayout layout setConfig config
     val canvas = Canvas() addCharts chart
     if (plotFlag) canvas.plot

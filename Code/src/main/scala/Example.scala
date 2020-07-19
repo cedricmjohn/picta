@@ -133,11 +133,13 @@ object TestDriveApp extends App {
 
   val model: SingleModelResults = modelWarehouse(eaglefordModel)(0)
 
-//  val series1: List[Double] = getSeriesFromSingleModel(model, age, List(0), numberOfSteps)
-//
-//  val series2: List[Double] = getSeriesFromSingleModel(model, d18Occ, List(0), numberOfSteps)
+  val series1: List[Double] = getDataFromSingleModel(model, age, List(0), numberOfSteps)
 
-  val series = getXYSeriesFromSingleModel(model, (age, d18Occ), List(0), numberOfSteps)
+  val series2: List[Double] = getDataFromSingleModel(model, d18Occ, List(0), numberOfSteps)
+
+  val series = XY(series1, series2)
+
+//  val series = getXYSeriesFromSingleModel(model, (age, d18Occ), List(0), numberOfSteps)
 
   val chart = Chart() addSeries series setTitle("x against y")
 

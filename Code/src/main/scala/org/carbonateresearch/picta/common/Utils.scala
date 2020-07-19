@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.common
 
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.{MARKERS, SCATTER, XY, XYSeries}
+import org.carbonateresearch.picta.{MARKERS, SCATTER, Series, XY}
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -15,7 +15,7 @@ object Utils {
    * @param data       : This is a tuple of the raw data for both the x and y variables
    */
   def getSeriesbyCategory[T: Serializer, T1: Color, T2: Color]
-  (categories: List[String], data: (List[T], List[T])): List[XYSeries[T, T, T1, T2]] = {
+  (categories: List[String], data: (List[T], List[T])): List[XY[T, T, T1, T2]] = {
     getSeriesbyCategory(categories, List(data._1, data._2))
   }
 
@@ -26,7 +26,7 @@ object Utils {
    * @param data       : This is a tuple of the raw data for both the x and y variables
    */
   private def getSeriesbyCategory[T: Serializer, T1: Color, T2: Color]
-  (categories: List[String], data: List[List[T]]): List[XYSeries[T, T, T1, T2]] = {
+  (categories: List[String], data: List[List[T]]): List[XY[T, T, T1, T2]] = {
     /** generate some axis labels - this is just to keep track, the exact value is not important */
     val axis_labels = List(generateRandomText, generateRandomText)
 
@@ -52,7 +52,7 @@ object Utils {
     }
 
     /** at this stage the structure should be like (axis 1 -> (cat. 1 -> Nil, cat. 2 -> Nil,...), axis 2 -> ...) */
-    var series_set = scala.collection.mutable.Set[XYSeries[T, T, T1, T2]]()
+    var series_set = scala.collection.mutable.Set[XY[T, T, T1, T2]]()
 
     /** for each label, take the associated data from the series and stick into the correct place in the map */
     for ((label, i) <- categories.zipWithIndex) {

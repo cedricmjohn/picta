@@ -36,7 +36,7 @@ object UnitTestUtils {
 
   // creates random XY for testing purposes
   def createXYSeries[T: Color]
-  (numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYSeries[Int, Double, T, T]] = {
+  (numberToCreate: Int, count: Int = 0, length: Int = 10): List[Series] = {
 
     if (count == numberToCreate) Nil
     else {

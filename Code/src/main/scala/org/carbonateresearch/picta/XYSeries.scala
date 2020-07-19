@@ -10,10 +10,6 @@ import org.carbonateresearch.picta.options.histogram.HistOptions
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
 
-trait XYSeries[T0, T1, T2, T3] extends Series {
-  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3]
-}
-
 /** ENUM for the XY chart series types */
 private[picta] sealed trait XYType
 
@@ -46,7 +42,7 @@ case object PIE extends XYType
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
  symbol: Opt[Symbol] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
- hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends XYSeries[T0, T1, T2, T3] {
+ hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends Series {
 
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
 

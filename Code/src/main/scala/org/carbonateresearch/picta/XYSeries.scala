@@ -5,13 +5,13 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.{Marker, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Axis, Marker, XAxis, YAxis}
 import org.carbonateresearch.picta.options.histogram.HistOptions
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
 
 trait XYSeries[T0, T1, T2, T3] extends Series {
-  def setAxes(axes: (XAxis, YAxis)): XY[T0, T1, T2, T3]
+  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3]
 }
 
 /** ENUM for the XY chart series types */
@@ -56,11 +56,12 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
 
-  def setAxes(new_axes: (XAxis, YAxis)): XY[T0, T1, T2, T3] = this.copy(xaxis = new_axes._1, yaxis = new_axes._2)
+  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
 
-  def setAxis(new_axis: XAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_axis)
-
-  def setAxis(new_axis: YAxis): XY[T0, T1, T2, T3] = this.copy(yaxis = new_axis)
+  def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis match {
+      case x: XAxis => this.copy(xaxis = x)
+      case y: YAxis => this.copy(yaxis = y)
+  }
 
   def asType(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
 

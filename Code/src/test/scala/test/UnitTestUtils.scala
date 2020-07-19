@@ -1,7 +1,6 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper._
-import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.options.ColorOptions.Color
 
 object UnitTestUtils {
@@ -48,7 +47,7 @@ object UnitTestUtils {
     }
   }
 
-  def createXYZSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[XYZSeries] = {
+  def createXYZSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[Series] = {
     if (count == numberToCreate) Nil
     else {
       val xs = List.range(0, length)

@@ -39,10 +39,10 @@ import org.scalatest.funsuite.AnyFunSuite
       val ax8 = YAxis(title = "y axis 3")
       val ax9 = YAxis(title = "y axis 4")
 
-      val chart1 = Chart() addSeries XY(x_double, y_double).setName("a") setAxes(ax1, ax6)
-      val chart2 = Chart() addSeries XY(y_int, y_double).setName("b") setAxes(ax2, ax7)
-      val chart3 = Chart() addSeries XY(x_int, y_double).setName("c") setAxes(ax3, ax8)
-      val chart4 = Chart() addSeries XY(z_int, z_double).setName("d") setAxes(ax4, ax9)
+      val chart1 = Chart() addSeries XY(x_double, y_double).setName("a") addAxes(ax1, ax6)
+      val chart2 = Chart() addSeries XY(y_int, y_double).setName("b") addAxes(ax2, ax7)
+      val chart3 = Chart() addSeries XY(x_int, y_double).setName("c") addAxes(ax3, ax8)
+      val chart4 = Chart() addSeries XY(z_int, z_double).setName("d") addAxes(ax4, ax9)
 
       val canvas =
         Canvas(2, 2)

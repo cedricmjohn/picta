@@ -18,15 +18,15 @@ import ujson.{Obj, Value}
  * @param lataxis        : This is the component that configures the lataxis.
  * @param longaxis       : This is the component that configures the longaxis.
  */
-final case class Geo(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
-               projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
-               showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
+final case class MapOptions(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
+                            projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
+                            showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
 
-  def setAxis(new_axis: LatAxis): Geo = this.copy(lataxis = new_axis)
+  def setMapAxis(new_axis: LatAxis): MapOptions = this.copy(lataxis = new_axis)
 
-  def setAxis(new_axis: LongAxis): Geo = this.copy(longaxis = new_axis)
+  def setMapAxis(new_axis: LongAxis): MapOptions = this.copy(longaxis = new_axis)
 
-  def setAxes(lat: LatAxis, lon: LongAxis): Geo = this.copy(lataxis = lat, longaxis = lon)
+  def setMapAxes(lat: LatAxis, lon: LongAxis): MapOptions = this.copy(lataxis = lat, longaxis = lon)
 
   private[picta] def serialize(): Value = {
     val meta = Obj(

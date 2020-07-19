@@ -28,7 +28,7 @@ case object Y_UNIFIED extends HoverMode
  */
 final case class Layout
 (title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, geo: Opt[Geo] = Blank, multichart: Opt[MultiChart] = Blank, showlegend: Boolean = false,
+ margin: Opt[Margin] = Blank, geo: Opt[MapOptions] = Blank, multichart: Opt[MultiChart] = Blank, showlegend: Boolean = false,
  hovermode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600) extends Component {
 
   def setTitle(new_title: String) = this.copy(title = new_title)
@@ -45,7 +45,7 @@ final case class Layout
     case None => this.copy(axes = new_axis.toList)
   }
 
-  def setGeo(new_geo: Geo): Layout = this.copy(geo = new_geo)
+  def setGeo(new_geo: MapOptions): Layout = this.copy(geo = new_geo)
 
   def setLegend(new_legend: Legend): Layout = this.copy(legend = new_legend, showlegend = true)
 

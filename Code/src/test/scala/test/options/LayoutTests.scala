@@ -22,7 +22,7 @@ class LayoutTests extends AnyFunSuite {
     // 1. define the axis to plot on the chart
     val ax0 = XAxis(position = 1, title = " x axis 1")
     val ax1 = YAxis(position = 1, title = "y axis 1")
-    val ax2 = YAxis(position = 2, title = "y axis 2", side = RIGHT, overlaying = "y")
+    val ax2 = YAxis(position = 2, title = "y axis 2", side = RIGHT, overlaying = YAxis())
 
     // 2. add the axis to the layout to display them on the xy chart
     val layout = picta.Layout("XY.Axis.Composition") setAxes List(ax0, ax1, ax2)

@@ -169,16 +169,9 @@ object Html {
       s"""
          |var masonry = new Macy({
          |    container: '#grid_${id}',
-         |    trueOrder: false,
-         |    waitForImages: false,
-         |    useOwnImageLoader: false,
          |    debug: true,
          |    mobileFirst: true,
          |    columns: ${columns},
-         |    margin: {
-         |        y: 0,
-         |        x: '0.5%',
-         |    },
          |  });
          |""".stripMargin
 

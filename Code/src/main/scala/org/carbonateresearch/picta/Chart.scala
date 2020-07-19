@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.common.Utils.generateRandomText
-import org.carbonateresearch.picta.options.{Axis, Legend, MultiChart, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Axis, MapOptions, Legend, Margin, MultiChart, XAxis, YAxis}
 import ujson.{Obj, Value}
 import upickle.default._
 
@@ -38,12 +38,12 @@ final case class Chart
     this.copy(layout = new_layout)
   }
 
-  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
+  def addAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
     val new_layout = this.layout setAxes(new_xaxis, new_yaxis)
     this.copy(layout = new_layout)
   }
 
-  def setAxes(new_axis: Axis*) = {
+  def addAxes(new_axis: Axis*) = {
     val new_layout = this.layout setAxes new_axis.toList
     this.copy(layout = new_layout)
   }
@@ -58,10 +58,29 @@ final case class Chart
     this.copy(layout = new_layout)
   }
 
+  def setMapOptions(new_map_options: MapOptions) = {
+    val new_layout = this.layout setGeo new_map_options
+    this.copy(layout = new_layout)
+  }
+
+  def setMargin(l: Int, r: Int, t: Int, b: Int) = {
+    val new_margin: Margin = Margin(l=l, r=r, t=t, b=b)
+    val new_layout = this.layout setMargin new_margin
+    this.copy(layout = new_layout)
+  }
+
+  def setDimensions(height: Int = this.layout.height, width: Int = this.layout.width) = {
+    val new_layout = this.layout.copy(height=height, width=width)
+    this.copy(layout = new_layout)
+  }
+
   def asMultiChart(rows: Int, columns: Int) = {
+    if (this.animated) throw new IllegalArgumentException("Animated Charts cannot be transformed to MultiCharts")
+
     val new_layout = this.layout setMultiChart MultiChart(rows, columns)
     this.copy(layout = new_layout)
   }
+
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 

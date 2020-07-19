@@ -28,7 +28,7 @@ trait Axis extends Component {
   val position: Opt[Int]
   val title: Opt[String]
   val side: Opt[Side]
-  val overlaying: Opt[String]
+  val overlaying: Opt[Axis]
   val domain: Opt[(Double, Double)]
   val range: Opt[(Double, Double)]
   val showgrid: Boolean
@@ -67,7 +67,8 @@ trait Axis extends Component {
     }
 
     val overlaying_ = overlaying.option match {
-      case Some(x) => Obj("overlaying" -> x)
+      case Some(x) if x.getPosition() != "" => Obj("overlaying" -> x.getPosition())
+      case Some(x) if x.getPosition() == "" => Obj("overlaying" -> x.orientation.take(1))
       case None => jsonMonoid.empty
     }
 
@@ -87,24 +88,24 @@ trait Axis extends Component {
   }
 }
 
-final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[String] = Blank,
+final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[XAxis] = Blank,
                   domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
                   zeroline: Boolean = false, showline: Boolean = false) extends Axis {
 
   override val orientation: String = "xaxis"
 
-  def setTitle(new_title: String): Axis = this.copy(title = new_title)
+  def setTitle(new_title: String): XAxis = this.copy(title = new_title)
   def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
   def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
 }
 
-final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[String] = Blank,
+final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[YAxis] = Blank,
                         domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, showgrid: Boolean = true,
                         zeroline: Boolean = false, showline: Boolean = false) extends Axis {
 
   override val orientation: String = "yaxis"
 
-  def setTitle(new_title: String): Axis = this.copy(title = new_title)
+  def setTitle(new_title: String): YAxis = this.copy(title = new_title)
   def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
   def setRange(new_range: (Double, Double)): Axis = this.copy(range = new_range)
 }

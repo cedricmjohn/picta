@@ -1,7 +1,5 @@
 package org.carbonateresearch.picta.common
 
-import java.security.SecureRandom
-
 import org.carbonateresearch.picta.options.ColorOptions.Color
 import org.carbonateresearch.picta.{MARKERS, SCATTER, XY, XYSeries}
 
@@ -74,17 +72,6 @@ object Utils {
 
   /** Generates a random alphanumeric string. */
   private[picta] def generateRandomText(): String = scala.util.Random.alphanumeric.take(10).mkString
-
-  //  def getSeriesFromSingleModel[T: Serializer]
-  //  (model: SingleModelResults, variable: ModelVariable[T], coordinate: Seq[Int], n: Int): List[T] = {
-  //    val r = for {
-  //      t <- 0 until n
-  //    } yield model.getStepResult(t, variable).getValueAtCell(coordinate)
-  //
-  //    r.asInstanceOf[Seq[T]].toList
-  //  }
-
-  // println(results.getModelVariablesForStep(i))
 
   /**
    * Creates a list of all the possible co-ordinates

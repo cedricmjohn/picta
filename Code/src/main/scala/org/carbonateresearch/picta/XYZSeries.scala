@@ -6,10 +6,8 @@ import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import ujson.{Obj, Value}
 
-trait XYZSeries extends Series
-
 /** ENUM for the XYZ chart series types */
-private[picta] sealed trait XYZType
+sealed trait XYZType
 
 case object SCATTER3D extends XYZType
 
@@ -29,7 +27,7 @@ case object SURFACE extends XYZType
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 (x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = generateRandomText, `type`: XYZType = SCATTER3D,
- symbol: Opt[Symbol] = Blank, n: Opt[Int] = Blank) extends XYZSeries {
+ symbol: Opt[Symbol] = Blank, n: Opt[Int] = Blank) extends Series {
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
   (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {

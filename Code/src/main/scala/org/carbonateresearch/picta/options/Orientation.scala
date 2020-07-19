@@ -1,6 +1,6 @@
 package org.carbonateresearch.picta.options
 
-private[picta] sealed trait Orientation
+sealed trait Orientation
 
 case object VERTICAL extends Orientation {
   override def toString: String = "x"

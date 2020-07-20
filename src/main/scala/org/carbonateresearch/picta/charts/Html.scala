@@ -10,22 +10,28 @@ import os.Path
 import ujson.Value
 import upickle.default.transform
 
+/** this object provides methods that generate the HTML that the user sees */
 object Html {
-  /** this is the plotly.min.js script that is used to render the plots */
   private val plotlyJs: String = readFile("plotly.min.js")
   private val macyJs: String = readFile("macy.min.js")
   private val requireJs: String = readFile("require.min.js")
   private val cssStyle: String = readFile("style.css")
   private val useCDN: Boolean = testNetworkConnection()
 
-  /** A function to read files from the src resources folder */
+  /** A function to read files from the src resources folder
+   *
+   * @param file_name: A string that denotes the name of the file in the resources folder.
+   * @return: A string containing the contents of the file.
+   */
   private def readFile(file_name: String): String = {
     val is = getClass.getClassLoader.getResourceAsStream(file_name)
     scala.io.Source.fromInputStream(is).mkString
   }
 
   /** This function checks if an active network connection is available. It returns true if this is the case, false
-   * otherwise.
+   *  otherwise.
+   *
+   * @return: A boolean that indicates whether an active internet connection is available
    */
   private def testNetworkConnection(): Boolean = {
     var activeConnection: Boolean = true
@@ -43,11 +49,10 @@ object Html {
     activeConnection
   }
 
-  /**
-   * This sets the charts to be inline inside a Jupyter notebook.
+  /** This initializes the library to work with an Almond Jupyter Kernel.
    *
-   * @param publish (implicit): required to render the HTML in the almond notebook.
-   * @param kernel  (implicit): required to interact with the underlying Jupyter kernel instance.
+   * @param publish: required to render the HTML in the almond notebook.
+   * @param kernel: required to interact with the underlying Jupyter kernel instance.
    */
   def initNotebook()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
@@ -74,8 +79,13 @@ object Html {
     publish.html(html.toString)
   }
 
-    /** Creates the necessary headers when plotting in jvm mode */
-  private def createHeader(useCDN: Boolean, includeStyle: Boolean) = {
+  /** This function creates the necessary headers when plotting in JVM mode. *
+   *
+   * @param useCDN: A boolean to specify whether to use a CDN or read the libraries from the resources folder.
+   * @param includeStyle: A boolean to specify whether to use the custom CSS file.
+   * @return: A string containing the relevant HTML section to be injected into the rendered page.
+   */
+  private def createHeader(useCDN: Boolean, includeStyle: Boolean): String = {
     var header = new StringBuilder()
 
     useCDN match {
@@ -95,6 +105,15 @@ object Html {
     s"""<head> \n""" + header.mkString + s"""\n</head>\n"""
   }
 
+
+  /** A function that generates the HTML grid from the Canvas.
+   *
+   * @param rows: The number of rows in the Canvas subplot grid.
+   * @param columns: The number of columns in the Canvas subplot grid.
+   * @param grid: The grid containing the subplots we want to plot.
+   * @param id: The id of the canvas.
+   * @return
+   */
   private def createGridHTML(rows: Int, columns: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
@@ -132,6 +151,13 @@ object Html {
   }
 
 
+  /** This function assembles the various bits of HTML and writes it to an individual page.
+   *
+   * @param rows: Number of rows in the Canvas subplot grid.
+   * @param cols: Number of columns in the Canvas subplot.
+   * @param grid: The Canvas subplot grid.
+   * @param id: The unique id of the Canvas this grid corresponds to.
+   */
   private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 

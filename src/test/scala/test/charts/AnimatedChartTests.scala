@@ -1,8 +1,7 @@
-package org.carbonateresearch.picta.charts
+package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils.{createXYSeries, createXYZSeries, validateJson}
-import org.carbonateresearch.picta.options.{XAxis, YAxis}
-import org.carbonateresearch.picta.{Canvas, Chart, Layout}
+import org.carbonateresearch.picta.{Canvas, Chart, ChartLayout, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 
 class AnimationTests extends AnyFunSuite {
@@ -12,20 +11,17 @@ class AnimationTests extends AnyFunSuite {
   test("Animation.XY") {
     val xaxis = XAxis(title = "X Variable") setRange (0.0, 10.0)
     val yaxis = YAxis(title = "Y Variable") setRange (0.0, 10.0)
-    val layout = Layout("Animation.XY") setAxes(xaxis, yaxis)
     val series = createXYSeries(numberToCreate = 50, length = 30)
-    val chart = Chart(animated = true) setLayout layout addSeries series
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot()
+    val chart = Chart(animated = true) setTitle "Animation.XY" addSeries series addAxes(xaxis, yaxis)
+    if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
 
   test("Animation.XYZ") {
     val series = createXYZSeries(numberToCreate = 3, length = 3)
-    val layout = Layout("Animation.XYZ")
-    val chart = Chart(animated = true) setLayout layout addSeries series
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot()
+    val layout = ChartLayout()
+    val chart = Chart(animated = true) setTitle "Animation.XYZ"  addSeries series
+    if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }
 }

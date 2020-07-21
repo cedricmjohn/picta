@@ -1,7 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0m[32mChartUtilityTests:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.SetTitle[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.Axes[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.ShowLegend[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.setLegend[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.Axis.Composition[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Chart.SetGeo[0m[0m

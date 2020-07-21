@@ -1,7 +1,7 @@
-package org.carbonateresearch.picta.charts
+package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.{Axis, MapOptions, LatAxis, Legend, Line, LongAxis, RIGHT, VERTICAL, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{MapOptions, LatAxis, Legend, Line, LongAxis, VERTICAL}
 import org.carbonateresearch.picta.{MARKERS, Map, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -12,8 +12,7 @@ class ChartUtilityTests extends AnyFunSuite {
   test("Chart.SetTitle") {
     val series = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS
     val chart = Chart() addSeries series setTitle "Chart.SetTitle"
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
@@ -50,7 +49,7 @@ class ChartUtilityTests extends AnyFunSuite {
         .addSeries(series1, series2)
         .setTitle("Chart.setLegend")
         .showLegend(true)
-        .setLegend(Legend(orientation = VERTICAL))
+        .setLegend(orientation = VERTICAL)
 
       val canvas = Canvas() addCharts chart
       if (plotFlag) canvas.plot
@@ -58,9 +57,6 @@ class ChartUtilityTests extends AnyFunSuite {
     }
 
     test("Chart.Axis.Composition") {
-      // lets make use of the config:
-      val config = Config()
-
       // create the axes
       val xaxis1 = XAxis() setTitle "x axis 1"
       val yaxis1 = YAxis()
@@ -85,7 +81,7 @@ class ChartUtilityTests extends AnyFunSuite {
         .addSeries(series1, series2)
         .setTitle("Chart.Axis.Composition")
         .addAxes(xaxis1, yaxis1, xaxis2, yaxis2)
-        .setConfig(config)
+        .setConfig(false, false)
         .asMultiChart(1, 2)
 
       val canvas = Canvas() addCharts chart1
@@ -106,7 +102,7 @@ class ChartUtilityTests extends AnyFunSuite {
       val chart =
         Chart()
           .addSeries(series)
-          .setConfig(config)
+          .setConfig(false, false)
           .setMapOptions(geo)
           .setMargin(0, 0, 100, 0)
           .setDimensions(height = 400, width = 400)

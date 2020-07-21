@@ -7,27 +7,18 @@ import org.carbonateresearch.picta.options.{Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
 sealed trait HistNorm
-
 case object PERCENT extends HistNorm
-
 case object DENSITY extends HistNorm
-
 case object PROBABILITY_DENSITY extends HistNorm
-
 case object NUMBER extends HistNorm {
   override def toString: String = ""
 }
 
 sealed trait HistFunction
-
 case object COUNT extends HistFunction
-
 case object SUM extends HistFunction
-
 case object AVG extends HistFunction
-
 case object MIN extends HistFunction
-
 case object MAX extends HistFunction
 
 /** This class sets the histogram-specific options for a histogram.
@@ -43,11 +34,29 @@ final case class HistOptions(orientation: Orientation = VERTICAL, cumulative: Op
                              histnorm: Opt[HistNorm] = Blank, histfunc: Opt[HistFunction] = Blank,
                              xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank) extends Component {
 
-  def setCumulative(new_cumulative: Cumulative): HistOptions = this.copy(cumulative = new_cumulative)
+  def setOrientation(new_orientation: Orientation) = this.copy(orientation=new_orientation)
 
-  def setXbins(new_xbins: Xbins): HistOptions = this.copy(xbins = new_xbins)
+  def setCumulative(enabled: Opt[Boolean] = Blank, direction: Opt[Direction] = Blank, currentbin: Opt[CurrentBin] = Blank) = {
+    this.copy(cumulative = Cumulative(enabled, direction, currentbin))
+  }
 
-  def setYbins(new_ybins: Ybins): HistOptions = this.copy(ybins = new_ybins)
+  def setCumulative(new_cumulative: Cumulative) = this.copy(cumulative=new_cumulative)
+
+  def setHistNorm(new_histnorm: HistNorm) = this.copy(histnorm = new_histnorm)
+
+  def setHistFunc(new_histfunc: HistFunction) = this.copy(histfunc=new_histfunc)
+
+  def setXBins(new_xbins: Xbins): HistOptions = this.copy(xbins = new_xbins)
+
+  def setXbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) = {
+    this.copy(xbins = Xbins(start=start, end=end, size= size))
+  }
+
+  def setYBins(new_ybins: Ybins): HistOptions = this.copy(ybins = new_ybins)
+
+  def setYbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) = {
+    this.copy(ybins = Ybins(start=start, end=end, size= size))
+  }
 
   private[picta] def serialize(): Value = {
     val cumulative_ = cumulative.option match {

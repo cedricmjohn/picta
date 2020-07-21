@@ -2,7 +2,7 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
 import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.options.{Line, Marker, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{Line, Marker}
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
 
@@ -27,10 +27,30 @@ class MarkerTests extends AnyFunSuite {
     val y_axis = YAxis() setTitle "y variable"
 
     val series = XY(x_int, y_int, `type` = SCATTER, symbol = MARKERS) setMarker marker
-    val layout = Layout("Marker.Composition.WithTrace") setAxes(x_axis, y_axis)
-    val chart = Chart() addSeries series setLayout layout
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "Marker.Composition.WithTrace"
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
+
+  test("Marker.SetAppearance") {
+    // additional traces can simply be composed with an existing chart and added on
+    val series1 = XY(x_int, x_int) asType SCATTER setName "Scatter" drawSymbol MARKERS
+
+    // lets give the second series a red marker. Again we can 'compose' a marker using smaller components
+    val marker = (
+      Marker()
+        setSymbol "circle"
+        setColor "red"
+        setLine(width = 2, "black")
+    )
+
+    // we not put brackets in the 'addSeries' function to ensure that addSeries picks up the right series'
+    val chart = Chart() addSeries (series1 setMarker marker)
+
+    if (plotFlag) chart.plot
+
+    assert(validateJson(chart.serialize.toString))
+  }
+
+
 }

@@ -17,3 +17,32 @@ h3 {
     display: inline-block;
     text-align: center;
 }
+
+.picta-button {
+    background-color: #003E74;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 50px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.picta-button:hover {
+    background-color: #002147;
+    color: white;
+}
+
+.grid-title h1 {
+    font-family: "Open Sans", verdana, arial, sans-serif;
+    font-weight: normal;
+}
+
+.grid-container {
+    padding-top: 40px;
+    background: white;
+}

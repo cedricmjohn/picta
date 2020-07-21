@@ -5,12 +5,12 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
 import ujson.{Obj, Value}
 
+/** A trait that specifies how the Xbins and Ybins case classes should behave. */
 private[picta] trait HistBins extends Component {
-  /** The starting value for the bin. Defaults to the minimum data value. */
   val start: Opt[Double]
-  /** The ending value for the bin. Defaults to the maximum data value. */
+
   val end: Opt[Double]
-  /** Sets the size of each bin. */
+
   val size: Opt[Double]
 
   private[picta] def serialize: Value = {
@@ -33,6 +33,20 @@ private[picta] trait HistBins extends Component {
   }
 }
 
-final case class Xbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins
+/** A case class that represents the Xbins option.
+ *
+ * @param start: The starting value for the bin. If not provided, rendering will default to the minimum data value.
+ * @param end: The ending value for the bin. If not provided, rendering will default to the maximum data value.
+ * @param size: Sets the size of each bin.
+ */
+final case class Xbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins {
+  def setStart(new_start: Double) = this.copy(start = new_start)
+  def setEnd(new_end: Double) = this.copy(end = new_end)
+  def setSize(new_size: Double) = this.copy(size = new_size)
+}
 
-final case class Ybins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins
+final case class Ybins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins {
+  def setStart(new_start: Double) = this.copy(start = new_start)
+  def setEnd(new_end: Double) = this.copy(end = new_end)
+  def setSize(new_size: Double) = this.copy(size = new_size)
+}

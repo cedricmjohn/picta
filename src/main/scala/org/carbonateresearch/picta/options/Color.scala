@@ -7,14 +7,12 @@ import upickle.default._
  * components.
  */
 object ColorOptions {
-
   sealed trait Color[T] {
     def serialize(seq: List[T]): Value
   }
 
   /** The lower priority option is the List[String]; the compiler matches with this second. */
   trait LowPriorityOption {
-
     implicit object ColorString extends Color[String] {
       def serialize(seq: List[String]): Value = {
         seq.length match {
@@ -29,7 +27,6 @@ object ColorOptions {
    * an error is thrown.
    */
   object Color extends LowPriorityOption {
-
     implicit object ColorDouble extends Color[Double] {
       def serialize(seq: List[Double]): Value = {
         seq.length match {

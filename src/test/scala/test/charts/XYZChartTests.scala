@@ -1,4 +1,4 @@
-package org.carbonateresearch.picta.charts
+package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta._
 import org.carbonateresearch.picta.UnitTestUtils._
@@ -10,25 +10,22 @@ class XYZTests extends AnyFunSuite {
 
   test("XYZ.Scatter3D") {
     val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawSymbol MARKERS
-    val chart = Chart() addSeries series setLayout Layout("XYZ.Scatter3D") setConfig config
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "XYZ.Scatter3D" setConfig(false, false)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XYZ.line3D") {
     val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawSymbol LINES
-    val chart = Chart() addSeries series setLayout Layout("XYZ.line3D") setConfig config
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "XYZ.line3D" setConfig(false, false)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XYZ.Surface") {
     val series = XYZ(z=z_surface.flatten, n = z_surface(0).length) asType SURFACE
-    val chart = Chart() addSeries series setLayout Layout("XYZ.Surface") setConfig config
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "XYZ.Surface" setConfig(false, false)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
@@ -36,9 +33,8 @@ class XYZTests extends AnyFunSuite {
     val data = List(List(1, 2, 3), List(4, 5, 6))
     val n = data(0).length
     val series = XYZ(z=data.flatten, n=n) asType HEATMAP
-    val chart = Chart() addSeries List(series) setLayout Layout("XYZ.Heatmap") setConfig  config
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "XYZ.Heatmap" setConfig(false, false)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
@@ -47,9 +43,8 @@ class XYZTests extends AnyFunSuite {
     val y: List[Int] = List.range(1, 16)
     val z = z_surface.flatten
     val series = XYZ(x=x, y=y, z=z, n=z_surface(0).length) asType HEATMAP
-    val chart = Chart() addSeries List(series) setLayout Layout("XYZ.HeatmapWithXY")
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() addSeries series setTitle "XYZ.HeatmapWithXY"
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 

@@ -28,6 +28,11 @@ final case class Marker[T0: Color, T1: Color]
 
   def setLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
 
+  def setLine[Z: Color](width: Double = 0.5, color: Opt[Z] = Blank): Marker[T0, Z] = {
+    val new_line = Line(width, color.toList)
+    this.copy(line = new_line)
+  }
+
   def setSize(new_size: List[Int]): Marker[T0, T1] = this.copy(size = new_size)
 
   def setSize(new_size: Int*): Marker[T0, T1] = this.copy(size = new_size.toList)

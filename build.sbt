@@ -6,11 +6,14 @@ version := "0.1"
 
 scalaVersion := "2.13.2"
 
+// cross scala version with 2.12; give sequence of scala version
+// crossScalaVersions := Seq("2.12.12", "2.13.3")
+
 // documentation output
 target in Compile in doc := baseDirectory.value.getParentFile / "docs"
 
 // Get scaladoc to add rootdoc.txt content to index.html
-scalacOptions in (Compile,doc) ++= Seq("-doc-root-content", "rootdoc.txt")
+scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
 
 // unit testing
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"

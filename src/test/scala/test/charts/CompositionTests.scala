@@ -1,8 +1,8 @@
-package org.carbonateresearch.picta.charts
+package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.{Axis, Legend, RIGHT, YAxis}
+import org.carbonateresearch.picta.options.Legend
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -15,33 +15,33 @@ class CompositionTests extends AnyFunSuite {
 
   test("XY.Chart.Add.Traces") {
     val chart = Chart() addSeries(series1, series2)
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Chart.Add.Layout") {
-    val chart = Chart() setLayout Layout("XY.Chart.Add.Layout") addSeries(series1, series2)
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() setChartLayout ChartLayout("XY.Chart.Add.Layout") addSeries(series1, series2)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Chart.Add.Config") {
-    val chart = Chart() setConfig config setLayout Layout("XY.Chart.Add.Config") addSeries(series1, series2)
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot
+    val chart = Chart() setConfig(false, false) setTitle "XY.Chart.Add.Config" addSeries(series1, series2)
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XY.Layout.Add.Axis") {
     val series3 = XY(x_int, z_int) asType SCATTER drawSymbol MARKERS setAxis YAxis(2)
-    val layout = (picta.Layout("XY.Chart.Add.Config") setLegend Legend()
-      setAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT))
 
-    val chart = Chart() setConfig Config(false, false) addSeries(series1, series2, series3) setLayout layout
-    val canvas = Canvas() setChart(0, 0, chart)
-    if (plotFlag) canvas.plot
+    val layout = (
+      picta.ChartLayout("XY.Chart.Add.Config")
+        setLegend Legend()
+        setAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT)
+      )
+
+    val chart = Chart() setConfig(false, false) addSeries(series1, series2, series3) setChartLayout layout
+    if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 }

@@ -9,13 +9,9 @@ private[picta] trait Series extends Component {
 
 /** ENUM for series markers */
 sealed trait Symbol
-
 case object NONE extends Symbol
-
 case object LINES extends Symbol
-
 case object MARKERS extends Symbol
-
 case object TEXT extends Symbol
 
 case object LINES_MARKERS extends Symbol {

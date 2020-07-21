@@ -21,7 +21,10 @@ private[picta] trait MapAxis extends Component {
   )
 }
 
+final case class LatAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends MapAxis {
+  def setRange(new_range: List[Double]) = this.copy(range = new_range)
+}
 
-final case class LatAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends MapAxis
-
-final case class LongAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends MapAxis
+final case class LongAxis(range: List[Double], showgrid: Boolean = true, dtick: Int = 10) extends MapAxis {
+  def setRange(new_range: List[Double]) = this.copy(range = new_range)
+}

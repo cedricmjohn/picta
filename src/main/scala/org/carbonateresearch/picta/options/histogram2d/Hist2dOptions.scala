@@ -15,6 +15,12 @@ import ujson.{Obj, Value}
 final case class Hist2dOptions(ncontours: Opt[Int] = Blank, reversescale: Opt[Boolean] = Opt(Option(true)),
                          showscale: Opt[Boolean] = Blank) extends Component {
 
+  def setNContours(new_ncontours: Int) = this.copy(ncontours=new_ncontours)
+
+  def setReverseScale(new_reversescale: Boolean) = this.copy(reversescale = new_reversescale)
+
+  def setShowScale(new_showscale: Boolean) = this.copy(showscale = new_showscale)
+
   private[picta] def serialize: Value = {
     val ncountours_ = ncontours.option match {
       case Some(x) => Obj("ncontours" -> x)

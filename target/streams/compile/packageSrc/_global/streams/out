@@ -1,81 +1,87 @@
-[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1-sources.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/plotly.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	require.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/require.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/require.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	dom-to-image.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/dom-to-image.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	macy.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/macy.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/macy.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/layout.json[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/layout.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	style.css[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/style.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/style.css[0m
 [0m[[0m[0mdebug[0m] [0m[0m	traces.json[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/resources/traces.json[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/traces.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/Example.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/Example.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XYSeries.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/XYSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/XYSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Axis.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Axis.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Config.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Config.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Config.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Series.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Series.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Series.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/PieElement.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/PieElement.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Table.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Table.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Table.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Chart.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Chart.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Chart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XYZSeries.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/IO.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/IO.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/IO.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Canvas.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Canvas.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Canvas.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ChartLayout.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/ChartLayout.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/OptionWrapper.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/OptionWrapper.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/OptionWrapper.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Component.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Component.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Layout.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Layout.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/Component.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MapSeries.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/MapSeries.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/MapSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/MapOptions.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MapOptions.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MapOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/MapAxis.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MapAxis.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MapAxis.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Legend.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Legend.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Axis.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Axis.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Legend.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Margin.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Margin.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Margin.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ErrorBar.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/ErrorBar.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Line.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Line.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Line.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Orientation.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Orientation.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Orientation.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/MultiChart.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MultiChart.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/MultiChart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Color.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Color.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Color.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Marker.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Marker.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Marker.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Projection.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Projection.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/Projection.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/conus/Utils.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/charts/Html.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/charts/Html.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/render/Html.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/render/Html.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common/Monoid.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Monoid.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Monoid.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common/Utils.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Utils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Utils.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common/Serializer.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Serializer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/common/Serializer.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistBins.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/HistBins.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/HistBins.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/Cumulative.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/Cumulative.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/Cumulative.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistOptions.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/IdeaProjects/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/HistOptions.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/org/carbonateresearch/picta/options/histogram/HistOptions.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

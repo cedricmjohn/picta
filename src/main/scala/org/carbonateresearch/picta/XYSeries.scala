@@ -5,26 +5,21 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.{Axis, Marker, XAxis, YAxis}
-import org.carbonateresearch.picta.options.histogram.HistOptions
+import org.carbonateresearch.picta.options.{ErrorBar, Marker, Orientation, VERTICAL, XError, YError}
+import org.carbonateresearch.picta.options.histogram.{Cumulative, CurrentBin, Direction, HistFunction, HistNorm, HistOptions, Xbins, Ybins}
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
 
+import scala.collection.mutable.ListBuffer
+
 /** ENUM for the XY chart series types */
 private[picta] sealed trait XYType
-
 case object SCATTER extends XYType
-
 case object SCATTERGL extends XYType
-
 case object BAR extends XYType
-
 case object HISTOGRAM2DCONTOUR extends XYType
-
 case object HISTOGRAM extends XYType
-
 case object PIE extends XYType
-
 
 /**
  * TODO - Remove non-common components to another individual component
@@ -42,21 +37,45 @@ case object PIE extends XYType
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
  symbol: Opt[Symbol] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
- hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank) extends Series {
+ hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank, xerror: Opt[XError] = Blank,
+ yerror: Opt[YError] = Blank) extends Series {
 
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
 
   def setMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
 
-  def setHistOptions(new_hist_options: HistOptions): XY[T0, T1, T2, T3] = this.copy(hist_options = new_hist_options)
 
-  def setHist2dOptions(new_hist2d_options: Hist2dOptions): XY[T0, T1, T2, T3] = this.copy(hist2d_options = new_hist2d_options)
+  def setHistOptions(new_histoption: HistOptions) = this.copy(hist_options = new_histoption)
+
+  def setHistOptions(orientation: Orientation = VERTICAL, cumulative: Opt[Cumulative] = Blank,
+                     histnorm: Opt[HistNorm] = Blank, histfunc: Opt[HistFunction] = Blank,
+                     xbins: Opt[Xbins] = Blank, ybins: Opt[Ybins] = Blank): XY[T0, T1, T2, T3] = {
+
+    val new_hist_options = HistOptions(orientation, cumulative, histnorm, histfunc, xbins, ybins)
+    this.copy(hist_options = new_hist_options)
+  }
+
+  def setHist2dOptions(new_hist2doption: Hist2dOptions) = this.copy(hist2d_options = new_hist2doption)
+
+  def setHist2dOptions(ncontours: Opt[Int] = Blank, reversescale: Opt[Boolean] = Opt(Option(true)),
+                       showscale: Opt[Boolean] = Blank): XY[T0, T1, T2, T3] = {
+
+    val new_hist2d_options = Hist2dOptions(ncontours, reversescale=reversescale, showscale=showscale)
+    this.copy(hist2d_options = new_hist2d_options)
+  }
 
   def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
 
   def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis match {
       case x: XAxis => this.copy(xaxis = x)
       case y: YAxis => this.copy(yaxis = y)
+  }
+
+  def setErrorBars(error: ErrorBar) = {
+    error match {
+      case x: XError => this.copy(xerror = x)
+      case y: YError => this.copy(yerror = y)
+    }
   }
 
   def asType(new_type: XYType): XY[T0, T1, T2, T3] = this.copy(`type` = new_type)
@@ -91,7 +110,6 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def drawLinesMarkersText() = this.copy(symbol = LINES_MARKERS_TEXT)
 
-
   private[picta] def serialize: Value = {
     val meta = Obj(
       "name" -> name,
@@ -104,12 +122,14 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
     }
 
     val xaxis_ = xaxis.option match {
-      case Some(x) => if (`type` != PIE && x.getPosition() != "") Obj("xaxis" -> ("x" + x.getPosition())) else jsonMonoid.empty
+      case Some(x) =>
+        if (`type` != PIE && x.getPosition() != "") Obj("xaxis" -> ("x" + x.getPosition())) else jsonMonoid.empty
       case _ => jsonMonoid.empty
     }
 
     val yaxis_ = yaxis.option match {
-      case Some(x) => if (`type` != PIE && x.getPosition() != "") Obj("yaxis" -> ("y" + x.getPosition())) else jsonMonoid.empty
+      case Some(x) =>
+        if (`type` != PIE && x.getPosition() != "") Obj("yaxis" -> ("y" + x.getPosition())) else jsonMonoid.empty
       case _ => jsonMonoid.empty
     }
 
@@ -130,7 +150,17 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case None => jsonMonoid.empty
     }
 
-    List(meta, mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries)
+    val xerror_ = xerror.option match {
+      case Some(x) => Obj("error_x" -> x.serialize)
+      case None => jsonMonoid.empty
+    }
+
+    val yerror_ = yerror.option match {
+      case Some(x) => Obj("error_y" -> x.serialize)
+      case None => jsonMonoid.empty
+    }
+
+    List(meta, mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries, xerror_, yerror_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 
@@ -162,5 +192,25 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   private def getHistOrientation(hist_options: Opt[HistOptions]): String = hist_options.option match {
       case Some(x) => x.orientation.toString
       case _ => "x"
+  }
+}
+
+object XY {
+  /* Alternative constructor for a Pie chart which utilizes PieElements */
+  def apply[T2: Color, T3: Color]
+  (x: List[PieElement]): XY[Double, String, T2, T3] = {
+
+    val labels = ListBuffer[String]()
+    val values = ListBuffer[Double]()
+
+    for (i <- 0 until x.length) {
+      val name = x(i).name
+      val value = x(i).value
+
+      labels += name
+      values += value
+    }
+
+    XY[Double, String, T2, T3](x=values.toList, y=labels.toList, `type` = PIE)
   }
 }

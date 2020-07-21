@@ -5,10 +5,19 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
 import ujson.{Obj, Value}
 
+sealed trait Region
+case object WORLD extends Region
+case object USA extends Region
+case object EUROPE extends Region
+case object ASIA extends Region
+case object AFRICA extends Region
+case object NORTH_AMERICA extends Region
+case object SOUTH_AMERICA extends Region
+
 /**
  * @constructor: This is configures the Chart for a Map.
  * @param resolution     : This sets the resolution.
- * @param scope          : This determines the geographic scope for the map.
+ * @param region          : This determines the geographic scope for the map.
  * @param showland       : Specifies whether the land is shown on the map.
  * @param showlakes      : Specifies whether lakes are shown on the map.
  * @param landcolor      : Specifcies the landcolor.
@@ -18,9 +27,25 @@ import ujson.{Obj, Value}
  * @param lataxis        : This is the component that configures the lataxis.
  * @param longaxis       : This is the component that configures the longaxis.
  */
-final case class MapOptions(scope: Opt[String] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
+final case class MapOptions(region: Opt[Region] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
                             projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
                             showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
+
+  def setRegion(new_region: Region) = this.copy(region = new_region)
+
+  def setLandColor(new_landcolor: String) = this.copy(landcolor = new_landcolor)
+
+  def setLakeColor(new_lakecolor: String) = this.copy(lakecolor = new_lakecolor)
+
+  def setProject(new_projection: Projection) = this.copy(projection = new_projection)
+
+  def setShowLand(new_showland: Boolean) = this.copy(showland = new_showland)
+
+  def setShowLakes(new_showlakes: Boolean) = this.copy(showlakes = new_showlakes)
+
+  def setResolution(new_resolution: Int) = this.copy(resolution = new_resolution)
+
+  def setCoastLineWidth(new_coastlinewidth: Int) = this.copy(coastlinewidth = new_coastlinewidth)
 
   def setMapAxis(new_axis: LatAxis): MapOptions = this.copy(lataxis = new_axis)
 
@@ -36,8 +61,8 @@ final case class MapOptions(scope: Opt[String] = Blank, landcolor: Opt[String] =
       "coastlinewidth" -> coastlinewidth
     )
 
-    val scope_ = scope.option match {
-      case Some(x) => Obj("scope" -> x)
+    val scope_ = region.option match {
+      case Some(x) => Obj("scope" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }
 

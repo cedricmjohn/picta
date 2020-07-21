@@ -1,12 +1,14 @@
 package org.carbonateresearch.picta
 
+import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
-import org.carbonateresearch.picta.options.{Axis, MapOptions, Legend, Margin, MultiChart, XAxis, YAxis}
+import org.carbonateresearch.picta.options.{AUTO, Anchor, HORIZONTAL, LatAxis, Legend, LongAxis, MapOptions, Margin, MultiChart, Orientation, Projection, Region}
 import ujson.{Obj, Value}
 import upickle.default._
 
 final case class Chart
-(data: List[Series] = Nil, layout: Layout = Layout(), config: Config = Config(),
+(data: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
  animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = generateRandomText()) extends Component {
 
   private val frames_labels = animated match {
@@ -24,17 +26,31 @@ final case class Chart
 
   private[picta] val config_ : Value = config.serialize
 
+  def plot() = Canvas().addCharts(this).plot
+
+  def plotInline()(implicit publish: OutputHandler) = Canvas().addCharts(this).plotInline
+
   def addSeries(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
 
   def addSeries(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
 
-  def setLayout[Z0, Z1, Z2, Z3](new_layout: Layout): Chart= this.copy(layout = new_layout)
+  def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart= this.copy(layout = new_layout)
 
-  def setConfig(new_config: Config): Chart = this.copy(config = new_config)
+  def setConfig(responsive: Boolean = true, scrollZoom: Boolean = true): Chart = {
+    val new_config = Config(responsive=responsive, scrollZoom=scrollZoom)
+    this.copy(config = new_config)
+  }
 
   /* helper methods that make wrangling all the sub-components a lot easier */
   def setTitle(title: String): Chart = {
     val new_layout = this.layout setTitle title
+    this.copy(layout = new_layout)
+  }
+
+  def setLegend(x: Double = 0.5, y: Double = -0.2, orientation: Orientation = HORIZONTAL,
+                xanchor: Anchor = AUTO, yanchor: Anchor = AUTO) = {
+    val new_legend = Legend(x=x, y=y, orientation=orientation, xanchor=xanchor, yanchor=yanchor)
+    val new_layout = this.layout setLegend new_legend
     this.copy(layout = new_layout)
   }
 
@@ -53,13 +69,21 @@ final case class Chart
     this.copy(layout = new_layout)
   }
 
-  def setLegend(new_legend: Legend) = {
-    val new_layout = this.layout setLegend new_legend
+  def setMapOptions(new_map_options: MapOptions) = {
+    val new_layout = this.layout setMapOption new_map_options
     this.copy(layout = new_layout)
   }
 
-  def setMapOptions(new_map_options: MapOptions) = {
-    val new_layout = this.layout setMapOption new_map_options
+  def setMapOptions(region: Opt[Region] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
+                    projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
+                    showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) = {
+
+    val map_option =
+      MapOptions(region, landcolor=landcolor, lakecolor=lakecolor, projection, lataxis, longaxis,
+      showland=showland, showlakes=showlakes, resolution=resolution, coastlinewidth=coastlinewidth)
+
+    val new_layout = this.layout setMapOption map_option
+
     this.copy(layout = new_layout)
   }
 
@@ -80,7 +104,6 @@ final case class Chart
     val new_layout = this.layout setMultiChart MultiChart(rows, columns)
     this.copy(layout = new_layout)
   }
-
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 

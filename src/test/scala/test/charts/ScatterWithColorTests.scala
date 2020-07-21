@@ -1,4 +1,4 @@
-package org.carbonateresearch.picta.charts
+package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int, z_double}
 import org.carbonateresearch.picta.options.Marker
@@ -12,9 +12,8 @@ class ScatterWithColorTests extends AnyFunSuite {
   test("ScatterWithColor.Basic") {
     val marker = Marker() setColor z_double
     val series = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS setMarker marker
-    val chart = Chart() addSeries series setLayout Layout("ScatterWithColor.Basic")
-    val canvas = Canvas() addCharts chart
-    if (plotFlag) canvas.plot()
+    val chart = Chart() addSeries series setTitle "ScatterWithColor.Basic"
+    if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString))
   }
 }

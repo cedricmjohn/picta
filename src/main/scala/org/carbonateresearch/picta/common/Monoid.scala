@@ -21,12 +21,10 @@ private[picta] object Monoid {
 
   /** implicit class adding syntactic sugar for combine method.
    *
-   * @param x : this is the original Value type object
+   * @param x : this is the original object which we wish to combine with another
    */
   implicit class jsonMonoid[T](val x: T)(implicit m: Monoid[T]) {
-    /** syntactic sugar for the combine property of a Monoid
-     *
-     * @param y : this is the other Value type object we wish to combine 'x' with
+    /** @param y : this is the other Value type object we wish to combine 'x' with
      */
     def |+|(y: T): T = m.combine(x, y)
   }

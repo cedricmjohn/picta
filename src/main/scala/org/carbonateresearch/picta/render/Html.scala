@@ -6,7 +6,7 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.Chart
-import org.carbonateresearch.picta.OptionWrapper.{Opt, Blank}
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import os.Path
 import ujson.Value
 import upickle.default.transform

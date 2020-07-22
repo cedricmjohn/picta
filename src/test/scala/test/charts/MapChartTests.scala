@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta.render
 
-import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson}
+import org.carbonateresearch.picta.UnitTestUtils.validateJson
 import org.carbonateresearch.picta.options._
-import org.carbonateresearch.picta.{Canvas, Chart, LINES, ChartLayout, Map}
+import org.carbonateresearch.picta.{Chart, LINES, LatAxis, LongAxis, Map, MapOptions}
 import org.scalatest.funsuite.AnyFunSuite
 
 class MapTests extends AnyFunSuite {

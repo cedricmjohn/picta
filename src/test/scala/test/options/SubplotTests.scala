@@ -11,8 +11,8 @@ import org.scalatest.funsuite.AnyFunSuite
       val ax1 = XAxis() setTitle "x axis 1"
       val ax2 = XAxis(2) setTitle "x axis 2"
 
-      val series1 = XY(x = List(1, 2, 3), y = List(2, 4, 5)) asType SCATTER drawSymbol MARKERS
-      val series2 = XY(x = List(10, 12, 13), y = List(20, 31)) asType SCATTER drawSymbol MARKERS setAxes(XAxis(2), YAxis(2))
+      val series1 = XY(x = List(1, 2, 3), y = List(2, 4, 5)) asType SCATTER drawStyle MARKERS
+      val series2 = XY(x = List(10, 12, 13), y = List(20, 31)) asType SCATTER drawStyle MARKERS setAxes(XAxis(2), YAxis(2))
 
       val layout = ChartLayout(title = "XY.Axis.Composition") setAxes(ax1, ax2) setMultiChart MultiChart(1, 2)
 

@@ -8,30 +8,41 @@ sealed trait Side
 case object RIGHT extends Side
 case object LEFT extends Side
 
-/**
- * @constructor Creates a new Axis that the user can configure with different options
- * @param position   : This is used to give an axis a key. This is used by a Series to map to the corresponding axis.
- * @param title      : This sets the axis title.
- * @param side       : This determines which side the axis will be shown on.
- * @param overlaying : This is used if we have more than one axis, and want to set which base axis it is mirroring.
- * @param domain     : Determines the domain the Chart.
- * @param range      : Determines the range the Chart.
- * @param showgrid   : Determines whether the grid is shown on the Chart.
- * @param zeroline   : Determines whether the zeroline for each axis are shown.
- * @param showline   : Determines whether the axis is visibly drawn on the chart.
- */
 
+/** Specifies the behaviour of axes that are inside a plot. */
 trait Axis extends Component {
-  val orientation: String
+
+  /** Used by the Picta library for book-keeping purposes. Specifies the direction of the axis. */
+  private[picta] val orientation: String
+
+  /** Specifies where on the chart this axis is displayed. */
   val position: Opt[Int]
+
+  /** This sets the axis title. */
   val title: Opt[String]
+
+  /** This determines which side the axis will be shown on. */
   val side: Opt[Side]
+
+  /** This is used if we have more than one axis, and want to set which base axis it is mirroring. */
   val overlaying: Opt[Axis]
+
+  /** Specifies the domain the Chart. */
   val domain: Opt[(Double, Double)]
+
+  /** Specifies the range the Chart. */
   val range: Opt[(Double, Double)]
+
+  /** Specifies the format of the axis ticks. */
   val tickformat: Opt[String]
+
+  /** Specifies whether the grid is shown on the plot. */
   val showgrid: Boolean
+
+  /** Specifies whether the zeroline for each axis are shown. */
   val zeroline: Boolean
+
+  /** Specifies whether the axis is visibly drawn on the chart. */
   val showline: Boolean
 
   def setTitle(new_title: String): Axis

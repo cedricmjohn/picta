@@ -3,24 +3,33 @@ package org.carbonateresearch.picta
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
-import org.carbonateresearch.picta.options.{AUTO, Anchor, HORIZONTAL, LatAxis, Legend, LongAxis, MapOptions, Margin, MultiChart, Orientation, Projection, Region}
+import org.carbonateresearch.picta.options._
 import ujson.{Obj, Value}
 import upickle.default._
 
+/** This is a single chart that renders in a slot in the Canvas grid.
+ *
+ * @param series: A list of series we wish to plot on the page.
+ * @param layout: This specifies how the chart will be laid out.
+ * @param config: This configures the chart.
+ * @param animated: This specifies whether the chart is animated.
+ * @param transition_duration: If the chart is animated, this specifies the duration between the frames.
+ * @param id: This is used by the Picta library internally for book-keeping purposes.
+ */
 final case class Chart
-(data: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
+(series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
  animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = generateRandomText()) extends Component {
 
   private val frames_labels = animated match {
     case false => (Nil, Nil)
-    case true => createFramesAndLabels(data)
+    case true => createFramesAndLabels(series)
   }
 
   private[picta] val frames = transform(frames_labels._1).to(Value)
 
   private[picta] val labels = frames_labels._2
 
-  private[picta] val data_ : List[Value] = data.map(t => t.serialize)
+  private[picta] val data_ : List[Value] = series.map(t => t.serialize)
 
   private[picta] val layout_ : Value = layout.serialize
 
@@ -30,9 +39,9 @@ final case class Chart
 
   def plotInline()(implicit publish: OutputHandler) = Canvas().addCharts(this).plotInline
 
-  def addSeries(new_series: List[Series]): Chart = this.copy(data = new_series ::: data)
+  def addSeries(new_series: List[Series]): Chart = this.copy(series = new_series ::: series)
 
-  def addSeries(new_series: Series*): Chart = this.copy(data = new_series.toList ::: data)
+  def addSeries(new_series: Series*): Chart = this.copy(series = new_series.toList ::: series)
 
   def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart= this.copy(layout = new_layout)
 
@@ -47,8 +56,9 @@ final case class Chart
     this.copy(layout = new_layout)
   }
 
-  def setLegend(x: Double = 0.5, y: Double = -0.2, orientation: Orientation = HORIZONTAL,
-                xanchor: Anchor = AUTO, yanchor: Anchor = AUTO) = {
+  def setLegend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Orientation = HORIZONTAL,
+                xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) = {
+
     val new_legend = Legend(x=x, y=y, orientation=orientation, xanchor=xanchor, yanchor=yanchor)
     val new_layout = this.layout setLegend new_legend
     this.copy(layout = new_layout)

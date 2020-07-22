@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils.{createXYSeries, createXYZSeries, validateJson}
-import org.carbonateresearch.picta.{Canvas, Chart, ChartLayout, XAxis, YAxis}
+import org.carbonateresearch.picta.{Chart, ChartLayout, XAxis, YAxis}
 import org.scalatest.funsuite.AnyFunSuite
 
 class AnimationTests extends AnyFunSuite {

@@ -6,7 +6,7 @@ import com.github.tototoshi.csv.CSVReader
 
 import scala.collection.mutable
 
-/** Contains helper methods to work with common IO tasks */
+/** Contains helper methods to work with common IO tasks. */
 object IO {
   /** this grabs the working directory path as a string */
   def getWorkingDirectory: String = os.pwd.toString

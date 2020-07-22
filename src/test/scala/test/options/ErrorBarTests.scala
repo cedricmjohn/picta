@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.UnitTestUtils.validateJson
-import org.carbonateresearch.picta.options.{CONSTANT, DATA, PERCENT, SQRT, YError}
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.UnitTestUtils.validateJson
+import org.carbonateresearch.picta.options._
 import org.scalatest.funsuite.AnyFunSuite
 
 class ErrorBarTests extends AnyFunSuite {
@@ -13,7 +13,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = DATA, array = List(0.5, 0.5, 0.5))
       )
 
@@ -31,7 +31,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = PERCENT, value = 10.0)
       )
 
@@ -49,7 +49,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = CONSTANT, value = 10.0)
       )
 
@@ -67,7 +67,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = SQRT)
       )
 
@@ -87,7 +87,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series1 = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = DATA, array = List(0.5, 0.5, 0.5))
       )
 
@@ -102,7 +102,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series2 = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = PERCENT, value = 10.0)
       )
 
@@ -117,7 +117,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series3 = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = CONSTANT, value = 10.0)
       )
 
@@ -132,7 +132,7 @@ class ErrorBarTests extends AnyFunSuite {
     val series4 = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setErrorBars YError(mode = SQRT)
       )
 

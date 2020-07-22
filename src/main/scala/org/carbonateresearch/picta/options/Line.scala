@@ -6,8 +6,8 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
 
-/**
- * @constructor: This constructs the line for a chart.
+/** This case class specifies how a line is rendered for a plot.
+ *
  * @param width : Sets the line width.
  * @param color : Sets the color for the line.
  */

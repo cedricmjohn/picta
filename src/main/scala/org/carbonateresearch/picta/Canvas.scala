@@ -1,10 +1,18 @@
 package org.carbonateresearch.picta
 
 import almond.interpreter.api.OutputHandler
-import org.carbonateresearch.picta.OptionWrapper.{Opt, Blank}
-import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
+import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
 
+
+/** This is the top level object which renders and plots the charts. All other Components sit inside it.
+ *
+ * @param rows: Number of rows in the Canvas subplot grid.
+ * @param columns: Number of columns in the Canvas subplot grid.
+ * @param title: Title of the Canvas subplot grid.
+ * @param grid: The actual grid containing the chart data.
+ */
 final case class Canvas(rows: Int = 1, columns: Int = 1, title: Opt[String] = Blank, private val grid: Opt[Array[Chart]] = Blank) {
 
   if (rows == 1 && columns == 1 && title.getOrElse("") != "")

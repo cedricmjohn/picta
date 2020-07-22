@@ -2,30 +2,31 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper.Opt
 
+/** Specifies the behaviour for a Series component. */
 private[picta] trait Series extends Component {
-  val symbol: Opt[Symbol]
+  val style: Opt[Style]
   val name: String
 }
 
 /** ENUM for series markers */
-sealed trait Symbol
-case object NONE extends Symbol
-case object LINES extends Symbol
-case object MARKERS extends Symbol
-case object TEXT extends Symbol
+sealed trait Style
+case object NONE extends Style
+case object LINES extends Style
+case object MARKERS extends Style
+case object TEXT extends Style
 
-case object LINES_MARKERS extends Symbol {
+case object LINES_MARKERS extends Style {
   override def toString: String = "lines+markers"
 }
 
-case object LINES_TEXT extends Symbol {
+case object LINES_TEXT extends Style {
   override def toString: String = "lines+text"
 }
 
-case object MARKERS_TEXT extends Symbol {
+case object MARKERS_TEXT extends Style {
   override def toString: String = "markers+text"
 }
 
-case object LINES_MARKERS_TEXT extends Symbol {
+case object LINES_MARKERS_TEXT extends Style {
   override def toString: String = "lines+markers+text"
 }

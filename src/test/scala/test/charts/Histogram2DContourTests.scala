@@ -1,10 +1,8 @@
 package org.carbonateresearch.picta.render
 
-import org.carbonateresearch.picta.UnitTestUtils.{config, validateJson, x_double, y_double}
-import org.carbonateresearch.picta.options.histogram.HistOptions
-import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
-import org.carbonateresearch.picta.options.{HORIZONTAL, Marker}
+import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_double, y_double}
 import org.carbonateresearch.picta._
+import org.carbonateresearch.picta.options.{HORIZONTAL, Marker}
 import org.scalatest.funsuite.AnyFunSuite
 
 class Histogram2DContourTests extends AnyFunSuite {
@@ -21,7 +19,7 @@ class Histogram2DContourTests extends AnyFunSuite {
 
   test("XY.Histogram2dContour.WithDensity") {
     val marker = Marker() setColor "rgb(102,0,0)"
-    val series1 = XY(x_double, y_double) asType SCATTER drawSymbol MARKERS setName "points" setMarker marker
+    val series1 = XY(x_double, y_double) asType SCATTER drawStyle MARKERS setName "points" setMarker marker
 
     val series2 = (
       XY(x_double, y_double)

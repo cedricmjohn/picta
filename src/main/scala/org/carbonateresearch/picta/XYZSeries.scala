@@ -23,11 +23,11 @@ case object SURFACE extends XYZType
  * @param y           :
  * @param z           :
  * @param name :
- * @param symbol :
+ * @param style :
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 (x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = generateRandomText, `type`: XYZType = SCATTER3D,
- symbol: Opt[Symbol] = Blank, n: Opt[Int] = Blank) extends Series {
+ style: Opt[Style] = Blank, n: Opt[Int] = Blank) extends Series {
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
   (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {
@@ -77,15 +77,15 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 
   def asSurface: XYZ[T0, T1, T2] = this.copy(`type` = SURFACE)
 
-  def drawSymbol(mode: Symbol): XYZ[T0, T1, T2] = this.copy(symbol = mode)
+  def drawStyle(mode: Style): XYZ[T0, T1, T2] = this.copy(style = mode)
 
-  def drawLines: XYZ[T0, T1, T2] = this.copy(symbol = LINES)
+  def drawLines: XYZ[T0, T1, T2] = this.copy(style = LINES)
 
-  def drawMarkers: XYZ[T0, T1, T2] = this.copy(symbol = MARKERS)
+  def drawMarkers: XYZ[T0, T1, T2] = this.copy(style = MARKERS)
 
-  def drawTEXT: XYZ[T0, T1, T2] = this.copy(symbol = LINES)
+  def drawTEXT: XYZ[T0, T1, T2] = this.copy(style = LINES)
 
-  def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(symbol = LINES_MARKERS)
+  def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(style = LINES_MARKERS)
 
   private def createSeries(): Value =
     (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0)) match {
@@ -116,7 +116,7 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
   private[picta] def serialize(): Value = {
     val name_ = Obj("name" -> name, "type" -> `type`.toString.toLowerCase())
 
-    val mode_ = symbol.option match {
+    val mode_ = style.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }

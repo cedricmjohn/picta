@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import ujson.{Obj, Value}
 
 final case class Margin(l: Opt[Int] = Blank, r: Opt[Int] = Blank, t: Opt[Int] = Blank, b: Opt[Int] = Blank) extends Component {

@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt, Empty}
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Empty, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import ujson.Obj
 
@@ -11,11 +11,19 @@ case object CONSTANT extends ErrorMode
 case object SQRT extends ErrorMode
 case object DATA extends ErrorMode
 
+/** This specifies the behaviour of an error bar. */
 trait ErrorBar extends Component {
+
+  /** This specifies how the error is calculated. */
   val mode: ErrorMode
+
+  /** This specifies whether the error bar is visible on the rendered chart. */
   private[picta] val visible: Boolean
 
+  /** This is only used if we use SQRT, CONSTANT or PERCENT as mode - specifies the value of the error. */
   val value: Opt[Double]
+
+  /** This is only used if we want to pass in a per point error value. */
   val array: Opt[List[Double]]
 
   private[picta] def serialize = {

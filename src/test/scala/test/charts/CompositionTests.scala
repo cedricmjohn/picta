@@ -2,16 +2,16 @@ package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.Legend
 import org.carbonateresearch.picta._
+import org.carbonateresearch.picta.options.Legend
 import org.scalatest.funsuite.AnyFunSuite
 
 class CompositionTests extends AnyFunSuite {
 
   val plotFlag = false
 
-  val series1 = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS
-  val series2 = XY(x_int, y_double) asType SCATTER drawSymbol MARKERS
+  val series1 = XY(x_int, y_int) asType SCATTER drawStyle MARKERS
+  val series2 = XY(x_int, y_double) asType SCATTER drawStyle MARKERS
 
   test("XY.Chart.Add.Traces") {
     val chart = Chart() addSeries(series1, series2)
@@ -32,7 +32,7 @@ class CompositionTests extends AnyFunSuite {
   }
 
   test("XY.Layout.Add.Axis") {
-    val series3 = XY(x_int, z_int) asType SCATTER drawSymbol MARKERS setAxis YAxis(2)
+    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis YAxis(2)
 
     val layout = (
       picta.ChartLayout("XY.Chart.Add.Config")

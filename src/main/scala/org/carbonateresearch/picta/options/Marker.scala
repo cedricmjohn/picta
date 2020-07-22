@@ -7,6 +7,8 @@ import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
 
+import SymbolShape._
+
 /**
  * @constructor: Configures a Marker component for the chart.
  * @param symbol : Specifies what symbol the marker will use on the chart.
@@ -15,12 +17,12 @@ import ujson.{Obj, Value}
  *
  */
 final case class Marker[T0: Color, T1: Color]
-(symbol: Opt[String] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank, size: Opt[List[Int]] = Empty) extends Component {
+(symbol: Opt[SymbolShape] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank, size: Opt[List[Int]] = Empty) extends Component {
 
   private val c0 = implicitly[Color[T0]]
   private val s0 = implicitly[Serializer[Int]]
 
-  def setSymbol(new_symbol: String): Marker[T0, T1] = this.copy(symbol = new_symbol)
+  def setSymbol(new_symbol: SymbolShape): Marker[T0, T1] = this.copy(symbol = new_symbol)
 
   def setColor[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
 
@@ -39,7 +41,7 @@ final case class Marker[T0: Color, T1: Color]
 
   private[picta] def serialize(): Value = {
     val symbol_ = symbol.option match {
-      case Some(x) => Obj("symbol" -> x)
+      case Some(x) => Obj("symbol" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }
 

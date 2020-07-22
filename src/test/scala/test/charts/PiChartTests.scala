@@ -1,8 +1,7 @@
 package org.carbonateresearch.picta.render
 
-import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils.validateJson
-import org.carbonateresearch.picta.{Canvas, Chart, PIE, PieElement, XY}
+import org.carbonateresearch.picta.{Chart, PIE, PieElement, XY}
 import org.scalatest.funsuite.AnyFunSuite
 
 class PieChartTests extends AnyFunSuite {

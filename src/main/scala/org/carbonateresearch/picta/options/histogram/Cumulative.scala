@@ -18,6 +18,7 @@ case object HALF extends CurrentBin
 
 /** This is an option for a histogram chart. If enabled == true, it shows cumulative distribution by summing the bin
  * values.
+ *
  * @param enabled    : A boolean that specifies whether the cumulative distribution is enabled.
  * @param direction  : If 'increasing' will sum all prior bins. if 'decreasing' will sum the later bins.
  * @param currentbin : only applies of enabled == true. Sets whether the bin is included, excluded, or has half of its value

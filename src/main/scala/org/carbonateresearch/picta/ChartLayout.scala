@@ -15,7 +15,7 @@ case object X_UNIFIED extends HoverMode
 case object Y_UNIFIED extends HoverMode
 
 /**
- * @constructor: Specifies the layout for the chart.
+ * Specifies the layout for the chart.
  * @param title      : Sets the chart title.
  * @param axes        : Sets the chart title.
  * @param showlegend : Specifies whether to show the legend.
@@ -23,15 +23,14 @@ case object Y_UNIFIED extends HoverMode
  * @param legend     : This is the component that configures the legend for the chart..
  * @param height     : This sets the height for the chart.
  * @param width      : This sets the width for the chart.
- * @param mapoption        : this is used for Map charts only and configures the geo component for a Map chart..
+ * @param mapoption  : this is used for Map charts only and configures the geo component for a Map chart..
  */
 final case class ChartLayout
-(title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, autosize: Opt[Boolean] = Blank,
+(title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Legend = Legend(), autosize: Opt[Boolean] = Blank,
  margin: Opt[Margin] = Blank, mapoption: Opt[MapOptions] = Blank, multichart: Opt[MultiChart] = Blank, showlegend: Boolean = true,
  hovermode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600) extends Component {
 
   def setTitle(new_title: String) = this.copy(title = new_title)
-
 
   def setAxes(new_axes: List[Axis]): ChartLayout = axes.option match {
     case Some(lst) => this.copy(axes = new_axes ::: lst)
@@ -44,6 +43,13 @@ final case class ChartLayout
   }
 
   def setLegend(new_legend: Legend): ChartLayout = this.copy(legend = new_legend, showlegend = true)
+
+  def setLegend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Orientation = VERTICAL,
+                xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) = {
+
+    val new_legend = Legend(x=x, y=y, orientation=orientation, xanchor=xanchor, yanchor=yanchor)
+    this.copy(legend = new_legend)
+  }
 
   def setAutosize(new_autosize: Boolean) = this.copy(autosize = new_autosize)
 
@@ -64,7 +70,7 @@ final case class ChartLayout
   def setDimensions(new_height: Int, new_width: Int) = this.copy(height = new_height, width = new_width)
 
   private[picta] def serialize(): Value = {
-    val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode.toString.toLowerCase)
+    val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode.toString.toLowerCase, "legend" -> legend.serialize)
 
     val title_ = title.option match {
       case Some(x) => Obj("title" -> Obj("text" -> x))
@@ -72,11 +78,6 @@ final case class ChartLayout
     }
 
     val showlegend_ = Obj("showlegend" -> showlegend)
-
-    val legend_ = legend.option match {
-      case Some(x) => Obj("legend" -> x.serialize)
-      case None => jsonMonoid.empty
-    }
 
     val autosize_ = autosize.option match {
       case Some(x) => Obj("autosize" -> x)
@@ -98,7 +99,7 @@ final case class ChartLayout
       case None => jsonMonoid.empty
     }
 
-    val combined = List(dim, title_, showlegend_, legend_, autosize_, geo_, margin_, minigrid_)
+    val combined = List(dim, title_, showlegend_, autosize_, geo_, margin_, minigrid_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
     axes.option match {

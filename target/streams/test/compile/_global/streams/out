@@ -1,2 +1,187 @@
 [0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/project/target/.sbt-compilation-infos/code-test/.sbt-idea-lock ...[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/AnimatedChartTests.scala:15:81: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart(animated = true) setTitle "Animation.XY" addSeries series addAxes(xaxis, yaxis)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/BasicChartTests.scala:28:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries(series1, series2) setTitle "XY.Multiple"[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/ChartUtilityTests.scala:27:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        addSeries(series1, series2, series3)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/ChartUtilityTests.scala:31:27: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val canvas = Canvas() setChart(0, 0, chart)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/ChartUtilityTests.scala:39:27: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart = Chart() addSeries(series1, series2) setTitle "Chart.ShowLegend" showLegend true[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:17:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries(series1, series2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:23:75: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() setChartLayout ChartLayout("XY.Chart.Add.Layout") addSeries(series1, series2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:29:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() setConfig(false, false) setTitle "XY.Chart.Add.Config" addSeries(series1, series2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:29:80: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() setConfig(false, false) setTitle "XY.Chart.Add.Config" addSeries(series1, series2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:43:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() setConfig(false, false) addSeries(series1, series2, series3) setChartLayout layout[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/CompositionTests.scala:43:49: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() setConfig(false, false) addSeries(series1, series2, series3) setChartLayout layout[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/Histogram2DContourTests.scala:15:64: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setChartLayout layout setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/Histogram2DContourTests.scala:28:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setHist2dOptions(ncontours = 20, reversescale = false, showscale = true)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/Histogram2DContourTests.scala:31:73: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val series3 = XY(x = x_double) asType HISTOGRAM setName "histogram" setAxes(XAxis(), YAxis(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/Histogram2DContourTests.scala:40:86: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val layout = (ChartLayout("XY.Histogram2dContour.WithDensity", autosize = false) setAxes(ax1, ax2, ax3, ax4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/Histogram2DContourTests.scala:42:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries(series1, series2, series3, series4) setChartLayout layout[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/HistogramTests.scala:39:75: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setTitle "XY.Histogram.Advanced" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/HistogramTests.scala:68:25: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries(t1, t2) setTitle "XY.Histogram.SpecifyBinningFunction"[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/MapChartTests.scala:32:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setDimensions(height = 800, width = 800)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/MapChartTests.scala:34:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setMargin (0, 0, 0, 0)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/MapChartTests.scala:35:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/XYZChartTests.scala:13:67: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setTitle "XYZ.Scatter3D" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/XYZChartTests.scala:20:64: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setTitle "XYZ.line3D" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/XYZChartTests.scala:27:65: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setTitle "XYZ.Surface" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/XYZChartTests.scala:36:65: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries series setTitle "XYZ.Heatmap" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ChartLayoutTests.scala:32:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        addSeries(series1, series2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ChartLayoutTests.scala:34:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        addAxes(ax0, ax1, ax2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ChartLayoutTests.scala:35:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ErrorBarTests.scala:146:41: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val canvas = Canvas(2, 2, "Errors") addCharts (chart1, chart2, chart3, chart4)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/LineTests.scala:20:36: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val line = Line() setWidth 0.1 setColor("rgb(255, 255, 255, 1)", "rgb(255, 255, 255, 1)")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/LineTests.scala:28:67: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val chart = Chart() addSeries data setTitle "Line.withMarker" setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/MarkerTests.scala:45:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setLine(width = 2, "black")[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:15:97: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val series2 = XY(x = List(10, 12, 13), y = List(20, 31)) asType SCATTER drawStyle MARKERS setAxes(XAxis(2), YAxis(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:17:63: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val layout = ChartLayout(title = "XY.Axis.Composition") setAxes(ax1, ax2) setMultiChart MultiChart(1, 2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:19:28: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart1 = Chart() addSeries(series1, series2) setChartLayout layout setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:19:78: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart1 = Chart() addSeries(series1, series2) setChartLayout layout setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:20:28: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart2 = Chart() addSeries(series2, series1) setChartLayout layout setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:20:78: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart2 = Chart() addSeries(series2, series1) setChartLayout layout setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:22:33: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val canvas = Canvas(1, 2) addCharts(chart1, chart2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:41:74: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart1 = Chart() addSeries XY(x_double, y_double).setName("a") addAxes(ax1, ax6)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:42:71: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart2 = Chart() addSeries XY(y_int, y_double).setName("b") addAxes(ax2, ax7)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:43:71: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart3 = Chart() addSeries XY(x_int, y_double).setName("c") addAxes(ax3, ax8)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:44:71: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val chart4 = Chart() addSeries XY(z_int, z_double).setName("d") addAxes(ax4, ax9)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:80:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          addAxes(ax1, ax6)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:81:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setMargin(l=50, r=30, t=50, b=50)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:88:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          addAxes(ax2, ax7)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:89:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setMargin(l=50, r=50, t=50, b=50)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:96:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          addAxes(ax3, ax8)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:97:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setMargin(l=50, r=30, t=50, b=50)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:105:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          addAxes(ax1, ax6, ax2, ax7) // these axes come from above[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:106:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setConfig(false, false)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/HistogramTests.scala:45:48: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val series = XY(x_random) asType HISTOGRAM setHistOptions(histnorm = NUMBER, cumulative = Cumulative(true))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/charts/HistogramTests.scala:55:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setHistOptions(histnorm = NUMBER, xbins = Xbins(start = 0.5, end = 3.0, size = 0.05))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ErrorBarTests.scala:98:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ErrorBarTests.scala:113:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ErrorBarTests.scala:128:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/ErrorBarTests.scala:143:9: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:78:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:86:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:94:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/test/scala/test/options/SubplotTests.scala:102:11: multiarg infix syntax looks like a tuple and will be deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          setDimensions(width = dim, height = dim)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m50 deprecations (since 2.13.3); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m62 warnings found[0m
 [0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/project/target/.sbt-compilation-infos/code-test/.sbt-idea-lock.[0m

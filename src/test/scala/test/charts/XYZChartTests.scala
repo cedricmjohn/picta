@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.render
 
-import org.carbonateresearch.picta._
 import org.carbonateresearch.picta.UnitTestUtils._
+import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
 class XYZTests extends AnyFunSuite {
@@ -9,14 +9,14 @@ class XYZTests extends AnyFunSuite {
   val plotFlag = false
 
   test("XYZ.Scatter3D") {
-    val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawSymbol MARKERS
+    val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawStyle MARKERS
     val chart = Chart() addSeries series setTitle "XYZ.Scatter3D" setConfig(false, false)
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("XYZ.line3D") {
-    val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawSymbol LINES
+    val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawStyle LINES
     val chart = Chart() addSeries series setTitle "XYZ.line3D" setConfig(false, false)
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

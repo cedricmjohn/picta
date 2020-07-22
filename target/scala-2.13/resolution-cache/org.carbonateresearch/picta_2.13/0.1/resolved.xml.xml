@@ -30,9 +30,9 @@
     <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="scala-tool-&gt;default"> </dependency>
     <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="scala-tool-&gt;optional(default)"> </dependency>
     <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="compile-&gt;default(compile)"> </dependency>
+    <dependency org="org.carbonateresearch" name="conus_2.13" rev="0.2.0" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="org.scalactic" name="scalactic_2.13" rev="3.1.2" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="org.scalatest" name="scalatest_2.13" rev="3.1.2" conf="test-&gt;default(compile)"> </dependency>
-    <dependency org="org.carbonateresearch" name="conus_2.13" rev="0.2.0" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="com.lihaoyi" name="upickle_2.13" rev="1.1.0" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="com.github.jupyter" name="jvm-repr" rev="0.4.0" conf="compile-&gt;default(compile)"> </dependency>
     <dependency org="sh.almond" name="interpreter-api_2.13" rev="0.10.0" conf="compile-&gt;default(compile)"> </dependency>

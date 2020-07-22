@@ -1,6 +1,6 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
+import org.carbonateresearch.picta.UnitTestUtils.validateJson
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
 
@@ -20,7 +20,7 @@ class AxisTests extends AnyFunSuite {
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
         asType SCATTER
-        drawSymbol MARKERS
+        drawStyle MARKERS
         setAxis yaxis
       )
 

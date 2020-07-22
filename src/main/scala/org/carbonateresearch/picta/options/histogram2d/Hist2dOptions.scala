@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta.options.histogram2d
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
 /**

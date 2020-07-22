@@ -5,8 +5,9 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.{ErrorBar, Marker, Orientation, VERTICAL, XError, YError}
-import org.carbonateresearch.picta.options.histogram.{Cumulative, CurrentBin, Direction, HistFunction, HistNorm, HistOptions, Xbins, Ybins}
+import org.carbonateresearch.picta.options.SymbolShape.SymbolShape
+import org.carbonateresearch.picta.options._
+import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
 
@@ -22,21 +23,27 @@ case object HISTOGRAM extends XYType
 case object PIE extends XYType
 
 /**
- * TODO - Remove non-common components to another individual component
  *
- * @constructor:
- * @param x           :
- * @param y           :
- * @param name
- * @param symbol :
- * @param `type` :
- * @param xaxis       :
- * @param yaxis       :
- * @param marker      :
+ * @param x: The data series for the first dimension.
+ * @param y: The data series for the second dimension.
+ * @param name: The name for the series.
+ * @param `type`: The type for the series, which determines how it is rendered.
+ * @param style: The symbol
+ * @param xaxis
+ * @param yaxis
+ * @param marker
+ * @param hist_options
+ * @param hist2d_options
+ * @param xerror
+ * @param yerror
+ * @tparam T0
+ * @tparam T1
+ * @tparam T2
+ * @tparam T3
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
- symbol: Opt[Symbol] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
+ style: Opt[Style] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank, xerror: Opt[XError] = Blank,
  yerror: Opt[YError] = Blank) extends Series {
 
@@ -44,6 +51,12 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def setMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
 
+  def setMarker[Z0: Color, Z1: Color]
+  (symbol: Opt[SymbolShape] = Blank, color: Opt[List[Z0]] = Empty, line: Opt[Line[Z1]] = Blank,
+   size: Opt[List[Int]] = Empty): XY[T0, T1, Z0, Z1] = {
+    val new_marker = Marker(symbol, color, line, size)
+    this.copy(marker = new_marker)
+  }
 
   def setHistOptions(new_histoption: HistOptions) = this.copy(hist_options = new_histoption)
 
@@ -92,23 +105,23 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 
   def asPIE(): XY[T0, T1, T2, T3] = this.copy(`type` = PIE)
 
-  def drawSymbol(new_mode: Symbol) = this.copy(symbol = new_mode)
+  def drawStyle(new_mode: Style) = this.copy(style = new_mode)
 
-  def drawLines() = this.copy(symbol = LINES)
+  def drawLines() = this.copy(style = LINES)
 
-  def drawMarkers() = this.copy(symbol = MARKERS)
+  def drawMarkers() = this.copy(style = MARKERS)
 
-  def drawLinesMarkers() = this.copy(symbol = LINES_MARKERS)
+  def drawLinesMarkers() = this.copy(style = LINES_MARKERS)
 
-  def drawText() = this.copy(symbol = TEXT)
+  def drawText() = this.copy(style = TEXT)
 
-  def drawLinesText() = this.copy(symbol = LINES_TEXT)
+  def drawLinesText() = this.copy(style = LINES_TEXT)
 
-  def drawMarkersText() = this.copy(symbol = MARKERS_TEXT)
+  def drawMarkersText() = this.copy(style = MARKERS_TEXT)
 
-  def drawNone() = this.copy(symbol = NONE)
+  def drawNone() = this.copy(style = NONE)
 
-  def drawLinesMarkersText() = this.copy(symbol = LINES_MARKERS_TEXT)
+  def drawLinesMarkersText() = this.copy(style = LINES_MARKERS_TEXT)
 
   private[picta] def serialize: Value = {
     val meta = Obj(
@@ -116,7 +129,7 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       "type" -> `type`.toString.toLowerCase,
     )
 
-    val mode_ = symbol.option match {
+    val mode_ = style.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }

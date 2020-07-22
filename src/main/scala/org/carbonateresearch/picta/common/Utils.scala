@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.common
 
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.{MARKERS, SCATTER, Series, XY}
+import org.carbonateresearch.picta.{MARKERS, SCATTER, XY}
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -71,14 +71,14 @@ object Utils {
     category_labels.foreach(category => {
       val x = data_map(axis_labels(0))(category).toList
       val y = data_map(axis_labels(1))(category).toList
-      series_set += XY(x = x, y = y, `type` = SCATTER, symbol = MARKERS, name = category)
+      series_set += XY(x = x, y = y, `type` = SCATTER, style = MARKERS, name = category)
     })
     series_set.toList
   }
 
   /** Generates a random alphanumeric string.
    *
-   * @return: Random alphanumeric string.
+   * @return: Random alphanumeric string of length 10.
    */
   private[picta] def generateRandomText(): String = scala.util.Random.alphanumeric.take(10).mkString
 
@@ -93,26 +93,5 @@ object Utils {
       x <- List.range(0, dimx)
       y <- List.range(0, dimy)
     } yield Seq(x, y)
-  }
-
-  /** traverse and update a Value object -  assumes no repeated keys - not a pure function as it modifies in place
-   *
-   * @param v: The value object to traverse
-   * @param parent: The parent key of the object we are looknig to update.
-   * @param child: The child key of the object we are looking to update.
-   * @param z: The value we wish to update.
-   * @return: A boolean indicating whether an update took place.
-   */
-  private[picta] def update(v: ujson.Value, parent: String, child: String, z: ujson.Value): Boolean = v match {
-    case a: ujson.Arr =>
-      a.arr.foreach(e => update(e, parent, child, z))
-      true
-    case o: ujson.Obj =>
-      o.obj.foreachEntry((key, value) => {
-        if ((key == parent) && (value.obj.keySet contains child)) value.obj(child) = z
-        else update(value, parent, child, z)
-      })
-      true
-    case _ => true
   }
 }

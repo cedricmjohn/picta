@@ -2,8 +2,8 @@ package org.carbonateresearch.picta.conus
 
 import org.carbonateresearch.conus.ModelVariable
 import org.carbonateresearch.conus.common.SingleModelResults
-import org.carbonateresearch.picta.{Series, XY}
 import org.carbonateresearch.picta.common.Serializer
+import org.carbonateresearch.picta.{Series, XY}
 
 import scala.collection.mutable.ListBuffer
 

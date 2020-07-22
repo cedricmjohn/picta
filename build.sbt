@@ -7,10 +7,13 @@ version := "0.1"
 scalaVersion := "2.13.2"
 
 // cross scala version with 2.12; give sequence of scala version
-// crossScalaVersions := Seq("2.12.12", "2.13.3")
+ crossScalaVersions := Seq("2.12.12", "2.13.3")
 
 // documentation output
 target in Compile in doc := baseDirectory.value.getParentFile / "docs"
+
+// conus library
+libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.2.0"
 
 // Get scaladoc to add rootdoc.txt content to index.html
 scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
@@ -19,8 +22,6 @@ scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % "test"
 
-// conus library
-libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.2.0"
 
 // JSON encoding / decoding
 libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"

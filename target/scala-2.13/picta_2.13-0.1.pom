@@ -17,6 +17,11 @@
             <version>2.13.2</version>
         </dependency>
         <dependency>
+            <groupId>org.carbonateresearch</groupId>
+            <artifactId>conus_2.13</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.scalactic</groupId>
             <artifactId>scalactic_2.13</artifactId>
             <version>3.1.2</version>
@@ -26,11 +31,6 @@
             <artifactId>scalatest_2.13</artifactId>
             <version>3.1.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.carbonateresearch</groupId>
-            <artifactId>conus_2.13</artifactId>
-            <version>0.2.0</version>
         </dependency>
         <dependency>
             <groupId>com.lihaoyi</groupId>

@@ -9,7 +9,7 @@ class BasicChartTests extends AnyFunSuite {
   val plotFlag = false
 
   test("XY.Scatter") {
-    val series = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS
+    val series = XY(x_int, y_int) asType SCATTER drawStyle MARKERS
     val chart = Chart() addSeries series setTitle "XY.Scatter"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -24,7 +24,7 @@ class BasicChartTests extends AnyFunSuite {
 
   test("XY.Multiple") {
     val series1 = XY(x_int, y_int) asType BAR
-    val series2 = XY(x_int, y_double) asType SCATTER drawSymbol MARKERS setName "test"
+    val series2 = XY(x_int, y_double) asType SCATTER drawStyle MARKERS setName "test"
     val chart = Chart() addSeries(series1, series2) setTitle "XY.Multiple"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

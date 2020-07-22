@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils._
-import org.carbonateresearch.picta.options.{MapOptions, LatAxis, Legend, Line, LongAxis, VERTICAL}
+import org.carbonateresearch.picta.options.{RIGHT => _, _}
 import org.carbonateresearch.picta.{MARKERS, Map, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -10,16 +10,16 @@ class ChartUtilityTests extends AnyFunSuite {
   val plotFlag = false
 
   test("Chart.SetTitle") {
-    val series = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS
+    val series = XY(x_int, y_int) asType SCATTER drawStyle MARKERS
     val chart = Chart() addSeries series setTitle "Chart.SetTitle"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
 
   test("Chart.Axes") {
-    val series1 = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS
-    val series2 = XY(x_int, y_double) asType SCATTER drawSymbol MARKERS
-    val series3 = XY(x_int, z_int) asType SCATTER drawSymbol MARKERS setAxis YAxis(2)
+    val series1 = XY(x_int, y_int) asType SCATTER drawStyle MARKERS
+    val series2 = XY(x_int, y_double) asType SCATTER drawStyle MARKERS
+    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis YAxis(2)
 
     val chart = (
       Chart()
@@ -34,8 +34,8 @@ class ChartUtilityTests extends AnyFunSuite {
   }
 
     test("Chart.ShowLegend") {
-      val series1 = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS setName "First Series"
-      val series2 = XY(y_int, x_int) asType SCATTER drawSymbol MARKERS setName "Second Series"
+      val series1 = XY(x_int, y_int) asType SCATTER drawStyle MARKERS setName "First Series"
+      val series2 = XY(y_int, x_int) asType SCATTER drawStyle MARKERS setName "Second Series"
       val chart = Chart() addSeries(series1, series2) setTitle "Chart.ShowLegend" showLegend true
       val canvas = Canvas() addCharts chart
       if (plotFlag) canvas.plot
@@ -43,8 +43,8 @@ class ChartUtilityTests extends AnyFunSuite {
     }
 
     test("Chart.setLegend") {
-      val series1 = XY(x_int, y_int) asType SCATTER drawSymbol MARKERS setName "First Series"
-      val series2 = XY(y_int, x_int) asType SCATTER drawSymbol MARKERS setName "Second Series"
+      val series1 = XY(x_int, y_int) asType SCATTER drawStyle MARKERS setName "First Series"
+      val series2 = XY(y_int, x_int) asType SCATTER drawStyle MARKERS setName "Second Series"
       val chart = Chart()
         .addSeries(series1, series2)
         .setTitle("Chart.setLegend")
@@ -67,13 +67,13 @@ class ChartUtilityTests extends AnyFunSuite {
       val series1 = (
         XY(x = List(1, 2, 3), y = List(2, 4, 5))
           asType SCATTER
-          drawSymbol MARKERS
+          drawStyle MARKERS
         )
 
       val series2 = (
         XY(x = x_double, y = y_double)
           .asType(SCATTER)
-          .drawSymbol(MARKERS)
+          .drawStyle(MARKERS)
           .setAxes(xaxis2, yaxis2)
         )
 

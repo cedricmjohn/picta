@@ -1,6 +1,5 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -24,8 +23,8 @@ class ChartLayoutTests extends AnyFunSuite {
     val ax2 = YAxis(position = 2, title = "y axis 2", side = RIGHT, overlaying = YAxis())
 
     // 2. define the data to display on the chart
-    val series1 = XY(x = x_int, y = y_double) asType SCATTER drawSymbol MARKERS setAxis YAxis(2)
-    val series2 = XY(x = x_double, y = y_int) asType SCATTER drawSymbol MARKERS
+    val series1 = XY(x = x_int, y = y_double) asType SCATTER drawStyle MARKERS setAxis YAxis(2)
+    val series2 = XY(x = x_double, y = y_int) asType SCATTER drawStyle MARKERS
 
     // 3. combine elements into a single chart
     val chart = (

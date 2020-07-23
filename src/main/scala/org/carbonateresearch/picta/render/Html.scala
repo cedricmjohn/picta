@@ -66,22 +66,21 @@ object Html {
       s"""
          |<style> $cssStyle </style>
          |<script> $requireJs </script>
-         |<script> $mergeImageJs </script>
          |<script>
          | require.config({
          |   paths: {
          |     'plotly': "https://cdn.plot.ly/plotly-latest.min",
-         |     'macy': "https://cdn.jsdelivr.net/npm/macy@2.5.1/dist/macy.min"
+         |     'macy': "https://cdn.jsdelivr.net/npm/macy@2.5.1/dist/macy.min",
+         |     'merge': "https://unpkg.com/merge-images@2.0.0/dist/index.umd"
          |   },
          | })
-         |require( ['plotly', 'macy'], function(Plotly, Macy) {
+         |require( ['plotly', 'macy', 'merge'], function(Plotly, Macy, mergeImages) {
          | window.Plotly = Plotly;
          | window.Macy = Macy;
+         | window.mergeImages = mergeImages;
          |})
          |</script>
          |""".stripMargin
-
-
 
     publish.html(html.toString)
   }
@@ -113,7 +112,6 @@ object Html {
 
     s"""<head> \n""" + header.mkString + s"""\n</head>\n"""
   }
-
 
   /** A function that generates the HTML grid from the Canvas.
    *

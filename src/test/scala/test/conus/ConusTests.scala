@@ -3,7 +3,7 @@
 //import org.carbonateresearch.picta.ConusTests._
 //import org.carbonateresearch.picta.UnitTestUtils.validateJson
 //import org.carbonateresearch.picta.conus.Utils._
-//import org.carbonateresearch.picta.options.VERTICAL
+//import org.carbonateresearch.picta.VERTICAL
 //import org.scalatest.funsuite.AnyFunSuite
 //
 //class ConusTests extends AnyFunSuite {

@@ -82,14 +82,10 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption$ColorString$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/DATA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/DATA$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/VERTICAL.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/VERTICAL.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/XError.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/XError.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Anchor.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/Anchor.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/VERTICAL$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/VERTICAL$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/PERCENT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/PERCENT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Legend$.class[0m
@@ -100,14 +96,10 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d/Hist2dOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/HORIZONTAL.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/HORIZONTAL.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/SQRT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/SQRT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CENTER.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/CENTER.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/HORIZONTAL$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/HORIZONTAL$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Margin.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/Margin.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/YError.class[0m
@@ -124,8 +116,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/RIGHT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/RIGHT$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Orientation.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/Orientation.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Line$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/options/Line$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ErrorBar.class[0m
@@ -358,6 +348,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$ONE_HUNDRED_AND_TWENTY_EIGHT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/EUROPE.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/EUROPE.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/VERTICAL.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/VERTICAL.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THIRTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THIRTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MARKERS.class[0m
@@ -430,6 +422,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/HAMMER.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MOLLWEIDE.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/MOLLWEIDE.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/VERTICAL$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/VERTICAL$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/NONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/NONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$STAR_SQUARE_OPEN_DOT$.class[0m
@@ -580,6 +574,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THIRTY_TWO$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$X_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$X_OPEN$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HORIZONTAL.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/HORIZONTAL.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THIRTY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THIRTY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_FOUR$.class[0m
@@ -616,6 +612,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/NATURAL_EARTH.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$STAR_TRIANGLE_UP_OPEN_DOT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$STAR_TRIANGLE_UP_OPEN_DOT$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HORIZONTAL$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/HORIZONTAL$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_TWENTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_TWENTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Series.class[0m
@@ -850,6 +848,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$DIAMOND_X_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/RIGHT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/RIGHT$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Orientation.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/Orientation.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ROBINSON$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/ROBINSON$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SCATTERGL.class[0m

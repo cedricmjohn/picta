@@ -2,7 +2,7 @@ package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_double, y_double}
 import org.carbonateresearch.picta._
-import org.carbonateresearch.picta.options.{HORIZONTAL, Marker}
+import org.carbonateresearch.picta.options.Marker
 import org.scalatest.funsuite.AnyFunSuite
 
 class Histogram2DContourTests extends AnyFunSuite {

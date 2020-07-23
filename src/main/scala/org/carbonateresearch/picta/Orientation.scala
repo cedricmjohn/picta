@@ -1,4 +1,4 @@
-package org.carbonateresearch.picta.options
+package org.carbonateresearch.picta
 
 sealed trait Orientation
 

@@ -1,16 +1,9 @@
 package org.carbonateresearch.picta.options
 
-import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.OptionWrapper.{Opt, Blank}
+import org.carbonateresearch.picta.{Component, HORIZONTAL, Orientation, VERTICAL}
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import ujson.{Obj, Value}
-
-sealed trait Anchor
-case object LEFT extends Anchor
-case object RIGHT extends Anchor
-case object CENTER extends Anchor
-case object AUTO extends Anchor
-
 
 /** This configures the legend for a chart.
  *

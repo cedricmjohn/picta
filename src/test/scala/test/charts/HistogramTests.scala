@@ -2,8 +2,8 @@ package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, x_random}
 import org.carbonateresearch.picta.options.histogram._
-import org.carbonateresearch.picta.options.{HORIZONTAL, Line, Marker}
-import org.carbonateresearch.picta.{Chart, ChartLayout, HISTOGRAM, XY}
+import org.carbonateresearch.picta.options.{Line, Marker}
+import org.carbonateresearch.picta.{Chart, ChartLayout, HISTOGRAM, HORIZONTAL, XY}
 import org.scalatest.funsuite.AnyFunSuite
 
 class HistogramTests extends AnyFunSuite {

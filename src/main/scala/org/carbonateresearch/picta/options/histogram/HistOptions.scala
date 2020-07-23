@@ -1,9 +1,8 @@
 package org.carbonateresearch.picta.options.histogram
 
-import org.carbonateresearch.picta.Component
+import org.carbonateresearch.picta.{Component, Orientation, VERTICAL}
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.options.{Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
 sealed trait HistNorm

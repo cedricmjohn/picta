@@ -30,6 +30,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LEFT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIVE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Orientation.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Orientation.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_DOT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_DOT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_OPEN_DOT$.html[0m
@@ -62,8 +64,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/YError.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/LEFT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/LEFT$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Orientation.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Orientation.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ErrorBar.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ErrorBar.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/PERCENT$.html[0m
@@ -86,14 +86,10 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption$ColorString$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CENTER$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/CENTER$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/HORIZONTAL$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/HORIZONTAL$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Margin.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Margin.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/VERTICAL$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/VERTICAL$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Marker.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Marker.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/DATA$.html[0m
@@ -554,6 +550,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/common/Utils$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HORIZONTAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HORIZONTAL$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY_FOUR$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY_FOUR$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ASTERISK_OPEN$.html[0m
@@ -730,6 +728,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_FOUR$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/VERTICAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/VERTICAL$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_TWO$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_TWO$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NW_OPEN$.html[0m

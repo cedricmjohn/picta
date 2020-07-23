@@ -5,7 +5,6 @@ import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
 
-
 /** This is the top level object which renders and plots the charts. All other Components sit inside it.
  *
  * @param rows: Number of rows in the Canvas subplot grid.

@@ -5,17 +5,6 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
-/** This trait acts as an ENUM for direction option */
-sealed trait Direction
-case object INCREASING extends Direction
-case object DECREASING extends Direction
-
-/** this trait acts as an ENUM for the current bin option */
-sealed trait CurrentBin
-case object INCLUDE extends CurrentBin
-case object EXCLUDE extends CurrentBin
-case object HALF extends CurrentBin
-
 /** This is an option for a histogram chart. If enabled == true, it shows cumulative distribution by summing the bin
  * values.
  *

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="org.carbonateresearch" module="picta_2.13" revision="0.1" status="release" publication="20200723130338">
+    <description>picta</description>
+  </info>
+  <configurations>
+    <conf name="plugin" visibility="public" description=""/>
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    <conf extends="compile,optional,provided" name="compile-internal" visibility="public" description=""/>
+    <conf name="docs" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    <conf extends="test,optional,provided" name="test-internal" visibility="public" description=""/>
+    <conf name="scala-tool" visibility="public" description=""/>
+    <conf name="sources" visibility="public" description=""/>
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    <conf extends="runtime,optional" name="runtime-internal" visibility="public" description=""/>
+  </configurations>
+  <publications>
+    <artifact e:classifier="sources" name="picta_2.13" type="src" ext="jar" conf="sources"/>
+    <artifact e:classifier="javadoc" name="picta_2.13" type="doc" ext="jar" conf="docs"/>
+    <artifact name="picta_2.13" type="jar" ext="jar" conf="compile"/>
+    <artifact name="picta_2.13" type="pom" ext="pom" conf="pom"/>
+  </publications>
+  <dependencies>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.13.2" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.13.2" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="scala-tool->default"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="scala-tool->optional(default)"> </dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.13.2" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.carbonateresearch" name="conus_2.13" rev="0.2.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.scalactic" name="scalactic_2.13" rev="3.1.2" conf="compile->default(compile)"> </dependency>
+    <dependency org="org.scalatest" name="scalatest_2.13" rev="3.1.2" conf="test->default(compile)"> </dependency>
+    <dependency org="com.lihaoyi" name="upickle_2.13" rev="1.1.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.github.jupyter" name="jvm-repr" rev="0.4.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="sh.almond" name="interpreter-api_2.13" rev="0.10.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="sh.almond" name="jupyter-api_2.13" rev="0.10.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.lihaoyi" name="os-lib_2.13" rev="0.7.0" conf="compile->default(compile)"> </dependency>
+    <dependency org="com.github.tototoshi" name="scala-csv_2.13" rev="1.3.6" conf="compile->default(compile)"> </dependency>
+  </dependencies>
+</ivy-module>

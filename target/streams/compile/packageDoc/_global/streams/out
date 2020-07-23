@@ -1,0 +1,985 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1-javadoc.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_EW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_EW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Orientation.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Orientation.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HASH_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HASH_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/SQRT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/SQRT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Legend.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Legend.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/YError.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/YError.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ErrorBar.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ErrorBar.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/PERCENT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/PERCENT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/XError.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/XError.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram2d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram2d/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$Color.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption$ColorString$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption$ColorString$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CENTER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/CENTER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Margin.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Margin.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Marker.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Marker.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/DATA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/DATA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/AUTO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/AUTO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CONSTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/CONSTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$Color$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color$$ColorDouble$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/ColorOptions$$Color$$ColorDouble$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistFunction.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/HistFunction.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistNorm.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/HistNorm.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/MIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/MIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/PERCENT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/PERCENT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/COUNT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/COUNT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/Xbins.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/Xbins.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/Ybins.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/Ybins.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/Cumulative.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/Cumulative.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/DECREASING$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/DECREASING$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/SUM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/SUM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/AVG$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/AVG$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/NUMBER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/NUMBER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/INCREASING$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/INCREASING$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/EXCLUDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/EXCLUDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/INCLUDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/INCLUDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/DENSITY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/DENSITY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HALF$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/HALF$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/HistOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/MAX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/MAX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/CurrentBin.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/CurrentBin.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/Direction.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/histogram/Direction.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Line.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Line.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Anchor.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/options/Anchor.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MERCATOR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MERCATOR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGRAM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGRAM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_EW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_EW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SCATTER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SCATTER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Map.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Map.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X_THIN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X_THIN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$PENTAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$PENTAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/NORTH_AMERICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/NORTH_AMERICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HOURGLASS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HOURGLASS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SINUSOIDAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SINUSOIDAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/conus[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/conus[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/conus/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/conus/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/conus/Utils$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/conus/Utils$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CONIC_EQUAL_AREA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/CONIC_EQUAL_AREA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Y_UNIFIED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Y_UNIFIED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Region.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Region.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$OCTAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$OCTAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/XY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X_THIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X_THIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_RIGHT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_RIGHT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/WORLD$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/WORLD$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$PENTAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$PENTAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$PENTAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$PENTAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AFRICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/AFRICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/NONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/NONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SOUTH_AMERICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SOUTH_AMERICA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MILLER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MILLER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$OCTAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$OCTAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Axis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Axis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MARKERS_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MARKERS_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SCATTERGL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SCATTERGL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/STEROGRAPHIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/STEROGRAPHIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_THIN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS_THIN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ChartLayout.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ChartLayout.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MapOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MapOptions.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Side.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Side.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/EQURECTANGULAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/EQURECTANGULAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/render[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/render[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/render/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/render/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/render/Html$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/render/Html$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/GNOMONIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/GNOMONIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ASIA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ASIA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Y$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Y$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_TALL_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CLOSEST$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/CLOSEST$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XY.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/XY.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LatAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LatAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/USA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/USA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$OCTAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$OCTAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ASTERISK$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ASTERISK$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HASH_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HASH_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/IO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/IO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/XAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/YAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/YAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LINES_MARKERS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LINES_MARKERS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CONTOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/CONTOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/BAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/BAR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Chart.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Chart.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_X$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/NATURAL_EARTH$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/NATURAL_EARTH$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XYZ.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/XYZ.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CONIC_CONFORMAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/CONIC_CONFORMAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HASH_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HASH_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$OCTAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$OCTAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/PIE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/PIE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/common[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/common/index.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/common/Utils$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/common/Utils$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HORIZONTAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HORIZONTAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ASTERISK_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ASTERISK_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LINES$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LINES$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LongAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LongAxis.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_LEFT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_LEFT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Style.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Style.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HASH$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HASH$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NW_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Projection.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Projection.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_EIGHTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/WINKEL_TRIPEL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/WINKEL_TRIPEL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LINES_MARKERS_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LINES_MARKERS_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/LINES_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/LINES_TEXT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$BOWTIE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$BOWTIE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FIFTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$PENTAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$PENTAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XYZType.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/XYZType.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Config.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Config.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_DIAMOND_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HAMMER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HAMMER$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/FALSE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/FALSE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MOLLWEIDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MOLLWEIDE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FORTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FORTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HISTOGRAM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HISTOGRAM$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ELEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_FIVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/KAVRAYSKIY7$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/KAVRAYSKIY7$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ECKERT4$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ECKERT4$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_UP_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_UP_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HOURGLASS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HOURGLASS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_NINETEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MARKERS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/MARKERS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/PieElement.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/PieElement.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/X_UNIFIED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/X_UNIFIED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/VERTICAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/VERTICAL$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NW_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/EUROPE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/EUROPE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_EIGHT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SCATTER3D$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SCATTER3D$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HEATMAP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HEATMAP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$BOWTIE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$BOWTIE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NW$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ROBINSON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ROBINSON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWELVE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGRAM_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HoverMode.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HoverMode.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_RIGHT_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ALBERS_USA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ALBERS_USA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ORTHOGRAPHIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/ORTHOGRAPHIC$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SymbolShape.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SymbolShape.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_THIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$CROSS_THIN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_THIRTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Canvas.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/Canvas.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$X_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$X_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_NINE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NS$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AITOFF$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/AITOFF$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SEVEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_NE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_ONE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_TWO_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THIRTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SURFACE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SURFACE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_SQUARE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$DIAMOND_WIDE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ZERO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ZERO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_LEFT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_LEFT_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$SQUARE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$Y_UP$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FOUR$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWENTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWENTY_SIX$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$HEXAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$HEXAGON_OPEN_DOT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SIXTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_THREE$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$STAR_TRIANGLE_DOWN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_SEVENTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	index.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/index.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TestDriveApp$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/TestDriveApp$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/annotation_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/annotation_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/abstract_type.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/abstract_type.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-100.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-100.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/object_comp_trait.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/object_comp_trait.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-700.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-700.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/object_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/object_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-400i.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-400i.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/class_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/class_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-400i.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-400i.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/package.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/package.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/class_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/class_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/diagrams.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/diagrams.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-700.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-700.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/index.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/index.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700i.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700i.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/class.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/class.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/index.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/index.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/trait_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/trait_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-400i.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-400i.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/jquery.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/jquery.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/object_comp_annotation.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/object_comp_annotation.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/trait_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/trait_comp.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/template.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/template.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/trait.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/trait.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700i.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700i.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/scheduler.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/scheduler.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/MaterialIcons-Regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/MaterialIcons-Regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/MaterialIcons-Regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/MaterialIcons-Regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-100.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-100.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/ref-index.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/ref-index.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/object_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/object_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/print.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/print.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/ownerbg.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/ownerbg.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/ownderbg2.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/ownderbg2.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-regular.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-regular.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700i.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700i.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/type_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/type_diagram.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/MaterialIcons-Regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/MaterialIcons-Regular.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/lato-v11-latin-100.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/lato-v11-latin-100.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/source-code-pro-v6-latin-700.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/source-code-pro-v6-latin-700.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/template.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/template.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/object.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/object.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/open-sans-v13-latin-700.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/open-sans-v13-latin-700.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/ownerbg2.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/ownerbg2.gif[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lib/annotation.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/docs/lib/annotation.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

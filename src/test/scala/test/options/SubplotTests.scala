@@ -44,7 +44,7 @@ import org.scalatest.funsuite.AnyFunSuite
       val chart4 = Chart() addSeries XY(z_int, z_double).setName("d") addAxes(ax4, ax9)
 
       val canvas =
-        Canvas(2, 2, title="4 by 4 grid")
+        Canvas(2, 2)
         .setChart(0, 1, chart1)
         .setChart(1, 1, chart2)
         .setChart(0, 0, chart3)
@@ -108,7 +108,7 @@ import org.scalatest.funsuite.AnyFunSuite
 
       // The canvas has an underlying grid. By default the underlying grid is 1x1, but we can pass in the dimensions we
       // require by passing in parameters in the constructor.
-      val canvas = Canvas(2, 2, title="Subplot.Margins")
+      val canvas = Canvas(2, 2)
         .setChart(0, 0, chart1)
         .setChart(0, 1, chart2)
         .setChart(1, 0, chart3)

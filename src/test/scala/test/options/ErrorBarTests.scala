@@ -143,7 +143,7 @@ class ErrorBarTests extends AnyFunSuite {
         setDimensions(width = dim, height = dim)
       )
 
-    val canvas = Canvas(2, 2, "Errors") addCharts (chart1, chart2, chart3, chart4)
+    val canvas = Canvas(2, 2) addCharts (chart1, chart2, chart3, chart4)
 
     if (plotFlag) canvas.plot
 

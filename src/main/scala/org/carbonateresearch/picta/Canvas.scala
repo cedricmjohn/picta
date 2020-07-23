@@ -9,13 +9,9 @@ import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
  *
  * @param rows: Number of rows in the Canvas subplot grid.
  * @param columns: Number of columns in the Canvas subplot grid.
- * @param title: Title of the Canvas subplot grid.
  * @param grid: The actual grid containing the chart data.
  */
-final case class Canvas(rows: Int = 1, columns: Int = 1, title: Opt[String] = Blank, private val grid: Opt[Array[Chart]] = Blank) {
-
-  if (rows == 1 && columns == 1 && title.getOrElse("") != "")
-    throw new IllegalArgumentException("Set the title in the plot instead")
+final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[Array[Chart]] = Blank) {
 
   val id = generateRandomText()
 
@@ -48,13 +44,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, title: Opt[String] = Bl
     new_canvas
   }
 
-  def plot() = title.option match {
-    case Some(x) => plotChart(rows, columns, grid_, id, x)
-    case _ => plotChart(rows, columns, grid_, id)
-  }
+  def plot() = plotChart(rows, columns, grid_, id)
 
-  def plotInline()(implicit publish: OutputHandler) = title.option match {
-    case Some(x) => plotChartInline(rows, columns, grid_, id, x)
-    case _ => plotChartInline(rows, columns, grid_, id)
-  }
+  def plotInline()(implicit publish: OutputHandler) = plotChartInline(rows, columns, grid_, id)
 }

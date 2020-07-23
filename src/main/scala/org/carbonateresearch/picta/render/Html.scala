@@ -123,15 +123,10 @@ object Html {
    * @param id: The id of the canvas.
    * @return
    */
-  private def createGridHTML(rows: Int, cols: Int, grid: Array[Chart], id: String, title: Opt[String] = Blank) = {
+  private def createGridHTML(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
     html ++= s"""<div id="grid-container_$id" class="grid-container" align="center"> \n"""
-
-    title.option match {
-      case Some(x) => html ++= s"""<div class="grid-title" align="center"> <h1>$x</h1> </div> \n"""
-      case _ => ()
-    }
 
     html ++= s"""<div id="grid_${id}" class="grid" align="center"> \n"""
 
@@ -431,17 +426,14 @@ object Html {
    * @param grid: The Canvas subplot grid.
    * @param id: The unique id of the Canvas this grid corresponds to.
    */
-  private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String, title: Opt[String] = Blank) = {
+  private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
     var html = new StringBuilder()
 
     /* create the html headers and add them to the page */
     html ++= createHeader(useCDN, true, rows, cols)
 
     /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
-    title.option match {
-      case Some(x) => html ++= createGridHTML(rows, cols, grid, id, x)
-      case _ => html ++= createGridHTML(rows, cols, grid, id)
-    }
+    html ++= createGridHTML(rows, cols, grid, id)
 
     /* create the javascript that corresponds to each of these charts */
     html ++= createJsScripts(rows, cols, grid, id)
@@ -457,16 +449,13 @@ object Html {
    * @param id: The unique id of the Canvas this grid corresponds to.
    * @param publish: Implicit parameter that exposes API when Almond kernel is in scope.
    */
-  private[picta] def plotChartInline(rows: Int, cols: Int, grid: Array[Chart], id: String, title: Opt[String] = Blank)
+  private[picta] def plotChartInline(rows: Int, cols: Int, grid: Array[Chart], id: String)
                                     (implicit publish: OutputHandler): Unit = {
 
     var html = new StringBuilder()
 
     /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
-    title.option match {
-      case Some(x) => html ++= createGridHTML(rows, cols, grid, id, x)
-      case _ => html ++= createGridHTML(rows, cols, grid, id)
-    }
+    html ++= createGridHTML(rows, cols, grid, id)
 
     /* create the javascript that corresponds to each of these charts */
     html ++= createJsScripts(rows, cols, grid, id)

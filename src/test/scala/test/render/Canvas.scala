@@ -50,7 +50,7 @@ class CanvasTests extends AnyFunSuite {
 
     // The canvas has an underlying grid. By default the underlying grid is 1x1, but we can pass in the dimensions we
     // require by passing in parameters in the constructor.
-    val canvas = Canvas(2, 2, title="The Picta Grid")
+    val canvas = Canvas(2, 2)
       .setChart(0, 0, chart3.setDimensions(width = dim, height = dim))
       .setChart(0, 1, chart4.setDimensions(width = dim, height = dim))
       .setChart(1, 0, chart1.setDimensions(width = dim, height = dim))

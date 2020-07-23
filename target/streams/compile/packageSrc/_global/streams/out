@@ -4,8 +4,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	require.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/require.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	dom-to-image.min.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/dom-to-image.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	macy.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/macy.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
@@ -14,6 +12,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/style.css[0m
 [0m[[0m[0mdebug[0m] [0m[0m	traces.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/traces.json[0m
+[0m[[0m[0mdebug[0m] [0m[0m	merge-image.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/merge-image.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/scala/Example.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MapOptions.scala[0m

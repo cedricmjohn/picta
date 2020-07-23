@@ -1,13 +1,12 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.Component
-import org.carbonateresearch.picta.OptionWrapper._
-import org.carbonateresearch.picta.common.Monoid._
+import org.carbonateresearch.picta.OptionWrapper.{Blank, Empty, Opt}
+import org.carbonateresearch.picta.SymbolShape.SymbolShape
+import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
-
-import SymbolShape._
 
 /**
  * @constructor: Configures a Marker component for the chart.

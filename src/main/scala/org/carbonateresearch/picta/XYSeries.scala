@@ -1,11 +1,11 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper._
+import org.carbonateresearch.picta.SymbolShape.SymbolShape
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
 import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.SymbolShape.SymbolShape
 import org.carbonateresearch.picta.options._
 import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
@@ -28,14 +28,14 @@ case object PIE extends XYType
  * @param y: The data series for the second dimension.
  * @param name: The name for the series.
  * @param `type`: The type for the series, which determines how it is rendered.
- * @param style: The symbol
- * @param xaxis
- * @param yaxis
- * @param marker
- * @param hist_options
- * @param hist2d_options
- * @param xerror
- * @param yerror
+ * @param style: This specifies the style for the marker.
+ * @param xaxis: This specifies the xaxis that the series maps to.
+ * @param yaxis: This specifies the yaxis that the series maps to.
+ * @param marker: This is a Marker component that sets a range of marker-specific options.
+ * @param hist_options: This is a HistOptions component that sets a range of histogram specific options
+ * @param hist2d_options: This is a Hist2dOptions component that sets 2D histogram specific options.
+ * @param xerror: This specifies the behaviour of the x error bar.
+ * @param yerror: This specifies the behaviour of the y error bar.
  * @tparam T0
  * @tparam T1
  * @tparam T2
@@ -54,7 +54,7 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   def setMarker[Z0: Color, Z1: Color]
   (symbol: Opt[SymbolShape] = Blank, color: Opt[List[Z0]] = Empty, line: Opt[Line[Z1]] = Blank,
    size: Opt[List[Int]] = Empty): XY[T0, T1, Z0, Z1] = {
-    val new_marker = Marker(symbol, color, line, size)
+    val new_marker = options.Marker(symbol, color, line, size)
     this.copy(marker = new_marker)
   }
 

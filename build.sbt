@@ -13,7 +13,7 @@ scalaVersion := "2.13.2"
 target in Compile in doc := baseDirectory.value.getParentFile / "docs"
 
 // conus library
-libraryDependencies  += "org.carbonateresearch" %% "conus" % "0.2.0"
+libraryDependencies += "org.carbonateresearch" %% "conus" % "0.2.0"
 
 // Get scaladoc to add rootdoc.txt content to index.html
 scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")

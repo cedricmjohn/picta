@@ -8,7 +8,6 @@ sealed trait Side
 case object RIGHT extends Side
 case object LEFT extends Side
 
-
 /** Specifies the behaviour of axes that are inside a plot. */
 trait Axis extends Component {
 

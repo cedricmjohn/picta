@@ -60,9 +60,6 @@ object Html {
   def initNotebook()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
 
-//    ${ if (rows > 1 || cols > 1) "\n .svg-container {width: 100% !important;} \n"}
-//    ${ if (rows > 1 || cols > 1) "\n .main-svg {width: 100% !important;} \n"}
-
     var html = new StringBuilder()
 
     html ++=

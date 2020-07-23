@@ -23,7 +23,7 @@ case object Y_UNIFIED extends HoverMode
  * @param legend     : This is the component that configures the legend for the chart..
  * @param height     : This sets the height for the chart.
  * @param width      : This sets the width for the chart.
- * @param mapoption  : this is used for Map charts only and configures the geo component for a Map chart..
+ * @param mapoption  : this is used for Map charts only and configures the geo component for a Map chart.
  */
 final case class ChartLayout
 (title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Legend = Legend(), autosize: Opt[Boolean] = Blank,

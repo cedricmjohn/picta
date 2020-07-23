@@ -9,7 +9,6 @@ import scala.collection.mutable.ListBuffer
 
 /** An object containing various utility functions used to wrangle the Conus library. */
 object Utils {
-
   /** This function grabs a single series specified from the user from a model that has been run.
    *
    * @param model_results: Results from a run of the Simlulator.
@@ -50,4 +49,4 @@ object Utils {
 
       XY(x.toList, y.toList)
     }
-  }
+}

@@ -2,7 +2,7 @@ package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
 import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.options.SymbolShape.CIRCLE
+import SymbolShape.CIRCLE
 import org.carbonateresearch.picta.options.{Line, Marker}
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write

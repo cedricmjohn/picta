@@ -39,18 +39,29 @@ private[picta] trait HistBins extends Component {
 
 /** A case class that represents the Xbins option.
  *
- * @param start: The starting value for the bin. If not provided, rendering will default to the minimum data value.
- * @param end: The ending value for the bin. If not provided, rendering will default to the maximum data value.
- * @param size: Sets the size of each bin.
+ * @param start : The starting value for the bin. If not provided, rendering will default to the minimum data value.
+ * @param end   : The ending value for the bin. If not provided, rendering will default to the maximum data value.
+ * @param size  : Sets the size of each bin.
  */
 final case class Xbins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins {
   def setStart(new_start: Double) = this.copy(start = new_start)
+
   def setEnd(new_end: Double) = this.copy(end = new_end)
+
   def setSize(new_size: Double) = this.copy(size = new_size)
 }
 
+
+/** A case class that represents the Ybins option.
+ *
+ * @param start : The starting value for the bin. If not provided, rendering will default to the minimum data value.
+ * @param end   : The ending value for the bin. If not provided, rendering will default to the maximum data value.
+ * @param size  : Sets the size of each bin.
+ */
 final case class Ybins(start: Opt[Double] = Blank, end: Opt[Double] = Blank, size: Opt[Double] = Blank) extends HistBins {
   def setStart(new_start: Double) = this.copy(start = new_start)
+
   def setEnd(new_end: Double) = this.copy(end = new_end)
+
   def setSize(new_size: Double) = this.copy(size = new_size)
 }

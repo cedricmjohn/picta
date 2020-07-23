@@ -1,3 +1,46 @@
 [0m[[0m[0mdebug[0m] [0m[0m"not up to date. inChanged = true, force = false[0m
 [0m[[0m[0mdebug[0m] [0m[0mUpdating ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mDone updating [0m
+[0m[[0m[33mwarn[0m] [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m	Note: Unresolved dependencies path:[0m
+[0m[[0m[31merror[0m] [0m[0msbt.librarymanagement.ResolveException: Error downloading org.carbonateresearch:conus_2.12:0.2.0[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: /Users/fazi/.ivy2/local/org.carbonateresearch/conus_2.12/0.2.0/ivys/ivy.xml[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://repo1.maven.org/maven2/org/carbonateresearch/conus_2.12/0.2.0/conus_2.12-0.2.0.pom[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://jitpack.io/org/carbonateresearch/conus_2.12/0.2.0/conus_2.12-0.2.0.pom[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:249)[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.$anonfun$update$35(CoursierDependencyResolution.scala:218)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.Either$LeftProjection.map(Either.scala:573)[0m
+[0m[[0m[31merror[0m] [0m[0m	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:218)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:102)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:69)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:115)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.control.Exception$Catch.apply(Exception.scala:228)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:115)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:96)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$inputChanged$1(Tracked.scala:150)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:129)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Classpaths$.$anonfun$updateTask0$5(Defaults.scala:2950)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(Transform.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:290)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.lang.Thread.run(Thread.java:832)[0m
+[0m[[0m[31merror[0m] [0m[0m([31mupdate[0m) sbt.librarymanagement.ResolveException: Error downloading org.carbonateresearch:conus_2.12:0.2.0[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  Not found[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: /Users/fazi/.ivy2/local/org.carbonateresearch/conus_2.12/0.2.0/ivys/ivy.xml[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://repo1.maven.org/maven2/org/carbonateresearch/conus_2.12/0.2.0/conus_2.12-0.2.0.pom[0m
+[0m[[0m[31merror[0m] [0m[0m  not found: https://jitpack.io/org/carbonateresearch/conus_2.12/0.2.0/conus_2.12-0.2.0.pom[0m

@@ -1,24 +1,15 @@
-
-
-
-object TestDriveApp extends App {
-
-//  val x = XY(x = 2, series_name = "a") asType PIE
-
-
-}
-
-//import org.carbonateresearch.picta.conus.Utils._
-//import org.carbonateresearch.picta.{Canvas, Chart, XY}
-//import org.carbonateresearch.conus.common.SingleModelResults
+//import org.carbonateresearch.conus._
+//import org.carbonateresearch.conus.common.ModelResults
 //import org.carbonateresearch.conus.modelzoo.GeneralGeology._
 //import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
-//import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, Simulator, Step, SteppedModel}
+//import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, Step, SteppedModel}
 //
 //import math._
-
-
-//  val modelWarehouse = Simulator
+//
+//object Example extends App {
+//
+//  val sim = new BasicSimulator
+//
 //  // a few constants
 //  val rhocal:Double = 2.71 //Density of carbonates
 //  val cOf=889000 //concentration of O in fluid
@@ -135,23 +126,8 @@ object TestDriveApp extends App {
 //      D47r.isBetween(0.511,0.683).atCells(Seq(18))
 //    )
 //
-//  modelWarehouse.evaluate(eaglefordModel)
+//  sim.evaluate(eaglefordModel)
 //  Thread.sleep(1000)
-//
-////  modelWarehouse.save(eaglefordModel)
-//
-//  val model: SingleModelResults = modelWarehouse(eaglefordModel)(0)
-//
-//  val series1: List[Double] = getDataFromSingleModel(model, age, List(0), numberOfSteps)
-//
-//  val series2: List[Double] = getDataFromSingleModel(model, d18Occ, List(0), numberOfSteps)
-//
-//  val series = XY(series1, series2)
-//
-////  val series = getXYSeriesFromSingleModel(model, (age, d18Occ), List(0), numberOfSteps)
-//
-//  val chart = Chart() addSeries series setTitle("x against y")
-//
-//  val canvas = Canvas() addCharts chart
-//
-//  canvas.plot()
+//  val results: ModelResults = sim.getResults(eaglefordModel)
+//  results.getModel(0)
+//}

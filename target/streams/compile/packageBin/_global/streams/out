@@ -1,7 +1,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/picta_2.13-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TestDriveApp$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/TestDriveApp$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/plotly.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org[0m
@@ -1126,10 +1124,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/XAxis$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TRIANGLE_SW$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TRIANGLE_SW$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TestDriveApp.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/TestDriveApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/Example.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	require.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/require.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	macy.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/macy.min.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	layout.json[0m
@@ -1140,4 +1140,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/traces.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	merge-image.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/merge-image.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Example$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/Example$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

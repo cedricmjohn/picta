@@ -4,16 +4,18 @@ organization := "org.carbonateresearch"
 
 version := "0.1"
 
-scalaVersion := "2.13.2"
+scalaVersion := "2.13.3"
 
 // cross scala version with 2.12; give sequence of scala version
- crossScalaVersions := Seq("2.12.12", "2.13.3")
+crossScalaVersions := Seq("2.12.12", "2.13.3")
 
 // documentation output
 target in Compile in doc := baseDirectory.value.getParentFile / "docs"
 
+resolvers += "jitpack" at "https://jitpack.io"
+
 // conus library
-libraryDependencies += "org.carbonateresearch" %% "conus" % "0.2.0"
+libraryDependencies += "org.carbonateresearch" %% "conus" % "0.2.2"
 
 // Get scaladoc to add rootdoc.txt content to index.html
 scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
@@ -22,12 +24,10 @@ scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % "test"
 
-
 // JSON encoding / decoding
 libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"
 
 // Jupter Kernels
-resolvers += "jitpack" at "https://jitpack.io"
 libraryDependencies += "com.github.jupyter" % "jvm-repr" % "0.4.0"
 libraryDependencies += "sh.almond" %% "interpreter-api" % "0.10.0"
 libraryDependencies += "sh.almond" %% "jupyter-api" % "0.10.0"

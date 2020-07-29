@@ -1,5 +1,7 @@
 package org.carbonateresearch.picta
 
+import scala.language.postfixOps
+
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
@@ -39,9 +41,9 @@ final case class Chart
 
   def plotInline()(implicit publish: OutputHandler) = Canvas().addCharts(this).plotInline
 
-  def addSeries(new_series: List[Series]): Chart = this.copy(series = new_series ::: series)
+  def addSeries(new_series: List[Series]): Chart = this.copy(series = series ::: new_series )
 
-  def addSeries(new_series: Series*): Chart = this.copy(series = new_series.toList ::: series)
+  def addSeries(new_series: Series*): Chart = this.copy(series =  series ::: new_series.toList)
 
   def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart= this.copy(layout = new_layout)
 
@@ -63,6 +65,65 @@ final case class Chart
     val new_layout = this.layout setLegend new_legend
     this.copy(layout = new_layout)
   }
+
+  // higher order function that allows various attributes of an axis to be set
+  private def setAxis(key: String, f: Axis => Axis) = {
+    def setAxisProperty(x: Axis)(f: Axis => Axis): Axis = f(x)
+
+    val existing_axes = this.layout.axes.option.getOrElse(Nil).filter(axis => axis.convertPosition(axis.getPosition) == key)
+
+    val new_axis = key match {
+      /* if we have no existing axes, we create a new one from scratch */
+      case "xaxis" if (existing_axes.length == 0) => setAxisProperty(XAxis())(f)
+      case "yaxis"if (existing_axes.length == 0) => setAxisProperty(YAxis())(f)
+      /* create update the existing axis */
+      case _ => setAxisProperty(existing_axes.last)(f)
+    }
+
+    /* now get all the axes EXCEPT the original axis */
+    val filtered_axes = this.layout.axes.option.getOrElse(Nil).filter(axis => axis.convertPosition(axis.getPosition) != key)
+
+    /* if we have other axes, then we need to combine with them */
+    val new_layout = this.layout setAxes (filtered_axes :+ new_axis)
+
+    this.copy(layout = new_layout)
+  }
+
+  private def setAxisTitle(title: String): Axis => Axis = Axis.setTitle(title)(_)
+
+  def setXAxisTitle(title: String) = setAxis(key="xaxis", setAxisTitle(title))
+
+  def setYAxisTitle(title: String) = setAxis(key="yaxis", setAxisTitle(title))
+
+  private def setAxisLimits(lower_limit: Double = 0, upper_limit: Double): Axis => Axis = Axis.setLimits(lower_limit, upper_limit)(_)
+
+  def setXAxisLimits(lower_limit: Double = 0, upper_limit: Double) = setAxis("xaxis", setAxisLimits(lower_limit, upper_limit))
+
+  def setYAxisLimits(lower_limit: Double = 0, upper_limit: Double) = setAxis("yaxis", setAxisLimits(lower_limit, upper_limit))
+
+  private def drawAxisLog(log: Boolean): Axis => Axis = Axis.drawLog(log)(_)
+
+  def drawXAxisLog(log: Boolean = true) = setAxis(key="xaxis", drawAxisLog(log))
+
+  def drawYAxisLog(log: Boolean = true) = setAxis(key="yaxis", drawAxisLog(log))
+
+  private def drawAxisReversed(reversed: Boolean): Axis => Axis = Axis.drawReverseAxis(reversed)(_)
+
+  def drawXAxisReversed(reverse: Boolean = true) = setAxis("xaxis", drawAxisReversed(reverse))
+
+  def drawYAxisReversed(reverse: Boolean = true) = setAxis("yaxis", drawAxisReversed(reverse))
+
+  private def setAxisTickGap(gap: Double): Axis => Axis = Axis.setTickGap(gap)(_)
+
+  def setXAxisTickGap(gap: Double = 0) = setAxis(key = "xaxis", setAxisTickGap(gap))
+
+  def setYAxisTickGap(gap: Double = 0) = setAxis(key = "yaxis", setAxisTickGap(gap))
+
+  private def setAxisStartTick(start_tick: Double) = Axis.setStartingTick(start_tick)(_)
+
+  def setXAxisStartTick(start_tick: Double = 0) = setAxis(key="xaxis", setAxisStartTick(start_tick))
+
+  def setYAxisStartTick(start_tick: Double = 0) = setAxis(key="yaxis", setAxisStartTick(start_tick))
 
   def addAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
     val new_layout = this.layout setAxes(new_xaxis, new_yaxis)

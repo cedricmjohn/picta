@@ -1,25 +1,25 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.LineTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.ChartUtilityTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.PieChartTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.MapTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.CompositionTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.AnimationTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.CanvasTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.BasicChartTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.HistogramTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.XYZTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.IOTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.ErrorBarTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.AxisTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.ChartLayoutTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.MarkerTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.SubplotTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@3456c55b, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 26 seconds, 659 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 61[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.BasicChartTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.PieChartTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.LineTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.AnimationTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.ErrorBarTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.AxisTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.ChartLayoutTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.MapTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.Histogram2DContourTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.SubplotTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.XYZTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.MarkerTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.CanvasTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.HistogramTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.ScatterWithColorTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.IOTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.CompositionTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.carbonateresearch.picta.render.ChartMethodTests, org.scalatest.tools.Framework$$anon$1@6aec813b, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 23 seconds, 445 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 65[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 18, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 61, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 65, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.SubplotTests[0m
@@ -31,7 +31,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.BasicChartTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.CompositionTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.ErrorBarTests[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.ChartUtilityTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.LineTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.MapTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.Histogram2DContourTests[0m
@@ -40,3 +39,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.MarkerTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.CanvasTests[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.HistogramTests[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org.carbonateresearch.picta.render.ChartMethodTests[0m

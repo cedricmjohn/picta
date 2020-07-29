@@ -1,13 +1,22 @@
-//import org.carbonateresearch.conus._
-//import org.carbonateresearch.conus.common.ModelResults
-//import org.carbonateresearch.conus.modelzoo.GeneralGeology._
-//import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
-//import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, Step, SteppedModel}
-//
-//import math._
-//
-//object Example extends App {
-//
+import org.carbonateresearch.conus._
+import org.carbonateresearch.conus.common.ModelResults
+import org.carbonateresearch.conus.modelzoo.GeneralGeology._
+import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
+import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, Step, SteppedModel}
+
+import math._
+
+object Example extends App {
+
+}
+
+// what happens when size of data gets too big
+// show n out total rows
+// maybe add this in
+// limit by default
+// set a hard limit; will need to be truly random; need to sample correctly
+
+
 //  val sim = new BasicSimulator
 //
 //  // a few constants
@@ -127,7 +136,7 @@
 //    )
 //
 //  sim.evaluate(eaglefordModel)
-//  Thread.sleep(1000)
+//  Thread.sleep(2000)
 //  val results: ModelResults = sim.getResults(eaglefordModel)
 //  results.getModel(0)
-//}
+

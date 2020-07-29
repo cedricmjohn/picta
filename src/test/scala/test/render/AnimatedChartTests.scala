@@ -9,8 +9,8 @@ class AnimationTests extends AnyFunSuite {
   val plotFlag = false
 
   test("Animation.XY") {
-    val xaxis = XAxis(title = "X Variable") setRange (0.0, 10.0)
-    val yaxis = YAxis(title = "Y Variable") setRange (0.0, 10.0)
+    val xaxis = XAxis(title = "X Variable") setLimits (0.0, 10.0)
+    val yaxis = YAxis(title = "Y Variable") setLimits (0.0, 10.0)
     val series = createXYSeries(numberToCreate = 50, length = 30)
     val chart = Chart(animated = true) setTitle "Animation.XY" addSeries series addAxes(xaxis, yaxis)
     if (plotFlag) chart.plot()

@@ -7,7 +7,7 @@ class ChartLayoutTests extends AnyFunSuite {
 
   val plotFlag = false
 
-  /** Empty Chart Test -> Simply displays an empty set of axis, with a generic title */
+  /* Empty Chart Test -> Simply displays an empty set of axis, with a generic title */
   test("XY.Empty") {
     val chart = Chart()
     val canvas = Canvas() addCharts chart
@@ -15,7 +15,7 @@ class ChartLayoutTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 
-  /** Test multiple series plotting and axis composition */
+  /* Test multiple series plotting and axis composition */
   test("XY.Axis.Composition") {
     // 1. define the axis to plot on the chart
     val ax0 = XAxis(position = 1, title = " x axis 1")

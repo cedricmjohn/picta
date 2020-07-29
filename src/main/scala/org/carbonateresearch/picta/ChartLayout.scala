@@ -32,12 +32,16 @@ final case class ChartLayout
   def setTitle(new_title: String) = this.copy(title = new_title)
 
   def setAxes(new_axes: List[Axis]): ChartLayout = axes.option match {
-    case Some(lst) => this.copy(axes = new_axes ::: lst)
+    /* add to the end of existing list. This ensures things that when we have two of the same keys,
+    the ones at the right are preserved. This is because below we foldleft when merging the axes */
+    case Some(lst) => this.copy(axes = lst ::: new_axes)
     case None => this.copy(axes = new_axes)
   }
 
   def setAxes(new_axis: Axis*): ChartLayout = axes.option match {
-    case Some(lst) => this.copy(axes = new_axis.toList ::: lst)
+    /* add to the end of existing list. This ensures things that when we have two of the same keys,
+    the ones at the right are preserved. This is because below we foldleft when merging the axes */
+    case Some(lst) => this.copy(axes = lst ::: new_axis.toList)
     case None => this.copy(axes = new_axis.toList)
   }
 
@@ -68,7 +72,7 @@ final case class ChartLayout
 
   def setDimensions(new_height: Int, new_width: Int) = this.copy(height = new_height, width = new_width)
 
-  private[picta] def serialize(): Value = {
+  private[picta] def serialize: Value = {
     val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hovermode.toString.toLowerCase, "legend" -> legend.serialize)
 
     val title_ = title.option match {
@@ -102,7 +106,7 @@ final case class ChartLayout
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
     axes.option match {
-      case Some(lst) => lst.foldLeft(combined)((a, x) => a |+| x.serialize())
+      case Some(lst) => lst.foldLeft(combined)((a, x) => a |+| x.serialize)
       case _ => combined
     }
   }

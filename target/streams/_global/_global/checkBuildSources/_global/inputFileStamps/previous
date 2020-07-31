@@ -1,1 +1,1 @@
-["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/build.sbt","acb6e5b23fae1b1dbd6e19d3435a8e347a9c15c1"]],"lastModifiedTimes":[]}]
+["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/Users/fazi/Desktop/Final Project/picta/build.sbt","49bec85c95f51e819128000c69c30d2935a14355"],["/Users/fazi/Desktop/Final Project/picta/project/plugins.sbt","88113f99679b39faefad5d991081d71942f216d4"]],"lastModifiedTimes":[]}]

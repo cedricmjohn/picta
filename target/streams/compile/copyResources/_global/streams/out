@@ -1,8 +1,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/plotly.min.js,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/plotly.min.js)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/require.min.js,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/require.min.js)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/macy.min.js,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/macy.min.js)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/layout.json,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/layout.json)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/style.css,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/style.css)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/traces.json,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/traces.json)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/src/main/resources/merge-image.js,/Users/fazi/Desktop/Final Project/irp-acse-fk4517/Code/target/scala-2.13/classes/merge-image.js)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/plotly.min.js,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/plotly.min.js)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/require.min.js,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/require.min.js)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/macy.min.js,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/macy.min.js)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/layout.json,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/layout.json)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/style.css,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/style.css)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/traces.json,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/traces.json)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/fazi/Desktop/Final Project/picta/src/main/resources/merge-image.js,/Users/fazi/Desktop/Final Project/picta/target/scala-2.12/classes/merge-image.js)[0m

@@ -7,6 +7,9 @@ import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, Step, Step
 import math._
 
 object Example extends App {
+  val x = Nil
+
+  println(x.take(0))
 
 }
 

@@ -10,6 +10,8 @@ import org.carbonateresearch.picta.options._
 import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
+import scala.language.postfixOps
+
 
 import scala.collection.mutable.ListBuffer
 
@@ -47,6 +49,8 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank, xerror: Opt[XError] = Blank,
  yerror: Opt[YError] = Blank) extends Series {
 
+  val classification: String = "xy"
+
   def setName(new_name: String): XY[T0, T1, T2, T3] = this.copy(name = new_name)
 
   def setMarker[Z0: Color, Z1: Color](new_marker: Marker[Z0, Z1]): XY[T0, T1, Z0, Z1] = this.copy(marker = new_marker)
@@ -78,6 +82,9 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   }
 
   def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
+
+  def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] =
+    this.copy(xaxis = new_xaxis.asInstanceOf[XAxis], yaxis = new_yaxis.asInstanceOf[YAxis])
 
   def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis match {
       case x: XAxis => this.copy(xaxis = x)
@@ -122,6 +129,37 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   def drawNone() = this.copy(style = NONE)
 
   def drawLinesMarkersText() = this.copy(style = LINES_MARKERS_TEXT)
+
+  def setColor[Z: Color](color: Z) = {
+    val new_marker = marker.option match {
+      case Some(x) => x setColor color
+      case _ => Marker[Z, T3]() setColor color
+    }
+    this.copy(marker = new_marker)
+  }
+
+  def setColor[Z: Color](color: List[Z]) = {
+    val new_marker = marker.option match {
+      case Some(x) => x setColor color
+      case _ => Marker[Z, T3]() setColor color setColorBar ColorBar()
+    }
+    this.copy(marker = new_marker)
+  }
+
+  def setColorBar(title: String = "", title_side: Opt[Side] = Blank) = {
+    val title_side_ = title_side.option match {
+      case Some(x) => x
+      case _ => RIGHT_SIDE
+    }
+
+    val new_colorbar = ColorBar(title, title_side_)
+
+    val new_marker = marker.option match {
+      case Some(x) => x setColorBar new_colorbar
+      case _ => Marker[T2, T3]() setColorBar ColorBar(title, title_side_)
+    }
+    this.copy(marker = new_marker)
+  }
 
   private[picta] def serialize: Value = {
     val meta = Obj(

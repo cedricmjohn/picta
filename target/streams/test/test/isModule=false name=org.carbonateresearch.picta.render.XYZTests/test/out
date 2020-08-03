@@ -9,3 +9,4 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Contour.Exception[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.AsScatter3d.Exceptions[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.HEATMAP.InvalidDimensions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- XYZ.Heatmap.SetColorBar[0m[0m

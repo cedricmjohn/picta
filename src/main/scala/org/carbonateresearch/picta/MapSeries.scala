@@ -17,6 +17,10 @@ import ujson.{Obj, Value}
 final case class Map[T: Color](lat: List[Double] = Nil, lon: List[Double] = Nil, name: String = generateRandomText,
                                style: Opt[Style] = Blank, line: Opt[Line[T]] = Blank) extends Series {
 
+  val classification: String = "map";
+
+  def setName(new_name: String): Series = this.copy(name = new_name)
+
   def setLat(new_lat: List[Double]) = this.copy(lat = new_lat)
 
   def setLon(new_lon: List[Double]) = this.copy(lon = new_lon)

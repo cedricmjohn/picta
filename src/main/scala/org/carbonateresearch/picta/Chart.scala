@@ -22,16 +22,36 @@ final case class Chart
 (series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
  animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = generateRandomText()) extends Component {
 
+  private val XYZ: Boolean = {
+    if (series.length == 0) false
+    else series.head.classification match {
+        case "xyz" => true
+        case _ => false
+      }
+  }
+
   private val frames_labels = animated match {
     case false => (Nil, Nil)
     case true => createFramesAndLabels(series)
+  }
+
+  private def createAnimatedData() = {
+    series match {
+      case Nil => Nil
+      case x =>
+        val head = series.head setName "Frame 0"
+        List(head.serialize)
+    }
   }
 
   private[picta] val frames = transform(frames_labels._1).to(Value)
 
   private[picta] val labels = frames_labels._2
 
-  private[picta] val data_ : List[Value] = series.map(t => t.serialize)
+  private[picta] val data_ : List[Value] = animated match {
+    case true => createAnimatedData()
+    case false => series.map(x => x.serialize)
+  }
 
   private[picta] val layout_ : Value = layout.serialize
 
@@ -45,7 +65,7 @@ final case class Chart
 
   def addSeries(new_series: Series*): Chart = this.copy(series =  series ::: new_series.toList)
 
-  def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart= this.copy(layout = new_layout)
+  def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart= this.copy(layout = new_layout.copy(XYZ = XYZ))
 
   def setConfig(responsive: Boolean = true, scrollZoom: Boolean = true): Chart = {
     val new_config = Config(responsive=responsive, scrollZoom=scrollZoom)
@@ -54,7 +74,7 @@ final case class Chart
 
   /* helper methods that make wrangling all the sub-components a lot easier */
   def setTitle(title: String): Chart = {
-    val new_layout = this.layout setTitle title
+    val new_layout = this.layout setTitle title setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
@@ -62,7 +82,7 @@ final case class Chart
                 xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) = {
 
     val new_legend = Legend(x=x, y=y, orientation=orientation, xanchor=xanchor, yanchor=yanchor)
-    val new_layout = this.layout setLegend new_legend
+    val new_layout = this.layout setLegend new_legend setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
@@ -76,6 +96,7 @@ final case class Chart
       /* if we have no existing axes, we create a new one from scratch */
       case "xaxis" if (existing_axes.length == 0) => setAxisProperty(XAxis())(f)
       case "yaxis"if (existing_axes.length == 0) => setAxisProperty(YAxis())(f)
+      case "zaxis"if (existing_axes.length == 0) => setAxisProperty(ZAxis())(f)
       /* create update the existing axis */
       case _ => setAxisProperty(existing_axes.last)(f)
     }
@@ -84,7 +105,7 @@ final case class Chart
     val filtered_axes = this.layout.axes.option.getOrElse(Nil).filter(axis => axis.convertPosition(axis.getPosition) != key)
 
     /* if we have other axes, then we need to combine with them */
-    val new_layout = this.layout setAxes (filtered_axes :+ new_axis)
+    val new_layout = this.layout setAxes (filtered_axes :+ new_axis) setXYZ XYZ
 
     this.copy(layout = new_layout)
   }
@@ -95,17 +116,23 @@ final case class Chart
 
   def setYAxisTitle(title: String) = setAxis(key="yaxis", setAxisTitle(title))
 
+  def setZAxisTitle(title: String) = setAxis(key="zaxis", setAxisTitle(title))
+
   private def setAxisLimits(lower_limit: Double = 0, upper_limit: Double): Axis => Axis = Axis.setLimits(lower_limit, upper_limit)(_)
 
   def setXAxisLimits(lower_limit: Double = 0, upper_limit: Double) = setAxis("xaxis", setAxisLimits(lower_limit, upper_limit))
 
   def setYAxisLimits(lower_limit: Double = 0, upper_limit: Double) = setAxis("yaxis", setAxisLimits(lower_limit, upper_limit))
 
+  def setZAxisLimits(lower_limit: Double = 0, upper_limit: Double) = setAxis("zaxis", setAxisLimits(lower_limit, upper_limit))
+
   private def drawAxisLog(log: Boolean): Axis => Axis = Axis.drawLog(log)(_)
 
   def drawXAxisLog(log: Boolean = true) = setAxis(key="xaxis", drawAxisLog(log))
 
   def drawYAxisLog(log: Boolean = true) = setAxis(key="yaxis", drawAxisLog(log))
+
+  def drawZAxisLog(log: Boolean = true) = setAxis(key="zaxis", drawAxisLog(log))
 
   private def drawAxisReversed(reversed: Boolean): Axis => Axis = Axis.drawReverseAxis(reversed)(_)
 
@@ -119,29 +146,33 @@ final case class Chart
 
   def setYAxisTickGap(gap: Double = 0) = setAxis(key = "yaxis", setAxisTickGap(gap))
 
+  def setZAxisTickGap(gap: Double = 0) = setAxis(key = "zaxis", setAxisTickGap(gap))
+
   private def setAxisStartTick(start_tick: Double) = Axis.setStartingTick(start_tick)(_)
 
   def setXAxisStartTick(start_tick: Double = 0) = setAxis(key="xaxis", setAxisStartTick(start_tick))
 
   def setYAxisStartTick(start_tick: Double = 0) = setAxis(key="yaxis", setAxisStartTick(start_tick))
 
+  def setZAxisStartTick(start_tick: Double = 0) = setAxis(key="zaxis", setAxisStartTick(start_tick))
+
   def addAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
-    val new_layout = this.layout setAxes(new_xaxis, new_yaxis)
+    val new_layout = this.layout setAxes(new_xaxis, new_yaxis) setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   def addAxes(new_axis: Axis*) = {
-    val new_layout = this.layout setAxes new_axis.toList
+    val new_layout = this.layout setAxes new_axis.toList setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   def showLegend(showlegend: Boolean) = {
-    val new_layout = this.layout showLegend showlegend
+    val new_layout = this.layout showLegend showlegend setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   def setMapOptions(new_map_options: MapOptions) = {
-    val new_layout = this.layout setMapOption new_map_options
+    val new_layout = this.layout setMapOption new_map_options setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
@@ -153,35 +184,38 @@ final case class Chart
       MapOptions(region, landcolor=landcolor, lakecolor=lakecolor, projection, lataxis, longaxis,
       showland=showland, showlakes=showlakes, resolution=resolution, coastlinewidth=coastlinewidth)
 
-    val new_layout = this.layout setMapOption map_option
+    val new_layout = this.layout setMapOption map_option setXYZ XYZ
 
     this.copy(layout = new_layout)
   }
 
   def setMargin(l: Int, r: Int, t: Int, b: Int) = {
     val new_margin: Margin = Margin(l=l, r=r, t=t, b=b)
-    val new_layout = this.layout setMargin new_margin
+    val new_layout = this.layout setMargin new_margin setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   def setDimensions(height: Int = this.layout.height, width: Int = this.layout.width) = {
-    val new_layout = this.layout.copy(height=height, width=width)
+    val new_layout = this.layout.copy(height=height, width=width) setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   def asMultiChart(rows: Int, columns: Int) = {
     if (this.animated) throw new IllegalArgumentException("Animated Charts cannot be transformed to MultiCharts")
 
-    val new_layout = this.layout setMultiChart MultiChart(rows, columns)
+    val new_layout = this.layout setMultiChart MultiChart(rows, columns) setXYZ XYZ
     this.copy(layout = new_layout)
   }
 
   private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
 
-  private def createFramesAndLabels(lst: List[Series], frames: List[Obj] = Nil, labels: List[String] = Nil): (List[Obj], List[String]) = {
+  private def createFramesAndLabels(lst: List[Series], frames: List[Obj] = Nil, labels: List[String] = Nil, index: Int = 0): (List[Obj], List[String]) = {
     lst match {
       case Nil => (frames, labels)
-      case hd :: tl => createFramesAndLabels(tl, frames :+ Obj("name" -> hd.name, "data" -> List(hd.serialize)), labels :+ hd.name)
+      case hd :: tl =>
+        val new_hd = hd setName s"Frame ${index}"
+        createFramesAndLabels(tl, frames :+ Obj("name" -> s"Frame ${index}", "data" -> List(new_hd.serialize)),
+          labels :+ s"Frame ${index}", index+1 )
     }
   }
 }

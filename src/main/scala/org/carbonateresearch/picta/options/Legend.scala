@@ -13,7 +13,7 @@ import ujson.{Obj, Value}
  * @param xanchor     :
  * @param yanchor     :
  */
-final case class Legend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Orientation = VERTICAL,
+final case class Legend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Opt[Orientation] = Blank,
                         xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) extends Component {
 
   def setPosition(new_x: Double, new_y: Double) = this.copy(x = new_x, y = new_y)
@@ -26,9 +26,10 @@ final case class Legend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientat
 
   private[picta] def serialize: Value = {
 
-    val orientation_ = orientation match {
-      case VERTICAL => Obj("orientation" -> "v")
-      case HORIZONTAL => Obj("orientation" -> "h")
+    val orientation_ = orientation.option match {
+      case Some(x) if x == VERTICAL => Obj("orientation" -> "v")
+      case Some(x) if x == HORIZONTAL => Obj("orientation" -> "h")
+      case _ => jsonMonoid.empty
     }
 
     val x_ = x.option match {

@@ -6,6 +6,9 @@ import org.carbonateresearch.picta.OptionWrapper.Opt
 private[picta] trait Series extends Component {
   val style: Opt[Style]
   val name: String
+  val classification: String
+
+  def setName(new_name: String): Series
 }
 
 /** ENUM for series markers */

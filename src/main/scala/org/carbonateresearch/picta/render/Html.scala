@@ -140,8 +140,11 @@ object Html {
                |<div align="center">
                |  <div id="graph_${graph_id}" class="graph"></div>
                |  <div class="animationInterface">
-               |    <button id="play_${graph_id}" class="picta-button">Play</button>
-               |    <button id="pause_${graph_id}" class="picta-button">Pause</button>
+               |    <button id="play_${graph_id}" class="picta-button">&#9658</button>
+               |    <button id="pause_${graph_id}" class="picta-button">&#9616;&#9616;</button>
+               |    <button id="prev_${graph_id}" class="picta-button"><</button>
+               |    <button id="next_${graph_id}" class="picta-button">></button>
+               |
                |    <div id="sliderContainer_${graph_id}" class="progressBar"></div>
                |    <div id="counterContainer_${graph_id}" class="inline-div">
                |        <h3>Frame: </h3> <h3 id="value_${graph_id}">0</h3>
@@ -347,7 +350,7 @@ object Html {
        |var trigger_${graph_id} = true
        |var reset_count_${graph_id} = false
        |
-       |play_${graph_id}.addEventListener('click', function() {
+       |play_${graph_id}.addEventListener('click', async function() {
        |   trigger_${graph_id} = true
        |   if (reset_count_${graph_id}) {
        |      slider_${graph_id}.value = 0
@@ -356,11 +359,12 @@ object Html {
        |
        |  const start_index = slider_${graph_id}.value == labels_${graph_id}.length - 1 ? 0 : slider_${graph_id}.value
        |  const end_index = labels_${graph_id}.length
-       |  Plotly.animate(graph_${graph_id}, labels_${graph_id}.slice(start_index, end_index), animation_settings_${graph_id})
+       |  await Plotly.animate(graph_${graph_id}, labels_${graph_id}.slice(start_index, end_index), animation_settings_${graph_id})
        |})
        |
-       |pause_${graph_id}.addEventListener('click', function() {
-       |  Plotly.animate(graph_${graph_id}, [null], animation_settings_${graph_id})
+       |pause_${graph_id}.addEventListener('click', async function() {
+       |  await Plotly.animate(graph_${graph_id}, [null], animation_settings_${graph_id})
+       |  trigger_${graph_id} = false;
        |})
        |
        |graph_${graph_id}.on('plotly_redraw', () => {
@@ -369,8 +373,8 @@ object Html {
        |   if (slider_${graph_id}.value == labels_${graph_id}.length - 1) reset_count_${graph_id} = true
        |});
        |
-       |slider_${graph_id}.oninput = function() {
-       |   Plotly.animate(graph_${graph_id}, frames_${graph_id}[this.value], animation_settings_${graph_id})
+       |slider_${graph_id}.oninput = async function() {
+       |   await Plotly.animate(graph_${graph_id}, frames_${graph_id}[this.value], animation_settings_${graph_id})
        |   trigger_${graph_id} = false
        |   slider_${graph_id}.value = this.value
        |   value_${graph_id}.innerHTML = this.value;
@@ -378,6 +382,29 @@ object Html {
        |   if (this.value == labels_${graph_id}.length - 1) reset_count_${graph_id} = true
        |   reset_count_${graph_id} = false
        |}
+       |
+       |next_${graph_id}.addEventListener('click', function() {
+       |    if (slider_${graph_id}.value == labels_${graph_id}.length - 1) {
+       |        reset_count_${graph_id} = true;
+       |        return;
+       |    }
+       |    ++slider_${graph_id}.value;
+       |    value_${graph_id}.innerHTML = slider_${graph_id}.value;
+       |    trigger_${graph_id} = false;
+       |    slider_${graph_id}.oninput();
+       |})
+       |
+       |prev_${graph_id}.addEventListener('click', function() {
+       |    if (slider_${graph_id}.value == 0) {
+       |        reset_count_${graph_id} = false;
+       |        return;
+       |    }
+       |    --slider_${graph_id}.value;
+       |    value_${graph_id}.innerHTML = slider_${graph_id}.value;
+       |    trigger_${graph_id} = false;
+       |    slider_${graph_id}.oninput();
+       |})
+       |
        |""".stripMargin
   }
 

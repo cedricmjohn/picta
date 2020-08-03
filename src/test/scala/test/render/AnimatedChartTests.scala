@@ -18,9 +18,15 @@ class AnimationTests extends AnyFunSuite {
   }
 
   test("Animation.XYZ") {
-    val series = createXYZSeries(numberToCreate = 3, length = 3)
-    val layout = ChartLayout()
-    val chart = Chart(animated = true) setTitle "Animation.XYZ"  addSeries series
+    val series = createXYZSeries(numberToCreate = 50, length = 30)
+    val chart = (
+      Chart(animated = true)
+      setTitle "Animation.XYZ"
+      addSeries series
+      setXAxisLimits(0, 10000)
+      setYAxisLimits(0, 10000)
+      setZAxisLimits(0, 10000)
+    )
     if (plotFlag) chart.plot()
     assert(validateJson(chart.serialize.toString, "dynamic"))
   }

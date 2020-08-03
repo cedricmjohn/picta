@@ -89,18 +89,19 @@ class XYZTests extends AnyFunSuite {
     }
   }
 
+    test("XYZ.Heatmap.SetColorBar") {
+      val data = List(List(1, 2, 3), List(4, 5, 6))
+      val n = data(0).length
+      val series = XYZ(z=data.flatten, n=n) asType HEATMAP
+      val chart = (
+        Chart()
+        addSeries ( series setColorBar "my colorbar" )
+        setTitle "XYZ.Heatmap.SetColorBar"
+      )
 
-
-
-
-
-
-
-
-
-
-
-
+      if (plotFlag) chart.plot
+      assert(validateJson(chart.serialize.toString))
+    }
 
 
 }

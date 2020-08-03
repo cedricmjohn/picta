@@ -4,15 +4,19 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.options.ColorOptions.Color
 
 object UnitTestUtils {
+
+  def genRangeRandomInt(min: Int = 0, max: Int = 10000) = min + (max - min) * scala.util.Random.nextInt()
+  def genRangeRandomDouble(min: Double = 0.0, max: Double = 10000.0) = min + (max - min) * scala.util.Random.nextDouble()
+
   // create a common configuration to be used in all the tests
   val config: Config = Config(responsive = false)
-  val x_random = List.range(1, 100).map(x => scala.util.Random.nextDouble() * 100)
-  val x_int = List.range(0, 100).map(x => scala.util.Random.nextInt(50))
-  val y_int = List.range(0, 100).map(x => scala.util.Random.nextInt(50))
-  val z_int = List.range(0, 100).map(x => scala.util.Random.nextInt(50))
-  val x_double = List.range(0, 100).map(x => scala.util.Random.nextDouble() * 50)
-  val y_double = List.range(0, 100).map(x => scala.util.Random.nextDouble() * 50)
-  val z_double = List.range(0, 100).map(x => scala.util.Random.nextDouble() * 50)
+  val x_random = List.range(1, 100).map(x => genRangeRandomDouble())
+  val x_int = List.range(0, 100).map(x => genRangeRandomInt())
+  val y_int = List.range(0, 100).map(x => genRangeRandomInt())
+  val z_int = List.range(0, 100).map(x => genRangeRandomInt())
+  val x_double = List.range(0, 100).map(x => genRangeRandomDouble())
+  val y_double = List.range(0, 100).map(x => genRangeRandomDouble())
+  val z_double = List.range(0, 100).map(x => genRangeRandomDouble())
   val x_str = List("1", "2", "3")
   val y_str = List("a", "b", "c")
   val z_str = List("my", "name", "is")
@@ -40,8 +44,8 @@ object UnitTestUtils {
 
     if (count == numberToCreate) Nil
     else {
-      val xs = List.range(0, length)
-      val ys = xs.map(x => scala.util.Random.nextDouble() * x)
+      val xs = List.range(0, length).map(x => genRangeRandomDouble())
+      val ys = xs.map(x => genRangeRandomDouble())
       val trace = XY(x = xs, y = ys, name = "trace" + count)
       trace :: createXYSeries(numberToCreate, count + 1, length)
     }
@@ -50,9 +54,9 @@ object UnitTestUtils {
   def createXYZSeries(numberToCreate: Int, count: Int = 0, length: Int = 10): List[Series] = {
     if (count == numberToCreate) Nil
     else {
-      val xs = List.range(0, length)
-      val ys = xs.map(x => scala.util.Random.nextDouble() * x)
-      val zs = xs.map(x => scala.util.Random.nextDouble() * x * scala.util.Random.nextInt())
+      val xs = List.range(0, length).map(x => genRangeRandomDouble())
+      val ys = xs.map(x => genRangeRandomDouble())
+      val zs = xs.map(x => genRangeRandomDouble())
       val trace = XYZ(x = xs, y = ys, z = zs, name = "trace" + count, `type` = SCATTER3D)
       trace :: createXYZSeries(numberToCreate, count + 1, length)
     }

@@ -20,7 +20,7 @@ class ChartLayoutTests extends AnyFunSuite {
     // 1. define the axis to plot on the chart
     val ax0 = XAxis(position = 1, title = " x axis 1")
     val ax1 = YAxis(position = 1, title = "y axis 1")
-    val ax2 = YAxis(position = 2, title = "y axis 2", side = RIGHT, overlaying = YAxis())
+    val ax2 = YAxis(position = 2, title = "y axis 2", side = RIGHT_SIDE, overlaying = YAxis())
 
     // 2. define the data to display on the chart
     val series1 = XY(x = x_int, y = y_double) asType SCATTER drawStyle MARKERS setAxis YAxis(2)

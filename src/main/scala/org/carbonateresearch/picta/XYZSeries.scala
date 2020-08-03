@@ -4,7 +4,11 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
+import org.carbonateresearch.picta.options.ColorOptions.Color
+import org.carbonateresearch.picta.options.{ColorBar, Marker}
 import ujson.{Obj, Value}
+
+import scala.language.postfixOps
 
 /** ENUM for the XYZ chart series types */
 sealed trait XYZType
@@ -27,7 +31,7 @@ case object SURFACE extends XYZType
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 (x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = generateRandomText, `type`: XYZType = SCATTER3D,
- style: Opt[Style] = Blank, n: Opt[Int] = Blank) extends Series {
+ style: Opt[Style] = Blank, n: Opt[Int] = Blank, colorbar_options: Opt[ColorBar] = Blank) extends Series {
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
   (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {
@@ -56,6 +60,10 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
     /* accept all other cases */
     case (_, _, _, _, _) => ()
   }
+
+  val classification: String = "xyz"
+
+  def setName(new_name: String): XYZ[T0, T1, T2] = this.copy(name = new_name)
 
   def asType(new_type: XYZType): XYZ[T0, T1, T2] = {
     new_type match {
@@ -113,14 +121,29 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
     Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> list)
   }
 
+  def setColorBar(title: String = "", title_side: Side = RIGHT_SIDE) = {
+    val title_side_ = title_side.option match {
+      case Some(x) => x
+      case _ => RIGHT_SIDE
+    }
+
+    val new_colorbar_options = ColorBar(title = title, title_side = title_side_)
+    this.copy(colorbar_options = new_colorbar_options)
+  }
+
   private[picta] def serialize(): Value = {
     val name_ = Obj("name" -> name, "type" -> `type`.toString.toLowerCase())
+
+    val colorbar_options_ = colorbar_options.option match {
+      case Some(x) if `type` == HEATMAP || `type` == SURFACE => Obj("colorbar" -> x.serialize)
+      case None => jsonMonoid.empty
+    }
 
     val mode_ = style.option match {
       case Some(x) => Obj("mode" -> x.toString.toLowerCase)
       case None => jsonMonoid.empty
     }
 
-    List(name_, mode_, createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
+    List(name_, colorbar_options_, mode_, createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

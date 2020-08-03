@@ -37,7 +37,7 @@ class CompositionTests extends AnyFunSuite {
     val layout = (
       picta.ChartLayout("XY.Chart.Add.Config")
         setLegend Legend()
-        setAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT)
+        setAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT_SIDE)
       )
 
     val chart = Chart() setConfig(false, false) addSeries(series1, series2, series3) setChartLayout layout

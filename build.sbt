@@ -4,7 +4,7 @@ name := "picta"
 
 organization := "org.carbonateresearch"
 
-version := "0.1.0"
+version := "0.1.1"
 
 //scalaVersion := "2.13.2"
 

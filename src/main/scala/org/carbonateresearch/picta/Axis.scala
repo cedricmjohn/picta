@@ -4,10 +4,6 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
-sealed trait Side
-case object RIGHT extends Side
-case object LEFT extends Side
-
 /** Specifies the behaviour of axes that are inside a plot. */
 trait Axis extends Component {
 
@@ -171,6 +167,24 @@ final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, 
   override val orientation: String = "yaxis"
 
   def setTitle(new_title: String): YAxis = this.copy(title = new_title)
+  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
+  def setLimits(new_range: (Double, Double)): Axis = this.copy(range = new_range)
+  def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)
+  def drawLog(log: Boolean = true): Axis = this.copy(logarithmic = log)
+  def drawReverseAxis(reverse: Boolean = true): Axis = this.copy(reversed = reverse)
+  def setTickGap(gap: Double) = this.copy(tick_gap = gap)
+  def setStartingTick(start: Double) = this.copy(start_tick = start)
+}
+
+
+final case class ZAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[YAxis] = Blank,
+                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, tickformat: Opt[String] = Blank,
+                        logarithmic: Boolean = false, reversed: Boolean = false, showgrid: Boolean = true, zeroline: Boolean = false,
+                        showline: Boolean = false, start_tick: Opt[Double] = Blank, tick_gap: Opt[Double] = Blank) extends Axis {
+
+  override val orientation: String = "zaxis"
+
+  def setTitle(new_title: String): ZAxis = this.copy(title = new_title)
   def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
   def setLimits(new_range: (Double, Double)): Axis = this.copy(range = new_range)
   def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)

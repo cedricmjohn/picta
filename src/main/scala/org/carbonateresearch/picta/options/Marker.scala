@@ -16,7 +16,8 @@ import ujson.{Obj, Value}
  *
  */
 final case class Marker[T0: Color, T1: Color]
-(symbol: Opt[SymbolShape] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank, size: Opt[List[Int]] = Empty) extends Component {
+(symbol: Opt[SymbolShape] = Blank, color: Opt[List[T0]] = Empty, line: Opt[Line[T1]] = Blank, size: Opt[List[Int]] = Empty,
+ colorbar_options: Opt[ColorBar] = Blank) extends Component {
 
   private val c0 = implicitly[Color[T0]]
   private val s0 = implicitly[Serializer[Int]]
@@ -37,6 +38,8 @@ final case class Marker[T0: Color, T1: Color]
   def setSize(new_size: List[Int]): Marker[T0, T1] = this.copy(size = new_size)
 
   def setSize(new_size: Int*): Marker[T0, T1] = this.copy(size = new_size.toList)
+
+  def setColorBar(new_colorbar: ColorBar) = this.copy(colorbar_options = new_colorbar)
 
   private[picta] def serialize(): Value = {
     val symbol_ = symbol.option match {
@@ -59,6 +62,11 @@ final case class Marker[T0: Color, T1: Color]
       case None => jsonMonoid.empty
     }
 
-    List(symbol_, color_, line_, size_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
+    val colorbar_options_ = colorbar_options.option match {
+      case Some(x) => Obj("colorbar" -> x.serialize)
+      case None => jsonMonoid.empty
+    }
+
+    List(symbol_, color_, line_, size_, colorbar_options_).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 }

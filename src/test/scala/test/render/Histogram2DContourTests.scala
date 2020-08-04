@@ -18,10 +18,10 @@ class Histogram2DContourTests extends AnyFunSuite {
   }
 
   test("XY.Histogram2dContour.WithDensity") {
-    val ax1 = XAxis(showgrid = false) setDomain(0.0, 0.85)
-    val ax2 = YAxis(showgrid = false) setDomain(0.0, 0.85)
-    val ax3 = XAxis(position = 2, showgrid = false) setDomain(0.85, 1.0)
-    val ax4 = YAxis(position = 2, showgrid = false) setDomain(0.85, 1.0)
+    val ax1 = Axis(X,showgrid = false) setDomain(0.0, 0.85)
+    val ax2 = Axis(Y,showgrid = false) setDomain(0.0, 0.85)
+    val ax3 = Axis(X,position = 2, showgrid = false) setDomain(0.85, 1.0)
+    val ax4 = Axis(Y,position = 2, showgrid = false) setDomain(0.85, 1.0)
 
     val marker = Marker() setColor "rgb(102,0,0)"
     val series1 = XY(x_double, y_double) asType SCATTER drawStyle MARKERS setName "points" setMarker marker

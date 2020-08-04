@@ -8,11 +8,11 @@ import org.scalatest.funsuite.AnyFunSuite
     val plotFlag = false
 
     test("Subplot.Grid") {
-      val ax1 = XAxis() setTitle "x axis 1"
-      val ax2 = XAxis(2) setTitle "x axis 2"
+      val ax1 = Axis(X) setTitle "x axis 1"
+      val ax2 = Axis(X, 2) setTitle "x axis 2"
 
       val series1 = XY(x = List(1, 2, 3), y = List(2, 4, 5)) asType SCATTER drawStyle MARKERS
-      val series2 = XY(x = List(10, 12, 13), y = List(20, 31)) asType SCATTER drawStyle MARKERS setAxes(XAxis(2), YAxis(2))
+      val series2 = XY(x = List(10, 12, 13), y = List(20, 31)) asType SCATTER drawStyle MARKERS setAxes(Axis(X, 2), Axis(Y, 2))
 
       val layout = ChartLayout(title = "XY.Axis.Composition") setAxes(ax1, ax2) setMultiChart MultiChart(1, 2)
 
@@ -28,15 +28,15 @@ import org.scalatest.funsuite.AnyFunSuite
     }
 
     test("Subplot.Multiple") {
-      val ax1 = XAxis(title = "x axis 1")
-      val ax2 = XAxis(title = "x axis 2")
-      val ax3 = XAxis(title = "x axis 3")
-      val ax4 = XAxis(title = "x axis 4")
+      val ax1 = Axis(X, title = "x axis 1")
+      val ax2 = Axis(X,title = "x axis 2")
+      val ax3 = Axis(X,title = "x axis 3")
+      val ax4 = Axis(X,title = "x axis 4")
 
-      val ax6 = YAxis(title = "y axis 1")
-      val ax7 = YAxis(title = "y axis 2")
-      val ax8 = YAxis(title = "y axis 3")
-      val ax9 = YAxis(title = "y axis 4")
+      val ax6 = Axis(Y,title = "y axis 1")
+      val ax7 = Axis(Y,title = "y axis 2")
+      val ax8 = Axis(Y,title = "y axis 3")
+      val ax9 = Axis(Y,title = "y axis 4")
 
       val chart1 = Chart() addSeries XY(x_double, y_double).setName("a") addAxes(ax1, ax6)
       val chart2 = Chart() addSeries XY(y_int, y_double).setName("b") addAxes(ax2, ax7)
@@ -59,16 +59,13 @@ import org.scalatest.funsuite.AnyFunSuite
     }
 
     test("Subplot.Margins") {
+      val ax1 = Axis(X, title = "x axis 1")
+      val ax2 = Axis(X, title = "x axis 2")
+      val ax3 = Axis(X, title = "x axis 3")
 
-      // first define the x-axes we will use in the plot
-      val ax1 = XAxis(title = "x axis 1")
-      val ax2 = XAxis(title = "x axis 2")
-      val ax3 = XAxis(title = "x axis 3")
-
-      // first define the y-axes we will use in the plot
-      val ax6 = YAxis(title = "y axis 1")
-      val ax7 = YAxis(title = "y axis 2")
-      val ax8 = YAxis(title = "y axis 3")
+      val ax6 = Axis(Y, title = "y axis 1")
+      val ax7 = Axis(Y, title = "y axis 2")
+      val ax8 = Axis(Y, title = "y axis 3")
 
       // it may be necessary to play around with the chart dimensions and margin  in order to ensure a good fit on screen.
       val dim = 500

@@ -4,69 +4,51 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
-/** Specifies the behaviour of axes that are inside a plot. */
-trait Axis extends Component {
+sealed trait AxisType
+case object X extends AxisType
+case object Y extends AxisType
+case object Z extends AxisType
 
-  /** Used by the Picta library for book-keeping purposes. Specifies the direction of the axis. */
-  private[picta] val orientation: String
+final case class Axis (`type`: AxisType, position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[Axis] = Blank,
+                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, tickformat: Opt[String] = Blank,
+                        logarithmic: Boolean = false, reversed: Boolean = false, showgrid: Boolean = true, zeroline: Boolean = false,
+                        showline: Boolean = false, start_tick: Opt[Double] = Blank, tick_gap: Opt[Double] = Blank) extends Component {
 
-  /** Specifies where on the chart this axis is displayed. */
-  val position: Opt[Int]
+  val orientation: String = `type` match {
+    case X => "xaxis"
+    case Y => "yaxis"
+    case Z => "zaxis"
+  }
 
-  /** This sets the axis title. */
-  val title: Opt[String]
+  def setTitle(new_title: String): Axis = this.copy(title = new_title)
 
-  /** This determines which side the axis will be shown on. */
-  val side: Opt[Side]
+  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
 
-  /** This is used if we have more than one axis, and want to set which base axis it is mirroring. */
-  val overlaying: Opt[Axis]
+  def setLimits(new_range: (Double, Double)): Axis = {
+      logarithmic match {
+        case true =>
+          val lower = if (new_range._1 == 0.0) 0.0 else scala.math.log10(new_range._1)
+          val upper = scala.math.log10(new_range._2)
+          val range = (lower, upper)
+          this.copy(range = range)
+        case false => this.copy(range = new_range)
+      }
+    }
 
-  /** Specifies the domain the Chart. */
-  val domain: Opt[(Double, Double)]
+  def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)
 
-  /** Specifies the range the Chart. */
-  val range: Opt[(Double, Double)]
+  def drawLog(log: Boolean = true): Axis = {
+    range.option match {
+      case Some(x) =>this.copy(logarithmic = log) setLimits x
+      case _ => this.copy(logarithmic = log)
+    }
+  }
 
-  /** Specifies the format of the axis ticks. */
-  val tickformat: Opt[String]
+  def drawReverseAxis(reverse: Boolean = true): Axis = this.copy(reversed = reverse)
 
-  /** Specifies whether the axis is logarithmic. */
-  val logarithmic: Boolean
+  def setTickGap(gap: Double) = this.copy(tick_gap = gap)
 
-  /** Specifies whether the axis is reversed. */
-  val reversed: Boolean
-
-  /** Specifies the starting tick for the axis. */
-  val start_tick: Opt[Double]
-
-  /** Specifies the gap between the ticks for this axis. */
-  val tick_gap: Opt[Double]
-
-  /** Specifies whether the grid is shown on the plot. */
-  val showgrid: Boolean
-
-  /** Specifies whether the zeroline for each axis are shown. */
-  val zeroline: Boolean
-
-  /** Specifies whether the axis is visibly drawn on the chart. */
-  val showline: Boolean
-
-  def setTitle(new_title: String): Axis
-
-  def setDomain(new_domain: (Double, Double)): Axis
-
-  def setLimits(new_range: (Double, Double)): Axis
-
-  def setTickDisplayFormat(new_format: String): Axis
-
-  def setTickGap(gap: Double): Axis
-
-  def setStartingTick(start: Double): Axis
-
-  def drawLog(log: Boolean): Axis
-
-  def drawReverseAxis(reversed: Boolean): Axis
+  def setStartingTick(start: Double) = this.copy(start_tick = start)
 
   private[picta] def getPosition(): String = position.option match {
     case Some(x) if x != 1 =>  x.toString
@@ -138,60 +120,8 @@ trait Axis extends Component {
 
     Obj(convertPosition(position_) ->
       List(title_, meta, side_, overlaying_, domain_, range_, tickformat_, logarthmic_, reversed_, start_tick_, tick_gap_)
-      .foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
+        .foldLeft(jsonMonoid.empty)((a, x) => a |+| x))
   }
-}
-
-final case class XAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[XAxis] = Blank,
-                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, tickformat: Opt[String] = Blank,
-                        logarithmic: Boolean = false, reversed: Boolean = false, showgrid: Boolean = true, zeroline: Boolean = false,
-                        showline: Boolean = false, start_tick: Opt[Double] = Blank, tick_gap: Opt[Double] = Blank) extends Axis {
-
-  override val orientation: String = "xaxis"
-
-  def setTitle(new_title: String): XAxis = this.copy(title = new_title)
-  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
-  def setLimits(new_range: (Double, Double)): Axis = this.copy(range = new_range)
-  def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)
-  def drawLog(log: Boolean = true): Axis = this.copy(logarithmic = log)
-  def drawReverseAxis(reverse: Boolean = true): Axis = this.copy(reversed = reverse)
-  def setTickGap(gap: Double) = this.copy(tick_gap = gap)
-  def setStartingTick(start: Double) = this.copy(start_tick = start)
-}
-
-final case class YAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[YAxis] = Blank,
-                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, tickformat: Opt[String] = Blank,
-                        logarithmic: Boolean = false, reversed: Boolean = false, showgrid: Boolean = true, zeroline: Boolean = false,
-                        showline: Boolean = false, start_tick: Opt[Double] = Blank, tick_gap: Opt[Double] = Blank) extends Axis {
-
-  override val orientation: String = "yaxis"
-
-  def setTitle(new_title: String): YAxis = this.copy(title = new_title)
-  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
-  def setLimits(new_range: (Double, Double)): Axis = this.copy(range = new_range)
-  def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)
-  def drawLog(log: Boolean = true): Axis = this.copy(logarithmic = log)
-  def drawReverseAxis(reverse: Boolean = true): Axis = this.copy(reversed = reverse)
-  def setTickGap(gap: Double) = this.copy(tick_gap = gap)
-  def setStartingTick(start: Double) = this.copy(start_tick = start)
-}
-
-
-final case class ZAxis (position: Opt[Int] = Blank, title: Opt[String] = Blank, side: Opt[Side] = Blank, overlaying: Opt[YAxis] = Blank,
-                        domain: Opt[(Double, Double)] = Blank, range: Opt[(Double, Double)] = Blank, tickformat: Opt[String] = Blank,
-                        logarithmic: Boolean = false, reversed: Boolean = false, showgrid: Boolean = true, zeroline: Boolean = false,
-                        showline: Boolean = false, start_tick: Opt[Double] = Blank, tick_gap: Opt[Double] = Blank) extends Axis {
-
-  override val orientation: String = "zaxis"
-
-  def setTitle(new_title: String): ZAxis = this.copy(title = new_title)
-  def setDomain(new_domain: (Double, Double)): Axis = this.copy(domain = new_domain)
-  def setLimits(new_range: (Double, Double)): Axis = this.copy(range = new_range)
-  def setTickDisplayFormat(new_format: String): Axis = this.copy(tickformat = new_format)
-  def drawLog(log: Boolean = true): Axis = this.copy(logarithmic = log)
-  def drawReverseAxis(reverse: Boolean = true): Axis = this.copy(reversed = reverse)
-  def setTickGap(gap: Double) = this.copy(tick_gap = gap)
-  def setStartingTick(start: Double) = this.copy(start_tick = start)
 }
 
 object Axis {

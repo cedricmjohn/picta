@@ -45,7 +45,7 @@ case object PIE extends XYType
  */
 final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
- style: Opt[Style] = Blank, xaxis: Opt[XAxis] = Blank, yaxis: Opt[YAxis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
+ style: Opt[Style] = Blank, xaxis: Opt[Axis] = Blank, yaxis: Opt[Axis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank, xerror: Opt[XError] = Blank,
  yerror: Opt[YError] = Blank) extends Series {
 
@@ -81,14 +81,14 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
     this.copy(hist2d_options = new_hist2d_options)
   }
 
-  def setAxes(new_xaxis: XAxis, new_yaxis: YAxis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
+  def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
 
-  def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] =
-    this.copy(xaxis = new_xaxis.asInstanceOf[XAxis], yaxis = new_yaxis.asInstanceOf[YAxis])
+//  def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] =
+//    this.copy(xaxis = new_xaxis.asInstanceOf[Axis], yaxis = new_yaxis.asInstanceOf[Axis])
 
-  def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis match {
-      case x: XAxis => this.copy(xaxis = x)
-      case y: YAxis => this.copy(yaxis = y)
+  def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis.`type` match {
+      case X => this.copy(xaxis = new_axis)
+      case Y => this.copy(yaxis = new_axis)
   }
 
   def setErrorBars(error: ErrorBar) = {

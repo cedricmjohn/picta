@@ -1,187 +1,153 @@
-//package org.carbonateresearch.picta
-//
-//import org.carbonateresearch.conus.common.ModelResults
-//import org.carbonateresearch.picta.ConusTests._
-//import org.carbonateresearch.picta.UnitTestUtils.validateJson
-//import org.carbonateresearch.picta.conus.Utils._
-//import org.carbonateresearch.picta.VERTICAL
-//import org.scalatest.funsuite.AnyFunSuite
-//
+package org.carbonateresearch.picta
+
+import org.carbonateresearch.picta.conus.Utils._
+import org.carbonateresearch.conus.common.SingleModelResults
+import org.carbonateresearch.picta.options.AUTO
+import org.carbonateresearch.conus._
+import org.carbonateresearch.picta.UnitTestUtils.validateJson
+
+import org.scalatest.funsuite.AnyFunSuite
+
 //class ConusTests extends AnyFunSuite {
 //
 //  val plotFlag = false
 //
 //  test("Conus.2DCategory") {
+//    val simulator = new BasicSimulator
+//    val nbRats:ModelVariable[Int] = ModelVariable("Number of Rats",2,"Individuals") //Notice this is an Int
+//    val deathRate:ModelVariable[Double] = ModelVariable("Death rate",0.0,"%")
 //
-////    val model = runModel
-////
-////    val x = List.range(0, 10)
-////
-////    // we can use the utility function to grab the series for a single variable
-////    val series2: List[Double] = getDataFromSingleModel(model, d18Occ, List(0), numberOfSteps)
-////
-////    val xy1 = XY(x, series2)
-////
-////    // lets also plot a second y variable
-////    val yaxis2 = YAxis(
-////      position = 2,
-////      title = "d13Ccc",
-////      overlaying = YAxis(), // this ensures that the axis sits on a seperate axis
-////      side = RIGHT, // this ensures the axis is on the right hand side
-////      tickformat = "0.1f" // this will keep formatting reasonable for display purposes
-////    )
-////
-////    // we construct the second y variable;
-////    val series3: List[Double] = getDataFromSingleModel(model, d13Ccc, List(0), numberOfSteps)
-////    val xy2 = XY(x, series3) setAxis yaxis2
-////
-////    // finally we can combine in a single chart
-////    val chart = (
-////      Chart()
-////        addSeries xy1
-////        addSeries xy2
-////        setTitle("d18Occ vs d13Ccc")
-////        addAxes(XAxis(title="age"), YAxis(title="d18Occ"), yaxis2)
-////        setLegend(y = -0.4, orientation=VERTICAL)
-////      )
-////
-////    val canvas = Canvas() addCharts chart
-////    if (plotFlag) canvas.plot
-////
-////    assert(validateJson(chart.serialize.toString))
-//
-//    import org.carbonateresearch.conus._
-//    import org.carbonateresearch.conus.modelzoo.GeneralGeology._
-//    import org.carbonateresearch.conus.modelzoo.PasseyHenkesClumpedDiffusionModel._
-//    import org.carbonateresearch.conus.{AllCells, ModelVariable, PerCell, BasicSimulator, Step, SteppedModel}
-//
-//    import math._
-//
-//    val sim = new BasicSimulator
-//
-//    // a few constants
-//    val rhocal:Double = 2.71 //Density of carbonates
-//    val cOf=889000 //concentration of O in fluid
-//    val cCf=200 //concentration of C in fluid
-//    val cOcal = 480000 //concentration of O in stoichiometric calcite
-//    val cCcal = 120000 //concentration of C in stoichiometric calcite
-//    val d13Ctdc = 0 //carbon isotope composition of total dissolved carbon in fluid
-//
-//    // setting model variables
-//    val initialAge:ModelVariable[Double] = ModelVariable("Initial age",96.0,"Ma")
-//    val finalAge:ModelVariable[Double] = ModelVariable("Final age",0.0,"Ma")
-//    val d18Of:ModelVariable[Double] = ModelVariable("Fluid d18O",-1.0,"‰")
-//    val TmaxSample:ModelVariable[Double] = ModelVariable("Tmax",0.0,"˚C")
-//    val WFF:ModelVariable[Double] = ModelVariable("Weight fraction of fluid",0.0,"")
-//    val CWRR:ModelVariable[Double] = ModelVariable("Cumulative water/rock ratio",0.0,"")
-//    val FluidMass:ModelVariable[Double] = ModelVariable("Mass of fluid",0.2,"")
-//    val d18Occ:ModelVariable[Double] = ModelVariable("d18Occ",1.0,"‰")
-//    val d13Ccc:ModelVariable[Double] = ModelVariable("d13Ccc",1.0,"‰")
-//    val D47r:ModelVariable[Double] = ModelVariable("D47 with partial recrystallization",.5,"‰")
-//    val fractionRec:ModelVariable[Double] = ModelVariable("Fraction of recrystallization",0.01,"‰")
-//    val initalBurialAtModelStart:ModelVariable[Double] = ModelVariable("Initial burial at model start",0.0,"meters")
-//
-//    // Initialise model conditions as lists
-//    val burialHistory = List((96.0,0.0), (39.0,2000.0), (0.0,-70.0))
-//    val geothermalGradientHistory= List((96.0,30.0),(0.0,30.0))
-//    val surfaceTemperaturesHistory = List((96.0,30.0),(0.0,30.0))
+//    // Let's initialise a few model conditions
 //    val numberOfSteps = 10
-//    val ageList:List[Double] = List(97.0,96.0,95.0)
-//    val finalAgeList:List[Double] = List(0.0)
-//    val rangeOfFluidMasses:List[Double] = List(0.2)
-//    val rangeOfPartialRecrystallization = List(1.0,.5,.1,.01,0.0)
 //
-//    // Bulk isotope calculation equations
-//    val d18OccFunction = (s:Step) => {
-//      val cO=(WFF(s)*cOf)+(1-WFF(s))*cOcal
-//      val alpha = math.exp((18.03*(1000*pow((burialTemperature(s)+273.15), -1)) - 32.42)/1000)
-//      val d18O = ((d18Of(s) * WFF(s) * cOf) + d18Occ(s) * (1-WFF(s)) * cOf)/ cO
-//      ((d18O * cOf * alpha) - (1000 * cOf * WFF(s) * (1-alpha))) / ((cOcal * (1-WFF(s)) * alpha) + cOf * WFF(s))
+//    // And let's create a function that, given a rat population and a deathRate, calculates a new population
+//
+//    def survivingRats(initialPopulation:Int, deathRate:Double): Int = {
+//      initialPopulation-math.floor(initialPopulation.toDouble*deathRate).toInt
 //    }
 //
-//    val d13CccFunction = (s:Step) => {
-//      val cC=(WFF(s)*cCf)+(1-WFF(s))*cCcal
-//      val alpha = exp((-2.4612+(7666.3/100) - (2.9880*pow(10,3)/pow((burialTemperature(s)+273.15),6)))/1000)
-//      val d13C = ((d13Ctdc * WFF(s) * d13Ctdc) + (d13Ccc(s) * (1-WFF(s)) * cCcal))/cC
-//      ((d13C * cC * alpha) - (1000 * cCf * WFF(s) * (1-alpha))) / (cCcal * (1-WFF(s) * alpha) + cCf * WFF(s))
-//    }
-//
-//    val eaglefordModel = new SteppedModel(numberOfSteps,"Eagleford recrystallization")
-//      .setGrid(19)
-//      .defineMathematicalModel(
-//        age =>> ageOfStep(initialAge,finalAge),
-//        depth =>> {(s:Step) => {burialDepthFromAgeModel(age,burialHistory).apply(s)+initalBurialAtModelStart(s)}},
-//        surfaceTemperature =>> surfaceTemperaturesAtAge(age, surfaceTemperaturesHistory),
-//        geothermalGradient =>> geothermalGradientAtAge(age,geothermalGradientHistory),
-//        burialTemperature =>> burialTemperatureFromGeothermalGradient(surfaceTemperature,depth,geothermalGradient),
-//        dT =>> dTFun,
-//        D47eq =>> D47eqFun,
-//        D47i =>> D47iFun,
-//        SampleTemp =>> davies19_T,
-//        FluidMass =>> {(s:Step) => 0.2},
-//        d18Of =>> {(s:Step) => -1.0},
-//        WFF =>> {(s:Step) => FluidMass(s) / (FluidMass(s) + rhocal)},
-//        CWRR =>> {(s:Step) => s.stepNumber * WFF(s)/(1-WFF(s))},
-//        d18Occ =>> d18OccFunction,
-//        d13Ccc =>> d13CccFunction,
-//        D47r =>> {(s:Step) => {if(burialTemperature(s)-burialTemperature(s-1) >= 0){D47r(s-1) * (1.0-fractionRec(s)) + D47eq(s) * fractionRec(s)}
-//        else {D47r(s-1)}}}
+//    val ratPopulation = new SteppedModel(numberOfSteps,"Simplified rat population dynamics")
+//      .setGrid(3,3) // 9 cells
+//      .defineMathematicalModel( // In this super simple model we do only two things at each step
+//        deathRate =>> {(s:Step) => scala.util.Random.nextDouble()*0.9}, // calculate a death rate
+//        nbRats =>> {(s:Step) => {survivingRats(nbRats(s-1)+(nbRats(s-1)/2*10),deathRate(s))}} // calcuate the nb rats
 //      )
-//      .defineInitialModelConditions(
-//        AllCells(initialAge,ageList),
-//        AllCells(finalAge,finalAgeList),
-//        AllCells(fractionRec,rangeOfPartialRecrystallization),
-//        AllCells(D47i,List(0.670,0.680,0.690)),
-//        AllCells(D47r,List(0.670,0.680,0.690)),
-//        PerCell(initalBurialAtModelStart,List(
-//          (List(0.0),Seq(0)),
-//          (List(-0.91),Seq(1)),
-//          (List(-1.22),Seq(2)),
-//          (List(-2.90),Seq(3)),
-//          (List(-4.57),Seq(4)),
-//          (List(-4.88),Seq(5)),
-//          (List(-4.90),Seq(6)),
-//          (List(-6.10),Seq(7)),
-//          (List(-6.40),Seq(8)),
-//          (List(-6.71),Seq(9)),
-//          (List(-25.90),Seq(10)),
-//          (List(-28.96),Seq(11)),
-//          (List(-29.87),Seq(12)),
-//          (List(-35.05),Seq(13)),
-//          (List(-35.36),Seq(14)),
-//          (List(-35.97),Seq(15)),
-//          (List(-36.58),Seq(16)),
-//          (List(-37.19),Seq(17)),
-//          (List(-38.90),Seq(18)))))
-//      .defineCalibration(
-//        D47r.isBetween(0.511,0.683).atCells(Seq(0)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(1)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(2)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(3)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(4)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(5)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(6)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(7)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(8)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(9)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(10)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(11)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(12)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(13)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(14)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(15)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(16)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(17)),
-//        D47r.isBetween(0.511,0.683).atCells(Seq(18))
-//      )
+//      .defineInitialModelConditions( // Now we need to determine the inital size of the population at each model grid
+//        PerCell(nbRats,List(
+//          (List(2),Seq(0,0)),
+//          (List(2),Seq(0,1)),
+//          (List(4),Seq(0,2)),
+//          (List(4),Seq(1,0)),
+//          (List(2),Seq(1,1)),
+//          (List(6),Seq(1,2)),
+//          (List(2),Seq(2,0)),
+//          (List(4),Seq(2,1)),
+//          (List(6),Seq(2,2)))))
 //
-//    sim.evaluate(eaglefordModel)
+//    simulator.evaluate(ratPopulation)
 //    Thread.sleep(1000)
-//    val results: ModelResults = sim.getResults(eaglefordModel)
-//    results.getModel(0)
+//
+//    // grab the results from the Conus model
+//    val model: SingleModelResults = simulator(ratPopulation)(0)
+//
+//    val generation = (0 until numberOfSteps-1).map(x=>x.toDouble).toList
+//
+//    // we can use the utility function to grab the series for a single variable
+//    val deathRateSeries: List[Double] = getDataFromSingleModel(model, deathRate, List(0,0), numberOfSteps)
+//
+//    val xy1 = XY(generation, deathRateSeries) setName("Death rate")
+//
+//    // alternatively we can quickly get the same data for XY using the function below
+//    //  val xy1 = getXYSeriesFromSingleModel(model, (age, d18Occ), List(0), numberOfSteps)
+//
+//    // lets also plot a second y variable
+//    val yaxis2 = Axis(
+//      Y,
+//      position = 2,
+//      title = "Nb rats",
+//      overlaying = Axis(Y), // this ensures that the axis sits on a seperate axis
+//      side = RIGHT_SIDE, // this ensures the axis is on the right hand side
+//      tickformat = "0.0f" // this will keep formatting reasonable for display purposes
+//    )
+//
+//    // we construct the second y variable;
+//    val nbRatsSeries: List[Double] = getDataFromSingleModel(model, nbRats, List(0,0), numberOfSteps).map(x => x.toDouble)
+//    val xy2 = XY(generation, nbRatsSeries) setAxis yaxis2 setName("Nb of rats")
+//
+//    // finally we can combine in a single chart
+//    val chart = (
+//      Chart()
+//        addSeries xy1
+//        addSeries xy2
+//        setTitle("Date rate vs nb of rats per generation for cell (0,0)")
+//        addAxes(Axis(X, title="Generation"), Axis(Y, title="Death rate"), yaxis2)
+//      )
+//
+//    val canvas = Canvas() addCharts chart
+//
+//    assert(validateJson(chart.serialize.toString))
+//
+//    // When we plot the result, we can see the legend is in the wrong place and overlaying the axis - we can overcome this
+//    // in the next example
+//    if (plotFlag) canvas.plot
+//
+//    // finally we can combine in a single chart
+//    val chart2 = (
+//      Chart()
+//        addSeries xy1
+//        addSeries xy2
+//        setTitle("Death rate vs Nb of rats for cell (0,0)")
+//        addAxes(Axis(X, title="Generation"), Axis(Y, title="Death rate"), yaxis2)
+//        setLegend(x = 0.5, y = -0.5, orientation = HORIZONTAL, xanchor = AUTO, yanchor = AUTO)
+//      )
+//
+//    val canvas2 = Canvas() addCharts chart2
+//
+//    if (plotFlag) canvas2.plot
+//
+//    assert(validateJson(chart2.serialize.toString))
+//
+//    val xaxis = Axis(X, title = "Generation") setLimits (0.0, 9.0)
+//    val yaxis = Axis(Y, title = "Nb of rats") setLimits (0.0, 10000.0)
+//    val animation: List[XY[Double, Double, Double, Double]] = (0 to generation.size-1).map(x => XY(generation.take(x+1), nbRatsSeries.take(x+1)) setName "nbRats").toList
+//
+//    // we can also specifiy the underlying layout directly - sometimes this can be useful
+//    val layout = ChartLayout("Animation XY") setAxes(xaxis, yaxis)
+//
+//    val chart3 = Chart(animated = true, transition_duration=100) setChartLayout layout addSeries animation
+//
+//    if (plotFlag) chart3.plot
+//
+//
+//    assert(validateJson(chart3.serialize.toString))
+//
+//    val nbCol = (0 to 2).toList
+//    val mySeries:List[Double] = nbCol.flatMap(r => {
+//      nbCol.map{c => getDataFromSingleModel(model, nbRats, List(r,c), numberOfSteps).last.toDouble}})
+//
+//    val series = XYZ(z=mySeries,n=3) asType HEATMAP
+//
+//    val chart4 = Chart().addSeries(series).setTitle("Nb of rats at time step 10")
+//
+//    if (plotFlag) chart4.plot
+//
+//    assert(validateJson(chart4.serialize.toString))
+//
+//    def createSeries:List[List[Double]] = {
+//      val nbCol = (0 to 2).toList
+//      val nestedList:List[List[Double]] = nbCol.flatMap(r => {
+//        nbCol.map{c => getDataFromSingleModel(model, nbRats, List(r,c), numberOfSteps).map(x=>x.toDouble)}})
+//
+//      (0 to 9).map(x => (0 to 8).map(y => nestedList(y)(x)).toList).toList
+//    }
+//
+//    val ratsAsSurface = createSeries.map(s => XYZ(z=s,n=3) asType SURFACE setColorBar("Rat Population", RIGHT_SIDE))
+//
+//    val ratsChart = Chart(animated = true, transition_duration=100) addSeries ratsAsSurface setTitle "Surface"
+//
+//    if (plotFlag) ratsChart.plot
+//
+//    assert(validateJson(ratsChart.serialize.toString))
 //  }
 //}
-//
-//object ConusTests {
-//
-//}
+

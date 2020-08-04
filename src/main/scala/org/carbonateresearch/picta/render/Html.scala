@@ -210,25 +210,24 @@ object Html {
         val graph_id = chart.id
 
         if (chart.animated) {
-          val traces: Value = transform(List(chart.data_(0))).to(Value)
           val frames: Value = chart.frames
           val labels: Value = transform(chart.labels).to(Value)
           val layout: Value = chart.layout_
           val transition_duration = chart.transition_duration
           val config: Value = chart.config_
 
-          html ++= createAnimationHTML(traces: Value, frames: Value, labels: Value, layout: Value, config=config,
+          html ++= createAnimationHTML(frames: Value, labels: Value, layout: Value, config=config,
             transition_duration: Int, graph_id: String)
         }
 
         else {
-          val traces: Value = transform(chart.data_).to(Value)
+          val traces: Value = chart.series_()
           val layout: Value = chart.layout_
           val config: Value = chart.config_
 
           html ++=
             s"""
-               | var traces_${graph_id} = ${traces};
+               |  var traces_${graph_id} = ${traces};
                | var layout_${graph_id} = ${layout};
                | var config_${graph_id} = ${config};
                | Plotly.newPlot("graph_${graph_id}", traces_${graph_id}, layout_${graph_id}, config_${graph_id});
@@ -306,17 +305,19 @@ object Html {
    * @param graph_id: A unique id associated with a particular Chart.
    * @return: A string representation of the HTML.
    */
-  private def createAnimationHTML(series: Value, frames: Value, labels: Value, layout: Value, config: Value,
+  private def createAnimationHTML(frames: Value, labels: Value, layout: Value, config: Value,
                                   transition_duration: Int, graph_id: String): String = {
 
     s"""
        |var graph_${graph_id} = document.getElementById('graph_${graph_id}')
-       |var traces_${graph_id} = $series
+       |
        |var layout_${graph_id} = $layout
        |var frames_${graph_id} = $frames
        |var labels_${graph_id} = $labels
        |var duration_${graph_id} = $transition_duration
        |var config_${graph_id} = $config
+       |
+       |var traces_${graph_id} = JSON.parse(JSON.stringify(frames_${graph_id}[0].data.map(x => x)))
        |
        |var animation_settings_${graph_id} = {
        |    mode: "immediate",

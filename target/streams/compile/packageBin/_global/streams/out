@@ -44,6 +44,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$ONE_HUNDRED_AND_THIRTY_TWO$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/TRANSVERSE_MERCATOR.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/TRANSVERSE_MERCATOR.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Closest_X.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/Closest_X.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$DIAMOND_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$DIAMOND_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TRIANGLE_SE_OPEN$.class[0m
@@ -492,14 +494,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/BOTTOM_SIDE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/WINKEL_TRIPEL.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/WINKEL_TRIPEL.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/YAxis$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/YAxis$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ZAxis.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/ZAxis.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CLosest_Y$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/CLosest_Y$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/XY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$STAR_SQUARE_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$STAR_SQUARE_OPEN$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/CLosest_Y.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/CLosest_Y.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$Y_LEFT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$Y_LEFT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$HEXAGON_TWO_DOT$.class[0m
@@ -626,6 +628,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/HORIZONTAL$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_TWENTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_TWENTY_ONE$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AxisType.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/AxisType.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Series.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/Series.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$FIFTEEN$.class[0m
@@ -686,6 +690,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/USA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_FOURTEEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_FOURTEEN$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$X_BASIC$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$X_BASIC$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TWO_HUNDRED_AND_FIFTEEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TWO_HUNDRED_AND_FIFTEEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$SQUARE_CROSS$.class[0m
@@ -766,8 +772,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$SEVEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$CIRCLE_X_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$CIRCLE_X_OPEN$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/YAxis.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/YAxis.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$FORTY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$FORTY$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$PENTAGON_DOT$.class[0m
@@ -818,8 +822,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$Y_UP$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TRIANGLE_UP_OPEN_DOT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TRIANGLE_UP_OPEN_DOT$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$X$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$X$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/OptionWrapper.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/OptionWrapper.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/KAVRAYSKIY7$.class[0m
@@ -898,8 +900,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$LINE_EW_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SOUTH_AMERICA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SOUTH_AMERICA.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ZAxis$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/ZAxis$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MILLER.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/MILLER.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MARKERS_TEXT$.class[0m
@@ -960,6 +960,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/WORLD.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$FIVE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$FIVE$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Z.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/Z.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SOUTH_AMERICA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SOUTH_AMERICA$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SCATTER3D$.class[0m
@@ -968,6 +970,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$HEXAGRAM_OPEN_DOT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$STAR_DIAMOND_OPEN_DOT$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$STAR_DIAMOND_OPEN_DOT$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Closest_X$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/Closest_X$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$ONE_HUNDRED_AND_TWENTY_NINE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$ONE_HUNDRED_AND_TWENTY_NINE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$LINE_NW$.class[0m
@@ -984,8 +988,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_NINE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/X$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/X$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XAxis.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/XAxis.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_SIX$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$THREE_HUNDRED_AND_SIX$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/HAMMER$.class[0m
@@ -1120,6 +1122,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/HoverMode.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TWENTY_ONE$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TWENTY_ONE$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Z$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/Z$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MapOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/MapOptions$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$STAR_TRIANGLE_DOWN_OPEN$.class[0m
@@ -1138,8 +1142,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TRIANGLE_NE_OPEN$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/XAxis$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/XAxis$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$TRIANGLE_SW$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/org/carbonateresearch/picta/SymbolShape$TRIANGLE_SW$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Example.class[0m
@@ -1158,6 +1160,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/traces.json[0m
 [0m[[0m[0mdebug[0m] [0m[0m	merge-image.js[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/merge-image.js[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Example$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/classes/Example$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

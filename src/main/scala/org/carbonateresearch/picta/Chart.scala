@@ -1,13 +1,14 @@
 package org.carbonateresearch.picta
 
 import scala.language.postfixOps
-
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.options._
 import ujson.{Obj, Value}
 import upickle.default._
+
+import scala.collection.mutable.ListBuffer
 
 /** This is a single chart that renders in a slot in the Canvas grid.
  *
@@ -20,7 +21,8 @@ import upickle.default._
  */
 final case class Chart
 (series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
- animated: Boolean = false, transition_duration: Int = 100, private[picta] val id: String = generateRandomText()) extends Component {
+ animated: Boolean = false, transition_duration: Int = 100, animate_multiple_series: Boolean = false,
+ private[picta] val id: String = generateRandomText()) extends Component {
 
   private val XYZ: Boolean = {
     if (series.length == 0) false
@@ -32,26 +34,28 @@ final case class Chart
 
   private val frames_labels = animated match {
     case false => (Nil, Nil)
-    case true => createFramesAndLabels(series)
+    case true => if (animate_multiple_series) createFramesAndLabelsParallel(series) else createFramesAndLabels(series)
   }
 
-  private def createAnimatedData() = {
-    series match {
-      case Nil => Nil
-      case x =>
-        val head = series.head setName "Frame 0"
-        List(head.serialize)
-    }
-  }
+//  private def createAnimatedData() = {
+//    series match {
+//      case Nil => Nil
+//      case x =>
+//        val head = series.head setName s"${series.head.name} (F0)"
+//        List(head.serialize)
+//    }
+//  }
 
-  private[picta] val frames = transform(frames_labels._1).to(Value)
+  private[picta] def frames() = transform(frames_labels._1).to(Value)
 
-  private[picta] val labels = frames_labels._2
+  private[picta] def labels() = frames_labels._2
 
-  private[picta] val data_ : List[Value] = animated match {
-    case true => createAnimatedData()
-    case false => series.map(x => x.serialize)
-  }
+//  private[picta] def data_() : List[Value] = animated match {
+//    case true => createAnimatedData()
+//    case false => series.map(x => x.serialize)
+//  }
+
+  private[picta] def series_() : List[Value] = series.map(x => x.serialize)
 
   private[picta] val layout_ : Value = layout.serialize
 
@@ -94,9 +98,9 @@ final case class Chart
 
     val new_axis = key match {
       /* if we have no existing axes, we create a new one from scratch */
-      case "xaxis" if (existing_axes.length == 0) => setAxisProperty(XAxis())(f)
-      case "yaxis"if (existing_axes.length == 0) => setAxisProperty(YAxis())(f)
-      case "zaxis"if (existing_axes.length == 0) => setAxisProperty(ZAxis())(f)
+      case "xaxis" if (existing_axes.length == 0) => setAxisProperty(Axis(X))(f)
+      case "yaxis"if (existing_axes.length == 0) => setAxisProperty(Axis(Y))(f)
+      case "zaxis"if (existing_axes.length == 0) => setAxisProperty(Axis(Z))(f)
       /* create update the existing axis */
       case _ => setAxisProperty(existing_axes.last)(f)
     }
@@ -156,7 +160,7 @@ final case class Chart
 
   def setZAxisStartTick(start_tick: Double = 0) = setAxis(key="zaxis", setAxisStartTick(start_tick))
 
-  def addAxes(new_xaxis: XAxis, new_yaxis: YAxis): Chart = {
+  def addAxes(new_xaxis: Axis, new_yaxis: Axis): Chart = {
     val new_layout = this.layout setAxes(new_xaxis, new_yaxis) setXYZ XYZ
     this.copy(layout = new_layout)
   }
@@ -207,15 +211,40 @@ final case class Chart
     this.copy(layout = new_layout)
   }
 
-  private[picta] def serialize: Value = Obj("traces" -> data_, "layout" -> layout_, "config" -> config_)
+  private[picta] def serialize: Value = Obj("traces" -> series_, "layout" -> layout_, "config" -> config_)
 
   private def createFramesAndLabels(lst: List[Series], frames: List[Obj] = Nil, labels: List[String] = Nil, index: Int = 0): (List[Obj], List[String]) = {
     lst match {
       case Nil => (frames, labels)
       case hd :: tl =>
-        val new_hd = hd setName s"Frame ${index}"
-        createFramesAndLabels(tl, frames :+ Obj("name" -> s"Frame ${index}", "data" -> List(new_hd.serialize)),
-          labels :+ s"Frame ${index}", index+1 )
+        val new_hd = hd setName s"${hd.name} (F${index})"
+        createFramesAndLabels(tl, frames :+ Obj("name" -> s"${hd.name} (F${index})", "data" -> List(new_hd.serialize)),
+          labels :+ s"${hd.name} (F${index})", index+1)
     }
+  }
+
+  def createFramesAndLabelsParallel(lst: List[Series]): (List[Obj], List[String]) = {
+    // get the unique series names
+    val names = lst.map(x => x.name).distinct
+
+    val nested_list: List[List[Series]] = names.map(x => lst.filter(s => s.name == x))
+
+    // get the number of steps
+    val n =  nested_list match {
+      case Nil => 0
+      case x => x.head.length
+    }
+
+    var labels = new ListBuffer[String]()
+    var frames = new ListBuffer[Obj]()
+
+    // for each time step, create a frame
+    for (i <- 0 until n) {
+      val frame_name = s"Frame ${i}"
+      labels += frame_name
+      val data: List[Value] = nested_list.map(s => s(i).setName(s"${s(i).name} (F${i})") .serialize)
+      frames += Obj("name" -> frame_name, "data" -> data)
+    }
+    (frames.toList, labels.toList)
   }
 }

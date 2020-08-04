@@ -6,8 +6,14 @@ import org.carbonateresearch.picta.options._
 import ujson.{Obj, Value}
 
 trait HoverMode
-case object X extends HoverMode
-case object Y extends HoverMode
+
+case object Closest_X extends HoverMode {
+  override def toString: String = "x"
+}
+case object CLosest_Y extends HoverMode {
+  override def toString: String = "y"
+}
+
 case object CLOSEST extends HoverMode
 case object FALSE extends HoverMode
 case object X_UNIFIED extends HoverMode

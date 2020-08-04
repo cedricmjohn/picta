@@ -652,7 +652,7 @@ object SymbolShape {
     override def toString: String = "cross-open-dot"
   }
 
-  case object X extends SymbolShape {
+  case object X_BASIC extends SymbolShape {
     override def toString: String = "x"
   }
 

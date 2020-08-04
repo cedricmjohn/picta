@@ -19,13 +19,13 @@ class ChartMethodTests extends AnyFunSuite {
   test("Chart.Axes") {
     val series1 = XY(x_int, y_int) asType SCATTER drawStyle MARKERS
     val series2 = XY(x_int, y_double) asType SCATTER drawStyle MARKERS
-    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis YAxis(2)
+    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis Axis(Y, 2)
 
     val chart = (
       Chart()
         setTitle "Chart.Axes"
         addSeries(series1, series2, series3)
-        addAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT_SIDE)
+        addAxes Axis(Y,position = 2, title = "second y axis", overlaying = Axis(Y), side = RIGHT_SIDE)
       )
 
     val canvas = Canvas() setChart(0, 0, chart)
@@ -58,11 +58,11 @@ class ChartMethodTests extends AnyFunSuite {
 
   test("Chart.Axis.Composition") {
     // create the axes
-    val xaxis1 = XAxis() setTitle "x axis 1"
-    val yaxis1 = YAxis()
+    val xaxis1 = Axis(X) setTitle "x axis 1"
+    val yaxis1 = Axis(Y)
 
-    val xaxis2 = XAxis(2) setTitle "x axis 2"
-    val yaxis2 = YAxis(2)
+    val xaxis2 = Axis(X, 2) setTitle "x axis 2"
+    val yaxis2 = Axis(Y,2)
 
     val series1 = (
       XY(x = List(1, 2, 3), y = List(2, 4, 5))
@@ -116,9 +116,9 @@ class ChartMethodTests extends AnyFunSuite {
   test("Chart.XYZ.SetAxesTitle") {
     val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawStyle MARKERS setName "XYZ series"
 
-    val xaxis = XAxis(title="my x axis")
-    val yaxis = YAxis(title="my y axis")
-    val zaxis = ZAxis(title="my z axis")
+    val xaxis = Axis(X, title="my x axis")
+    val yaxis = Axis(Y, title="my y axis")
+    val zaxis = Axis(Z, title="my z axis")
 
     val chart = (
       Chart()
@@ -135,9 +135,9 @@ class ChartMethodTests extends AnyFunSuite {
   test("Chart.XYZ.SetAxesRange") {
     val series = XYZ(x_double, y_double, z_double) asType SCATTER3D drawStyle MARKERS setName "XYZ series"
 
-    val xaxis = XAxis(title="my x axis")
-    val yaxis = YAxis(title="my y axis")
-    val zaxis = ZAxis(title="my z axis")
+    val xaxis = Axis(X, title="my x axis")
+    val yaxis = Axis(Y, title="my y axis")
+    val zaxis = Axis(Z, title="my z axis")
 
     val chart = (
       Chart()

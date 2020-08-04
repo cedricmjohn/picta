@@ -32,12 +32,12 @@ class CompositionTests extends AnyFunSuite {
   }
 
   test("XY.Layout.Add.Axis") {
-    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis YAxis(2)
+    val series3 = XY(x_int, z_int) asType SCATTER drawStyle MARKERS setAxis Axis(Y, 2)
 
     val layout = (
       picta.ChartLayout("XY.Chart.Add.Config")
         setLegend Legend()
-        setAxes YAxis(position = 2, title = "second y axis", overlaying = YAxis(), side = RIGHT_SIDE)
+        setAxes Axis(Y, position = 2, title = "second y axis", overlaying = Axis(Y), side = RIGHT_SIDE)
       )
 
     val chart = Chart() setConfig(false, false) addSeries(series1, series2, series3) setChartLayout layout

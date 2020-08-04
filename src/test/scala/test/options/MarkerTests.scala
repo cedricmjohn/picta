@@ -24,8 +24,8 @@ class MarkerTests extends AnyFunSuite {
 
   test("Marker.Composition.WithTrace") {
     val marker = Marker() setSymbol CIRCLE setColor "red" setLine Line()
-    val x_axis = XAxis() setTitle "x variable"
-    val y_axis = YAxis() setTitle "y variable"
+    val x_axis = Axis(X) setTitle "x variable"
+    val y_axis = Axis(Y) setTitle "y variable"
 
     val series = XY(x_int, y_int, `type` = SCATTER, style = MARKERS) setMarker marker
     val chart = Chart() addSeries series setTitle "Marker.Composition.WithTrace"

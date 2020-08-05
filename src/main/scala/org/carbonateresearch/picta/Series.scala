@@ -13,9 +13,13 @@ private[picta] trait Series extends Component {
 
 /** ENUM for series markers */
 sealed trait Style
+
 case object NONE extends Style
+
 case object LINES extends Style
+
 case object MARKERS extends Style
+
 case object TEXT extends Style
 
 case object LINES_MARKERS extends Style {

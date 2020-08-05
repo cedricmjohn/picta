@@ -15,7 +15,7 @@ class AxisTests extends AnyFunSuite {
   }
 
   test("Axis.MultipleAxes") {
-    val yaxis = Axis(Y) setTickDisplayFormat("0.3f")
+    val yaxis = Axis(Y) setTickDisplayFormat ("0.3f")
 
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
@@ -37,7 +37,7 @@ class AxisTests extends AnyFunSuite {
   }
 
   test("Axis.SetAxisRange") {
-    val yaxis = Axis(Y) setTickDisplayFormat("0.3f")
+    val yaxis = Axis(Y) setTickDisplayFormat ("0.3f")
 
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
@@ -53,7 +53,7 @@ class AxisTests extends AnyFunSuite {
         addAxes yaxis
         setXAxisLimits(-100, 100)
         setYAxisLimits(-100, 100)
-        setXAxisTitle("my new x axis")
+        setXAxisTitle ("my new x axis")
       )
 
     if (plotFlag) chart.plot
@@ -62,7 +62,7 @@ class AxisTests extends AnyFunSuite {
   }
 
   test("Axis.SetTick") {
-    val yaxis = Axis(Y) setTickDisplayFormat("0.3f")
+    val yaxis = Axis(Y) setTickDisplayFormat ("0.3f")
 
     val series = (
       XY(List.range(0, 100), List.range(0, 100))
@@ -78,7 +78,7 @@ class AxisTests extends AnyFunSuite {
         addAxes yaxis
         setXAxisLimits(0, 100)
         setYAxisLimits(-100, 100)
-        setXAxisTitle("my new x axis")
+        setXAxisTitle ("my new x axis")
         setXAxisStartTick 50
         setXAxisTickGap 25
       )
@@ -89,7 +89,7 @@ class AxisTests extends AnyFunSuite {
   }
 
   test("Axis.SetAxisLog") {
-    val yaxis = Axis(Y) setTickDisplayFormat("0.3f")
+    val yaxis = Axis(Y) setTickDisplayFormat ("0.3f")
 
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
@@ -113,7 +113,7 @@ class AxisTests extends AnyFunSuite {
   }
 
   test("Axis.SetAxisReversed") {
-    val yaxis = Axis(Y) setTickDisplayFormat("0.3f")
+    val yaxis = Axis(Y) setTickDisplayFormat ("0.3f")
 
     val series = (
       XY(List(1, 2, 3), List(1.234, 5.2112, 2.44332))
@@ -145,10 +145,10 @@ class AxisTests extends AnyFunSuite {
         asType SCATTER
         drawStyle MARKERS
         setAxis Axis(Y, 2)
-        setName("Series 2 using Y axis 2")
+        setName ("Series 2 using Y axis 2")
       )
 
-    val series3 = series1.copy() setName("Series 3 using Y axis 1")
+    val series3 = series1.copy() setName ("Series 3 using Y axis 1")
 
     val chart = (
       Chart()

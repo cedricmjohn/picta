@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.SymbolShape.CIRCLE
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
 import org.carbonateresearch.picta.common.Monoid._
-import SymbolShape.CIRCLE
 import org.carbonateresearch.picta.options.{Line, Marker}
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
@@ -17,7 +17,7 @@ class MarkerTests extends AnyFunSuite {
   }
 
   test("Marker.Constructor.Full") {
-    val marker = Marker() setSymbol CIRCLE setColor "red" setLine Line() setSize(10)
+    val marker = Marker() setSymbol CIRCLE setColor "red" setLine Line() setSize (10)
     val test = """{"symbol":"circle","color":"red","line":{"width":0.5},"size":[10]}"""
     assert(test == write(marker.serialize))
   }
@@ -43,7 +43,7 @@ class MarkerTests extends AnyFunSuite {
         setSymbol CIRCLE
         setColor "red"
         setLine(width = 2, "black")
-    )
+      )
 
     // we not put brackets in the 'addSeries' function to ensure that addSeries picks up the right series'
     val chart = Chart() addSeries (series1 setMarker marker)

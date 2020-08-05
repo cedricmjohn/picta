@@ -16,6 +16,7 @@ private[picta] trait Monoid[T] extends Semigroup[T] {
 private[picta] object Monoid {
   implicit val jsonMonoid: Monoid[Value] = new Monoid[Value] {
     def combine(x: Value, y: Value): Value = x.obj ++ y.obj
+
     def empty: Value = read("{}")
   }
 
@@ -28,4 +29,5 @@ private[picta] object Monoid {
      */
     def |+|(y: T): T = m.combine(x, y)
   }
+
 }

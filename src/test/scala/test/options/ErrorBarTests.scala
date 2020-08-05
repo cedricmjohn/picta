@@ -137,13 +137,13 @@ class ErrorBarTests extends AnyFunSuite {
       )
 
     val chart4 = (
-        Chart()
+      Chart()
         addSeries series4
         setTitle "Sqrt Error"
         setDimensions(width = dim, height = dim)
       )
 
-    val canvas = Canvas(2, 2) addCharts (chart1, chart2, chart3, chart4)
+    val canvas = Canvas(2, 2) addCharts(chart1, chart2, chart3, chart4)
 
     if (plotFlag) canvas.plot
 
@@ -152,8 +152,6 @@ class ErrorBarTests extends AnyFunSuite {
     assert(validateJson(chart3.serialize.toString))
     assert(validateJson(chart4.serialize.toString))
   }
-
-
 
 
 }

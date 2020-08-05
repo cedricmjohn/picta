@@ -10,34 +10,39 @@ import org.carbonateresearch.picta.options._
 import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions
 import ujson.{Obj, Value}
-import scala.language.postfixOps
-
 
 import scala.collection.mutable.ListBuffer
+import scala.language.postfixOps
 
 /** ENUM for the XY chart series types */
 private[picta] sealed trait XYType
+
 case object SCATTER extends XYType
+
 case object SCATTERGL extends XYType
+
 case object BAR extends XYType
+
 case object HISTOGRAM2DCONTOUR extends XYType
+
 case object HISTOGRAM extends XYType
+
 case object PIE extends XYType
 
 /**
  *
- * @param x: The data series for the first dimension.
- * @param y: The data series for the second dimension.
- * @param name: The name for the series.
- * @param `type`: The type for the series, which determines how it is rendered.
- * @param style: This specifies the style for the marker.
- * @param xaxis: This specifies the xaxis that the series maps to.
- * @param yaxis: This specifies the yaxis that the series maps to.
- * @param marker: This is a Marker component that sets a range of marker-specific options.
- * @param hist_options: This is a HistOptions component that sets a range of histogram specific options
- * @param hist2d_options: This is a Hist2dOptions component that sets 2D histogram specific options.
- * @param xerror: This specifies the behaviour of the x error bar.
- * @param yerror: This specifies the behaviour of the y error bar.
+ * @param x              : The data series for the first dimension.
+ * @param y              : The data series for the second dimension.
+ * @param name           : The name for the series.
+ * @param `type`         : The type for the series, which determines how it is rendered.
+ * @param style          : This specifies the style for the marker.
+ * @param xaxis          : This specifies the xaxis that the series maps to.
+ * @param yaxis          : This specifies the yaxis that the series maps to.
+ * @param marker         : This is a Marker component that sets a range of marker-specific options.
+ * @param hist_options   : This is a HistOptions component that sets a range of histogram specific options
+ * @param hist2d_options : This is a Hist2dOptions component that sets 2D histogram specific options.
+ * @param xerror         : This specifies the behaviour of the x error bar.
+ * @param yerror         : This specifies the behaviour of the y error bar.
  * @tparam T0
  * @tparam T1
  * @tparam T2
@@ -77,18 +82,15 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   def setHist2dOptions(ncontours: Opt[Int] = Blank, reversescale: Opt[Boolean] = Opt(Option(true)),
                        showscale: Opt[Boolean] = Blank): XY[T0, T1, T2, T3] = {
 
-    val new_hist2d_options = Hist2dOptions(ncontours, reversescale=reversescale, showscale=showscale)
+    val new_hist2d_options = Hist2dOptions(ncontours, reversescale = reversescale, showscale = showscale)
     this.copy(hist2d_options = new_hist2d_options)
   }
 
   def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] = this.copy(xaxis = new_xaxis, yaxis = new_yaxis)
 
-//  def setAxes(new_xaxis: Axis, new_yaxis: Axis): XY[T0, T1, T2, T3] =
-//    this.copy(xaxis = new_xaxis.asInstanceOf[Axis], yaxis = new_yaxis.asInstanceOf[Axis])
-
   def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis.`type` match {
-      case X => this.copy(xaxis = new_axis)
-      case Y => this.copy(yaxis = new_axis)
+    case X => this.copy(xaxis = new_axis)
+    case Y => this.copy(yaxis = new_axis)
   }
 
   def setErrorBars(error: ErrorBar) = {
@@ -241,8 +243,8 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
   }
 
   private def getHistOrientation(hist_options: Opt[HistOptions]): String = hist_options.option match {
-      case Some(x) => x.orientation.toString
-      case _ => "x"
+    case Some(x) => x.orientation.toString
+    case _ => "x"
   }
 }
 
@@ -262,6 +264,6 @@ object XY {
       values += value
     }
 
-    XY[Double, String, T2, T3](x=values.toList, y=labels.toList, `type` = PIE)
+    XY[Double, String, T2, T3](x = values.toList, y = labels.toList, `type` = PIE)
   }
 }

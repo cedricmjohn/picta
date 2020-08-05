@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta.options
 
-import org.carbonateresearch.picta.{Component, HORIZONTAL, Orientation, VERTICAL}
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
+import org.carbonateresearch.picta.{Component, HORIZONTAL, Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
 /** This configures the legend for a chart.
@@ -10,8 +10,8 @@ import ujson.{Obj, Value}
  * @param x           : x-coordinate for positioning legend on the chart.
  * @param y           : y-coordinate for positioning the legend on the chart.
  * @param orientation : Specifies whether the legend is horizontal or vertical.
- * @param xanchor     :
- * @param yanchor     :
+ * @param xanchor     : Specifies what point on the bottom of the chart to use as the x-coordinate.
+ * @param yanchor     : Specifies what point on the side of the chart to use as the y-coordinate.
  */
 final case class Legend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Opt[Orientation] = Blank,
                         xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) extends Component {

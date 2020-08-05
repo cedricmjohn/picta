@@ -11,17 +11,17 @@ import ujson.{Obj, Value}
  * @param enabled    : A boolean that specifies whether the cumulative distribution is enabled.
  * @param direction  : If 'increasing' will sum all prior bins. if 'decreasing' will sum the later bins.
  * @param currentbin : only applies of enabled == true. Sets whether the bin is included, excluded, or has half of its value
- *                   in the current cumulative value.
+ *                     in the current cumulative value.
  */
 final case class Cumulative(enabled: Opt[Boolean] = Blank, direction: Opt[Direction] = Blank,
                             currentbin: Opt[CurrentBin] = Blank) extends Component {
 
 
-  def setEnabled(new_enabled: Boolean) = this.copy(enabled=new_enabled)
+  def setEnabled(new_enabled: Boolean) = this.copy(enabled = new_enabled)
 
-  def setDirection(new_direction: Direction) = this.copy(direction=new_direction)
+  def setDirection(new_direction: Direction) = this.copy(direction = new_direction)
 
-  def setCurrentbin(new_currentbin: CurrentBin) = this.copy(currentbin=new_currentbin)
+  def setCurrentbin(new_currentbin: CurrentBin) = this.copy(currentbin = new_currentbin)
 
   private[picta] def serialize: Value = {
     val enabled_ = enabled.option match {

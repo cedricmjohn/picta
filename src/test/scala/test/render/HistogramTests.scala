@@ -3,7 +3,7 @@ package org.carbonateresearch.picta.render
 import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, x_random}
 import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.{Line, Marker}
-import org.carbonateresearch.picta.{Chart, ChartLayout, HISTOGRAM, HORIZONTAL, XY}
+import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
 class HistogramTests extends AnyFunSuite {
@@ -18,7 +18,7 @@ class HistogramTests extends AnyFunSuite {
   }
 
   test("XY.Histogram.Horizontal") {
-    val series = XY(x = x_int) asType HISTOGRAM setHistOptions(orientation = HORIZONTAL)
+    val series = XY(x = x_int) asType HISTOGRAM setHistOptions (orientation = HORIZONTAL)
     val layout = ChartLayout()
     val chart = Chart() addSeries series setTitle "XY.Histogram.Horizontal"
     if (plotFlag) chart.plot
@@ -27,7 +27,7 @@ class HistogramTests extends AnyFunSuite {
 
   test("XY.Histogram.Color") {
     val marker = Marker() setColor "rgba(255, 100, 102, 0.4)" setLine Line()
-    val series = XY(x_random) asType HISTOGRAM setMarker marker setHistOptions(orientation = HORIZONTAL)
+    val series = XY(x_random) asType HISTOGRAM setMarker marker setHistOptions (orientation = HORIZONTAL)
     val chart = Chart() addSeries series setTitle "XY.Histogram.Color"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -63,8 +63,8 @@ class HistogramTests extends AnyFunSuite {
   test("XY.Histogram.SpecifyBinningFunction") {
     val x = List("Apples", "Apples", "Apples", "Oranges", "Bananas")
     val y = List("5", "10", "3", "10", "5")
-    val t1 = XY(x = x, y = y) asType HISTOGRAM setHistOptions(histfunc = COUNT)
-    val t2 = XY(x = x, y = y) asType HISTOGRAM setHistOptions(histfunc = SUM)
+    val t1 = XY(x = x, y = y) asType HISTOGRAM setHistOptions (histfunc = COUNT)
+    val t2 = XY(x = x, y = y) asType HISTOGRAM setHistOptions (histfunc = SUM)
     val chart = Chart() addSeries(t1, t2) setTitle "XY.Histogram.SpecifyBinningFunction"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

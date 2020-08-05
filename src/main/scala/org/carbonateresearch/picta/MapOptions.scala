@@ -5,60 +5,89 @@ import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
 sealed trait Region
+
 case object WORLD extends Region
+
 case object USA extends Region
+
 case object EUROPE extends Region
+
 case object ASIA extends Region
+
 case object AFRICA extends Region
+
 case object NORTH_AMERICA extends Region
+
 case object SOUTH_AMERICA extends Region
 
 sealed trait Projection
+
 case object EQURECTANGULAR extends Projection
+
 case object MERCATOR extends Projection
+
 case object ORTHOGRAPHIC extends Projection
+
 case object NATURAL_EARTH extends Projection {
   override def toString: String = "natural earth"
 }
+
 case object KAVRAYSKIY7 extends Projection
+
 case object MILLER extends Projection
+
 case object ROBINSON extends Projection
+
 case object ECKERT4 extends Projection
+
 case object AZIMUTHAL_EQUAL_AREA extends Projection {
   override def toString: String = "azimuthal equal area"
 }
+
 case object AZIMUTHAL_EQUIDISTANT extends Projection {
   override def toString: String = "azimuthal equidistant"
 }
+
 case object CONIC_EQUAL_AREA extends Projection {
   override def toString: String = "conic equal area"
 }
+
 case object CONIC_CONFORMAL extends Projection {
   override def toString: String = "conic conformal"
 }
+
 case object CONIC_EQUAL_EQUIDISTANT extends Projection {
   override def toString: String = "conic equal equidistant"
 }
+
 case object GNOMONIC extends Projection
+
 case object STEROGRAPHIC extends Projection
+
 case object MOLLWEIDE extends Projection
+
 case object HAMMER extends Projection
+
 case object TRANSVERSE_MERCATOR extends Projection {
   override def toString: String = "transverse mercator"
 }
+
 case object ALBERS_USA extends Projection {
   override def toString: String = "albers usa"
 }
+
 case object WINKEL_TRIPEL extends Projection {
   override def toString: String = "winkel tripel"
 }
+
 case object AITOFF extends Projection
+
 case object SINUSOIDAL extends Projection
 
 /** This is configures the Chart for a Map.
  *
  * @param resolution     : This sets the resolution.
- * @param region          : This determines the geographic scope for the map.
+ * @param region         : This determines the geographic scope for the map.
  * @param showland       : Specifies whether the land is shown on the map.
  * @param showlakes      : Specifies whether lakes are shown on the map.
  * @param landcolor      : Specifcies the landcolor.

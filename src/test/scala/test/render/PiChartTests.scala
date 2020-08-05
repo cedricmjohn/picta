@@ -16,10 +16,10 @@ class PieChartTests extends AnyFunSuite {
   }
 
   test("XY.Pie.PieElements") {
-    val a = PieElement(value=19, name="Residential")
-    val b = PieElement(value=26, name="Non-Residential")
-    val c = PieElement(value=26, name="Utility")
-    val series = XY(x=List(a, b, c))
+    val a = PieElement(value = 19, name = "Residential")
+    val b = PieElement(value = 26, name = "Non-Residential")
+    val c = PieElement(value = 26, name = "Utility")
+    val series = XY(x = List(a, b, c))
     val chart = Chart() addSeries series setTitle "XY.Pie.PieElements"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

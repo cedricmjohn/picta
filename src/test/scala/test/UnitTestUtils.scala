@@ -5,9 +5,6 @@ import org.carbonateresearch.picta.options.ColorOptions.Color
 
 object UnitTestUtils {
 
-  def genRangeRandomInt(min: Int = 0, max: Int = 10000) = min + (max - min) * scala.util.Random.nextInt()
-  def genRangeRandomDouble(min: Double = 0.0, max: Double = 10000.0) = min + (max - min) * scala.util.Random.nextDouble()
-
   // create a common configuration to be used in all the tests
   val config: Config = Config(responsive = false)
   val x_random = List.range(1, 100).map(x => genRangeRandomDouble())
@@ -37,6 +34,10 @@ object UnitTestUtils {
     List(8.99, 8.99, 8.98, 9.18, 9.2, 9.19),
     List(8.93, 8.97, 8.97, 9.18, 9.2, 9.18)
   )
+
+  def genRangeRandomInt(min: Int = 0, max: Int = 10000) = min + (max - min) * scala.util.Random.nextInt()
+
+  def genRangeRandomDouble(min: Double = 0.0, max: Double = 10000.0) = min + (max - min) * scala.util.Random.nextDouble()
 
   // creates random XY for testing purposes
   def createXYSeries[T: Color]

@@ -23,7 +23,7 @@ class ChartLayoutTests extends AnyFunSuite {
     val ax2 = Axis(Y, position = 2, title = "y axis 2", side = RIGHT_SIDE, overlaying = Axis(Y))
 
     // 2. define the data to display on the chart
-    val series1 = XY(x = x_int, y = y_double) asType SCATTER drawStyle MARKERS setAxis Axis(Y,2)
+    val series1 = XY(x = x_int, y = y_double) asType SCATTER drawStyle MARKERS setAxis Axis(Y, 2)
     val series2 = XY(x = x_double, y = y_int) asType SCATTER drawStyle MARKERS
 
     // 3. combine elements into a single chart
@@ -33,7 +33,7 @@ class ChartLayoutTests extends AnyFunSuite {
         setTitle "XY.Axis.Composition"
         addAxes(ax0, ax1, ax2)
         setConfig(false, false)
-    )
+      )
 
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))

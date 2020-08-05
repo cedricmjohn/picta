@@ -7,17 +7,17 @@ import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 /** This object contains a number of general utility functions that are useful for both users and maintainers of the
- *  library.
+ * library.
  */
 object Utils {
   /** This is the alternative constructor for the alternative constructor above. As this function signature uses
    * lists as opposed to tuples, it is not good from a user interface perspective.
    *
-   * @param categories: This are the per data-point category labels.
-   * @param data: This is a tuple of the raw data for both the x and y variables.
-   * @tparam T: Context-bounded by Serializer.
-   * @tparam T1: Context-bounded by Color.
-   * @tparam T2: Context-bounded by Color.
+   * @param categories : This are the per data-point category labels.
+   * @param data       : This is a tuple of the raw data for both the x and y variables.
+   * @tparam T  : Context-bounded by Serializer.
+   * @tparam T1 : Context-bounded by Color.
+   * @tparam T2 : Context-bounded by Color.
    * @return
    */
   def getSeriesbyCategory[T: Serializer, T1: Color, T2: Color]
@@ -84,8 +84,8 @@ object Utils {
 
   /** A utility function that creates a list of all the possible co-ordinates inside a grid.
    *
-   * @param dimx: The x-dimension of a grid.
-   * @param dimy: The y-dimension of a grid.
+   * @param dimx : The x-dimension of a grid.
+   * @param dimy : The y-dimension of a grid.
    * @return: A list of x-y co-ordinates for the grid.
    */
   def createCoordinateRange(dimx: Int, dimy: Int): List[Seq[Int]] = {

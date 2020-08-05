@@ -6,7 +6,6 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.Chart
-import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import os.Path
 import ujson.Value
 import upickle.default.transform
@@ -21,41 +20,10 @@ object Html {
   private val cssStyle: String = readFile("style.css")
   private val useCDN: Boolean = testNetworkConnection()
 
-  /** A function to read files from the src resources folder
-   *
-   * @param file_name: A string that denotes the name of the file in the resources folder.
-   * @return: A string containing the contents of the file.
-   */
-  private def readFile(file_name: String): String = {
-    val is = getClass.getClassLoader.getResourceAsStream(file_name)
-    scala.io.Source.fromInputStream(is).mkString
-  }
-
-  /** This function checks if an active network connection is available. It returns true if this is the case, false
-   *  otherwise.
-   *
-   * @return: A boolean that indicates whether an active internet connection is available
-   */
-  private def testNetworkConnection(): Boolean = {
-    var activeConnection: Boolean = true
-    val url: URL = new URL("https://www.google.com")
-    val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
-
-    try {
-      urlConn.connect()
-      urlConn.setConnectTimeout(1)
-      urlConn.setReadTimeout(1)
-    } catch {
-      case e: Throwable => activeConnection = false
-    } finally urlConn.disconnect()
-
-    activeConnection
-  }
-
   /** This initializes the library to work with an Almond Jupyter Kernel.
    *
-   * @param publish: required to render the HTML in the almond notebook.
-   * @param kernel: required to interact with the underlying Jupyter kernel instance.
+   * @param publish : required to render the HTML in the almond notebook.
+   * @param kernel  : required to interact with the underlying Jupyter kernel instance.
    */
   def initNotebook()(implicit publish: OutputHandler, kernel: JupyterApi): Unit = {
     kernel.silent(true)
@@ -85,10 +53,63 @@ object Html {
     publish.html(html.toString)
   }
 
+  /** A function to read files from the src resources folder
+   *
+   * @param file_name : A string that denotes the name of the file in the resources folder.
+   * @return: A string containing the contents of the file.
+   */
+  private def readFile(file_name: String): String = {
+    val is = getClass.getClassLoader.getResourceAsStream(file_name)
+    scala.io.Source.fromInputStream(is).mkString
+  }
+
+  /** This function checks if an active network connection is available. It returns true if this is the case, false
+   * otherwise.
+   *
+   * @return: A boolean that indicates whether an active internet connection is available
+   */
+  private def testNetworkConnection(): Boolean = {
+    var activeConnection: Boolean = true
+    val url: URL = new URL("https://www.google.com")
+    val urlConn: HttpURLConnection = url.openConnection().asInstanceOf[HttpURLConnection]
+
+    try {
+      urlConn.connect()
+      urlConn.setConnectTimeout(1)
+      urlConn.setReadTimeout(1)
+    } catch {
+      case e: Throwable => activeConnection = false
+    } finally urlConn.disconnect()
+
+    activeConnection
+  }
+
+  /** This function assembles the various bits of HTML and writes it to an individual page.
+   *
+   * @param rows : Number of rows in the Canvas subplot grid.
+   * @param cols : Number of columns in the Canvas subplot.
+   * @param grid : The Canvas subplot grid.
+   * @param id   : The unique id of the Canvas this grid corresponds to.
+   */
+  private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String): Unit = {
+    var html = new StringBuilder()
+
+    /* create the html headers and add them to the page */
+    html ++= createHeader(useCDN, true, rows, cols)
+
+    /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
+    html ++= createGridHTML(rows, cols, grid, id)
+
+    /* create the javascript that corresponds to each of these charts */
+    html ++= createJsScripts(rows, cols, grid, id)
+
+    writeHTMLToFile(html.toString, id)
+  }
+
   /** This function creates the necessary headers when plotting in JVM mode. *
    *
-   * @param useCDN: A boolean to specify whether to use a CDN or read the libraries from the resources folder.
-   * @param includeStyle: A boolean to specify whether to use the custom CSS file.
+   * @param useCDN       : A boolean to specify whether to use a CDN or read the libraries from the resources folder.
+   * @param includeStyle : A boolean to specify whether to use the custom CSS file.
    * @return: A string containing the relevant HTML section to be injected into the rendered page.
    */
   private def createHeader(useCDN: Boolean, includeStyle: Boolean, rows: Int, cols: Int): String = {
@@ -115,13 +136,13 @@ object Html {
 
   /** A function that generates the HTML grid from the Canvas.
    *
-   * @param rows: The number of rows in the Canvas subplot grid.
-   * @param cols: The number of columns in the Canvas subplot grid.
-   * @param grid: The grid containing the subplots we want to plot.
-   * @param id: The id of the canvas.
-   * @return
+   * @param rows : The number of rows in the Canvas subplot grid.
+   * @param cols : The number of columns in the Canvas subplot grid.
+   * @param grid : The grid containing the subplots we want to plot.
+   * @param id   : The id of the canvas.
+   * @return: returns a string representing the HTML for the grid.
    */
-  private def createGridHTML(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
+  private def createGridHTML(rows: Int, cols: Int, grid: Array[Chart], id: String): String = {
     var html = new StringBuilder()
 
     html ++= s"""<div id="grid-container_$id" class="grid-container" align="center"> \n"""
@@ -175,13 +196,13 @@ object Html {
 
   /** Creates the associated javascript for each Canvas.
    *
-   * @param rows: Number of rows in the Canvas subplot grid.
-   * @param cols: Number of columns in the Canvas subplot.
-   * @param grid: The Canvas subplot grid.
-   * @param id: The unique id of the Canvas this grid corresponds to.
-   * @return
+   * @param rows : Number of rows in the Canvas subplot grid.
+   * @param cols : Number of columns in the Canvas subplot.
+   * @param grid : The Canvas subplot grid.
+   * @param id   : The unique id of the Canvas this grid corresponds to.
+   * @return: Returns a string representing the javascript script to be injected into the page.
    */
-  private def createJsScripts(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
+  private def createJsScripts(rows: Int, cols: Int, grid: Array[Chart], id: String): String = {
     var html = new StringBuilder()
 
     /** create js for this batch */
@@ -216,7 +237,7 @@ object Html {
           val transition_duration = chart.transition_duration
           val config: Value = chart.config_
 
-          html ++= createAnimationHTML(frames: Value, labels: Value, layout: Value, config=config,
+          html ++= createAnimationHTML(frames: Value, labels: Value, layout: Value, config = config,
             transition_duration: Int, graph_id: String)
         }
 
@@ -238,56 +259,57 @@ object Html {
 
     /* if we have a grid with more than one image, we need to allow a Canvas save as PNG button*/
     if (rows > 1 || cols > 1) {
-      html ++= s"""
-                  |var save_${id} = document.getElementById("saveAsPNG_${id}")
-                  |save_${id}.onclick = function() {
-                  |    const grid = document.getElementById("grid-container_${id}")
-                  |    const graphs = grid.getElementsByClassName("graph")
-                  |
-                  |    const promises = []
-                  |
-                  |    const rows = $rows
-                  |    const cols = $cols
-                  |    const img_width = 400
-                  |    const img_height = 400
-                  |    var margin = 50
-                  |
-                  |    for (var i=0; i<graphs.length; i++) {
-                  |        const promise = Plotly.toImage(graphs[i], {format: 'png', width: img_width, height: img_height})
-                  |        promises.push(new Promise((resolve) => {
-                  |            resolve(promise);
-                  |        }));
-                  |    }
-                  |
-                  |    Promise.all(promises).then((images) => {
-                  |        const positioned_images = []
-                  |
-                  |        for (var i=0; i<rows; i++) {
-                  |            for (var j=0; j<cols; j++) {
-                  |
-                  |                const obj = {
-                  |                    "src": images[i*cols + j],
-                  |                    x: i*img_width+margin,
-                  |                    y: j*img_height+margin
-                  |                }
-                  |
-                  |                positioned_images.push(obj)
-                  |            }
-                  |        }
-                  |
-                  |        mergeImages(positioned_images, {
-                  |            width: img_width*cols+60, height: img_height*rows+60
-                  |        })
-                  |        .then(b64 => {
-                  |            var a = document.createElement("a");
-                  |            a.href = b64;
-                  |            a.download = "Image.png";
-                  |            a.click();
-                  |            a.remove()
-                  |        });
-                  |    });
-                  |}
-                  |""".stripMargin
+      html ++=
+        s"""
+           |var save_${id} = document.getElementById("saveAsPNG_${id}")
+           |save_${id}.onclick = function() {
+           |    const grid = document.getElementById("grid-container_${id}")
+           |    const graphs = grid.getElementsByClassName("graph")
+           |
+           |    const promises = []
+           |
+           |    const rows = $rows
+           |    const cols = $cols
+           |    const img_width = 400
+           |    const img_height = 400
+           |    var margin = 50
+           |
+           |    for (var i=0; i<graphs.length; i++) {
+           |        const promise = Plotly.toImage(graphs[i], {format: 'png', width: img_width, height: img_height})
+           |        promises.push(new Promise((resolve) => {
+           |            resolve(promise);
+           |        }));
+           |    }
+           |
+           |    Promise.all(promises).then((images) => {
+           |        const positioned_images = []
+           |
+           |        for (var i=0; i<rows; i++) {
+           |            for (var j=0; j<cols; j++) {
+           |
+           |                const obj = {
+           |                    "src": images[i*cols + j],
+           |                    x: i*img_width+margin,
+           |                    y: j*img_height+margin
+           |                }
+           |
+           |                positioned_images.push(obj)
+           |            }
+           |        }
+           |
+           |        mergeImages(positioned_images, {
+           |            width: img_width*cols+60, height: img_height*rows+60
+           |        })
+           |        .then(b64 => {
+           |            var a = document.createElement("a");
+           |            a.href = b64;
+           |            a.download = "Image.png";
+           |            a.click();
+           |            a.remove()
+           |        });
+           |    });
+           |}
+           |""".stripMargin
     }
     html ++= s"""</script> \n"""
     html.mkString
@@ -295,14 +317,13 @@ object Html {
 
   /** A function that creates the HTML associated with an animated chart.
    *
-   * @param series: A json representation of the data series.
-   * @param frames: A json representation of the sequence of frames.
-   * @param labels: A json representation of the labels that are associated with each of the frames -
-   *              for tracking purposes.
-   * @param layout: A json representation of the Layout for the corresponding Canvas.
-   * @param config: A json representation of the Config for the corresponding Canvas
-   * @param transition_duration: The duration between transitioning frame to frame.
-   * @param graph_id: A unique id associated with a particular Chart.
+   * @param frames              : A json representation of the sequence of frames.
+   * @param labels              : A json representation of the labels that are associated with each of the frames
+   *                              for tracking purposes.
+   * @param layout              : A json representation of the Layout for the corresponding Canvas.
+   * @param config              : A json representation of the Config for the corresponding Canvas
+   * @param transition_duration : The duration between transitioning frame to frame.
+   * @param graph_id            : A unique id associated with a particular Chart.
    * @return: A string representation of the HTML.
    */
   private def createAnimationHTML(frames: Value, labels: Value, layout: Value, config: Value,
@@ -445,35 +466,13 @@ object Html {
     }
   }
 
-  /** This function assembles the various bits of HTML and writes it to an individual page.
-   *
-   * @param rows: Number of rows in the Canvas subplot grid.
-   * @param cols: Number of columns in the Canvas subplot.
-   * @param grid: The Canvas subplot grid.
-   * @param id: The unique id of the Canvas this grid corresponds to.
-   */
-  private[picta] def plotChart(rows: Int, cols: Int, grid: Array[Chart], id: String) = {
-    var html = new StringBuilder()
-
-    /* create the html headers and add them to the page */
-    html ++= createHeader(useCDN, true, rows, cols)
-
-    /* create the grid, with the individual chart html inside. This takes into account whether the chart is animated or not */
-    html ++= createGridHTML(rows, cols, grid, id)
-
-    /* create the javascript that corresponds to each of these charts */
-    html ++= createJsScripts(rows, cols, grid, id)
-
-    writeHTMLToFile(html.toString, id)
-  }
-
   /** This function assembles the various bits of HTML and writes it to a Jupyter display.
    *
-   * @param rows: Number of rows in the Canvas subplot grid.
-   * @param cols: Number of columns in the Canvas subplot.
-   * @param grid: The Canvas subplot grid.
-   * @param id: The unique id of the Canvas this grid corresponds to.
-   * @param publish: Implicit parameter that exposes API when Almond kernel is in scope.
+   * @param rows    : Number of rows in the Canvas subplot grid.
+   * @param cols    : Number of columns in the Canvas subplot.
+   * @param grid    : The Canvas subplot grid.
+   * @param id      : The unique id of the Canvas this grid corresponds to.
+   * @param publish : Implicit parameter that exposes API when Almond kernel is in scope.
    */
   private[picta] def plotChartInline(rows: Int, cols: Int, grid: Array[Chart], id: String)
                                     (implicit publish: OutputHandler): Unit = {

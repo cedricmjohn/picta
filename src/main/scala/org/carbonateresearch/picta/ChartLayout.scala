@@ -10,33 +10,36 @@ trait HoverMode
 case object Closest_X extends HoverMode {
   override def toString: String = "x"
 }
+
 case object CLosest_Y extends HoverMode {
   override def toString: String = "y"
 }
 
 case object CLOSEST extends HoverMode
+
 case object FALSE extends HoverMode
+
 case object X_UNIFIED extends HoverMode
+
 case object Y_UNIFIED extends HoverMode
 
 /**
  * Specifies the layout for the chart.
- * @param title      : Sets the chart title.
+ *
+ * @param title       : Sets the chart title.
  * @param axes        : Sets the chart title.
  * @param show_legend : Specifies whether to show the legend.
  * @param auto_size   : This is the component that configures the legend for the chart..
- * @param legend     : This is the component that configures the legend for the chart..
- * @param height     : This sets the height for the chart.
- * @param width      : This sets the width for the chart.
- * @param map_options  : this is used for Map charts only and configures the geo component for a Map chart.
+ * @param legend      : This is the component that configures the legend for the chart..
+ * @param height      : This sets the height for the chart.
+ * @param width       : This sets the width for the chart.
+ * @param map_options : this is used for Map charts only and configures the geo component for a Map chart.
  */
 final case class ChartLayout
 (title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, auto_size: Opt[Boolean] = Blank,
  margin: Opt[Margin] = Blank, map_options: Opt[MapOptions] = Blank, multi_chart: Opt[MultiChart] = Blank,
  show_legend: Boolean = true, hover_mode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600, XYZ: Boolean = false)
   extends Component {
-
-  private[picta] def setXYZ(XYZ: Boolean) = this.copy(XYZ = XYZ)
 
   def setTitle(new_title: String) = this.copy(title = new_title)
 
@@ -59,7 +62,7 @@ final case class ChartLayout
   def setLegend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Orientation = VERTICAL,
                 xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) = {
 
-    val new_legend = Legend(x=x, y=y, orientation=orientation, xanchor=xanchor, yanchor=yanchor)
+    val new_legend = Legend(x = x, y = y, orientation = orientation, xanchor = xanchor, yanchor = yanchor)
     this.copy(legend = new_legend)
   }
 
@@ -80,6 +83,8 @@ final case class ChartLayout
   def setWidth(new_width: Int) = this.copy(width = new_width)
 
   def setDimensions(new_height: Int, new_width: Int) = this.copy(height = new_height, width = new_width)
+
+  private[picta] def setXYZ(XYZ: Boolean) = this.copy(XYZ = XYZ)
 
   private[picta] def serialize: Value = {
     val dim = Obj("height" -> height, "width" -> width, "hovermode" -> hover_mode.toString.toLowerCase)
@@ -126,7 +131,7 @@ final case class ChartLayout
           val scene = Obj("scene" -> combined_axes)
           List(scene).foldLeft(combined)((a, x) => a |+| x)
         }
-          /* if we have a XY chart, we can filter out the zaxis as they will never be used */
+        /* if we have a XY chart, we can filter out the zaxis as they will never be used */
         else lst.filter(axis => axis.orientation != "zaxis").foldLeft(combined)((a, x) => a |+| x.serialize)
       case _ => combined
     }

@@ -10,15 +10,12 @@ trait ErrorBar extends Component {
 
   /** This specifies how the error is calculated. */
   val mode: ErrorMode
-
-  /** This specifies whether the error bar is visible on the rendered chart. */
-  private[picta] val visible: Boolean
-
   /** This is only used if we use SQRT, CONSTANT or PERCENT as mode - specifies the value of the error. */
   val value: Opt[Double]
-
   /** This is only used if we want to pass in a per point error value. */
   val array: Opt[List[Double]]
+  /** This specifies whether the error bar is visible on the rendered chart. */
+  private[picta] val visible: Boolean
 
   private[picta] def serialize = {
     val meta = Obj(
@@ -41,4 +38,5 @@ trait ErrorBar extends Component {
 }
 
 case class XError(mode: ErrorMode, visible: Boolean = true, value: Opt[Double] = Blank, array: Opt[List[Double]] = Empty) extends ErrorBar
+
 case class YError(mode: ErrorMode, visible: Boolean = true, value: Opt[Double] = Blank, array: Opt[List[Double]] = Empty) extends ErrorBar

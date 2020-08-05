@@ -4,8 +4,7 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
-import org.carbonateresearch.picta.options.ColorOptions.Color
-import org.carbonateresearch.picta.options.{ColorBar, Marker}
+import org.carbonateresearch.picta.options.ColorBar
 import ujson.{Obj, Value}
 
 import scala.language.postfixOps
@@ -23,10 +22,10 @@ case object SURFACE extends XYZType
 
 /**
  * @constructor: A Series for a 3d chart.
- * @param x           :
- * @param y           :
- * @param z           :
- * @param name :
+ * @param x     :
+ * @param y     :
+ * @param z     :
+ * @param name  :
  * @param style :
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
@@ -35,7 +34,7 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 
   /* Error handling is done at the topmost level so that exceptions are thrown as soon as possible */
   (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0), `type`) match {
-      /* a surface chart must always specify n */
+    /* a surface chart must always specify n */
     case (_, _, _, 0, SURFACE) =>
       throw new IllegalArgumentException("'n' cannot be equal to zero if 'type' is 'SURFACE' or 'HEATMAP'")
 
@@ -95,32 +94,6 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 
   def drawLinesMarkers: XYZ[T0, T1, T2] = this.copy(style = LINES_MARKERS)
 
-  private def createSeries(): Value =
-    (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0)) match {
-      case (x, y, z, 0) =>  createXYZ(x, y, z)
-      case (Nil, Nil, z, n) => createXYZ(z, n)
-      case (x, y, z, n) if (n != 0) => createXYZ(x, y, z, n)
-      case _ => throw new IllegalArgumentException("'n' cannot be equal to zero")
-  }
-
-  /** list has a nested form, no other axis specified */
-  private def createXYZ[T: Serializer](z: List[T], n: Int)(implicit s0: Serializer[T]): Value = {
-    val list = z.grouped(n).toList.map(e => s0.serialize(e))
-    Obj("z" -> list)
-  }
-
-  /** x, y and z are specified */
-  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2])(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
-    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> s2.serialize(z))
-  }
-
-  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
-  (x: List[T0], y: List[T1], z: List[T2], n: Int)(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
-    val list: List[Value] = z.grouped(n).toList.map(e => s2.serialize(e))
-    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> list)
-  }
-
   def setColorBar(title: String = "", title_side: Side = RIGHT_SIDE) = {
     val title_side_ = title_side.option match {
       case Some(x) => x
@@ -145,5 +118,31 @@ final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
     }
 
     List(name_, colorbar_options_, mode_, createSeries).foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
+  }
+
+  private def createSeries(): Value =
+    (x.getOrElse(Nil), y.getOrElse(Nil), z, n.getOrElse(0)) match {
+      case (x, y, z, 0) => createXYZ(x, y, z)
+      case (Nil, Nil, z, n) => createXYZ(z, n)
+      case (x, y, z, n) if (n != 0) => createXYZ(x, y, z, n)
+      case _ => throw new IllegalArgumentException("'n' cannot be equal to zero")
+    }
+
+  /** list has a nested form, no other axis specified */
+  private def createXYZ[T: Serializer](z: List[T], n: Int)(implicit s0: Serializer[T]): Value = {
+    val list = z.grouped(n).toList.map(e => s0.serialize(e))
+    Obj("z" -> list)
+  }
+
+  /** x, y and z are specified */
+  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
+  (x: List[T0], y: List[T1], z: List[T2])(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
+    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> s2.serialize(z))
+  }
+
+  private def createXYZ[T0: Serializer, T1: Serializer, T2: Serializer]
+  (x: List[T0], y: List[T1], z: List[T2], n: Int)(implicit s0: Serializer[T0], s1: Serializer[T1], s2: Serializer[T2]): Value = {
+    val list: List[Value] = z.grouped(n).toList.map(e => s2.serialize(e))
+    Obj("x" -> s0.serialize(x), "y" -> s1.serialize(y), "z" -> list)
   }
 }

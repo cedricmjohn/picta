@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
-import org.carbonateresearch.picta.{Component, Side}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
+import org.carbonateresearch.picta.{Component, Side}
 import ujson.{Obj, Value}
 
 case class ColorBar(title: Opt[String] = Blank, title_side: Opt[Side] = Blank) extends Component {

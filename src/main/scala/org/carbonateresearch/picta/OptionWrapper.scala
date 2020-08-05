@@ -1,8 +1,8 @@
 package org.carbonateresearch.picta
 
 /** This object provides a wrapper for the Scala built-in 'Option' type. Within it are defined various things that
- *  make the user interface a lot simpler. A wrapper is created so as not to pollute non-Picta code with the implicit
- *  Option conversion.
+ * make the user interface a lot simpler. A wrapper is created so as not to pollute non-Picta code with the implicit
+ * Option conversion.
  */
 private[picta] object OptionWrapper {
   /** The Opt type equivalent of an Option type 'None' */

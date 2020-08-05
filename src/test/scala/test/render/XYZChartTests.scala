@@ -23,7 +23,7 @@ class XYZTests extends AnyFunSuite {
   }
 
   test("XYZ.Surface") {
-    val series = XYZ(z=z_surface.flatten, n = z_surface(0).length) asType SURFACE
+    val series = XYZ(z = z_surface.flatten, n = z_surface(0).length) asType SURFACE
     val chart = Chart() addSeries series setTitle "XYZ.Surface" setConfig(false, false)
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -32,7 +32,7 @@ class XYZTests extends AnyFunSuite {
   test("XYZ.Heatmap") {
     val data = List(List(1, 2, 3), List(4, 5, 6))
     val n = data(0).length
-    val series = XYZ(z=data.flatten, n=n) asType HEATMAP
+    val series = XYZ(z = data.flatten, n = n) asType HEATMAP
     val chart = Chart() addSeries series setTitle "XYZ.Heatmap" setConfig(false, false)
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -42,7 +42,7 @@ class XYZTests extends AnyFunSuite {
     val x: List[String] = List("a", "b", "c", "d", "e", "f")
     val y: List[Int] = List.range(1, 16)
     val z = z_surface.flatten
-    val series = XYZ(x=x, y=y, z=z, n=z_surface(0).length) asType HEATMAP
+    val series = XYZ(x = x, y = y, z = z, n = z_surface(0).length) asType HEATMAP
     val chart = Chart() addSeries series setTitle "XYZ.HeatmapWithXY"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
@@ -85,23 +85,23 @@ class XYZTests extends AnyFunSuite {
       val x: List[String] = List("a", "b", "c", "d", "e", "f")
       val y: List[Int] = List.range(1, 16)
       val z = z_surface.flatten
-      XYZ(x=y, y=x, z=z, n=z_surface(0).length) asType HEATMAP
+      XYZ(x = y, y = x, z = z, n = z_surface(0).length) asType HEATMAP
     }
   }
 
-    test("XYZ.Heatmap.SetColorBar") {
-      val data = List(List(1, 2, 3), List(4, 5, 6))
-      val n = data(0).length
-      val series = XYZ(z=data.flatten, n=n) asType HEATMAP
-      val chart = (
-        Chart()
-        addSeries ( series setColorBar "my colorbar" )
+  test("XYZ.Heatmap.SetColorBar") {
+    val data = List(List(1, 2, 3), List(4, 5, 6))
+    val n = data(0).length
+    val series = XYZ(z = data.flatten, n = n) asType HEATMAP
+    val chart = (
+      Chart()
+        addSeries (series setColorBar "my colorbar")
         setTitle "XYZ.Heatmap.SetColorBar"
       )
 
-      if (plotFlag) chart.plot
-      assert(validateJson(chart.serialize.toString))
-    }
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
 
 
 }

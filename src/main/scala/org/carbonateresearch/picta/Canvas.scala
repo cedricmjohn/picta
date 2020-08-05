@@ -7,9 +7,9 @@ import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
 
 /** This is the top level object which renders and plots the charts. All other Components sit inside it.
  *
- * @param rows: Number of rows in the Canvas subplot grid.
- * @param columns: Number of columns in the Canvas subplot grid.
- * @param grid: The actual grid containing the chart data.
+ * @param rows    : Number of rows in the Canvas subplot grid.
+ * @param columns : Number of columns in the Canvas subplot grid.
+ * @param grid    : The actual grid containing the chart data.
  */
 final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[Array[Chart]] = Blank) {
 
@@ -39,7 +39,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[A
     val new_canvas = this.copy()
 
     /* copy each chart with an updated index to the corresponding position inside the subplot grid */
-    charts.zipWithIndex.foreach{ case (chart, index) => new_canvas.grid_(index) = chart.copy(id=generateRandomText) }
+    charts.zipWithIndex.foreach { case (chart, index) => new_canvas.grid_(index) = chart.copy(id = generateRandomText) }
 
     new_canvas
   }

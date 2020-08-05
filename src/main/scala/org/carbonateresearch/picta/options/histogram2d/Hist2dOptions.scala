@@ -13,9 +13,9 @@ import ujson.{Obj, Value}
  * @param showscale    : Specifies whether the scale is shown for this series or not.
  */
 final case class Hist2dOptions(ncontours: Opt[Int] = Blank, reversescale: Opt[Boolean] = Opt(Option(true)),
-                         showscale: Opt[Boolean] = Blank) extends Component {
+                               showscale: Opt[Boolean] = Blank) extends Component {
 
-  def setNContours(new_ncontours: Int) = this.copy(ncontours=new_ncontours)
+  def setNContours(new_ncontours: Int) = this.copy(ncontours = new_ncontours)
 
   def setReverseScale(new_reversescale: Boolean) = this.copy(reversescale = new_reversescale)
 

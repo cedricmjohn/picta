@@ -2,8 +2,6 @@ package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils._
 import org.carbonateresearch.picta._
-import org.carbonateresearch.picta.options._
-
 import org.scalatest.funsuite.AnyFunSuite
 
 class CanvasTests extends AnyFunSuite {
@@ -12,7 +10,7 @@ class CanvasTests extends AnyFunSuite {
 
   test("XYZ.Scatter3D") {
 
-    val x = List(-9, -6, -5 , -3, -1)
+    val x = List(-9, -6, -5, -3, -1)
     val y = List(0, 1, 4, 5, 7)
     val z = List(
       List(10, 10.625, 12.5, 15.625, 20),
@@ -23,26 +21,26 @@ class CanvasTests extends AnyFunSuite {
     )
 
     // we flatten the nested list as we pass it into the Series constructor
-    val contour = XYZ(x=x, y=y, z=z.flatten, n=z(0).length).asType(CONTOUR)
+    val contour = XYZ(x = x, y = y, z = z.flatten, n = z(0).length).asType(CONTOUR)
 
     // set up the chart
     val chart1 = Chart()
       .addSeries(contour)
       .setTitle("Contour")
 
-    val heatmap = XYZ(z=z.flatten, n=z(0).length) asType HEATMAP
+    val heatmap = XYZ(z = z.flatten, n = z(0).length) asType HEATMAP
 
     val chart2 = Chart() addSeries heatmap setTitle "Heatmap"
 
-    val surface = XYZ(x=x, y=y, z=z.flatten, n=z(0).length) asType SURFACE
+    val surface = XYZ(x = x, y = y, z = z.flatten, n = z(0).length) asType SURFACE
 
     val chart3 = Chart() addSeries surface setTitle "Surface"
 
     val x2 = List.range(1, 100)
     val y2 = List.range(1, 100)
-    val z2 = List.range(1, 100).map(e => e + scala.util.Random.nextDouble()*100)
+    val z2 = List.range(1, 100).map(e => e + scala.util.Random.nextDouble() * 100)
 
-    val line = XYZ(x=x2, y=y2, z=z2) asType SCATTER3D drawStyle LINES
+    val line = XYZ(x = x2, y = y2, z = z2) asType SCATTER3D drawStyle LINES
 
     val chart4 = Chart() addSeries line setTitle "Line"
 

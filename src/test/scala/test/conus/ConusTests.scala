@@ -1,13 +1,5 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.conus.Utils._
-import org.carbonateresearch.conus.common.SingleModelResults
-import org.carbonateresearch.picta.options.AUTO
-import org.carbonateresearch.conus._
-import org.carbonateresearch.picta.UnitTestUtils.validateJson
-
-import org.scalatest.funsuite.AnyFunSuite
-
 //class ConusTests extends AnyFunSuite {
 //
 //  val plotFlag = false

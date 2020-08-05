@@ -1,7 +1,7 @@
-[0m[[0m[0minfo[0m] [0m[0m:: delivering :: org.carbonateresearch#picta_2.13;0.1.1 :: 0.1.1 :: release :: Tue Aug 04 23:24:27 BST 2020[0m
-[0m[[0m[0mdebug[0m] [0m[0m	options = status=release pubdate=Tue Aug 04 23:24:27 BST 2020 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0m[0minfo[0m] [0m[0m:: delivering :: org.carbonateresearch#picta_2.13;0.1.1 :: 0.1.1 :: release :: Wed Aug 05 15:14:54 BST 2020[0m
+[0m[[0m[0mdebug[0m] [0m[0m	options = status=release pubdate=Wed Aug 05 15:14:54 BST 2020 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
 [0m[[0m[0minfo[0m] [0m[0m	delivering ivy file to /Users/fazi/Desktop/Final Project/picta/target/scala-2.13/ivy-0.1.1.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	deliver done (5ms)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	deliver done (6ms)[0m
 [0m[[0m[0mdebug[0m] [0m[0mlocal do not support transaction. ivy pattern does not use revision as a directory[0m
 [0m[[0m[0minfo[0m] [0m[0m	published picta_2.13 to /Users/fazi/.ivy2/local/org.carbonateresearch/picta_2.13/0.1.1/poms/picta_2.13.pom[0m
 [0m[[0m[0minfo[0m] [0m[0m	published picta_2.13 to /Users/fazi/.ivy2/local/org.carbonateresearch/picta_2.13/0.1.1/jars/picta_2.13.jar[0m

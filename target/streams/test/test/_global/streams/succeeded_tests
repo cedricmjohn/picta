@@ -1,20 +1,20 @@
 #Successful Tests
-#Tue Aug 04 23:23:07 BST 2020
-org.carbonateresearch.picta.render.AnimationTests=1596579768198
-org.carbonateresearch.picta.ErrorBarTests=1596579787695
-org.carbonateresearch.picta.render.HistogramTests=1596579784790
-org.carbonateresearch.picta.render.XYZTests=1596579784814
-org.carbonateresearch.picta.render.MapTests=1596579765423
-org.carbonateresearch.picta.render.ScatterWithColorTests=1596579773664
-org.carbonateresearch.picta.render.CompositionTests=1596579770981
-org.carbonateresearch.picta.render.Histogram2DContourTests=1596579765877
-org.carbonateresearch.picta.render.ChartMethodTests=1596579786355
-org.carbonateresearch.picta.render.BasicChartTests=1596579770705
-org.carbonateresearch.picta.MarkerTests=1596579770843
-org.carbonateresearch.picta.ChartLayoutTests=1596579765521
-org.carbonateresearch.picta.AxisTests=1596579784779
-org.carbonateresearch.picta.render.CanvasTests=1596579776317
-org.carbonateresearch.picta.render.PieChartTests=1596579768159
-org.carbonateresearch.picta.SubplotTests=1596579784929
-org.carbonateresearch.picta.LineTests=1596579762875
-org.carbonateresearch.picta.IOTests=1596579759829
+#Wed Aug 05 15:13:29 BST 2020
+org.carbonateresearch.picta.render.AnimationTests=1596627853702
+org.carbonateresearch.picta.ErrorBarTests=1596627873679
+org.carbonateresearch.picta.render.HistogramTests=1596627872447
+org.carbonateresearch.picta.render.XYZTests=1596627861439
+org.carbonateresearch.picta.render.MapTests=1596627851006
+org.carbonateresearch.picta.render.ScatterWithColorTests=1596627848496
+org.carbonateresearch.picta.render.CompositionTests=1596627856377
+org.carbonateresearch.picta.render.Histogram2DContourTests=1596627861394
+org.carbonateresearch.picta.render.ChartMethodTests=1596627865700
+org.carbonateresearch.picta.MarkerTests=1596627861407
+org.carbonateresearch.picta.render.BasicChartTests=1596627863652
+org.carbonateresearch.picta.ChartLayoutTests=1596627856313
+org.carbonateresearch.picta.AxisTests=1596627867288
+org.carbonateresearch.picta.render.CanvasTests=1596636809073
+org.carbonateresearch.picta.render.PieChartTests=1596627861277
+org.carbonateresearch.picta.SubplotTests=1596627870133
+org.carbonateresearch.picta.LineTests=1596627848633
+org.carbonateresearch.picta.IOTests=1596627845975

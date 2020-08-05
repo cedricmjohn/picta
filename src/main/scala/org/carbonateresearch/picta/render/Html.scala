@@ -262,11 +262,11 @@ object Html {
       html ++=
         s"""
            |var save_${id} = document.getElementById("saveAsPNG_${id}")
-           |save_${id}.onclick = function() {
+           |save_${id}.onclick = async function() {
            |    const grid = document.getElementById("grid-container_${id}")
            |    const graphs = grid.getElementsByClassName("graph")
            |
-           |    const promises = []
+           |    const images = []
            |
            |    const rows = $rows
            |    const cols = $cols
@@ -274,23 +274,22 @@ object Html {
            |    const img_height = 400
            |    var margin = 50
            |
-           |    for (var i=0; i<graphs.length; i++) {
-           |        const promise = Plotly.toImage(graphs[i], {format: 'png', width: img_width, height: img_height})
-           |        promises.push(new Promise((resolve) => {
-           |            resolve(promise);
-           |        }));
+           |    for (var i=0; i<rows; i++) {
+           |      for (var j=0; j<cols; j++) {
+           |        const image = await Plotly.toImage(graphs[i * cols + j], {format: 'png', width: img_width, height: img_height})
+           |        images.push(image);
+           |      }
            |    }
            |
-           |    Promise.all(promises).then((images) => {
-           |        const positioned_images = []
+           |    const positioned_images = []
            |
            |        for (var i=0; i<rows; i++) {
            |            for (var j=0; j<cols; j++) {
            |
            |                const obj = {
            |                    "src": images[i*cols + j],
-           |                    x: i*img_width+margin,
-           |                    y: j*img_height+margin
+           |                    x: j*img_width+margin,
+           |                    y: i*img_height+margin
            |                }
            |
            |                positioned_images.push(obj)
@@ -307,7 +306,6 @@ object Html {
            |            a.click();
            |            a.remove()
            |        });
-           |    });
            |}
            |""".stripMargin
     }

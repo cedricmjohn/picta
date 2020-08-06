@@ -4,21 +4,25 @@
     <groupId>org.carbonateresearch</groupId>
     <artifactId>picta_2.13</artifactId>
     <packaging>jar</packaging>
-    <description>picta</description>
-    <url>https://github.com/cedricjohn/picta</url>
+    <description>Picta: the interactive scientific plotting library for Scala.</description>
+    <url>https://github.com/cedricmjohn/picta</url>
     <version>0.1.1</version>
     <licenses>
         <license>
             <name>GNU General Public License</name>
-            <url>https://github.com/cedricjohn/picta/LICENSE</url>
+            <url>http://www.gnu.org/licenses/</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
     <name>picta</name>
     <organization>
         <name>org.carbonateresearch</name>
-        <url>https://github.com/cedricjohn/picta</url>
+        <url>https://github.com/cedricmjohn/picta</url>
     </organization>
+    <scm>
+        <url>https://github.com/cedricmjohn/picta-site</url>
+        <connection>scm:git:git@github.com:cedricmjohn/picta.git</connection>
+    </scm>
     <developers>
         <developer>
             <id>acse-fk4517</id>
@@ -27,9 +31,9 @@
             <email>fazal.khan19@imperial.ac.uk</email>
         </developer>
         <developer>
-            <id>cedricjohn</id>
+            <id>cedricmjohn</id>
             <name>Cedric John</name>
-            <url>http://github.com/cedricjohn</url>
+            <url>http://github.com/cedricmjohn</url>
             <email>cedric.john@gmail.com</email>
         </developer>
     </developers>

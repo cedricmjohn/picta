@@ -1,359 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63f266c1-1c99-4382-a7a0-d581d8a7acef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/0. first_chart.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/0. first_chart.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/1. canvas.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/1. canvas.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/2. Example_Histogram2DDensity.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/2. Example_Histogram2DDensity.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/3. example_3dgrid.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/3. example_3dgrid.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/4. example_animation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/4. example_animation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$26351b39ebd6d6781d0d$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$26351b39ebd6d6781d0d.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$26351b39ebd6d6781d0d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/carbonateresearch/picta/render/Html.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/carbonateresearch/picta/render/Html.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Example$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AFRICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AFRICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AITOFF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AITOFF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ALBERS_USA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ALBERS_USA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ASIA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ASIA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Axis$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Axis$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Axis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/BAR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/BAR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/BOTTOM_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/BOTTOM_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CLOSEST$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CLOSEST$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CLosest_Y$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CLosest_Y$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_CONFORMAL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_CONFORMAL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_EQUAL_AREA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_EQUAL_AREA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONTOUR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/CONTOUR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Chart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Chart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ChartLayout$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ChartLayout$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ChartLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ChartLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ECKERT4$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ECKERT4$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/EQURECTANGULAR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/EQURECTANGULAR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/EUROPE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/EUROPE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/FALSE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/FALSE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/GNOMONIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/GNOMONIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HAMMER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HAMMER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HEATMAP$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HEATMAP$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HISTOGRAM$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HISTOGRAM$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/IO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/IO$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/KAVRAYSKIY7$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/KAVRAYSKIY7$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LEFT_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LEFT_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_MARKERS$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_MARKERS$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_MARKERS_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_MARKERS_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/LINES_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MARKERS$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MARKERS$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MARKERS_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MARKERS_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MERCATOR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MERCATOR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MILLER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MILLER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MOLLWEIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MOLLWEIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Map$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Map$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MapOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MapOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MapOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/MapOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NATURAL_EARTH$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NATURAL_EARTH$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NONE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NONE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NORTH_AMERICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/NORTH_AMERICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ORTHOGRAPHIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ORTHOGRAPHIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PIE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PIE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PieElement$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PieElement$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PieElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/PieElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/RIGHT_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/RIGHT_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ROBINSON$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/ROBINSON$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SCATTER3D$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SCATTER3D$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SCATTERGL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SCATTERGL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SINUSOIDAL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SINUSOIDAL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SOUTH_AMERICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SOUTH_AMERICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/STEROGRAPHIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/STEROGRAPHIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SURFACE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/SURFACE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TOP_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TOP_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/USA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/USA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/WINKEL_TRIPEL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/WINKEL_TRIPEL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/WORLD$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/WORLD$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/X$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/X$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XY.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XY.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XYZ$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XYZ$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XYZ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/XYZ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/X_UNIFIED$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/X_UNIFIED$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Y$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Y$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Y_UNIFIED$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Y_UNIFIED$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Z$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/Z$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer$BigDecimalSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer$BigDecimalSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Float_Serializer$FloatSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Float_Serializer$FloatSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Float_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Float_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Int_Serializer$IntSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Int_Serializer$IntSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Int_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Int_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Long_Serializer$LongSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Long_Serializer$LongSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Long_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Long_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$jsonMonoid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Monoid$jsonMonoid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Serializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Serializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Serializer$DoubleSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/Serializer$DoubleSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/String_Serializer$StringSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/String_Serializer$StringSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/String_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/common/String_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/AUTO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/AUTO$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/CENTER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/CENTER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/CONSTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/CONSTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$Color$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$Color$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$Color$ColorDouble$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$Color$ColorDouble$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption$ColorString$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption$ColorString$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/DATA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/DATA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ErrorBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/ErrorBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/LEFT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/LEFT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/MultiChart$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/MultiChart$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/MultiChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/MultiChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/PERCENT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/PERCENT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/RIGHT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/RIGHT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/SQRT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/SQRT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/XError$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/XError$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/XError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/XError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/YError$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/YError$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/YError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/YError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/AVG$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/AVG$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/COUNT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/COUNT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/DECREASING$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/DECREASING$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/DENSITY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/DENSITY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/EXCLUDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/EXCLUDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HALF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HALF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HistOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HistOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HistOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/HistOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/INCLUDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/INCLUDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/INCREASING$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/INCREASING$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/MAX$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/MAX$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/MIN$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/MIN$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/NUMBER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/NUMBER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/PERCENT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/PERCENT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/SUM$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/options/histogram/SUM$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/render/Html$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/render/Html$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/render/Html.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/org/carbonateresearch/picta/render/Html.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/ivy-0.1.1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/ivy-0.1.1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1-javadoc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/picta_2.12-0.1.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/javascript/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/javascript/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/javascript/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/javascript/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/UnitTestUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/UnitTestUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/UnitTestUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/UnitTestUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/render/CanvasTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/render/CanvasTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/render/ScatterWithColorTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/org/carbonateresearch/picta/render/ScatterWithColorTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Example$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/merge-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/merge-image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AFRICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AFRICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AITOFF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AITOFF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ALBERS_USA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ALBERS_USA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ASIA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ASIA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/AZIMUTHAL_EQUIDISTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Axis$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Axis$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Axis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/BAR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/BAR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/BOTTOM_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/BOTTOM_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CLOSEST$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CLOSEST$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CLosest_Y$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CLosest_Y$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_CONFORMAL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_CONFORMAL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_EQUAL_AREA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_EQUAL_AREA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONIC_EQUAL_EQUIDISTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONTOUR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/CONTOUR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Chart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Chart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ChartLayout$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ChartLayout$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ChartLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ChartLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ECKERT4$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ECKERT4$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/EQURECTANGULAR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/EQURECTANGULAR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/EUROPE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/EUROPE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/FALSE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/FALSE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/GNOMONIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/GNOMONIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HAMMER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HAMMER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HEATMAP$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HEATMAP$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HISTOGRAM$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HISTOGRAM$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/HISTOGRAM2DCONTOUR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/IO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/IO$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/KAVRAYSKIY7$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/KAVRAYSKIY7$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LEFT_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LEFT_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_MARKERS$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_MARKERS$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_MARKERS_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_MARKERS_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/LINES_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MARKERS$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MARKERS$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MARKERS_TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MARKERS_TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MERCATOR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MERCATOR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MILLER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MILLER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MOLLWEIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MOLLWEIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Map$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Map$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MapOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MapOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MapOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/MapOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NATURAL_EARTH$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NATURAL_EARTH$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NONE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NONE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NORTH_AMERICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/NORTH_AMERICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ORTHOGRAPHIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ORTHOGRAPHIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PIE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PIE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PieElement$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PieElement$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PieElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/PieElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/RIGHT_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/RIGHT_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ROBINSON$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/ROBINSON$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SCATTER3D$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SCATTER3D$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SCATTERGL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SCATTERGL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SINUSOIDAL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SINUSOIDAL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SOUTH_AMERICA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SOUTH_AMERICA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/STEROGRAPHIC$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/STEROGRAPHIC$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SURFACE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/SURFACE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TEXT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TEXT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TOP_SIDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TOP_SIDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/TRANSVERSE_MERCATOR$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/USA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/USA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/WINKEL_TRIPEL$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/WINKEL_TRIPEL$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/WORLD$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/WORLD$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/X$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/X$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XY.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XY.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XYZ$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XYZ$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XYZ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/XYZ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/X_UNIFIED$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/X_UNIFIED$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Y$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Y$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Y_UNIFIED$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Y_UNIFIED$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Z$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/Z$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer$BigDecimalSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer$BigDecimalSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Big_Decimal_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Float_Serializer$FloatSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Float_Serializer$FloatSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Float_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Float_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Int_Serializer$IntSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Int_Serializer$IntSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Int_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Int_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Long_Serializer$LongSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Long_Serializer$LongSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Long_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Long_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$jsonMonoid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Monoid$jsonMonoid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Serializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Serializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Serializer$DoubleSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/Serializer$DoubleSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/String_Serializer$StringSerializer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/String_Serializer$StringSerializer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/String_Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/common/String_Serializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/AUTO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/AUTO$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/CENTER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/CENTER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/CONSTANT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/CONSTANT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$Color$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$Color$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$Color$ColorDouble$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$Color$ColorDouble$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption$ColorString$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption$ColorString$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ColorOptions$LowPriorityOption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/DATA$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/DATA$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ErrorBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/ErrorBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/LEFT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/LEFT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/MultiChart$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/MultiChart$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/MultiChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/MultiChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/PERCENT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/PERCENT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/RIGHT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/RIGHT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/SQRT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/SQRT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/XError$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/XError$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/XError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/XError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/YError$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/YError$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/YError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/YError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/AVG$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/AVG$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/COUNT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/COUNT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/DECREASING$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/DECREASING$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/DENSITY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/DENSITY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/EXCLUDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/EXCLUDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HALF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HALF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HistOptions$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HistOptions$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HistOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/HistOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/INCLUDE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/INCLUDE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/INCREASING$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/INCREASING$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/MAX$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/MAX$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/MIN$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/MIN$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/NUMBER$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/NUMBER$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/PERCENT$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/PERCENT$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/PROBABILITY_DENSITY$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/SUM$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/options/histogram/SUM$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/render/Html$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/render/Html$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/render/Html.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/org/carbonateresearch/picta/render/Html.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/ivy-0.1.1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/ivy-0.1.1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1-javadoc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/picta_2.13-0.1.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/UnitTestUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/UnitTestUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/UnitTestUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/UnitTestUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/AnimationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/AnimationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/CanvasTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/CanvasTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/ScatterWithColorTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/test-classes/org/carbonateresearch/picta/render/ScatterWithColorTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/_global/publishLocal/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/publishLocal/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/discoveredMainClasses/data" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/discoveredMainClasses/data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/_global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/_global/streams/copy-resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/scala/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/scala/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/scala/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/doc/_global/streams/scala/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageDoc/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageDoc/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageDoc/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageDoc/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageSrc/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageSrc/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageSrc/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageSrc/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/_global/_global/compileBinaryFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileBinaryFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/copyResources/_global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/copyResources/_global/streams/copy-resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/definedTests/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/definedTests/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/test/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/test/_global/streams/succeeded_tests" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/succeeded_tests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/testOnly/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/testOnly/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.AxisTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.AxisTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.ChartLayoutTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.ChartLayoutTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.ErrorBarTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.ErrorBarTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.IOTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.IOTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.LineTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.LineTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.MarkerTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.MarkerTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.SubplotTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.SubplotTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.AnimationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.AnimationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.BasicChartTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.BasicChartTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.CanvasTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.CanvasTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ChartMethodTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ChartMethodTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.CompositionTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.CompositionTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.Histogram2DContourTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.Histogram2DContourTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.HistogramTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.HistogramTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.MapTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.MapTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.PieChartTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.PieChartTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ScatterWithColorTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ScatterWithColorTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.XYZTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.XYZTests.xml" afterDir="false" />
+    <list default="true" id="f3b3fee3-3b46-4914-ad53-f12fabaea501" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,80 +23,73 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="242d6070-015e-4058-8ff7-925541e00c0b" />
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1fRqrE2mt99ruZAg2Y9Yc2ODDuu" />
+  <component name="ProjectId" id="1fg1a2DDIlK5dfkiJiumOlSDKXd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Hydra Compiler" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63f266c1-1c99-4382-a7a0-d581d8a7acef" name="Default Changelist" comment="" />
-      <created>1596191449428</created>
+      <changelist id="f3b3fee3-3b46-4914-ad53-f12fabaea501" name="Default Changelist" comment="" />
+      <created>1596624982061</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1596191449428</updated>
-      <workItem from="1596191456232" duration="231000" />
-      <workItem from="1596205523432" duration="53000" />
-      <workItem from="1596215736202" duration="1006000" />
-      <workItem from="1596452487771" duration="27864000" />
-      <workItem from="1596487883888" duration="1081000" />
-      <workItem from="1596532072514" duration="29259000" />
-      <workItem from="1596578313815" duration="2114000" />
-      <workItem from="1596622461339" duration="5400000" />
-      <workItem from="1596634312852" duration="1698000" />
-      <workItem from="1596637582891" duration="1763000" />
+      <updated>1596624982061</updated>
+      <workItem from="1596624983131" duration="4986000" />
+      <workItem from="1596644737172" duration="1320000" />
+      <workItem from="1596712088473" duration="1551000" />
     </task>
+    <task id="LOCAL-00001" summary="Version 0.1.1 as pushed to Maven">
+      <created>1596717042406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596717042406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version 0.1.1 as pushed to Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.1.1 as pushed to Maven" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="183" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1596558554983">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="322" y="145" key="CommitChangelistDialog2" timestamp="1596717038271">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="458" y="182" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.794@0.23.1440.794" timestamp="1596457907563" />
-    <state x="458" y="182" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.795@0.23.1440.795" timestamp="1596466883235" />
-    <state x="458" y="183" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.798@0.23.1440.798" timestamp="1596558554983" />
-    <state x="645" y="120" key="#com.intellij.ide.util.MemberChooser" timestamp="1596533402734">
-      <screen x="0" y="23" width="1440" height="801" />
+    <state x="322" y="145" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1596717038271" />
+    <state x="308" y="202" width="938" height="539" key="VCS.ChangeListViewerDialog" timestamp="1596717114668">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="645" y="120" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1596533402733" />
-    <state x="402" y="175" width="698" height="490" key="find.popup" timestamp="1596568365127">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="308" y="202" width="938" height="539" key="VCS.ChangeListViewerDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1596717114668" />
+    <state x="496" y="291" key="Vcs.Push.Dialog.v2" timestamp="1596717086205">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="402" y="175" width="698" height="490" key="find.popup/0.23.1440.798@0.23.1440.798" timestamp="1596568365127" />
-    <state x="383" y="139" width="672" height="682" key="search.everywhere.popup" timestamp="1596562697394">
-      <screen x="0" y="23" width="1440" height="798" />
-    </state>
-    <state x="383" y="138" width="672" height="678" key="search.everywhere.popup/0.23.1440.794@0.23.1440.794" timestamp="1596464695629" />
-    <state x="383" y="139" width="672" height="682" key="search.everywhere.popup/0.23.1440.798@0.23.1440.798" timestamp="1596562697394" />
+    <state x="496" y="291" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1596717086205" />
   </component>
 </project>

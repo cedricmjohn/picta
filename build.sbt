@@ -1,3 +1,4 @@
+import com.jsuereth.sbtpgp.PgpKeys.gpgCommand
 import sbt.url
 
 name := "picta"
@@ -40,15 +41,16 @@ libraryDependencies += "com.lihaoyi" %% "os-lib" % "0.7.0"
 // CSV file
 libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.3.6"
 
-val username = "cedricjohn"
+val username = "cedricmjohn"
 val repo     = "picta"
-name := "picta"
+//name := "picta"
 
 inThisBuild(
   List(
     organization := "org.carbonateresearch",
     homepage := Some(url(s"https://github.com/$username/$repo")),
     licenses := List("GNU General Public License" -> url(s"https://github.com/$username/$repo/LICENSE")),
+    scmInfo := Some(ScmInfo(url(s"https://github.com/$username/$repo-site"), s"scm:git:git@github.com:$username/$repo.git")),
     developers := List(
       Developer(
         id = "acse-fk4517",
@@ -65,3 +67,34 @@ inThisBuild(
     )
   )
 )
+
+//Global / gpgCommand := (baseDirectory.value / "gpg.sh").getAbsolutePath
+
+ThisBuild / description := "Picta: the interactive scientific plotting library for Scala."
+ThisBuild / licenses := List("GNU General Public License" -> new URL("http://www.gnu.org/licenses/"))
+ThisBuild / homepage := Some(url("https://github.com/cedricmjohn/picta"))
+
+// Remove all additional repository other than Maven Central from POM
+ThisBuild / pomIncludeRepository := { _ => false }
+ThisBuild / publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+ThisBuild / publishMavenStyle := true
+
+publishConfiguration := publishConfiguration.value.withOverwrite(true)
+publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
+
+
+/*
+credentials += Credentials(
+  "GnuPG Key ID",
+  "gpg",
+  "C2B1493A584970F254B26AC1174AF7302D6AD8DB", // key identifier
+  "ignored" // this field is ignored; passwords are supplied by pinentry
+)*/
+
+publishTo := sonatypePublishToBundle.value
+
+

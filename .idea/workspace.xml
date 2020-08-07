@@ -2,6 +2,7 @@
 <project version="4">
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
+<<<<<<< HEAD
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -252,6 +253,12 @@
       <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.PieChartTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.PieChartTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ScatterWithColorTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.ScatterWithColorTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.XYZTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-org.carbonateresearch.picta.render.XYZTests.xml" afterDir="false" />
+=======
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3b3fee3-3b46-4914-ad53-f12fabaea501" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+>>>>>>> eb7546d56409f1f59bacd2814b93208e1ee6e488
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,20 +276,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="242d6070-015e-4058-8ff7-925541e00c0b" />
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1fRqrE2mt99ruZAg2Y9Yc2ODDuu" />
+  <component name="ProjectId" id="1fg1a2DDIlK5dfkiJiumOlSDKXd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
   </component>
@@ -307,13 +314,29 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
+=======
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Hydra Compiler" />
+>>>>>>> eb7546d56409f1f59bacd2814b93208e1ee6e488
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63f266c1-1c99-4382-a7a0-d581d8a7acef" name="Default Changelist" comment="" />
-      <created>1596191449428</created>
+      <changelist id="f3b3fee3-3b46-4914-ad53-f12fabaea501" name="Default Changelist" comment="" />
+      <created>1596624982061</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1596191449428</updated>
       <workItem from="1596191456232" duration="231000" />
       <workItem from="1596205523432" duration="53000" />
@@ -330,25 +353,32 @@
       <workItem from="1596705514954" duration="18000" />
       <workItem from="1596705862923" duration="6000" />
       <workItem from="1596813367327" duration="4161000" />
+=======
+      <updated>1596624982061</updated>
+      <workItem from="1596624983131" duration="4986000" />
+      <workItem from="1596644737172" duration="1320000" />
+      <workItem from="1596712088473" duration="1551000" />
     </task>
+    <task id="LOCAL-00001" summary="Version 0.1.1 as pushed to Maven">
+      <created>1596717042406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596717042406</updated>
+>>>>>>> eb7546d56409f1f59bacd2814b93208e1ee6e488
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version 0.1.1 as pushed to Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.1.1 as pushed to Maven" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="458" y="182" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1596815460901">
       <screen x="0" y="23" width="1440" height="795" />
     </state>
@@ -378,8 +408,19 @@
     <state x="402" y="175" width="698" height="490" key="find.popup/0.23.1440.798@0.23.1440.798" timestamp="1596813997505" />
     <state x="383" y="139" width="672" height="682" key="search.everywhere.popup" timestamp="1596562697394">
       <screen x="0" y="23" width="1440" height="798" />
+=======
+    <state x="322" y="145" key="CommitChangelistDialog2" timestamp="1596717038271">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="383" y="138" width="672" height="678" key="search.everywhere.popup/0.23.1440.794@0.23.1440.794" timestamp="1596464695629" />
-    <state x="383" y="139" width="672" height="682" key="search.everywhere.popup/0.23.1440.798@0.23.1440.798" timestamp="1596562697394" />
+    <state x="322" y="145" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1596717038271" />
+    <state x="308" y="202" width="938" height="539" key="VCS.ChangeListViewerDialog" timestamp="1596717114668">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="308" y="202" width="938" height="539" key="VCS.ChangeListViewerDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1596717114668" />
+    <state x="496" y="291" key="Vcs.Push.Dialog.v2" timestamp="1596717086205">
+      <screen x="0" y="23" width="1792" height="1097" />
+>>>>>>> eb7546d56409f1f59bacd2814b93208e1ee6e488
+    </state>
+    <state x="496" y="291" key="Vcs.Push.Dialog.v2/0.23.1792.1097@0.23.1792.1097" timestamp="1596717086205" />
   </component>
 </project>

@@ -50,6 +50,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Orientation.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Side.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Side.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Color.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Color.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/MapSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/MapSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Anchor.scala[0m
@@ -68,8 +70,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/ErrorMode.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/MultiChart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/MultiChart.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Color.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Color.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Marker.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Marker.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/conus/Utils.scala[0m

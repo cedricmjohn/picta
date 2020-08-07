@@ -1,6 +1,7 @@
 package org.carbonateresearch.picta
 
 import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.options._
@@ -19,8 +20,7 @@ import scala.language.postfixOps
  * @param transition_duration : If the chart is animated, this specifies the duration between the frames.
  * @param id                  : This is used by the Picta library internally for book-keeping purposes.
  */
-final case class Chart
-(series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
+final case class Chart(series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
  animated: Boolean = false, transition_duration: Int = 100, animate_multiple_series: Boolean = false,
  private[picta] val id: String = generateRandomText()) extends Component {
 
@@ -45,19 +45,19 @@ final case class Chart
 
   def plotInline()(implicit publish: OutputHandler) = Canvas().addCharts(this).plotInline
 
-  def addSeries(new_series: List[Series]): Chart = this.copy(series = series ::: new_series)
+  def addSeries(new_series: List[Series]) = this.copy(series = series ::: new_series)
 
-  def addSeries(new_series: Series*): Chart = this.copy(series = series ::: new_series.toList)
+  def addSeries(new_series: Series*) = this.copy(series = series ::: new_series.toList)
 
-  def setChartLayout[Z0, Z1, Z2, Z3](new_layout: ChartLayout): Chart = this.copy(layout = new_layout.copy(XYZ = XYZ))
+  def setChartLayout(new_layout: ChartLayout) = this.copy(layout = new_layout.copy(XYZ = XYZ))
 
-  def setConfig(responsive: Boolean = true, scrollZoom: Boolean = true): Chart = {
+  def setConfig(responsive: Boolean = true, scrollZoom: Boolean = true) = {
     val new_config = Config(responsive = responsive, scrollZoom = scrollZoom)
     this.copy(config = new_config)
   }
 
   /* helper methods that make wrangling all the sub-components a lot easier */
-  def setTitle(title: String): Chart = {
+  def setTitle(title: String) = {
     val new_layout = this.layout setTitle title setXYZ XYZ
     this.copy(layout = new_layout)
   }
@@ -140,7 +140,7 @@ final case class Chart
 
   def setZAxisStartTick(start_tick: Double = 0) = setAxis(key = "zaxis", setAxisStartTick(start_tick))
 
-  def addAxes(new_xaxis: Axis, new_yaxis: Axis): Chart = {
+  def addAxes(new_xaxis: Axis, new_yaxis: Axis) = {
     val new_layout = this.layout setAxes(new_xaxis, new_yaxis) setXYZ XYZ
     this.copy(layout = new_layout)
   }

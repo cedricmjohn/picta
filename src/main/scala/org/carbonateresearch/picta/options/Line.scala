@@ -1,9 +1,9 @@
 package org.carbonateresearch.picta.options
 
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.Component
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
-import org.carbonateresearch.picta.options.ColorOptions.Color
 import ujson.{Obj, Value}
 
 /** This case class specifies how a line is rendered for a plot.

@@ -23,7 +23,7 @@ class Histogram2DContourTests extends AnyFunSuite {
     val ax3 = Axis(X, position = 2, showgrid = false) setDomain(0.85, 1.0)
     val ax4 = Axis(Y, position = 2, showgrid = false) setDomain(0.85, 1.0)
 
-    val marker = Marker() setColor "rgb(102,0,0)"
+    val marker = Marker() setColor RGB(102,0,0)
     val series1 = XY(x_double, y_double) asType SCATTER drawStyle MARKERS setName "points" setMarker marker
 
     val series2 = (

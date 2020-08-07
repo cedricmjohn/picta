@@ -1,6 +1,7 @@
 package org.carbonateresearch.picta
 
 import almond.interpreter.api.OutputHandler
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Opt}
 import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
@@ -11,7 +12,8 @@ import org.carbonateresearch.picta.render.Html.{plotChart, plotChartInline}
  * @param columns : Number of columns in the Canvas subplot grid.
  * @param grid    : The actual grid containing the chart data.
  */
-final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[Array[Chart]] = Blank) {
+final case class Canvas
+(rows: Int = 1, columns: Int = 1, private val grid: Opt[Array[Chart]] = Blank) {
 
   val id = generateRandomText()
 
@@ -20,7 +22,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[A
     case _ => Array.fill[Chart](rows * columns)(Chart(id = "not_set"))
   }
 
-  def setChart(i: Int, j: Int, chart: Chart): Canvas = {
+  def setChart(i: Int, j: Int, chart: Chart) = {
     val copy = this.copy(grid = this.grid_)
     copy.grid_(i * columns + j) = chart.copy(id = generateRandomText())
     copy
@@ -30,7 +32,7 @@ final case class Canvas(rows: Int = 1, columns: Int = 1, private val grid: Opt[A
   def addCharts(charts: Chart*): Canvas = addCharts(charts.toList)
 
   /* adds charts in the first available place; overwrites existing chart */
-  def addCharts(charts: List[Chart]): Canvas = {
+  def addCharts(charts: List[Chart]) = {
 
     if (charts.length != this.grid_.length)
       throw new IllegalArgumentException("The number of charts must exactly equal the number of places in the subplot grid")

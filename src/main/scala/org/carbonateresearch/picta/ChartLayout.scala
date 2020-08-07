@@ -1,5 +1,6 @@
 package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Empty, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.options._
@@ -43,21 +44,21 @@ final case class ChartLayout
 
   def setTitle(new_title: String) = this.copy(title = new_title)
 
-  def setAxes(new_axes: List[Axis]): ChartLayout = axes.option match {
+  def setAxes(new_axes: List[Axis]) = axes.option match {
     /* add to the end of existing list. This ensures things that when we have two of the same keys,
     the ones at the right are preserved. This is because below we foldleft when merging the axes */
     case Some(lst) => this.copy(axes = lst ::: new_axes)
     case None => this.copy(axes = new_axes)
   }
 
-  def setAxes(new_axis: Axis*): ChartLayout = axes.option match {
+  def setAxes(new_axis: Axis*) = axes.option match {
     /* add to the end of existing list. This ensures things that when we have two of the same keys,
     the ones at the right are preserved. This is because below we foldleft when merging the axes */
     case Some(lst) => this.copy(axes = lst ::: new_axis.toList)
     case None => this.copy(axes = new_axis.toList)
   }
 
-  def setLegend(new_legend: Legend): ChartLayout = this.copy(legend = new_legend, show_legend = true)
+  def setLegend(new_legend: Legend) = this.copy(legend = new_legend, show_legend = true)
 
   def setLegend(x: Opt[Double] = Blank, y: Opt[Double] = Blank, orientation: Orientation = VERTICAL,
                 xanchor: Opt[Anchor] = Blank, yanchor: Opt[Anchor] = Blank) = {
@@ -68,9 +69,9 @@ final case class ChartLayout
 
   def setAutosize(new_autosize: Boolean) = this.copy(auto_size = new_autosize)
 
-  def setMargin(new_margin: Margin): ChartLayout = this.copy(margin = new_margin)
+  def setMargin(new_margin: Margin) = this.copy(margin = new_margin)
 
-  def setMapOption(new_geo: MapOptions): ChartLayout = this.copy(map_options = new_geo)
+  def setMapOption(new_geo: MapOptions) = this.copy(map_options = new_geo)
 
   def setMultiChart(new_minigrid: MultiChart) = this.copy(multi_chart = new_minigrid)
 

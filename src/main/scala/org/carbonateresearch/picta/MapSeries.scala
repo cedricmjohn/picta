@@ -1,9 +1,9 @@
 package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.common.Utils.generateRandomText
-import org.carbonateresearch.picta.options.ColorOptions.Color
 import org.carbonateresearch.picta.options.Line
 import ujson.{Obj, Value}
 

@@ -1,11 +1,11 @@
 package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.SymbolShape.SymbolShape
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.common.Serializer
 import org.carbonateresearch.picta.common.Utils._
-import org.carbonateresearch.picta.options.ColorOptions.Color
 import org.carbonateresearch.picta.options._
 import org.carbonateresearch.picta.options.histogram._
 import org.carbonateresearch.picta.options.histogram2d.Hist2dOptions

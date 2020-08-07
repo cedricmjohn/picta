@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.OptionWrapper._
-import org.carbonateresearch.picta.options.ColorOptions.Color
+import ColorOptions.Color
 
 object UnitTestUtils {
 

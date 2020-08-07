@@ -6,6 +6,7 @@ import java.net.{HttpURLConnection, URL}
 import almond.api.JupyterApi
 import almond.interpreter.api.OutputHandler
 import org.carbonateresearch.picta.Chart
+import org.carbonateresearch.picta.ColorOptions.Color
 import os.Path
 import ujson.Value
 import upickle.default.transform
@@ -142,7 +143,7 @@ object Html {
    * @param id   : The id of the canvas.
    * @return: returns a string representing the HTML for the grid.
    */
-  private def createGridHTML(rows: Int, cols: Int, grid: Array[Chart], id: String): String = {
+  private def createGridHTML[T0: Color, T1: Color](rows: Int, cols: Int, grid: Array[Chart], id: String): String = {
     var html = new StringBuilder()
 
     html ++= s"""<div id="grid-container_$id" class="grid-container" align="center"> \n"""

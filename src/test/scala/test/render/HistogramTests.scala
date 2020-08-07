@@ -25,13 +25,30 @@ class HistogramTests extends AnyFunSuite {
     assert(validateJson(chart.serialize.toString))
   }
 
-  test("XY.Histogram.Color") {
+  test("XY.Histogram.Color.String") {
     val marker = Marker() setColor "rgba(255, 100, 102, 0.4)" setLine Line()
+    val series = XY(x_random) asType HISTOGRAM setMarker marker setHistOptions (orientation = HORIZONTAL)
+    val chart = Chart() addSeries series setTitle "XY.Histogram.ColorString"
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Histogram.Color.RGB") {
+    val marker = Marker() setColor RGB(255, 100, 102) setLine Line()
     val series = XY(x_random) asType HISTOGRAM setMarker marker setHistOptions (orientation = HORIZONTAL)
     val chart = Chart() addSeries series setTitle "XY.Histogram.Color"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }
+
+  test("XY.Histogram.ColorRGBA") {
+    val marker = Marker() setColor RGBA(255, 100, 102, 0.4) setLine Line()
+    val series = XY(x_random) asType HISTOGRAM setMarker marker setHistOptions (orientation = HORIZONTAL)
+    val chart = Chart() addSeries series setTitle "XY.Histogram.Color.RGBA"
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
 
   test("XY.Histogram.withLines") {
     val marker = Marker() setColor "rgba(255, 100, 102, 0.4)" setLine Line()

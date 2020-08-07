@@ -13,6 +13,7 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Canvas.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Chart.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/ChartLayout.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Color.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Component.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Config.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/IO.scala[0m
@@ -33,7 +34,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/common/Utils.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Anchor.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Color.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/ColorBar.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/ErrorBar.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/ErrorMode.scala[0m
@@ -54,10 +54,10 @@
 [0m[[0m[33mwarn[0m] [0m[0m                                 ^[0m
 [0m[[0m[33mwarn[0m] [0m[0m28 deprecations (since 2.13.3); re-run with -deprecation for details[0m
 [0m[[0m[33mwarn[0m] [0m[0m2 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala:23:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Marker.scala:11:1: Tag '@constructor:' is not recognised[0m
 [0m[[0m[33mwarn[0m] [0m[0m/**[0m
 [0m[[0m[33mwarn[0m] [0m[0m^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Marker.scala:11:1: Tag '@constructor:' is not recognised[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala:23:1: Tag '@constructor:' is not recognised[0m
 [0m[[0m[33mwarn[0m] [0m[0m/**[0m
 [0m[[0m[33mwarn[0m] [0m[0m^[0m
 [0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala:12:3: Tag '@return:' is not recognised[0m

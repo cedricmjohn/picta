@@ -1,5 +1,6 @@
 package org.carbonateresearch.picta
 
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
@@ -97,9 +98,11 @@ case object SINUSOIDAL extends Projection
  * @param lataxis        : This is the component that configures the lataxis.
  * @param longaxis       : This is the component that configures the longaxis.
  */
-final case class MapOptions(region: Opt[Region] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
-                            projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
-                            showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
+
+final case class MapOptions
+(region: Opt[Region] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
+ projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
+ showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
 
   def setRegion(new_region: Region) = this.copy(region = new_region)
 

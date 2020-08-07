@@ -16,6 +16,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$SQUARE_OPEN_DOT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/AZIMUTHAL_EQUAL_AREA$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$STAR_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$STAR_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_SIX$.html[0m
@@ -54,8 +56,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/SQRT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/SQRT$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Legend.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/Legend.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/YError.html[0m
@@ -78,18 +78,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/histogram2d/index.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/histogram2d/Hist2dOptions.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$$Color.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption$ColorString$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption$ColorString$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorBar.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorBar.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CENTER$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/CENTER$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Margin.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/Margin.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$$LowPriorityOption.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/Marker.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/Marker.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/DATA$.html[0m
@@ -98,10 +92,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/AUTO$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/CONSTANT$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/CONSTANT$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$$Color$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/ColorOptions$$Color$$ColorDouble$.html[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/ColorOptions$$Color$$ColorDouble$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/options/histogram[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/options/histogram/HistFunction.html[0m
@@ -226,6 +216,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_TWENTY_ONE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/Region.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/Region.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$$StringColor$ColorString$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$$StringColor$ColorString$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ELEVEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$TWO_HUNDRED_AND_ELEVEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_FORTY_TWO$.html[0m
@@ -524,6 +516,10 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$THREE_HUNDRED_AND_FIVE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_X_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_X_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$$Color.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$$Color.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$$StringColor.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$$StringColor.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/NATURAL_EARTH$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/NATURAL_EARTH$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SW_OPEN_DOT$.html[0m
@@ -580,6 +576,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$HASH$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$CIRCLE_CROSS_OPEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/RGB.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/RGB.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_DOWN_OPEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$NINETEEN$.html[0m
@@ -762,6 +760,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$LINE_NW$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ROBINSON$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ROBINSON$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/RGBA.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/RGBA.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWELVE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWELVE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$CROSS_OPEN_DOT$.html[0m
@@ -816,6 +816,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$THIRTY_NINE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_TWO$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY_TWO$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$$Color$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$$Color$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_THIRTY$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$LINE_NS$.html[0m
@@ -858,6 +860,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$TRIANGLE_SE$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$FOURTEEN$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$FOURTEEN$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/ColorOptions$$Color$$ColorDouble$.html[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/ColorOptions$$Color$$ColorDouble$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$Y_UP$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/fazi/Desktop/Final Project/docs/org/carbonateresearch/picta/SymbolShape$$Y_UP$.html[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/carbonateresearch/picta/SymbolShape$$ONE_HUNDRED_AND_TWENTY$.html[0m

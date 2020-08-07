@@ -1,6 +1,6 @@
 package org.carbonateresearch.picta.common
 
-import org.carbonateresearch.picta.options.ColorOptions.Color
+import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.{MARKERS, SCATTER, XY}
 
 import scala.collection.mutable

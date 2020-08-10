@@ -20,7 +20,8 @@ import scala.language.postfixOps
  * @param transition_duration : If the chart is animated, this specifies the duration between the frames.
  * @param id                  : This is used by the Picta library internally for book-keeping purposes.
  */
-final case class Chart(series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
+final case class Chart
+(series: List[Series] = Nil, layout: ChartLayout = ChartLayout(), config: Config = Config(),
  animated: Boolean = false, transition_duration: Int = 100, animate_multiple_series: Boolean = false,
  private[picta] val id: String = generateRandomText()) extends Component {
 
@@ -155,7 +156,7 @@ final case class Chart(series: List[Series] = Nil, layout: ChartLayout = ChartLa
     this.copy(layout = new_layout)
   }
 
-  def setMapOptions(new_map_options: MapOptions) = {
+  def setMapOptions(new_map_options: MapOption) = {
     val new_layout = this.layout setMapOption new_map_options setXYZ XYZ
     this.copy(layout = new_layout)
   }

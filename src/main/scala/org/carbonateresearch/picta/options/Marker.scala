@@ -26,7 +26,7 @@ final case class Marker[T0: Color, T1: Color]
 
   def setColor[Z: Color](new_color: List[Z]): Marker[Z, T1] = this.copy(color = new_color)
 
-  def setColor[Z: Color](new_color: Z): Marker[Z, T1] = this.copy(color = List(new_color))
+  def setColor[Z: Color](new_color: Z*): Marker[Z, T1] = this.copy(color = new_color.toList)
 
   def setLine[Z: Color](new_line: Line[Z]): Marker[T0, Z] = this.copy(line = new_line)
 

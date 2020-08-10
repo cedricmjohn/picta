@@ -38,7 +38,7 @@ case object Y_UNIFIED extends HoverMode
  */
 final case class ChartLayout
 (title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, auto_size: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, map_options: Opt[MapOptions] = Blank, multi_chart: Opt[MultiChart] = Blank,
+ margin: Opt[Margin] = Blank, map_options: Opt[MapOption] = Blank, multi_chart: Opt[MultiChart] = Blank,
  show_legend: Boolean = true, hover_mode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600, XYZ: Boolean = false)
   extends Component {
 
@@ -71,7 +71,7 @@ final case class ChartLayout
 
   def setMargin(new_margin: Margin) = this.copy(margin = new_margin)
 
-  def setMapOption(new_geo: MapOptions) = this.copy(map_options = new_geo)
+  def setMapOption(new_geo: MapOption) = this.copy(map_options = new_geo)
 
   def setMultiChart(new_minigrid: MultiChart) = this.copy(multi_chart = new_minigrid)
 

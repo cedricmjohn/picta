@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta.options
 
 import org.carbonateresearch.picta.ColorOptions.Color
-import org.carbonateresearch.picta.Component
+import org.carbonateresearch.picta.{Component, RGB}
 import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
@@ -19,11 +19,7 @@ final case class Line[T: Color](width: Double = 0.5, color: Opt[List[T]] = Empty
 
   def setColor[T: Color](new_color: List[T]): Line[T] = this.copy(color = new_color)
 
-  def setColor(new_color: String): Line[String] = this.copy(color = List(new_color))
-
-  def setColor(new_color: String*): Line[String] = this.copy(color = new_color.toList)
-
-  def setColor(new_color: Double): Line[Double] = this.copy(color = List(new_color))
+  def setColor[T: Color](new_color: T*): Line[T] = this.copy(color = new_color.toList)
 
   private[picta] def serialize(): Value = {
     val acc = Obj("width" -> width)

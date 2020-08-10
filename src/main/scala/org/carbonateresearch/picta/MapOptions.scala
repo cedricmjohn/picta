@@ -85,6 +85,8 @@ case object AITOFF extends Projection
 
 case object SINUSOIDAL extends Projection
 
+trait MapOption extends Component
+
 /** This is configures the Chart for a Map.
  *
  * @param resolution     : This sets the resolution.
@@ -98,11 +100,13 @@ case object SINUSOIDAL extends Projection
  * @param lataxis        : This is the component that configures the lataxis.
  * @param longaxis       : This is the component that configures the longaxis.
  */
-
-final case class MapOptions
-(region: Opt[Region] = Blank, landcolor: Opt[String] = Blank, lakecolor: Opt[String] = Blank,
+final case class MapOptions[T0: Color, T1: Color]
+(region: Opt[Region] = Blank, landcolor: Opt[T0] = Blank, lakecolor: Opt[T1] = Blank,
  projection: Opt[Projection] = Blank, lataxis: Opt[LatAxis] = Blank, longaxis: Opt[LongAxis] = Blank,
- showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends Component {
+ showland: Boolean = true, showlakes: Boolean = true, resolution: Int = 50, coastlinewidth: Int = 2) extends MapOption {
+
+  private val c0 = implicitly[Color[T0]]
+  private val c1 = implicitly[Color[T1]]
 
   def setRegion(new_region: Region) = this.copy(region = new_region)
 
@@ -120,11 +124,11 @@ final case class MapOptions
 
   def setCoastLineWidth(new_coastlinewidth: Int) = this.copy(coastlinewidth = new_coastlinewidth)
 
-  def setMapAxis(new_axis: LatAxis): MapOptions = this.copy(lataxis = new_axis)
+  def setMapAxis(new_axis: LatAxis) = this.copy(lataxis = new_axis)
 
-  def setMapAxis(new_axis: LongAxis): MapOptions = this.copy(longaxis = new_axis)
+  def setMapAxis(new_axis: LongAxis) = this.copy(longaxis = new_axis)
 
-  def setMapAxes(lat: LatAxis, lon: LongAxis): MapOptions = this.copy(lataxis = lat, longaxis = lon)
+  def setMapAxes(lat: LatAxis, lon: LongAxis) = this.copy(lataxis = lat, longaxis = lon)
 
   private[picta] def serialize(): Value = {
     val meta = Obj(
@@ -140,12 +144,12 @@ final case class MapOptions
     }
 
     val landcolor_ = landcolor.option match {
-      case Some(x) => Obj("landcolor" -> x)
+      case Some(x) => Obj("landcolor" -> c0.serialize(List(x)))
       case None => jsonMonoid.empty
     }
 
     val lakecolor_ = lakecolor.option match {
-      case Some(x) => Obj("lakecolor" -> x)
+      case Some(x) => Obj("lakecolor" -> c1.serialize(List(x)))
       case None => jsonMonoid.empty
     }
 

@@ -1,7 +1,7 @@
 package org.carbonateresearch.picta
 
 import org.carbonateresearch.picta.SymbolShape.CIRCLE
-import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int}
+import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_double, x_int, y_double, y_int}
 import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.options.{Line, Marker}
 import org.scalatest.funsuite.AnyFunSuite
@@ -49,6 +49,25 @@ class MarkerTests extends AnyFunSuite {
     val chart = Chart() addSeries (series1 setMarker marker)
 
     if (plotFlag) chart.plot
+
+    assert(validateJson(chart.serialize.toString))
+  }
+
+
+  test("Marker.SetColor") {
+
+    val line = Line() setWidth 1.5 setColor RGB(8, 48, 107)
+
+    val marker = Marker() setColor RGBA(158, 202, 225, 0.6) setLine line
+
+    val series = XY(x_double, y_double) setName "scatter" asType BAR
+
+    val chart = (
+      Chart()
+        addSeries series
+        setTitle "Scatter"
+      )
+
 
     assert(validateJson(chart.serialize.toString))
   }

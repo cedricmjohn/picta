@@ -1,12 +1,8 @@
 # Picta
 
----
-
 ### A graphing library for the Scala Programming language
 
 ## Contents 
-
----
 
 [Requirements](#requirements)
 
@@ -15,8 +11,6 @@
 [Documentation](#documentation)
 
 ## Introduction
-
----
 
 Picta is a graphing library that allows interactive data exploration in the Scala ecosystem. Picta has an easy to use API, that is close to natural language as possible, and adds extensive charting functionality to the Scala ecosystem.
 
@@ -28,8 +22,6 @@ Picta was written from scratch, except for the following files:
 - ```src/main/resources/require.min.js```
 
 ## Requirements
-
----
 
 To use this project, you need to have installed Scala 2.12.12+.
 
@@ -44,8 +36,6 @@ npm install
 This should install install all the necessary dependencies to get the unit-testing framework working.
 
 ## Installation
-
----
 
 #### SBT
 
@@ -73,8 +63,6 @@ import $ivy. `org.carbonateresearch::picta:0.1.1`
 ```
 
 ## Documentation
-
----
 
 Full documentation for the project can be found here:
 

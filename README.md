@@ -80,7 +80,7 @@ The API docs contain detailed information about the source code, such as functio
 
 ## Credit
 
-The Picta logo was designed by [design_league](https://www.fiverr.com/design_league).
+The Picta logo was created by [design_league](https://www.fiverr.com/design_league).
 
 
 

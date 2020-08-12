@@ -12,7 +12,9 @@
 
 ## Introduction
 
-Picta is a graphing library that allows interactive data exploration in the Scala ecosystem. Picta has an easy to use API, that is close to natural language as possible, and adds extensive charting functionality to the Scala ecosystem.
+Picta is a graphing library that allows interactive data exploration in the Scala ecosystem. 
+
+Picta has an easy to use API that is as close to natural language as possible, making it easy to create plots while exploring data. Picta also allows many different plot types, adding extensive charting functionality to the Scala ecosystem.
 
 Picta was written from scratch, except for the following files:
 
@@ -21,19 +23,31 @@ Picta was written from scratch, except for the following files:
 - ```src/main/resources/plotly.min.js```
 - ```src/main/resources/require.min.js```
 
+These files simply contain code from open source libraries used in the creation of Picta.
+
 ## Requirements
 
 To use this project, you need to have installed Scala 2.12.12+.
 
-If you wish to run the unit-tests, you will also need to install [Node.js](https://nodejs.org/en/). 
+##### Working The Unit Testing Framework
 
-If you have NPM installed, you can simply navigate to ```/src/test/resources/javascript``` and run the following command:
+If you wish to run the unit tests, you will also need to install [Node.js](https://nodejs.org/en/). 
+
+If you have NPM installed, you can simply navigate to ```/src/test/resources/javascript/``` and run the following command:
 
 ```shell
 npm install
 ```
 
-This should install install all the necessary dependencies to get the unit-testing framework working.
+This should install all the necessary dependencies to get the unit-testing framework working.
+
+To run the tests, simply open an SBT shell and use the following command:
+
+```scala
++ test
+```
+
+This will run the unit tests, which should all pass.
 
 ## Installation
 
@@ -64,11 +78,11 @@ import $ivy. `org.carbonateresearch::picta:0.1.1`
 
 ## Documentation
 
-Full documentation for the project can be found here:
+The documentation site for the project can be found here:
 
 [Documentation Site](https://acse-fk4517.github.io/picta-docs/index.html)
 
-The documentation site contains examples on how to use the Picta library, including how to run the unit-testing framework.
+The documentation site contains extensive examples on how to use the Picta library.
 
 The documentation is built with [Jekyll](https://jekyllrb.com), using the theme by Tom Johnson [here](https://github.com/tomjoht/documentation-theme-jekyll)
 

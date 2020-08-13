@@ -2,9 +2,9 @@
 
 ### A graphing library for the Scala Programming language
 
-Picta is a graphing library that allows interactive data exploration in the Scala ecosystem. 
+Picta is a graphing library that allows interactive data exploration in the Scala ecosystem.
 
-Picta has an easy to use API that is as close to natural language as possible, making it easy to create plots while exploring data. 
+Picta has an easy to use API that is as close to natural language as possible, making it easy to create plots while exploring data.
 
 Picta also allows many different plot types, adding extensive charting functionality to the Scala ecosystem.
 
@@ -94,7 +94,7 @@ In addition to the documentation site above, there is also an API site, built wi
 
 The API docs contain detailed information about the source code, such as function signatures and types of the various elements in the library.
 
-You can find an extensive list of plot examples [here](https://acse-fk4517.github.io/picta-docs/pages/Picta-Examples-Notebook.html)
+You can find an extensive list of plot examples [here](https://acse-fk4517.github.io/picta-docs/pages/Picta-Examples-Notebook.html).
 
 
 ## Credit

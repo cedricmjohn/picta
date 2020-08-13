@@ -1,6 +1,7 @@
 package org.carbonateresearch.picta.render
 
 import org.carbonateresearch.picta.UnitTestUtils._
+import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.{MARKERS, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -33,6 +34,14 @@ class BasicChartTests extends AnyFunSuite {
   test("XY.Scatter.Simplest") {
     val series = XY(x = x_int, y = y_int) asType SCATTER
     val chart = Chart() addSeries series setTitle "XY.Scatter.Simplest"
+    if (plotFlag) chart.plot
+    assert(validateJson(chart.serialize.toString))
+  }
+
+  test("XY.Annotation") {
+    val annotations = y_str.map(x => generateRandomText.take(3))
+    val series = XY(y_str, y_double) asType BAR addAnnotations annotations
+    val chart = Chart() addSeries series setTitle "XY.Annotation"
     if (plotFlag) chart.plot
     assert(validateJson(chart.serialize.toString))
   }

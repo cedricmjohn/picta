@@ -196,8 +196,4 @@
       </library>
     </orderEntry>
   </component>
-  <component name="SbtModule">
-    <option name="buildForURI" value="file:$MODULE_DIR$/../../../../Final%20Project/picta/" />
-    <option name="imports" value="_root_.sbt.Keys._, _root_.sbt.ScriptedPlugin.autoImport._, _root_.sbtrelease.ReleasePlugin.autoImport._, _root_.xerial.sbt.Sonatype.autoImport._, _root_.com.jsuereth.sbtpgp.SbtPgp.autoImport._, _root_.org.scalafmt.sbt.ScalafmtPlugin.autoImport._, _root_.sbt._, _root_.sbt.nio.Keys._, _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.ScriptedPlugin, _root_.sbt.plugins.SbtPlugin, _root_.sbt.plugins.SemanticdbPlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.sbtrelease.ReleasePlugin, _root_.xerial.sbt.Sonatype, _root_.com.jsuereth.sbtpgp.SbtPgp, _root_.org.scalafmt.sbt.ScalafmtPlugin, _root_.scala.xml.{TopScope=&gt;SUB:DOLLARscope}" />
-  </component>
 </module>

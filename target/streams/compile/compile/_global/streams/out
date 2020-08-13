@@ -1,15 +1,14 @@
 [0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/fazi/Desktop/Final Project/picta/project/target/.sbt-compilation-infos/picta-compile/.sbt-idea-lock ...[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Chart.scala:145:34: multiarg infix syntax looks like a tuple and will be deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val new_layout = this.layout setAxes(new_xaxis, new_yaxis) setXYZ XYZ[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/MapOptions.scala:133:22: method with a single empty parameter list overrides method without any parameter list[0m
-[0m[[0m[33mwarn[0m] [0m[0m  private[picta] def serialize(): Value = {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m10 deprecations (since 2.13.3); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Chart.scala:145:34: multiarg infix syntax looks like a tuple and will be deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val new_layout = this.layout setAxes(new_xaxis, new_yaxis) setXYZ XYZ[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m7 deprecations (since 2.13.3); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYSeries.scala:91:62: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Z[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis.`type` match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m4 deprecations (since 2.13.3); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYSeries.scala:91:62: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Z[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def setAxis(new_axis: Axis): XY[T0, T1, T2, T3] = new_axis.`type` match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m6 deprecations (since 2.13.3); re-run with -deprecation for details[0m
 [0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
 [0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/fazi/Desktop/Final Project/picta/project/target/.sbt-compilation-infos/picta-compile/.sbt-idea-lock.[0m

@@ -52,7 +52,7 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
 (x: List[T0], y: Opt[List[T1]] = Empty, name: String = generateRandomText, `type`: XYType = SCATTER,
  style: Opt[Style] = Blank, xaxis: Opt[Axis] = Blank, yaxis: Opt[Axis] = Blank, marker: Opt[Marker[T2, T3]] = Blank,
  hist_options: Opt[HistOptions] = Blank, hist2d_options: Opt[Hist2dOptions] = Blank, xerror: Opt[XError] = Blank,
- yerror: Opt[YError] = Blank) extends Series {
+ yerror: Opt[YError] = Blank, text: Opt[List[String]] = Empty) extends Series {
 
   val classification: String = "xy"
 
@@ -163,6 +163,10 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
     this.copy(marker = new_marker)
   }
 
+  def addAnnotations(new_text: List[String]) = this.copy(text=new_text)
+
+  def addAnnotations(new_text: String*) = this.copy(text=new_text.toList)
+
   private[picta] def serialize: Value = {
     val meta = Obj(
       "name" -> name,
@@ -213,7 +217,12 @@ final case class XY[T0: Serializer, T1: Serializer, T2: Color, T3: Color]
       case None => jsonMonoid.empty
     }
 
-    List(meta, mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries, xerror_, yerror_)
+    val text_ = text.option match {
+      case Some(x) => Obj("text" -> x)
+      case None => jsonMonoid.empty
+    }
+
+    List(meta, mode_, xaxis_, yaxis_, marker_, hist_options_, hist2d_options_, createSeries, xerror_, yerror_, text_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
   }
 

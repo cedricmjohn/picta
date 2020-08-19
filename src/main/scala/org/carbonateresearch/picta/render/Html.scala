@@ -218,7 +218,7 @@ object Html {
          |    columns: ${cols},
          |    margin: {
          |        x: 0,
-         |        y: 0
+         |        y: 50
          |    }
          |  });
          |""".stripMargin

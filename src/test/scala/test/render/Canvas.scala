@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils._
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Canvas component.
+ */
 class CanvasTests extends AnyFunSuite {
 
   val plotFlag = false

@@ -26,7 +26,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Series.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Side.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/SymbolShape.scala[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/Table.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/common/Monoid.scala[0m
@@ -54,14 +53,8 @@
 [0m[[0m[33mwarn[0m] [0m[0m                                 ^[0m
 [0m[[0m[33mwarn[0m] [0m[0m27 deprecations (since 2.13.3); re-run with -deprecation for details[0m
 [0m[[0m[33mwarn[0m] [0m[0m2 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/options/Marker.scala:11:1: Tag '@constructor:' is not recognised[0m
-[0m[[0m[33mwarn[0m] [0m[0m/**[0m
-[0m[[0m[33mwarn[0m] [0m[0m^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/XYZSeries.scala:23:1: Tag '@constructor:' is not recognised[0m
-[0m[[0m[33mwarn[0m] [0m[0m/**[0m
-[0m[[0m[33mwarn[0m] [0m[0m^[0m
 [0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala:12:3: Tag '@return:' is not recognised[0m
-[0m[[0m[33mwarn[0m] [0m[0m  /** This function grabs a single series specified from the user from a model that has been run.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  /** This function grabs a single series specified by the user, from a model that completed running.[0m
 [0m[[0m[33mwarn[0m] [0m[0m  ^[0m
 [0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/conus/Utils.scala:29:3: Tag '@return:' is not recognised[0m
 [0m[[0m[33mwarn[0m] [0m[0m  /** This function grabs a pair of series specified from the user from a model that has been run.[0m
@@ -69,5 +62,5 @@
 [0m[[0m[33mwarn[0m] [0m[0m/Users/fazi/Desktop/Final Project/picta/src/main/scala/org/carbonateresearch/picta/common/Utils.scala:85:3: Tag '@return:' is not recognised[0m
 [0m[[0m[33mwarn[0m] [0m[0m  /** A utility function that creates a list of all the possible co-ordinates inside a grid.[0m
 [0m[[0m[33mwarn[0m] [0m[0m  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m8 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m6 warnings found[0m
 [0m[[0m[0minfo[0m] [0m[0mMain Scala API documentation successful.[0m

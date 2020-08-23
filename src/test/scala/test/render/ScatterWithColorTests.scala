@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils.{validateJson, x_int, y_int, z_
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the 2D scatter chart with colors.
+ */
 class ScatterWithColorTests extends AnyFunSuite {
 
   val plotFlag = false

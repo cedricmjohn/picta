@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils._
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests XYZ Chart and it's various methods.
+ */
 class XYZTests extends AnyFunSuite {
 
   val plotFlag = false

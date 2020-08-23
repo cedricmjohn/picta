@@ -5,6 +5,9 @@ import org.carbonateresearch.picta._
 import org.carbonateresearch.picta.options.Marker
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Histogram2dContour component.
+ */
 class Histogram2DContourTests extends AnyFunSuite {
 
   val plotFlag = false

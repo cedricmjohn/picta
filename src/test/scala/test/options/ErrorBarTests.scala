@@ -5,6 +5,9 @@ import org.carbonateresearch.picta.UnitTestUtils.validateJson
 import org.carbonateresearch.picta.options._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Error Bar component, and it's various methods.
+ */
 class ErrorBarTests extends AnyFunSuite {
 
   val plotFlag = false

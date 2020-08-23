@@ -25,8 +25,8 @@ object Utils {
     getSeriesbyCategory(categories, List(data._1, data._2))
   }
 
-  /** This is the base constructor for the alternative constructor above. As this function signature uses lists as
-   * opposed to tuples, it is not good from a user interface perspective.
+  /** This is the base constructor for the alternative constructor which does not take in a list. This constructor
+   * uses lists, which the alternate constructor abstracts away for ease of use.
    *
    * @param categories : This are the per data-point category labels.
    * @param data       : This is a tuple of the raw data for both the x and y variables.

@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils.{createXYSeries, createXYZSerie
 import org.carbonateresearch.picta.{Axis, Chart, X, Y}
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests animated charts in Picta.
+ */
 class AnimationTests extends AnyFunSuite {
 
   val plotFlag = false

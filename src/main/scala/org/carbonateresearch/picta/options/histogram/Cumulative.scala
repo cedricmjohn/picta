@@ -10,12 +10,11 @@ import ujson.{Obj, Value}
  *
  * @param enabled    : A boolean that specifies whether the cumulative distribution is enabled.
  * @param direction  : If 'increasing' will sum all prior bins. if 'decreasing' will sum the later bins.
- * @param currentbin : only applies of enabled == true. Sets whether the bin is included, excluded, or has half of its value
+ * @param currentbin : only applies if enabled == true. Sets whether the bin is included, excluded, or has half of its value
  *                     in the current cumulative value.
  */
 final case class Cumulative(enabled: Opt[Boolean] = Blank, direction: Opt[Direction] = Blank,
                             currentbin: Opt[CurrentBin] = Blank) extends Component {
-
 
   def setEnabled(new_enabled: Boolean) = this.copy(enabled = new_enabled)
 

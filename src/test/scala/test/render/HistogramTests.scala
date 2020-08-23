@@ -6,6 +6,9 @@ import org.carbonateresearch.picta.options.{Line, Marker}
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Histogram component and it's various methods.
+ */
 class HistogramTests extends AnyFunSuite {
 
   val plotFlag = false

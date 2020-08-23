@@ -6,6 +6,9 @@ import org.carbonateresearch.picta._
 import org.carbonateresearch.picta.options.Legend
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests chart composition; how charts can be assembled from smaller pieces.
+ */
 class CompositionTests extends AnyFunSuite {
 
   val plotFlag = false

@@ -8,13 +8,13 @@ import ujson.{Obj, Value}
 /** A trait that specifies how the Xbins and Ybins case classes should behave. */
 private[picta] trait HistBins extends Component {
 
-  /** Starting value for the axis bin */
+  /** Starting value for the axis bin. */
   val start: Opt[Double]
 
-  /** ending value for the axis bin */
+  /** ending value for the axis bin. */
   val end: Opt[Double]
 
-  /** size of each bin */
+  /** size of each bin. */
   val size: Opt[Double]
 
   private[picta] def serialize: Value = {

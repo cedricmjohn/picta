@@ -3,18 +3,32 @@ package org.carbonateresearch.picta
 import ujson.Value
 import upickle.default._
 
-/** This object creates a priority implicit which allows either a List[String] or List[Double] to be added as chart
- * components.
+/**
+ * This case class represents an RGB color.
+ *
+ * @param r: Red.
+ * @param g: Green.
+ * @param b: Blue.
  */
-
 case class RGB(r: Double, g: Double, b: Double) {
   override def toString: String = s"rgb(${r}, ${g}, ${b})"
 }
 
+/**
+ * This case class represents and RGBA color
+ *
+ * @param r: Red.
+ * @param g: Green.
+ * @param b: Blue.
+ * @param a: Alpha.
+ */
 case class RGBA(r: Double, g: Double, b: Double, a: Double) {
   override def toString: String = s"rgba(${r}, ${g}, ${b}, ${a})"
 }
 
+/** This object creates a priority implicit which allows either a List[String] or List[Double]
+ * to be added as chart components.
+ * */
 object ColorOptions {
 
   sealed trait Color[T] {

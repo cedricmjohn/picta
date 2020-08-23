@@ -5,6 +5,12 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.{Component, Side}
 import ujson.{Obj, Value}
 
+/**
+ * This case class represents a color bar for a plot.
+ *
+ * @param title: The title of the color bar.
+ * @param title_side: The side on which the title should should be displayed.
+ */
 case class ColorBar(title: Opt[String] = Blank, title_side: Opt[Side] = Blank) extends Component {
 
   def setTitle(new_title: String) = this.copy(title = new_title)

@@ -3,6 +3,9 @@ package org.carbonateresearch.picta
 import org.carbonateresearch.picta.UnitTestUtils._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the ChartLayout component, and it's various functions.
+ */
 class ChartLayoutTests extends AnyFunSuite {
 
   val plotFlag = false

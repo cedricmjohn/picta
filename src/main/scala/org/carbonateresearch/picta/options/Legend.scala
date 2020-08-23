@@ -5,7 +5,7 @@ import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.{Component, HORIZONTAL, Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
-/** This configures the legend for a chart.
+/** This case class specifies the legend for a chart.
  *
  * @param x           : x-coordinate for positioning legend on the chart.
  * @param y           : y-coordinate for positioning the legend on the chart.

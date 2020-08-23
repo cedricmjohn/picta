@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils.validateJson
 import org.carbonateresearch.picta.{Chart, PIE, PieElement, XY}
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Pie Chart and it's various methods.
+ */
 class PieChartTests extends AnyFunSuite {
 
   val plotFlag = false

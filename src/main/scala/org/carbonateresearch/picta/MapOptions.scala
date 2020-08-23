@@ -5,6 +5,7 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
+/** Sets the region for a map chart. */
 sealed trait Region
 
 case object WORLD extends Region
@@ -21,6 +22,7 @@ case object NORTH_AMERICA extends Region
 
 case object SOUTH_AMERICA extends Region
 
+/** Sets how the projection is calculated on a map. */
 sealed trait Projection
 
 case object EQURECTANGULAR extends Projection

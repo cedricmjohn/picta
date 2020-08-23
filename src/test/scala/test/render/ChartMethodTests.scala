@@ -5,6 +5,9 @@ import org.carbonateresearch.picta.options.{RIGHT => _, _}
 import org.carbonateresearch.picta.{MARKERS, Map, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests various chart methods.
+ */
 class ChartMethodTests extends AnyFunSuite {
 
   val plotFlag = false

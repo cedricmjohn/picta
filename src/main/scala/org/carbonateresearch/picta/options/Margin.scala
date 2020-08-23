@@ -5,6 +5,14 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import ujson.{Obj, Value}
 
+/**
+ * This case class specifies margins (in px). Margins can be used by a number of different components.
+ *
+ * @param l: left margin.
+ * @param r: right margin.
+ * @param t: top margin.
+ * @param b: bottom margin.
+ */
 final case class Margin(l: Opt[Int] = Blank, r: Opt[Int] = Blank, t: Opt[Int] = Blank, b: Opt[Int] = Blank) extends Component {
   private[picta] def serialize(): Value = {
     val l_ = l.option match {

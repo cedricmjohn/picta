@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils._
 import org.carbonateresearch.picta.options.MultiChart
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Picta Subplot Grid system.
+ */
 case class SubplotTests() extends AnyFunSuite {
   val plotFlag = false
 

@@ -4,6 +4,7 @@ import org.carbonateresearch.picta.OptionWrapper._
 import org.carbonateresearch.picta.common.Monoid._
 import ujson.{Obj, Value}
 
+/** Specifies the axis direction. */
 sealed trait AxisType
 
 case object X extends AxisType

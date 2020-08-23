@@ -7,6 +7,9 @@ import org.carbonateresearch.picta.options.{Line, Marker}
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
 
+/**
+ * This tests the Marker component and it's various methods.
+ */
 class MarkerTests extends AnyFunSuite {
 
   val plotFlag = false

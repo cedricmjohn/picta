@@ -5,31 +5,43 @@ import org.carbonateresearch.picta.common.Monoid._
 import org.carbonateresearch.picta.{Component, Orientation, VERTICAL}
 import ujson.{Obj, Value}
 
+/** Specifies how the histogram is normalized. */
 sealed trait HistNorm
 
+/** The length of each bar equals the percentage of occurrences with respect to the total number of points. */
 case object PERCENT extends HistNorm
 
+/** The length of each bar equals the number of occurrences in a bin divided by the length of the bin interval. */
 case object DENSITY extends HistNorm
 
+/** The area of each bar corresponds to the probability that an event will fall into the corresponding bin (here, the sum of all bin AREAS equals 1). */
 case object PROBABILITY_DENSITY extends HistNorm
 
+/** The length of each bar corresponds to the number of occurrences. */
 case object NUMBER extends HistNorm {
   override def toString: String = ""
 }
 
+/** Specifies the binning function used for the histogram. */
 sealed trait HistFunction
 
+/** Histogram values are equal to the number of values lying in the bin.  */
 case object COUNT extends HistFunction
 
+/** Histogram values are equal to the sum of the values lying in the bin.  */
 case object SUM extends HistFunction
 
+/** Histogram values are equal to the average of the values lying in the bin.  */
 case object AVG extends HistFunction
 
+/** Histogram values are equal to the min of the values lying in the bin.  */
 case object MIN extends HistFunction
 
+/** Histogram values are equal to the max of the values lying in the bin.  */
 case object MAX extends HistFunction
 
-/** This class sets the histogram-specific options for a histogram.
+/** This class sets the options for a histogram. Generally this will be manipulated by a component that sits higher up
+ *  in the class hierarchy.
  *
  * @param orientation : Specifies whether the histogram is vertical or horizontal.
  * @param cumulative  : This takes in a Cumulative type which specifies how the histogram cumulative function works.

@@ -1,5 +1,6 @@
 package org.carbonateresearch.picta
 
+/** Specifies the symbol shape that is displayed on the chart. */
 object SymbolShape {
 
   sealed trait SymbolShape

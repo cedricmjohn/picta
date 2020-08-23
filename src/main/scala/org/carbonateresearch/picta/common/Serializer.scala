@@ -3,7 +3,7 @@ package org.carbonateresearch.picta.common
 import ujson.Value
 import upickle.default._
 
-/** A type class that serializes scala data structures to a valid Value format for JSON.
+/** A type class that serializes lists to a valid array compatible JSON.
  *
  * Implicits are prioritised to allow the compiler to compile without any ambiguity errors.
  * Implicit priority for serialization: BigDecimal < Long < Float < String < Int < Double.
@@ -12,7 +12,7 @@ private[picta] sealed trait Serializer[T] {
   def serialize(lst: List[T]): Value
 }
 
-/** serializes a list of BigDecimals */
+/** serializes a list of BigDecimals. */
 private[picta] trait Big_Decimal_Serializer {
 
   implicit object BigDecimalSerializer extends Serializer[BigDecimal] {
@@ -21,7 +21,7 @@ private[picta] trait Big_Decimal_Serializer {
 
 }
 
-/** serializes a list of Longs */
+/** serializes a list of Longs. */
 private[picta] trait Long_Serializer extends Big_Decimal_Serializer {
 
   implicit object LongSerializer extends Serializer[Long] {
@@ -30,7 +30,7 @@ private[picta] trait Long_Serializer extends Big_Decimal_Serializer {
 
 }
 
-/** serializes a list of Floats */
+/** serializes a list of Floats. */
 private[picta] trait Float_Serializer extends Long_Serializer {
 
   implicit object FloatSerializer extends Serializer[Float] {
@@ -39,7 +39,7 @@ private[picta] trait Float_Serializer extends Long_Serializer {
 
 }
 
-/** serializes a list of Strings */
+/** serializes a list of Strings. */
 private[picta] trait String_Serializer extends Float_Serializer {
 
   implicit object StringSerializer extends Serializer[String] {
@@ -48,7 +48,7 @@ private[picta] trait String_Serializer extends Float_Serializer {
 
 }
 
-/** serializes a list of Ints */
+/** serializes a list of Ints. */
 private[picta] trait Int_Serializer extends String_Serializer {
 
   implicit object IntSerializer extends Serializer[Int] {
@@ -57,7 +57,7 @@ private[picta] trait Int_Serializer extends String_Serializer {
 
 }
 
-/** serializes a list of Doubles */
+/** serializes a list of Doubles. */
 private[picta] object Serializer extends Int_Serializer {
 
   implicit object DoubleSerializer extends Serializer[Double] {

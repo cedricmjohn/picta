@@ -5,6 +5,9 @@ import org.carbonateresearch.picta.common.Utils.generateRandomText
 import org.carbonateresearch.picta.{MARKERS, SCATTER, _}
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests basic charts in Picta.
+ */
 class BasicChartTests extends AnyFunSuite {
 
   val plotFlag = false

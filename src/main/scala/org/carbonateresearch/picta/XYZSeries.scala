@@ -21,12 +21,20 @@ case object HEATMAP extends XYZType
 case object SURFACE extends XYZType
 
 /**
- * @constructor: A Series for a 3d chart.
- * @param x     :
- * @param y     :
- * @param z     :
- * @param name  :
- * @param style :
+ * * A Series for a 3d chart.
+ *
+ * @param x: The data series for the first dimension.
+ * @param y: The data series for the second dimension.
+ * @param z: The data series for the third dimension.
+ * @param name: The name of the data series.
+ * @param `type`: The type of the data series.
+ * @param style: Specifies the style of chart.
+ * @param n: Only used when working with a nested list that has been flattened. Specifies the number of elements in the
+ *           nested list before it was flattened.
+ * @param colorbar_options: Specifies the color bar options for the chart.
+ * @tparam T0
+ * @tparam T1
+ * @tparam T2
  */
 final case class XYZ[T0: Serializer, T1: Serializer, T2: Serializer]
 (x: Opt[List[T0]] = Empty, y: Opt[List[T1]] = Empty, z: List[T2], name: String = generateRandomText, `type`: XYZType = SCATTER3D,

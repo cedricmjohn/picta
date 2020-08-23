@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.IO.{getWorkingDirectory, readCSV}
 import org.carbonateresearch.picta.common.Utils.getSeriesbyCategory
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the IO functions.
+ */
 class IOTests extends AnyFunSuite {
 
   val plotFlag = false

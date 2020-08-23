@@ -5,6 +5,9 @@ import org.carbonateresearch.picta.options._
 import org.carbonateresearch.picta._
 import org.scalatest.funsuite.AnyFunSuite
 
+/**
+ * This tests the Map Chart component and it's various methods.
+ */
 class MapTests extends AnyFunSuite {
 
   val plotFlag = false

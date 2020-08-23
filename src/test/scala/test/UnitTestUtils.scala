@@ -3,6 +3,9 @@ package org.carbonateresearch.picta
 import org.carbonateresearch.picta.OptionWrapper._
 import ColorOptions.Color
 
+/**
+ * This object contains helper functions that help in testing various functionality of the library.
+ */
 object UnitTestUtils {
 
   // create a common configuration to be used in all the tests

@@ -9,7 +9,7 @@ import org.carbonateresearch.picta.common.Serializer
 import ujson.{Obj, Value}
 
 /**
- * @constructor: Configures a Marker component for the chart.
+ * Configures a Marker component for the chart.
  * @param symbol : Specifies what symbol the marker will use on the chart.
  * @param color  : Specifies the color for the symbol on a chart.
  * @param line   : This configures the line for the marker. This is another Line component.

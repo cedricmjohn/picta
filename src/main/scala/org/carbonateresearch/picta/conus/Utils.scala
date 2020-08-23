@@ -7,11 +7,11 @@ import org.carbonateresearch.picta.{Series, XY}
 
 import scala.collection.mutable.ListBuffer
 
-/** An object containing various utility functions used to wrangle the Conus library. */
+/** An object containing various utility functions used to easily interact with the Conus library. */
 object Utils {
-  /** This function grabs a single series specified from the user from a model that has been run.
+  /** This function grabs a single series specified by the user, from a model that completed running.
    *
-   * @param model_results   : Results from a run of the Simlulator.
+   * @param model_results   : Results from a run of the Simulator.
    * @param variable        : The variable we wish to extract.
    * @param coordinate      : The co-ordinate for which we wish to extract the variable.
    * @param number_of_steps : The number of time-steps we wish to extract the variable for.

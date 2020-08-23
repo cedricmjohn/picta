@@ -1,25 +1,30 @@
 package org.carbonateresearch.picta
 
-import org.carbonateresearch.picta.ColorOptions.Color
 import org.carbonateresearch.picta.OptionWrapper.{Blank, Empty, Opt}
 import org.carbonateresearch.picta.common.Monoid.jsonMonoid
 import org.carbonateresearch.picta.options._
 import ujson.{Obj, Value}
 
+/** Determines how the hover mode interactions behave. */
 trait HoverMode
 
+/** Hover label appears for the closest data point in the x direction. */
 case object Closest_X extends HoverMode {
   override def toString: String = "x"
 }
 
+/** Hover label appears for the closest data point in the y direction. */
 case object CLosest_Y extends HoverMode {
   override def toString: String = "y"
 }
 
+/** Hover label appears for the closest data point. */
 case object CLOSEST extends HoverMode
 
+/** Hover label are disabled. */
 case object FALSE extends HoverMode
 
+/** Support to be added . */
 case object X_UNIFIED extends HoverMode
 
 case object Y_UNIFIED extends HoverMode
@@ -27,19 +32,24 @@ case object Y_UNIFIED extends HoverMode
 /**
  * Specifies the layout for the chart.
  *
- * @param title       : Sets the chart title.
- * @param axes        : Sets the chart title.
- * @param show_legend : Specifies whether to show the legend.
- * @param auto_size   : This is the component that configures the legend for the chart..
- * @param legend      : This is the component that configures the legend for the chart..
- * @param height      : This sets the height for the chart.
- * @param width       : This sets the width for the chart.
- * @param map_options : this is used for Map charts only and configures the geo component for a Map chart.
+ * @param title: Sets the chart title.
+ * @param axes: Sets the chart title.
+ * @param legend: This is the component that configures the legend for the chart.
+ * @param auto_size
+ * @param margin
+ * @param map_options: This is used for Map charts only and configures the geo component for a Map chart.
+ * @param multi_chart: Spcifies whether this chart will have multiple axes.
+ * @param hover_distance: Specifies the hover distance.
+ * @param show_legend: Toggles whether the legend should be displayed.
+ * @param hover_mode: Determines how the hover mode interaction behaves.
+ * @param height: This sets the height for the chart.
+ * @param width: This sets the width for the chart.
+ * @param XYZ: A flag value used by Picta to determine whether it should apply XY (2D) or XYZ (3D) options to the chart layout.
  */
 final case class ChartLayout
 (title: Opt[String] = Blank, axes: Opt[List[Axis]] = Empty, legend: Opt[Legend] = Blank, auto_size: Opt[Boolean] = Blank,
- margin: Opt[Margin] = Blank, map_options: Opt[MapOption] = Blank, multi_chart: Opt[MultiChart] = Blank,
- show_legend: Boolean = true, hover_mode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600, XYZ: Boolean = false)
+ margin: Opt[Margin] = Blank, map_options: Opt[MapOption] = Blank, multi_chart: Opt[MultiChart] = Blank, hover_distance: Opt[Int] = Blank,
+ show_legend: Boolean = true, hover_mode: HoverMode = CLOSEST, height: Int = 550, width: Int = 600, private[picta] val XYZ: Boolean = false)
   extends Component {
 
   def setTitle(new_title: String) = this.copy(title = new_title)
@@ -122,7 +132,12 @@ final case class ChartLayout
       case _ => jsonMonoid.empty
     }
 
-    val combined = List(dim, title_, showlegend_, autosize_, geo_, margin_, minigrid_, legend_)
+    val hoverdistance_ = hover_distance.option match {
+      case Some(x) => Obj("hoverdistance" -> x)
+      case _ => jsonMonoid.empty
+    }
+
+    val combined = List(dim, title_, showlegend_, autosize_, geo_, margin_, minigrid_, legend_, hoverdistance_)
       .foldLeft(jsonMonoid.empty)((a, x) => a |+| x)
 
     axes.option match {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-  <info organisation="org.carbonateresearch" module="picta_2.13" revision="0.1.1" status="release" publication="20200819145932">
+  <info organisation="org.carbonateresearch" module="picta_2.13" revision="0.1.1" status="release" publication="20200823164717">
     <description homepage="https://github.com/cedricmjohn/picta">Picta: the interactive scientific plotting library for Scala.</description>
   </info>
   <configurations>

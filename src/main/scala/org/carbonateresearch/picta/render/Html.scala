@@ -195,7 +195,8 @@ object Html {
     html.mkString
   }
 
-  /** Creates the associated javascript for each Canvas.
+  /**
+   * Creates the associated javascript for each Canvas.
    *
    * @param rows : Number of rows in the Canvas subplot grid.
    * @param cols : Number of columns in the Canvas subplot.

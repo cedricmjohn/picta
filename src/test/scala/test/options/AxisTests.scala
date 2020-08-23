@@ -4,6 +4,9 @@ import org.carbonateresearch.picta.UnitTestUtils._
 import org.scalatest.funsuite.AnyFunSuite
 import upickle.default.write
 
+/**
+ * This tests the Axis components, and its various methods.
+ */
 class AxisTests extends AnyFunSuite {
 
   val plotFlag = false

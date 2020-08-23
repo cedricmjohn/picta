@@ -13,7 +13,7 @@ version := "0.1.1"
 crossScalaVersions := Seq("2.12.12", "2.13.3")
 
 // documentation output
-target in Compile in doc := baseDirectory.value.getParentFile / "docs"
+target in Compile in doc := baseDirectory.value.getParentFile / "api"
 
 // conus library
 libraryDependencies += "org.carbonateresearch" %% "conus" % "0.2.3"

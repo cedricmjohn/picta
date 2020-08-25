@@ -9,7 +9,8 @@ import org.carbonateresearch.conus._
 import org.carbonateresearch.conus.common.SingleModelResults
 
 /**
- * This tests the CoNuS model integration. It runs a simple rat population model
+ * This tests the CoNuS model integration. It runs a simple rat population model.
+ * This test is currently ignored as CoNuS is still working on exiting actors cleanly.
  */
 class ConusTests extends AnyFunSuite {
 

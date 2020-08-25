@@ -8,7 +8,7 @@ Picta has an easy to use API that is as close to natural language as possible, m
 
 Picta also allows many different plot types, adding extensive charting functionality to the Scala ecosystem.
 
-## Contents 
+## Contents
 
 [Requirements](#requirements)
 
@@ -20,10 +20,10 @@ Picta also allows many different plot types, adding extensive charting functiona
 
 Picta was written from scratch, except for the following files:
 
-- ```src/main/resources/macy.min.js```
-- ```src/main/resources/merge-image.js```
-- ```src/main/resources/plotly.min.js```
-- ```src/main/resources/require.min.js```
+- `src/main/resources/macy.min.js`
+- `src/main/resources/merge-image.js`
+- `src/main/resources/plotly.min.js`
+- `src/main/resources/require.min.js`
 
 These files simply contain code from open source libraries used in the creation of Picta.
 
@@ -33,9 +33,9 @@ To use this project, you need to have installed Scala 2.12.12+.
 
 ##### Running The Unit Testing Framework
 
-If you wish to run the unit tests, you will also need to install [Node.js](https://nodejs.org/en/). 
+If you wish to run the unit tests, you will also need to install [Node.js](https://nodejs.org/en/).
 
-If you have NPM installed, you can simply navigate to ```/src/test/resources/javascript/``` and run the following command:
+If you have NPM installed, you can simply navigate to `/src/test/resources/javascript/` and run the following command:
 
 ```shell
 npm install
@@ -50,6 +50,8 @@ To run the tests, simply open an SBT shell and use the following command:
 ```
 
 This will run the unit tests, which should all pass.
+
+You can find more information on how to contribute using the unit-testing framework in the main documentation [here](https://acse-fk4517.github.io/picta-docs/contributing_library).
 
 ## Installation
 
@@ -81,9 +83,10 @@ import $ivy. `org.carbonateresearch::picta:0.1.1`
 ## Documentation
 
 #### Main Documentation Site
+
 The documentation site for the project can be found here:
 
-* [Documentation Site](https://acse-fk4517.github.io/picta-docs/index.html)
+- [Documentation Site](https://acse-fk4517.github.io/picta-docs/index.html)
 
 The documentation site contains extensive examples on how to use the Picta library.
 
@@ -93,7 +96,7 @@ The documentation is built with [Jekyll](https://jekyllrb.com), using the theme 
 
 In addition to the documentation site above, there is also an API documentation site, built with [Scaladoc](https://docs.scala-lang.org/overviews/scaladoc/for-library-authors.html) here:
 
-* [Picta API](https://acse-fk4517.github.io/picta-api/)
+- [Picta API](https://acse-fk4517.github.io/picta-api/)
 
 The API docs contain detailed information about the source code, such as function signatures and types of the various elements in the library.
 
@@ -104,20 +107,3 @@ You can find an extensive list of plot examples [here](https://acse-fk4517.githu
 ## Credit
 
 The Picta logo was created by [design_league](https://www.fiverr.com/design_league).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

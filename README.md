@@ -2,22 +2,88 @@
 
 ### A graphing library for the Scala Programming language
 
-Picta is a graphing library that allows interactive data exploration in the Scala ecosystem.
+Picta is a graphing library for the Scala. It has an easy to use API that is close to natural language, making it easy to visualize different types of data.
 
-Picta has an easy to use API that is as close to natural language as possible, making it easy to create plots while exploring data.
+Picta comes with many different plot types, adding extensive charting functionality to the Scala ecosystem.
 
-Picta also allows many different plot types, adding extensive charting functionality to the Scala ecosystem.
+Plots are composed from smaller, simpler components, and combined together to create plots of varying complexity.
+
+The library is written in Scala, and cross-compiles to versions 2.12 and 2.13.
+
+Picta is also able to run inside a Jupyter Notebook, thanks to it's integration with the [Almond](https://almond.sh) kernel.
+
+All plots created by Picta are valid HTML. More information about the library can be found at the [Documentation](#documentation) site.
 
 ## Contents
+
+[Repository Structure](#repository-structure)
+
+[Maven Repository](#maven-repository)
 
 [Requirements](#requirements)
 
 [Installation](#installation)
 
+[Running The Unit Testing Framework](#running-the-unit-testing-framework)
+
 [Documentation](#documentation)
 
-## Introduction
+## Repository Structure
 
+The following are the main folders and files for the project. Files or folders not listed here are simply used for compilation, and can be ignored.
+
+### /src/
+
+This folder contains all the main code for the library, and consists of of two further directories:
+
+#### /src/main/
+
+This folder contains all the code that implements Picta. In this folder you will find the case classes that represent each plot component.
+
+All code associated with actually rendering plots on screen can be found in the `/render/` folder.
+
+The `/conus/` folder contains code for all the Picta helper functions that help a user visualize forward-models.
+
+The remaining folders implement various functionality useful to the library.
+
+#### /src/test/
+
+This folder contains the unit tests for the library. Generally each class corresponds to a test suite that tests a specific part of the library.
+
+To see how to set up the unit testing framework, please see [Running The Unit Testing Framework](#running-the-unit-testing-framework) below.
+
+#### /srce/test/resources
+
+This folder contains the Javascript files that are used to run the Node.js specific unit testing code.
+
+- `node_modules` contains all the dependencies downloaded by the `NPM` package manager to run the Node.js specific unit testing code.
+
+### /Documentation/
+
+This folder simply contains a README.md file that contains details on where to find the in depth documentation.
+
+### /build.sbt
+
+This file tells `SBT` how to build and compile the project. The file also contains all the dependencies this project will automatically pull in when 
+it is being compiled and built.
+
+### COPYING.md
+
+This contains a copy of the GNU general public license, version 3.
+
+### license.md
+
+This contains information on how the project is licensed. It goes hand in hand with the `COPYING.md` listed file above.
+
+### Picta-Examples-Notebook.ipynb
+
+This is a Jupyter notebook that contains many different examples of charts that are created using the Picta library.
+
+### rootdoc.txt
+
+This file is used to create the start page for the API documentation, which can be found hosted at [Picta API](https://acse-fk4517.github.io/picta-api/).
+
+#### Other Files
 Picta was written from scratch, except for the following files:
 
 - `src/main/resources/macy.min.js`
@@ -27,11 +93,17 @@ Picta was written from scratch, except for the following files:
 
 These files simply contain code from open source libraries used in the creation of Picta.
 
+## Maven Repository
+
+This library is hosted on Maven for an easy installation on your machine.
+
+You can find the Maven repository: [https://mvnrepository.com/artifact/org.carbonateresearch/picta](https://mvnrepository.com/artifact/org.carbonateresearch/picta)
+
 ## Requirements
 
 To use this project, you need to have installed Scala 2.12.12+.
 
-##### Running The Unit Testing Framework
+## Running The Unit Testing Framework
 
 If you wish to run the unit tests, you will also need to install [Node.js](https://nodejs.org/en/).
 

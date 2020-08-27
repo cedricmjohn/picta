@@ -102,7 +102,7 @@ You can find the Maven repository: [https://mvnrepository.com/artifact/org.carbo
 
 ## Requirements
 
-To use this project, you need to have installed Scala 2.12.12+.
+To use this project, you need to have installed Scala version 2.12.12 or greater. You will also need the appropriate version of the JDK. You can use the [openjdk](https://openjdk.java.net).
 
 ## Running The Unit Testing Framework
 

@@ -32,7 +32,7 @@ All plots created by Picta are valid HTML. More information about the library ca
 
 The following are the main folders and files for the project. Files or folders not listed here are simply used for compilation, and can be ignored.
 
-### /src/
+### 1. /src/
 
 This folder contains all the main code for the library, and consists of of two further directories:
 
@@ -52,38 +52,39 @@ This folder contains the unit tests for the library. Generally each class corres
 
 To see how to set up the unit testing framework, please see [Running The Unit Testing Framework](#running-the-unit-testing-framework) below.
 
-#### /srce/test/resources
+#### /src/test/resources
 
 This folder contains the Javascript files that are used to run the Node.js specific unit testing code.
 
 - `node_modules` contains all the dependencies downloaded by the `NPM` package manager to run the Node.js specific unit testing code.
 
-### /Documentation/
+### 2. /Documentation/
 
 This folder simply contains a README.md file that contains details on where to find the in depth documentation.
 
-### /build.sbt
+### 3. /build.sbt
 
-This file tells `SBT` how to build and compile the project. The file also contains all the dependencies this project will automatically pull in when 
+This file tells `SBT` how to build and compile the project. The file also contains all the dependencies this project will automatically pull in when
 it is being compiled and built.
 
-### COPYING.md
+### 4. COPYING.md
 
 This contains a copy of the GNU general public license, version 3.
 
-### license.md
+### 5. license.md
 
 This contains information on how the project is licensed. It goes hand in hand with the `COPYING.md` listed file above.
 
-### Picta-Examples-Notebook.ipynb
+### 6. Picta-Examples-Notebook.ipynb
 
 This is a Jupyter notebook that contains many different examples of charts that are created using the Picta library.
 
-### rootdoc.txt
+### 7. rootdoc.txt
 
 This file is used to create the start page for the API documentation, which can be found hosted at [Picta API](https://acse-fk4517.github.io/picta-api/).
 
-#### Other Files
+### 8. Other Files
+
 Picta was written from scratch, except for the following files:
 
 - `src/main/resources/macy.min.js`

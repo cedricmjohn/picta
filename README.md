@@ -67,19 +67,19 @@ This folder simply contains a README.md file that contains details on where to f
 This file tells `SBT` how to build and compile the project. The file also contains all the dependencies this project will automatically pull in when
 it is being compiled and built.
 
-### 4. COPYING.md
+### 4. /COPYING.md
 
 This contains a copy of the GNU general public license, version 3.
 
-### 5. license.md
+### 5. /license.md
 
 This contains information on how the project is licensed. It goes hand in hand with the `COPYING.md` listed file above.
 
-### 6. Picta-Examples-Notebook.ipynb
+### 6. /Picta-Examples-Notebook.ipynb
 
 This is a Jupyter notebook that contains many different examples of charts that are created using the Picta library.
 
-### 7. rootdoc.txt
+### 7. /rootdoc.txt
 
 This file is used to create the start page for the API documentation, which can be found hosted at [Picta API](https://acse-fk4517.github.io/picta-api/).
 

@@ -1,3 +1,8 @@
+/* Author:          Fazal Khan
+   Github:          acse-fk4517
+   Github Repo:     https://github.com/acse-2019/irp-acse-fk4517
+*/
+
 import com.jsuereth.sbtpgp.PgpKeys.gpgCommand
 import sbt.url
 
@@ -24,7 +29,6 @@ scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", "rootdoc.txt")
 // unit testing
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.2"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.2" % "test"
-
 
 // JSON encoding / decoding
 libraryDependencies += "com.lihaoyi" %% "upickle" % "1.1.0"

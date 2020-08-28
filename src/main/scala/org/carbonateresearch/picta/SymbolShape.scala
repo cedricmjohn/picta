@@ -1,3 +1,7 @@
+/* Author:          Fazal Khan
+   Github:          acse-fk4517
+   Github Repo:     https://github.com/acse-2019/irp-acse-fk4517
+*/
 package org.carbonateresearch.picta
 
 /** Specifies the symbol shape that is displayed on the chart. */

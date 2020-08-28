@@ -1,3 +1,7 @@
+/* Author:          Fazal Khan
+   Github:          acse-fk4517
+   Github Repo:     https://github.com/acse-2019/irp-acse-fk4517
+*/
 package org.carbonateresearch.picta
 
 /** This object provides a wrapper for the Scala built-in 'Option' type. Within it are defined various things that

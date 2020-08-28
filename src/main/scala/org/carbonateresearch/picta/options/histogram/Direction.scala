@@ -1,3 +1,7 @@
+/* Author:          Fazal Khan
+   Github:          acse-fk4517
+   Github Repo:     https://github.com/acse-2019/irp-acse-fk4517
+*/
 package org.carbonateresearch.picta.options.histogram
 
 /** This trait acts as an ENUM for direction option. Only applies if cumulative is enabled. */

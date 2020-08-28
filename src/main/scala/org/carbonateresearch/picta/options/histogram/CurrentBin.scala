@@ -1,3 +1,7 @@
+/* Author:          Fazal Khan
+   Github:          acse-fk4517
+   Github Repo:     https://github.com/acse-2019/irp-acse-fk4517
+*/
 package org.carbonateresearch.picta.options.histogram
 
 /** this trait acts as an ENUM for the current bin option. Only applies if cumulative is enabled. */
